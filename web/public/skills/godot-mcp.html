@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>godot-mcp - kanam-skills</title>
+<style>:root {
+  --bg: #0d1117;
+  --fg: #e6edf3;
+  --muted: #8b949e;
+  --accent: #58a6ff;
+  --card: #161b22;
+  --border: #30363d;
+  --code-bg: #161b22;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  padding: 4rem 2rem 2rem;
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #58a6ff, #bc8cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tagline {
+  font-size: 1.25rem;
+  color: var(--fg);
+  margin-bottom: 1.5rem;
+}
+
+.sub { color: var(--muted); font-size: 1rem; max-width: 640px; margin: 1rem auto 0; }
+
+.install {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.95rem;
+  color: var(--accent);
+  display: inline-block;
+  margin: 0.5rem auto;
+}
+
+main { flex: 1; max-width: 1000px; margin: 0 auto; padding: 1rem 2rem 3rem; width: 100%; }
+
+section { margin-bottom: 2.5rem; }
+
+h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.count {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 0.1rem 0.7rem;
+  margin-left: 0.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  text-decoration: none;
+  color: var(--fg);
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+.card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--accent);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.card p { color: var(--muted); font-size: 0.9rem; }
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border);
+}
+
+footer a { color: var(--accent); text-decoration: none; }
+
+/* Skill page */
+.back { color: var(--accent); text-decoration: none; font-size: 0.9rem; display: inline-block; margin-bottom: 1rem; }
+
+main.skill { max-width: 860px; }
+
+.skill-body {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.85rem;
+  white-space: pre-wrap;
+  overflow-x: auto;
+  color: var(--fg);
+  line-height: 1.5;
+}
+
+.chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+
+.chip {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 0.3rem 0.9rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.chip:hover { border-color: var(--accent); }
+
+@media (max-width: 640px) {
+  h1 { font-size: 2.2rem; }
+  header { padding: 3rem 1.5rem 1.5rem; }
+  main { padding: 1rem 1.5rem 2rem; }
+}
+</style>
+</head>
+<body>
+
+  <header>
+    <a class="back" href="../index.html">&larr; catalog</a>
+    <h1>godot-mcp</h1>
+    <p class="tagline">Aprender Godot 4.x paso a paso con asistencia de OpenClaw. El MCP server es una herramienta complementaria, no un reemplazo del editor.</p>
+  </header>
+  <main class="skill">
+    <article><pre class="skill-body">
+# Godot MCP — Aprender Godot juntos
+
+Este skill NO es sobre construir juegos de un prompt. Es sobre acompañar a Gonzo en su viaje de aprendizaje de Godot 4.7, paso a paso, hito por hito.
+
+## Filosofía
+
+- **Gonzo aprende haciendo, no leyendo.** Cada hito es hands-on.
+- **Prueba y error.** Si algo se rompe, lo investigamos juntos.
+- **Descubrimiento compartido.** Godot 4.7 tiene cosas nuevas que neither of us knows. Las exploramos juntos.
+- **No automatizar el aprendizaje.** No construyo el juego por Gonzo. Soy guía, copiloto y herramienta.
+- **Hitos pequeños y celebrables.** Cada paso genera algo visible que se puede probar.
+
+## Rol de OpenClaw
+
+1. **Guía**: explicar conceptos de Godot cuando se necesiten.
+2. **Asistente MCP**: usar el MCP server para tareas repetitivas o de verificación.
+3. **Investigador**: buscar docs, ejemplos, cambios en Godot 4.7 vs versiones anteriores.
+4. **Debug companion**: ayudar a diagnosticar errores cuando algo no funciona.
+5. **NOT a builder**: no construyo escenas enteras de un prompt. Gonzo decide qué hacer y lo hacemos juntos.
+
+## Setup del MCP server (cuando se necesite)
+
+```bash
+cd /path/to/godot/project
+npx @yanhuifair/godot-mcp -t streamable-http --port 9877 -p .
+```
+
+Health: `http://127.0.0.1:9877/health`
+MCP endpoint: `http://127.0.0.1:9877/mcp`
+
+Helper script: `/tmp/godot-mcp.sh` (maneja sesión MCP automáticamente).
+
+If this skill ever adds scripts under `skills/godot-mcp/scripts/`, run `npm test` from the workspace root and use `test-skills.sh` to validate them before committing.
+
+## Cuándo usar el MCP vs el editor
+
+- **MCP**: verificación rápida, lectura de estado, validación, operaciones repetitivas.
+- **Editor**: Gonzo trabaja directamente. El MCP no reemplaza la experiencia de usar Godot.
+- **Ambos**: Gonzo puede tener el editor abierto mientras OpenClaw asiste con MCP.
+
+## Godot 4.7 — Qué hay de nuevo
+
+Godot 4.7 trae cambios sobre 4.6 que vale la pena explorar:
+
+- **TileMapLayer**: reemplazo definitivo de TileMap (nodo separado, no TileMap + layers)
+- **Mejoras de renderizado**: Metal backend mejorado en macOS
+- **Nuevos nodos y propiedades**: investigar cambios en CharacterBody2D, Camera2D, etc.
+- **Performance**: mejoras en culling y batching 2D
+- **GDScript**: posibles nuevos features del lenguaje
+
+&gt;Nota: verificar changelog oficial de 4.7 para detalles exactos antes de enseñar algo que podría haber cambiado.
+
+## Estructura de hitos sugerida (flexible)
+
+### Hito 1: Primer proyecto y editor
+- Crear proyecto nuevo desde Godot
+- Entender la interfaz: viewport, dock de escena, inspector, sistema de archivos
+- Crear primera escena con un nodo visible
+- Guardar y correr
+
+### Hito 2: Nodos y escenas
+- Árbol de nodos: parent/child
+- Tipos de nodos: Node2D, Sprite2D, CharacterBody2D, StaticBody2D
+- Instancing: reutilizar escenas dentro de escenas
+- Transform: position, rotation, scale
+
+### Hito 3: Scripts y GDScript
+- Attachar script a un nodo
+- _ready, _process, _physics_process
+- Variables, @export
+- Input handling
+- Señales
+
+### Hito 4: Física 2D
+- Collision shapes
+- CharacterBody2D vs StaticBody2D vs RigidBody2D
+- Gravedad y move_and_slide
+- Áreas (Area2D) para detección
+
+### Hito 5: Cámara y UI
+- Camera2D: seguimiento, límites, smoothing
+- CanvasLayer y Control nodes
+- Labels, Buttons, signals de UI
+
+### Hito 6: Game feel
+- Animación (AnimatedSprite2D o _draw)
+- Particles
+- Sound effects
+- Screen shake
+
+### Hito 7: Niveles y progresión
+- Tilemaps/TileMapLayer
+- Scene switching
+- Save/load
+- Export
+
+## Notas
+
+- Godot 4.7.1 instalado en `/Applications/Godot.app`
+- El MCP server `@yanhuifair/godot-mcp` v1.4.0 tiene 282 tools
+- No instalar el plugin del MCP en el proyecto a menos que sea necesario para algo específico
+- Preferir que Gonzo trabaje en el editor y use OpenClaw como guía</pre></article>
+    <section><h3>Related</h3><div class="chips"><a class="chip" href="adhd-assistant.html">adhd-assistant</a><a class="chip" href="adhd-daily-planner.html">adhd-daily-planner</a><a class="chip" href="apple-photos.html">apple-photos</a><a class="chip" href="calorie-counter.html">calorie-counter</a></div></section>
+  </main>
+  <footer>MIT licensed - kanam-skills</footer>
+</body>
+</html>

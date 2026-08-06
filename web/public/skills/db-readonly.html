@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>db-readonly - kanam-skills</title>
+<style>:root {
+  --bg: #0d1117;
+  --fg: #e6edf3;
+  --muted: #8b949e;
+  --accent: #58a6ff;
+  --card: #161b22;
+  --border: #30363d;
+  --code-bg: #161b22;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  padding: 4rem 2rem 2rem;
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #58a6ff, #bc8cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tagline {
+  font-size: 1.25rem;
+  color: var(--fg);
+  margin-bottom: 1.5rem;
+}
+
+.sub { color: var(--muted); font-size: 1rem; max-width: 640px; margin: 1rem auto 0; }
+
+.install {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.95rem;
+  color: var(--accent);
+  display: inline-block;
+  margin: 0.5rem auto;
+}
+
+main { flex: 1; max-width: 1000px; margin: 0 auto; padding: 1rem 2rem 3rem; width: 100%; }
+
+section { margin-bottom: 2.5rem; }
+
+h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.count {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 0.1rem 0.7rem;
+  margin-left: 0.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  text-decoration: none;
+  color: var(--fg);
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+.card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--accent);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.card p { color: var(--muted); font-size: 0.9rem; }
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border);
+}
+
+footer a { color: var(--accent); text-decoration: none; }
+
+/* Skill page */
+.back { color: var(--accent); text-decoration: none; font-size: 0.9rem; display: inline-block; margin-bottom: 1rem; }
+
+main.skill { max-width: 860px; }
+
+.skill-body {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.85rem;
+  white-space: pre-wrap;
+  overflow-x: auto;
+  color: var(--fg);
+  line-height: 1.5;
+}
+
+.chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+
+.chip {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 0.3rem 0.9rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.chip:hover { border-color: var(--accent); }
+
+@media (max-width: 640px) {
+  h1 { font-size: 2.2rem; }
+  header { padding: 3rem 1.5rem 1.5rem; }
+  main { padding: 1rem 1.5rem 2rem; }
+}
+</style>
+</head>
+<body>
+
+  <header>
+    <a class="back" href="../index.html">&larr; catalog</a>
+    <h1>db-readonly</h1>
+    <p class="tagline">Queries read-only seguras a PostgreSQL y MySQL</p>
+  </header>
+  <main class="skill">
+    <article><pre class="skill-body">
+# db-readonly
+
+## Descripción
+Ejecuta consultas SELECT, WITH y EXPLAIN contra bases de datos PostgreSQL o MySQL. Bloquea INSERT, UPDATE, DELETE, DROP y ALTER para prevenir modificaciones accidentales. Exporta resultados a CSV, TSV o JSON.
+
+## Cuándo usarlo
+- Para inspeccionar schemas de tablas antes de escribir una migración
+- Para contar rows y verificar que un import de datos se completó
+- Para samplear registros y debuggear un issue reportado
+- Para exportar resultados de queries a CSV para reportes
+- Para ejecutar EXPLAIN en queries lentas y diagnosticar performance
+
+## Workflow
+1. Configurar variables de entorno con credenciales de DB (PGHOST, PGDATABASE, etc.)
+2. Escribir la consulta SELECT/WITH/EXPLAIN
+3. Ejecutar db-readonly con la consulta
+4. Recibir resultados en el formato solicitado
+
+## Tooling relacionado
+
+| Skill / Script | Uso |
+|---|---|
+| `sql-insight/scripts/sql_query_helper.py` | Optimizar queries lentas, interpretar EXPLAIN, y extraer schema en formato compacto. |
+| `observability/scripts/metrics-report.sh` | Generar reportes de metricas a partir de resultados exportados. |
+| `performance-optimization/scripts/benchmark.sh` | Medir impacto de performance de queries. |
+
+## Notas
+- Bloquea writes a nivel skill, no solo a nivel de promesa
+- Requiere configurar conexión vía environment variables
+- Soporta múltiples conexiones (PostgreSQL y MySQL)
+</pre></article>
+    <section><h3>Related</h3><div class="chips"><a class="chip" href="deepwiki.html">deepwiki</a><a class="chip" href="sql-insight.html">sql-insight</a><a class="chip" href="supabase-assistant.html">supabase-assistant</a></div></section>
+  </main>
+  <footer>MIT licensed - kanam-skills</footer>
+</body>
+</html>

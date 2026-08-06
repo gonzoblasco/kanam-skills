@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>brand-name-forge - kanam-skills</title>
+<style>:root {
+  --bg: #0d1117;
+  --fg: #e6edf3;
+  --muted: #8b949e;
+  --accent: #58a6ff;
+  --card: #161b22;
+  --border: #30363d;
+  --code-bg: #161b22;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  padding: 4rem 2rem 2rem;
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #58a6ff, #bc8cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tagline {
+  font-size: 1.25rem;
+  color: var(--fg);
+  margin-bottom: 1.5rem;
+}
+
+.sub { color: var(--muted); font-size: 1rem; max-width: 640px; margin: 1rem auto 0; }
+
+.install {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.95rem;
+  color: var(--accent);
+  display: inline-block;
+  margin: 0.5rem auto;
+}
+
+main { flex: 1; max-width: 1000px; margin: 0 auto; padding: 1rem 2rem 3rem; width: 100%; }
+
+section { margin-bottom: 2.5rem; }
+
+h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.count {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 0.1rem 0.7rem;
+  margin-left: 0.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  text-decoration: none;
+  color: var(--fg);
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+.card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--accent);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.card p { color: var(--muted); font-size: 0.9rem; }
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border);
+}
+
+footer a { color: var(--accent); text-decoration: none; }
+
+/* Skill page */
+.back { color: var(--accent); text-decoration: none; font-size: 0.9rem; display: inline-block; margin-bottom: 1rem; }
+
+main.skill { max-width: 860px; }
+
+.skill-body {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.85rem;
+  white-space: pre-wrap;
+  overflow-x: auto;
+  color: var(--fg);
+  line-height: 1.5;
+}
+
+.chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+
+.chip {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 0.3rem 0.9rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.chip:hover { border-color: var(--accent); }
+
+@media (max-width: 640px) {
+  h1 { font-size: 2.2rem; }
+  header { padding: 3rem 1.5rem 1.5rem; }
+  main { padding: 1rem 1.5rem 2rem; }
+}
+</style>
+</head>
+<body>
+
+  <header>
+    <a class="back" href="../index.html">&larr; catalog</a>
+    <h1>brand-name-forge</h1>
+    <p class="tagline">Workshop sistemático de naming de marca: 8 métodos clásicos para generar candidatos de nombre con significado, justificación y sugerencias de dominio.</p>
+  </header>
+  <main class="skill">
+    <article><pre class="skill-body">
+# Workflow: Brand Name Forge
+
+## Propósito
+
+Workshop sistemático de naming que genera 8 candidatos de nombre usando métodos clásicos, cada uno con significado, justificación y sugerencias de dominio.
+
+## Cuándo usarlo
+
+- Nombrar un producto, servicio o empresa
+- Brainstorming de nombres de marca
+- Renombrar un proyecto existente
+
+## 8 Naming Methods
+
+| # | Method | Description | Example |
+|---|---|---|---|
+| 1 | **Portmanteau** | Fusionar dos palabras | Pinterest = Pin + Interest |
+| 2 | **Metaphor** | Imagen que simboliza el valor | Amazon (río vasto) |
+| 3 | **Onomatopoeia** | Sonido que evoca la experiencia | Zoom, Snap |
+| 4 | **Acronym** | Iniciales de una frase | IBM, BMW |
+| 5 | **Foreign Borrowing** | Préstamo de otro idioma | Volvo (latín: "ruedo") |
+| 6 | **Eponym/Toponym** | Fundador, mito o lugar | Tesla, Patagonia |
+| 7 | **Coined Word** | Palabra inventada | Kodak, Xerox |
+| 8 | **Pun/Wordplay** | Homófonos, deletreos alternativos | Flickr, Lyft |
+
+## Outputs
+
+- 8 name candidates con meaning, rationale, domain suggestions
+- Top recommendation con justificación
+- Name quality check (cross-language safety, trademarkability, pronounceability)
+
+## Tooling relacionado
+
+| Skill / Script | Uso |
+|---|---|
+| `copy-editing/scripts/word-count.sh` | Verificar longitud y legibilidad de taglines asociadas. |
+| `copy-editing/scripts/readability-check.sh` | Medir legibilidad de explicaciones de marca. |
+
+## Related Skills
+
+- [Product Discovery](../product-discovery): Para definir producto antes de nombrarlo
+- [Copy Editing](../copy-editing): Para pulir el messaging de la marca
+</pre></article>
+    <section><h3>Related</h3><div class="chips"><a class="chip" href="content-serializer.html">content-serializer</a><a class="chip" href="copy-editing.html">copy-editing</a><a class="chip" href="curriculum-builder.html">curriculum-builder</a><a class="chip" href="deslop.html">deslop</a></div></section>
+  </main>
+  <footer>MIT licensed - kanam-skills</footer>
+</body>
+</html>

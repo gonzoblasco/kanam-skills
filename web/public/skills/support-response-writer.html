@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>support-response-writer - kanam-skills</title>
+<style>:root {
+  --bg: #0d1117;
+  --fg: #e6edf3;
+  --muted: #8b949e;
+  --accent: #58a6ff;
+  --card: #161b22;
+  --border: #30363d;
+  --code-bg: #161b22;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  padding: 4rem 2rem 2rem;
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #58a6ff, #bc8cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tagline {
+  font-size: 1.25rem;
+  color: var(--fg);
+  margin-bottom: 1.5rem;
+}
+
+.sub { color: var(--muted); font-size: 1rem; max-width: 640px; margin: 1rem auto 0; }
+
+.install {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.95rem;
+  color: var(--accent);
+  display: inline-block;
+  margin: 0.5rem auto;
+}
+
+main { flex: 1; max-width: 1000px; margin: 0 auto; padding: 1rem 2rem 3rem; width: 100%; }
+
+section { margin-bottom: 2.5rem; }
+
+h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.count {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 0.1rem 0.7rem;
+  margin-left: 0.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  text-decoration: none;
+  color: var(--fg);
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+.card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--accent);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.card p { color: var(--muted); font-size: 0.9rem; }
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border);
+}
+
+footer a { color: var(--accent); text-decoration: none; }
+
+/* Skill page */
+.back { color: var(--accent); text-decoration: none; font-size: 0.9rem; display: inline-block; margin-bottom: 1rem; }
+
+main.skill { max-width: 860px; }
+
+.skill-body {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.85rem;
+  white-space: pre-wrap;
+  overflow-x: auto;
+  color: var(--fg);
+  line-height: 1.5;
+}
+
+.chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+
+.chip {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 0.3rem 0.9rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.chip:hover { border-color: var(--accent); }
+
+@media (max-width: 640px) {
+  h1 { font-size: 2.2rem; }
+  header { padding: 3rem 1.5rem 1.5rem; }
+  main { padding: 1rem 1.5rem 2rem; }
+}
+</style>
+</head>
+<body>
+
+  <header>
+    <a class="back" href="../index.html">&larr; catalog</a>
+    <h1>support-response-writer</h1>
+    <p class="tagline">Generar respuestas profesionales de customer support: pre-venta, post-venta, reclamos y devoluciones, con estrategias de de-escalación emocional.</p>
+  </header>
+  <main class="skill">
+    <article><pre class="skill-body">
+# Workflow: Support Response Writer
+
+## Propósito
+
+Generar respuestas profesionales de customer support para distintos escenarios: pre-venta, post-venta, reclamos y devoluciones. Incluye estrategias de de-escalación emocional según el nivel de intensidad del cliente.
+
+## Cuándo usarlo
+
+- Redactar respuesta de soporte
+- Cliente furioso o frustrado
+- Gestionar devolución o cambio
+- Responder consulta pre-venta
+- Manejar reclamo
+
+## Escenarios
+
+### Pre-Sale Inquiry
+1. Warm greeting
+2. Precise answer
+3. Value reinforcement
+4. Concern removal
+5. Call to action
+
+### After-Sale Support
+1. Identity confirmation
+2. Empathy expression
+3. Problem diagnosis
+4. Solution (step-by-step)
+5. Follow-up
+
+### Complaint Handling
+1. Sincere apology
+2. Emotional validation
+3. Fact confirmation
+4. Compensation plan
+5. Improvement commitment
+6. Continued care
+
+### Returns &amp; Exchanges
+1. Positive attitude
+2. Policy explanation
+3. Process guidance
+4. Streamlined handling
+5. Retention &amp; care
+
+## Emotional De-Escalation
+
+| Level | Strategy | Key Phrases |
+|---|---|---|
+| Calm | Professional, efficient | Answer directly |
+| Anxious | Empathy + clear timeline | "Let me look into this right away" |
+| Dissatisfied | Validate + ownership + compensation | "I'd feel the same way" |
+| Angry | Listen + deep empathy + escalate | "I'm escalating this immediately" |
+| Disappointed | Warm care + exceed expectations | "We feel terrible about letting you down" |
+
+## Outputs
+
+- Script de respuesta inicial
+- Follow-up response
+- Escalation response
+- Estrategia de de-escalación
+- Communication tips
+
+## Helper Scripts
+
+Scripts en `skills/support-response-writer/scripts/`:
+
+| Script | Uso |
+|---|---|
+| `sentiment-check.sh &lt;file&gt;` | Detecta el tono/emoción de un mensaje de soporte y sugiere nivel de de-escalación. Usar antes de redactar la respuesta. |
+
+Tambien ver [copy-editing/scripts/readability-check.sh](../copy-editing/scripts/readability-check.sh) para pulir legibilidad y [word-count.sh](../copy-editing/scripts/word-count.sh) para controlar longitud.
+
+## Related Skills
+
+- [Copy Editing](../copy-editing): Para pulir el tono de las respuestas
+- [Campaign Plan](../campaign-plan): Para campañas de customer communication
+</pre></article>
+    <section><h3>Related</h3><div class="chips"><a class="chip" href="github.html">github</a><a class="chip" href="i18n-expert.html">i18n-expert</a><a class="chip" href="shortcuts-generator.html">shortcuts-generator</a><a class="chip" href="tech-docs.html">tech-docs</a></div></section>
+  </main>
+  <footer>MIT licensed - kanam-skills</footer>
+</body>
+</html>

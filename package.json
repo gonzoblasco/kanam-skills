@@ -1,0 +1,16 @@
+{
+  "name": "kanam-skills",
+  "version": "0.1.0",
+  "description": "Agent skills for the whole job - and the rest of your life. Engineering workflows, personal productivity, creative writing, and life admin in the open Agent Skills format.",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test": "bats tests/bash/",
+    "test:bash": "bats tests/bash/",
+    "build:web": "cd web && npm run build",
+    "deploy:web": "cd web && npm run deploy"
+  },
+  "devDependencies": {
+    "bats": "^1.11.0"
+  }
+}

@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>openspec - kanam-skills</title>
+<style>:root {
+  --bg: #0d1117;
+  --fg: #e6edf3;
+  --muted: #8b949e;
+  --accent: #58a6ff;
+  --card: #161b22;
+  --border: #30363d;
+  --code-bg: #161b22;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  padding: 4rem 2rem 2rem;
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #58a6ff, #bc8cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tagline {
+  font-size: 1.25rem;
+  color: var(--fg);
+  margin-bottom: 1.5rem;
+}
+
+.sub { color: var(--muted); font-size: 1rem; max-width: 640px; margin: 1rem auto 0; }
+
+.install {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.95rem;
+  color: var(--accent);
+  display: inline-block;
+  margin: 0.5rem auto;
+}
+
+main { flex: 1; max-width: 1000px; margin: 0 auto; padding: 1rem 2rem 3rem; width: 100%; }
+
+section { margin-bottom: 2.5rem; }
+
+h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.count {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 0.1rem 0.7rem;
+  margin-left: 0.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  text-decoration: none;
+  color: var(--fg);
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+.card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--accent);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.card p { color: var(--muted); font-size: 0.9rem; }
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border);
+}
+
+footer a { color: var(--accent); text-decoration: none; }
+
+/* Skill page */
+.back { color: var(--accent); text-decoration: none; font-size: 0.9rem; display: inline-block; margin-bottom: 1rem; }
+
+main.skill { max-width: 860px; }
+
+.skill-body {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.85rem;
+  white-space: pre-wrap;
+  overflow-x: auto;
+  color: var(--fg);
+  line-height: 1.5;
+}
+
+.chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+
+.chip {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 0.3rem 0.9rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.chip:hover { border-color: var(--accent); }
+
+@media (max-width: 640px) {
+  h1 { font-size: 2.2rem; }
+  header { padding: 3rem 1.5rem 1.5rem; }
+  main { padding: 1rem 1.5rem 2rem; }
+}
+</style>
+</head>
+<body>
+
+  <header>
+    <a class="back" href="../index.html">&larr; catalog</a>
+    <h1>openspec</h1>
+    <p class="tagline">Use OpenSpec CLI for spec-driven development: create change proposals, write spec deltas, design docs, tasks, and archive approved changes.</p>
+  </header>
+  <main class="skill">
+    <article><pre class="skill-body">
+# OpenSpec
+
+Use the OpenSpec CLI (`@fission-ai/openspec`) to practice spec-driven development inside projects. This skill complements `agent-workflow`: `agent-workflow` defines *how* to work, `openspec` defines *where* to write specs and changes.
+
+## When to use
+
+Use this skill for any non-trivial change in a project that has OpenSpec initialized:
+
+- New feature
+- Behavior change
+- Refactor that changes behavior
+- API change
+- UI/UX change with spec-level impact
+- Any change that benefits from an agreed spec before code
+
+Skip for:
+- Pure config/tooling/docs changes (set `skip_specs: true` if using OpenSpec)
+- One-line fixes with no behavior change
+- Throwaway experiments
+
+## Requirements
+
+- Node.js &gt;= 20.19.0
+- `@fission-ai/openspec` installed globally:
+  ```bash
+  npm install -g @fission-ai/openspec@latest
+  ```
+- OpenSpec initialized in the project:
+  ```bash
+  openspec init --tools none
+  ```
+
+## Project structure
+
+After `openspec init`, the project has:
+
+```
+openspec/
+├── config.yaml              # OpenSpec configuration
+├── specs/                   # Source-of-truth specs
+│   └── auth/spec.md
+│   └── user/spec.md
+├── changes/                 # Active change proposals
+│   └── add-2fa/
+│       ├── .openspec.yaml
+│       ├── proposal.md
+│       ├── specs/
+│       │   └── auth/spec.md      # Delta spec
+│       ├── design.md
+│       └── tasks.md
+└── changes/archive/         # Archived changes
+```
+
+## Workflow
+
+### Phase 1: Initialize (one-time per project)
+
+```bash
+cd projects/my-app
+openspec init --tools none
+```
+
+This creates the `openspec/` structure. It does not configure IDE-specific slash commands because OpenClaw uses the CLI directly.
+
+### Phase 2: Create a change proposal
+
+```bash
+openspec new change add-login-button
+```
+
+Then generate:
+
+- `openspec/changes/add-login-button/proposal.md` — Why, What Changes, Capabilities, Impact
+
+Use `openspec instructions proposal --change add-login-button` to get the exact template and guidance.
+
+### Phase 3: Write spec deltas
+
+For each capability declared in the proposal:
+
+- Create `openspec/changes/add-login-button/specs/&lt;capability&gt;/spec.md`
+- Use the delta format:
+  - `## ADDED Requirements`
+  - `## MODIFIED Requirements`
+  - `## REMOVED Requirements`
+
+Use `openspec instructions proposal --change add-login-button` for the template.
+
+### Phase 4: Technical design (optional)
+
+Write `openspec/changes/add-login-button/design.md` when the implementation approach is non-obvious.
+
+### Phase 5: Tasks
+
+Write `openspec/changes/add-login-button/tasks.md` as a checklist:
+
+```markdown
+## 1. Database
+- [ ] 1.1 Add column
+- [ ] 1.2 Create migration
+
+## 2. Backend
+- [ ] 2.1 Update endpoint
+
+## 3. Frontend
+- [ ] 3.1 Update component
+```
+
+### Phase 6: Validate
+
+```bash
+openspec validate add-login-button
+openspec status --change add-login-button
+openspec show add-login-button
+```
+
+## Helper scripts relacionados
+
+| Skill / Script | Uso |
+|---|---|
+| `product-discovery/scripts/generate-openspec.sh` | Genera un OpenSpec a partir de la definición del producto cuando no hay CLI instalado. |
+| `architecture-designer` | Diseña la arquitectura que luego se documenta con OpenSpec. |
+| `tech-docs/scripts/generate-adr.sh` | Genera ADRs para decisiones arquitectónicas que afectan el spec. |
+
+### Phase 7: Implement
+
+Execute tasks one by one. Mark tasks complete as you go. Run tests/lint/build after each task.
+
+### Phase 8: Archive
+
+```bash
+openspec archive add-login-button --yes
+```
+
+This merges the delta specs into `openspec/specs/` and moves the change to `openspec/changes/archive/`.
+
+## Integration with agent-workflow
+
+Combine with `agent-workflow`:
+
+1. `agent-workflow` Phase 1 (Design Gate) becomes writing the OpenSpec proposal and deltas.
+2. `agent-workflow` Phase 2 (Implementation Plan) becomes the OpenSpec `tasks.md`.
+3. `agent-workflow` Phase 3 (TDD) executes the tasks.
+4. `agent-workflow` Phase 4 (Code Review) reviews the implementation.
+5. `openspec archive` finalizes the change.
+
+## Helper commands
+
+```bash
+# Check current state
+openspec list
+openspec list --specs
+openspec status --change &lt;change-name&gt;
+
+# Get instructions for the next artifact
+openspec instructions proposal --change &lt;change-name&gt;
+openspec instructions apply --change &lt;change-name&gt;
+openspec instructions archive --change &lt;change-name&gt;
+
+# Validate and view
+openspec validate &lt;change-name&gt;
+openspec show &lt;change-name&gt;
+
+# Create and archive changes
+openspec new change &lt;change-name&gt;
+openspec archive &lt;change-name&gt; --yes
+```
+
+## Anti-patterns
+
+- Creating `tasks.md` before `proposal.md` and spec deltas
+- Listing capabilities in the proposal but not writing the corresponding delta specs
+- Writing implementation details in `proposal.md` instead of `design.md`
+- Skipping `openspec validate`
+- Archiving without all tasks complete
+- Using OpenSpec as a todo list for trivial changes
+
+## Best practices
+
+- Keep proposals concise (1-2 pages).
+- Every capability must map to a real spec file.
+- Use `### Requirement: &lt;name&gt;` and `#### Scenario: &lt;name&gt;` format in specs.
+- Use SHALL/MUST in requirement text.
+- Run `openspec validate` before applying or archiving.
+- Update `CHANGELOG.md` after archiving.
+
+## Notes
+
+- OpenSpec does not replace `AGENTS.md`. It adds a structured spec layer.
+- The CLI emits anonymous telemetry by default. Set `OPENSPEC_TELEMETRY=0` to disable.
+- OpenSpec is not an MCP server; this skill uses the CLI directly.
+- For projects that do not use OpenSpec, fall back to `.knowledge/specs/`, `.knowledge/plans/`, and `agent-workflow`.
+</pre></article>
+    <section><h3>Related</h3><div class="chips"><a class="chip" href="api-and-interface-design.html">api-and-interface-design</a><a class="chip" href="browser-testing-with-devtools.html">browser-testing-with-devtools</a><a class="chip" href="ci-cd-and-automation.html">ci-cd-and-automation</a><a class="chip" href="code-review-and-quality.html">code-review-and-quality</a></div></section>
+  </main>
+  <footer>MIT licensed - kanam-skills</footer>
+</body>
+</html>

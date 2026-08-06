@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>sql-insight - kanam-skills</title>
+<style>:root {
+  --bg: #0d1117;
+  --fg: #e6edf3;
+  --muted: #8b949e;
+  --accent: #58a6ff;
+  --card: #161b22;
+  --border: #30363d;
+  --code-bg: #161b22;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  padding: 4rem 2rem 2rem;
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #58a6ff, #bc8cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tagline {
+  font-size: 1.25rem;
+  color: var(--fg);
+  margin-bottom: 1.5rem;
+}
+
+.sub { color: var(--muted); font-size: 1rem; max-width: 640px; margin: 1rem auto 0; }
+
+.install {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.95rem;
+  color: var(--accent);
+  display: inline-block;
+  margin: 0.5rem auto;
+}
+
+main { flex: 1; max-width: 1000px; margin: 0 auto; padding: 1rem 2rem 3rem; width: 100%; }
+
+section { margin-bottom: 2.5rem; }
+
+h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.count {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 0.1rem 0.7rem;
+  margin-left: 0.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  text-decoration: none;
+  color: var(--fg);
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+.card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--accent);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.card p { color: var(--muted); font-size: 0.9rem; }
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border);
+}
+
+footer a { color: var(--accent); text-decoration: none; }
+
+/* Skill page */
+.back { color: var(--accent); text-decoration: none; font-size: 0.9rem; display: inline-block; margin-bottom: 1rem; }
+
+main.skill { max-width: 860px; }
+
+.skill-body {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.85rem;
+  white-space: pre-wrap;
+  overflow-x: auto;
+  color: var(--fg);
+  line-height: 1.5;
+}
+
+.chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+
+.chip {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 0.3rem 0.9rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.chip:hover { border-color: var(--accent); }
+
+@media (max-width: 640px) {
+  h1 { font-size: 2.2rem; }
+  header { padding: 3rem 1.5rem 1.5rem; }
+  main { padding: 1rem 1.5rem 2rem; }
+}
+</style>
+</head>
+<body>
+
+  <header>
+    <a class="back" href="../index.html">&larr; catalog</a>
+    <h1>sql-insight</h1>
+    <p class="tagline">Traducir lenguaje natural a SQL, optimizar queries e interpretar planes EXPLAIN para SQLite y PostgreSQL.</p>
+  </header>
+  <main class="skill">
+    <article><pre class="skill-body">
+# Workflow: SQL Insight
+
+## Propósito
+
+Asistente de SQL: traducir lenguaje natural a SQL, analizar y optimizar queries, e interpretar planes de ejecución (EXPLAIN) para SQLite y PostgreSQL.
+
+## Filosofía
+
+&gt; A slow query is a bug you haven't measured yet.
+
+La optimización de queries no es magia. Es entender qué está haciendo la base de datos y por qué.
+
+---
+
+# Cuándo usarlo
+
+- Traducir una pregunta en lenguaje natural a SQL
+- Optimizar una query lenta
+- Analizar un plan EXPLAIN
+- Detectar anti-patrones SQL (SELECT *, N+1, funciones en WHERE)
+- Extraer schema de una base de datos
+
+---
+
+# Fases
+
+## 1. Schema Extraction
+
+Extraer estructura de tablas para dar contexto:
+
+```bash
+# SQLite
+python3 scripts/sql_query_helper.py --db-path data.db schema --compact
+
+# PostgreSQL
+python3 scripts/sql_query_helper.py --db-type postgres --dsn "host=localhost dbname=mydb" schema --compact
+```
+
+## 2. NL → SQL
+
+Usar el schema como contexto para traducir lenguaje natural a SQL.
+
+## 3. Query Optimization
+
+Analizar la query generada contra 13 reglas de anti-patrones:
+
+```bash
+python3 scripts/sql_query_helper.py optimize "SELECT * FROM orders WHERE user_id = 100"
+```
+
+## 4. EXPLAIN Analysis
+
+Verificar el plan de ejecución:
+
+```bash
+python3 scripts/sql_query_helper.py --db-path data.db explain "SELECT * FROM orders WHERE user_id = 100"
+```
+
+---
+
+# Outputs
+
+- SQL generado desde lenguaje natural
+- Reporte de optimización con issues detectados
+- Interpretación del plan EXPLAIN
+- Schema de base de datos en formato compacto
+
+## Helper Scripts
+
+Scripts en `skills/sql-insight/scripts/`:
+
+| Script | Uso |
+|---|---|
+| `sql_query_helper.py` | Extrae schema, traduce NL-&gt;SQL, optimiza queries, y analiza EXPLAIN. Usar en todas las fases. |
+
+---
+
+# Anti-Patrones Detectados
+
+| Regla | Severidad | Descripción |
+|---|---|---|
+| SELECT * | warning | Listar columnas explícitamente |
+| Sin WHERE/LIMIT | info | Query sin límite |
+| LIKE '%...' | warning | Bypass de índice |
+| OR conditions | info | Puede evitar uso de índice |
+| NOT IN subquery | warning | Performance pobre |
+| Funciones en WHERE | warning | Previene uso de índice |
+| Joins implícitos | info | Menos legibles |
+| ORDER BY sin LIMIT | info | Ordenar todo sin límite |
+| Subqueries anidadas | warning | Difícil de optimizar |
+
+---
+
+# Principios
+
+- Siempre extraer schema antes de generar SQL
+- Preferir queries parametrizadas sobre concatenación
+- Verificar EXPLAIN antes de considerar una query optimizada
+- Detectar N+1 queries temprano
+
+---
+
+# Related Skills
+
+- [Observability](../observability): Para monitorear performance de DB
+- [Performance Optimization](../performance-optimization): Para optimizar queries lentas
+</pre></article>
+    <section><h3>Related</h3><div class="chips"><a class="chip" href="db-readonly.html">db-readonly</a><a class="chip" href="deepwiki.html">deepwiki</a><a class="chip" href="supabase-assistant.html">supabase-assistant</a></div></section>
+  </main>
+  <footer>MIT licensed - kanam-skills</footer>
+</body>
+</html>
