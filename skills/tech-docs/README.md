@@ -17,13 +17,13 @@ Para **crear y gestionar documentación técnica** de proyectos: ADRs (Architect
 
 ### Workflow completo
 
-1. **Audiencia** — ¿quién lee estos docs?
-2. **Diseño Arquitectónico** — diagramas C4, trade-offs, dependencias, riesgos
-3. **Estructura** — qué docs necesita el proyecto
-4. **ADRs** — crear o sincronizar decisiones arquitecturales
-5. **Redacción técnica** — ejemplos concretos, código real
-6. **Revisión** — coherencia, completitud, enlaces no rotos
-7. **Publicación** — commit + push
+1. **Audiencia** - ¿quién lee estos docs?
+2. **Diseño Arquitectónico** - diagramas C4, trade-offs, dependencias, riesgos
+3. **Estructura** - qué docs necesita el proyecto
+4. **ADRs** - crear o sincronizar decisiones arquitecturales
+5. **Redacción técnica** - ejemplos concretos, código real
+6. **Revisión** - coherencia, completitud, enlaces no rotos
+7. **Publicación** - commit + push
 
 ### Scripts útiles
 
@@ -48,5 +48,5 @@ python3 scripts/analyze_codebase.py ./src --type architecture
 
 ## Skills relacionadas
 
-- [Knowledge Management](../knowledge-management) — Para mantener la base de conocimiento
-- [Build & Scaffold](../build-scaffold) — Para documentar decisiones de scaffolding
+- [Knowledge Management](../knowledge-management) - Para mantener la base de conocimiento
+- [Build & Scaffold](../build-scaffold) - Para documentar decisiones de scaffolding

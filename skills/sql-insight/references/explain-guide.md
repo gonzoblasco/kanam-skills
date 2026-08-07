@@ -1,4 +1,4 @@
-# EXPLAIN Guide — SQL Insight Reference
+# EXPLAIN Guide - SQL Insight Reference
 
 Interpretación de planes de ejecución.
 
@@ -57,5 +57,5 @@ Output:
 
 ## Related
 
-- [SKILL.md](../SKILL.md) — Workflow principal
-- [Optimization Rules](./optimization-rules.md) — Reglas de optimización
+- [SKILL.md](../SKILL.md) - Workflow principal
+- [Optimization Rules](./optimization-rules.md) - Reglas de optimización

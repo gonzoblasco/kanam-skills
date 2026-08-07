@@ -1,4 +1,4 @@
-# Referencia del Método STAR — CV Tailor
+# Referencia del Método STAR - CV Tailor
 
 Guía completa del método STAR para reescribir experiencia laboral.
 
@@ -41,5 +41,5 @@ Guía completa del método STAR para reescribir experiencia laboral.
 
 ## Relacionados
 
-- [SKILL.md](../SKILL.md) — Workflow principal
-- [ATS Guide](./ats-guide.md) — Guía de compatibilidad ATS
+- [SKILL.md](../SKILL.md) - Workflow principal
+- [ATS Guide](./ats-guide.md) - Guía de compatibilidad ATS

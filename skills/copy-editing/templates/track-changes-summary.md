@@ -31,4 +31,4 @@
 
 <!-- Sections reviewed but left as-is, with brief note on why -->
 
-- {{section}} — {{reason kept}}
+- {{section}} - {{reason kept}}

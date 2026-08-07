@@ -20,14 +20,14 @@ Para **mantener la documentación consistente, actualizada y útil** para humano
 
 ### Workflow completo
 
-1. **Discovery** — detectar qué docs existen, cuáles faltan, cuáles están abandonados
-2. **Ownership** — determinar dueño de cada información
-3. **Consistency Audit** — buscar contradicciones entre documentos
-4. **Freshness** — detectar conocimiento viejo (🟢 Vigente / 🟡 Revisar / 🔴 Obsoleto)
-5. **Knowledge Graph** — relacionar información (Feature → ADR → PR → CHANGELOG)
-6. **Compression** — reducir redundancia, proponer consolidación
-7. **Evolution** — detectar docs que deberían dividirse o fusionarse
-8. **Publishing** — actualizar índice, verificar enlaces
+1. **Discovery** - detectar qué docs existen, cuáles faltan, cuáles están abandonados
+2. **Ownership** - determinar dueño de cada información
+3. **Consistency Audit** - buscar contradicciones entre documentos
+4. **Freshness** - detectar conocimiento viejo (🟢 Vigente / 🟡 Revisar / 🔴 Obsoleto)
+5. **Knowledge Graph** - relacionar información (Feature → ADR → PR → CHANGELOG)
+6. **Compression** - reducir redundancia, proponer consolidación
+7. **Evolution** - detectar docs que deberían dividirse o fusionarse
+8. **Publishing** - actualizar índice, verificar enlaces
 
 ### Scripts útiles
 
@@ -53,5 +53,5 @@ python3 scripts/knowledge-graph.py
 
 ## Skills relacionadas
 
-- [Engineering Governance](../engineering-governance) — Para auditar la calidad del conocimiento
-- [Technical Documentation](../tech-docs) — Para crear y mantener documentación técnica
+- [Engineering Governance](../engineering-governance) - Para auditar la calidad del conocimiento
+- [Technical Documentation](../tech-docs) - Para crear y mantener documentación técnica

@@ -19,7 +19,7 @@ I hear you, and I'm sorry. {{specific thing they're upset about}} should not hav
 
 **To make this right:** {{compensation, refund, credit, or other remedy}}
 
-I'm personally making sure this gets resolved. You'll hear from me {{timeline}} at the latest — likely sooner.
+I'm personally making sure this gets resolved. You'll hear from me {{timeline}} at the latest - likely sooner.
 
 If there's anything else you need in the meantime, reply here and I'll jump on it.
 
@@ -31,7 +31,7 @@ Best,
 ## De-escalation Notes
 
 - **Emotion detected:** {{anger / frustration / disappointment}}
-- **Valid points they made:** {{list — acknowledge these specifically}}
+- **Valid points they made:** {{list - acknowledge these specifically}}
 - **Root cause:** {{what went wrong}}
 - **Compensation approved:** {{what was offered}}
 - **Follow-up:** {{date and action}}

@@ -1,16 +1,16 @@
-# Case Frameworks — Mock Interview Drill
+# Case Frameworks - Mock Interview Drill
 
 Frameworks de case interview con cuándo usar cada uno.
 
 ## Cómo usar un framework
 
-1. **Escuchá el case** — no interrumpas, tomá notas
-2. **Clarificá** — preguntá lo que no entendiste
-3. **Elegí el framework** — según el tipo de problema
-4. **Estructurá tu respuesta** — usá el framework como guía, no como receta
-5. **Hacé assumptions** — explicitá lo que asumís
-6. **Analizá** — aplicá datos si los hay
-7. **Recomendá** — con fundamento
+1. **Escuchá el case** - no interrumpas, tomá notas
+2. **Clarificá** - preguntá lo que no entendiste
+3. **Elegí el framework** - según el tipo de problema
+4. **Estructurá tu respuesta** - usá el framework como guía, no como receta
+5. **Hacé assumptions** - explicitá lo que asumís
+6. **Analizá** - aplicá datos si los hay
+7. **Recomendá** - con fundamento
 
 ---
 
@@ -190,7 +190,7 @@ Cost = Fixed + Variable
 
 ## Related
 
-- [SKILL.md](../SKILL.md) — Workflow principal
-- [Behavioral Questions](./behavioral-questions.md) — Banco de preguntas behavioral
-- [System Design Guide](./system-design-guide.md) — Para technical interviews
-- [Preparation Guide](./preparation-guide.md) — Qué estudiar antes
+- [SKILL.md](../SKILL.md) - Workflow principal
+- [Behavioral Questions](./behavioral-questions.md) - Banco de preguntas behavioral
+- [System Design Guide](./system-design-guide.md) - Para technical interviews
+- [Preparation Guide](./preparation-guide.md) - Qué estudiar antes

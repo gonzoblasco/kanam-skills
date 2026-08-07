@@ -34,6 +34,6 @@ refactor(#15): extract auth logic to useAuth hook
 
 - **Siempre en ingles** para los repos que usan ingles
 - **Un commit por issue/tarea** - commits atomicos
-- **Guion comun (-), nunca guion largo (—)**
+- **Guion comun (-), nunca guion largo (-)**
 - El numero de issue referencia el issue de GitHub
 - Descripcion en modo imperativo ("add" no "added" ni "adds")

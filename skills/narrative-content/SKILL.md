@@ -37,9 +37,9 @@ Acá no hay culpa, no hay "debería escribir más", no hay comparación. Hay un 
 | **✍️ Escribir el próximo capítulo** | Ya sabés qué sigue, necesitás sentarte a escribir | `progress-tracker.sh --add <palabras>` |
 | **🔍 Revisar lo que escribiste** | Terminaste algo y querés mejorarlo | `revision-check.sh` |
 | **📦 Exportar / publicar** | Querés pasar a DOCX, EPUB, o Markdown | `export-novel.py` |
-| **🎯 Elegir un género** | No sabés qué género es el tuyo o querés explorar | — |
-| **🧊 Estoy trabado** | Writer's block, pérdida de rumbo, "esto es una mierda" | — |
-| **📚 Quiero aprender** | Querés mejorar tu oficio | — |
+| **🎯 Elegir un género** | No sabés qué género es el tuyo o querés explorar | - |
+| **🧊 Estoy trabado** | Writer's block, pérdida de rumbo, "esto es una mierda" | - |
+| **📚 Quiero aprender** | Querés mejorar tu oficio | - |
 
 Elegí una opción y arrancamos.
 

@@ -1,4 +1,4 @@
-# Herramientas de Performance — Referencia
+# Herramientas de Performance - Referencia
 
 ## Frontend
 
@@ -38,5 +38,5 @@
 
 ## Related
 
-- [SKILL.md](../SKILL.md) — Workflow principal
-- [Domains](./domains.md) — Dominios de performance
+- [SKILL.md](../SKILL.md) - Workflow principal
+- [Domains](./domains.md) - Dominios de performance

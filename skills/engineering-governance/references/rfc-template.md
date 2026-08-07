@@ -1,4 +1,4 @@
-# RFC Template — Propuesta de Mejora
+# RFC Template - Propuesta de Mejora
 
 ```markdown
 # RFC: [Título de la propuesta]
@@ -41,5 +41,5 @@
 
 ## Related
 
-- [SKILL.md](../SKILL.md) — Workflow principal
-- [Audit Checklist](./audit-checklist.md) — Checklist de auditoría
+- [SKILL.md](../SKILL.md) - Workflow principal
+- [Audit Checklist](./audit-checklist.md) - Checklist de auditoría

@@ -1,4 +1,4 @@
-# Dopamine Menu — ADHD Assistant Reference
+# Dopamine Menu - ADHD Assistant Reference
 
 Menú personalizado de estímulos para regulación de dopamina.
 
@@ -35,5 +35,5 @@ Menú personalizado de estímulos para regulación de dopamina.
 
 ## Related
 
-- [SKILL.md](../SKILL.md) — Workflow principal
-- [Daily Planning](./daily-planning.md) — Plantilla de plan diario
+- [SKILL.md](../SKILL.md) - Workflow principal
+- [Daily Planning](./daily-planning.md) - Plantilla de plan diario

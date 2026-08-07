@@ -63,7 +63,7 @@ El tono de marca personal no es una camisa de fuerza. Se modula según el tipo d
 | **Pedido / CTA** (¿te sirve?, seguí la serie) | Directo y genuino. Una sola pregunta clara, sin suplicar. |
 
 **Reglas duras del tono (no negociables):**
-- **Nunca guión largo (—).** Usá siempre guión común (-). El guión largo no está en el teclado y delata que no es un dev escribiendo. (USER.md)
+- **Nunca guión largo (-).** Usá siempre guión común (-). El guión largo no está en el teclado y delata que no es un dev escribiendo. (USER.md)
 - **Nada de "Great question!" ni "I'd be happy to help!".** Esa calidez falsa de chatbot te hace sonar a bot.
 - **Nada de "en este post voy a enseñarte...".** Contalo, no lo anuncies.
 - **No te des la razón solo por ser vos.** Si algo falló, decilo. La vulnerabilidad técnica (encontré un bug, me equivoqué) es tu mayor activo de credibilidad.
@@ -72,7 +72,7 @@ El tono de marca personal no es una camisa de fuerza. Se modula según el tipo d
 
 Releé el post y preguntate:
 - [ ] ¿Suena a Gonzo, o a un manual de programación?
-- [ ] ¿Hay algún guión largo (—) que deba ser guión común (-)?
+- [ ] ¿Hay algún guión largo (-) que deba ser guión común (-)?
 - [ ] ¿Está la lección/opinión, o solo el "qué hice"?
 - [ ] ¿Está adaptado a la ocasión (deep-dive vs anuncio vs opinión), o es todo igual?
 
@@ -147,8 +147,8 @@ Releé el post y preguntate:
    ```
    | Semana | Unidad | Tema | LinkedIn | X (hilo) | Posteado |
    |--------|--------|------|----------|----------|----------|
-   | 1 | Nivel 1 | Hello World | ✅ | ✅ | — |
-   | 2 | Nivel 2 | Prompts | ✅ | ✅ | — |
+   | 1 | Nivel 1 | Hello World | ✅ | ✅ | - |
+   | 2 | Nivel 2 | Prompts | ✅ | ✅ | - |
    ```
 
 4. **Bach de preparación:** escribí 2-3 semanas de posts por adelantado (buffer). Así la semana de publicación solo es "revisar y subir", no escribir bajo presión.

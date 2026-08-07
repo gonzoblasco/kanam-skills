@@ -21,11 +21,11 @@ Es conversacional. Le describís el escenario y genera todo.
 
 Te devuelve:
 
-1. **Respuesta inicial** — lista para copiar y usar
-2. **Follow-up response** — si el cliente sigue preguntando
-3. **Escalation response** — si no se puede resolver en el momento
-4. **Estrategia de de-escalación** — según el nivel emocional
-5. **Communication tips** — qué evitar, qué decir
+1. **Respuesta inicial** - lista para copiar y usar
+2. **Follow-up response** - si el cliente sigue preguntando
+3. **Escalation response** - si no se puede resolver en el momento
+4. **Estrategia de de-escalación** - según el nivel emocional
+5. **Communication tips** - qué evitar, qué decir
 
 ### Niveles de de-escalación
 
@@ -45,5 +45,5 @@ Te devuelve:
 
 ## Skills relacionadas
 
-- [Copy Editing](../copy-editing) — Para pulir el tono de las respuestas
-- [Campaign Plan](../campaign-plan) — Para campañas de customer communication
+- [Copy Editing](../copy-editing) - Para pulir el tono de las respuestas
+- [Campaign Plan](../campaign-plan) - Para campañas de customer communication

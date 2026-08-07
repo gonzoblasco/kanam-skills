@@ -1,6 +1,6 @@
-# LinkedIn Profile Guide — CV Tailor
+# LinkedIn Profile Guide - CV Tailor
 
-Guía para adaptar tu perfil de LinkedIn como complemento del CV. No es 1:1 — LinkedIn tiene reglas distintas.
+Guía para adaptar tu perfil de LinkedIn como complemento del CV. No es 1:1 - LinkedIn tiene reglas distintas.
 
 ## Diferencias clave CV vs LinkedIn
 
@@ -32,9 +32,9 @@ Reglas:
 
 Es tu elevator pitch. 2-3 párrafos:
 
-1. **Quién sos** — rol, stack, años de experiencia, qué te apasiona
-2. **Qué hiciste** — 2-3 logros clave con datos (STAR comprimido)
-3. **Qué buscás** — próximo paso, tipo de rol, industria
+1. **Quién sos** - rol, stack, años de experiencia, qué te apasiona
+2. **Qué hiciste** - 2-3 logros clave con datos (STAR comprimido)
+3. **Qué buscás** - próximo paso, tipo de rol, industria
 
 **Template:**
 
@@ -97,10 +97,10 @@ LinkedIn tiene su propio algoritmo de búsqueda. Optimizá para:
 - [ ] Banner personalizado (no el default azul)
 - [ ] URL personalizada (linkedin.com/in/tunombre)
 - [ ] Open to Work configurado con preferencias reales
-- [ ] Actividad reciente (likes, comments, posts) — muestra que estás activo
+- [ ] Actividad reciente (likes, comments, posts) - muestra que estás activo
 
 ## Related
 
-- [SKILL.md](../SKILL.md) — Workflow principal
-- [STAR Method](./star-method.md) — Guía STAR
-- [ATS Guide](./ats-guide.md) — Guía de compatibilidad ATS
+- [SKILL.md](../SKILL.md) - Workflow principal
+- [STAR Method](./star-method.md) - Guía STAR
+- [ATS Guide](./ats-guide.md) - Guía de compatibilidad ATS

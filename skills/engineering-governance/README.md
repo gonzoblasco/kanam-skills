@@ -18,14 +18,14 @@ Para **mantener y mejorar el sistema de workflows, principios y estándares de i
 
 ### Workflow completo
 
-1. **System Health Check** — ¿qué workflows no se usan? ¿qué genera fricción?
-2. **Pattern Mining** — buscar patrones repetitivos para extraer
-3. **Workflow Audit** — auditar cada workflow con checklist
-4. **Knowledge Consistency** — buscar contradicciones entre documentos
-5. **Industry Review** — comparar contra el estado del arte
-6. **Governance Review** — detectar workflows obsoletos, muy grandes, o mezclados
-7. **Engineering Principles** — auditar principios vigentes
-8. **Improvement Proposal** — generar RFCs
+1. **System Health Check** - ¿qué workflows no se usan? ¿qué genera fricción?
+2. **Pattern Mining** - buscar patrones repetitivos para extraer
+3. **Workflow Audit** - auditar cada workflow con checklist
+4. **Knowledge Consistency** - buscar contradicciones entre documentos
+5. **Industry Review** - comparar contra el estado del arte
+6. **Governance Review** - detectar workflows obsoletos, muy grandes, o mezclados
+7. **Engineering Principles** - auditar principios vigentes
+8. **Improvement Proposal** - generar RFCs
 
 ### Scripts útiles
 
@@ -60,5 +60,5 @@ python3 scripts/generate-governance-report.py
 
 ## Skills relacionadas
 
-- [Knowledge Management](../knowledge-management) — Para mantener la base de conocimiento
-- [Observability](../observability) — Para medir la salud del sistema
+- [Knowledge Management](../knowledge-management) - Para mantener la base de conocimiento
+- [Observability](../observability) - Para medir la salud del sistema

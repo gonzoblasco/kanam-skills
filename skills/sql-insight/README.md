@@ -17,10 +17,10 @@ Para **escribir SQL, optimizar queries lentas y entender planes de ejecución**.
 
 ### Workflow
 
-1. **Schema Extraction** — extraer estructura de tablas para dar contexto
-2. **NL → SQL** — describís lo que querés en lenguaje natural
-3. **Query Optimization** — analizar contra 13 reglas anti-patrón
-4. **EXPLAIN Analysis** — verificar el plan de ejecución
+1. **Schema Extraction** - extraer estructura de tablas para dar contexto
+2. **NL → SQL** - describís lo que querés en lenguaje natural
+3. **Query Optimization** - analizar contra 13 reglas anti-patrón
+4. **EXPLAIN Analysis** - verificar el plan de ejecución
 
 ### Script
 
@@ -54,5 +54,5 @@ python3 scripts/sql_query_helper.py --db-path data.db explain "SELECT * FROM ord
 
 ## Skills relacionadas
 
-- [Observability](../observability) — Para monitorear performance de DB
-- [Performance Optimization](../performance-optimization) — Para optimizar queries lentas
+- [Observability](../observability) - Para monitorear performance de DB
+- [Performance Optimization](../performance-optimization) - Para optimizar queries lentas

@@ -49,7 +49,7 @@ Usa el wrapper `~/.openclaw/workspace/skills/github/scripts/github-mcp.py` para:
 
 ## Reglas de Escritura
 
-- **Usa siempre guion comun (-), nunca guion largo (—).** El guion largo no esta en un teclado estandar y hace evidente que el texto no fue escrito por un desarrollador. Esto aplica a descripciones de PR, comentarios, issues y cualquier texto orientado a GitHub.
+- **Usa siempre guion comun (-), nunca guion largo (-).** El guion largo no esta en un teclado estandar y hace evidente que el texto no fue escrito por un desarrollador. Esto aplica a descripciones de PR, comentarios, issues y cualquier texto orientado a GitHub.
 
 ## Auth
 

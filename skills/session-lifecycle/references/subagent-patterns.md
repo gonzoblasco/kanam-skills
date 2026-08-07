@@ -1,4 +1,4 @@
-# Sub-agent Patterns — Session Lifecycle Reference
+# Sub-agent Patterns - Session Lifecycle Reference
 
 Patrones para spawnear sub-agentes.
 
@@ -66,5 +66,5 @@ Main session: merge results
 
 ## Related
 
-- [SKILL.md](../SKILL.md) — Workflow principal
-- [Session Templates](./session-templates.md) — Templates de sesión
+- [SKILL.md](../SKILL.md) - Workflow principal
+- [Session Templates](./session-templates.md) - Templates de sesión

@@ -1,4 +1,4 @@
-# Preparation Guide — Mock Interview Drill
+# Preparation Guide - Mock Interview Drill
 
 Qué estudiar antes de una entrevista según el target.
 
@@ -131,30 +131,30 @@ Qué estudiar antes de una entrevista según el target.
 ## Recursos recomendados
 
 ### System Design
-- [System Design Interview](https://github.com/donnemartin/system-design-primer) — donnemartin
-- [Designing Data-Intensive Applications](https://dataintensive.net/) — Kleppmann (libro)
-- [ByteByteGo](https://www.youtube.com/@ByteByteGo) — YouTube
+- [System Design Interview](https://github.com/donnemartin/system-design-primer) - donnemartin
+- [Designing Data-Intensive Applications](https://dataintensive.net/) - Kleppmann (libro)
+- [ByteByteGo](https://www.youtube.com/@ByteByteGo) - YouTube
 
 ### Algorithms
-- [LeetCode](https://leetcode.com/) — practice problems
-- [NeetCode](https://neetcode.io/) — curated problem list
-- [Cracking the Coding Interview](https://www.crackingthecodinginterview.com/) — libro
+- [LeetCode](https://leetcode.com/) - practice problems
+- [NeetCode](https://neetcode.io/) - curated problem list
+- [Cracking the Coding Interview](https://www.crackingthecodinginterview.com/) - libro
 
 ### Behavioral
-- [STAR Method](https://www.themuse.com/advice/star-interview-method) — guía
+- [STAR Method](https://www.themuse.com/advice/star-interview-method) - guía
 - [Amazon Leadership Principles](https://www.amazon.jobs/content/en/our-workplace/leadership-principles)
 - [Google Googleyness](https://www.levels.fyi/blog/what-is-googleyness.html)
 
 ### Case Interviews (consulting)
-- [Case in Point](https://www.amazon.com/Case-Point-Complete-Interview-Preparation/dp/0971015888) — libro
-- [Preplounge](https://www.preplounge.com/) — practice cases
-- [Crafting Cases](https://www.craftingcases.com/) — free cases
+- [Case in Point](https://www.amazon.com/Case-Point-Complete-Interview-Preparation/dp/0971015888) - libro
+- [Preplounge](https://www.preplounge.com/) - practice cases
+- [Crafting Cases](https://www.craftingcases.com/) - free cases
 
 ---
 
 ## Related
 
-- [SKILL.md](../SKILL.md) — Workflow principal
-- [Behavioral Questions](./behavioral-questions.md) — Banco de preguntas
-- [System Design Guide](./system-design-guide.md) — Guía de system design
-- [Case Frameworks](./case-frameworks.md) — Frameworks de case
+- [SKILL.md](../SKILL.md) - Workflow principal
+- [Behavioral Questions](./behavioral-questions.md) - Banco de preguntas
+- [System Design Guide](./system-design-guide.md) - Guía de system design
+- [Case Frameworks](./case-frameworks.md) - Frameworks de case

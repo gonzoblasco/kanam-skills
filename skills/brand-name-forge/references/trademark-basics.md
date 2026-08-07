@@ -4,10 +4,10 @@
 
 ## What Can Be Trademarked
 
-- **Words** — "Apple" for computers
-- **Logos** — The Nike swoosh
-- **Sounds** — The MGM lion roar
-- **Colors** — Tiffany blue (in jewelry context)
+- **Words** - "Apple" for computers
+- **Logos** - The Nike swoosh
+- **Sounds** - The MGM lion roar
+- **Colors** - Tiffany blue (in jewelry context)
 
 ## What Cannot Be Trademarked
 
@@ -28,9 +28,9 @@ Key tech classes:
 
 Before paying for a trademark search:
 
-1. **USPTO TESS:** https://tmsearch.uspto.gov — search for exact and similar names
-2. **WIPO Global Brand Database:** https://www.wipo.int/branddb/ — international
-3. **Google:** Search "[name] + [category]" — any active businesses?
+1. **USPTO TESS:** https://tmsearch.uspto.gov - search for exact and similar names
+2. **WIPO Global Brand Database:** https://www.wipo.int/branddb/ - international
+3. **Google:** Search "[name] + [category]" - any active businesses?
 4. **App stores:** Search for apps with the same name
 5. **Social media:** Check Twitter, Instagram, YouTube handles
 

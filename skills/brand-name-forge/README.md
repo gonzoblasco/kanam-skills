@@ -37,5 +37,5 @@ Incluye top recommendation con justificación y name quality check (cross-langua
 
 ## Skills relacionadas
 
-- [Product Discovery](../product-discovery) — Para definir el producto antes de nombrarlo
-- [Copy Editing](../copy-editing) — Para pulir el messaging de la marca
+- [Product Discovery](../product-discovery) - Para definir el producto antes de nombrarlo
+- [Copy Editing](../copy-editing) - Para pulir el messaging de la marca

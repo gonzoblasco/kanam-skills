@@ -1,4 +1,4 @@
-# Dialogue — Narrative Content
+# Dialogue - Narrative Content
 
 Cómo escribir diálogo que suene real, sirva a la historia, y revele personaje.
 
@@ -6,7 +6,7 @@ Cómo escribir diálogo que suene real, sirva a la historia, y revele personaje.
 
 ### 1. El diálogo no es conversación real
 
-La conversación real es llena de "eh", "mmm", "o sea", interrupciones, cambios de tema. El diálogo en ficción es **conversación destilada** — solo lo que importa.
+La conversación real es llena de "eh", "mmm", "o sea", interrupciones, cambios de tema. El diálogo en ficción es **conversación destilada** - solo lo que importa.
 
 **Regla:** Cada línea de diálogo debe hacer al menos una de estas cosas:
 - Revelar carácter
@@ -50,7 +50,7 @@ El ritmo del diálogo afecta cómo se siente la escena:
 - **Rápido** (líneas cortas, sin tags, sin descripción) → tensión, pelea, urgencia
 - **Lento** (pausas, descripciones entre líneas, tags elaborados) → intimidad, reflexión, incomodidad
 - **Interrumpido** (personajes que se cortan) → conflicto, ansiedad
-- **Silencioso** (largas pausas, "—... — dijo") → tensión no resuelta
+- **Silencioso** (largas pausas, "-... - dijo") → tensión no resuelta
 
 ## Tags de diálogo
 
@@ -59,35 +59,35 @@ El ritmo del diálogo afecta cómo se siente la escena:
 El lector saltea "dijo" inconscientemente. Usar "exclamó", "replicó", "inquirió" distrae.
 
 **Bien:**
-—No sé —dijo ella—. Quizás deberíamos esperar.
+-No sé -dijo ella-. Quizás deberíamos esperar.
 
 **Mal:**
-—No sé —exclamó ella vehementemente—. Quizás deberíamos esperar —añadió con incertidumbre.
+-No sé -exclamó ella vehementemente-. Quizás deberíamos esperar -añadió con incertidumbre.
 
 ### Cuándo usar tags descriptivos
 
 Usalos con moderación, solo cuando el tono no sea obvio:
 
-—No sé —dijo ella, mirando al piso—. Quizás deberíamos esperar.
+-No sé -dijo ella, mirando al piso-. Quizás deberíamos esperar.
 
 ### Cuándo no usar tags
 
 Cuando es obvio quién habla por el contenido o el ritmo:
 
-—¿Vas a venir?
-—No sé.
-—¿Por qué no?
-—Porque no quiero.
+-¿Vas a venir?
+-No sé.
+-¿Por qué no?
+-Porque no quiero.
 
 ## Exposición en diálogo
 
 **Malo:**
-—Como sabés, hermano, desde que papá murió hace cinco años, la empresa familiar está en crisis.
+-Como sabés, hermano, desde que papá murió hace cinco años, la empresa familiar está en crisis.
 
 **Bueno:**
-—Papá se estaría muriendo de vergüenza.
-—No empecemos.
-—¿Viste los números? Estamos en terapia intensiva.
+-Papá se estaría muriendo de vergüenza.
+-No empecemos.
+-¿Viste los números? Estamos en terapia intensiva.
 
 **Regla:** Si el personaje está diciendo algo que ambos personajes ya saben, es exposición barata. Encontrala otra forma.
 
@@ -96,22 +96,22 @@ Cuando es obvio quién habla por el contenido o el ritmo:
 **Regla:** Menos es más. Una palabra cada tanto sugiere el acento sin cansar al lector.
 
 **Mal:**
-—¡Ah, me mon, je ne sais pas, but ze whole ting ees a mess, no?
+-¡Ah, me mon, je ne sais pas, but ze whole ting ees a mess, no?
 
 **Bien:**
-—No sé, mon ami. Todo esto es un desastre.
+-No sé, mon ami. Todo esto es un desastre.
 
 ## Formato
 
 ```
-—Línea de diálogo —dijo el personaje—. Continuación.
-—Otra línea.
-—Y otra.
+-Línea de diálogo -dijo el personaje-. Continuación.
+-Otra línea.
+-Y otra.
 
-—Nuevo parlamento —dijo otro personaje.
+-Nuevo parlamento -dijo otro personaje.
 ```
 
-- **Raya (—)** al inicio de cada parlamento (no guión, no comillas)
+- **Raya (-)** al inicio de cada parlamento (no guión, no comillas)
 - **Sin espacio** entre la raya y el texto
 - **Punto** después del tag si el diálogo termina ahí
 - **Coma** después del tag si el diálogo continúa
@@ -125,7 +125,7 @@ Cuando es obvio quién habla por el contenido o el ritmo:
 
 ## Related
 
-- [SKILL.md](../SKILL.md) — Workflow principal
-- [Scene Craft](../references/scene-craft.md) — Anatomía de una escena
-- [Character Development](../references/character-development.md) — Fichas de personajes
-- [Genre Guide](../references/genre-guide.md) — Guía de géneros
+- [SKILL.md](../SKILL.md) - Workflow principal
+- [Scene Craft](../references/scene-craft.md) - Anatomía de una escena
+- [Character Development](../references/character-development.md) - Fichas de personajes
+- [Genre Guide](../references/genre-guide.md) - Guía de géneros

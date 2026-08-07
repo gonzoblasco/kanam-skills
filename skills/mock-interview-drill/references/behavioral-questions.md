@@ -1,4 +1,4 @@
-# Behavioral Questions — Mock Interview Drill
+# Behavioral Questions - Mock Interview Drill
 
 Banco de preguntas behavioral por categoría con criterios de evaluación.
 
@@ -23,7 +23,7 @@ Banco de preguntas behavioral por categoría con criterios de evaluación.
 - ✅ Describe el conflicto sin culpar a la otra persona
 - ✅ Explica qué hizo para resolverlo (no solo "hablamos")
 - ✅ Muestra aprendizaje o cambio de approach
-- ❌ "Nunca tuve conflictos" (red flag — o no tiene experiencia o no es honesto)
+- ❌ "Nunca tuve conflictos" (red flag - o no tiene experiencia o no es honesto)
 - ❌ Culpa a otros sin autoreflexión
 
 ---
@@ -115,7 +115,7 @@ Banco de preguntas behavioral por categoría con criterios de evaluación.
 
 ## Related
 
-- [SKILL.md](../SKILL.md) — Workflow principal
-- [System Design Guide](./system-design-guide.md) — Para technical interviews
-- [Case Frameworks](./case-frameworks.md) — Para case interviews
-- [Preparation Guide](./preparation-guide.md) — Qué estudiar antes
+- [SKILL.md](../SKILL.md) - Workflow principal
+- [System Design Guide](./system-design-guide.md) - Para technical interviews
+- [Case Frameworks](./case-frameworks.md) - Para case interviews
+- [Preparation Guide](./preparation-guide.md) - Qué estudiar antes

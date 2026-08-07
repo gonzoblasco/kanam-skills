@@ -1,22 +1,22 @@
-# Narrative Structures — Narrative Content Reference
+# Narrative Structures - Narrative Content Reference
 
 Estructuras narrativas para planificar obras de ficción.
 
 ## Three-Act Structure
 
 ```
-Act I — Setup (25%)
+Act I - Setup (25%)
 ├── Inciting Incident
 ├── Establish world, characters, conflict
 └── First Plot Point → protagonist commits
 
-Act II — Confrontation (50%)
+Act II - Confrontation (50%)
 ├── Rising action
 ├── Midpoint → stakes escalate
 ├── Darkest moment / All is lost
 └── Second Plot Point → new resolve
 
-Act III — Resolution (25%)
+Act III - Resolution (25%)
 ├── Climax
 ├── Falling action
 └── Denouement
@@ -58,16 +58,16 @@ Act III — Resolution (25%)
 ## Snowflake Method (Randy Ingermanson)
 
 1. **One-sentence summary** (1h)
-2. **Expand to paragraph** (1h) — 5 sentences: setup, 3 disasters, ending
-3. **Character summaries** (1h each) — name, motivation, goal, conflict, epiphany
-4. **Expand to page** (1h) — each sentence from step 2 → full paragraph
-5. **Character synopses** (1-2 days) — 1-page POV per character
-6. **Expand to multi-page** (1 week) — each paragraph from step 4 → full page
-7. **Scene cards** (1 week) — each scene on a card: POV, summary, conflict
+2. **Expand to paragraph** (1h) - 5 sentences: setup, 3 disasters, ending
+3. **Character summaries** (1h each) - name, motivation, goal, conflict, epiphany
+4. **Expand to page** (1h) - each sentence from step 2 → full paragraph
+5. **Character synopses** (1-2 days) - 1-page POV per character
+6. **Expand to multi-page** (1 week) - each paragraph from step 4 → full page
+7. **Scene cards** (1 week) - each scene on a card: POV, summary, conflict
 8. **Write the draft** (1-3 months)
 
 ## Related
 
-- [SKILL.md](../SKILL.md) — Workflow principal
-- [Character Development](./character-development.md) — Fichas de personajes
-- [Worldbuilding](./worldbuilding.md) — Construcción de mundos
+- [SKILL.md](../SKILL.md) - Workflow principal
+- [Character Development](./character-development.md) - Fichas de personajes
+- [Worldbuilding](./worldbuilding.md) - Construcción de mundos

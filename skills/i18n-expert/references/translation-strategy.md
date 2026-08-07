@@ -1,4 +1,4 @@
-# Translation Strategy — I18n Expert Reference
+# Translation Strategy - I18n Expert Reference
 
 Estrategias para generar y mantener traducciones.
 
@@ -49,5 +49,5 @@ new Intl.NumberFormat('es-AR', {
 
 ## Related
 
-- [SKILL.md](../SKILL.md) — Workflow principal
-- [Locale Setup](./locale-setup.md) — Configuración por framework
+- [SKILL.md](../SKILL.md) - Workflow principal
+- [Locale Setup](./locale-setup.md) - Configuración por framework

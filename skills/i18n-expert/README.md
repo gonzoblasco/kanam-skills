@@ -19,13 +19,13 @@ Para **configurar, auditar y mantener la internacionalización** en proyectos we
 
 ### Workflow completo
 
-1. **Scope** — framework, estado actual, locales target, formato
-2. **Setup** — instalar framework (next-intl, react-i18next, vue-i18n)
-3. **Auditoría** — ejecutar script para detectar keys faltantes y huérfanas
-4. **Reemplazo** — buscar strings hardcodeadas y reemplazar con `t('key')`
-5. **Localización de errores** — mapear códigos a claves localizadas
-6. **Validación** — re-ejecutar auditoría hasta 0 issues
-7. **Performance** — lazy-load locale bundles, split archivos grandes
+1. **Scope** - framework, estado actual, locales target, formato
+2. **Setup** - instalar framework (next-intl, react-i18next, vue-i18n)
+3. **Auditoría** - ejecutar script para detectar keys faltantes y huérfanas
+4. **Reemplazo** - buscar strings hardcodeadas y reemplazar con `t('key')`
+5. **Localización de errores** - mapear códigos a claves localizadas
+6. **Validación** - re-ejecutar auditoría hasta 0 issues
+7. **Performance** - lazy-load locale bundles, split archivos grandes
 
 ### Script
 
@@ -45,5 +45,5 @@ Reporta: keys faltantes, keys huérfanas, brecha de paridad entre locales.
 
 ## Skills relacionadas
 
-- [Build & Scaffold](../build-scaffold) — Para incluir i18n en el scaffolding inicial
-- [Review & Quality](../review-quality) — Para revisar que no haya strings hardcodeadas
+- [Build & Scaffold](../build-scaffold) - Para incluir i18n en el scaffolding inicial
+- [Review & Quality](../review-quality) - Para revisar que no haya strings hardcodeadas

@@ -1,4 +1,4 @@
-# Frontend Optimization — Performance Optimization Reference
+# Frontend Optimization - Performance Optimization Reference
 
 Técnicas de optimización para frontend.
 
@@ -79,6 +79,6 @@ import { Virtualizer } from '@tanstack/react-virtual';
 
 ## Related
 
-- [SKILL.md](../SKILL.md) — Workflow principal
-- [Backend Optimization](./backend-optimization.md) — Optimización backend
-- [Database Optimization](./database-optimization.md) — Optimización DB
+- [SKILL.md](../SKILL.md) - Workflow principal
+- [Backend Optimization](./backend-optimization.md) - Optimización backend
+- [Database Optimization](./database-optimization.md) - Optimización DB

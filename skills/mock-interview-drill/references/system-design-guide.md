@@ -1,4 +1,4 @@
-# System Design Guide — Mock Interview Drill
+# System Design Guide - Mock Interview Drill
 
 Guía para entrevistas de system design. Cómo estructurar la respuesta, qué preguntar, trade-offs comunes.
 
@@ -36,10 +36,10 @@ Dibujá la arquitectura general:
 
 Elegí 1-2 componentes y profundizá:
 
-- **Database schema** — tablas, índices, particionamiento
-- **API design** — endpoints, métodos, payloads
-- **Data flow** — cómo viajan los datos entre componentes
-- **Caching** — qué cacheás, dónde, por cuánto tiempo
+- **Database schema** - tablas, índices, particionamiento
+- **API design** - endpoints, métodos, payloads
+- **Data flow** - cómo viajan los datos entre componentes
+- **Caching** - qué cacheás, dónde, por cuánto tiempo
 
 ### 4. Trade-offs & Edge Cases (5 min)
 
@@ -129,7 +129,7 @@ Elegí 1-2 componentes y profundizá:
 
 ## Related
 
-- [SKILL.md](../SKILL.md) — Workflow principal
-- [Behavioral Questions](./behavioral-questions.md) — Banco de preguntas behavioral
-- [Case Frameworks](./case-frameworks.md) — Para case interviews
-- [Preparation Guide](./preparation-guide.md) — Qué estudiar antes
+- [SKILL.md](../SKILL.md) - Workflow principal
+- [Behavioral Questions](./behavioral-questions.md) - Banco de preguntas behavioral
+- [Case Frameworks](./case-frameworks.md) - Para case interviews
+- [Preparation Guide](./preparation-guide.md) - Qué estudiar antes

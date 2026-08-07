@@ -1,4 +1,4 @@
-# Reflection Template — Session Lifecycle Reference
+# Reflection Template - Session Lifecycle Reference
 
 Template de reflexión post-sesión para identificar aprendizajes y patrones.
 
@@ -19,9 +19,9 @@ Al final de cada sesión significativa (no sesiones de 5 min). Como parte del ci
 - ¿Hay algo que debería ser automático y hoy es manual?
 
 ### ¿Es global o de proyecto?
-- 🌍 **Global** — aplica a cualquier proyecto, dominio o contexto
-- 🏗️ **Proyecto** — específico del AI Engineering OS o del workspace
-- 📦 **Contexto** — específico de un proyecto de producto en particular
+- 🌍 **Global** - aplica a cualquier proyecto, dominio o contexto
+- 🏗️ **Proyecto** - específico del AI Engineering OS o del workspace
+- 📦 **Contexto** - específico de un proyecto de producto en particular
 
 ### ¿Dónde va?
 | Si es... | Va a... |
@@ -33,7 +33,7 @@ Al final de cada sesión significativa (no sesiones de 5 min). Como parte del ci
 ## Formato de entrada
 
 ```markdown
-## YYYY-MM-DD — [Título corto]
+## YYYY-MM-DD - [Título corto]
 
 ### N. [Título de la lección]
 [Descripción de 2-4 párrafos]
@@ -45,5 +45,5 @@ Al final de cada sesión significativa (no sesiones de 5 min). Como parte del ci
 
 ## Related
 
-- [SKILL.md](../SKILL.md) — Workflow principal
-- [Session Templates](./session-templates.md) — Templates de inicio y cierre
+- [SKILL.md](../SKILL.md) - Workflow principal
+- [Session Templates](./session-templates.md) - Templates de inicio y cierre

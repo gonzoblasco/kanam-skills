@@ -1,4 +1,4 @@
-# Session Templates — Session Lifecycle Reference
+# Session Templates - Session Lifecycle Reference
 
 Templates para inicio y cierre de sesión.
 
@@ -53,7 +53,7 @@ Templates para inicio y cierre de sesión.
 ## HANDOFF Template
 
 ```markdown
-# HANDOFF — [Project Name]
+# HANDOFF - [Project Name]
 
 ## Session Context
 - **Date:** YYYY-MM-DD
@@ -86,5 +86,5 @@ Templates para inicio y cierre de sesión.
 
 ## Related
 
-- [SKILL.md](../SKILL.md) — Workflow principal
-- [Task Execution](../../task-execution) — Ejecución de tareas
+- [SKILL.md](../SKILL.md) - Workflow principal
+- [Task Execution](../../task-execution) - Ejecución de tareas

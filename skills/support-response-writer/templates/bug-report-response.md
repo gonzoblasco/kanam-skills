@@ -10,11 +10,11 @@
 
 Hi {{name}},
 
-Thank you for reporting this — I can see how {{restate the problem in their words}} would be frustrating.
+Thank you for reporting this - I can see how {{restate the problem in their words}} would be frustrating.
 
 **What's happening:** {{explain the bug in plain language, no jargon}}
 
-**What we're doing:** {{what's being done to fix it — timeline if known, honesty if not}}
+**What we're doing:** {{what's being done to fix it - timeline if known, honesty if not}}
 
 **Workaround (if available):** {{temporary fix they can use now}}
 

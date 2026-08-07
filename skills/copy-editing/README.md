@@ -20,13 +20,13 @@ Es conversacional. Le pasás el copy y decís "editá esto".
 
 Hace 7 sweeps en orden, y después de cada uno vuelve a verificar los anteriores:
 
-1. **Clarity** — ¿Se entiende? Sin jerga, una idea por oración
-2. **Voice & Tone** — ¿Suena consistente? Leélo en voz alta
-3. **So What** — Cada claim responde "¿y qué?" (feature → benefit)
-4. **Prove It** — ¿Hay evidencia? Testimonios, datos, garantías
-5. **Specificity** — ¿Es concreto? "Save time" → "Save 4 hours every week"
-6. **Heightened Emotion** — ¿Hace sentir algo? Pain points que se sienten
-7. **Zero Risk** — ¿Eliminamos barreras? Fricción cerca del CTA, objeciones
+1. **Clarity** - ¿Se entiende? Sin jerga, una idea por oración
+2. **Voice & Tone** - ¿Suena consistente? Leélo en voz alta
+3. **So What** - Cada claim responde "¿y qué?" (feature → benefit)
+4. **Prove It** - ¿Hay evidencia? Testimonios, datos, garantías
+5. **Specificity** - ¿Es concreto? "Save time" → "Save 4 hours every week"
+6. **Heightened Emotion** - ¿Hace sentir algo? Pain points que se sienten
+7. **Zero Risk** - ¿Eliminamos barreras? Fricción cerca del CTA, objeciones
 
 ## Referencias
 
@@ -37,5 +37,5 @@ Hace 7 sweeps en orden, y después de cada uno vuelve a verificar los anteriores
 
 ## Skills relacionadas
 
-- [Narrative Content](../narrative-content) — Para escritura de ficción
-- [Campaign Plan](../campaign-plan) — Para planificar campañas
+- [Narrative Content](../narrative-content) - Para escritura de ficción
+- [Campaign Plan](../campaign-plan) - Para planificar campañas

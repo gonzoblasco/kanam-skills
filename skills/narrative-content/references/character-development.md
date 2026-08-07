@@ -1,4 +1,4 @@
-# Character Development — Narrative Content Reference
+# Character Development - Narrative Content Reference
 
 Fichas y arquetipos para construir personajes.
 
@@ -65,6 +65,6 @@ Fichas y arquetipos para construir personajes.
 
 ## Related
 
-- [SKILL.md](../SKILL.md) — Workflow principal
-- [Narrative Structures](./narrative-structures.md) — Estructuras narrativas
-- [Worldbuilding](./worldbuilding.md) — Construcción de mundos
+- [SKILL.md](../SKILL.md) - Workflow principal
+- [Narrative Structures](./narrative-structures.md) - Estructuras narrativas
+- [Worldbuilding](./worldbuilding.md) - Construcción de mundos

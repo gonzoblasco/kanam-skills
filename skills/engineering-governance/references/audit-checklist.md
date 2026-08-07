@@ -1,4 +1,4 @@
-# Audit Checklist de Workflows — Referencia
+# Audit Checklist de Workflows - Referencia
 
 ## Responsabilidad Única
 
@@ -36,4 +36,4 @@
 
 ## Related
 
-- [SKILL.md](../SKILL.md) — Workflow principal
+- [SKILL.md](../SKILL.md) - Workflow principal

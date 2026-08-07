@@ -1,4 +1,4 @@
-# Metrics Definitions — Engineering Governance Reference
+# Metrics Definitions - Engineering Governance Reference
 
 Qué métricas trackear, cómo interpretarlas y thresholds.
 
@@ -50,6 +50,6 @@ Qué métricas trackear, cómo interpretarlas y thresholds.
 
 ## Related
 
-- [SKILL.md](../SKILL.md) — Workflow principal
-- [Audit Checklist](../references/audit-checklist.md) — Checklist de auditoría
-- [RFC Template](../references/rfc-template.md) — Template de propuestas
+- [SKILL.md](../SKILL.md) - Workflow principal
+- [Audit Checklist](../references/audit-checklist.md) - Checklist de auditoría
+- [RFC Template](../references/rfc-template.md) - Template de propuestas

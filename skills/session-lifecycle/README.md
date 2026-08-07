@@ -17,12 +17,12 @@ Para **estructurar cada sesión de trabajo** con IA: inicio (cargar contexto + m
 
 ### Fases
 
-1. **Inicio** — cargar contexto, memoria, handoff del proyecto activo
-2. **Dispatcher** — spawnear sub-agentes: fork (necesita transcript) vs isolated (independiente)
-3. **Ejecución** — trabajo principal, decisiones, archivos tocados
-4. **Cierre** — escanear sesión, escribir HANDOFF, memory, CHANGELOG
-5. **Tareas** — convertir pendientes en accionables (cron jobs o TODO.md)
-6. **Commit** — commit + push del workspace
+1. **Inicio** - cargar contexto, memoria, handoff del proyecto activo
+2. **Dispatcher** - spawnear sub-agentes: fork (necesita transcript) vs isolated (independiente)
+3. **Ejecución** - trabajo principal, decisiones, archivos tocados
+4. **Cierre** - escanear sesión, escribir HANDOFF, memory, CHANGELOG
+5. **Tareas** - convertir pendientes en accionables (cron jobs o TODO.md)
+6. **Commit** - commit + push del workspace
 
 ### Scripts útiles
 
@@ -43,5 +43,5 @@ Para **estructurar cada sesión de trabajo** con IA: inicio (cargar contexto + m
 
 ## Skills relacionadas
 
-- [Task Execution](../task-execution) — Para ejecutar tareas dentro de la sesión
-- [Knowledge Management](../knowledge-management) — Para registrar aprendizajes de la sesión
+- [Task Execution](../task-execution) - Para ejecutar tareas dentro de la sesión
+- [Knowledge Management](../knowledge-management) - Para registrar aprendizajes de la sesión

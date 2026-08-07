@@ -1,4 +1,4 @@
-# Worldbuilding — Narrative Content Reference
+# Worldbuilding - Narrative Content Reference
 
 Guía para construir mundos de ficción creíbles.
 
@@ -76,6 +76,6 @@ Guía para construir mundos de ficción creíbles.
 
 ## Related
 
-- [SKILL.md](../SKILL.md) — Workflow principal
-- [Narrative Structures](./narrative-structures.md) — Estructuras narrativas
-- [Character Development](./character-development.md) — Fichas de personajes
+- [SKILL.md](../SKILL.md) - Workflow principal
+- [Narrative Structures](./narrative-structures.md) - Estructuras narrativas
+- [Character Development](./character-development.md) - Fichas de personajes

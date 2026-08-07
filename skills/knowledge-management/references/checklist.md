@@ -1,4 +1,4 @@
-# Checklist de Conocimiento — Referencia
+# Checklist de Conocimiento - Referencia
 
 ## Discovery
 
@@ -37,5 +37,5 @@
 
 ## Related
 
-- [SKILL.md](../SKILL.md) — Workflow principal
-- [Artifacts](./artifacts.md) — Catálogo de artefactos
+- [SKILL.md](../SKILL.md) - Workflow principal
+- [Artifacts](./artifacts.md) - Catálogo de artefactos

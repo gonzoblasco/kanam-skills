@@ -50,5 +50,5 @@ Te hace una pregunta abierta, espera tu respuesta, y después 3-5 follow-ups de 
 
 ## Skills relacionadas
 
-- [CV Tailor](../cv-tailor) — Para optimizar el CV antes de las entrevistas
-- [Code Mentor](../code-mentor) — Para practicar algoritmos y conceptos
+- [CV Tailor](../cv-tailor) - Para optimizar el CV antes de las entrevistas
+- [Code Mentor](../code-mentor) - Para practicar algoritmos y conceptos

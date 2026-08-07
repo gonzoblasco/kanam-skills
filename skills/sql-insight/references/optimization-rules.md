@@ -1,4 +1,4 @@
-# SQL Optimization Rules — SQL Insight Reference
+# SQL Optimization Rules - SQL Insight Reference
 
 Las 13 reglas de detección de anti-patrones SQL.
 
@@ -101,5 +101,5 @@ SELECT * FROM users u WHERE NOT EXISTS (SELECT 1 FROM orders o WHERE o.user_id =
 
 ## Related
 
-- [SKILL.md](../SKILL.md) — Workflow principal
-- [EXPLAIN Guide](./explain-guide.md) — Interpretación de EXPLAIN
+- [SKILL.md](../SKILL.md) - Workflow principal
+- [EXPLAIN Guide](./explain-guide.md) - Interpretación de EXPLAIN

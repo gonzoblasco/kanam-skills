@@ -15,7 +15,7 @@
 
 - **Sentence case** / **Title Case** for headings
 - **Oxford comma:** yes / no
-- **Em dashes:** yes / no (use — not -)
+- **Em dashes:** yes / no (use - not -)
 - **Numbers:** spell out {{1-9 / 1-99}} / numerals for {{10+ / 100+}}
 - **Contractions:** yes / no
 - **Pronouns:** {{we/us / I/me / you}}

@@ -39,5 +39,5 @@ Es conversacional. Le decís lo que te pasa y te guía.
 
 ## Skills relacionadas
 
-- [Session Lifecycle](../session-lifecycle) — Para estructurar sesiones de trabajo
-- [Task Execution](../task-execution) — Para ejecutar tareas desglosadas
+- [Session Lifecycle](../session-lifecycle) - Para estructurar sesiones de trabajo
+- [Task Execution](../task-execution) - Para ejecutar tareas desglosadas

@@ -1,4 +1,4 @@
-# Revision Guide — Narrative Content
+# Revision Guide - Narrative Content
 
 Los 3 niveles de revisión: estructural, de línea, y de copy. Cómo hacer cada uno.
 
@@ -28,21 +28,21 @@ La primera versión es para descubrir la historia. La revisión es para contarla
 
 ### Checklist estructural
 
-- [ ] **¿La premisa es clara?** — ¿Podés resumir la historia en 1-2 oraciones?
-- [ ] **¿El arco del protagonista funciona?** — ¿Cambia de principio a fin? ¿El cambio es creíble?
-- [ ] **¿La estructura tiene sentido?** — Three-Act, Hero's Journey, etc. ¿Cada acto tiene propósito?
-- [ ] **¿El pacing es consistente?** — ¿Hay partes que se arrastran? ¿Partes que van demasiado rápido?
-- [ ] **¿Cada escena es necesaria?** — Si podés saltarte una escena sin perder la historia, borrala.
-- [ ] **¿Los plot holes son manejables?** — Anotalos todos. Algunos se resuelven solos, otros necesitan reescritura.
-- [ ] **¿El final es satisfactorio?** — No tiene que ser feliz, pero tiene que ser *justo*.
+- [ ] **¿La premisa es clara?** - ¿Podés resumir la historia en 1-2 oraciones?
+- [ ] **¿El arco del protagonista funciona?** - ¿Cambia de principio a fin? ¿El cambio es creíble?
+- [ ] **¿La estructura tiene sentido?** - Three-Act, Hero's Journey, etc. ¿Cada acto tiene propósito?
+- [ ] **¿El pacing es consistente?** - ¿Hay partes que se arrastran? ¿Partes que van demasiado rápido?
+- [ ] **¿Cada escena es necesaria?** - Si podés saltarte una escena sin perder la historia, borrala.
+- [ ] **¿Los plot holes son manejables?** - Anotalos todos. Algunos se resuelven solos, otros necesitan reescritura.
+- [ ] **¿El final es satisfactorio?** - No tiene que ser feliz, pero tiene que ser *justo*.
 
 ### Cómo hacer una revisión estructural
 
-1. **Leé la historia completa de una sentada** — como si fueras un lector, no el autor
-2. **Tomá notas de lo que funciona y lo que no** — no corrijas todavía, solo observá
-3. **Hacé un outline post-hoc** — escribí lo que realmente pasa, no lo que querías que pasara
-4. **Identificá los problemas grandes** — personajes planos, estructura débil, pacing roto
-5. **Decidí qué vas a cambiar** — no arregles todo, priorizá los problemas que más impacto tienen
+1. **Leé la historia completa de una sentada** - como si fueras un lector, no el autor
+2. **Tomá notas de lo que funciona y lo que no** - no corrijas todavía, solo observá
+3. **Hacé un outline post-hoc** - escribí lo que realmente pasa, no lo que querías que pasara
+4. **Identificá los problemas grandes** - personajes planos, estructura débil, pacing roto
+5. **Decidí qué vas a cambiar** - no arregles todo, priorizá los problemas que más impacto tienen
 
 ### Problemas comunes y soluciones
 
@@ -64,14 +64,14 @@ La primera versión es para descubrir la historia. La revisión es para contarla
 
 ### Checklist de línea
 
-- [ ] **¿Cada escena tiene un propósito claro?** — Si no sabés por qué está, borrala.
-- [ ] **¿Cada escena tiene conflicto?** — Sin conflicto, no hay tensión.
-- [ ] **¿Cada escena termina con un gancho?** — El lector debería querer leer la siguiente.
-- [ ] **¿El diálogo suena natural?** — Leelo en voz alta. Si suena falso, reescribilo.
-- [ ] **¿Hay demasiada descripción?** — Mostrá lo que importa, omití el resto.
-- [ ] **¿Hay demasiado diálogo?** — Si solo hablan sin hacer nada, agregá acción.
-- [ ] **¿El ritmo de la escena es correcto?** — Escenas de acción: rápido. Escenas de reflexión: lento.
-- [ ] **¿Cada personaje tiene una voz distinta?** — Cubrí los nombres y leé el diálogo. ¿Podés distinguir quién habla?
+- [ ] **¿Cada escena tiene un propósito claro?** - Si no sabés por qué está, borrala.
+- [ ] **¿Cada escena tiene conflicto?** - Sin conflicto, no hay tensión.
+- [ ] **¿Cada escena termina con un gancho?** - El lector debería querer leer la siguiente.
+- [ ] **¿El diálogo suena natural?** - Leelo en voz alta. Si suena falso, reescribilo.
+- [ ] **¿Hay demasiada descripción?** - Mostrá lo que importa, omití el resto.
+- [ ] **¿Hay demasiado diálogo?** - Si solo hablan sin hacer nada, agregá acción.
+- [ ] **¿El ritmo de la escena es correcto?** - Escenas de acción: rápido. Escenas de reflexión: lento.
+- [ ] **¿Cada personaje tiene una voz distinta?** - Cubrí los nombres y leé el diálogo. ¿Podés distinguir quién habla?
 
 ### Técnicas de línea
 
@@ -107,20 +107,20 @@ Después:
 
 ### Checklist de copy
 
-- [ ] **Palabras repetidas** — buscá palabras que aparecen demasiado cerca
-- [ ] **Adjetivos y adverbios innecesarios** — "muy", "realmente", "bastante" casi siempre sobran
-- [ ] **Voz pasiva** — "La pelota fue pateada por Juan" → "Juan pateó la pelota"
-- [ ] **Tiempos verbales consistentes** — no mezcles pasado y presente sin razón
-- [ ] **Puntuación** — comas, puntos, rayas de diálogo, todo consistente
-- [ ] **Ortografía** — acentos, mayúsculas, nombres propios
-- [ ] **Formato** — sangrías, espacios, separación de párrafos
+- [ ] **Palabras repetidas** - buscá palabras que aparecen demasiado cerca
+- [ ] **Adjetivos y adverbios innecesarios** - "muy", "realmente", "bastante" casi siempre sobran
+- [ ] **Voz pasiva** - "La pelota fue pateada por Juan" → "Juan pateó la pelota"
+- [ ] **Tiempos verbales consistentes** - no mezcles pasado y presente sin razón
+- [ ] **Puntuación** - comas, puntos, rayas de diálogo, todo consistente
+- [ ] **Ortografía** - acentos, mayúsculas, nombres propios
+- [ ] **Formato** - sangrías, espacios, separación de párrafos
 
 ### Herramientas de copy
 
-- **Leé en voz alta** — el oído detecta lo que el ojo no ve
-- **Cambiá la fuente** — un cambio visual revela errores
-- **Imprimilo** — en papel se ven cosas que en pantalla no
-- **Dejalo reposar** — 24 horas sin mirarlo, después releé
+- **Leé en voz alta** - el oído detecta lo que el ojo no ve
+- **Cambiá la fuente** - un cambio visual revela errores
+- **Imprimilo** - en papel se ven cosas que en pantalla no
+- **Dejalo reposar** - 24 horas sin mirarlo, después releé
 
 ---
 
@@ -129,9 +129,9 @@ Después:
 Usá este log para trackear qué revisaste y qué falta.
 
 ```markdown
-# Revision Log — [Project Name]
+# Revision Log - [Project Name]
 
-## Structural Review — [Date]
+## Structural Review - [Date]
 - [ ] Premisa clara
 - [ ] Arco del protagonista
 - [ ] Estructura
@@ -144,7 +144,7 @@ Issues found:
 - [Issue 1]
 - [Issue 2]
 
-## Line Review — [Date]
+## Line Review - [Date]
 - [ ] Cada escena tiene propósito
 - [ ] Cada escena tiene conflicto
 - [ ] Ganchos al final de cada escena
@@ -155,7 +155,7 @@ Issues found:
 Issues found:
 - [Issue 1]
 
-## Copy Review — [Date]
+## Copy Review - [Date]
 - [ ] Palabras repetidas
 - [ ] Adverbios innecesarios
 - [ ] Voz pasiva
@@ -172,7 +172,7 @@ Issues found:
 
 ## Related
 
-- [SKILL.md](../SKILL.md) — Workflow principal
-- [Scene Craft](../references/scene-craft.md) — Anatomía de una escena
-- [Dialogue](../references/dialogue.md) — Cómo escribir diálogo
-- [Narrative Structures](../references/narrative-structures.md) — Estructuras narrativas
+- [SKILL.md](../SKILL.md) - Workflow principal
+- [Scene Craft](../references/scene-craft.md) - Anatomía de una escena
+- [Dialogue](../references/dialogue.md) - Cómo escribir diálogo
+- [Narrative Structures](../references/narrative-structures.md) - Estructuras narrativas

@@ -50,5 +50,5 @@ Verifica formato, layout, fuentes, estructura de secciones, densidad de keywords
 
 ## Skills relacionadas
 
-- [Mock Interview Drill](../mock-interview-drill) — Para practicar entrevistas después de tener el CV listo
-- [Code Mentor](../code-mentor) — Para practicar algoritmos si la posición los requiere
+- [Mock Interview Drill](../mock-interview-drill) - Para practicar entrevistas después de tener el CV listo
+- [Code Mentor](../code-mentor) - Para practicar algoritmos si la posición los requiere

@@ -1,11 +1,11 @@
-# Daily Planning — ADHD Assistant Reference
+# Daily Planning - ADHD Assistant Reference
 
 Plantilla para el check-in diario.
 
 ## Morning Template
 
 ```markdown
-## Daily Plan — [Date]
+## Daily Plan - [Date]
 
 ### Check-in
 - Energy (1-10):
@@ -13,9 +13,9 @@ Plantilla para el check-in diario.
 - Any deadlines today?
 
 ### Top 3 Priorities
-1. [ ] [Priority 1] — [time block]
-2. [ ] [Priority 2] — [time block]
-3. [ ] [Priority 3] — [time block]
+1. [ ] [Priority 1] - [time block]
+2. [ ] [Priority 2] - [time block]
+3. [ ] [Priority 3] - [time block]
 
 ### Schedule
 - Morning: [priority 1]
@@ -31,7 +31,7 @@ Plantilla para el check-in diario.
 ## End-of-Day Template
 
 ```markdown
-## End-of-Day — [Date]
+## End-of-Day - [Date]
 
 ### Wins
 - [ ]
@@ -50,5 +50,5 @@ Plantilla para el check-in diario.
 
 ## Related
 
-- [SKILL.md](../SKILL.md) — Workflow principal
-- [Dopamine Menu](./dopamine-menu.md) — Menú de estímulos
+- [SKILL.md](../SKILL.md) - Workflow principal
+- [Dopamine Menu](./dopamine-menu.md) - Menú de estímulos

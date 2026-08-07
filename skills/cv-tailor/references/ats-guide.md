@@ -1,4 +1,4 @@
-# Guía ATS — CV Tailor
+# Guía ATS - CV Tailor
 
 Guía de compatibilidad con Applicant Tracking Systems.
 
@@ -32,5 +32,5 @@ Guía de compatibilidad con Applicant Tracking Systems.
 
 ## Relacionados
 
-- [SKILL.md](../SKILL.md) — Workflow principal
-- [STAR Method](./star-method.md) — Guía STAR
+- [SKILL.md](../SKILL.md) - Workflow principal
+- [STAR Method](./star-method.md) - Guía STAR

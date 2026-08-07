@@ -1,6 +1,6 @@
 # Daily Plan
 
-## Morning Check-In — {{date}}
+## Morning Check-In - {{date}}
 
 **Energy:** {{1-10}}
 **Mood:** {{emoji}} {{mood}}
@@ -25,7 +25,7 @@
 
 ## Open Loops
 
-<!-- Things floating in your head — capture them, don't solve them now -->
+<!-- Things floating in your head - capture them, don't solve them now -->
 
 - {{thing I'm worried about}}
 - {{thing I need to do eventually}}

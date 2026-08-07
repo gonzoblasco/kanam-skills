@@ -1,4 +1,4 @@
-# Governance Report — Workflow Audit
+# Governance Report - Workflow Audit
 
 **Date:** 2026-07-23 23:59
 

@@ -1,4 +1,4 @@
-# Artefactos de Conocimiento — Referencia
+# Artefactos de Conocimiento - Referencia
 
 ## Estratégicos
 
@@ -42,4 +42,4 @@
 
 ## Related
 
-- [SKILL.md](../SKILL.md) — Workflow principal
+- [SKILL.md](../SKILL.md) - Workflow principal

@@ -16,11 +16,11 @@ Para **escribir novelas, cuentos y ficción** con estructura profesional. Incluy
 
 ### Workflow completo
 
-1. **Premisa** — idea central, género, tono, audiencia, conflicto principal
-2. **Estructura** — arco narrativo, capítulos, personajes, worldbuilding
-3. **Redacción** — escritura de capítulos, escenas, diálogos
-4. **Revisión** — coherencia narrativa, consistencia, plot holes
-5. **Exportación** — DOCX, EPUB, Markdown
+1. **Premisa** - idea central, género, tono, audiencia, conflicto principal
+2. **Estructura** - arco narrativo, capítulos, personajes, worldbuilding
+3. **Redacción** - escritura de capítulos, escenas, diálogos
+4. **Revisión** - coherencia narrativa, consistencia, plot holes
+5. **Exportación** - DOCX, EPUB, Markdown
 
 ### Scripts útiles
 
@@ -45,5 +45,5 @@ python3 scripts/export-novel.py ./capitulos/ --format epub --output novela.epub
 
 ## Skills relacionadas
 
-- [Copy Editing](../copy-editing) — Para editar el texto narrativo
-- [Technical Documentation](../tech-docs) — Para documentar estructura narrativa
+- [Copy Editing](../copy-editing) - Para editar el texto narrativo
+- [Technical Documentation](../tech-docs) - Para documentar estructura narrativa

@@ -1,4 +1,4 @@
-# Locale Setup — I18n Expert Reference
+# Locale Setup - I18n Expert Reference
 
 Guía de configuración para distintos frameworks.
 
@@ -85,5 +85,5 @@ namespace.section.action
 
 ## Related
 
-- [SKILL.md](../SKILL.md) — Workflow principal
-- [Audit Script](../scripts/i18n_audit.py) — Script de auditoría
+- [SKILL.md](../SKILL.md) - Workflow principal
+- [Audit Script](../scripts/i18n_audit.py) - Script de auditoría

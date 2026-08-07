@@ -1,4 +1,4 @@
-# Common Copy Problems — Copy Editing Reference
+# Common Copy Problems - Copy Editing Reference
 
 Problemas frecuentes y cómo arreglarlos.
 
@@ -36,5 +36,5 @@ Problemas frecuentes y cómo arreglarlos.
 
 ## Related
 
-- [SKILL.md](../SKILL.md) — Workflow principal
-- [Word-Level Edits](./word-level-edits.md) — Ediciones a nivel palabra
+- [SKILL.md](../SKILL.md) - Workflow principal
+- [Word-Level Edits](./word-level-edits.md) - Ediciones a nivel palabra
