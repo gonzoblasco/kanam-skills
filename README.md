@@ -122,12 +122,12 @@ mock-interview-drill, cv-tailor
 copy-editing, narrative-content, brand-name-forge, content-serializer,
 deslop, image-generation, curriculum-builder
 
-### Vida diaria y herramientas (7 skills)
+### Vida diaria y herramientas (6 skills)
 
-adhd-assistant, adhd-daily-planner, apple-photos, calorie-counter, mlx-stt,
+adhd-assistant, apple-photos, calorie-counter, mlx-stt,
 checkmate, godot-mcp
 
-**Total: 59 skills.**
+**Total: 58 skills.**
 
 Explorá el catálogo completo en el [sitio de kanam-skills](#) (GitHub Pages).
 

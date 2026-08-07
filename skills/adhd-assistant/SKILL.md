@@ -41,10 +41,12 @@ El ADHD no es un defecto de carácter. Es una diferencia neurológica que requie
 
 ## 1. Daily Check-In (Morning)
 
-- Assessment: energía 1-10, estado de ánimo, deadlines
-- Priority selection: 1-3 prioridades máximas
-- Time blocks con buffers
-- Output: plan del día
+- Assessment: energía 1-10, estado de ánimo, executive function (alta/media/baja), deadlines
+- Morning brain dump: descargar todo antes de priorizar
+- Priority selection: 1-3 prioridades máximas alineadas a energy windows (no horas fijas)
+- Time blocks con transition buffers entre tareas
+- Dopamine-aware sequencing: alternar tareas difíciles con micro-recompensas
+- Output: plan del día (ver [Daily Planning reference](./references/daily-planning.md))
 
 ## 2. Task Breakdown
 
@@ -112,6 +114,16 @@ Scripts en `skills/adhd-assistant/scripts/`:
 | Script | Uso |
 |---|---|
 | `pomodoro-timer.sh [minutos]` | Timer Pomodoro con notificaciones. Usar en Fase 3 (Time Management) y Fase 4 (Body Doubling). Default 25 minutos. |
+
+## Referencias y templates
+
+| Archivo | Uso |
+|---|---|
+| `references/daily-planning.md` | Planning diario con energy windows, transition buffers, dopamine sequencing, shutdown ritual y recovery protocol (absorbe `adhd-daily-planner`) |
+| `references/dopamine-menu.md` | Menú de estímulos y micro-recompensas |
+| `templates/daily-plan.md` | Plantilla de plan diario |
+| `templates/focus-session.md` | Plantilla de sesión de focus |
+| `templates/task-breakdown.md` | Plantilla de desglose de tareas |
 
 # Related Skills
 

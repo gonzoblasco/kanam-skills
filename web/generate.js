@@ -50,7 +50,7 @@ const CATEGORIES = [
       "content-serializer","deslop","image-generation","curriculum-builder",
   ]},
   { id: "life", label: "Vida diaria y herramientas", match: [
-      "adhd-assistant","adhd-daily-planner","apple-photos",
+      "adhd-assistant","apple-photos",
       "calorie-counter","mlx-stt","checkmate","godot-mcp",
   ]},
 ];
