@@ -94,7 +94,7 @@ function readSkills() {
 function layout(body, title) {
   const css = fs.readFileSync(path.join(SRC_DIR, "style.css"), "utf8");
   return `<!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">

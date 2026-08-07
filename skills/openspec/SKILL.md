@@ -1,6 +1,6 @@
 ---
 name: openspec
-description: "Use OpenSpec CLI for spec-driven development: create change proposals, write spec deltas, design docs, tasks, and archive approved changes."
+description: "Usar el CLI de OpenSpec para desarrollo guiado por specs: crear propuestas de cambio, escribir deltas de specs, documentos de diseño, tareas y archivar cambios aprobados."
 metadata:
   version: 1.0.0
   author: Kanam
@@ -15,113 +15,113 @@ allowed-tools:
 
 # OpenSpec
 
-Use the OpenSpec CLI (`@fission-ai/openspec`) to practice spec-driven development inside projects. This skill complements `agent-workflow`: `agent-workflow` defines *how* to work, `openspec` defines *where* to write specs and changes.
+Usar el CLI de OpenSpec (`@fission-ai/openspec`) para practicar desarrollo guiado por specs dentro de los proyectos. Esta skill complementa a `agent-workflow`: `agent-workflow` define *cómo* trabajar, `openspec` define *dónde* escribir los specs y los cambios.
 
-## When to use
+## Cuándo usar
 
-Use this skill for any non-trivial change in a project that has OpenSpec initialized:
+Usar esta skill para cualquier cambio no trivial en un proyecto que tenga OpenSpec inicializado:
 
-- New feature
-- Behavior change
-- Refactor that changes behavior
-- API change
-- UI/UX change with spec-level impact
-- Any change that benefits from an agreed spec before code
+- Nueva feature
+- Cambio de comportamiento
+- Refactor que cambia el comportamiento
+- Cambio de API
+- Cambio de UI/UX con impacto a nivel de spec
+- Cualquier cambio que se beneficie de un spec acordado antes del código
 
-Skip for:
-- Pure config/tooling/docs changes (set `skip_specs: true` if using OpenSpec)
-- One-line fixes with no behavior change
-- Throwaway experiments
+Omitir para:
+- Cambios puramente de config/tooling/docs (poner `skip_specs: true` si se usa OpenSpec)
+- Arreglos de una línea sin cambio de comportamiento
+- Experimentos descartables
 
-## Requirements
+## Requisitos
 
 - Node.js >= 20.19.0
-- `@fission-ai/openspec` installed globally:
+- `@fission-ai/openspec` instalado globalmente:
   ```bash
   npm install -g @fission-ai/openspec@latest
   ```
-- OpenSpec initialized in the project:
+- OpenSpec inicializado en el proyecto:
   ```bash
   openspec init --tools none
   ```
 
-## Project structure
+## Estructura del proyecto
 
-After `openspec init`, the project has:
+Después de `openspec init`, el proyecto tiene:
 
 ```
 openspec/
-├── config.yaml              # OpenSpec configuration
-├── specs/                   # Source-of-truth specs
+├── config.yaml              # Configuración de OpenSpec
+├── specs/                   # Specs fuente de verdad
 │   └── auth/spec.md
 │   └── user/spec.md
-├── changes/                 # Active change proposals
+├── changes/                 # Propuestas de cambio activas
 │   └── add-2fa/
 │       ├── .openspec.yaml
 │       ├── proposal.md
 │       ├── specs/
-│       │   └── auth/spec.md      # Delta spec
+│       │   └── auth/spec.md      # Spec delta
 │       ├── design.md
 │       └── tasks.md
-└── changes/archive/         # Archived changes
+└── changes/archive/         # Cambios archivados
 ```
 
 ## Workflow
 
-### Phase 1: Initialize (one-time per project)
+### Fase 1: Inicializar (una vez por proyecto)
 
 ```bash
 cd projects/my-app
 openspec init --tools none
 ```
 
-This creates the `openspec/` structure. It does not configure IDE-specific slash commands because OpenClaw uses the CLI directly.
+Esto crea la estructura `openspec/`. No configura comandos slash específicos del IDE porque OpenClaw usa el CLI directamente.
 
-### Phase 2: Create a change proposal
+### Fase 2: Crear una propuesta de cambio
 
 ```bash
 openspec new change add-login-button
 ```
 
-Then generate:
+Luego generar:
 
-- `openspec/changes/add-login-button/proposal.md` - Why, What Changes, Capabilities, Impact
+- `openspec/changes/add-login-button/proposal.md` - Por qué, Qué Cambia, Capacidades, Impacto
 
-Use `openspec instructions proposal --change add-login-button` to get the exact template and guidance.
+Usar `openspec instructions proposal --change add-login-button` para obtener la plantilla exacta y las guías.
 
-### Phase 3: Write spec deltas
+### Fase 3: Escribir los deltas de specs
 
-For each capability declared in the proposal:
+Para cada capacidad declarada en la propuesta:
 
-- Create `openspec/changes/add-login-button/specs/<capability>/spec.md`
-- Use the delta format:
+- Crear `openspec/changes/add-login-button/specs/<capability>/spec.md`
+- Usar el formato de delta:
   - `## ADDED Requirements`
   - `## MODIFIED Requirements`
   - `## REMOVED Requirements`
 
-Use `openspec instructions proposal --change add-login-button` for the template.
+Usar `openspec instructions proposal --change add-login-button` para la plantilla.
 
-### Phase 4: Technical design (optional)
+### Fase 4: Diseño técnico (opcional)
 
-Write `openspec/changes/add-login-button/design.md` when the implementation approach is non-obvious.
+Escribir `openspec/changes/add-login-button/design.md` cuando el enfoque de implementación no sea obvio.
 
-### Phase 5: Tasks
+### Fase 5: Tareas
 
-Write `openspec/changes/add-login-button/tasks.md` as a checklist:
+Escribir `openspec/changes/add-login-button/tasks.md` como checklist:
 
 ```markdown
-## 1. Database
-- [ ] 1.1 Add column
-- [ ] 1.2 Create migration
+## 1. Base de datos
+- [ ] 1.1 Agregar columna
+- [ ] 1.2 Crear migración
 
 ## 2. Backend
-- [ ] 2.1 Update endpoint
+- [ ] 2.1 Actualizar endpoint
 
 ## 3. Frontend
-- [ ] 3.1 Update component
+- [ ] 3.1 Actualizar componente
 ```
 
-### Phase 6: Validate
+### Fase 6: Validar
 
 ```bash
 openspec validate add-login-button
@@ -129,7 +129,7 @@ openspec status --change add-login-button
 openspec show add-login-button
 ```
 
-## Helper scripts relacionados
+## Scripts auxiliares relacionados
 
 | Skill / Script | Uso |
 |---|---|
@@ -137,71 +137,71 @@ openspec show add-login-button
 | `architecture-designer` | Diseña la arquitectura que luego se documenta con OpenSpec. |
 | `tech-docs/scripts/generate-adr.sh` | Genera ADRs para decisiones arquitectónicas que afectan el spec. |
 
-### Phase 7: Implement
+### Fase 7: Implementar
 
-Execute tasks one by one. Mark tasks complete as you go. Run tests/lint/build after each task.
+Ejecutar las tareas una por una. Marcar las tareas como completadas a medida que se avanza. Correr tests/lint/build después de cada tarea.
 
-### Phase 8: Archive
+### Fase 8: Archivar
 
 ```bash
 openspec archive add-login-button --yes
 ```
 
-This merges the delta specs into `openspec/specs/` and moves the change to `openspec/changes/archive/`.
+Esto fusiona los specs delta en `openspec/specs/` y mueve el cambio a `openspec/changes/archive/`.
 
-## Integration with agent-workflow
+## Integración con agent-workflow
 
-Combine with `agent-workflow`:
+Combinar con `agent-workflow`:
 
-1. `agent-workflow` Phase 1 (Design Gate) becomes writing the OpenSpec proposal and deltas.
-2. `agent-workflow` Phase 2 (Implementation Plan) becomes the OpenSpec `tasks.md`.
-3. `agent-workflow` Phase 3 (TDD) executes the tasks.
-4. `agent-workflow` Phase 4 (Code Review) reviews the implementation.
-5. `openspec archive` finalizes the change.
+1. La Fase 1 de `agent-workflow` (Design Gate) se convierte en escribir la propuesta y los deltas de OpenSpec.
+2. La Fase 2 de `agent-workflow` (Implementation Plan) se convierte en el `tasks.md` de OpenSpec.
+3. La Fase 3 de `agent-workflow` (TDD) ejecuta las tareas.
+4. La Fase 4 de `agent-workflow` (Code Review) revisa la implementación.
+5. `openspec archive` finaliza el cambio.
 
-## Helper commands
+## Comandos auxiliares
 
 ```bash
-# Check current state
+# Ver el estado actual
 openspec list
 openspec list --specs
 openspec status --change <change-name>
 
-# Get instructions for the next artifact
+# Obtener instrucciones para el próximo artefacto
 openspec instructions proposal --change <change-name>
 openspec instructions apply --change <change-name>
 openspec instructions archive --change <change-name>
 
-# Validate and view
+# Validar y ver
 openspec validate <change-name>
 openspec show <change-name>
 
-# Create and archive changes
+# Crear y archivar cambios
 openspec new change <change-name>
 openspec archive <change-name> --yes
 ```
 
-## Anti-patterns
+## Anti-patrones
 
-- Creating `tasks.md` before `proposal.md` and spec deltas
-- Listing capabilities in the proposal but not writing the corresponding delta specs
-- Writing implementation details in `proposal.md` instead of `design.md`
-- Skipping `openspec validate`
-- Archiving without all tasks complete
-- Using OpenSpec as a todo list for trivial changes
+- Crear `tasks.md` antes que `proposal.md` y los deltas de specs
+- Listar capacidades en la propuesta pero no escribir los specs delta correspondientes
+- Escribir detalles de implementación en `proposal.md` en vez de `design.md`
+- Omitir `openspec validate`
+- Archivar sin tener todas las tareas completas
+- Usar OpenSpec como lista de tareas para cambios triviales
 
-## Best practices
+## Buenas prácticas
 
-- Keep proposals concise (1-2 pages).
-- Every capability must map to a real spec file.
-- Use `### Requirement: <name>` and `#### Scenario: <name>` format in specs.
-- Use SHALL/MUST in requirement text.
-- Run `openspec validate` before applying or archiving.
-- Update `CHANGELOG.md` after archiving.
+- Mantener las propuestas concisas (1-2 páginas).
+- Cada capacidad debe mapear a un archivo de spec real.
+- Usar el formato `### Requirement: <name>` y `#### Scenario: <name>` en los specs.
+- Usar SHALL/MUST en el texto de los requirements.
+- Correr `openspec validate` antes de aplicar o archivar.
+- Actualizar `CHANGELOG.md` después de archivar.
 
-## Notes
+## Notas
 
-- OpenSpec does not replace `AGENTS.md`. It adds a structured spec layer.
-- The CLI emits anonymous telemetry by default. Set `OPENSPEC_TELEMETRY=0` to disable.
-- OpenSpec is not an MCP server; this skill uses the CLI directly.
-- For projects that do not use OpenSpec, fall back to `.knowledge/specs/`, `.knowledge/plans/`, and `agent-workflow`.
+- OpenSpec no reemplaza a `AGENTS.md`. Agrega una capa de specs estructurados.
+- El CLI emite telemetría anónima por defecto. Poner `OPENSPEC_TELEMETRY=0` para desactivarla.
+- OpenSpec no es un servidor MCP; esta skill usa el CLI directamente.
+- Para proyectos que no usan OpenSpec, recurrir a `.knowledge/specs/`, `.knowledge/plans/` y `agent-workflow`.

@@ -1,196 +1,196 @@
 ---
 name: git-workflow-and-versioning
-description: Structures git workflow practices. Use when making any code change. Use when committing, branching, resolving conflicts, or when you need to organize work across multiple parallel streams. Use when cutting a release, choosing a semantic version bump, tagging, or writing a changelog.
+description: "Estructura las prácticas de workflow de git. Usar al hacer cualquier cambio de código. Usar al commitear, crear ramas, resolver conflictos, o cuando necesites organizar el trabajo en múltiples streams paralelos. Usar al cortar un release, elegir un bump de versionado semántico, taguear, o escribir un changelog."
 ---
 
-# Git Workflow and Versioning
+# Workflow de Git y Versionado
 
-## Overview
+## Resumen
 
-Git is your safety net. Treat commits as save points, branches as sandboxes, and history as documentation. With AI agents generating code at high speed, disciplined version control is the mechanism that keeps changes manageable, reviewable, and reversible.
+Git es tu red de seguridad. Tratá los commits como puntos de guardado, las ramas como sandboxes y el historial como documentación. Con agentes de IA generando código a alta velocidad, el control de versiones disciplinado es el mecanismo que mantiene los cambios manejables, revisables y reversibles.
 
-## When to Use
+## Cuándo usar
 
-Always. Every code change flows through git.
+Siempre. Todo cambio de código fluye por git.
 
-## Core Principles
+## Principios centrales
 
-### Trunk-Based Development (Recommended)
+### Trunk-Based Development (Recomendado)
 
-Keep `main` always deployable. Work in short-lived feature branches that merge back within 1-3 days. Long-lived development branches are hidden costs - they diverge, create merge conflicts, and delay integration. DORA research consistently shows trunk-based development correlates with high-performing engineering teams.
+Mantener `main` siempre desplegable. Trabajar en feature branches de vida corta que se mergean dentro de 1-3 días. Las ramas de desarrollo de larga vida son costos ocultos: divergen, crean conflictos de merge y retrasan la integración. La investigación DORA muestra consistentemente que el trunk-based development se correlaciona con equipos de ingeniería de alto rendimiento.
 
 ```
-main ──●──●──●──●──●──●──●──●──●──  (always deployable)
+main ──●──●──●──●──●──●──●──●──●──  (siempre desplegable)
         ╲      ╱  ╲    ╱
-         ●──●─╱    ●──╱    ← short-lived feature branches (1-3 days)
+         ●──●─╱    ●──╱    ← feature branches de vida corta (1-3 días)
 ```
 
-This is the recommended default. Teams using gitflow or long-lived branches can adapt the principles (atomic commits, small changes, descriptive messages) to their branching model - the commit discipline matters more than the specific branching strategy.
+Este es el default recomendado. Los equipos que usan gitflow o ramas de larga vida pueden adaptar los principios (commits atómicos, cambios pequeños, mensajes descriptivos) a su modelo de ramas: la disciplina de commit importa más que la estrategia específica de ramas.
 
-- **Dev branches are costs.** Every day a branch lives, it accumulates merge risk.
-- **Release branches are acceptable.** When you need to stabilize a release while main moves forward.
-- **Feature flags > long branches.** Prefer deploying incomplete work behind flags rather than keeping it on a branch for weeks.
+- **Las dev branches son costos.** Cada día que vive una rama, acumula riesgo de merge.
+- **Las release branches son aceptables.** Cuando necesitás estabilizar un release mientras main avanza.
+- **Feature flags > ramas largas.** Preferir desplegar trabajo incompleto detrás de flags antes que mantenerlo en una rama por semanas.
 
-### 1. Commit Early, Commit Often
+### 1. Commitear temprano, commitear seguido
 
-Each successful increment gets its own commit. Don't accumulate large uncommitted changes.
-
-```
-Work pattern:
-  Implement slice → Test → Verify → Commit → Next slice
-
-Not this:
-  Implement everything → Hope it works → Giant commit
-```
-
-Commits are save points. If the next change breaks something, you can revert to the last known-good state instantly.
-
-### 2. Atomic Commits
-
-Each commit does one logical thing:
+Cada incremento exitoso tiene su propio commit. No acumular cambios grandes sin commitear.
 
 ```
-# Good: Each commit is self-contained
+Patrón de trabajo:
+  Implementar slice → Test → Verificar → Commit → Siguiente slice
+
+No así:
+  Implementar todo → Esperar que funcione → Commit gigante
+```
+
+Los commits son puntos de guardado. Si el siguiente cambio rompe algo, podés revertir al último estado conocido-bueno al instante.
+
+### 2. Commits atómicos
+
+Cada commit hace una sola cosa lógica:
+
+```
+# Bueno: Cada commit es autocontenido
 git log --oneline
 a1b2c3d Add task creation endpoint with validation
 d4e5f6g Add task creation form component
 h7i8j9k Connect form to API and add loading state
 m1n2o3p Add task creation tests (unit + integration)
 
-# Bad: Everything mixed together
+# Malo: Todo mezclado
 git log --oneline
 x1y2z3a Add task feature, fix sidebar, update deps, refactor utils
 ```
 
-### 3. Descriptive Messages
+### 3. Mensajes descriptivos
 
-Commit messages explain the *why*, not just the *what*:
+Los mensajes de commit explican el *por qué*, no solo el *qué*:
 
 ```
-# Good: Explains intent
+# Bueno: Explica la intención
 feat: add email validation to registration endpoint
 
 Prevents invalid email formats from reaching the database.
 Uses Zod schema validation at the route handler level,
 consistent with existing validation patterns in auth.ts.
 
-# Bad: Describes what's obvious from the diff
+# Malo: Describe lo obvio del diff
 update auth.ts
 ```
 
-**Format:**
+**Formato:**
 ```
-<type>: <short description>
+<type>: <descripción corta>
 
-<optional body explaining why, not what>
+<cuerpo opcional explicando el por qué, no el qué>
 ```
 
-**Types:**
-- `feat` - New feature
-- `fix` - Bug fix
-- `refactor` - Code change that neither fixes a bug nor adds a feature
-- `test` - Adding or updating tests
-- `docs` - Documentation only
-- `chore` - Tooling, dependencies, config
+**Tipos:**
+- `feat` - Nueva feature
+- `fix` - Arreglo de bug
+- `refactor` - Cambio de código que ni arregla un bug ni agrega una feature
+- `test` - Agregar o actualizar tests
+- `docs` - Solo documentación
+- `chore` - Tooling, dependencias, config
 
-### 4. Keep Concerns Separate
+### 4. Mantener las preocupaciones separadas
 
-Don't combine formatting changes with behavior changes. Don't combine refactors with features. Each type of change should be a separate commit - and ideally a separate PR:
+No combinar cambios de formato con cambios de comportamiento. No combinar refactors con features. Cada tipo de cambio debería ser un commit separado, e idealmente un PR separado:
 
 ```
-# Good: Separate concerns
+# Bueno: Preocupaciones separadas
 git commit -m "refactor: extract validation logic to shared utility"
 git commit -m "feat: add phone number validation to registration"
 
-# Bad: Mixed concerns
+# Malo: Preocupaciones mezcladas
 git commit -m "refactor validation and add phone number field"
 ```
 
-**Separate refactoring from feature work.** A refactoring change and a feature change are two different changes - submit them separately. This makes each change easier to review, revert, and understand in history. Small cleanups (renaming a variable) can be included in a feature commit at reviewer discretion.
+**Separar el refactoring del trabajo de feature.** Un cambio de refactoring y un cambio de feature son dos cambios diferentes: enviarlos por separado. Esto hace que cada cambio sea más fácil de revisar, revertir y entender en el historial. Los cleanups pequeños (renombrar una variable) se pueden incluir en un commit de feature a criterio del reviewer.
 
-### 5. Size Your Changes
+### 5. Dimensionar tus cambios
 
-Target ~100 lines per commit/PR. Changes over ~1000 lines should be split. See the splitting strategies in `code-review-and-quality` for how to break down large changes.
-
-```
-~100 lines  → Easy to review, easy to revert
-~300 lines  → Acceptable for a single logical change
-~1000 lines → Split into smaller changes
-```
-
-## Branching Strategy
-
-### Feature Branches
+Apuntar a ~100 líneas por commit/PR. Los cambios de más de ~1000 líneas deberían dividirse. Ver las estrategias de división en `code-review-and-quality` para cómo descomponer cambios grandes.
 
 ```
-main (always deployable)
+~100 líneas  → Fácil de revisar, fácil de revertir
+~300 líneas  → Aceptable para un único cambio lógico
+~1000 líneas → Dividir en cambios más chicos
+```
+
+## Estrategia de ramas
+
+### Feature branches
+
+```
+main (siempre desplegable)
   │
-  ├── feature/task-creation    ← One feature per branch
-  ├── feature/user-settings    ← Parallel work
-  └── fix/duplicate-tasks      ← Bug fixes
+  ├── feature/task-creation    ← Una feature por rama
+  ├── feature/user-settings    ← Trabajo en paralelo
+  └── fix/duplicate-tasks      ← Arreglos de bugs
 ```
 
-- Branch from `main` (or the team's default branch)
-- Keep branches short-lived (merge within 1-3 days) - long-lived branches are hidden costs
-- Delete branches after merge
-- Prefer feature flags over long-lived branches for incomplete features
+- Crear la rama desde `main` (o la rama default del equipo)
+- Mantener las ramas de vida corta (mergear dentro de 1-3 días) - las ramas de larga vida son costos ocultos
+- Borrar las ramas después del merge
+- Preferir feature flags sobre ramas de larga vida para features incompletas
 
-### Branch Naming
+### Nombres de ramas
 
 ```
-feature/<short-description>   → feature/task-creation
-fix/<short-description>       → fix/duplicate-tasks
-chore/<short-description>     → chore/update-deps
-refactor/<short-description>  → refactor/auth-module
+feature/<descripción-corta>   → feature/task-creation
+fix/<descripción-corta>       → fix/duplicate-tasks
+chore/<descripción-corta>     → chore/update-deps
+refactor/<descripción-corta>  → refactor/auth-module
 ```
 
-## Working with Worktrees
+## Trabajar con worktrees
 
-For parallel AI agent work, use git worktrees to run multiple branches simultaneously:
+Para trabajo de agentes de IA en paralelo, usar git worktrees para correr múltiples ramas simultáneamente:
 
 ```bash
-# Create a worktree for a feature branch
+# Crear un worktree para una feature branch
 git worktree add ../project-feature-a feature/task-creation
 git worktree add ../project-feature-b feature/user-settings
 
-# Each worktree is a separate directory with its own branch
-# Agents can work in parallel without interfering
+# Cada worktree es un directorio separado con su propia rama
+# Los agentes pueden trabajar en paralelo sin interferirse
 ls ../
-  project/              ← main branch
-  project-feature-a/    ← task-creation branch
-  project-feature-b/    ← user-settings branch
+  project/              ← rama main
+  project-feature-a/    ← rama task-creation
+  project-feature-b/    ← rama user-settings
 
-# When done, merge and clean up
+# Cuando terminás, mergear y limpiar
 git worktree remove ../project-feature-a
 ```
 
-Benefits:
-- Multiple agents can work on different features simultaneously
-- No branch switching needed (each directory has its own branch)
-- If one experiment fails, delete the worktree - nothing is lost
-- Changes are isolated until explicitly merged
+Beneficios:
+- Múltiples agentes pueden trabajar en diferentes features simultáneamente
+- No hace falta cambiar de rama (cada directorio tiene su propia rama)
+- Si un experimento falla, borrar el worktree - nada se pierde
+- Los cambios quedan aislados hasta que se mergean explícitamente
 
-## The Save Point Pattern
+## El patrón de punto de guardado
 
 ```
-Agent starts work
+El agente empieza el trabajo
     │
-    ├── Makes a change
-    │   ├── Test passes? → Commit → Continue
-    │   └── Test fails? → Revert to last commit → Investigate
+    ├── Hace un cambio
+    │   ├── ¿Test pasa? → Commit → Continuar
+    │   └── ¿Test falla? → Revertir al último commit → Investigar
     │
-    ├── Makes another change
-    │   ├── Test passes? → Commit → Continue
-    │   └── Test fails? → Revert to last commit → Investigate
+    ├── Hace otro cambio
+    │   ├── ¿Test pasa? → Commit → Continuar
+    │   └── ¿Test falla? → Revertir al último commit → Investigar
     │
-    └── Feature complete → All commits form a clean history
+    └── Feature completa → Todos los commits forman un historial limpio
 ```
 
-This pattern means you never lose more than one increment of work. If an agent goes off the rails, `git reset --hard HEAD` takes you back to the last successful state.
+Este patrón significa que nunca perdés más de un incremento de trabajo. Si un agente se va de las manos, `git reset --hard HEAD` te devuelve al último estado exitoso.
 
-## Change Summaries
+## Resúmenes de cambio
 
-After any modification, provide a structured summary. This makes review easier, documents scope discipline, and surfaces unintended changes:
+Después de cualquier modificación, proveer un resumen estructurado. Esto facilita la revisión, documenta la disciplina de alcance y expone cambios no intencionados:
 
 ```
 CHANGES MADE:
@@ -206,33 +206,33 @@ POTENTIAL CONCERNS:
 - Added zod as a dependency (72KB gzipped) - already in package.json
 ```
 
-This pattern catches wrong assumptions early and gives reviewers a clear map of the change. The "DIDN'T TOUCH" section is especially important - it shows you exercised scope discipline and didn't go on an unsolicited renovation.
+Este patrón detecta supuestos incorrectos temprano y les da a los reviewers un mapa claro del cambio. La sección "DIDN'T TOUCH" es especialmente importante: muestra que ejercitaste disciplina de alcance y no fuiste en una renovación no solicitada.
 
-## Pre-Commit Hygiene
+## Higiene previa al commit
 
-Before every commit:
+Antes de cada commit:
 
 ```bash
-# 1. Check what you're about to commit
+# 1. Revisar qué estás por commitear
 git diff --staged
 
-# 2. Ensure no secrets
+# 2. Asegurar que no haya secrets
 git diff --staged | grep -i "password\|secret\|api_key\|token"
 
-# 3. Run tests
+# 3. Correr tests
 npm test
 
-# 4. Run linting
+# 4. Correr linting
 npm run lint
 
-# 5. Run type checking
+# 5. Correr type checking
 npx tsc --noEmit
 ```
 
-Automate this with git hooks:
+Automatizar esto con git hooks:
 
 ```json
-// package.json (using lint-staged + husky)
+// package.json (usando lint-staged + husky)
 {
   "lint-staged": {
     "*.{ts,tsx}": ["eslint --fix", "prettier --write"],
@@ -241,62 +241,62 @@ Automate this with git hooks:
 }
 ```
 
-## Handling Generated Files
+## Manejo de archivos generados
 
-- **Commit generated files** only if the project expects them (e.g., `package-lock.json`, Prisma migrations)
-- **Don't commit** build output (`dist/`, `.next/`), environment files (`.env`), or IDE config (`.vscode/settings.json` unless shared)
-- **Have a `.gitignore`** that covers: `node_modules/`, `dist/`, `.env`, `.env.local`, `*.pem`
+- **Commitear archivos generados** solo si el proyecto los espera (ej.: `package-lock.json`, migraciones de Prisma)
+- **No commitear** salida de build (`dist/`, `.next/`), archivos de entorno (`.env`) o config de IDE (`.vscode/settings.json` salvo que sea compartida)
+- **Tener un `.gitignore`** que cubra: `node_modules/`, `dist/`, `.env`, `.env.local`, `*.pem`
 
-## Using Git for Debugging
+## Usar git para debugging
 
 ```bash
-# Find which commit introduced a bug
+# Encontrar qué commit introdujo un bug
 git bisect start
 git bisect bad HEAD
 git bisect good <known-good-commit>
-# Git checkouts midpoints; run your test at each to narrow down
+# Git checkout puntos medios; correr tu test en cada uno para acotar
 
-# View what changed recently
+# Ver qué cambió recientemente
 git log --oneline -20
 git diff HEAD~5..HEAD -- src/
 
-# Find who last changed a specific line
+# Encontrar quién cambió por última vez una línea específica
 git blame src/services/task.ts
 
-# Search commit messages for a keyword
+# Buscar mensajes de commit por keyword
 git log --grep="validation" --oneline
 ```
 
-## Release & Versioning
+## Release & versionado
 
-Commits are how *you* track change; a **version** is how your *consumers* track it. The moment anything else depends on your code - another team, a published package, a deployed client - "latest on main" stops being a sufficient answer to "what am I running, and is it safe to upgrade?" A version number and a changelog are the contract that answers it.
+Los commits son cómo *vos* trackeás el cambio; una **versión** es cómo *tus consumidores* lo trackean. En el momento en que algo más depende de tu código (otro equipo, un paquete publicado, un cliente desplegado), "latest on main" deja de ser una respuesta suficiente a "¿qué estoy corriendo, y es seguro actualizar?" Un número de versión y un changelog son el contrato que la responde.
 
-### Semantic Versioning
+### Versionado semántico
 
-For anything with consumers, version `MAJOR.MINOR.PATCH` and let the number carry meaning:
+Para cualquier cosa con consumidores, versionar `MAJOR.MINOR.PATCH` y dejar que el número tenga significado:
 
 ```
-  MAJOR  breaking change - consumers must change their code to upgrade
-  MINOR  new functionality, backward-compatible - safe to upgrade
-  PATCH  bug fix, backward-compatible - safe to upgrade
+  MAJOR  cambio que rompe - los consumidores deben cambiar su código para actualizar
+  MINOR  nueva funcionalidad, retrocompatible - seguro de actualizar
+  PATCH  arreglo de bug, retrocompatible - seguro de actualizar
 ```
 
-The number is a promise, so make the code match it. A "patch" that changes behavior consumers relied on is a major change wearing a disguise (Hyrum's Law - see the `api-and-interface-design` skill). When unsure whether a change is breaking, assume it is; a surprise major is far cheaper than a broken consumer.
+El número es una promesa, así que hacé que el código coincida con él. Un "patch" que cambia un comportamiento del que dependían los consumidores es un cambio major disfrazado (Ley de Hyrum - ver la skill `api-and-interface-design`). Cuando no estés seguro de si un cambio rompe algo, asumí que sí; un major sorpresa es mucho más barato que un consumidor roto.
 
-### Tag the release, and let the tag be the source of truth
+### Taguear el release, y dejar que el tag sea la fuente de verdad
 
-A release is an immutable point in history, not a moving branch. Tag it so it can always be reproduced:
+Un release es un punto inmutable en la historia, no una rama en movimiento. Taguearlo para que siempre pueda reproducirse:
 
 ```bash
 git tag -a v1.4.0 -m "Release 1.4.0"
 git push origin v1.4.0
 ```
 
-Derive the version from the tag rather than hand-editing it in scattered files, so the artifact, the tag, and the changelog can never disagree.
+Derivar la versión del tag en vez de editarla a mano en archivos dispersos, para que el artefacto, el tag y el changelog nunca puedan discrepar.
 
-### Keep a changelog written for humans
+### Mantener un changelog escrito para humanos
 
-A changelog is not `git log`. It's the curated, consumer-facing answer to "what changed and do I care?" - grouped by `Added / Changed / Fixed / Deprecated / Removed / Security`, newest on top, every entry phrased around user impact, not internal mechanics.
+Un changelog no es `git log`. Es la respuesta curada, orientada al consumidor, a "¿qué cambió y me importa?" - agrupada por `Added / Changed / Fixed / Deprecated / Removed / Security`, con lo más nuevo arriba, y cada entrada redactada alrededor del impacto para el usuario, no de la mecánica interna.
 
 ```markdown
 ## [1.4.0] - 2025-06-12
@@ -308,48 +308,48 @@ A changelog is not `git log`. It's the curated, consumer-facing answer to "what 
 - `GET /v1/tasks/all` - use the paginated `GET /v1/tasks` (removal in 2.0)
 ```
 
-Write the entry in the same change that makes the change, while the impact is fresh - not reconstructed from commit archaeology at release time. Breaking changes get a migration note and a deprecation window (follow the `deprecation-and-migration` skill); shipping the actual release is the `shipping-and-launch` skill's job - this section is the versioning contract that feeds it.
+Escribir la entrada en el mismo cambio que hace el cambio, mientras el impacto está fresco - no reconstruida desde la arqueología de commits en el momento del release. Los cambios que rompen algo llevan una nota de migración y una ventana de deprecación (seguir la skill `deprecation-and-migration`); publicar el release real es trabajo de la skill `shipping-and-launch` - esta sección es el contrato de versionado que la alimenta.
 
-## Common Rationalizations
+## Racionalizaciones comunes
 
-| Rationalization | Reality |
+| Racionalización | Realidad |
 |---|---|
-| "I'll commit when the feature is done" | One giant commit is impossible to review, debug, or revert. Commit each slice. |
-| "The message doesn't matter" | Messages are documentation. Future you (and future agents) will need to understand what changed and why. |
-| "I'll squash it all later" | Squashing destroys the development narrative. Prefer clean incremental commits from the start. |
-| "Branches add overhead" | Short-lived branches are free and prevent conflicting work from colliding. Long-lived branches are the problem - merge within 1-3 days. |
-| "I'll split this change later" | Large changes are harder to review, riskier to deploy, and harder to revert. Split before submitting, not after. |
-| "I don't need a .gitignore" | Until `.env` with production secrets gets committed. Set it up immediately. |
-| "It's just a small fix, bump the patch" | Check what consumers can observe. A behavior change they relied on is a major, whatever the diff size. |
-| "The changelog is just the commit log" | Commits are for you; the changelog is for consumers, curated by impact. Generating one from raw commits buries what matters. |
-| "We'll write the changelog at release time" | By then the impact is reconstructed from memory and half of it is missing. Write the entry with the change. |
+| "Commitearé cuando la feature esté lista" | Un commit gigante es imposible de revisar, debuggear o revertir. Commitear cada slice. |
+| "El mensaje no importa" | Los mensajes son documentación. El futuro vos (y los futuros agentes) necesitarán entender qué cambió y por qué. |
+| "Lo squasheo todo después" | El squash destruye la narrativa de desarrollo. Preferir commits incrementales limpios desde el inicio. |
+| "Las ramas agregan overhead" | Las ramas de vida corta son gratis y previenen que el trabajo conflictivo colisione. Las de larga vida son el problema: mergear dentro de 1-3 días. |
+| "Dividiré este cambio después" | Los cambios grandes son más difíciles de revisar, más riesgosos de desplegar y más difíciles de revertir. Dividir antes de enviar, no después. |
+| "No necesito un .gitignore" | Hasta que un `.env` con secrets de producción se commitee. Configurarlo de inmediato. |
+| "Es solo un arreglo chico, bump al patch" | Revisá qué pueden observar los consumidores. Un cambio de comportamiento del que dependían es un major, sea cual sea el tamaño del diff. |
+| "El changelog es solo el log de commits" | Los commits son para vos; el changelog es para los consumidores, curado por impacto. Generar uno desde commits crudos entierra lo que importa. |
+| "Escribiremos el changelog en el release" | Para entonces el impacto se reconstruye desde la memoria y falta la mitad. Escribir la entrada con el cambio. |
 
-## Red Flags
+## Red flags
 
-- Large uncommitted changes accumulating
-- Commit messages like "fix", "update", "misc"
-- Formatting changes mixed with behavior changes
-- No `.gitignore` in the project
-- Committing `node_modules/`, `.env`, or build artifacts
-- Long-lived branches that diverge significantly from main
-- Force-pushing to shared branches
-- A breaking change shipped under a minor or patch version bump
-- A release with no tag, or a version number hand-edited out of sync with the tag
-- A user-facing release with no changelog entry, or a changelog that's just dumped commit messages
+- Cambios grandes sin commitear acumulándose
+- Mensajes de commit como "fix", "update", "misc"
+- Cambios de formato mezclados con cambios de comportamiento
+- Sin `.gitignore` en el proyecto
+- Commitear `node_modules/`, `.env` o artefactos de build
+- Ramas de larga vida que divergen significativamente de main
+- Force-push a ramas compartidas
+- Un cambio que rompe algo publicado bajo un bump de minor o patch
+- Un release sin tag, o un número de versión editado a mano fuera de sync con el tag
+- Un release orientado al usuario sin entrada de changelog, o un changelog que solo es mensajes de commit volcados
 
-## Verification
+## Verificación
 
-For every commit:
+Para cada commit:
 
-- [ ] Commit does one logical thing
-- [ ] Message explains the why, follows type conventions
-- [ ] Tests pass before committing
-- [ ] No secrets in the diff
-- [ ] No formatting-only changes mixed with behavior changes
-- [ ] `.gitignore` covers standard exclusions
+- [ ] El commit hace una sola cosa lógica
+- [ ] El mensaje explica el por qué, sigue las convenciones de tipo
+- [ ] Los tests pasan antes de commitear
+- [ ] Sin secrets en el diff
+- [ ] Sin cambios solo de formato mezclados con cambios de comportamiento
+- [ ] `.gitignore` cubre exclusiones estándar
 
-For every release (anything with consumers):
+Para cada release (cualquier cosa con consumidores):
 
-- [ ] The version bump matches the change: breaking → major, additive → minor, fix → patch
-- [ ] The release is tagged, and the version is derived from the tag, not hand-edited out of sync
-- [ ] The changelog has a curated, human-readable entry grouped by impact for this version
+- [ ] El bump de versión coincide con el cambio: rompe → major, aditivo → minor, arreglo → patch
+- [ ] El release está tagueado, y la versión se deriva del tag, no editada a mano fuera de sync
+- [ ] El changelog tiene una entrada curada y legible por humanos agrupada por impacto para esta versión

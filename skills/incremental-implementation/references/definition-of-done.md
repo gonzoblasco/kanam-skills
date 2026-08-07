@@ -1,67 +1,67 @@
 # Definition of Done
 
-A standing, project-wide bar that every change must clear before it counts as done. Unlike acceptance criteria, which vary per task and answer "did we build the right thing?", the Definition of Done is the same every time and answers "is this finished to our standard?". Use it as the final gate in `planning-and-task-breakdown`, `incremental-implementation`, and `shipping-and-launch`.
+Un estándar permanente a nivel de proyecto que todo cambio debe superar antes de contarse como terminado. A diferencia de los acceptance criteria, que varían por tarea y responden "¿construimos lo correcto?", el Definition of Done es el mismo siempre y responde "¿está terminado según nuestro estándar?". Usarlo como gate final en `planning-and-task-breakdown`, `incremental-implementation` y `shipping-and-launch`.
 
 ## Definition of Done vs. Acceptance Criteria
 
 | | Acceptance Criteria | Definition of Done |
 |---|---|---|
-| Scope | Specific to one task or spec | Applies to every increment |
-| Changes | Different for each item | Fixed and reused |
-| Answers | "Did we build *this thing*?" | "Is it *ready*?" |
-| Owner | Defined when planning the task | Defined once for the project |
-| Example | "User can reset password via email link" | "Tests pass, no regressions, docs updated" |
+| Alcance | Específico de una tarea o spec | Aplica a cada incremento |
+| Cambios | Diferente para cada ítem | Fijo y reutilizado |
+| Responde | "¿Construimos *esta cosa*?" | "¿Está *listo*?" |
+| Dueño | Definido al planificar la tarea | Definido una vez para el proyecto |
+| Ejemplo | "El usuario puede resetear la contraseña vía link de email" | "Los tests pasan, sin regresiones, docs actualizados" |
 
-The two are complementary. A task is done only when **its** acceptance criteria are met **and** the standing Definition of Done is satisfied. Skipping either leaves work that looks finished but is not.
+Ambos son complementarios. Una tarea está terminada solo cuando **sus** acceptance criteria se cumplen **y** el Definition of Done permanente se satisface. Omitir cualquiera de los dos deja trabajo que parece terminado pero no lo está.
 
-## The Standing Checklist
+## El checklist permanente
 
-Apply this to every change before declaring it done.
+Aplicarlo a cada cambio antes de declararlo terminado.
 
-### Correctness
-- [ ] All acceptance criteria for the task are met
-- [ ] Code runs and behaves as intended, verified at runtime, not just compiled or typechecked
-- [ ] New behavior is covered by tests that fail without the change and pass with it
-- [ ] Existing tests still pass; no regressions introduced
-- [ ] Edge cases and error paths are handled, not just the happy path
+### Corrección
+- [ ] Todos los acceptance criteria de la tarea se cumplen
+- [ ] El código corre y se comporta como se intentó, verificado en runtime, no solo compilado o con typecheck
+- [ ] El comportamiento nuevo está cubierto por tests que fallan sin el cambio y pasan con él
+- [ ] Los tests existentes siguen pasando; no se introdujeron regresiones
+- [ ] Los edge cases y los caminos de error están manejados, no solo el happy path
 
-### Quality
-- [ ] Code reveals intent through naming and structure; no comments needed to explain *what* it does
-- [ ] No duplicated business logic
-- [ ] No dead code, debug output, or commented-out blocks left behind
-- [ ] Changes are scoped to the task; no unrelated refactors snuck in
-- [ ] Linting and formatting pass
+### Calidad
+- [ ] El código revela la intención a través del naming y la estructura; no se necesitan comentarios para explicar *qué* hace
+- [ ] Sin lógica de negocio duplicada
+- [ ] Sin dead code, output de debug ni bloques comentados dejados atrás
+- [ ] Los cambios están acotados a la tarea; sin refactors no relacionados colados
+- [ ] Linting y formato pasan
 
-The depth behind these items lives in `code-review-and-quality` (the five-axis review) and `code-simplification` (reducing complexity without changing behavior).
+La profundidad detrás de estos ítems vive en `code-review-and-quality` (la review de cinco ejes) y `code-simplification` (reducir complejidad sin cambiar comportamiento).
 
-### Integration
-- [ ] Change works with the rest of the system, not just in isolation
-- [ ] Database migrations, config changes, and feature flags are accounted for
-- [ ] Backward compatibility considered for any public interface or API change
+### Integración
+- [ ] El cambio funciona con el resto del sistema, no solo de forma aislada
+- [ ] Las migraciones de base de datos, cambios de config y feature flags están contemplados
+- [ ] Se consideró la retrocompatibilidad para cualquier interfaz pública o cambio de API
 
-### Documentation
-- [ ] Public interfaces, APIs, and user-facing behavior are documented
-- [ ] Architectural decisions worth preserving are recorded (see `documentation-and-adrs`)
-- [ ] Documentation describes the current state in timeless language, not the change history
+### Documentación
+- [ ] Las interfaces públicas, APIs y el comportamiento orientado al usuario están documentados
+- [ ] Las decisiones arquitectónicas que valen la pena preservar están registradas (ver `documentation-and-adrs`)
+- [ ] La documentación describe el estado actual en lenguaje atemporal, no el historial de cambios
 
 ### Ship-readiness
-- [ ] Security implications reviewed for any untrusted input, auth, or data handling (see `security-and-hardening`)
-- [ ] Observability in place for new critical paths (logs, metrics, traces) (see `observability-and-instrumentation`)
-- [ ] Rollback path exists for anything risky (see `shipping-and-launch`)
-- [ ] The human has reviewed and approved before merge or deploy
+- [ ] Se revisaron las implicaciones de seguridad para cualquier input no confiable, auth o manejo de datos (ver `security-and-hardening`)
+- [ ] Hay observabilidad en su lugar para nuevos caminos críticos (logs, métricas, traces) (ver `observability-and-instrumentation`)
+- [ ] Existe un camino de rollback para cualquier cosa riesgosa (ver `shipping-and-launch`)
+- [ ] El humano revisó y aprobó antes del merge o deploy
 
-## How to Apply
+## Cómo aplicar
 
-- **Per task**: confirm the Correctness and Quality sections before checking the task off.
-- **Per feature**: confirm Integration and Documentation before considering the feature complete.
-- **Per release**: the full checklist is the floor; `shipping-and-launch` adds the deploy-specific gates on top.
+- **Por tarea**: confirmar las secciones de Corrección y Calidad antes de marcar la tarea.
+- **Por feature**: confirmar Integración y Documentación antes de considerar la feature completa.
+- **Por release**: el checklist completo es el piso; `shipping-and-launch` agrega los gates específicos de deploy encima.
 
-Tailor the list to the project once, then reuse it unchanged. A Definition of Done that is renegotiated every sprint is not a Definition of Done.
+Adaptar la lista al proyecto una vez, luego reutilizarla sin cambios. Un Definition of Done que se renegocia cada sprint no es un Definition of Done.
 
-## Red Flags
+## Red flags
 
-- "It's done, I just haven't run it yet": unverified work is not done.
-- "Tests pass" used as a synonym for done while docs, regressions, or runtime verification are skipped.
-- A different bar applied depending on deadline pressure.
-- Acceptance criteria treated as the whole bar, with no standing quality floor.
-- "Done" declared before human review on changes that need it.
+- "Está hecho, solo que todavía no lo corrí": el trabajo no verificado no está hecho.
+- "Los tests pasan" usado como sinónimo de hecho mientras se omiten docs, regresiones o verificación en runtime.
+- Un estándar distinto aplicado según la presión de plazos.
+- Los acceptance criteria tratados como el estándar completo, sin piso de calidad permanente.
+- "Hecho" declarado antes de la revisión humana en cambios que la necesitan.

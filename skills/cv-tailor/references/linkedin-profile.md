@@ -28,7 +28,7 @@ Reglas:
 - Usá keywords que busca un recruiter
 - Sin emojis (ocupan caracteres valiosos)
 
-### About Section
+### Sección About
 
 Es tu elevator pitch. 2-3 párrafos:
 
@@ -47,7 +47,7 @@ Most recently, [achievement with data]. Before that, [another achievement].
 Currently exploring [next step: roles/industries/problems].
 ```
 
-### Experience Section
+### Sección Experience
 
 Acá va la diferencia más grande con el CV:
 
@@ -60,14 +60,14 @@ Estrategia:
 - **Bullet 3 (opcional):** tecnología o metodología relevante
 - **Media:** agregá screenshots, demos, links a proyectos
 
-### Skills Section
+### Sección Skills
 
 - Listá 15-20 skills relevantes
 - Las top 3 skills deberían estar en tu headline
 - Pedí endorsements a colegas (el algoritmo pesa endorsements de conexiones fuertes)
 - Priorizá skills que aparecen en JDs que te interesan
 
-### Recommendations
+### Recomendaciones
 
 - Pedí 1-2 recomendaciones de ex-jefes o clientes
 - Especificá qué querés que destaquen (no "es buena persona", sino "lideró X proyecto y logró Y resultado")

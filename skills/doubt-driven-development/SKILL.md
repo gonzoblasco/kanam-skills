@@ -1,243 +1,244 @@
 ---
 name: doubt-driven-development
-description: Subjects every non-trivial decision to a fresh-context adversarial review before it stands. Use when correctness matters more than speed, when working in unfamiliar code, when stakes are high (production, security-sensitive logic, irreversible operations), or any time a confident output would be cheaper to verify now than to debug later.
+description: Somete toda decision no trivial a una revision adversarial con contexto fresco antes de que prevalezca. Usalo cuando la correccion importe mas que la velocidad, cuando trabajes en codigo desconocido, cuando haya mucho en juego (produccion, logica sensible a seguridad, operaciones irreversibles), o en cualquier momento en que un output confiado seria mas barato de verificar ahora que de depurar despues.
 ---
 
-# Doubt-Driven Development
+# Desarrollo Impulsado por la Duda
 
-## Overview
+## Resumen
 
-A confident answer is not a correct one. Long sessions accumulate context that quietly turns assumptions into "facts" without anyone noticing. Doubt-driven development is the discipline of materializing a fresh-context reviewer — biased to **disprove**, not approve — before any non-trivial output stands.
+Una respuesta confiada no es una respuesta correcta. Las sesiones largas acumulan contexto que silenciosamente convierte suposiciones en "hechos" sin que nadie lo note. El desarrollo impulsado por la duda es la disciplina de materializar un revisor con contexto fresco, sesgado a **refutar**, no a aprobar, antes de que prevalezca cualquier output no trivial.
 
-This is not `/review`. `/review` is a verdict on a finished artifact. This is an in-flight posture: non-trivial decisions get cross-examined while course-correction is still cheap.
+Esto no es `/review`. `/review` es un veredicto sobre un artefacto terminado. Esto es una postura en vuelo: las decisiones no triviales se someten a un contrainterrogatorio mientras la correccion del rumbo todavia es barata.
 
-## When to Use
+## Cuando Usarlo
 
-A decision is **non-trivial** when at least one of these is true:
+Una decision es **no trivial** cuando al menos una de estas cosas es verdad:
 
-- It introduces or modifies branching logic
-- It crosses a module or service boundary
-- It asserts a property the type system or compiler cannot verify (thread safety, idempotence, ordering, invariants)
-- Its correctness depends on context the future reader cannot see
-- Its blast radius is irreversible (production deploy, data migration, public API change)
+- Introduce o modifica logica de ramificacion
+- Cruza un limite de modulo o servicio
+- Afirma una propiedad que el type system o el compilador no pueden verificar (thread safety, idempotencia, ordenamiento, invariantes)
+- Su correccion depende de un contexto que el lector futuro no puede ver
+- Su radio de impacto es irreversible (despliegue a produccion, migracion de datos, cambio de API publica)
 
-Apply the skill when:
+Aplica la skill cuando:
 
-- About to make an architectural decision under uncertainty
-- About to commit non-trivial code
-- About to claim a non-obvious fact ("this is safe", "this scales", "this matches the spec")
-- Working in code you don't fully understand
+- Estes por tomar una decision arquitectonica bajo incertidumbre
+- Estes por commiteear codigo no trivial
+- Estes por afirmar un hecho no obvio ("esto es seguro", "esto escala", "esto coincide con el spec")
+- Trabajes en codigo que no entendes del todo
 
-**When NOT to use:**
+**Cuando NO usarla:**
 
-- Mechanical operations (renaming, formatting, file moves)
-- Following a clear, unambiguous user instruction
-- Reading or summarizing existing code
-- One-line changes with obvious correctness
-- Pure tooling operations (running tests, listing files)
-- The user has explicitly asked for speed over verification
+- Operaciones mecanicas (renombrar, formatear, mover archivos)
+- Seguir una instruccion clara e inequivoca del usuario
+- Leer o resumir codigo existente
+- Cambios de una linea con correccion obvia
+- Operaciones de puro tooling (ejecutar pruebas, listar archivos)
+- El usuario pidio explicitamente velocidad sobre verificacion
 
-If you doubt every keystroke, you ship nothing. The skill applies only to non-trivial decisions as defined above.
+Si dudas de cada pulsacion de tecla, no publicas nada. La skill aplica solo a decisiones no triviales como se definen arriba.
 
-## Loading Constraints
+## Restricciones de Carga
 
-This skill is designed for the **main-session orchestrator**, where Step 3 (DOUBT, detailed below) can spawn a fresh-context reviewer.
+Esta skill esta disenada para el **orquestador de la sesion principal**, donde el Paso 3 (DOUBT, detallado abajo) puede generar un revisor con contexto fresco.
 
-- **Do NOT add this skill to a persona's `skills:` frontmatter.** A persona that follows Step 3 would spawn another persona — the orchestration anti-pattern explicitly forbidden by `references/orchestration-patterns.md` ("personas do not invoke other personas").
-- **If you find yourself applying this skill from inside a subagent context** (where Claude Code prevents nested subagent spawn): the preferred path is to surface to the user that doubt-driven cannot run nested and let the main session handle it. As a last resort only, a degraded self-questioning fallback exists — rewrite ARTIFACT + CONTRACT as a fresh self-prompt with a hard mental separator from your prior reasoning, and walk Steps 1–5. This is **not fresh-context review** (you carry your own context with you), so flag the result as degraded and prefer escalation whenever the user is reachable.
+- **NO agregues esta skill al frontmatter `skills:` de una persona.** Una persona que siguiera el Paso 3 generaria otra persona: el anti-patron de orquestacion explicitamente prohibido por `references/orchestration-patterns.md` ("las personas no invocan otras personas").
+- **Si te encontras aplicando esta skill desde dentro de un contexto de subagente** (donde Claude Code impide el spawn de subagentes anidados): el camino preferido es senalar al usuario que doubt-driven no puede ejecutarse anidado y dejar que la sesion principal lo maneje. Solo como ultimo recurso, existe un fallback degradado de auto-cuestionamiento: reescribe ARTIFACT + CONTRACT como un auto-prompt fresco con un separador mental duro de tu razonamiento previo, y recorre los Pasos 1-5. Esto **no es una revision con contexto fresco** (cargas tu propio contexto contigo), asi que marca el resultado como degradado y prefiere la escalacion siempre que el usuario este alcanzable.
 
-## The Process
+## El Proceso
 
-Copy this checklist when applying the skill:
-
-```
-Doubt cycle:
-- [ ] Step 1: CLAIM — wrote the claim + why-it-matters
-- [ ] Step 2: EXTRACT — isolated artifact + contract, stripped reasoning
-- [ ] Step 3: DOUBT — invoked fresh-context reviewer with adversarial prompt
-- [ ] Step 4: RECONCILE — classified every finding against the artifact text
-- [ ] Step 5: STOP — met stop condition (trivial findings, 3 cycles, or user override)
-```
-
-### Step 1: CLAIM — Surface what stands
-
-Name the decision in two or three lines:
+Copia esta checklist cuando apliques la skill:
 
 ```
-CLAIM: "The new caching layer is thread-safe under the
-        read-heavy workload described in the spec."
-WHY THIS MATTERS: a race here corrupts user data and is
-                  hard to detect in QA.
+Ciclo de duda:
+- [ ] Paso 1: CLAIM - escribi la afirmacion + por que-importa
+- [ ] Paso 2: EXTRACT - aisla el artefacto + el contrato, sin el razonamiento
+- [ ] Paso 3: DOUBT - invoco un revisor con contexto fresco con prompt adversarial
+- [ ] Paso 4: RECONCILE - clasifique cada hallazgo contra el texto del artefacto
+- [ ] Paso 5: STOP - se cumplio la condicion de parada (hallazgos triviales, 3 ciclos o override del usuario)
 ```
 
-If you can't write the claim that compactly, you have a vibe, not a decision. Surface it before scrutinizing it.
+### Paso 1: CLAIM - Saca a la superficie lo que prevalece
 
-### Step 2: EXTRACT — Smallest reviewable unit
-
-A fresh-context reviewer needs the **artifact** and the **contract**, not the journey.
-
-- Code: the diff or the function — not the whole file
-- Decision: the proposal in 3–5 sentences plus the constraints it has to satisfy
-- Assertion: the claim plus the evidence that supposedly supports it (kept distinct from the Step 1 CLAIM block, which is the orchestrator's hypothesis under scrutiny)
-
-Strip your reasoning. If you hand over conclusions, you'll get back validation of your conclusions. The unit must be small enough that a reviewer can hold it in mind in one read — if it's a 500-line PR, decompose first.
-
-### Step 3: DOUBT — Invoke the fresh-context reviewer
-
-The reviewer's prompt **must be adversarial**. Framing decides the answer.
+Nombra la decision en dos o tres lineas:
 
 ```
-Adversarial review. Find what is wrong with this artifact.
-Assume the author is overconfident. Look for:
-- Unstated assumptions
-- Edge cases not handled
-- Hidden coupling or shared state
-- Ways the contract could be violated
-- Existing conventions this might break
-- Failure modes under unexpected input
-
-Do NOT validate. Do NOT summarize. Find issues, or state
-explicitly that you cannot find any after thorough examination.
-
-ARTIFACT: <paste artifact>
-CONTRACT: <paste contract>
+CLAIM: "La nueva capa de cache es thread-safe bajo la
+        carga de lectura intensiva descrita en el spec."
+POR QUE IMPORTA: una race aqui corrompe los datos del
+                 usuario y es dificil de detectar en QA.
 ```
 
-**Pass ARTIFACT + CONTRACT only. Do NOT pass the CLAIM.** Handing the reviewer your conclusion biases it toward agreement. The reviewer must independently determine whether the artifact satisfies the contract.
+Si no podes escribir la afirmacion de forma tan compacta, tenes una vibracion, no una decision. Sacala a la superficie antes de escudriñarla.
 
-In Claude Code, the role-based reviewers in `agents/` start with isolated context by design and are usable here — see `agents/` for the roster and per-domain match.
+### Paso 2: EXTRACT - La unidad revisable mas pequena
 
-**The adversarial prompt above takes precedence over the persona's default response shape.** Personas like `code-reviewer` are written to produce balanced verdicts with both strengths and weaknesses; doubt-driven needs issues-only output. Paste the adversarial prompt verbatim into the invocation so it overrides the persona's default. If a persona's response shape can't be overridden cleanly, fall back to a generic subagent with the adversarial prompt.
+Un revisor con contexto fresco necesita el **artefacto** y el **contrato**, no el viaje.
 
-#### Cross-model escalation
+- Codigo: el diff o la funcion, no el archivo entero
+- Decision: la propuesta en 3-5 oraciones mas las restricciones que tiene que satisfacer
+- Afirmacion: la afirmacion mas la evidencia que supuestamente la respalda (mantenida distinta del bloque CLAIM del Paso 1, que es la hipotesis del orquestador bajo escrutinio)
 
-A single-model reviewer shares blind spots with the original author — a colder, different-architecture model catches them. Doubt-driven is already opt-in for non-trivial decisions, so within that scope offering cross-model is part of the skill's value, not optional friction.
+Quita tu razonamiento. Si entregas conclusiones, te van a devolver la validacion de tus conclusiones. La unidad debe ser lo suficientemente pequena como para que un revisor la pueda sostener en mente en una lectura: si es un PR de 500 lineas, descompone primero.
 
-**Interactive sessions: always offer. Never silently skip.**
+### Paso 3: DOUBT - Invoca el revisor con contexto fresco
 
-**Step 1: Ask the user**
+El prompt del revisor **debe ser adversarial**. El encuadre decide la respuesta.
 
-After the single-model review in Step 3 above, but before RECONCILE, pause and ask:
+```
+Revision adversarial. Encontra que esta mal en este artefacto.
+Asumi que el autor esta demasiado confiado. Busca:
+- Suposiciones no declaradas
+- Casos borde no manejados
+- Acoplamiento oculto o estado compartido
+- Formas en que el contrato podria violarse
+- Convenciones existentes que esto podria romper
+- Modos de falla bajo entrada inesperada
 
-> *"Single-model review complete. Want a cross-model second opinion? Options: Gemini CLI, Codex CLI, manual external review (you paste it elsewhere), or skip."*
+NO valides. NO resumas. Encontra problemas, o declara
+explicitamente que no puedes encontrar ninguno despues de un
+examen exhaustivo.
 
-This question is mandatory in every interactive doubt cycle — even on artifacts that feel low-stakes. The user — not the agent — decides whether the cost is worth it. The agent's job is to surface the choice.
+ARTIFACT: <pega el artefacto>
+CONTRACT: <pega el contrato>
+```
 
-**Step 2: If the user picks a CLI — verify, then invoke**
+**Pasa SOLO ARTIFACT + CONTRACT. NO pases el CLAIM.** Entregarle al revisor tu conclusion lo sesga hacia el acuerdo. El revisor debe determinar independientemente si el artefacto satisface el contrato.
 
-1. Check the tool is in PATH (`which gemini`, `which codex`).
-2. Test it works (`gemini --version` or equivalent) before passing the full prompt — a stale or broken binary may pass `which` but fail on real input.
-3. Confirm the exact invocation with the user, including required flags, auth, and env vars (e.g., API keys). Implementations vary; never assume.
-4. Pass ARTIFACT + CONTRACT + the adversarial prompt **only**. No session context, no CLAIM.
-5. Mind shell escaping. If the artifact contains quotes, `$(...)`, or backticks, prefer stdin (`echo … | gemini`) or a heredoc over inline `-p "…"`. When in doubt, ask the user to confirm the invocation before running it.
-6. Take the output into Step 4 (RECONCILE).
+En Claude Code, los revisores basados en roles en `agents/` arrancan con contexto aislado por diseno y son usables aqui: ver `agents/` para el roster y el emparejamiento por dominio.
 
-**Never interpolate the artifact into a shell-quoted argument.** Code, markdown, and review prompts routinely contain backticks, `$(...)`, and quote characters that will either truncate the prompt or execute embedded shell. Write the full prompt to a file and pipe it through stdin.
+**El prompt adversarial de arriba tiene precedencia sobre la forma de respuesta default de la persona.** Personas como `code-reviewer` estan escritas para producir veredictos balanceados con tanto fortalezas como debilidades; doubt-driven necesita output de solo problemas. Pega el prompt adversarial verbatim en la invocacion para que sobreescriba el default de la persona. Si la forma de respuesta de una persona no se puede sobreescribir limpiamente, cae a un subagente generico con el prompt adversarial.
 
-Example shapes (verify flags against your installed tool — syntax differs across implementations and versions):
+#### Escalacion cross-model
+
+Un revisor de un solo modelo comparte puntos ciegos con el autor original: un modelo mas frio y de arquitectura diferente los detecta. Doubt-driven ya es opt-in para decisiones no triviales, asi que dentro de ese alcance, ofrecer cross-model es parte del valor de la skill, no friccion opcional.
+
+**Sesiones interactivas: ofrece siempre. Nunca te saltes silenciosamente.**
+
+**Paso 1: Pregunta al usuario**
+
+Despues de la revision de un solo modelo en el Paso 3 de arriba, pero antes de RECONCILE, pausa y pregunta:
+
+> *"Revision de un solo modelo completa. Queres una segunda opinion cross-model? Opciones: Gemini CLI, Codex CLI, revision externa manual (la pegas en otro lado), o saltear."*
+
+Esta pregunta es obligatoria en cada ciclo de duda interactivo, incluso en artefactos que se sientan de bajo riesgo. El usuario, no el agente, decide si el costo vale la pena. El trabajo del agente es sacar a la superficie la eleccion.
+
+**Paso 2: Si el usuario elige un CLI: verifica, luego invoca**
+
+1. Revisa que la herramienta este en PATH (`which gemini`, `which codex`).
+2. Prueba que funciona (`gemini --version` o equivalente) antes de pasar el prompt completo: un binario viejo o roto puede pasar el `which` pero fallar en la entrada real.
+3. Confirma la invocacion exacta con el usuario, incluidos los flags requeridos, el auth y las env vars (ej: API keys). Las implementaciones varian; nunca asumas.
+4. Pasa ARTIFACT + CONTRACT + el prompt adversarial **solamente**. Sin contexto de sesion, sin CLAIM.
+5. Ojo con el shell escaping. Si el artefacto contiene comillas, `$(...)` o backticks, prefiere stdin (`echo … | gemini`) o un heredoc sobre el `-p "…"` inline. Cuando tengas dudas, pide al usuario que confirme la invocacion antes de ejecutarla.
+6. Lleva el output al Paso 4 (RECONCILE).
+
+**Nunca interpoles el artefacto en un argumento entre comillas de shell.** El codigo, el markdown y los prompts de revision contienen rutinariamente backticks, `$(...)` y caracteres de comillas que o truncaran el prompt o ejecutaran shell embebido. Escribe el prompt completo en un archivo y pasalo por stdin.
+
+Formas de ejemplo (verifica los flags contra tu herramienta instalada: la sintaxis difiere entre implementaciones y versiones):
 
 ```bash
-# Write the adversarial prompt + ARTIFACT + CONTRACT to a temp file first.
-# Then pipe via stdin so shell metacharacters in the artifact stay inert.
+# Escribe primero el prompt adversarial + ARTIFACT + CONTRACT en un archivo temporal.
+# Luego pasalo por stdin para que los metacaracteres de shell en el artefacto queden inertes.
 
-# Codex (read-only sandbox keeps the CLI from writing to your workspace):
-codex exec --sandbox read-only -C <repo-path> - < /tmp/doubt-prompt.md
+# Codex (el sandbox de solo lectura evita que el CLI escriba en tu workspace):
+codex exec --sandbox read-only -C <ruta-del-repo> - < /tmp/doubt-prompt.md
 
-# Gemini ('--approval-mode plan' is read-only; '-p ""' triggers non-interactive
-# mode and the prompt is read from stdin):
+# Gemini ('--approval-mode plan' es de solo lectura; '-p ""' dispara el modo
+# no interactivo y el prompt se lee de stdin):
 gemini --approval-mode plan -p "" < /tmp/doubt-prompt.md
 ```
 
-A read-only sandbox is the load-bearing detail: a doubt artifact may itself contain instructions (intentional or accidental prompt injection) that the cross-model CLI would otherwise execute against your workspace.
+El sandbox de solo lectura es el detalle que sostiene la carga: un artefacto de duda puede contener el mismo instrucciones (inyeccion de prompt intencional o accidental) que el CLI cross-model ejecutaria de otro modo contra tu workspace.
 
-**Step 3: If the CLI is unavailable or fails**
+**Paso 3: Si el CLI no esta disponible o falla**
 
-Surface the failure explicitly. Offer: run it manually, try a different tool, or skip. Do not silently fall back to single-model — the user should know cross-model didn't happen.
+Saca a la superficie el fallo explicitamente. Ofrece: ejecutarlo manualmente, probar con otra herramienta o saltear. No caigas silenciosamente a un solo modelo: el usuario deberia saber que el cross-model no sucedio.
 
-**Step 4: If the user skips**
+**Paso 4: Si el usuario saltea**
 
-Acknowledge the skip in the output (*"Proceeding with single-model findings only"*) and continue to RECONCILE. Skipping is fine; silent skipping is not.
+Reconoce el salteo en el output (*"Continuando solo con los hallazgos de un solo modelo"*) y continua a RECONCILE. Saltear esta bien; saltear silenciosamente no lo esta.
 
-**Non-interactive contexts** (CI, `/loop`, autonomous-loop, scheduled runs):
+**Contextos no interactivos** (CI, `/loop`, loop autonomo, corridas programadas):
 
-- Cross-model is **skipped**, and the skip must be **announced** in the output: *"Cross-model skipped: non-interactive context."*
-- **Never invoke an external CLI without explicit user authorization** — this is a load-bearing safety property.
+- El cross-model se **saltea**, y el salteo debe **anunciarse** en el output: *"Cross-model omitido: contexto no interactivo."*
+- **Nunca invoques un CLI externo sin autorizacion explicita del usuario** - esta es una propiedad de seguridad que sostiene la carga.
 
-Cross-model adds cost, latency, and tool fragility. The agent surfaces the choice every cycle; the user decides whether this artifact warrants it.
+El cross-model agrega costo, latencia y fragilidad de herramientas. El agente saca a la superficie la eleccion cada ciclo; el usuario decide si este artefacto lo amerita.
 
-### Step 4: RECONCILE — Fold findings back
+### Paso 4: RECONCILE - Dobla los hallazgos de vuelta
 
-The reviewer's output is data, not verdict. **You are still the orchestrator.** Re-read the artifact text against each finding before classifying — rubber-stamping the reviewer is the same failure mode as ignoring it.
+El output del revisor son datos, no un veredicto. **Vos seguis siendo el orquestador.** Re-lee el texto del artefacto contra cada hallazgo antes de clasificar: sellar con goma el visto bueno del revisor es el mismo modo de falla que ignorarlo.
 
-For each finding, classify in this **precedence order** (first matching class wins):
+Para cada hallazgo, clasifica en este **orden de precedencia** (gana la primera clase que coincida):
 
-1. **Contract misread** — reviewer flagged something specifically because the CONTRACT you provided was unclear or incomplete. Fix the contract first, re-classify on the next cycle.
-2. **Valid + actionable** — real issue requiring a change to the artifact. Change it, re-loop.
-3. **Valid trade-off** — issue is real but cost of fixing exceeds cost of accepting. Document the trade-off explicitly so the user sees it.
-4. **Noise** — reviewer flagged something that's actually correct under context the reviewer didn't have. Note it, move on, and ask: would adding that context to the contract have prevented the false flag?
+1. **Lectura erronea del contrato** - el revisor marco algo especificamente porque el CONTRACT que diste era poco claro o incompleto. Arregla primero el contrato, re-clasifica en el proximo ciclo.
+2. **Valido + accionable** - problema real que requiere un cambio al artefacto. Cambialo, re-hace el loop.
+3. **Trade-off valido** - el problema es real pero el costo de arreglarlo supera el costo de aceptarlo. Documenta el trade-off explicitamente para que el usuario lo vea.
+4. **Ruido** - el revisor marco algo que en realidad es correcto bajo un contexto que el revisor no tenia. Anotalo, segui adelante y preguntate: agregar ese contexto al contrato habria prevenido el falso flag?
 
-A fresh reviewer can be wrong because it lacks context. Don't defer just because it's "fresh."
+Un revisor fresco puede estar equivocado porque le falta contexto. No difieras solo porque es "fresco".
 
-### Step 5: STOP — Bounded loop, not recursion
+### Paso 5: STOP - Loop acotado, no recursion
 
-Stop when:
+Detente cuando:
 
-- Next iteration returns only trivial or already-considered findings, **or**
-- 3 cycles completed (escalate to user, don't grind a fourth alone), **or**
-- User explicitly says "ship it"
+- La proxima iteracion devuelve solo hallazgos triviales o ya considerados, **o**
+- Se completaron 3 ciclos (escala al usuario, no muelas un cuarto solo), **o**
+- El usuario dice explicitamente "largalo"
 
-If after 3 cycles the reviewer still surfaces substantive issues, the artifact may not be ready. Surface this to the user — three unresolved cycles is information about the artifact, not a reason to keep looping.
+Si despues de 3 ciclos el revisor sigue sacando a la superficie problemas sustanciales, el artefacto puede no estar listo. Sacaselo a la superficie al usuario: tres ciclos sin resolver es informacion sobre el artefacto, no una razon para seguir en loop.
 
-If 3 cycles is "obviously insufficient" because the artifact is large: the artifact is too big — return to Step 2 and decompose. Do not lift the bound.
+Si 3 ciclos es "obviamente insuficiente" porque el artefacto es grande: el artefacto es demasiado grande: volve al Paso 2 y descompone. No levantes el limite.
 
-## Common Rationalizations
+## Racionalizaciones Comunes
 
-| Rationalization | Reality |
+| Racionalizacion | Realidad |
 |---|---|
-| "I'm confident, skip the doubt step" | Confidence correlates poorly with correctness on novel problems. Moments of certainty are exactly when blind spots hide. |
-| "Spawning a reviewer is expensive" | Debugging a wrong commit in production is more expensive. The check is bounded; the bug isn't. |
-| "The reviewer will just nitpick" | Only if unscoped. Constrain the prompt to "issues that would make this fail under the contract." |
-| "I'll do doubt at the end with `/review`" | `/review` is a final gate. Doubt-driven catches wrong directions early when course-correction is cheap. By PR time it's too late. |
-| "If I doubt every step I'll never ship" | The skill applies to non-trivial decisions, not every keystroke. Re-read "When NOT to Use." |
-| "Two opinions are always better than one" | Not when the second has less context and produces noise. Reconcile, don't defer. |
-| "The reviewer disagreed so I was wrong" | The reviewer lacks your context — disagreement is information, not verdict. Re-read the artifact, classify, then decide. |
-| "Cross-model is always better" | Cross-model catches blind spots a single model shares with itself, but it adds cost and tool fragility. Offer it every interactive doubt cycle — the user decides whether the artifact warrants it. The agent's job is to surface the choice, not to gate it. |
-| "User said yes once, so I can keep invoking the CLI" | Each invocation is its own authorization. The artifact, the prompt, and the flags change between calls — re-confirm the exact command with the user before every run. |
+| "Estoy confiado, salteame el paso de la duda" | La confianza correlaciona pobremente con la correccion en problemas novedosos. Los momentos de certeza son exactamente donde se esconden los puntos ciegos. |
+| "Generar un revisor es caro" | Depurar un commit equivocado en produccion es mas caro. El chequeo esta acotado; el bug no lo esta. |
+| "El revisor solo va a hacer nitpick" | Solo si no esta acotado. Limita el prompt a "problemas que harian fallar esto bajo el contrato". |
+| "Hare la duda al final con `/review`" | `/review` es una puerta final. Doubt-driven detecta direcciones equivocadas temprano, cuando la correccion del rumbo es barata. Para el momento del PR ya es tarde. |
+| "Si dudo de cada paso nunca publico" | La skill aplica a decisiones no triviales, no a cada pulsacion de tecla. Re-lee "Cuando NO usarla". |
+| "Dos opiniones siempre son mejores que una" | No cuando la segunda tiene menos contexto y produce ruido. Reconcilia, no difieras. |
+| "El revisor no estuvo de acuerdo, asi que yo estaba equivocado" | Al revisor le falta tu contexto: el desacuerdo es informacion, no veredicto. Re-lee el artefacto, clasifica y luego decide. |
+| "Cross-model siempre es mejor" | Cross-model detecta puntos ciegos que un solo modelo comparte consigo mismo, pero agrega costo y fragilidad de herramientas. Ofrecelo en cada ciclo de duda interactivo: el usuario decide si el artefacto lo amerita. El trabajo del agente es sacar a la superficie la eleccion, no gatearla. |
+| "El usuario dijo si una vez, asi que puedo seguir invocando el CLI" | Cada invocacion es su propia autorizacion. El artefacto, el prompt y los flags cambian entre llamadas: re-confirma el comando exacto con el usuario antes de cada ejecucion. |
 
-## Red Flags
+## Senales de Alerta
 
-- Spawning a fresh-context reviewer for a one-line rename or formatting change
-- Treating reviewer output as authoritative without re-reading the artifact text
-- Looping >3 cycles without escalating to the user
-- Prompting the reviewer with "is this good?" instead of "find issues"
-- Skipping doubt under time pressure on a high-stakes decision
-- Re-spawning fresh-context on an unchanged artifact (you'll get the same findings; you're stalling)
-- **Doubt theater (checkable signal)**: across 2 or more cycles where the reviewer surfaced substantive findings, zero findings were classified as actionable. You are validating, not doubting. Stop and escalate.
-- Doubting only after committing — that's `/review`, not doubt-driven development
-- Hardcoding an external CLI invocation without confirming with the user that the tool exists, is configured, and accepts that exact syntax
-- **Silently skipping cross-model in an interactive doubt cycle.** Even when not recommending it, the offer must be visible. Skipping is fine; silent skipping is not.
-- Falling back silently when an external CLI errors or is missing — surface the failure and let the user redirect
-- Stripping the contract from the reviewer's input
-- Passing the CLAIM to the reviewer (biases toward agreement)
+- Generar un revisor con contexto fresco para un rename de una linea o un cambio de formateo
+- Tratar el output del revisor como autoritativo sin re-leer el texto del artefacto
+- Loopear >3 ciclos sin escalar al usuario
+- Preguntarle al revisor "esto esta bien?" en lugar de "encontra problemas"
+- Saltearse la duda bajo presion de tiempo en una decision de alto riesgo
+- Re-generar contexto fresco sobre un artefacto sin cambios (vas a obtener los mismos hallazgos; estas dilatando)
+- **Teatro de la duda (senal comprobable)**: a traves de 2 o mas ciclos donde el revisor saco a la superficie hallazgos sustanciales, cero hallazgos fueron clasificados como accionables. Estas validando, no dudando. Detente y escala.
+- Dudar solo despues de commiteear: eso es `/review`, no desarrollo impulsado por la duda
+- Hardcodear una invocacion de CLI externo sin confirmar con el usuario que la herramienta existe, esta configurada y acepta esa sintaxis exacta
+- **Saltear silenciosamente el cross-model en un ciclo de duda interactivo.** Aun cuando no lo recomiendes, la oferta debe ser visible. Saltear esta bien; saltear silenciosamente no lo esta.
+- Caer silenciosamente cuando un CLI externo falla o falta: saca a la superficie el fallo y deja que el usuario redirija
+- Quitar el contrato de la entrada del revisor
+- Pasarle el CLAIM al revisor (sesga hacia el acuerdo)
 
-## Interaction with Other Skills
+## Interaccion con Otras Skills
 
-- **`code-review-and-quality` / `/review`**: complementary. `/review` is post-hoc PR verdict; doubt-driven is in-flight per-decision. Use both.
-- **`source-driven-development`**: SDD verifies *facts about frameworks* against official docs. Doubt-driven verifies *your reasoning about the artifact*. SDD checks the API exists; doubt-driven checks you used it correctly under the contract.
-- **`test-driven-development`**: TDD's RED step is doubt made concrete — a failing test is a disproof attempt. When TDD applies, that failing test *is* the doubt step for behavioral claims.
-- **`debugging-and-error-recovery`**: when the reviewer surfaces a real failure mode, drop into the debugging skill to localize and fix.
-- **Repo orchestration rules** (`references/orchestration-patterns.md`): this skill orchestrates from the main session. A persona calling another persona is anti-pattern B — see Loading Constraints above.
+- **`code-review-and-quality` / `/review`**: complementarias. `/review` es un veredicto de PR post-hoc; doubt-driven es por-decision en vuelo. Usa ambas.
+- **`source-driven-development`**: SDD verifica *hechos sobre frameworks* contra la documentacion oficial. Doubt-driven verifica *tu razonamiento sobre el artefacto*. SDD chequea que la API exista; doubt-driven chequea que la usaste correctamente bajo el contrato.
+- **`test-driven-development`**: el paso RED de TDD es la duda hecha concreta: un test que falla es un intento de refutacion. Cuando TDD aplica, ese test que falla *es* el paso de la duda para las afirmaciones de comportamiento.
+- **`debugging-and-error-recovery`**: cuando el revisor saca a la superficie un modo de falla real, entra a la skill de debugging para localizar y arreglar.
+- **Reglas de orquestacion del repo** (`references/orchestration-patterns.md`): esta skill orquesta desde la sesion principal. Una persona que llama a otra persona es el anti-patron B: ver Restricciones de Carga arriba.
 
-## Verification
+## Verificacion
 
-After applying doubt-driven development:
+Despues de aplicar el desarrollo impulsado por la duda:
 
-- [ ] Every non-trivial decision (per the definition above) was named explicitly as a CLAIM before standing
-- [ ] At least one fresh-context review per non-trivial artifact (a failing test produced by TDD's RED step satisfies this for behavioral claims, per Interaction with Other Skills)
-- [ ] The reviewer received ARTIFACT + CONTRACT — NOT the CLAIM, NOT your reasoning
-- [ ] The reviewer's prompt was adversarial ("find issues"), not validating ("is it good")
-- [ ] Findings were classified against the artifact text (not rubber-stamped) using the precedence: contract misread / actionable / trade-off / noise
-- [ ] A stop condition was met (trivial findings, 3 cycles, or user override)
-- [ ] In interactive mode, cross-model was **explicitly offered** to the user (regardless of artifact stakes) and the response was acknowledged in the output
-- [ ] In non-interactive mode, cross-model was skipped and the skip was announced
-- [ ] Any external CLI invocation was preceded by a PATH check, a working-binary test, syntax confirmation with the user, and explicit authorization to run
+- [ ] Cada decision no trivial (segun la definicion de arriba) fue nombrada explicitamente como un CLAIM antes de prevalecer
+- [ ] Al menos una revision con contexto fresco por artefacto no trivial (un test que falla producido por el paso RED de TDD satisface esto para las afirmaciones de comportamiento, segun Interaccion con Otras Skills)
+- [ ] El revisor recibio ARTIFACT + CONTRACT, NO el CLAIM, NO tu razonamiento
+- [ ] El prompt del revisor fue adversarial ("encontra problemas"), no validatorio ("esta bien")
+- [ ] Los hallazgos fueron clasificados contra el texto del artefacto (no sellados con goma) usando la precedencia: lectura erronea del contrato / accionable / trade-off / ruido
+- [ ] Se cumplio una condicion de parada (hallazgos triviales, 3 ciclos o override del usuario)
+- [ ] En modo interactivo, el cross-model fue **ofrecido explicitamente** al usuario (independientemente de lo que este en juego en el artefacto) y la respuesta fue reconocida en el output
+- [ ] En modo no interactivo, el cross-model fue omitido y el salteo fue anunciado
+- [ ] Cualquier invocacion de CLI externo fue precedida por un chequeo de PATH, una prueba del binario funcionando, confirmacion de sintaxis con el usuario y autorizacion explicita para ejecutar

@@ -1,3 +1,6 @@
 node_modules/
 .DS_Store
 *.log
+
+# Output del generador estatico - se regenera en CI
+web/public/

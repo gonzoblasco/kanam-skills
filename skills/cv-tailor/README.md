@@ -20,10 +20,10 @@ Es conversacional. Le pasás tu CV y la descripción del puesto.
 
 Hace 4 fases:
 
-### 1. Keyword Match Analysis
+### 1. Análisis de matching de keywords
 Extrae keywords del JD en 3 categorías (hard skills, soft skills, industry) y genera matriz de matching. Required coverage ≥ 80% es passing.
 
-### 2. STAR Rewriting
+### 2. Reescritura STAR
 Reescribe cada entrada de experiencia:
 
 | Elemento | Check |
@@ -33,7 +33,7 @@ Reescribe cada entrada de experiencia:
 | **A** Action | Acciones concretas |
 | **R** Result | Datos cuantificados |
 
-### 3. ATS Compatibility Check
+### 3. Verificación de compatibilidad ATS
 Verifica formato, layout, fuentes, estructura de secciones, densidad de keywords.
 
 ### 4. Output
@@ -45,7 +45,7 @@ Verifica formato, layout, fuentes, estructura de secciones, densidad de keywords
 
 | Archivo | Qué contiene |
 |---|---|
-| `references/star-method.md` | Guía STAR completa con action verbs y ejemplos before/after |
+| `references/star-method.md` | Guía STAR completa con verbos de acción y ejemplos antes/después |
 | `references/ats-guide.md` | Checklist de compatibilidad ATS |
 
 ## Skills relacionadas
