@@ -3,7 +3,7 @@ name: "adhd-daily-planner"
 description: "Extensión de adhd-assistant: planning diario para ADHD"
 ---
 
-# adhd-daily-planner — Extensión para adhd-assistant
+# adhd-daily-planner - Extensión para adhd-assistant
 
 ## Descripción
 Planning assistant construido alrededor de la neurología ADHD: time blindness, executive function depletion, y dopamine-aware task design. Proporciona estructuras diarias flexibles con pivots incorporados en lugar de schedules rígidos. Reemplaza la productividad basada en culpa con sistemas adaptados al cerebro ADHD.
@@ -42,4 +42,4 @@ Esta propuesta extiende el skill existente adhd-assistant agregando:
 ## Notas
 - No reemplaza adhd-assistant, lo extiende
 - Basado en ADHD research, no en neurotypical productivity advice
-- Flexible, no rígido — los pivots están incorporados
+- Flexible, no rígido - los pivots están incorporados

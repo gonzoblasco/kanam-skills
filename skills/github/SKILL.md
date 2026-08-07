@@ -1,6 +1,6 @@
 ---
 name: "github"
-description: "Add official GitHub MCP server wrapper for advanced tools: security alerts, notifications, discussions, project boards, code analysis."
+description: "Agrega un wrapper del GitHub MCP server oficial para herramientas avanzadas: alertas de seguridad, notificaciones, discusiones, project boards, analisis de codigo."
 metadata:
   category: "Development"
   tags:
@@ -17,39 +17,39 @@ metadata:
 
 # GitHub
 
-Use `gh` for common GitHub operations and the official GitHub MCP Server for advanced tools not available in `gh`.
+Usa `gh` para las operaciones comunes de GitHub y el GitHub MCP Server oficial para las herramientas avanzadas que no estan disponibles en `gh`.
 
-## Two interfaces
+## Dos interfaces
 
-### 1. `gh` CLI (default)
+### 1. CLI `gh` (default)
 
-Use for:
-- Listing/viewing PRs and issues
-- Creating PRs/issues/comments
-- Checking CI runs
-- Basic API queries
-- Merging PRs
+Usalo para:
+- Listar/ver PRs e issues
+- Crear PRs/issues/comentarios
+- Chequear corridas de CI
+- Consultas basicas de API
+- Mergear PRs
 
-### 2. GitHub MCP Server (advanced)
+### 2. GitHub MCP Server (avanzado)
 
-Use the wrapper `~/.openclaw/workspace/skills/github/scripts/github-mcp.py` for:
-- Security alerts / Dependabot
+Usa el wrapper `~/.openclaw/workspace/skills/github/scripts/github-mcp.py` para:
+- Alertas de seguridad / Dependabot
 - Code scanning
-- Notifications
-- Discussions
+- Notificaciones
+- Discusiones
 - Project boards
-- Advanced PR/issue operations
-- Code analysis tools
+- Operaciones avanzadas de PR/issue
+- Herramientas de analisis de codigo
 
-## Requirements
+## Requisitos
 
-- `gh` CLI authenticated (`gh auth status`)
-- GitHub Personal Access Token stored in `~/.openclaw/secrets/github-token`
-- Official GitHub MCP binary at `~/.openclaw/bin/github-mcp`
+- CLI `gh` autenticado (`gh auth status`)
+- GitHub Personal Access Token guardado en `~/.openclaw/secrets/github-token`
+- Binario oficial de GitHub MCP en `~/.openclaw/bin/github-mcp`
 
-## Writing Rules
+## Reglas de Escritura
 
-- **Always use regular hyphen (-), never em dash (—).** The em dash isn't on a standard keyboard and makes it obvious the text wasn't written by a developer. This applies to PR descriptions, comments, issues, and any GitHub-facing text.
+- **Usa siempre guion comun (-), nunca guion largo (—).** El guion largo no esta en un teclado estandar y hace evidente que el texto no fue escrito por un desarrollador. Esto aplica a descripciones de PR, comentarios, issues y cualquier texto orientado a GitHub.
 
 ## Auth
 
@@ -58,9 +58,9 @@ gh auth status
 gh auth login
 ```
 
-The MCP wrapper reads `~/.openclaw/secrets/github-token` automatically.
+El wrapper de MCP lee `~/.openclaw/secrets/github-token` automaticamente.
 
-## gh CLI: PRs
+## CLI gh: PRs
 
 ```bash
 gh pr list --repo owner/repo --json number,title,state,author,url
@@ -71,9 +71,9 @@ gh pr create --repo owner/repo --title "feat: title" --body-file /tmp/pr.md
 gh pr merge 55 --repo owner/repo --squash
 ```
 
-URLs work directly: `gh pr view https://github.com/owner/repo/pull/55`.
+Las URLs funcionan directamente: `gh pr view https://github.com/owner/repo/pull/55`.
 
-## gh CLI: Issues
+## CLI gh: Issues
 
 ```bash
 gh issue list --repo owner/repo --state open --json number,title,labels,url
@@ -83,7 +83,7 @@ gh issue comment 42 --repo owner/repo --body-file /tmp/comment.md
 gh issue close 42 --repo owner/repo --comment "Fixed in ..."
 ```
 
-## gh CLI: CI / Runs
+## CLI gh: CI / Runs
 
 ```bash
 gh run list --repo owner/repo --limit 10
@@ -92,30 +92,30 @@ gh run view <run-id> --repo owner/repo --log-failed
 gh run rerun <run-id> --repo owner/repo --failed
 ```
 
-## GitHub MCP Server wrapper
+## Wrapper del GitHub MCP Server
 
 ```bash
-# List available tools
+# Lista las herramientas disponibles
 ~/.openclaw/workspace/skills/github/scripts/github-mcp.py list
 
-# Call a tool
+# Llama a una herramienta
 ~/.openclaw/workspace/skills/github/scripts/github-mcp.py call list_pull_requests '{"owner": "facebook", "repo": "astryx", "state": "open", "limit": 5}'
 
-# Use additional toolsets (security, notifications, discussions, etc.)
+# Usa toolsets adicionales (security, notifications, discussions, etc.)
 ~/.openclaw/workspace/skills/github/scripts/github-mcp.py call list_security_alerts '{"owner": "facebook", "repo": "astryx"}' --toolsets=default,code_security,notifications
 ```
 
-Available toolsets: `actions`, `code_quality`, `code_security`, `copilot`, `copilot_issue_intents`, `dependabot`, `discussions`, `gists`, `git`, `issues`, `labels`, `notifications`, `orgs`, `projects`, `pull_requests`, `repos`, `secret_protection`, `security_advisories`, `stargazers`, `users`.
+Toolsets disponibles: `actions`, `code_quality`, `code_security`, `copilot`, `copilot_issue_intents`, `dependabot`, `discussions`, `gists`, `git`, `issues`, `labels`, `notifications`, `orgs`, `projects`, `pull_requests`, `repos`, `secret_protection`, `security_advisories`, `stargazers`, `users`.
 
 Default: `context`, `copilot`, `issues`, `pull_requests`, `repos`, `users`.
 
-## Security alerts workflow
+## Flujo de trabajo de alertas de seguridad
 
 ```bash
 ~/.openclaw/workspace/skills/github/scripts/github-mcp.py call list_code_scanning_alerts '{"owner": "facebook", "repo": "astryx"}' --toolsets=code_security
 ```
 
-## Notifications workflow
+## Flujo de trabajo de notificaciones
 
 ```bash
 ~/.openclaw/workspace/skills/github/scripts/github-mcp.py call list_notifications '{"limit": 10}' --toolsets=notifications
@@ -127,7 +127,7 @@ Default: `context`, `copilot`, `issues`, `pull_requests`, `repos`, `users`.
 ~/.openclaw/workspace/skills/github/scripts/github-mcp.py call list_projects '{"owner": "facebook"}' --toolsets=projects
 ```
 
-## gh CLI: API
+## CLI gh: API
 
 ```bash
 gh api repos/owner/repo/pulls/55 --jq '.title, .state, .user.login'
@@ -135,47 +135,47 @@ gh api repos/owner/repo/labels --jq '.[].name'
 gh api --cache 1h repos/owner/repo --jq '{stars: .stargazers_count, forks: .forks_count}'
 ```
 
-Use `--json` + `--jq` for structured output. Use `--body-file` for comments/bodies containing backticks, shell snippets, env names, or user text.
+Usa `--json` + `--jq` para una salida estructurada. Usa `--body-file` para comentarios/cuerpos que contengan backticks, fragmentos de shell, nombres de env o texto de usuario.
 
-## gh CLI: Comments & Reviews
+## CLI gh: Comentarios y Reviews
 
 ```bash
-# Post a comment
+# Publica un comentario
 gh api repos/owner/repo/issues/42/comments -f body="Your comment here"
 
-# Get all comments on an issue/PR
+# Obtiene todos los comentarios de un issue/PR
 gh api repos/owner/repo/issues/42/comments --paginate
 
-# Get a specific comment by ID
+# Obtiene un comentario especifico por ID
 gh api repos/owner/repo/issues/comments/<comment-id>
 
-# Reply to a review
+# Responde a un review
 gh api repos/owner/repo/pulls/55/comments -f body="Thanks, fixed!" -f in_reply_to=<review-comment-id>
 ```
 
-## When to use gh vs MCP
+## Cuando usar gh vs MCP
 
-| Task | Use |
+| Tarea | Usa |
 |---|---|
-| Common PR/issue ops | `gh` |
-| CI runs | `gh` |
-| Comments/reviews | `gh` |
-| Security alerts | MCP |
-| Notifications | MCP |
-| Discussions | MCP |
+| Operaciones comunes de PR/issue | `gh` |
+| Corridas de CI | `gh` |
+| Comentarios/reviews | `gh` |
+| Alertas de seguridad | MCP |
+| Notificaciones | MCP |
+| Discusiones | MCP |
 | Project boards | MCP |
 | Code scanning | MCP |
 | Dependabot | MCP |
-| Complex API queries | MCP or `gh api` |
+| Consultas de API complejas | MCP o `gh api` |
 
-## Security
+## Seguridad
 
-- Keep `~/.openclaw/secrets/github-token` with `chmod 600`.
-- Never commit the token.
-- The MCP server can perform write operations (create/update/delete). For read-only safety, run with `--toolsets=default` or use `--read-only` flag on the binary if needed.
-- Prefer `gh` for destructive operations where you want explicit confirmation.
+- Mantene `~/.openclaw/secrets/github-token` con `chmod 600`.
+- Nunca commitees el token.
+- El MCP server puede realizar operaciones de escritura (create/update/delete). Para seguridad de solo lectura, ejecutalo con `--toolsets=default` o usa el flag `--read-only` en el binario si es necesario.
+- Prefiere `gh` para operaciones destructivas donde quieras confirmacion explicita.
 
-## Helper Scripts
+## Scripts de Ayuda
 
 Scripts en `skills/github/scripts/`:
 
@@ -186,7 +186,7 @@ Scripts en `skills/github/scripts/`:
 
 Para triage de issues de un repo especifico, ver [oss-contribution/scripts/triage-issues.sh](../oss-contribution/scripts/triage-issues.sh).
 
-## Related
+## Relacionados
 
-- `gh-issue-planner`: For planning projects into GitHub Issues (epics -> stories -> subtasks). ONLY for personal repos.
-- `code-review-agent`: For detailed code review using subagents.
+- `gh-issue-planner`: Para planificar proyectos en GitHub Issues (epics -> stories -> subtasks). SOLO para repos personales.
+- `code-review-agent`: Para revision de codigo detallada usando subagentes.

@@ -168,85 +168,85 @@ main.skill { max-width: 860px; }
 <body>
 
   <header>
-    <a class="back" href="../index.html">&larr; catalog</a>
+    <a class="back" href="../index.html">&larr; catálogo</a>
     <h1>image-generation</h1>
-    <p class="tagline">Generate images for games, web, mockups, placeholders, and creative projects via LLM image APIs.</p>
+    <p class="tagline">Genera imágenes para juegos, web, mockups, placeholders y proyectos creativos mediante APIs de imágenes por LLM.</p>
   </header>
   <main class="skill">
     <article><pre class="skill-body">
-# Image Generation
+# Generación de Imágenes
 
-Generate images for any project: game sprites, web assets, UI mockups, placeholders, marketing art, or creative concepts.
+Genera imágenes para cualquier proyecto: sprites de juegos, assets web, mockups de UI, placeholders, arte de marketing o conceptos creativos.
 
-## When to use
+## Cuándo usarla
 
-- User asks for an image, sprite, icon, texture, thumbnail, or mockup.
-- Building a game, website, app, slide deck, or document that needs visuals.
-- Need a placeholder while waiting for final art.
-- Want to iterate on art direction before involving a human designer.
+- El usuario pide una imagen, sprite, ícono, textura, thumbnail o mockup.
+- Construir un juego, sitio web, app, presentación o documento que necesita visuales.
+- Necesitas un placeholder mientras esperas el arte final.
+- Quieres iterar sobre la dirección del arte antes de involucrar a un diseñador humano.
 
-## Providers
+## Proveedores
 
-Prefer the provider with confirmed working credentials and quota:
+Prefiere el proveedor con credenciales confirmadas y cuota disponible:
 
-1. **OpenAI Images API** — `gpt-image-1` / `dall-e-3`. Requires `OPENAI_API_KEY`.
-2. **Google Gemini / Imagen** — native image generation via `generateContent`. Requires `GEMINI_API_KEY` with billing/cuota.
-3. **MCP servers** — optional if user already has a compatible MCP configured (e.g. `@ideepakrajput/gemini-image-generator-mcp`).
+1. **OpenAI Images API** - `gpt-image-1` / `dall-e-3`. Requiere `OPENAI_API_KEY`.
+2. **Google Gemini / Imagen** - generación nativa de imágenes vía `generateContent`. Requiere `GEMINI_API_KEY` con billing/cuota.
+3. **Servidores MCP** - opcional si el usuario ya tiene un MCP compatible configurado (ej: `@ideepakrajput/gemini-image-generator-mcp`).
 
-Default to **OpenAI Images API** because it has the most reliable image generation quota and output quality.
+Por defecto, usa **OpenAI Images API** porque tiene la cuota de generación de imágenes y la calidad de salida más confiables.
 
 ## API Keys
 
-Store keys outside the workspace in `~/.openclaw/secrets/` with restrictive permissions:
+Guarda las claves fuera del workspace en `~/.openclaw/secrets/` con permisos restrictivos:
 
 - `~/.openclaw/secrets/openai-api-key`
 - `~/.openclaw/secrets/gemini-api-key`
 
-Read them with `cat` inside `exec` calls; never paste keys into chat, skill code, or project files.
+Léelas con `cat` dentro de llamadas `exec`; nunca pegues claves en el chat, en el código de la skill o en archivos del proyecto.
 
 ## Workflow
 
-1. **Clarify intent** — size/aspect ratio, style, transparency, how it will be used.
-2. **Pick provider** — default OpenAI unless user asks for Gemini or an MCP.
-3. **Generate** — call the provider API and save image beside the project or in `/tmp`.
-4. **Deliver** — show the result as `MEDIA:&lt;path&gt;` or move it into the project assets folder.
-5. **Log** — record prompt, path, provider, and usage/cost when relevant.
+1. **Aclarar la intención** - tamaño/proporción, estilo, transparencia, cómo se usará.
+2. **Elegir proveedor** - por defecto OpenAI salvo que el usuario pida Gemini o un MCP.
+3. **Generar** - llama a la API del proveedor y guarda la imagen junto al proyecto o en `/tmp`.
+4. **Entregar** - muestra el resultado como `MEDIA:&lt;path&gt;` o muévelo a la carpeta de assets del proyecto.
+5. **Registrar** - anota el prompt, la ruta, el proveedor y el uso/costo cuando sea relevante.
 
-## Helper script
+## Script de ayuda
 
-Use `scripts/generate-image.sh` for one-off generations from inside `exec`:
+Usa `scripts/generate-image.sh` para generaciones puntuales desde `exec`:
 
 ```bash
-# Generate via OpenAI (default)
+# Generar vía OpenAI (default)
 ~/.openclaw/workspace/skills/image-generation/scripts/generate-image.sh openai \
   "A flat vector hero image for a fintech website, minimal, no text" \
   /tmp/fintech_hero.png \
   1792x1024
 ```
 
-If you modify this skill's script, run `npm test` from the workspace root before committing.
+Si modificas el script de esta skill, ejecuta `npm test` desde la raíz del workspace antes de commitear.
 
-## Best practices
+## Mejores prácticas
 
-- Add style keywords to every prompt: `pixel art`, `flat vector illustration`, `3D render`, `photorealistic`, `UI mockup`, `transparent background`, etc.
-- Request transparent backgrounds only when the provider supports it.
-- Prefer square sizes (`1024x1024`) unless the use case needs another aspect ratio.
-- For game sprites: include `sprite sheet`, `white background`, `consistent art style`, and `isolated object`.
-- For web placeholders: include `abstract`, `minimal`, `neutral colors`, and safe dimensions.
-- For mockups: describe the device, layout, and content in text; avoid real brands unless asked.
-- Save generated images under `projects/&lt;slug&gt;/assets/generated/` or `~/openclaw-media/generated/` for cross-project reuse.
-- Always verify the API call succeeded and the image file has bytes before returning it.
+- Agrega keywords de estilo a todo prompt: `pixel art`, `flat vector illustration`, `3D render`, `photorealistic`, `UI mockup`, `transparent background`, etc.
+- Solicita fondos transparentes solo cuando el proveedor lo soporte.
+- Prefiere tamaños cuadrados (`1024x1024`) salvo que el caso de uso necesite otra proporción.
+- Para sprites de juegos: incluye `sprite sheet`, `white background`, `consistent art style` e `isolated object`.
+- Para placeholders web: incluye `abstract`, `minimal`, `neutral colors` y dimensiones seguras.
+- Para mockups: describe el dispositivo, el layout y el contenido en texto; evita marcas reales salvo que se pidan.
+- Guarda las imágenes generadas en `projects/&lt;slug&gt;/assets/generated/` o `~/openclaw-media/generated/` para reutilizarlas entre proyectos.
+- Verifica siempre que la llamada a la API haya tenido éxito y que el archivo de imagen tenga bytes antes de devolverlo.
 
-## Prompt templates
+## Plantillas de prompts
 
-- **Game sprite**: `"A 64x64 pixel art {object}, {color}, isolated on transparent background, game sprite asset"`
-- **Web hero image**: `"A wide flat vector illustration for a {topic} website hero section, minimal, modern, muted colors, no text"`
-- **UI mockup**: `"A clean UI mockup of a {app type} dashboard, light mode, minimal design, no real logos, desktop browser frame"`
+- **Sprite de juego**: `"A 64x64 pixel art {object}, {color}, isolated on transparent background, game sprite asset"`
+- **Imagen hero web**: `"A wide flat vector illustration for a {topic} website hero section, minimal, modern, muted colors, no text"`
+- **Mockup de UI**: `"A clean UI mockup of a {app type} dashboard, light mode, minimal design, no real logos, desktop browser frame"`
 - **Placeholder**: `"Abstract soft gradient placeholder image, {color palette}, subtle texture, no text, {aspect ratio}"`
 
-## Tool commands
+## Comandos de herramientas
 
-### OpenAI direct curl
+### OpenAI curl directo
 
 ```bash
 KEY=$(cat ~/.openclaw/secrets/openai-api-key)
@@ -263,7 +263,7 @@ echo "$JSON" | python3 -c "import sys,json,base64; d=json.load(sys.stdin); data=
 echo "$OUT"
 ```
 
-### Gemini direct curl (when quota available)
+### Gemini curl directo (cuando haya cuota disponible)
 
 ```bash
 KEY=$(cat ~/.openclaw/secrets/gemini-api-key)
@@ -279,25 +279,25 @@ echo "$RESP" | python3 -c "import sys,json,base64; d=json.load(sys.stdin); parts
 echo "$OUT"
 ```
 
-## Error handling
+## Manejo de errores
 
-- `RESOURCE_EXHAUSTED` / quota error → inform user, suggest checking billing or switching provider.
-- `INVALID_ARGUMENT` / bad prompt → simplify and retry.
-- `b64_json` missing → inspect raw response and report the API error.
-- Empty image file → retry once; if persists, switch provider.
+- `RESOURCE_EXHAUSTED` / error de cuota: informa al usuario, sugiere revisar el billing o cambiar de proveedor.
+- `INVALID_ARGUMENT` / mal prompt: simplifica y reintenta.
+- Falta `b64_json`: inspecciona la respuesta cruda y reporta el error de la API.
+- Archivo de imagen vacío: reintenta una vez; si persiste, cambia de proveedor.
 
-## MCP integration
+## Integración MCP
 
-If the user has a compatible MCP server running, prefer its tools when already configured. Otherwise use the helper script or direct API calls above; they are more reliable than wrapping stdio MCP servers manually.
+Si el usuario tiene un servidor MCP compatible corriendo, prefiere sus herramientas cuando ya estén configuradas. De lo contrario, usa el script de ayuda o las llamadas directas a la API de arriba; son más confiables que envolver servidores MCP de stdio manualmente.
 
-## Notes
+## Notas
 
-- Keep generated art in a `generated/` subfolder so it is easy to distinguish from final/human-made assets.
-- Do not claim copyright or ownership of generated images when discussing licensing with the user.
-- For publication, remind the user to review provider terms (OpenAI / Google) for their use case.
+- Mantén el arte generado en una subcarpeta `generated/` para que sea fácil distinguirlo de los assets finales/hechos por humanos.
+- No reclames copyright ni propiedad de las imágenes generadas cuando hables de licencias con el usuario.
+- Para publicación, recuérdale al usuario revisar los términos del proveedor (OpenAI / Google) para su caso de uso.
 </pre></article>
-    <section><h3>Related</h3><div class="chips"><a class="chip" href="brand-name-forge.html">brand-name-forge</a><a class="chip" href="content-serializer.html">content-serializer</a><a class="chip" href="copy-editing.html">copy-editing</a><a class="chip" href="curriculum-builder.html">curriculum-builder</a></div></section>
+    <section><h3>Relacionadas</h3><div class="chips"><a class="chip" href="brand-name-forge.html">brand-name-forge</a><a class="chip" href="content-serializer.html">content-serializer</a><a class="chip" href="copy-editing.html">copy-editing</a><a class="chip" href="curriculum-builder.html">curriculum-builder</a></div></section>
   </main>
-  <footer>MIT licensed - kanam-skills</footer>
+  <footer>Licencia MIT - kanam-skills</footer>
 </body>
 </html>

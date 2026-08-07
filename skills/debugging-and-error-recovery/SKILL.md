@@ -1,179 +1,179 @@
 ---
 name: debugging-and-error-recovery
-description: Guides systematic root-cause debugging. Integrates 5-step triage (reproduce, localize, reduce, fix, guard), forensic logging, failure pattern recognition from investigation memory, and regression prevention. Use when tests fail, builds break, behavior doesn't match expectations, or any unexpected error occurs — not for guessing.
+description: Guía la depuración sistemática de causa raíz. Integra triage de 5 pasos (reproducir, localizar, reducir, arreglar, proteger), logging forense, reconocimiento de patrones de fallo desde la memoria de investigación y prevención de regresiones. Úsala cuando los tests fallan, los builds se rompen, el comportamiento no coincide con las expectativas o ocurre cualquier error inesperado: no para adivinar.
 ---
 
-# Debugging and Error Recovery: The 5-Step Triage System
+# Depuración y Recuperación de Errores: El Sistema de Triage de 5 Pasos
 
-## Overview
+## Resumen
 
-Systematic debugging with structured triage. When something breaks, **stop adding features**, preserve evidence, and follow a structured process to find and fix the root cause. Guessing wastes time — the 5-step checklist works for test failures, build errors, runtime bugs, and production incidents. This skill integrates **forensic logging**, **failure pattern recognition** from investigation memory, and **regression prevention**.
+Depuración sistemática con triage estructurado. Cuando algo se rompe, **deja de agregar features**, preserva la evidencia y sigue un proceso estructurado para encontrar y arreglar la causa raíz. Adivinar pierde tiempo: el checklist de 5 pasos funciona para fallos de tests, errores de build, bugs de runtime e incidentes de producción. Esta skill integra **logging forense**, **reconocimiento de patrones de fallo** desde la memoria de investigación y **prevención de regresiones**.
 
 ---
 
-## 🎯 Phase 1: The 5-Step Debug Triage Framework
+## 🎯 Fase 1: El Framework de Triage de Depuración en 5 Pasos
 
-### Step 1: REPRODUCE (Can I consistently break it?)
-**Goal:** Prove the bug is real and not a flaky test/environment issue.
+### Paso 1: REPRODUCIR (¿Puedo romperlo de forma consistente?)
+**Objetivo:** Probar que el bug es real y no un problema de test/entorno flaky.
 
 **Checklist:**
-- [ ] Can I reproduce this locally? Document steps to reproduce.
-- [ ] Is this a one-time error or consistent?
-- [ ] Does environment matter (dev/staging/production)?
-- [ ] Is the test flaky, or is the bug real?
-- [ ] What's the minimal way to trigger it?
+- [ ] ¿Puedo reproducirlo localmente? Documenta los pasos para reproducir.
+- [ ] ¿Es un error de una sola vez o es consistente?
+- [ ] ¿Importa el entorno (dev/staging/production)?
+- [ ] ¿El test es flaky, o el bug es real?
+- [ ] ¿Cuál es la forma mínima de dispararlo?
 
-**Evidence Capture:**
+**Captura de Evidencia:**
 ```bash
-# Minimal reproduction case
+# Caso de reproducción mínima
 cat > /tmp/reproduce.ts <<EOF
-// Smallest code snippet that triggers the bug
+// Snippet de código mínimo que dispara el bug
 const data = fetch('/api/problematic-endpoint');
 try {
-  await data.json(); // Boom! TypeError here
+  await data.json(); // ¡Boom! TypeError aquí
 } catch (e) {
-  console.error('Bug reproduced:', e.message);
+  console.error('Bug reproducido:', e.message);
   process.exit(1);
 }
 EOF
 
-# Document:
-BUG_REPRODUCTION_STEPS:
-1. Clone repo and run npm install
-2. Navigate to projects/my-project/
-3. Run npm start
-4. Open http://localhost:3000/api/v1/problems
-5. Observe TypeError in console (see logs/error.log)
+# Documenta:
+PASOS_DE_REPRODUCCION_DEL_BUG:
+1. Clonar el repo y correr npm install
+2. Navegar a projects/my-project/
+3. Correr npm start
+4. Abrir http://localhost:3000/api/v1/problems
+5. Observar el TypeError en la consola (ver logs/error.log)
 ```
 
-**Tools:**
-- `git blame` — See when this code was added and by whom
-- `console.error()` with stack trace capture
-- Logs from error monitoring (Sentry, Bugsnag, etc.)
-- Screenshots/videos if it's a visual issue
+**Herramientas:**
+- `git blame`: ve cuándo se agregó este código y quién lo hizo
+- `console.error()` con captura de stack trace
+- Logs del monitoreo de errores (Sentry, Bugsnag, etc.)
+- Screenshots/videos si es un problema visual
 
 ---
 
-### Step 2: LOCALIZE (Where in the codebase?)
-**Goal:** Identify the exact file/line/function responsible.
+### Paso 2: LOCALIZAR (¿Dónde en la base de código?)
+**Objetivo:** Identificar el archivo/línea/función exacta responsable.
 
-**Binary Search Strategy:**
+**Estrategia de Búsqueda Binaria:**
 ```bash
-# Narrowing down by commenting out code sections
-# Start: Comment out half the files/modules
+# Acotar comentando secciones de código
+# Inicio: comenta la mitad de los archivos/módulos
 cd projects/my-project/
 
-if npm run test -- --grep "bug-name" fails; then
-  echo "Bug is in uncommented section";
+if npm run test -- --grep "bug-name" falla; then
+  echo "El bug está en la sección sin comentar";
 else
-  echo "Bug is in commented section";
-   # Uncomment problematic half, comment other half
+  echo "El bug está en la sección comentada";
+   # Descomenta la mitad problemática, comenta la otra mitad
 fi
 
-# Continue binary search until pinpointed to single function/line
+# Continúa la búsqueda binaria hasta aislar la función/línea única
 ```
 
-**Tools & Techniques:**
-- **Git blame + git log** — Who last modified this? When?
-- **Stack trace analysis** — Call chain leading to failure
-- **Dependency tree inspection** — Is it a third-party library issue?
-- **Environment diff check** — What differs between working/broken environments?
+**Herramientas y Técnicas:**
+- **Git blame + git log**: ¿Quién modificó esto por última vez? ¿Cuándo?
+- **Análisis del stack trace**: cadena de llamadas que lleva al fallo
+- **Inspección del árbol de dependencias**: ¿es un problema de una librería de terceros?
+- **Chequeo de diff de entornos**: ¿qué difiere entre los entornos que funcionan y los que no?
 
-**Common Culprits:**
+**Culpables Comunes:**
 ```
-✗ Recent PR introduced breaking change in shared utility → Module resolution error
-✗ Dependency updated and removed peer dependency → Build failure
-✗ Config file typo → ESLint/TypeScript complaint treated as error
-✗ Race condition only visible under load → Flaky test
-✗ Browser-specific API used without feature detection → Console warning + error
+✗ Un PR reciente introdujo un cambio que rompe en una utility compartida → Error de resolución de módulos
+✗ Una dependencia se actualizó y eliminó una peer dependency → Fallo de build
+✗ Typo en un archivo de configuración → Queja de ESLint/TypeScript tratada como error
+✗ Race condition solo visible bajo carga → Test flaky
+✗ API específica de navegador usada sin feature detection → Advertencia de consola + error
 ```
 
 ---
 
-### Step 3: REDUCE (Can I isolate the cause?)
-**Goal:** Create a minimal test case that proves the root cause.
+### Paso 3: REDUCIR (¿Puedo aislar la causa?)
+**Objetivo:** Crear un caso de test mínimo que pruebe la causa raíz.
 
-**Strategies:**
+**Estrategias:**
 
-#### A) The Rubber Duck Debugging Method
-Explain line-by-line what the code should do. Often you'll spot the issue while talking through it.
+#### A) El Método de Depuración del Pato de Goma
+Explica línea por línea qué debería hacer el código. A menudo verás el problema mientras lo explicas en voz alta.
 
-#### B) Controlled Experiments
+#### B) Experimentos Controlados
 ```tsx
-// Test hypothesis: Is this a React state timing issue?
+// Prueba la hipótesis: ¿Es un problema de timing de estado de React?
 
-// Experiment 1: Remove useEffect dependency
+// Experimento 1: quita la dependencia de useEffect
 function MyComponent({ data }) {
-  const [state, setState] = useState(null); // Without proper init
+  const [state, setState] = useState(null); // Sin init apropiado
   
-  // ✗ BROKEN — State never initializes
+  // ✗ ROTO: el estado nunca se inicializa
   return <div>{state}</div>;
 }
 
-// Experiment 2: Add proper effect
+// Experimento 2: agrega el effect apropiado
 function MyComponent({ data }) {
   const [state, setState] = useState(null);
   
   useEffect(() => {
-     setState(data); // Proper initialization on mount
+     setState(data); // Inicialización apropiada en el mount
    }, [data]);
    
   return <div>{state}</div>;
 }
 
-// ✓ FIXED — Now it initializes correctly
+// ✓ ARREGLADO: ahora se inicializa correctamente
 ```
 
-#### C) The "What If I..." Method
+#### C) El Método "¿Qué Pasaría Si...?"
 ```bash
-# What if I remove this file? → Still works
-# What if I add this line back? → Boom, broken!
-# What if I change the type signature? → Compile error points to the issue
+# ¿Qué pasa si quito este archivo? → Sigue funcionando
+# ¿Qué pasa si agrego esta línea de nuevo? → ¡Boom, roto!
+# ¿Qué pasa si cambio la firma del tipo? → El error de compilación apunta al problema
 ```
 
 ---
 
-### Step 4: FIX (How do I solve it?)
-**Goal:** Implement the solution with confidence.
+### Paso 4: ARREGLAR (¿Cómo lo resuelvo?)
+**Objetivo:** Implementar la solución con confianza.
 
-**Before Fixing — Verify:**
-- [ ] Root cause clearly understood
-- [ ] Minimal fix identified (not band-aid)
-- [ ] Tests would fail without this fix (Prove it fixes something)
-- [ ] Solution aligns with architecture principles
+**Antes de Arreglar: Verificar:**
+- [ ] Causa raíz claramente entendida
+- [ ] Fix mínimo identificado (no una curita)
+- [ ] Los tests fallarían sin este fix (prueba que arregla algo)
+- [ ] La solución se alinea con los principios de arquitectura
 
-**Common Fixes:**
+**Fixes Comunes:**
 
 #### Fix #1: Race Condition
 ```tsx
-// Problem: State updates race each other
+// Problema: las actualizaciones de estado compiten entre sí
 const [count, setCount] = useState(0);
 
 <button onClick={() => {
-  setCount(c => c + 1); // Click too fast → lost update
+  setCount(c => c + 1); // Clic demasiado rápido → update perdido
 }}/>
 
-// Solution: Use batched updates or async pattern
+// Solución: usa updates por lotes o patrón async
 const increment = useCallback(async () => {
-   await new Promise(resolve => setTimeout(resolve, 0)); // Batch to next tick
+   await new Promise(resolve => setTimeout(resolve, 0)); // Lote para el próximo tick
    setCount(prev => prev + 1);
 }, []);
 ```
 
-#### Fix #2: Module Resolution Error
+#### Fix #2: Error de Resolución de Módulos
 ```bash
-# Problem: Module can't be found (CJS vs ESM)
+# Problema: no se puede encontrar el módulo (CJS vs ESM)
 error: Cannot find module '@/utils/helpers'
 
-# Solution A — Check package.json types
+# Solución A: revisa types en package.json
 {
-  "type": "module"  // or "commonjs"
+  "type": "module"  // o "commonjs"
 }
 
-# Solution B — Use proper import path
-import { helper } from '../../utils/helpers.js';  // Note the .js
+# Solución B: usa la ruta de import correcta
+import { helper } from '../../utils/helpers.js';  // nota el .js
 
-# Solution C — tsconfig paths
+# Solución C: paths de tsconfig
 {
   "compilerOptions": {
     "baseUrl": ".",
@@ -184,72 +184,72 @@ import { helper } from '../../utils/helpers.js';  // Note the .js
 }
 ```
 
-#### Fix #3: Type Error from TypeScript
+#### Fix #3: Error de Tipo de TypeScript
 ```tsx
-// Problem: Incompatible types
+// Problema: tipos incompatibles
 interface User { id: number; name: string }
-interface Post { id: number; title: string; author: User['id'] } // ❌ Wrong!
+interface Post { id: number; title: string; author: User['id'] } // ❌ Incorrecto!
 
-// Solution: Use proper type reference
+// Solución: usa la referencia de tipo correcta
 interface Post { 
   id: number; 
   title: string; 
-  authorId: User['id']; // ✅ Correct reference
+  authorId: User['id']; // ✅ Referencia correcta
 }
 ```
 
 ---
 
-### Step 5: GUARD (How do I prevent it?)
-**Goal:** Add tests, monitoring, or patterns that make this impossible to regress.
+### Paso 5: PROTEGER (¿Cómo lo prevengo?)
+**Objetivo:** Agregar tests, monitoreo o patrones que hagan imposible que regrese.
 
-**Guardrails Checklist:**
-- [ ] Unit test added for this exact scenario
-- [ ] Integration test covers the flow
-- [ ] E2E test verifies user-facing behavior
-- [ ] Monitoring/alerting configured (if production code)
-- [ ] Documentation updated if pattern changed
-- [ ] ADR created if architectural decision involved
+**Checklist de Salvaguardas:**
+- [ ] Test unitario agregado para este escenario exacto
+- [ ] Test de integración cubre el flujo
+- [ ] Test E2E verifica el comportamiento visible para el usuario
+- [ ] Monitoreo/alertas configurados (si es código de producción)
+- [ ] Documentación actualizada si el patrón cambió
+- [ ] ADR creado si estuvo involucrada una decisión arquitectónica
 
-**Test Pyramid Implementation:**
+**Implementación de la Pirámide de Tests:**
 ```
-       /\  (E2E — 10% of tests, max coverage needed)
+       /\  (E2E: 10% de los tests, máxima cobertura necesaria)
       /  \
-     /____\  (Integration — 30%, business logic)
+     /____\  (Integración: 30%, lógica de negocio)
     /      \
-   /________\  (Unit — 60%, edge cases & helpers)
+   /________\  (Unit: 60%, casos límite y helpers)
 
-Guard Example:
-- Unit: Edge case where count is -1
-- Integration: Full transaction flow with error handling  
-- E2E: User can see error message and retry button works
+Ejemplo de Salvaguarda:
+- Unit: caso límite donde count es -1
+- Integración: flujo de transacción completo con manejo de errores
+- E2E: el usuario puede ver el mensaje de error y el botón de reintentar funciona
 ```
 
 ---
 
-## 🧠 Phase 2: Forensic Logging (From Debug Agent)
+## 🧠 Fase 2: Logging Forense (Del Agente de Depuración)
 
-### Structured Error Collection
+### Recopilación de Errores Estructurada
 
-#### Level Classification
+#### Clasificación por Nivel
 ```typescript
 enum LogLevel {
-  DEBUG = 'debug',     // Verbose, for investigation
-  INFO = 'info',       // Normal flow, interesting points
-  WARN = 'warn',       // Something might go wrong
-  ERROR = 'error',     // Something broke
-  FATAL = 'fatal'      // System unusable
+  DEBUG = 'debug',     // Verboso, para investigación
+  INFO = 'info',       // Flujo normal, puntos interesantes
+  WARN = 'warn',       // Algo podría salir mal
+  ERROR = 'error',     // Algo se rompió
+  FATAL = 'fatal'      // Sistema inutilizable
 }
 
-// Usage:
-logger.debug('Starting computation with input:', inputData);
-logger.info('Computation completed');
-logger.warn('Performance degraded, response time increasing');
-logger.error('Payment processing failed', { orderId, error });
-logger.fatal('All database connections lost');
+// Uso:
+logger.debug('Iniciando el cálculo con input:', inputData);
+logger.info('Cálculo completado');
+logger.warn('Rendimiento degradado, el tiempo de respuesta está aumentando');
+logger.error('Falló el procesamiento del pago', { orderId, error });
+logger.fatal('Se perdieron todas las conexiones a la base de datos');
 ```
 
-#### Error Context Capture Template
+#### Plantilla de Captura de Contexto de Error
 ```javascript
 function logError(error, context) {
   const fullContext = {
@@ -259,13 +259,13 @@ function logError(error, context) {
     userId: getUserId(),
     session: getSessionInfo(),
     
-    // Error details
+    // Detalles del error
     error: {
       message: error.message,
       name: error.name,
       stack: error.stack,
       
-      // Additional context
+      // Contexto adicional
       ...context,
     },
   };
@@ -277,16 +277,16 @@ function logError(error, context) {
 
 ---
 
-## 📋 Phase 3: Failure Pattern Recognition (From Debug Investigation)
+## 📋 Fase 3: Reconocimiento de Patrones de Fallo (De la Investigación de Depuración)
 
-### Common Failure Patterns & Detection
+### Patrones de Fallo Comunes y Detección
 
-#### Pattern #1: Circular Dependencies
+#### Patrón #1: Dependencias Circulares
 ```javascript
-// Detected via static analysis or runtime error
-Circular dependency detected: A → B → C → A
+// Detectado vía análisis estático o error de runtime
+Dependencia circular detectada: A → B → C → A
 
-// Prevention: Extract shared interface to separate file
+// Prevención: extrae la interfaz compartida a un archivo separado
 // circle-break.ts
 export interface UserServiceInterface {
   getUser(id: string): User;
@@ -301,52 +301,52 @@ export const userService = new UserService();
 import { UserServiceInterface } from './circle-break';
 ```
 
-#### Pattern #2: Event Loop Blocking
+#### Patrón #2: Bloqueo del Event Loop
 ```javascript
-// Detected via performance monitoring or lighthouse
-WARNING: Script execution blocked for > 100ms
+// Detectado vía monitoreo de rendimiento o lighthouse
+ADVERTENCIA: la ejecución del script estuvo bloqueada por más de 100ms
 
-// Offload to web worker
+// Descarga a un web worker
 const worker = new Worker('./worker.js');
 worker.postMessage(data);
 worker.onmessage = (e) => setState(e.data);
 ```
 
-#### Pattern #3: Memory Leaks
+#### Patrón #3: Fugas de Memoria
 ```javascript
-// Detected via DevTools memory profiler or heap snapshot
-WARNING: Memory growing unboundedly over time
+// Detectado vía el profiler de memoria de DevTools o un heap snapshot
+ADVERTENCIA: la memoria crece sin límite con el tiempo
 
-// Common leak: event listener never removed
+// Fuga común: listener de eventos que nunca se elimina
 const button = document.createElement('button');
-button.addEventListener('click', handleClick); // ← Never removed!
+button.addEventListener('click', handleClick); // ← ¡Nunca se elimina!
 document.body.appendChild(button);
 
-// Fix: Clean up on component mount/unmount
+// Fix: limpia en el mount/unmount del componente
 useEffect(() => {
   const btn = document.createElement('button');
   btn.addEventListener('click', handleClick);
   document.body.appendChild(btn);
   
   return () => {
-     btn.removeEventListener('click', handleClick); // ← Cleanup!
+     btn.removeEventListener('click', handleClick); // ← ¡Limpieza!
    };
 }, []);
 ```
 
 ---
 
-## 🛡️ Phase 4: Regression Prevention
+## 🛡️ Fase 4: Prevención de Regresiones
 
-### Automated Guardrails
+### Salvaguardas Automatizadas
 
-#### Pre-Merge Checklist
-- [ ] `npm run test` passes locally
-- [ ] `npm run lint` passes
-- [ ] No breaking changes in public API (if applicable)
-- [ ] Performance budget not exceeded
+#### Checklist Pre-Merge
+- [ ] `npm run test` pasa localmente
+- [ ] `npm run lint` pasa
+- [ ] Sin cambios que rompan la API pública (si aplica)
+- [ ] El presupuesto de rendimiento no se excede
 
-#### CI Shield
+#### Escudo de CI
 ```yaml
 # .github/workflows/shield.yaml
 name: Quality Shield
@@ -360,65 +360,65 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      # Layer 1: Fast feedback (lint + types)
+      # Capa 1: Feedback rápido (lint + types)
       - run: npx biome check --strict .
       
-      # Layer 2: Unit tests (parallel, fastest)
+      # Capa 2: Tests unitarios (paralelos, más rápidos)
       - run: npx vitest run --coverage
       
-      # Layer 3: Integration tests (business logic)
+      # Capa 3: Tests de integración (lógica de negocio)
       - run: npx vitest run --integration
       
-      # Layer 4: Build verification (can it actually build?)
+      # Capa 4: Verificación del build (¿puede realmente compilar?)
       - run: npm ci && npm run build
       
-      # Layer 5: E2E safety net (slow, must pass)
+      # Capa 5: Red de seguridad E2E (lento, debe pasar)
       - run: npx playwright test --workers=4
       
-      # Layer 6: Bundle size regression
+      # Capa 6: Regresión del tamaño del bundle
       - run: npx esbuild --bundle src/index.ts --outfile=/tmp/bundle.js --stats=/tmp/stats.json
       - run: npx esbuild --bundle old-version.ts --outfile=/tmp/old.txt --stats=/tmp/old.txt
       - run: ./scripts/check-bundle-size.sh
       
-      # Layer 7: Security audit
+      # Capa 7: Auditoría de seguridad
       - run: npx npm-audit
 ```
 
 ---
 
-## 🔥 Phase 5: Emergency Recovery Procedures
+## 🔥 Fase 5: Procedimientos de Recuperación de Emergencia
 
-### When Production is Broken (But You Can't Revert)
+### Cuando Producción Está Rota (Pero No Puedes Revertir)
 
-#### Step 1: Triage Severity
+#### Paso 1: Triage de Severidad
 ```
-🔴 CRITICAL — System unusable → Emergency patch needed immediately
-🟠 HIGH — Core feature broken → Patch within 4 hours
-🟡 MEDIUM — Non-core feature affected → Fix by end of day
-🟢 LOW — Cosmetic/UX issue → Address in next release
+🔴 CRÍTICO: Sistema inutilizable → Se necesita parche de emergencia de inmediato
+🟠 ALTO: Feature central rota → Parche dentro de 4 horas
+🟡 MEDIO: Feature no central afectada → Arreglar antes de fin de día
+🟢 BAJO: Problema cosmético/UX → Atender en el próximo release
 ```
 
-#### Step 2: Deploy Hotfix (Not Full Rollback)
+#### Paso 2: Desplegar Hotfix (No Rollback Completo)
 ```bash
-# Don't revert everything if users are mid-action
+# No reviertas todo si los usuarios están en medio de una acción
 cd projects/my-project/
 
 git cherry-pick <hotfix-commit> --no-verify
 
-# Verify hotfix works in staging first
+# Verifica primero que el hotfix funcione en staging
 npm run test:e2e
 
-# Deploy with feature flag for canary testing
+# Despliega con feature flag para pruebas canary
 npx feature-toggle enable payment-fix --percentage=5%
 
-# Monitor
+# Monitorea
 npm run sentry:watch
 ```
 
 ---
 
-## 📚 References
+## 📚 Referencias
 
-See `references/debug-patterns.md` for common failure modes and detection strategies.  
-See `references/logging-template.md` for structured error capture guidelines.  
-See `references/error-monitoring-setup.md` for Sentry/Bugsnag integration patterns.
+Ver `references/debug-patterns.md` para modos de fallo comunes y estrategias de detección.  
+Ver `references/logging-template.md` para pautas de captura de errores estructurada.  
+Ver `references/error-monitoring-setup.md` para patrones de integración con Sentry/Bugsnag.

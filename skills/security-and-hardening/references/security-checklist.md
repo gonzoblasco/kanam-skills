@@ -1,85 +1,85 @@
-# Security Checklist
+# Lista de verificación de seguridad
 
-Quick reference for web application security. Use alongside the `security-and-hardening` skill.
+Referencia rápida para la seguridad de aplicaciones web. Úsala junto con la skill `security-and-hardening`.
 
-## Table of Contents
+## Tabla de contenidos
 
-- [Threat Modeling (Start Here)](#threat-modeling-start-here)
-- [Pre-Commit Checks](#pre-commit-checks)
-- [Authentication](#authentication)
-- [Authorization](#authorization)
-- [Input Validation](#input-validation)
-- [Security Headers](#security-headers)
-- [CORS Configuration](#cors-configuration)
-- [Data Protection](#data-protection)
-- [Dependency Security](#dependency-security)
-- [AI / LLM Security](#ai--llm-security)
-- [Error Handling](#error-handling)
-- [OWASP Top 10 Quick Reference](#owasp-top-10-quick-reference)
-- [OWASP Top 10 for LLMs Quick Reference](#owasp-top-10-for-llms-quick-reference)
+- [Modelado de amenazas (empezar aquí)](#modelado-de-amenazas-empezar-aquí)
+- [Verificaciones previas al commit](#verificaciones-previas-al-commit)
+- [Autenticación](#autenticación)
+- [Autorización](#autorización)
+- [Validación de entrada](#validación-de-entrada)
+- [Cabeceras de seguridad](#cabeceras-de-seguridad)
+- [Configuración de CORS](#configuración-de-cors)
+- [Protección de datos](#protección-de-datos)
+- [Seguridad de dependencias](#seguridad-de-dependencias)
+- [Seguridad de IA / LLM](#seguridad-de-ia--llm)
+- [Manejo de errores](#manejo-de-errores)
+- [Referencia rápida del OWASP Top 10](#referencia-rápida-del-owasp-top-10)
+- [Referencia rápida del OWASP Top 10 para LLMs](#referencia-rápida-del-owasp-top-10-para-llms)
 
-## Threat Modeling (Start Here)
+## Modelado de amenazas (empezar aquí)
 
-Before reaching for controls, spend five minutes thinking like an attacker:
+Antes de llegar a los controles, dedica cinco minutos a pensar como un atacante:
 
-- [ ] Trust boundaries mapped (requests, uploads, webhooks, third-party APIs, LLM output)
-- [ ] Assets named (credentials, PII, payment data, admin actions, money movement)
-- [ ] STRIDE run per boundary (Spoofing, Tampering, Repudiation, Info disclosure, DoS, Elevation)
-- [ ] Abuse cases written next to use cases ("how would I misuse this?")
+- [ ] Límites de confianza mapeados (peticiones, subidas, webhooks, APIs de terceros, salida de LLM)
+- [ ] Activos nombrados (credenciales, PII, datos de pago, acciones de administrador, movimiento de dinero)
+- [ ] STRIDE ejecutado por límite (Spoofing, Tampering, Repudiation, divulgación de info, DoS, Elevación)
+- [ ] Casos de abuso escritos junto a los casos de uso ("¿cómo abusaría yo de esto?")
 
-## Pre-Commit Checks
+## Verificaciones previas al commit
 
-- [ ] No secrets in code (`git diff --cached | grep -i "password\|secret\|api_key\|token"`)
-- [ ] `.gitignore` covers: `.env`, `.env.local`, `*.pem`, `*.key`
-- [ ] `.env.example` uses placeholder values (not real secrets)
+- [ ] Sin secretos en código (`git diff --cached | grep -i "password\|secret\|api_key\|token"`)
+- [ ] `.gitignore` cubre: `.env`, `.env.local`, `*.pem`, `*.key`
+- [ ] `.env.example` usa valores de ejemplo (no secretos reales)
 
-## Authentication
+## Autenticación
 
-- [ ] Passwords hashed with bcrypt (≥12 rounds), scrypt, or argon2
-- [ ] Session cookies: `httpOnly`, `secure`, `sameSite: 'lax'`
-- [ ] Session expiration configured (reasonable max-age)
-- [ ] Rate limiting on login endpoint (≤10 attempts per 15 minutes)
-- [ ] Password reset tokens: time-limited (≤1 hour), single-use
-- [ ] Account lockout after repeated failures (optional, with notification)
-- [ ] MFA supported for sensitive operations (optional but recommended)
+- [ ] Contraseñas hasheadas con bcrypt (≥12 rounds), scrypt o argon2
+- [ ] Cookies de sesión: `httpOnly`, `secure`, `sameSite: 'lax'`
+- [ ] Caducidad de sesión configurada (max-age razonable)
+- [ ] Límite de peticiones en el endpoint de login (≤10 intentos por 15 minutos)
+- [ ] Tokens de reset de contraseña: con límite de tiempo (≤1 hora), de un solo uso
+- [ ] Bloqueo de cuenta tras fallos repetidos (opcional, con notificación)
+- [ ] MFA soportado para operaciones sensibles (opcional pero recomendado)
 
-## Authorization
+## Autorización
 
-- [ ] Every protected endpoint checks authentication
-- [ ] Every resource access checks ownership/role (prevents IDOR)
-- [ ] Admin endpoints require admin role verification
-- [ ] API keys scoped to minimum necessary permissions
-- [ ] JWT tokens validated (signature, expiration, issuer)
+- [ ] Cada endpoint protegido verifica la autenticación
+- [ ] Cada acceso a recurso verifica propiedad/rol (previene IDOR)
+- [ ] Los endpoints de admin requieren verificación de rol de admin
+- [ ] API keys limitadas a los permisos mínimos necesarios
+- [ ] Tokens JWT validados (firma, expiración, emisor)
 
-## Input Validation
+## Validación de entrada
 
-- [ ] All user input validated at system boundaries (API routes, form handlers)
-- [ ] Validation uses allowlists (not denylists)
-- [ ] String lengths constrained (min/max)
-- [ ] Numeric ranges validated
-- [ ] Email, URL, and date formats validated with proper libraries
-- [ ] File uploads: type restricted, size limited, content verified
-- [ ] SQL queries parameterized (no string concatenation)
-- [ ] HTML output encoded (use framework auto-escaping)
-- [ ] URLs validated before redirect (prevent open redirect)
-- [ ] Server-side URL fetches allowlisted; private/reserved IPs blocked (prevent SSRF)
+- [ ] Toda la entrada de usuario validada en los límites del sistema (rutas de API, manejadores de formularios)
+- [ ] La validación usa listas blancas (no listas negras)
+- [ ] Longitudes de cadenas restringidas (min/max)
+- [ ] Rangos numéricos validados
+- [ ] Formatos de email, URL y fecha validados con librerías apropiadas
+- [ ] Subidas de archivos: tipo restringido, tamaño limitado, contenido verificado
+- [ ] Consultas SQL parametrizadas (sin concatenación de cadenas)
+- [ ] Salida HTML codificada (usa el escape automático del framework)
+- [ ] URLs validadas antes de redirigir (previene open redirect)
+- [ ] Obtenciones de URL del lado del servidor en lista blanca; IPs privadas/reservadas bloqueadas (previene SSRF)
 
-## Security Headers
+## Cabeceras de seguridad
 
 ```
 Content-Security-Policy: default-src 'self'; script-src 'self'
 Strict-Transport-Security: max-age=31536000; includeSubDomains
 X-Content-Type-Options: nosniff
 X-Frame-Options: DENY
-X-XSS-Protection: 0  (disabled, rely on CSP)
+X-XSS-Protection: 0  (desactivado, confía en CSP)
 Referrer-Policy: strict-origin-when-cross-origin
 Permissions-Policy: camera=(), microphone=(), geolocation=()
 ```
 
-## CORS Configuration
+## Configuración de CORS
 
 ```typescript
-// Restrictive (recommended)
+// Restrictivo (recomendado)
 cors({
   origin: ['https://yourdomain.com', 'https://app.yourdomain.com'],
   credentials: true,
@@ -87,119 +87,119 @@ cors({
   allowedHeaders: ['Content-Type', 'Authorization'],
 })
 
-// NEVER use in production:
-cors({ origin: '*' })  // Allows any origin
+// NUNCA usar en producción:
+cors({ origin: '*' })  // Permite cualquier origen
 ```
 
-## Data Protection
+## Protección de datos
 
-- [ ] Sensitive fields excluded from API responses (`passwordHash`, `resetToken`, etc.)
-- [ ] Sensitive data not logged (passwords, tokens, full CC numbers)
-- [ ] PII encrypted at rest (if required by regulation)
-- [ ] HTTPS for all external communication
-- [ ] Database backups encrypted
+- [ ] Campos sensibles excluidos de las respuestas de API (`passwordHash`, `resetToken`, etc.)
+- [ ] Datos sensibles no registrados (contraseñas, tokens, números completos de tarjeta de crédito)
+- [ ] PII cifrada en reposo (si lo exige la regulación)
+- [ ] HTTPS para toda la comunicación externa
+- [ ] Backups de base de datos cifrados
 
-## Dependency Security
+## Seguridad de dependencias
 
-First locate the **installation boundary**. If the package is matched by a parent `workspaces` declaration, use that workspace root; otherwise use the nearest project root that owns both its manifest and dependency graph. At that boundary, corroborate `packageManager` (when present), the lockfile, and CI commands. Stop if they disagree or competing manager lockfiles exist there. A nested project is independent only when it is outside the parent workspace; independent subprojects may legitimately use different managers.
+Primero localiza el **límite de instalación**. Si el paquete coincide con una declaración `workspaces` padre, usa esa raíz de workspace; de lo contrario, usa la raíz del proyecto más cercana que posea tanto su manifest como su grafo de dependencias. En ese límite, corrobora `packageManager` (cuando esté presente), el lockfile y los comandos de CI. Detente si no coinciden o si existen lockfiles de gestores en competencia allí. Un proyecto anidado es independiente solo cuando está fuera del workspace padre; los subproyectos independientes pueden usar legítimamente gestores distintos.
 
-| Manager/version signal | Frozen/immutable CI install | Known-advisory audit |
+| Señal de gestor/versión | Instalación CI frozen/inmutable | Auditoría de advisory conocidos |
 |---|---|---|
-| npm (`package-lock.json` or `npm-shrinkwrap.json`) | `npm ci` | `npm audit` |
+| npm (`package-lock.json` o `npm-shrinkwrap.json`) | `npm ci` | `npm audit` |
 | pnpm | `pnpm install --frozen-lockfile` | `pnpm audit` |
 | Yarn 2+ | `yarn install --immutable` | `yarn npm audit -A -R` |
 | Yarn 1 | `yarn install --frozen-lockfile` | `yarn audit` |
 
-For an unlisted manager or version, consult its official documentation; do not substitute another manager's commands or newer defaults.
+Para un gestor o versión no listado, consulta su documentación oficial; no sustituyas los comandos de otro gestor ni los defaults más nuevos.
 
-### Install-Script Gate
+### Puerta de scripts de instalación
 
-Never discover dependency lifecycle scripts by first executing an ordinary install on a client whose defaults have not been verified.
+Nunca descubras los scripts de ciclo de vida de las dependencias ejecutando primero una instalación ordinaria en un cliente cuyos defaults no se hayan verificado.
 
-1. Bootstrap with dependency scripts disabled, or with a documented default-deny policy plus fail-closed enforcement.
-2. Inspect the exact script source and package version before approval.
-3. Record the narrowest native allow/deny policy at the installation boundary and commit it.
-4. Run a clean frozen/immutable install with that policy and verify the required packages still build.
+1. Inicializa con scripts de dependencias desactivados, o con una política documentada de denegación por defecto más una aplicación con fallo cerrado.
+2. Inspecciona el código fuente exacto del script y la versión del paquete antes de aprobar.
+3. Registra la política nativa más restringida de permitir/denegar en el límite de instalación y confírmala.
+4. Ejecuta una instalación limpia frozen/inmutable con esa política y verifica que los paquetes requeridos aún compilan.
 
-**Point-in-time snapshot:** Package-manager defaults and command names change quickly. Verify this matrix against the pinned client's current official documentation before relying on it.
+**Instantánea puntual:** los defaults de los gestores de paquetes y los nombres de comandos cambian rápido. Verifica esta matriz contra la documentación oficial actual del cliente fijado antes de confiar en ella.
 
-| Manager version | Native policy |
+| Versión del gestor | Política nativa |
 |---|---|
-| npm without verified granular approvals | Bootstrap with `npm ci --ignore-scripts`, or persist `ignore-scripts=true` when project-wide blocking is intended. Keep scripts disabled or deliberately upgrade before allowing any reviewed dependency script. |
-| npm 11.18.x (verified on 11.18.0) | Unreviewed dependency scripts run with a warning by default. Enforce `strict-allow-scripts=true` before a normal install, then use the workspace-unaware `npm install-scripts ls` from the installation boundary; keep approvals version-pinned and denials name-wide. |
-| npm 12.x (verified on 12.0.1) | Unreviewed dependency scripts are skipped by default; `strict-allow-scripts=true` makes their presence fail the install before execution. Use the same `npm install-scripts` review and approval flow. |
-| pnpm 11+ | Use `pnpm approve-builds` and commit `allowBuilds` decisions; `strictDepBuilds` defaults to `true`, so unreviewed builds fail. |
-| pnpm 10.26–10.x | Configure `allowBuilds` explicitly, or use `pnpm approve-builds` with the legacy `onlyBuiltDependencies` / `ignoredBuiltDependencies` lists. Set `strictDepBuilds: true`; its v10 default is `false`. |
-| pnpm 10.1–10.25 | `pnpm approve-builds` records the legacy lists; enable `strictDepBuilds` where supported (10.3+). |
-| Older or unknown pnpm | Bootstrap with `pnpm install --frozen-lockfile --ignore-scripts`. Keep scripts disabled unless the pinned version documents an enforceable policy. |
-| Yarn 4.14+ | Dependency postinstalls are disabled by default. Grant only required exceptions with top-level `dependenciesMeta.<package>.built: true`. |
-| Yarn 2–4.13 | Set `enableScripts: false` in `.yarnrc.yml`, then grant only required exceptions with top-level `dependenciesMeta.<package>.built: true`; do not enable scripts globally. |
-| Yarn 1 | Bootstrap with `yarn install --ignore-scripts`; keep scripts disabled unless each required exception is reviewed under the pinned client's documented workflow. |
+| npm sin aprobaciones granulares verificadas | Inicializa con `npm ci --ignore-scripts`, o persiste `ignore-scripts=true` cuando se pretenda bloquear a nivel de proyecto. Mantén los scripts desactivados o actualiza deliberadamente antes de permitir cualquier script de dependencia revisado. |
+| npm 11.18.x (verificado en 11.18.0) | Los scripts de dependencias sin revisar se ejecutan con una advertencia por defecto. Aplica `strict-allow-scripts=true` antes de una instalación normal, luego usa el `npm install-scripts ls` que no conoce el workspace desde el límite de instalación; mantén las aprobaciones fijadas por versión y las denegaciones por nombre. |
+| npm 12.x (verificado en 12.0.1) | Los scripts de dependencias sin revisar se omiten por defecto; `strict-allow-scripts=true` hace que su presencia falle la instalación antes de la ejecución. Usa el mismo flujo de revisión y aprobación `npm install-scripts`. |
+| pnpm 11+ | Usa `pnpm approve-builds` y confirma las decisiones `allowBuilds`; `strictDepBuilds` es `true` por defecto, así que los builds sin revisar fallan. |
+| pnpm 10.26–10.x | Configura `allowBuilds` explícitamente, o usa `pnpm approve-builds` con las listas legacy `onlyBuiltDependencies` / `ignoredBuiltDependencies`. Define `strictDepBuilds: true`; su default en v10 es `false`. |
+| pnpm 10.1–10.25 | `pnpm approve-builds` registra las listas legacy; habilita `strictDepBuilds` donde se soporte (10.3+). |
+| pnpm más viejo o desconocido | Inicializa con `pnpm install --frozen-lockfile --ignore-scripts`. Mantén los scripts desactivados salvo que la versión fijada documento una política aplicable. |
+| Yarn 4.14+ | Los postinstalls de dependencias están desactivados por defecto. Otorga solo las excepciones requeridas con `dependenciesMeta.<package>.built: true` a nivel superior. |
+| Yarn 2–4.13 | Define `enableScripts: false` en `.yarnrc.yml`, luego otorga solo las excepciones requeridas con `dependenciesMeta.<package>.built: true` a nivel superior; no habilites los scripts globalmente. |
+| Yarn 1 | Inicializa con `yarn install --ignore-scripts`; mantén los scripts desactivados salvo que cada excepción requerida se revise bajo el flujo documentado del cliente fijado. |
 
-Authoritative checks: [npm install-scripts](https://docs.npmjs.com/cli/v11/commands/npm-install-scripts/), [install policy](https://docs.npmjs.com/cli/v11/commands/npm-install/), and [CLI releases](https://github.com/npm/cli/releases); [pnpm approve-builds](https://pnpm.io/cli/approve-builds) and [build settings](https://pnpm.io/settings#allowbuilds); [Yarn security](https://yarnpkg.com/features/security) and [manifest](https://yarnpkg.com/configuration/manifest#dependenciesMeta).
+Verificaciones autoritativas: [npm install-scripts](https://docs.npmjs.com/cli/v11/commands/npm-install-scripts/), [política de instalación](https://docs.npmjs.com/cli/v11/commands/npm-install/) y [releases de CLI](https://github.com/npm/cli/releases); [pnpm approve-builds](https://pnpm.io/cli/approve-builds) y [configuración de build](https://pnpm.io/settings#allowbuilds); [seguridad de Yarn](https://yarnpkg.com/features/security) y [manifest](https://yarnpkg.com/configuration/manifest#dependenciesMeta).
 
-**Supply-chain hygiene** (advisory audits do not catch newly malicious packages):
-- [ ] Exactly one authoritative lockfile per project/workspace root is committed and CI never rewrites it
-- [ ] Critical/high findings are triaged for reachability; deferrals have a reason and review date
-- [ ] Forced audit remediation (`npm audit fix --force` or equivalent) is never automatic; remediation diffs and changelogs are reviewed
-- [ ] Registry signatures/provenance are verified where the manager supports it
-- [ ] Dependency lifecycle scripts are blocked before first execution and approved only through the pinned manager's native policy
-- [ ] New dependencies are reviewed for ownership, maintenance, release age, provenance, transitive graph, and typosquatting
+**Higiene de la cadena de suministro** (las auditorías de advisory no detectan paquetes recién maliciosos):
+- [ ] Exactamente un lockfile autoritativo por raíz de proyecto/workspace confirmado y CI nunca lo reescribe
+- [ ] Hallazgos críticos/altos con triaje por alcanzabilidad; los diferimientos tienen motivo y fecha de revisión
+- [ ] La remediación de auditoría forzada (`npm audit fix --force` o equivalente) nunca es automática; se revisan los diffs de remediación y los changelogs
+- [ ] Firmas/procedencia del registro verificadas donde el gestor lo soporte
+- [ ] Scripts de ciclo de vida de dependencias bloqueados antes de la primera ejecución y aprobados solo a través de la política nativa del gestor fijado
+- [ ] Nuevas dependencias revisadas por propiedad, mantenimiento, antigüedad del release, procedencia, grafo transitivo y typosquatting
 
-## AI / LLM Security
+## Seguridad de IA / LLM
 
-For any feature that calls an LLM (chatbots, summarizers, agents, RAG):
+Para cualquier funcionalidad que llame a un LLM (chatbots, resumidores, agentes, RAG):
 
-- [ ] Model output treated as untrusted — never into `eval`/SQL/shell/`innerHTML`/file paths
-- [ ] Prompt injection assumed; permissions enforced in code, not in the system prompt
-- [ ] Secrets, cross-tenant data, and full system prompts kept out of the context window
-- [ ] Tool/agent permissions scoped; destructive or irreversible actions require confirmation
-- [ ] Token, rate, and recursion/loop limits set (bound consumption)
+- [ ] Salida del modelo tratada como no confiable; nunca hacia `eval`/SQL/shell/`innerHTML`/rutas de archivo
+- [ ] Inyección de prompts asumida; permisos aplicados en código, no en el system prompt
+- [ ] Secretos, datos entre tenants y system prompts completos fuera de la ventana de contexto
+- [ ] Permisos de herramientas/agentes limitados; las acciones destructivas o irreversibles requieren confirmación
+- [ ] Límites de tokens, tasa y recursión/loop establecidos (consumo acotado)
 
-## Error Handling
+## Manejo de errores
 
 ```typescript
-// Production: generic error, no internals
+// Producción: error genérico, sin internos
 res.status(500).json({
-  error: { code: 'INTERNAL_ERROR', message: 'Something went wrong' }
+  error: { code: 'INTERNAL_ERROR', message: 'Algo salió mal' }
 });
 
-// NEVER in production:
+// NUNCA en producción:
 res.status(500).json({
   error: err.message,
-  stack: err.stack,         // Exposes internals
-  query: err.sql,           // Exposes database details
+  stack: err.stack,         // Expone internos
+  query: err.sql,           // Expone detalles de la base de datos
 });
 ```
 
-## OWASP Top 10 Quick Reference
+## Referencia rápida del OWASP Top 10
 
-| # | Vulnerability | Prevention |
+| # | Vulnerabilidad | Prevención |
 |---|---|---|
-| 1 | Broken Access Control | Auth checks on every endpoint, ownership verification |
-| 2 | Cryptographic Failures | HTTPS, strong hashing, no secrets in code |
-| 3 | Injection | Parameterized queries, input validation |
-| 4 | Insecure Design | Threat modeling, spec-driven development |
-| 5 | Security Misconfiguration | Security headers, minimal permissions, audit deps |
-| 6 | Vulnerable Components | The ecosystem's dependency audit (`npm audit`, `pip-audit`, ...), keep deps updated, minimal deps |
-| 7 | Auth Failures | Strong passwords, rate limiting, session management |
-| 8 | Data Integrity Failures | Verify updates/dependencies, signed artifacts |
-| 9 | Logging Failures | Log security events, don't log secrets |
-| 10 | SSRF | Validate/allowlist URLs, restrict outbound requests |
+| 1 | Control de acceso roto | Verificaciones de auth en cada endpoint, verificación de propiedad |
+| 2 | Fallos criptográficos | HTTPS, hash fuerte, sin secretos en código |
+| 3 | Inyección | Consultas parametrizadas, validación de entrada |
+| 4 | Diseño inseguro | Modelado de amenazas, desarrollo guiado por especificación |
+| 5 | Mala configuración de seguridad | Cabeceras de seguridad, permisos mínimos, auditoría de deps |
+| 6 | Componentes vulnerables | La auditoría de dependencias del ecosistema (`npm audit`, `pip-audit`, ...), mantener deps actualizadas, deps mínimas |
+| 7 | Fallos de autenticación | Contraseñas fuertes, límite de peticiones, gestión de sesiones |
+| 8 | Fallos de integridad de datos | Verificar actualizaciones/dependencias, artefactos firmados |
+| 9 | Fallos de registro | Registrar eventos de seguridad, no registrar secretos |
+| 10 | SSRF | Validar/lista blanca de URLs, restringir peticiones salientes |
 
-## OWASP Top 10 for LLMs Quick Reference
+## Referencia rápida del OWASP Top 10 para LLMs
 
-For apps with LLM features. See the [OWASP GenAI Security Project](https://genai.owasp.org/llm-top-10/).
+Para apps con funcionalidades de LLM. Ver el [Proyecto de seguridad GenAI de OWASP](https://genai.owasp.org/llm-top-10/).
 
-| ID | Risk | Prevention |
+| ID | Riesgo | Prevención |
 |---|---|---|
-| LLM01 | Prompt Injection | Don't trust the system prompt as a boundary; enforce permissions in code |
-| LLM02 | Sensitive Information Disclosure | Keep secrets/PII out of prompts; filter outputs |
-| LLM03 | Supply Chain | Vet models, datasets, and plugins like any dependency |
-| LLM04 | Data and Model Poisoning | Use trusted model sources, verify integrity; vet fine-tuning and RAG data |
-| LLM05 | Improper Output Handling | Treat model output as untrusted; validate, parameterize, encode |
-| LLM06 | Excessive Agency | Scope tool permissions; confirm destructive actions |
-| LLM07 | System Prompt Leakage | Assume the system prompt can leak; put no secrets in it |
-| LLM08 | Vector and Embedding Weaknesses | Partition RAG embeddings per tenant; validate documents before indexing |
-| LLM09 | Misinformation | Ground answers with citations; validate critical claims; keep a human in the loop |
-| LLM10 | Unbounded Consumption | Cap tokens, request rate, and loop/recursion depth |
+| LLM01 | Inyección de prompts | No confíes en el system prompt como límite; aplica permisos en código |
+| LLM02 | Divulgación de información sensible | Mantén secretos/PII fuera de los prompts; filtra las salidas |
+| LLM03 | Cadena de suministro | Evalúa modelos, datasets y plugins como cualquier dependencia |
+| LLM04 | Envenenamiento de datos y modelos | Usa fuentes de modelos confiables, verifica integridad; evalúa el fine-tuning y los datos RAG |
+| LLM05 | Manejo inadecuado de la salida | Trata la salida del modelo como no confiable; valida, parametriza, codifica |
+| LLM06 | Agencia excesiva | Limita los permisos de las herramientas; confirma las acciones destructivas |
+| LLM07 | Fuga del system prompt | Asume que el system prompt puede filtrarse; no pongas secretos en él |
+| LLM08 | Debilidades de vectores y embeddings | Particiona los embeddings RAG por tenant; valida documentos antes de indexar |
+| LLM09 | Desinformación | Fundamenta las respuestas con citas; valida afirmaciones críticas; mantén un humano en el bucle |
+| LLM10 | Consumo ilimitado | Limita tokens, tasa de peticiones y profundidad de loop/recursión |

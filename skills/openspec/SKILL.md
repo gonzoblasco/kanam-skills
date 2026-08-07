@@ -85,7 +85,7 @@ openspec new change add-login-button
 
 Then generate:
 
-- `openspec/changes/add-login-button/proposal.md` — Why, What Changes, Capabilities, Impact
+- `openspec/changes/add-login-button/proposal.md` - Why, What Changes, Capabilities, Impact
 
 Use `openspec instructions proposal --change add-login-button` to get the exact template and guidance.
 

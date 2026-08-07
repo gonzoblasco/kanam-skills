@@ -26,10 +26,10 @@ Creación y gestión de documentación técnica de proyectos: ADRs, README, API 
 
 ### 2. Diseño Arquitectónico (pre-ADRs)
 Antes de documentar decisiones, diseñar la arquitectura:
-- **Diagramas C4/Mermaid** — contexto, contenedores, componentes, código
-- **Trade-offs** — evaluar opciones de stack, patrones, base de datos
-- **Análisis de dependencias** — salud del proyecto, versiones, compatibilidad
-- **Riesgos técnicos** — identificar temprano
+- **Diagramas C4/Mermaid** - contexto, contenedores, componentes, código
+- **Trade-offs** - evaluar opciones de stack, patrones, base de datos
+- **Análisis de dependencias** - salud del proyecto, versiones, compatibilidad
+- **Riesgos técnicos** - identificar temprano
 
 ### 3. Estructura
 Qué docs necesita el proyecto (README, API docs, guías, ADRs, CHANGELOG, CONTRIBUTING).
@@ -38,9 +38,9 @@ Qué docs necesita el proyecto (README, API docs, guías, ADRs, CHANGELOG, CONTR
 Crear o sincronizar decisiones arquitecturales con el formato estándar: contexto, decisión, consecuencias, alternativas consideradas.
 
 Referencia de patrones:
-- **Hexagonal Architecture** — puertos y adaptadores, dependencias inward
-- **Clean Architecture** — capas, reglas de dependencia
-- **Domain-Driven Design** — bounded contexts, entidades, value objects
+- **Hexagonal Architecture** - puertos y adaptadores, dependencias inward
+- **Clean Architecture** - capas, reglas de dependencia
+- **Domain-Driven Design** - bounded contexts, entidades, value objects
 
 ### 5. Redacción técnica
 Escribir o actualizar docs con ejemplos concretos, no teoría. Código real, no pseudocódigo.

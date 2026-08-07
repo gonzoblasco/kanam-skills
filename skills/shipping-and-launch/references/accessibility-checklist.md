@@ -1,115 +1,115 @@
-# Accessibility Checklist
+# Checklist de Accesibilidad
 
-Quick reference for WCAG 2.1 AA compliance. Use alongside the `frontend-ui-engineering` skill.
+Referencia rapida para el cumplimiento de WCAG 2.1 AA. Usala junto con la skill `frontend-ui-engineering`.
 
-## Table of Contents
+## Tabla de Contenidos
 
-- [Essential Checks](#essential-checks)
-- [Common HTML Patterns](#common-html-patterns)
-- [Testing Tools](#testing-tools)
-- [Quick Reference: ARIA Live Regions](#quick-reference-aria-live-regions)
-- [Common Anti-Patterns](#common-anti-patterns)
+- [Chequeos Esenciales](#chequeos-esenciales)
+- [Patrones HTML Comunes](#patrones-html-comunes)
+- [Herramientas de Prueba](#herramientas-de-prueba)
+- [Referencia Rapida: Regiones ARIA Live](#referencia-rapida-regiones-aria-live)
+- [Anti-Patrones Comunes](#anti-patrones-comunes)
 
-## Essential Checks
+## Chequeos Esenciales
 
-### Keyboard Navigation
-- [ ] All interactive elements focusable via Tab key
-- [ ] Focus order follows visual/logical order
-- [ ] Focus is visible (outline/ring on focused elements)
-- [ ] Custom widgets have keyboard support (Enter to activate, Escape to close)
-- [ ] No keyboard traps (user can always Tab away from a component)
-- [ ] Skip-to-content link at top of page - visible (at least) on keyboard focus
-- [ ] Modals trap focus while open, return focus on close
+### Navegacion por Teclado
+- [ ] Todos los elementos interactivos son enfocables con la tecla Tab
+- [ ] El orden del foco sigue el orden visual/logico
+- [ ] El foco es visible (outline/anillo en los elementos enfocados)
+- [ ] Los widgets personalizados tienen soporte de teclado (Enter para activar, Escape para cerrar)
+- [ ] No hay trampas de teclado (el usuario siempre puede salir de un componente con Tab)
+- [ ] Enlace "saltar al contenido" en la parte superior de la pagina: visible (al menos) al recibir el foco del teclado
+- [ ] Los modales atrapan el foco mientras estan abiertos y lo devuelven al cerrarse
 
-### Screen Readers
-- [ ] All images have `alt` text (or `alt=""` for decorative images)
-- [ ] All form inputs have associated labels (`<label>` or `aria-label`)
-- [ ] Buttons and links have descriptive text (not "Click here")
-- [ ] Icon-only buttons have `aria-label`
-- [ ] Page has one `<h1>` and headings don't skip levels
-- [ ] Dynamic content changes announced (`aria-live` regions)
-- [ ] Tables have `<th>` headers with scope
+### Lectores de Pantalla
+- [ ] Todas las imagenes tienen texto `alt` (o `alt=""` para imagenes decorativas)
+- [ ] Todos los inputs de formulario tienen labels asociados (`<label>` o `aria-label`)
+- [ ] Los botones y enlaces tienen texto descriptivo (no "Hace clic aca")
+- [ ] Los botones de solo icono tienen `aria-label`
+- [ ] La pagina tiene un solo `<h1>` y los encabezados no saltan niveles
+- [ ] Los cambios de contenido dinamico se anuncian (regiones `aria-live`)
+- [ ] Las tablas tienen headers `<th>` con scope
 
 ### Visual
-- [ ] Text contrast ≥ 4.5:1 (normal text) or ≥ 3:1 (large text, 18px+)
-- [ ] UI components contrast ≥ 3:1 against background
-- [ ] Color is not the only way to convey information
-- [ ] Text resizable to 200% without breaking layout
-- [ ] No content that flashes more than 3 times per second
+- [ ] Contraste del texto >= 4.5:1 (texto normal) o >= 3:1 (texto grande, 18px+)
+- [ ] Contraste de los componentes de UI >= 3:1 contra el fondo
+- [ ] El color no es la unica forma de transmitir informacion
+- [ ] El texto es redimensionable al 200% sin romper el layout
+- [ ] No hay contenido que parpadee mas de 3 veces por segundo
 
-### Forms
-- [ ] Every input has a visible label
-- [ ] Required fields indicated (not by color alone)
-- [ ] Error messages specific and associated with the field
-- [ ] Error state visible by more than color (icon, text, border)
-- [ ] Form submission errors summarized and focusable
-- [ ] Known fields use autocomplete (for example `type="email" autocomplete="email"`)
+### Formularios
+- [ ] Cada input tiene un label visible
+- [ ] Los campos obligatorios estan indicados (no solo por color)
+- [ ] Los mensajes de error son especificos y estan asociados con el campo
+- [ ] El estado de error es visible por mas que solo el color (icono, texto, borde)
+- [ ] Los errores de envio del formulario se resumen y son enfocables
+- [ ] Los campos conocidos usan autocomplete (por ejemplo `type="email" autocomplete="email"`)
 
-### Content
-- [ ] Language declared (`<html lang="en">`)
-- [ ] Page has a descriptive `<title>`
-- [ ] Links distinguish from surrounding text (not by color alone)
-- [ ] Touch targets ≥ 44x44px on mobile
-- [ ] Meaningful empty states (not blank screens)
+### Contenido
+- [ ] Idioma declarado (`<html lang="en">`)
+- [ ] La pagina tiene un `<title>` descriptivo
+- [ ] Los enlaces se distinguen del texto circundante (no solo por color)
+- [ ] Los objetivos táctiles son >= 44x44px en movil
+- [ ] Estados vacios significativos (no pantallas en blanco)
 
-## Common HTML Patterns
+## Patrones HTML Comunes
 
-### Buttons vs. Links
+### Botones vs. Enlaces
 
 ```html
-<!-- Use <button> for actions -->
+<!-- Usa <button> para acciones -->
 <button onClick={handleDelete}>Delete Task</button>
 
-<!-- Use <a> for navigation -->
+<!-- Usa <a> para navegacion -->
 <a href="/tasks/123">View Task</a>
 
-<!-- NEVER use div/span as buttons -->
-<div onClick={handleDelete}>Delete</div>  <!-- BAD -->
+<!-- NUNCA uses div/span como botones -->
+<div onClick={handleDelete}>Delete</div>  <!-- MAL -->
 ```
 
-### Form Labels
+### Labels de Formulario
 
 ```html
-<!-- Explicit label association -->
+<!-- Asociacion explicita del label -->
 <label htmlFor="email">Email address</label>
 <input id="email" type="email" required />
 
-<!-- Implicit wrapping -->
+<!-- Envolver implicitamente -->
 <label>
   Email address
   <input type="email" required />
 </label>
 
-<!-- Hidden label (visible label preferred) -->
+<!-- Label oculto (se prefiere el label visible) -->
 <input type="search" aria-label="Search tasks" />
 ```
 
-### ARIA Roles
+### Roles ARIA
 
 ```html
-<!-- Navigation -->
+<!-- Navegacion -->
 <nav aria-label="Main navigation">...</nav>
 <nav aria-label="Footer links">...</nav>
 
-<!-- Status messages -->
+<!-- Mensajes de estado -->
 <div role="status" aria-live="polite">Task saved</div>
 
-<!-- Alert messages -->
+<!-- Mensajes de alerta -->
 <div role="alert">Error: Title is required</div>
 
-<!-- Modal dialogs -->
+<!-- Dialogos modales -->
 <dialog aria-modal="true" aria-labelledby="dialog-title">
   <h2 id="dialog-title">Confirm Delete</h2>
   ...
 </dialog>
 
-<!-- Loading states -->
+<!-- Estados de carga -->
 <div aria-busy="true" aria-label="Loading tasks">
   <Spinner />
 </div>
 ```
 
-### Accessible Lists
+### Listas Accesibles
 
 ```html
 <ul role="list" aria-label="Tasks">
@@ -120,41 +120,41 @@ Quick reference for WCAG 2.1 AA compliance. Use alongside the `frontend-ui-engin
 </ul>
 ```
 
-## Testing Tools
+## Herramientas de Prueba
 
 ```bash
-# Automated audit
-npx axe-core          # Programmatic accessibility testing
-npx pa11y             # CLI accessibility checker
+# Auditoria automatizada
+npx axe-core          # Pruebas de accesibilidad programaticas
+npx pa11y             # Chequeador de accesibilidad CLI
 
-# In browser
-# Chrome DevTools → Lighthouse → Accessibility
-# Chrome DevTools → Elements → Accessibility tree
+# En el navegador
+# Chrome DevTools -> Lighthouse -> Accessibility
+# Chrome DevTools -> Elements -> Accessibility tree
 
-# Screen reader testing
+# Pruebas con lector de pantalla
 # macOS: VoiceOver (Cmd + F5)
-# Windows: NVDA (free) or JAWS
+# Windows: NVDA (gratis) o JAWS
 # Linux: Orca
 ```
 
-## Quick Reference: ARIA Live Regions
+## Referencia Rapida: Regiones ARIA Live
 
-| Value | Behavior | Use For |
-|-------|----------|---------|
-| `aria-live="polite"` | Announced at next pause | Status updates, saved confirmations |
-| `aria-live="assertive"` | Announced immediately | Errors, time-sensitive alerts |
-| `role="status"` | Same as `polite` | Status messages |
-| `role="alert"` | Same as `assertive` | Error messages |
+| Valor | Comportamiento | Usar Para |
+|-------|----------------|-----------|
+| `aria-live="polite"` | Se anuncia en la proxima pausa | Actualizaciones de estado, confirmaciones de guardado |
+| `aria-live="assertive"` | Se anuncia inmediatamente | Errores, alertas sensibles al tiempo |
+| `role="status"` | Igual que `polite` | Mensajes de estado |
+| `role="alert"` | Igual que `assertive` | Mensajes de error |
 
-## Common Anti-Patterns
+## Anti-Patrones Comunes
 
-| Anti-Pattern | Problem | Fix |
+| Anti-Patron | Problema | Solucion |
 |---|---|---|
-| `div` as button | Not focusable, no keyboard support | Use `<button>` |
-| Missing `alt` text | Images invisible to screen readers | Add descriptive `alt` |
-| Color-only states | Invisible to color-blind users | Add icons, text, or patterns |
-| Autoplaying media | Disorienting, can't be stopped | Add controls, don't autoplay |
-| Custom dropdown with no ARIA | Unusable by keyboard/screen reader | Use native `<select>` or proper ARIA listbox |
-| Removing focus outlines | Users can't see where they are | Style outlines, don't remove them |
-| Empty links/buttons | "Link" announced with no description | Add text or `aria-label` |
-| `tabindex > 0` | Breaks natural tab order | Use `tabindex="0"` or `-1` only |
+| `div` como boton | No es enfocable, sin soporte de teclado | Usa `<button>` |
+| Falta de texto `alt` | Las imagenes son invisibles para los lectores de pantalla | Agrega `alt` descriptivo |
+| Estados solo por color | Invisibles para usuarios con daltonismo | Agrega iconos, texto o patrones |
+| Media con autoplay | Desorienta, no se puede detener | Agrega controles, no uses autoplay |
+| Dropdown personalizado sin ARIA | Inutilizable por teclado/lector de pantalla | Usa `<select>` nativo o un listbox ARIA apropiado |
+| Eliminar los outlines de foco | Los usuarios no pueden ver donde estan | Estiliza los outlines, no los elimines |
+| Enlaces/botones vacios | "Enlace" anunciado sin descripcion | Agrega texto o `aria-label` |
+| `tabindex > 0` | Rompe el orden natural del tab | Usa solo `tabindex="0"` o `-1` |

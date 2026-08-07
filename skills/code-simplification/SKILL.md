@@ -1,72 +1,72 @@
 ---
 name: code-simplification
-description: Simplifies code for clarity. Use when refactoring code for clarity without changing behavior. Use when code works but is harder to read, maintain, or extend than it should be. Use when reviewing code that has accumulated unnecessary complexity.
+description: Simplifica el código para mayor claridad. Úsalo al refactorizar código para claridad sin cambiar el comportamiento. Úsalo cuando el código funciona pero es más difícil de leer, mantener o extender de lo que debería. Úsalo al revisar código que ha acumulado complejidad innecesaria.
 ---
 
-# Code Simplification
+# Simplificación de Código
 
-> Inspired by the [Claude Code Simplifier plugin](https://github.com/anthropics/claude-plugins-official/blob/main/plugins/code-simplifier/agents/code-simplifier.md). Adapted here as a model-agnostic, process-driven skill for any AI coding agent.
+> Inspirado en el [plugin Claude Code Simplifier](https://github.com/anthropics/claude-plugins-official/blob/main/plugins/code-simplifier/agents/code-simplifier.md). Adaptado aquí como una skill agnóstica al modelo y dirigida por proceso para cualquier agente de codificación con IA.
 
-## Overview
+## Visión General
 
-Simplify code by reducing complexity while preserving exact behavior. The goal is not fewer lines — it's code that is easier to read, understand, modify, and debug. Every simplification must pass a simple test: "Would a new team member understand this faster than the original?"
+Simplifica el código reduciendo la complejidad mientras preservas el comportamiento exacto. El objetivo no son menos líneas: es un código más fácil de leer, entender, modificar y depurar. Toda simplificación debe pasar una prueba simple: "¿Un miembro nuevo del equipo lo entendería más rápido que el original?"
 
-## When to Use
+## Cuándo Usarla
 
-- After a feature is working and tests pass, but the implementation feels heavier than it needs to be
-- During code review when readability or complexity issues are flagged
-- When you encounter deeply nested logic, long functions, or unclear names
-- When refactoring code written under time pressure
-- When consolidating related logic scattered across files
-- After merging changes that introduced duplication or inconsistency
+- Después de que una función funciona y los tests pasan, pero la implementación se siente más pesada de lo necesario
+- Durante la revisión de código cuando se marcan problemas de legibilidad o complejidad
+- Cuando te encuentras con lógica profundamente anidada, funciones largas o nombres poco claros
+- Al refactorizar código escrito bajo presión de tiempo
+- Al consolidar lógica relacionada repartida entre archivos
+- Después de fusionar cambios que introdujeron duplicación o inconsistencia
 
-**When NOT to use:**
+**Cuándo NO usarla:**
 
-- Code is already clean and readable — don't simplify for the sake of it
-- You don't understand what the code does yet — comprehend before you simplify
-- The code is performance-critical and the "simpler" version would be measurably slower
-- You're about to rewrite the module entirely — simplifying throwaway code wastes effort
+- El código ya está limpio y es legible: no simplifiques por simplificar
+- Todavía no entiendes qué hace el código: comprende antes de simplificar
+- El código es crítico para el rendimiento y la versión "más simple" sería mediblemente más lenta
+- Estás a punto de reescribir el módulo por completo: simplificar código desechable desperdicia esfuerzo
 
-## The Five Principles
+## Los Cinco Principios
 
-### 1. Preserve Behavior Exactly
+### 1. Preserva el Comportamiento Exactamente
 
-Don't change what the code does — only how it expresses it. All inputs, outputs, side effects, error behavior, and edge cases must remain identical. If you're not sure a simplification preserves behavior, don't make it.
-
-```
-ASK BEFORE EVERY CHANGE:
-→ Does this produce the same output for every input?
-→ Does this maintain the same error behavior?
-→ Does this preserve the same side effects and ordering?
-→ Do all existing tests still pass without modification?
-```
-
-### 2. Follow Project Conventions
-
-Simplification means making code more consistent with the codebase, not imposing external preferences. Before simplifying:
+No cambies lo que hace el código, solo cómo lo expresa. Todas las entradas, salidas, efectos secundarios, comportamientos de error y casos límite deben permanecer idénticos. Si no estás seguro de que una simplificación preserve el comportamiento, no la hagas.
 
 ```
-1. Read CLAUDE.md / project conventions
-2. Study how neighboring code handles similar patterns
-3. Match the project's style for:
-   - Import ordering and module system
-   - Function declaration style
-   - Naming conventions
-   - Error handling patterns
-   - Type annotation depth
+PREGUNTA ANTES DE CADA CAMBIO:
+→ ¿Esto produce la misma salida para cada entrada?
+→ ¿Mantiene el mismo comportamiento de error?
+→ ¿Preserva los mismos efectos secundarios y su orden?
+→ ¿Siguen pasando todos los tests existentes sin modificación?
 ```
 
-Simplification that breaks project consistency is not simplification — it's churn.
+### 2. Sigue las Convenciones del Proyecto
 
-### 3. Prefer Clarity Over Cleverness
+Simplificar significa hacer que el código sea más coherente con el codebase, no imponer preferencias externas. Antes de simplificar:
 
-Explicit code is better than compact code when the compact version requires a mental pause to parse.
+```
+1. Lee CLAUDE.md / las convenciones del proyecto
+2. Estudia cómo el código vecino maneja patrones similares
+3. Haz coincidir el estilo del proyecto en:
+   - Orden de imports y sistema de módulos
+   - Estilo de declaración de funciones
+   - Convenciones de nomenclatura
+   - Patrones de manejo de errores
+   - Profundidad de anotaciones de tipos
+```
+
+La simplificación que rompe la coherencia del proyecto no es simplificación: es churn.
+
+### 3. Prefiere la Claridad Sobre la Astucia
+
+El código explícito es mejor que el código compacto cuando la versión compacta requiere una pausa mental para analizarla.
 
 ```typescript
-// UNCLEAR: Dense ternary chain
+// POCO CLARO: Cadena densa de ternarios
 const label = isNew ? 'New' : isUpdated ? 'Updated' : isArchived ? 'Archived' : 'Active';
 
-// CLEAR: Readable mapping
+// CLARO: Mapeo legible
 function getStatusLabel(item: Item): string {
   if (item.isNew) return 'New';
   if (item.isUpdated) return 'Updated';
@@ -76,160 +76,160 @@ function getStatusLabel(item: Item): string {
 ```
 
 ```typescript
-// UNCLEAR: Chained reduces with inline logic
+// POCO CLARO: Reducciones encadenadas con lógica en línea
 const result = items.reduce((acc, item) => ({
   ...acc,
   [item.id]: { ...acc[item.id], count: (acc[item.id]?.count ?? 0) + 1 }
 }), {});
 
-// CLEAR: Named intermediate step
+// CLARO: Paso intermedio con nombre
 const countById = new Map<string, number>();
 for (const item of items) {
   countById.set(item.id, (countById.get(item.id) ?? 0) + 1);
 }
 ```
 
-### 4. Maintain Balance
+### 4. Mantén el Equilibrio
 
-Simplification has a failure mode: over-simplification. Watch for these traps:
+La simplificación tiene un modo de fallo: la sobre-simplificación. Vigila estas trampas:
 
-- **Inlining too aggressively** — removing a helper that gave a concept a name makes the call site harder to read
-- **Combining unrelated logic** — two simple functions merged into one complex function is not simpler
-- **Removing "unnecessary" abstraction** — some abstractions exist for extensibility or testability, not complexity
-- **Optimizing for line count** — fewer lines is not the goal; easier comprehension is
+- **Inline demasiado agresivo**: eliminar un helper que le daba nombre a un concepto hace que el sitio de la llamada sea más difícil de leer
+- **Combinar lógica no relacionada**: dos funciones simples fusionadas en una función compleja no es más simple
+- **Eliminar abstracción "innecesaria"**: algunas abstracciones existen para la extensibilidad o la testabilidad, no para la complejidad
+- **Optimizar por número de líneas**: menos líneas no es el objetivo; la comprensión más fácil sí lo es
 
-### 5. Scope to What Changed
+### 5. Acota a lo que Cambió
 
-Default to simplifying recently modified code. Avoid drive-by refactors of unrelated code unless explicitly asked to broaden scope. Unscoped simplification creates noise in diffs and risks unintended regressions.
+El valor por defecto es simplificar el código modificado recientemente. Evita refactorizaciones al paso de código no relacionado a menos que se te pida explícitamente ampliar el alcance. La simplificación sin acotar crea ruido en los diffs y arriesga regresiones no intencionadas.
 
-## The Simplification Process
+## El Proceso de Simplificación
 
-### Step 1: Understand Before Touching (Chesterton's Fence)
+### Paso 1: Entiende Antes de Tocar (La Valla de Chesterton)
 
-Before changing or removing anything, understand why it exists. This is Chesterton's Fence: if you see a fence across a road and don't understand why it's there, don't tear it down. First understand the reason, then decide if the reason still applies.
-
-```
-BEFORE SIMPLIFYING, ANSWER:
-- What is this code's responsibility?
-- What calls it? What does it call?
-- What are the edge cases and error paths?
-- Are there tests that define the expected behavior?
-- Why might it have been written this way? (Performance? Platform constraint? Historical reason?)
-- Check git blame: what was the original context for this code?
-```
-
-If you can't answer these, you're not ready to simplify. Read more context first.
-
-### Step 2: Identify Simplification Opportunities
-
-Scan for these patterns — each one is a concrete signal, not a vague smell:
-
-**Structural complexity:**
-
-| Pattern | Signal | Simplification |
-|---------|--------|----------------|
-| Deep nesting (3+ levels) | Hard to follow control flow | Extract conditions into guard clauses or helper functions |
-| Long functions (50+ lines) | Multiple responsibilities | Split into focused functions with descriptive names |
-| Nested ternaries | Requires mental stack to parse | Replace with if/else chains, switch, or lookup objects |
-| Boolean parameter flags | `doThing(true, false, true)` | Replace with options objects or separate functions |
-| Repeated conditionals | Same `if` check in multiple places | Extract to a well-named predicate function |
-
-**Naming and readability:**
-
-| Pattern | Signal | Simplification |
-|---------|--------|----------------|
-| Generic names | `data`, `result`, `temp`, `val`, `item` | Rename to describe the content: `userProfile`, `validationErrors` |
-| Abbreviated names | `usr`, `cfg`, `btn`, `evt` | Use full words unless the abbreviation is universal (`id`, `url`, `api`) |
-| Misleading names | Function named `get` that also mutates state | Rename to reflect actual behavior |
-| Comments explaining "what" | `// increment counter` above `count++` | Delete the comment — the code is clear enough |
-| Comments explaining "why" | `// Retry because the API is flaky under load` | Keep these — they carry intent the code can't express |
-
-**Redundancy:**
-
-| Pattern | Signal | Simplification |
-|---------|--------|----------------|
-| Duplicated logic | Same 5+ lines in multiple places | Extract to a shared function |
-| Dead code | Unreachable branches, unused variables, commented-out blocks | Remove (after confirming it's truly dead) |
-| Unnecessary abstractions | Wrapper that adds no value | Inline the wrapper, call the underlying function directly |
-| Over-engineered patterns | Factory-for-a-factory, strategy-with-one-strategy | Replace with the simple direct approach |
-| Redundant type assertions | Casting to a type that's already inferred | Remove the assertion |
-
-### Step 3: Apply Changes Incrementally
-
-Make one simplification at a time. Run tests after each change. **Submit refactoring changes separately from feature or bug fix changes.** A PR that refactors and adds a feature is two PRs — split them.
+Antes de cambiar o eliminar nada, entiende por qué existe. Esta es la Valla de Chesterton: si ves una valla al otro lado de un camino y no entiendes por qué está ahí, no la derribes. Primero entiende la razón, luego decide si la razón sigue aplicando.
 
 ```
-FOR EACH SIMPLIFICATION:
-1. Make the change
-2. Run the test suite
-3. If tests pass → commit (or continue to next simplification)
-4. If tests fail → revert and reconsider
+ANTES DE SIMPLIFICAR, RESPONDE:
+- ¿Cuál es la responsabilidad de este código?
+- ¿Qué lo llama? ¿A qué llama?
+- ¿Cuáles son los casos límite y los caminos de error?
+- ¿Hay tests que definen el comportamiento esperado?
+- ¿Por qué podría haberse escrito así? (¿Rendimiento? ¿Restricción de plataforma? ¿Motivo histórico?)
+- Revisa el git blame: ¿cuál era el contexto original de este código?
 ```
 
-Avoid batching multiple simplifications into a single untested change. If something breaks, you need to know which simplification caused it.
+Si no puedes responder a estas preguntas, no estás listo para simplificar. Lee más contexto primero.
 
-**The Rule of 500:** If a refactoring would touch more than 500 lines, invest in automation (codemods, sed scripts, AST transforms) rather than making the changes by hand. Manual edits at that scale are error-prone and exhausting to review.
+### Paso 2: Identifica Oportunidades de Simplificación
 
-### Step 4: Verify the Result
+Busca estos patrones: cada uno es una señal concreta, no un olor vago:
 
-After all simplifications, step back and evaluate the whole:
+**Complejidad estructural:**
+
+| Patrón | Señal | Simplificación |
+|--------|-------|----------------|
+| Anidamiento profundo (3+ niveles) | Flujo de control difícil de seguir | Extrae las condiciones a guardas o funciones helper |
+| Funciones largas (50+ líneas) | Múltiples responsabilidades | Divide en funciones enfocadas con nombres descriptivos |
+| Ternarios anidados | Requiere pila mental para analizar | Reemplaza con cadenas if/else, switch u objetos de búsqueda |
+| Flags de parámetros booleanos | `doThing(true, false, true)` | Reemplaza con objetos de opciones o funciones separadas |
+| Condicionales repetidos | La misma comprobación `if` en varios lugares | Extrae a una función de predicado bien nombrada |
+
+**Nomenclatura y legibilidad:**
+
+| Patrón | Señal | Simplificación |
+|--------|-------|----------------|
+| Nombres genéricos | `data`, `result`, `temp`, `val`, `item` | Renombra para describir el contenido: `userProfile`, `validationErrors` |
+| Nombres abreviados | `usr`, `cfg`, `btn`, `evt` | Usa palabras completas a menos que la abreviatura sea universal (`id`, `url`, `api`) |
+| Nombres engañosos | Función llamada `get` que también muta estado | Renombra para reflejar el comportamiento real |
+| Comentarios que explican "qué" | `// increment counter` sobre `count++` | Elimina el comentario: el código ya es bastante claro |
+| Comentarios que explican "por qué" | `// Reintenta porque la API es inestable bajo carga` | Consérvalos: llevan intención que el código no puede expresar |
+
+**Redundancia:**
+
+| Patrón | Señal | Simplificación |
+|--------|-------|----------------|
+| Lógica duplicada | Las mismas 5+ líneas en varios lugares | Extrae a una función compartida |
+| Código muerto | Ramas inalcanzables, variables sin usar, bloques comentados | Elimina (después de confirmar que está realmente muerto) |
+| Abstracciones innecesarias | Wrapper que no añade valor | Aplica inline al wrapper, llama a la función subyacente directamente |
+| Patrones sobre-ingenierizados | Fábrica-de-una-fábrica, estrategia-con-una-estrategia | Reemplaza con el enfoque directo y simple |
+| Afirmaciones de tipo redundantes | Casting a un tipo que ya está inferido | Elimina la afirmación |
+
+### Paso 3: Aplica los Cambios de Forma Incremental
+
+Haz una simplificación a la vez. Ejecuta los tests después de cada cambio. **Envía los cambios de refactorización por separado de los cambios de función o corrección de bugs.** Un PR que refactoriza y añade una función son dos PR: divídelos.
 
 ```
-COMPARE BEFORE AND AFTER:
-- Is the simplified version genuinely easier to understand?
-- Did you introduce any new patterns inconsistent with the codebase?
-- Is the diff clean and reviewable?
-- Would a teammate approve this change?
+POR CADA SIMPLIFICACIÓN:
+1. Haz el cambio
+2. Ejecuta la suite de tests
+3. Si los tests pasan → commit (o continúa con la siguiente simplificación)
+4. Si los tests fallan → revierte y reconsidera
 ```
 
-If the "simplified" version is harder to understand or review, revert. Not every simplification attempt succeeds.
+Evita agrupar múltiples simplificaciones en un solo cambio sin probar. Si algo se rompe, necesitas saber qué simplificación lo causó.
 
-## Language-Specific Guidance
+**La Regla de 500:** Si una refactorización tocaría más de 500 líneas, invierte en automatización (codemods, scripts de sed, transformaciones AST) en lugar de hacer los cambios a mano. Las ediciones manuales a esa escala son propensas a errores y agotadoras de revisar.
+
+### Paso 4: Verifica el Resultado
+
+Después de todas las simplificaciones, da un paso atrás y evalúa el conjunto:
+
+```
+COMPARA ANTES Y DESPUÉS:
+- ¿La versión simplificada es genuinamente más fácil de entender?
+- ¿Introdujiste patrones nuevos inconsistentes con el codebase?
+- ¿El diff está limpio y es revisable?
+- ¿Un compañero aprobaría este cambio?
+```
+
+Si la versión "simplificada" es más difícil de entender o revisar, revierte. No todo intento de simplificación tiene éxito.
+
+## Guía Específica por Lenguaje
 
 ### TypeScript / JavaScript
 
 ```typescript
-// SIMPLIFY: Unnecessary async wrapper
-// Before
+// SIMPLIFICA: Wrapper async innecesario
+// Antes
 async function getUser(id: string): Promise<User> {
   return await userService.findById(id);
 }
-// After
+// Después
 function getUser(id: string): Promise<User> {
   return userService.findById(id);
 }
 
-// SIMPLIFY: Verbose conditional assignment
-// Before
+// SIMPLIFICA: Asignación condicional verbosa
+// Antes
 let displayName: string;
 if (user.nickname) {
   displayName = user.nickname;
 } else {
   displayName = user.fullName;
 }
-// After
+// Después
 const displayName = user.nickname || user.fullName;
 
-// SIMPLIFY: Manual array building
-// Before
+// SIMPLIFICA: Construcción manual de arrays
+// Antes
 const activeUsers: User[] = [];
 for (const user of users) {
   if (user.isActive) {
     activeUsers.push(user);
   }
 }
-// After
+// Después
 const activeUsers = users.filter((user) => user.isActive);
 
-// SIMPLIFY: Redundant boolean return
-// Before
+// SIMPLIFICA: Retorno booleano redundante
+// Antes
 function isValid(input: string): boolean {
   if (input.length > 0 && input.length < 100) {
     return true;
   }
   return false;
 }
-// After
+// Después
 function isValid(input: string): boolean {
   return input.length > 0 && input.length < 100;
 }
@@ -238,16 +238,16 @@ function isValid(input: string): boolean {
 ### Python
 
 ```python
-# SIMPLIFY: Verbose dictionary building
-# Before
+# SIMPLIFICA: Construcción verbosa de diccionarios
+# Antes
 result = {}
 for item in items:
     result[item.id] = item.name
-# After
+# Después
 result = {item.id: item.name for item in items}
 
-# SIMPLIFY: Nested conditionals with early return
-# Before
+# SIMPLIFICA: Condicionales anidados con retorno temprano
+# Antes
 def process(data):
     if data is not None:
         if data.is_valid():
@@ -259,7 +259,7 @@ def process(data):
             raise ValueError("Invalid data")
     else:
         raise TypeError("Data is None")
-# After
+# Después
 def process(data):
     if data is None:
         raise TypeError("Data is None")
@@ -273,8 +273,8 @@ def process(data):
 ### React / JSX
 
 ```tsx
-// SIMPLIFY: Verbose conditional rendering
-// Before
+// SIMPLIFICA: Renderizado condicional verboso
+// Antes
 function UserBadge({ user }: Props) {
   if (user.isAdmin) {
     return <Badge variant="admin">Admin</Badge>;
@@ -282,50 +282,50 @@ function UserBadge({ user }: Props) {
     return <Badge variant="default">User</Badge>;
   }
 }
-// After
+// Después
 function UserBadge({ user }: Props) {
   const variant = user.isAdmin ? 'admin' : 'default';
   const label = user.isAdmin ? 'Admin' : 'User';
   return <Badge variant={variant}>{label}</Badge>;
 }
 
-// SIMPLIFY: Prop drilling through intermediate components
-// Before — consider whether context or composition solves this better.
-// This is a judgment call — flag it, don't auto-refactor.
+// SIMPLIFICA: Prop drilling a través de componentes intermedios
+// Antes - considera si el contexto o la composición resuelven esto mejor.
+// Esto es un juicio - márcalo, no lo auto-refactorices.
 ```
 
-## Common Rationalizations
+## Racionalizaciones Comunes
 
-| Rationalization | Reality |
+| Racionalización | Realidad |
 |---|---|
-| "It's working, no need to touch it" | Working code that's hard to read will be hard to fix when it breaks. Simplifying now saves time on every future change. |
-| "Fewer lines is always simpler" | A 1-line nested ternary is not simpler than a 5-line if/else. Simplicity is about comprehension speed, not line count. |
-| "I'll just quickly simplify this unrelated code too" | Unscoped simplification creates noisy diffs and risks regressions in code you didn't intend to change. Stay focused. |
-| "The types make it self-documenting" | Types document structure, not intent. A well-named function explains *why* better than a type signature explains *what*. |
-| "This abstraction might be useful later" | Don't preserve speculative abstractions. If it's not used now, it's complexity without value. Remove it and re-add when needed. |
-| "The original author must have had a reason" | Maybe. Check git blame — apply Chesterton's Fence. But accumulated complexity often has no reason; it's just the residue of iteration under pressure. |
-| "I'll refactor while adding this feature" | Separate refactoring from feature work. Mixed changes are harder to review, revert, and understand in history. |
+| "Funciona, no hace falta tocarlo" | El código funcional difícil de leer será difícil de arreglar cuando se rompa. Simplificar ahora ahorra tiempo en cada cambio futuro. |
+| "Menos líneas siempre es más simple" | Un ternario anidado de 1 línea no es más simple que un if/else de 5 líneas. La simplicidad se trata de velocidad de comprensión, no del número de líneas. |
+| "Simplificaré rápido también este código no relacionado" | La simplificación sin acotar crea diffs ruidosos y arriesga regresiones en código que no tenías intención de cambiar. Mantente enfocado. |
+| "Los tipos lo hacen autodocumentable" | Los tipos documentan estructura, no intención. Una función bien nombrada explica el *por qué* mejor de lo que una firma de tipos explica el *qué*. |
+| "Esta abstracción podría ser útil más tarde" | No conserves abstracciones especulativas. Si no se usa ahora, es complejidad sin valor. Elimínala y vuelve a añadirla cuando se necesite. |
+| "El autor original debía de tener una razón" | Quizás. Revisa el git blame: aplica la Valla de Chesterton. Pero la complejidad acumulada a menudo no tiene razón; es solo el residuo de la iteración bajo presión. |
+| "Refactorizaré mientras añado esta función" | Separa la refactorización del trabajo de funciones. Los cambios mezclados son más difíciles de revisar, revertir y entender en el historial. |
 
-## Red Flags
+## Señales de Alerta
 
-- Simplification that requires modifying tests to pass (you likely changed behavior)
-- "Simplified" code that is longer and harder to follow than the original
-- Renaming things to match your preferences rather than project conventions
-- Removing error handling because "it makes the code cleaner"
-- Simplifying code you don't fully understand
-- Batching many simplifications into one large, hard-to-review commit
-- Refactoring code outside the scope of the current task without being asked
+- Simplificación que requiere modificar los tests para que pasen (probablemente cambiaste el comportamiento)
+- Código "simplificado" que es más largo y más difícil de seguir que el original
+- Renombrar cosas para que coincidan con tus preferencias en lugar de con las convenciones del proyecto
+- Eliminar el manejo de errores porque "hace que el código sea más limpio"
+- Simplificar código que no entiendes del todo
+- Agrupar muchas simplificaciones en un commit grande y difícil de revisar
+- Refactorizar código fuera del alcance de la tarea actual sin que te lo pidan
 
-## Verification
+## Verificación
 
-After completing a simplification pass:
+Después de completar una pasada de simplificación:
 
-- [ ] All existing tests pass without modification
-- [ ] Build succeeds with no new warnings
-- [ ] Linter/formatter passes (no style regressions)
-- [ ] Each simplification is a reviewable, incremental change
-- [ ] The diff is clean — no unrelated changes mixed in
-- [ ] Simplified code follows project conventions (checked against CLAUDE.md or equivalent)
-- [ ] No error handling was removed or weakened
-- [ ] No dead code was left behind (unused imports, unreachable branches)
-- [ ] A teammate or review agent would approve the change as a net improvement
+- [ ] Todos los tests existentes pasan sin modificación
+- [ ] El build tiene éxito sin advertencias nuevas
+- [ ] El linter/formateador pasa (sin regresiones de estilo)
+- [ ] Cada simplificación es un cambio incremental y revisable
+- [ ] El diff está limpio: sin cambios no relacionados mezclados
+- [ ] El código simplificado sigue las convenciones del proyecto (verificado contra CLAUDE.md o equivalente)
+- [ ] No se eliminó ni debilitó ningún manejo de errores
+- [ ] No quedó código muerto (imports sin usar, ramas inalcanzables)
+- [ ] Un compañero o agente de revisión aprobaría el cambio como una mejora neta

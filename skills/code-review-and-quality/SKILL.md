@@ -1,36 +1,36 @@
 ---
 name: code-review-and-quality
-description: Conducts multi-axis code review with quality gates. Integrates five-axis review (correctness, readability, architecture, security, performance), anti-pattern detection, and mentorship feedback. Use when reviewing code written by yourself, another agent, or a human before merging any change to the main branch.
+description: Realiza revisión de código multieje con quality gates (puertas de calidad). Integra la revisión de cinco ejes (correctitud, legibilidad, arquitectura, seguridad, rendimiento), detección de anti-patrones y feedback de mentoría. Usar al revisar código escrito por vos, por otro agente o por un humano antes de mergear cualquier cambio a la rama principal.
 ---
 
-# Code Review and Quality: The Five-Axis Inspection
+# Code Review and Quality: La Inspección de Cinco Ejes
 
-## Overview
+## Resumen
 
-Multi-dimensional code review with quality gates. Every change gets reviewed before merge — **no exceptions**. This skill combines **five-axis review**, **anti-pattern detection**, and **mentorship feedback** to assess code quality across correctness, readability, architecture, security, and performance.
+Revisión de código multidimensional con quality gates. Cada cambio se revisa antes del merge - **sin excepciones**. Esta skill combina la **revisión de cinco ejes**, la **detección de anti-patrones** y el **feedback de mentoría** para evaluar la calidad del código en correctitud, legibilidad, arquitectura, seguridad y rendimiento.
 
-**The approval standard:** Approve a change when it definitely improves overall code health, even if it isn't perfect. The goal is continuous improvement, not perfection.
+**El estándar de aprobación:** Aprobá un cambio cuando definitivamente mejora la salud general del código, incluso si no es perfecto. El objetivo es la mejora continua, no la perfección.
 
 ---
 
-## 🎯 Phase 1: Five-Axis Review Framework
+## 🎯 Fase 1: Framework de Revisión de Cinco Ejes
 
-### Axis 1: Correctness (Is it right?)
-**Verification Checklist:**
-- [ ] Does it match the spec/requirements exactly?
-- [ ] Do all tests pass? (unit, integration, E2E)
-- [ ] Are edge cases handled?
-- [ ] Is error handling comprehensive?
-- [ ] Are type signatures correct (if TypeScript)?
+### Eje 1: Correctitud (¿Está bien?)
+**Checklist de verificación:**
+- [ ] ¿Coincide exactamente con el spec/requerimientos?
+- [ ] ¿Pasan todos los tests? (unit, integración, E2E)
+- [ ] ¿Se manejan los casos límite?
+- [ ] ¿El manejo de errores es completo?
+- [ ] ¿Las firmas de tipos son correctas (si es TypeScript)?
 
-**Common Issues:**
+**Problemas comunes:**
 ```tsx
-// ✗ WRONG — Missing null check
+// ✗ MAL - Falta el check de null
 function getUser(id) {
-  return users.find(u => u.id === id); // Returns undefined, not null
+  return users.find(u => u.id === id); // Devuelve undefined, no null
 }
 
-// ✓ CORRECT — Explicit handling
+// ✓ CORRECTO - Manejo explícito
 function getUser(id) {
   const user = users.find(u => u.id === id);
   if (!user) throw new NotFoundError('User not found');
@@ -40,22 +40,22 @@ function getUser(id) {
 
 ---
 
-### Axis 2: Readability (Is it clear?)
-**Verification Checklist:**
-- [ ] Would a new team member understand this in < 5 minutes?
-- [ ] Are variable/functions meaningfully named?
-- [ ] Is nesting depth ≤ 3 levels?
-- [ ] Are comments explaining WHY, not WHAT?
-- [ ] Follows consistent formatting and conventions?
+### Eje 2: Legibilidad (¿Está claro?)
+**Checklist de verificación:**
+- [ ] ¿Un miembro nuevo del equipo lo entendería en menos de 5 minutos?
+- [ ] ¿Las variables/funciones tienen nombres significativos?
+- [ ] ¿La profundidad de anidamiento es ≤ 3 niveles?
+- [ ] ¿Los comentarios explican POR QUÉ, no QUÉ?
+- [ ] ¿Sigue un formato y convenciones consistentes?
 
-**Common Issues:**
+**Problemas comunes:**
 ```tsx
-// ✗ BAD — Unreadable function name
+// ✗ MAL - Nombre de función ilegible
 function processTransformOptimizeData(data, flag) {
   return data.filter(d => d.active).map(d => d.value).reduce((a,b)=>a+b);
 }
 
-// ✓ GOOD — Clear intent
+// ✓ BIEN - Intención clara
 function calculateTotalActiveValues(items) {
   return items
     .filter(item => item.isActive)
@@ -66,55 +66,55 @@ function calculateTotalActiveValues(items) {
 
 ---
 
-### Axis 3: Architecture (Is it structured well?)
-**Verification Checklist:**
-- [ ] Does it follow Single Responsibility Principle?
-- [ ] Are dependencies properly managed/injected?
-- [ ] Is there appropriate separation of concerns?
-- [ ] Does it fit the existing architecture?
-- [ ] Are boundaries clear (component/module)?
+### Eje 3: Arquitectura (¿Está bien estructurado?)
+**Checklist de verificación:**
+- [ ] ¿Sigue el Principio de Responsabilidad Única?
+- [ ] ¿Las dependencias se manejan/inyectan correctamente?
+- [ ] ¿Hay una separación apropiada de responsabilidades?
+- [ ] ¿Encaja con la arquitectura existente?
+- [ ] ¿Los límites están claros (componente/módulo)?
 
 ---
 
-### Axis 4: Security (Is it safe?)
-**Verification Checklist:**
-- [ ] Is user input validated/sanitized at boundaries?
-- [ ] Are secrets never logged or exposed?
-- [ ] Are authentication/authorization checks in place?
-- [ ] Are SQL injection/XSS/CSRF attacks prevented?
-- [ ] Are dependencies checked for vulnerabilities?
+### Eje 4: Seguridad (¿Es seguro?)
+**Checklist de verificación:**
+- [ ] ¿La entrada del usuario se valida/sanea en los límites?
+- [ ] ¿Los secretos nunca se loguean ni exponen?
+- [ ] ¿Hay checks de autenticación/autorización?
+- [ ] ¿Se previenen ataques de SQL injection/XSS/CSRF?
+- [ ] ¿Las dependencias se chequean por vulnerabilidades?
 
 ---
 
-### Axis 5: Performance (Is it fast?)
-**Verification Checklist:**
-- [ ] Are database queries optimized (no N+1)?
-- [ ] Are unnecessary re-renders prevented (React keys, memo)?
-- [ ] Is bundle size monitored?
-- [ ] Are heavy operations offloaded to web workers/background?
-- [ ] Are loading states handled properly?
+### Eje 5: Rendimiento (¿Es rápido?)
+**Checklist de verificación:**
+- [ ] ¿Las queries de base de datos están optimizadas (sin N+1)?
+- [ ] ¿Se previenen re-renders innecesarios (React keys, memo)?
+- [ ] ¿Se monitorea el tamaño del bundle?
+- [ ] ¿Las operaciones pesadas se descargan a web workers/background?
+- [ ] ¿Los estados de carga se manejan correctamente?
 
 ---
 
-## 🚫 Phase 2: Anti-Pattern Detection (From Anti-Pattern Czar)
+## 🚫 Fase 2: Detección de Anti-Patrones (Del Anti-Pattern Czar)
 
-### Critical Anti-Patterns to Detect
+### Anti-Patrones Críticos a Detectar
 
-#### Pattern #1: Premature Optimization
+#### Patrón #1: Optimización Prematura
 ```tsx
-// ✗ ANTI-PATTERN — Optimizing too early
+// ✗ ANTI-PATRÓN - Optimizando demasiado temprano
 const results = cache.get(key) || fetchData().then(res => res.cache.set(key, res));
 
-// ✓ CORRECT — Lazy loading with caching strategy defined later
+// ✓ CORRECTO - Lazy loading con estrategia de cache definida después
 const results = useLazyDataFetching({ key, onCache: (val) => cache.set(key, val) });
 ```
 
-#### Pattern #2: God Component/Service
+#### Patrón #2: God Component/Service (Componente/Servicio Dios)
 ```tsx
-// ✗ ANTI-PATTERN — 400+ lines doing everything
-function Dashboard() { // 450 lines of logic... }
+// ✗ ANTI-PATRÓN - 400+ líneas que hacen de todo
+function Dashboard() { // 450 líneas de lógica... }
 
-// ✓ CORRECT — Decomposed
+// ✓ CORRECTO - Descompuesto
 function Dashboard() {
   return (
     <Layout>
@@ -129,32 +129,32 @@ function Dashboard() {
 }
 ```
 
-#### Pattern #3: Feature Envy
+#### Patrón #3: Feature Envy (Envidia de Feature)
 ```tsx
-// ✗ ANTI-PATTERN — Method belongs in a new class
+// ✗ ANTI-PATRÓN - El método pertenece a una clase nueva
 class Order {
-  applyPromoCode(code) { // This should be in PromoCodeService!
+  applyPromoCode(code) { // ¡Esto debería estar en PromoCodeService!
     // ...
   }
 }
 
-// ✓ CORRECT — Separated concern
-class Order { /* only Order logic */ }
+// ✓ CORRECTO - Responsabilidad separada
+class Order { /* solo lógica de Order */ }
 class PromoCodeService {
-  apply(code, amount) { /* promo logic here */ }
+  apply(code, amount) { /* lógica de promo acá */ }
 }
 ```
 
-#### Pattern #4: Spaghetti Conditions
+#### Patrón #4: Condiciones Espagueti
 ```tsx
-// ✗ ANTI-PATTERN — 50+ if conditions in one file
+// ✗ ANTI-PATRÓN - 50+ condiciones if en un solo archivo
 function handleAction(type) {
   if (type === 'A') return ...;
   if (type === 'B') return ...;
-  // ... 45 more conditions
+  // ... 45 condiciones más
 }
 
-// ✓ CORRECT — Strategy pattern or map
+// ✓ CORRECTO - Patrón strategy o map
 function handleAction(type) {
   const handlers = {
     A: handleTypeA,
@@ -165,14 +165,14 @@ function handleAction(type) {
 }
 ```
 
-#### Pattern #5: Magic Numbers/Strings
+#### Patrón #5: Números/Cadenas Mágicas
 ```tsx
-// ✗ ANTI-PATTERN — Hidden constants
+// ✗ ANTI-PATRÓN - Constantes ocultas
 const MAX_RETRIES = 5;
 const API_TIMEOUT = 3000;
 const ERROR_CODES = { INVALID_USER: 401, NOT_FOUND: 404 };
 
-// ✓ CORRECT — Named constants in config file
+// ✓ CORRECTO - Constantes con nombre en archivo de config
 // api-config.ts
 export const RETRIES = 5;
 export const TIMEOUTS = { API: 3000 };
@@ -181,44 +181,44 @@ export const ERROR_CODES = { ... };
 
 ---
 
-## 📋 Phase 3: Review Severity Labels
+## 📋 Fase 3: Etiquetas de Severidad de Revisión
 
-### 🟢 Nit (Low Priority)
-**Definition:** Cosmetic issues, minor style inconsistencies, optional improvements.
+### 🟢 Nit (Prioridad Baja)
+**Definición:** Problemas cosméticos, inconsistencias menores de estilo, mejoras opcionales.
 
-**Examples:**
-- Missing trailing comma
-- Inconsistent spacing in one file
-- Could use a more descriptive variable name but it's understandable
-- Missing JSDoc comment that would be nice but isn't critical
+**Ejemplos:**
+- Coma final faltante
+- Espaciado inconsistente en un archivo
+- Se podría usar un nombre de variable más descriptivo pero es comprensible
+- Falta un comentario JSDoc que estaría bueno pero no es crítico
 
-**Action:** Comment inline, don't block merge (unless accumulation is problematic)
-
----
-
-### 🟡 FYI (For Your Information - Medium Priority)
-**Definition:** Important context, potential future improvements, architecture awareness.
-
-**Examples:**
-- This approach might become a performance bottleneck at scale
-- Consider extracting to a shared utility for reuse in other modules
-- Good pattern but worth documenting as a design decision
-
-**Action:** Add comment noting the observation, consider mentioning in ADR if architectural impact
+**Acción:** Comentá inline, no bloquees el merge (salvo que la acumulación sea problemática)
 
 ---
 
-### 🔴 Blocker (Critical - Must Fix Before Merge)
-**Definition:** Functional bugs, security vulnerabilities, critical architecture violations.
+### 🟡 FYI (Para Tu Información - Prioridad Media)
+**Definición:** Contexto importante, mejoras futuras potenciales, conciencia de arquitectura.
 
-**Examples:**
+**Ejemplos:**
+- Este enfoque podría convertirse en un cuello de botella de rendimiento a escala
+- Considerá extraerlo a una utilidad compartida para reutilizarlo en otros módulos
+- Buen patrón pero vale la pena documentarlo como decisión de diseño
+
+**Acción:** Agregá un comentario anotando la observación, considerá mencionarlo en el ADR si tiene impacto arquitectónico
+
+---
+
+### 🔴 Blocker (Crítico - Debe Corregirse Antes del Merge)
+**Definición:** Bugs funcionales, vulnerabilidades de seguridad, violaciones críticas de arquitectura.
+
+**Ejemplos:**
 ```tsx
-// 🔴 BLOCKER — Security vulnerability
+// 🔴 BLOCKER - Vulnerabilidad de seguridad
 const userInput = req.body.email;
-// No validation, no sanitization — potential XSS/injection!
+// Sin validación, sin saneamiento - ¡potencial XSS/injection!
 
-// Should be:
-const userInput = sanitize(req.body.email); // OWASP validator
+// Debería ser:
+const userInput = sanitize(req.body.email); // validador OWASP
 if (!isEmail(userInput)) {
   return res.status(400).json({ error: 'Invalid email' });
 }
@@ -226,79 +226,79 @@ if (!isEmail(userInput)) {
 
 ---
 
-## 📊 Phase 4: Change Sizing & Review Depth
+## 📊 Fase 4: Dimensionamiento del Cambio y Profundidad de Revisión
 
-### Small Changes (< 100 lines)
-**Review Focus:**
-- Correctness only (unit tests + manual verification)
-- Readability check
-- Security basics (input validation, secrets)
+### Cambios Pequeños (< 100 líneas)
+**Foco de revisión:**
+- Correctitud solamente (tests unitarios + verificación manual)
+- Check de legibilidad
+- Básicos de seguridad (validación de entrada, secretos)
 
-**Reviewers Needed:** 1 peer minimum
-
----
-
-### Medium Changes (100-500 lines)
-**Review Focus:**
-- All five axes covered
-- Integration tests required
-- Architecture alignment check
-
-**Reviewers Needed:** 2 peers minimum
+**Revisores necesarios:** mínimo 1 par
 
 ---
 
-### Large Changes (> 500 lines or multiple files)
-**Review Focus:**
-- Full five-axis review
-- Performance profiling (if applicable)
-- Security audit (OWASP Top 10 checks)
-- Architecture documentation update (ADR)
+### Cambios Medianos (100-500 líneas)
+**Foco de revisión:**
+- Los cinco ejes cubiertos
+- Tests de integración requeridos
+- Check de alineación de arquitectura
 
-**Reviewers Needed:** 3+ peers, possibly including senior engineer
-
-**Required Deliverables:**
-- [ ] All tests passing
-- [ ] ADR documenting architectural decision
-- [ ] Performance baseline comparison
-- [ ] Security review sign-off
+**Revisores necesarios:** mínimo 2 pares
 
 ---
 
-## ⏱️ Phase 5: Review Speed Norms
+### Cambios Grandes (> 500 líneas o múltiples archivos)
+**Foco de revisión:**
+- Revisión completa de cinco ejes
+- Perfilado de rendimiento (si aplica)
+- Auditoría de seguridad (checks de OWASP Top 10)
+- Actualización de documentación de arquitectura (ADR)
 
-### Response Time Expectations
-- **Nit issues:** 48 hours (cosmetic, can wait)
-- **FYI observations:** 72 hours (contextual, worth thinking about)
-- **Blockers:** Same-day (must fix before merge possible)
+**Revisores necesarios:** 3+ pares, posiblemente incluyendo un ingeniero senior
 
-**SLA Targets:**
-- Small changes: Review within 24h
-- Medium changes: Review within 48h  
-- Large changes: Review within 72h or break into smaller PRs
+**Entregables requeridos:**
+- [ ] Todos los tests pasando
+- [ ] ADR documentando la decisión arquitectónica
+- [ ] Comparación de línea base de rendimiento
+- [ ] Aprobación de la revisión de seguridad
 
 ---
 
-## 🧠 Phase 6: Mentorship Feedback Integration (From Code Mentor)
+## ⏱️ Fase 5: Normas de Velocidad de Revisión
 
-### Constructive Feedback Framework
+### Expectativas de Tiempo de Respuesta
+- **Issues Nit:** 48 horas (cosmético, puede esperar)
+- **Observaciones FYI:** 72 horas (contextual, vale la pena pensarlo)
+- **Blockers:** El mismo día (debe corregirse antes de poder mergear)
 
-#### The Sandwich Method (Updated)
-1. **What worked well** — Acknowledge good parts first
-2. **What can improve** — Actionable suggestions with before/after
-3. **Why it matters** — Connect to business impact/maintenance cost
+**Objetivos SLA:**
+- Cambios pequeños: Revisión dentro de 24h
+- Cambios medianos: Revisión dentro de 48h
+- Cambios grandes: Revisión dentro de 72h o dividirlos en PRs más pequeños
 
-#### Example Feedback:
+---
+
+## 🧠 Fase 6: Integración de Feedback de Mentoría (Del Code Mentor)
+
+### Framework de Feedback Constructivo
+
+#### El Método Sandwich (Actualizado)
+1. **Lo que funcionó bien** - Reconocé primero las partes buenas
+2. **Lo que puede mejorar** - Sugerencias accionables con antes/después
+3. **Por qué importa** - Conectalo con el impacto en el negocio/costo de mantenimiento
+
+#### Ejemplo de Feedback:
 ```
-✅ What worked:
-- Clean separation of concerns in this component
-- Good use of React Query for data fetching
-- Tests cover the happy path well
+✅ Lo que funcionó:
+- Separación limpia de responsabilidades en este componente
+- Buen uso de React Query para la obtención de datos
+- Los tests cubren bien el happy path
 
-💡 Suggestion:
-Consider extracting the validation logic to a separate utility file.
+💡 Sugerencia:
+Considerá extraer la lógica de validación a un archivo de utilidad separado.
 
-BEFORE:
+ANTES:
 function handleFormSubmit(e) {
   const email = e.target.email;
   if (!isValidEmail(email)) return;
@@ -306,83 +306,83 @@ function handleFormSubmit(e) {
   // ... submit
 }
 
-AFTER (extracted):
+DESPUÉS (extraído):
 import { validateEmail } from './form-validation-utils';
 
 function handleFormSubmit(e) {
   const email = e.target.email;
-  if (!validateEmail(email)) return; // Much clearer!
+  if (!validateEmail(email)) return; // ¡Mucho más claro!
   // ... submit
 }
 
-🎯 Why it matters:
-This pattern will appear in multiple forms across the app. Centralizing validation makes it:
-1. Easier to maintain (one source of truth)
-2. More testable (unit tests instead of inline checks)
-3. Consistent across all form inputs
-4. Safer (if we need stricter validation later, change in one place)
+🎯 Por qué importa:
+Este patrón va a aparecer en múltiples formularios de la app. Centralizar la validación lo hace:
+1. Más fácil de mantener (una única fuente de verdad)
+2. Más testeable (tests unitarios en vez de checks inline)
+3. Consistente en todos los inputs de formularios
+4. Más seguro (si necesitamos validación más estricta después, cambiamos en un solo lugar)
 ```
 
 ---
 
-## 🔍 Phase 7: Severity Detection Heuristics
+## 🔍 Fase 7: Heurísticas de Detección de Severidad
 
-### Automatic Severity Assessment
+### Evaluación Automática de Severidad
 
-**Security Critical (Blocker):**
-- Hardcoded secrets/API keys
-- Missing authentication on sensitive routes
-- SQL injection patterns detected
-- XSS vulnerabilities via unsanitized input
+**Crítico de Seguridad (Blocker):**
+- Secretos/API keys hardcodeados
+- Autenticación faltante en rutas sensibles
+- Patrones de SQL injection detectados
+- Vulnerabilidades XSS vía entrada sin sanear
 
-**Architecture Critical (Blocker):**
-- Violates single responsibility principle severely
-- Creates circular dependencies
-- Breaks existing architecture boundaries
-- Introduces tight coupling that requires refactoring downstream
+**Crítico de Arquitectura (Blocker):**
+- Viola severamente el principio de responsabilidad única
+- Crea dependencias circulares
+- Rompe los límites de arquitectura existentes
+- Introduce acoplamiento fuerte que requiere refactoring downstream
 
-**Performance Warning (FYI → Blocker if scale confirmed):**
-- N+1 query patterns without confirmation of volume
-- Excessive re-renders in production components
-- Unoptimized bundle size increases (>20%)
+**Advertencia de Rendimiento (FYI → Blocker si se confirma la escala):**
+- Patrones de query N+1 sin confirmación de volumen
+- Re-renders excesivos en componentes de producción
+- Aumentos de tamaño de bundle sin optimizar (>20%)
 
-**Style Issues (Nit):**
-- Formatting inconsistencies
-- Naming preferences
-- Import order differences
-
----
-
-## ✅ Verification Gate Checklist
-
-Before approving any merge request, verify:
-
-### Pre-Merge Checklist
-- [ ] All tests passing locally and on CI
-- [ ] Code style matches project conventions
-- [ ] Five axes reviewed (even if shallow for small changes)
-- [ ] Security basics validated (input validation, no secrets exposed)
-
-### Post-Merge Validation
-- [ ] No new regression tests failed
-- [ ] Deployment completed successfully
-- [ ] Monitoring dashboards show stable metrics
-- [ ] User feedback doesn't indicate broken functionality
+**Issues de Estilo (Nit):**
+- Inconsistencias de formato
+- Preferencias de nombres
+- Diferencias en el orden de imports
 
 ---
 
-## 🚨 Red Flags Requiring Immediate Attention
+## ✅ Checklist de Puerta de Verificación
 
-- Any PR introducing authentication/authorization logic → Security audit mandatory
-- Database migration changes → Schema validation required
-- Breaking API changes → Versioning strategy documented
-- Performance-critical code paths → Profiling required
-- Third-party library additions → Vulnerability check + license review
+Antes de aprobar cualquier merge request, verificá:
+
+### Checklist Pre-Merge
+- [ ] Todos los tests pasando localmente y en CI
+- [ ] El estilo del código coincide con las convenciones del proyecto
+- [ ] Los cinco ejes revisados (aunque sea superficial para cambios pequeños)
+- [ ] Básicos de seguridad validados (validación de entrada, sin secretos expuestos)
+
+### Validación Post-Merge
+- [ ] Ningún test de regresión nuevo falló
+- [ ] El deployment se completó con éxito
+- [ ] Los dashboards de monitoreo muestran métricas estables
+- [ ] El feedback de usuarios no indica funcionalidad rota
 
 ---
 
-## 📚 References
+## 🚨 Red Flags que Requieren Atención Inmediata
 
-See `references/security-checklist.md` for OWASP Top 10 prevention patterns.
-See `references/testing-patterns.md` for test structure guidelines.
-See `references/definition-of-done.md` for project-wide quality standards.
+- Cualquier PR que introduzca lógica de autenticación/autorización → Auditoría de seguridad obligatoria
+- Cambios de migración de base de datos → Validación de esquema requerida
+- Cambios breaking de API → Estrategia de versionado documentada
+- Rutas de código críticas para rendimiento → Perfilado requerido
+- Adiciones de librerías de terceros → Check de vulnerabilidades + revisión de licencia
+
+---
+
+## 📚 Referencias
+
+Ver `references/security-checklist.md` para patrones de prevención de OWASP Top 10.
+Ver `references/testing-patterns.md` para guías de estructura de tests.
+Ver `references/definition-of-done.md` para estándares de calidad a nivel de proyecto.

@@ -1,57 +1,58 @@
-# Installing kanam-skills in OpenClaw
+# Instalar kanam-skills en OpenClaw
 
-**This is the differentiator.** The mainstream skills collections
-(Addy, Google, Anthropic) don't cover OpenClaw. These skills were adapted for
-and verified on OpenClaw — this is the only port you'll find.
+**Este es el diferenciador.** Las colecciones mainstream de skills (Addy,
+Google, Anthropic) no cubren OpenClaw. Estas skills fueron adaptadas para
+OpenClaw y verificadas ahí - este es el único port que vas a encontrar.
 
-## How OpenClaw loads skills
+## Cómo carga OpenClaw las skills
 
-OpenClaw discovers skills from `<workspace>/skills` (highest precedence) and a
-few other roots. Each skill is a folder containing a `SKILL.md` file with YAML
-frontmatter. See the
-[OpenClaw skills docs](https://docs.openclaw.ai/tools/skills) for details.
+OpenClaw descubre skills desde `<workspace>/skills` (mayor precedencia) y otras
+raíces. Cada skill es una carpeta que contiene un archivo `SKILL.md` con
+frontmatter YAML. Ver la
+[documentación de skills de OpenClaw](https://docs.openclaw.ai/tools/skills)
+para detalles.
 
-## Install
+## Instalación
 
-From your OpenClaw workspace:
+Desde tu workspace de OpenClaw:
 
 ```bash
-# Clone once (anywhere)
+# Clonar una vez (donde sea)
 git clone git@github.com:gonzoblasco/kanam-skills.git /tmp/kanam-skills
 
-# Copy every skill into your workspace
+# Copiar cada skill a tu workspace
 cp -R /tmp/kanam-skills/skills/* skills/
 
-# Clean up
+# Limpiar
 rm -rf /tmp/kanam-skills
 ```
 
-Restart your OpenClaw session (or start a new one). Skills are discovered
-automatically.
+Reiniciá tu sesión de OpenClaw (o empezá una nueva). Las skills se descubren
+automáticamente.
 
-## Install a subset
+## Instalar un subconjunto
 
-Copy only the skills you want:
+Copiá solo las skills que quieras:
 
 ```bash
 cp -R /tmp/kanam-skills/skills/spec-driven-development skills/
 cp -R /tmp/kanam-skills/skills/adhd-assistant skills/
 ```
 
-## Verify
+## Verificar
 
-After restart, run:
+Después de reiniciar, ejecutá:
 
 ```
 openclaw skills list
 ```
 
-or just ask your agent "what skills do you have?" — the installed skills
-should appear in the `<available_skills>` context.
+o simplemente preguntale a tu agente "¿qué skills tenés?" - las skills
+instaladas deberían aparecer en el contexto `<available_skills>`.
 
-## Keep in sync
+## Mantenerlo sincronizado
 
-To pull updates later:
+Para traer actualizaciones después:
 
 ```bash
 git -C /tmp/kanam-skills pull

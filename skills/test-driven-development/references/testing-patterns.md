@@ -1,89 +1,89 @@
-# Testing Patterns Reference (JavaScript/TypeScript)
+# Referencia de patrones de testing (JavaScript/TypeScript)
 
-Quick reference of JavaScript/TypeScript testing patterns — Jest, React Testing Library, Supertest, and Playwright — illustrating the universal principles from the `test-driven-development` skill. The principles (Arrange-Act-Assert, naming, mock discipline, anti-patterns) apply in any ecosystem; the syntax and tooling shown here are JS/TS-specific. In another stack, follow the same principles with the repository's own test framework and commands.
+Referencia rápida de patrones de testing de JavaScript/TypeScript: Jest, React Testing Library, Supertest y Playwright, que ilustran los principios universales de la skill `test-driven-development`. Los principios (Arrange-Act-Assert, nombrado, disciplina de mocks, anti-patrones) aplican en cualquier ecosistema; la sintaxis y el tooling mostrados aquí son específicos de JS/TS. En otro stack, sigue los mismos principios con el framework y los comandos de test propios del repositorio.
 
-## Table of Contents
+## Tabla de contenidos
 
-- [Test Structure (Arrange-Act-Assert)](#test-structure-arrange-act-assert)
-- [Test Naming Conventions](#test-naming-conventions)
-- [Common Assertions](#common-assertions)
-- [Mocking Patterns](#mocking-patterns)
-- [React/Component Testing](#reactcomponent-testing)
-- [API / Integration Testing](#api--integration-testing)
-- [E2E Testing (Playwright)](#e2e-testing-playwright)
-- [Test Anti-Patterns](#test-anti-patterns)
+- [Estructura de tests (Arrange-Act-Assert)](#estructura-de-tests-arrange-act-assert)
+- [Convenciones de nombrado de tests](#convenciones-de-nombrado-de-tests)
+- [Aserciones comunes](#aserciones-comunes)
+- [Patrones de mocking](#patrones-de-mocking)
+- [Testing de React/Componentes](#testing-de-reactcomponentes)
+- [Testing de API / Integración](#testing-de-api--integración)
+- [Testing E2E (Playwright)](#testing-e2e-playwright)
+- [Anti-patrones de tests](#anti-patrones-de-tests)
 
-## Test Structure (Arrange-Act-Assert)
+## Estructura de tests (Arrange-Act-Assert)
 
 ```typescript
-it('describes expected behavior', () => {
-  // Arrange: Set up test data and preconditions
-  const input = { title: 'Test Task', priority: 'high' };
+it('describe el comportamiento esperado', () => {
+  // Arrange: prepara los datos del test y las precondiciones
+  const input = { title: 'Tarea de Test', priority: 'high' };
 
-  // Act: Perform the action being tested
+  // Act: ejecuta la acción que se está probando
   const result = createTask(input);
 
-  // Assert: Verify the outcome
-  expect(result.title).toBe('Test Task');
+  // Assert: verifica el resultado
+  expect(result.title).toBe('Tarea de Test');
   expect(result.priority).toBe('high');
   expect(result.status).toBe('pending');
 });
 ```
 
-## Test Naming Conventions
+## Convenciones de nombrado de tests
 
 ```typescript
-// Pattern: [unit] [expected behavior] [condition]
+// Patrón: [unidad] [comportamiento esperado] [condición]
 describe('TaskService.createTask', () => {
-  it('creates a task with default pending status', () => {});
-  it('throws ValidationError when title is empty', () => {});
-  it('trims whitespace from title', () => {});
-  it('generates a unique ID for each task', () => {});
+  it('crea una tarea con estado pending por defecto', () => {});
+  it('lanza ValidationError cuando el título está vacío', () => {});
+  it('recorta los espacios en blanco del título', () => {});
+  it('genera un ID único para cada tarea', () => {});
 });
 ```
 
-## Common Assertions
+## Aserciones comunes
 
 ```typescript
-// Equality
-expect(result).toBe(expected);           // Strict equality (===)
-expect(result).toEqual(expected);        // Deep equality (objects/arrays)
-expect(result).toStrictEqual(expected);  // Deep equality + type matching
+// Igualdad
+expect(result).toBe(expected);           // Igualdad estricta (===)
+expect(result).toEqual(expected);        // Igualdad profunda (objetos/arrays)
+expect(result).toStrictEqual(expected);  // Igualdad profunda + coincidencia de tipos
 
-// Truthiness
+// Verdad / falsedad
 expect(result).toBeTruthy();
 expect(result).toBeFalsy();
 expect(result).toBeNull();
 expect(result).toBeDefined();
 expect(result).toBeUndefined();
 
-// Numbers
+// Números
 expect(result).toBeGreaterThan(5);
 expect(result).toBeLessThanOrEqual(10);
-expect(result).toBeCloseTo(0.3, 5);      // Floating point
+expect(result).toBeCloseTo(0.3, 5);      // Punto flotante
 
-// Strings
+// Cadenas
 expect(result).toMatch(/pattern/);
 expect(result).toContain('substring');
 
-// Arrays / Objects
+// Arrays / Objetos
 expect(array).toContain(item);
 expect(array).toHaveLength(3);
 expect(object).toHaveProperty('key', 'value');
 
-// Errors
+// Errores
 expect(() => fn()).toThrow();
 expect(() => fn()).toThrow(ValidationError);
-expect(() => fn()).toThrow('specific message');
+expect(() => fn()).toThrow('mensaje específico');
 
 // Async
 await expect(asyncFn()).resolves.toBe(value);
 await expect(asyncFn()).rejects.toThrow(Error);
 ```
 
-## Mocking Patterns
+## Patrones de mocking
 
-### Mock Functions
+### Funciones mock
 
 ```typescript
 const mockFn = jest.fn();
@@ -96,86 +96,86 @@ expect(mockFn).toHaveBeenCalledWith('arg1', 'arg2');
 expect(mockFn).toHaveBeenCalledTimes(3);
 ```
 
-### Mock Modules
+### Módulos mock
 
 ```typescript
-// Mock an entire module
+// Mockea un módulo completo
 jest.mock('./database', () => ({
   query: jest.fn().mockResolvedValue([{ id: 1, title: 'Test' }]),
 }));
 
-// Mock specific exports
+// Mockea exports específicos
 jest.mock('./utils', () => ({
   ...jest.requireActual('./utils'),
   generateId: jest.fn().mockReturnValue('test-id'),
 }));
 ```
 
-### Mock at Boundaries Only
+### Mockea solo en los límites
 
 ```
-Mock these:                    Don't mock these:
-├── Database calls             ├── Internal utility functions
-├── HTTP requests              ├── Business logic
-├── File system operations     ├── Data transformations
-├── External API calls         ├── Validation functions
-└── Time/Date (when needed)    └── Pure functions
+Mockea estos:                    No mockees estos:
+├── Llamadas a la base de datos   ├── Funciones de utilidad internas
+├── Peticiones HTTP               ├── Lógica de negocio
+├── Operaciones del sistema de archivos  ├── Transformaciones de datos
+├── Llamadas a APIs externas      ├── Funciones de validación
+└── Tiempo/Fecha (cuando se necesite)    └── Funciones puras
 ```
 
-## React/Component Testing
+## Testing de React/Componentes
 
 ```tsx
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 
 describe('TaskForm', () => {
-  it('submits the form with entered data', async () => {
+  it('envía el formulario con los datos ingresados', async () => {
     const onSubmit = jest.fn();
     render(<TaskForm onSubmit={onSubmit} />);
 
-    // Find elements by accessible role/label (not test IDs)
-    await screen.findByRole('textbox', { name: /title/i });
-    fireEvent.change(screen.getByRole('textbox', { name: /title/i }), {
-      target: { value: 'New Task' },
+    // Encuentra elementos por rol/etiqueta accesible (no por test IDs)
+    await screen.findByRole('textbox', { name: /título/i });
+    fireEvent.change(screen.getByRole('textbox', { name: /título/i }), {
+      target: { value: 'Nueva Tarea' },
     });
-    fireEvent.click(screen.getByRole('button', { name: /create/i }));
+    fireEvent.click(screen.getByRole('button', { name: /crear/i }));
 
     await waitFor(() => {
-      expect(onSubmit).toHaveBeenCalledWith({ title: 'New Task' });
+      expect(onSubmit).toHaveBeenCalledWith({ title: 'Nueva Tarea' });
     });
   });
 
-  it('shows validation error for empty title', async () => {
+  it('muestra un error de validación para título vacío', async () => {
     render(<TaskForm onSubmit={jest.fn()} />);
 
-    fireEvent.click(screen.getByRole('button', { name: /create/i }));
+    fireEvent.click(screen.getByRole('button', { name: /crear/i }));
 
-    expect(await screen.findByText(/title is required/i)).toBeInTheDocument();
+    expect(await screen.findByText(/el título es obligatorio/i)).toBeInTheDocument();
   });
 });
 ```
 
-## API / Integration Testing
+## Testing de API / Integración
 
 ```typescript
 import request from 'supertest';
 import { app } from '../src/app';
 
 describe('POST /api/tasks', () => {
-  it('creates a task and returns 201', async () => {
+  it('crea una tarea y devuelve 201', async () => {
     const response = await request(app)
       .post('/api/tasks')
-      .send({ title: 'Test Task' })
+      .send({ title: 'Tarea de Test' })
       .set('Authorization', `Bearer ${testToken}`)
       .expect(201);
 
     expect(response.body).toMatchObject({
       id: expect.any(String),
-      title: 'Test Task',
+      title: 'Tarea de Test',
       status: 'pending',
     });
   });
 
-  it('returns 422 for invalid input', async () => {
+  it('devuelve 422 para entrada inválida', async () => {
     const response = await request(app)
       .post('/api/tasks')
       .send({ title: '' })
@@ -185,7 +185,7 @@ describe('POST /api/tasks', () => {
     expect(response.body.error.code).toBe('VALIDATION_ERROR');
   });
 
-  it('returns 401 without authentication', async () => {
+  it('devuelve 401 sin autenticación', async () => {
     await request(app)
       .post('/api/tasks')
       .send({ title: 'Test' })
@@ -194,42 +194,42 @@ describe('POST /api/tasks', () => {
 });
 ```
 
-## E2E Testing (Playwright)
+## Testing E2E (Playwright)
 
 ```typescript
 import { test, expect } from '@playwright/test';
 
-test('user can create and complete a task', async ({ page }) => {
-  // Navigate and authenticate
+test('el usuario puede crear y completar una tarea', async ({ page }) => {
+  // Navega y autentica
   await page.goto('/');
   await page.getByRole('textbox', { name: /email/i }).fill('test@example.com');
   await page.getByLabel(/password/i).fill('testpass123');
-  await page.getByRole('button', { name: /log in/i }).click();
+  await page.getByRole('button', { name: /iniciar sesión/i }).click();
 
-  // Create a task
-  await page.getByRole('button', { name: /new task/i }).click();
-  await page.getByRole('textbox', { name: /title/i }).fill('Buy groceries');
-  await page.getByRole('button', { name: /create/i }).click();
+  // Crea una tarea
+  await page.getByRole('button', { name: /nueva tarea/i }).click();
+  await page.getByRole('textbox', { name: /título/i }).fill('Comprar víveres');
+  await page.getByRole('button', { name: /crear/i }).click();
 
-  // Verify task appears
-  const task = page.getByRole('listitem', { name: /buy groceries/i });
+  // Verifica que la tarea aparezca
+  const task = page.getByRole('listitem', { name: /comprar víveres/i });
   await expect(task).toBeVisible();
 
-  // Complete the task
-  await task.getByRole('checkbox', { name: /complete buy groceries/i }).check();
+  // Completa la tarea
+  await task.getByRole('checkbox', { name: /completar comprar víveres/i }).check();
   await expect(task).toHaveCSS('text-decoration-line', 'line-through');
 });
 ```
 
-## Test Anti-Patterns
+## Anti-patrones de tests
 
-| Anti-Pattern | Problem | Better Approach |
+| Anti-patrón | Problema | Mejor enfoque |
 |---|---|---|
-| Testing implementation details | Breaks on refactor | Test inputs/outputs |
-| Snapshot everything | No one reviews snapshot diffs | Assert specific values |
-| Shared mutable state | Tests pollute each other | Setup/teardown per test |
-| Testing third-party code | Wastes time, not your bug | Mock the boundary |
-| Skipping tests to pass CI | Hides real bugs | Fix or delete the test |
-| Using `test.skip` permanently | Dead code | Remove or fix it |
-| Overly broad assertions | Doesn't catch regressions | Be specific |
-| No async error handling | Swallowed errors, false passes | Always `await` async tests |
+| Probar detalles de implementación | Se rompe en el refactor | Prueba entradas/salidas |
+| Snapshot de todo | Nadie revisa los diffs de snapshot | Afirma valores específicos |
+| Estado mutable compartido | Los tests se contaminan entre sí | Setup/teardown por test |
+| Probar código de terceros | Pierde tiempo, no es tu bug | Mockea el límite |
+| Omitir tests para pasar CI | Oculta bugs reales | Arregla o elimina el test |
+| Usar `test.skip` permanentemente | Código muerto | Elimínalo o arréglalo |
+| Aserciones demasiado amplias | No detecta regresiones | Sé específico |
+| Sin manejo de errores async | Errores tragados, falsos positivos | Siempre `await` en tests async |

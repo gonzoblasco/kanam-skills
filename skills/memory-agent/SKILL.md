@@ -143,7 +143,7 @@ Al finalizar una sesión, el Memory Agent:
 ## Structured Escalation
 
 ```
-BLOQUEO: Memory Agent — no puede resolver inconsistencia
+BLOQUEO: Memory Agent - no puede resolver inconsistencia
 CAUSA: [dos documentos se contradicen y no hay forma de determinar cuál es correcto]
 INTENTOS: [qué documentos se revisaron]
 NECESITO: [decisión de Gonzo sobre cuál versión es la correcta]

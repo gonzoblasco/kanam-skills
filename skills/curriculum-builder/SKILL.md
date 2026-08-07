@@ -3,20 +3,20 @@ name: "curriculum-builder"
 description: "Scaffold para tutores adaptativos con IA. Markdown + grafo → ruta + lecciones LLM (BYOK) + frontend. Inspirado en roadmap.sh."
 ---
 
-# Curriculum Builder — Skill de OpenClaw
+# Curriculum Builder - Skill de OpenClaw
 
 ## Descripción
 
 Scaffold completo para crear **tutores adaptativos con IA** para cualquier tema. Toma contenido markdown estructurado + grafo de prerrequisitos y genera:
 
 - Motor de ruta de aprendizaje (determinístico)
-- Capa pedagógica LLM (BYOK — traé tu propia clave)
+- Capa pedagógica LLM (BYOK - traé tu propia clave)
 - Frontend con búsqueda, filtros y lecciones
 - Feedback loop post-lección
 - Cache SQLite con TTL
 
 **Inspirado en:** roadmap.sh (pero open source + IA generativa)  
-**Caso de uso piloto:** EnSuLugar — tutor de cocina (15 recetas, 28 técnicas)
+**Caso de uso piloto:** EnSuLugar - tutor de cocina (15 recetas, 28 técnicas)
 
 ---
 
@@ -103,10 +103,10 @@ Breve descripción del tema.
 
 ## Pasos
 
-1. **Paso 1** — Descripción con detalle técnico.
+1. **Paso 1** - Descripción con detalle técnico.
    Nota: explicación del porqué.
 
-2. **Paso 2** — Siguiente paso.
+2. **Paso 2** - Siguiente paso.
 ```
 
 ## 4. Grafo de Prerrequisitos
@@ -157,11 +157,11 @@ Ha completado {recetas_completadas} lecciones.
 Generá una lección sobre {tecnica} usando {receta} como ejemplo práctico.
 
 La lección debe incluir:
-1. **Qué es {tecnica}** — definición clara y por qué es importante
-2. **El mecanismo** — cómo funciona, qué pasa a nivel técnico
-3. **Paso a paso** — usando la receta como vehículo, explicando el porqué de cada paso
-4. **Errores comunes** — qué suele salir mal y cómo evitarlo
-5. **Tips de experto** — para llevar la técnica al siguiente nivel
+1. **Qué es {tecnica}** - definición clara y por qué es importante
+2. **El mecanismo** - cómo funciona, qué pasa a nivel técnico
+3. **Paso a paso** - usando la receta como vehículo, explicando el porqué de cada paso
+4. **Errores comunes** - qué suele salir mal y cómo evitarlo
+5. **Tips de experto** - para llevar la técnica al siguiente nivel
 
 Tono: {nivel <= 2 ? "sencillo y alentador" : "técnico pero accesible"}
 `;
@@ -253,7 +253,7 @@ OLLAMA_MODEL=deepseek-v4-flash
 
 ## 12. Referencias
 
-- **Caso de uso:** EnSuLugar — github.com/gonzoblasco/ensulugar
+- **Caso de uso:** EnSuLugar - github.com/gonzoblasco/ensulugar
 - **Inspiración:** roadmap.sh
 - **Stack:** Vite 6 + React 19 + TypeScript + Node.js + SQLite + Ollama
 - **Patrón relacionado:** pipeline-detector (detectores locales + validación cruzada / IA contextual)

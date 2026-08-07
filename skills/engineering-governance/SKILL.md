@@ -59,7 +59,7 @@ Nunca durante la implementación de una tarea.
 - bugs
 - incidentes
 - feedback humano
-- **incidentes externos** (ej: OpenAI/Hugging Face julio 2026) — lecciones de seguridad, arquitectura de agentes, patrones de ataque/defensa
+- **incidentes externos** (ej: OpenAI/Hugging Face julio 2026) - lecciones de seguridad, arquitectura de agentes, patrones de ataque/defensa
 
 ---
 
@@ -239,8 +239,8 @@ Todo cambio a un script de skill debe pasar por los siguientes gates antes de ll
 `npm test` corre:
 
 - `test-skills.sh` (syntax)
-- `npx bats tests/bash/` — 17 tests funcionales sobre scripts criticos
-- `pytest tests/python/` — 8 tests funcionales sobre scripts Python criticos
+- `npx bats tests/bash/` - 17 tests funcionales sobre scripts criticos
+- `pytest tests/python/` - 8 tests funcionales sobre scripts Python criticos
 
 Los tests viven en `tests/bash/` y `tests/python/`. Cuando agregas o modificas un script con riesgo de regresion, agrega un test.
 
@@ -267,12 +267,12 @@ chmod +x .git/hooks/pre-commit
 
 ## Anti-patrones documentados
 
-- `eval "$cmd"` — reemplazar por funciones con nombre.
-- `grep -c ... || echo "0"` — produce `0\n0`; usar `|| true` + `${VAR:-0}`.
-- `sed 's/.*/\u&/'` — GNU-only; usar `awk` o `perl`.
-- `find A -name B -o -name C -exec ...` — aplica `-exec` solo al segundo `-name`; usar `\( ... \)`.
-- `PASS=***` o `PASS=*** + 1))` — rompe contadores; inicializar a `0` y usar `$((PASS + 1))`.
-- `sed -i ''` — macOS-only; usar `sed -i.bak` + `rm .bak`.
+- `eval "$cmd"` - reemplazar por funciones con nombre.
+- `grep -c ... || echo "0"` - produce `0\n0`; usar `|| true` + `${VAR:-0}`.
+- `sed 's/.*/\u&/'` - GNU-only; usar `awk` o `perl`.
+- `find A -name B -o -name C -exec ...` - aplica `-exec` solo al segundo `-name`; usar `\( ... \)`.
+- `PASS=***` o `PASS=*** + 1))` - rompe contadores; inicializar a `0` y usar `$((PASS + 1))`.
+- `sed -i ''` - macOS-only; usar `sed -i.bak` + `rm .bak`.
 
 # Decisiones
 
@@ -341,7 +341,7 @@ La gobernanza existe para reducir la entropía del sistema.
 - [Knowledge Management](../knowledge-management): Para mantener la base de conocimiento actualizada
 - [Observability](../observability): Para medir la salud del sistema
 
-## Growth Loops — Ciclos de Mejora Continua
+## Growth Loops - Ciclos de Mejora Continua
 
 Cuatro ciclos que mantienen el sistema evolucionando:
 
@@ -349,7 +349,7 @@ Cuatro ciclos que mantienen el sistema evolucionando:
 Periódicamente, preguntarse: "¿Qué no sé que me ayudaría a hacer mejor mi trabajo?" Investigar skills de ClawHub, leer documentación, explorar tools nuevas.
 
 ### 2. Reconocimiento de Patrones
-Cuando una situación se repite 3+ veces, no es coincidencia — es un patrón. Documentarlo en LEARNINGS.md y considerar promoverlo a SOUL/TOOLS/AGENTS.
+Cuando una situación se repite 3+ veces, no es coincidencia - es un patrón. Documentarlo en LEARNINGS.md y considerar promoverlo a SOUL/TOOLS/AGENTS.
 
 ### 3. Expansión de Capacidades
 Cuando una tarea se hace 2+ veces y requiere el mismo proceso manual, considerar: ¿se puede skill-izar? ¿se puede automatizar? ¿se puede documentar como workflow?
@@ -357,19 +357,19 @@ Cuando una tarea se hace 2+ veces y requiere el mismo proceso manual, considerar
 ### 4. Seguimiento de Resultados
 Después de implementar una mejora, verificar: ¿realmente mejoró algo? ¿O solo agregó complejidad? Si no hay mejora medible, revertir.
 
-**Lección:** la mejora continua no es automática — necesita ciclos explícitos. Sin ellos, el sistema se estanca o empeora.
+**Lección:** la mejora continua no es automática - necesita ciclos explícitos. Sin ellos, el sistema se estanca o empeora.
 
-## Evaluación de Skills Externas — Cómo Decidir
+## Evaluación de Skills Externas - Cómo Decidir
 
 Cuando revisemos skills de ClawHub (o cualquier skill externa), seguir este proceso:
 
-1. **Leer el SKILL.md completo** — entender qué hace realmente
-2. **Identificar qué pisa** — ¿ya tenemos algo equivalente? ¿en AGENTS.md, LEARNINGS.md, MEMORY.md?
-3. **Identificar qué aporta** — ¿tiene patrones, frameworks o ideas que no tenemos?
+1. **Leer el SKILL.md completo** - entender qué hace realmente
+2. **Identificar qué pisa** - ¿ya tenemos algo equivalente? ¿en AGENTS.md, LEARNINGS.md, MEMORY.md?
+3. **Identificar qué aporta** - ¿tiene patrones, frameworks o ideas que no tenemos?
 4. **Decidir:**
-   - **Instalar** — solo si aporta algo que no tenemos Y no podemos integrar como convención
-   - **Robar ideas** — si tiene patrones útiles que podemos adoptar en nuestro sistema
-   - **Pasar** — si pisa lo que tenemos o no es relevante
+   - **Instalar** - solo si aporta algo que no tenemos Y no podemos integrar como convención
+   - **Robar ideas** - si tiene patrones útiles que podemos adoptar en nuestro sistema
+   - **Pasar** - si pisa lo que tenemos o no es relevante
 5. **Si robamos:** documentar en LEARNINGS.md, actualizar AGENTS.md/MEMORY.md según corresponda
 
 **Regla:** preferir integrar patrones como convención propia antes que instalar skills externas. Menos skills = menos contexto quemado = sistema más rápido y predecible.

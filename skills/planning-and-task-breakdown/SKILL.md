@@ -1,304 +1,305 @@
 ---
 name: planning-and-task-breakdown
-description: Decomposes specs into small, verifiable tasks with acceptance criteria and dependency ordering. Integrates timeline estimation from builder patterns and GitHub issue planning. Use when you have a spec or clear requirements and need to break work into implementable tasks — or when a task feels too large/vague to start.
+description: Descompone especificaciones en tareas pequeñas y verificables con criterios de aceptación y orden de dependencias. Integra estimación de tiempos desde patrones de builders y planificación de issues en GitHub. Úsalo cuando tengas una especificación o requisitos claros y necesites dividir el trabajo en tareas implementables, o cuando una tarea se sienta demasiado grande o vaga para empezar.
 ---
 
-# Planning and Task Breakdown: From Spec to Actionable Units
+# Planificación y Desglose de Tareas: De la Especificación a Unidades Accionables
 
-## Overview
+## Visión General
 
-Decompose work into small, verifiable tasks with explicit acceptance criteria. Good task breakdown is the difference between an agent that completes work reliably and one that produces a tangled mess. Every task should be small enough to implement, test, and verify in a single focused session.
+Descompón el trabajo en tareas pequeñas y verificables con criterios de aceptación explícitos. Un buen desglose de tareas es la diferencia entre un agente que completa el trabajo de forma fiable y uno que produce un lío enmarañado. Cada tarea debería ser lo suficientemente pequeña como para implementarla, probarla y verificarla en una única sesión enfocada.
 
-This skill integrates **timeline estimation**, **GitHub issue planning** integration, and **dependency mapping** for optimal sequencing.
-
----
-
-## 🎯 Phase 1: When to Break Down Work
-
-### ✅ Break Down When
-
-- [ ] You have a spec but need implementable units
-- [ ] A task feels too large or vague to start
-- [ ] Work needs parallelization across agents/sessions
-- [ ] You need to communicate scope to humans (for estimation/assignment)
-- [ ] The implementation order isn't obvious
-
-### ❌ Skip Breakdown, Go Directly to Implementation When
-
-- [ ] Single-file changes with obvious scope (<50 lines)
-- [ ] Configuration-only modifications
-- [ ] Well-defined, self-contained fix where dependency mapping is trivial
-- [ ] You already know the implementation steps and timeline is clear (<1 hour total)
+Esta skill integra la **estimación de tiempos**, la integración con **planificación de issues en GitHub** y el **mapeo de dependencias** para un secuenciado óptimo.
 
 ---
 
-## 📋 Phase 2: The Breakdown Process
+## 🎯 Fase 1: Cuándo Desglosar el Trabajo
 
-### Step 1: Understand the Spec
+### ✅ Desglosa Cuando
 
-**Read Thoroughly:**
-- Identify user stories/requirements
-- Note acceptance criteria for each
-- Document edge cases mentioned
-- List technical constraints or requirements
+- [ ] Tienes una especificación pero necesitas unidades implementables
+- [ ] Una tarea se siente demasiado grande o vaga para empezar
+- [ ] El trabajo necesita paralelización entre agentes/sesiones
+- [ ] Necesitas comunicar el alcance a humanos (para estimación/asignación)
+- [ ] El orden de implementación no es obvio
 
-**Clarification Questions (If Missing):**
+### ❌ Omite el Desglose, Ve Directo a la Implementación Cuando
+
+- [ ] Cambios de un solo archivo con alcance obvio (menos de 50 líneas)
+- [ ] Modificaciones solo de configuración
+- [ ] Corrección bien definida y autocontenida donde el mapeo de dependencias es trivial
+- [ ] Ya conoces los pasos de implementación y el tiempo es claro (menos de 1 hora en total)
+
+---
+
+## 📋 Fase 2: El Proceso de Desglose
+
+### Paso 1: Entiende la Especificación
+
+**Lee a fondo:**
+- Identifica las historias de usuario/requisitos
+- Anota los criterios de aceptación de cada una
+- Documenta los casos límite mencionados
+- Enumera las restricciones o requisitos técnicos
+
+**Preguntas de Aclaración (si faltan):**
 ```
-❓ Is X feature scoped to this iteration?
-❓ Should Y error state show custom message or generic?
-❓ Does Z need to work offline or only when online?
+❓ ¿La función X está dentro del alcance de esta iteración?
+❓ ¿El estado de error Y debe mostrar un mensaje personalizado o genérico?
+❓ ¿Z necesita funcionar sin conexión o solo cuando está en línea?
 ```
 
 ---
 
-### Step 2: Map to Technical Components
+### Paso 2: Mapea a Componentes Técnicos
 
-**Identify:**
-- Which files will be created/modified/deleted
-- Dependencies between components
-- Shared utilities needed across features
-- Test coverage requirements per component
+**Identifica:**
+- Qué archivos se crearán/modificarán/eliminarán
+- Las dependencias entre componentes
+- Las utilidades compartidas necesarias entre funciones
+- Los requisitos de cobertura de tests por componente
 
-**Component Dependency Graph:**
+**Grafo de Dependencias de Componentes:**
 ```
 ┌──────────────┐       ┌──────────────┐       ┌──────────────┐
-│  Component A │ ──→   │  Component B │ ──→   │  Component C │
-│ (Login Form) │      │ (Auth Guard) │      │(Dashboard)    │
+│  Componente A│ ──→   │  Componente B│ ──→   │  Componente C│
+│(Formulario de│      │ (Guarda Auth)│      │(Panel)       │
+│   Login)     │      │              │      │              │
 └──────────────┘       └──────────────┘       └──────────────┘
      ↑                        ↑                       ↑
- [1st]                   [2nd]                    [3rd]
+ [1º]                    [2º]                    [3º]
 ```
 
 ---
 
-### Step 3: Break Into Tasks (The Atomic Unit)
+### Paso 3: Divide en Tareas (La Unidad Atómica)
 
-#### Task Sizing Rules
+#### Reglas de Tamaño de Tareas
 
-✅ **Good Task:**
-- Can be completed in 1-4 hours max
-- Touches 1-5 files max
-- Has clear completion criteria
-- Testable independently
-- Doesn't depend on other tasks being merged first
+✅ **Buena Tarea:**
+- Se puede completar en 1-4 horas como máximo
+- Toca 1-5 archivos como máximo
+- Tiene criterios de finalización claros
+- Se puede probar de forma independiente
+- No depende de que otras tareas se hayan fusionado primero
 
-❌ **Bad Task:**
-- "Implement authentication" (too broad)
-- Touches >10 files
-- Multiple features combined
-- "Fix everything that's broken"
-- Requires other tasks to be complete before verification
+❌ **Mala Tarea:**
+- "Implementar autenticación" (demasiado amplia)
+- Toca más de 10 archivos
+- Combina múltiples funciones
+- "Arreglar todo lo que está roto"
+- Requiere que otras tareas estén completas antes de la verificación
 
 ---
 
-## 📊 Phase 3: Task Structure Template
+## 📊 Fase 3: Plantilla de Estructura de Tarea
 
-### Complete Task Template
+### Plantilla Completa de Tarea
 
 ```markdown
-## [TASK] #<number> <Title>
+## [TAREA] #<número> <Título>
 
-### Description
-[Brief description of what this task does]
+### Descripción
+[Breve descripción de lo que hace esta tarea]
 
-### Why It Matters
-[Business/technical rationale for why this is needed]
+### Por Qué Importa
+[Justificación técnica/de negocio de por qué se necesita]
 
-### Acceptance Criteria
-- [ ] Criterion 1 (testable, specific)
-- [ ] Criterion 2 (measurable, verifiable)
-- [ ] Criterion 3 (edge case covered)
+### Criterios de Aceptación
+- [ ] Criterio 1 (comprobable, específico)
+- [ ] Criterio 2 (medible, verificable)
+- [ ] Criterio 3 (caso límite cubierto)
 
-### Technical Notes
-- Files to create/modify/delete: [...list]
-- Dependencies on other tasks: #XX → #YY
-- Edge cases to handle: [...]
+### Notas Técnicas
+- Archivos a crear/modificar/eliminar: [...lista]
+- Dependencias de otras tareas: #XX → #YY
+- Casos límite a manejar: [...]
 
-### Estimated Effort
-⏱️ Time: ~2 hours
-📁 Files: 3
-🔗 Dependencies: Wait for #45 before starting
+### Esfuerzo Estimado
+⏱️ Tiempo: ~2 horas
+📁 Archivos: 3
+🔗 Dependencias: Espera a #45 antes de empezar
 
-### Test Plan
+### Plan de Tests
 ```bash
-# What tests will validate this?
+# ¿Qué tests validarán esto?
 npm run test -- --testNamePattern="feature X"
-# Expected output: All tests pass
+# Salida esperada: Todos los tests pasan
 ```
 
-### Definition of Done
-- [ ] Code implemented and working
-- [ ] Unit tests added and passing
-- [ ] Integration tests covering edge cases
-- [ ] No new warnings in linter
-- [ ] Documentation updated (if applicable)
-```
-
----
-
-## 🕐 Phase 4: Timeline Estimation (From Builder Integration)
-
-### Estimation Strategy
-
-**Base Units:**
-- Type the task complexity into categories:
-  - 🟢 Tiny (<30 lines, 1 file): 30 min
-  - 🟡 Small (30-100 lines, 2-4 files): 2 hours
-  - 🟠 Medium (100-300 lines, 5-8 files): 4-8 hours
-  - 🔴 Large (>300 lines, 10+ files): 8-16 hours or split into multiple tasks
-
-**Adjustment Factors:**
-```
-Base Estimate ×
-├── Complexity Factor (novel pattern vs familiar) ×1.5–2x
-├── Testing Effort (more edge cases = +30%)
-├── Dependencies (waiting on other work = +20%)
-└── Risk Factor (unknowns, untested areas) ×1.25x
-```
-
-### Parallelization Calculation
-
-**Serial vs Parallel:**
-```
-Scenario: 4 tasks totaling 20 hours of work
-
-Serial (one at a time):    ████████████████████ 20h
-Parallel (2 concurrent):   ████░░ 8h + ████░░ 8h = 8h total calendar time
-                           (start T1 & T3, then add T2 & T4 as dependencies allow)
-
-Realistically with context switching:    ~12-14h actual calendar time
+### Definición de Terminado
+- [ ] Código implementado y funcionando
+- [ ] Tests unitarios añadidos y pasando
+- [ ] Tests de integración que cubren los casos límite
+- [ ] Sin advertencias nuevas en el linter
+- [ ] Documentación actualizada (si aplica)
 ```
 
 ---
 
-## 🔗 Phase 5: Dependency Mapping
+## 🕐 Fase 4: Estimación de Tiempos (Integración con Builder)
 
-### Dependency Types
+### Estrategia de Estimación
 
-#### 1. **Hard Blocker** (Must complete before)
+**Unidades Base:**
+- Clasifica la complejidad de la tarea en categorías:
+  - 🟢 Diminuta (menos de 30 líneas, 1 archivo): 30 min
+  - 🟡 Pequeña (30-100 líneas, 2-4 archivos): 2 horas
+  - 🟠 Mediana (100-300 líneas, 5-8 archivos): 4-8 horas
+  - 🔴 Grande (más de 300 líneas, 10+ archivos): 8-16 horas o dividir en múltiples tareas
+
+**Factores de Ajuste:**
+```
+Estimación Base ×
+├── Factor de Complejidad (patrón novedoso vs familiar) ×1.5-2x
+├── Esfuerzo de Testing (más casos límite = +30%)
+├── Dependencias (esperar otro trabajo = +20%)
+└── Factor de Riesgo (incógnitas, áreas sin probar) ×1.25x
+```
+
+### Cálculo de Paralelización
+
+**En Serie vs en Paralelo:**
+```
+Escenario: 4 tareas que suman 20 horas de trabajo
+
+En serie (una a la vez):    ████████████████████ 20h
+En paralelo (2 concurrentes): ████░░ 8h + ████░░ 8h = 8h de tiempo de calendario total
+                           (empieza T1 y T3, luego añade T2 y T4 según lo permitan las dependencias)
+
+En la práctica con cambio de contexto:    ~12-14h de tiempo de calendario real
+```
+
+---
+
+## 🔗 Fase 5: Mapeo de Dependencias
+
+### Tipos de Dependencias
+
+#### 1. **Bloqueo Duro** (Debe completarse antes)
 ```markdown
-Task #23: Implement Payment API
-└─ [HARD BLOCKER] Task #24: Add payment form to checkout
-   (Can't build form until API exists)
+Tarea #23: Implementar API de Pagos
+└─ [BLOQUEO DURO] Tarea #24: Añadir formulario de pago al checkout
+   (No se puede construir el formulario hasta que exista la API)
 ```
 
-#### 2. **Soft Dependency** (Recommended sequence but not required)
+#### 2. **Dependencia Blanda** (Secuencia recomendada pero no obligatoria)
 ```markdown
-Task #30: Style guide setup
-└─ [SOFT] Task #35: Feature A styling
-   (Feature works without it, but look feels unfinished)
+Tarea #30: Configuración de la guía de estilos
+└─ [BLANDA] Tarea #35: Estilizado de la función A
+   (La función funciona sin ello, pero el aspecto se siente inacabado)
 ```
 
-#### 3. **Can Parallelize** (Independent, can do concurrently)
+#### 3. **Se Puede Paralelizar** (Independiente, se puede hacer de forma concurrente)
 ```markdown
-Task #40: User dashboard component
-Task #41: Admin dashboard component
-└─ [PARALLEL] Both work independently of each other
+Tarea #40: Componente de panel de usuario
+Tarea #41: Componente de panel de administrador
+└─ [PARALELO] Ambas funcionan de forma independiente entre sí
 ```
 
 ---
 
-## 📝 Phase 6: Output Deliverables
+## 📝 Fase 6: Entregables de Salida
 
-### Task Breakdown Document Structure
+### Estructura del Documento de Desglose de Tareas
 
 ```markdown
-# IMPLEMENTATION PLAN: [Project/Feature Name]
+# PLAN DE IMPLEMENTACIÓN: [Nombre del Proyecto/Función]
 
-## Spec Reference
-- Original spec: LINK TO SPEC.md
-- Version: v1.2.0
-- Date: 2026-08-06
-
----
-
-## 📋 Summary
-Total: 15 tasks
-Estimated effort: 48 hours
-Parallelization: 3 tracks can run concurrently
+## Referencia de la Especificación
+- Especificación original: ENLACE A SPEC.md
+- Versión: v1.2.0
+- Fecha: 2026-08-06
 
 ---
 
-## 🔗 Dependency Graph
+## 📋 Resumen
+Total: 15 tareas
+Esfuerzo estimado: 48 horas
+Paralelización: 3 pistas pueden ejecutarse de forma concurrente
+
+---
+
+## 🔗 Grafo de Dependencias
 
 ```mermaid
 graph TD
-    A[Task #1: Setup] --> B[Task #2: Auth API]
-    B --> C[Task #3: Login Form]
-    B --> D[Task #4: Protected Route Guard]
-    C --> E[Task #5: Dashboard UI]
+    A[Tarea #1: Configuración] --> B[Tarea #2: API de Auth]
+    B --> C[Tarea #3: Formulario de Login]
+    B --> D[Tarea #4: Guarda de Rutas Protegidas]
+    C --> E[Tarea #5: UI del Panel]
     D --> E
-    E --> F[Task #6: Dashboard Logic]
+    E --> F[Tarea #6: Lógica del Panel]
 ```
 
 ---
 
-## 📊 Task List
+## 📊 Lista de Tareas
 
-### Track 1: Foundation (Tasks 1-3)
-| ID | Task | Est. Time | Dependencies | Status |
-|----|------|-----------|--------------|--------|
-| #1 | Initialize project with OpenSpec scaffold | 2h | None | ⏳ Ready |
-| #2 | Implement authentication API endpoints | 6h | #1 | ⏳ Ready |
-| #3 | Create login form component | 4h | #2 | ⏳ Ready |
+### Pista 1: Cimientos (Tareas 1-3)
+| ID | Tarea | Tiempo Est. | Dependencias | Estado |
+|----|-------|-------------|--------------|--------|
+| #1 | Inicializar proyecto con el scaffold de OpenSpec | 2h | Ninguna | ⏳ Lista |
+| #2 | Implementar endpoints de la API de autenticación | 6h | #1 | ⏳ Lista |
+| #3 | Crear el componente del formulario de login | 4h | #2 | ⏳ Lista |
 
-### Track 2: Core Features (Tasks 4-8)
-| ID | Task | Est. Time | Dependencies | Status |
-|----|------|-----------|--------------|--------|
-| #4 | Add protected route guard | 3h | #2 | ⏳ Ready |
-| #5 | Build dashboard layout | 6h | #3, #4 | ⏳ Blocked |
-| #6 | Implement dashboard data fetching | 4h | #6 | 🔄 In Progress |
-
----
-
-## 🧪 Test Strategy per Task
-
-| Task | Unit Tests | Integration Tests | E2E Required? |
-|------|------------|-------------------|---------------|
-| #1 | ✅ Yes | ✅ Scaffold included | ❌ No |
-| #2 | ✅ Yes | ✅ API contract validation | ⏱️ Optional (if public API) |
-| #3 | ✅ Form validation tests | ✅ Render tests | ✅ Critical path |
+### Pista 2: Funciones Principales (Tareas 4-8)
+| ID | Tarea | Tiempo Est. | Dependencias | Estado |
+|----|-------|-------------|--------------|--------|
+| #4 | Añadir guarda de rutas protegidas | 3h | #2 | ⏳ Lista |
+| #5 | Construir el layout del panel | 6h | #3, #4 | ⏳ Bloqueada |
+| #6 | Implementar la obtención de datos del panel | 4h | #6 | 🔄 En Progreso |
 
 ---
 
-## ⚠️ Risk Assessment
+## 🧪 Estrategia de Tests por Tarea
 
-| Risk | Probability | Impact | Mitigation |
-|-------|------------|---------|------------|
-| Auth tokens expire unexpectedly | Medium | High | Implement refresh token auto-renewal |
-| Third-party service API limits hit | Low | Medium | Add caching layer early |
-| Component complexity exceeds estimates | Medium | Medium | Break into smaller sub-components if needed |
+| Tarea | Tests Unitarios | Tests de Integración | ¿E2E Requerido? |
+|-------|-----------------|----------------------|-----------------|
+| #1 | ✅ Sí | ✅ Scaffold incluido | ❌ No |
+| #2 | ✅ Sí | ✅ Validación del contrato de la API | ⏱️ Opcional (si es API pública) |
+| #3 | ✅ Tests de validación del formulario | ✅ Tests de renderizado | ✅ Ruta crítica |
 
 ---
 
-## 📣 Communication Plan
+## ⚠️ Evaluación de Riesgos
 
-### Pre-Implementation
-- [x] Spec approved by stakeholders
-- [x] Task breakdown reviewed with team
-- [ ] Implementation kickoff (schedule TBD)
+| Riesgo | Probabilidad | Impacto | Mitigación |
+|--------|--------------|---------|------------|
+| Los tokens de auth expiran inesperadamente | Media | Alto | Implementar renovación automática de refresh tokens |
+| Se alcanzan los límites de la API de terceros | Baja | Medio | Añadir capa de caché desde el principio |
+| La complejidad del componente supera las estimaciones | Media | Medio | Dividir en sub-componentes más pequeños si es necesario |
 
-### During Implementation
-- [ ] Daily status updates (if sprint <5 days)
-- [ ] Blockers escalated immediately
-- [ ] PRs created per task (one PR = one task)
+---
 
-### Post-Implementation
-- [ ] All tasks completed and tested
-- [ ] Documentation updated
-- [ ] ADR created if architectural decisions made
+## 📣 Plan de Comunicación
+
+### Pre-Implementación
+- [x] Especificación aprobada por las partes interesadas
+- [x] Desglose de tareas revisado con el equipo
+- [ ] Kickoff de implementación (fecha por confirmar)
+
+### Durante la Implementación
+- [ ] Actualizaciones de estado diarias (si el sprint dura menos de 5 días)
+- [ ] Los bloqueos se escalan inmediatamente
+- [ ] PRs creados por tarea (un PR = una tarea)
+
+### Post-Implementación
+- [ ] Todas las tareas completadas y probadas
+- [ ] Documentación actualizada
+- [ ] ADR creado si se tomaron decisiones arquitectónicas
 ```
 
 ---
 
-## 🎮 Phase 7: GitHub Issue Integration
+## 🎮 Fase 7: Integración con Issues de GitHub
 
-### Auto-Generate Issues from Breakdown
+### Generar Issues Automáticamente desde el Desglose
 
-When connected to GitHub/GitLab, automatically create issues:
+Cuando esté conectado a GitHub/GitLab, crea los issues automáticamente:
 
 ```bash
-# For each task in the breakdown:
+# Por cada tarea del desglose:
 for task in TASKS; do
   gh issue create \
     --repo $REPO \
@@ -307,137 +308,137 @@ for task in TASKS; do
 done
 ```
 
-### Issue Template Generated
+### Plantilla de Issue Generada
 ```markdown
-## [TASK #XX] <Title>
+## [TAREA #XX] <Título>
 
-### 📋 Description
-[Brief from breakdown doc]
+### 📋 Descripción
+[Resumen del documento de desglose]
 
-### ✅ Acceptance Criteria
-- [ ] Criterion 1
-- [ ] Criterion 2
+### ✅ Criterios de Aceptación
+- [ ] Criterio 1
+- [ ] Criterio 2
 
-### 🔗 Dependencies
-- Blocked on: #YY (GitHub issue link)
-- Unblocks: #ZZ (GitHub issue link)
+### 🔗 Dependencias
+- Bloqueada por: #YY (enlace al issue de GitHub)
+- Desbloquea: #ZZ (enlace al issue de GitHub)
 
-### 🎯 Estimation
-~${task.estimated_hours} hours
+### 🎯 Estimación
+~${task.estimated_hours} horas
 
-### 📍 Location in Repo
-Files to modify:
+### 📍 Ubicación en el Repo
+Archivos a modificar:
 - `packages/frontend/src/components/...`
 - `packages/backend/api/routes/...`
 
 ---
 
-**Automatically generated from spec-driven breakdown on 2026-08-06.**
-**Source specification:** [Link to original spec]
+**Generado automáticamente a partir del desglose dirigido por especificación el 2026-08-06.**
+**Especificación fuente:** [Enlace a la especificación original]
 ```
 
 ---
 
-## 🧠 Phase 8: Common Breakdown Mistakes & How to Avoid Them
+## 🧠 Fase 8: Errores Comunes en el Desglose y Cómo Evitarlos
 
-### Mistake #1: Combining Features in One Task
+### Error #1: Combinar Funciones en una Sola Tarea
 ```markdown
-❌ BAD TASK:
-"#42 Implement User Authentication"
-- Login form (frontend)
-- Auth API endpoints (backend)
-- Session management (shared)
-- Password reset flow (entire feature)
+❌ MALA TAREA:
+"#42 Implementar Autenticación de Usuario"
+- Formulario de login (frontend)
+- Endpoints de la API de Auth (backend)
+- Gestión de sesión (compartida)
+- Flujo de restablecimiento de contraseña (función completa)
 
-✅ BETTER BREAKDOWN:
-#42a: Design authentication flows (user stories)
-#42b: Auth API — registration & login endpoints
-#42c: Auth API — password reset & email verification
-#42d: Shared auth utilities & types
-#42e: Login form component with validation
-#42f: Session management hook + provider
-#42g: Protected route guard
+✅ MEJOR DESGLOSE:
+#42a: Diseñar los flujos de autenticación (historias de usuario)
+#42b: API de Auth - endpoints de registro y login
+#42c: API de Auth - restablecimiento de contraseña y verificación de email
+#42d: Utilidades y tipos de auth compartidos
+#42e: Componente de formulario de login con validación
+#42f: Hook de gestión de sesión + provider
+#42g: Guarda de rutas protegidas
 ```
 
-### Mistake #2: Too Vague Acceptance Criteria
+### Error #2: Criterios de Aceptación Demasiado Vagas
 ```markdown
-❌ BAD:
-"- [ ] Login works"
-"- [ ] Tests pass"
+❌ MALO:
+"- [ ] El login funciona"
+"- [ ] Los tests pasan"
 
-✅ GOOD:
-"- [ ] User can register with valid email and password (min 8 chars)"
-"- [ ] Registration error shows inline validation message"
-"- [ ] Email verification link expires after 24 hours"
-"- [ ] Login accepts email OR registered username"
-"- [ ] Session persists across tabs (localStorage sync)"
-"- [ ] Protected routes redirect to login on access attempt"
-"- [ ] Unit tests cover happy path + edge cases for validation"
+✅ BUENO:
+"- [ ] El usuario puede registrarse con email y contraseña válidos (mínimo 8 caracteres)"
+"- [ ] El error de registro muestra un mensaje de validación en línea"
+"- [ ] El enlace de verificación de email caduca después de 24 horas"
+"- [ ] El login acepta email O nombre de usuario registrado"
+"- [ ] La sesión persiste entre pestañas (sincronización con localStorage)"
+"- [ ] Las rutas protegidas redirigen al login al intentar acceder"
+"- [ ] Los tests unitarios cubren el camino feliz y los casos límite de validación"
 ```
 
 ---
 
-## 🛠️ Phase 9: Tools & Integrations
+## 🛠️ Fase 9: Herramientas e Integraciones
 
-### Command Line Workflow
+### Flujo de Trabajo en Línea de Comandos
 
 ```bash
-# 1. Generate task breakdown from spec
+# 1. Generar el desglose de tareas a partir de la especificación
 npx open-spec breakdown --input specs/my-feature/spec.md --output tasks/
 
-# 2. Review generated tasks (interactive mode)
+# 2. Revisar las tareas generadas (modo interactivo)
 cd tasks
-open .       # Or review with your preferred tool
+open .       # O revisa con tu herramienta preferida
 
-# 3. Export to GitHub/GitLab issues
+# 3. Exportar a issues de GitHub/GitLab
 npx task-exporter github --token $GITHUB_TOKEN --repo owner/repo
 
-# 4. Create PRs per completed task
-# After marking task done in tracker:
+# 4. Crear PRs por tarea completada
+# Después de marcar la tarea como hecha en el tracker:
 npx task-to-pr --task-id 42a --auto-branch
 ```
 
 ---
 
-## ✅ Verification Checklist
+## ✅ Lista de Verificación
 
-Before finalizing breakdown:
+Antes de finalizar el desglose:
 
-### Structural Quality
-- [ ] Each task can be completed independently (where parallelized)
-- [ ] No task takes more than ~8 hours realistically
-- [ ] All acceptance criteria are testable and measurable
+### Calidad Estructural
+- [ ] Cada tarea se puede completar de forma independiente (donde se paraleliza)
+- [ ] Ninguna tarea toma más de ~8 horas en la práctica
+- [ ] Todos los criterios de aceptación son comprobables y medibles
 
-### Completeness
-- [ ] Edge cases considered for each task
-- [ ] Dependencies mapped (hard blockers + soft dependencies)
-- [ ] Test strategy defined per task
+### Completitud
+- [ ] Casos límite considerados para cada tarea
+- [ ] Dependencias mapeadas (bloqueos duros + dependencias blandas)
+- [ ] Estrategia de tests definida por tarea
 
-### Clarity
-- [ ] Titles clearly describe what's being built
-- [ ] Descriptions explain why it matters, not just what
-- [ ] Acceptance criteria use Gherkin-like clarity (Given/When/Then)
+### Claridad
+- [ ] Los títulos describen claramente qué se está construyendo
+- [ ] Las descripciones explican por qué importa, no solo qué se hace
+- [ ] Los criterios de aceptación usan claridad tipo Gherkin (Dado/Cuando/Entonces)
 
-### Practicality
-- [ ] Can a human developer start this task and finish it without blocking on other tasks?
-- [ ] Do the tools/integrations work for your team's workflow?
-- [ ] Is there enough context in each task to avoid constant reference to parent doc?
-
----
-
-## 📚 References
-
-See `references/task-template.md` for reusable task templates.  
-See `references/dependency-mapping-guide.md` for advanced dependency visualization techniques.  
-See `docs/architecture/adr-002-task-decomposition-patterns.md` for how we decompose work in this project.
+### Practicidad
+- [ ] ¿Puede un desarrollador humano empezar esta tarea y terminarla sin bloquearse en otras tareas?
+- [ ] ¿Las herramientas/integraciones funcionan para el flujo de trabajo de tu equipo?
+- [ ] ¿Hay suficiente contexto en cada tarea para evitar consultar constantemente el documento padre?
 
 ---
 
-## Common Rationalizations & Reality Check
+## 📚 Referencias
 
-| Rationalization | Reality |
-|-----------------|---------|
-| "We can break tasks as we go, no need to plan" | Unplanned breaks lead to gaps, rework, and incomplete tasks that block others. Breakdown prevents scope creep mid-sprint. |
-| "This is too detailed for a simple feature" | Every feature, no matter how simple, needs clarity on acceptance criteria. Simple features just have simpler breakdowns (maybe 2-3 tasks instead of 15). |
-| "I'll write the PR description instead" | PR descriptions should validate work against pre-agreed acceptance criteria. Breakdown defines what you're building; PR confirms you finished it correctly. |
-| "We use GitHub Projects, right? That's our plan" | GitHub Projects is where breakdown lives. Tasks in Projects are your implementation plan — vague epics without task-level breakdown lead to unpredictable sprints. |
+Consulta `references/task-template.md` para plantillas de tareas reutilizables.  
+Consulta `references/dependency-mapping-guide.md` para técnicas avanzadas de visualización de dependencias.  
+Consulta `docs/architecture/adr-002-task-decomposition-patterns.md` para saber cómo descomponemos el trabajo en este proyecto.
+
+---
+
+## Racionalizaciones Comunes y Comprobación de la Realidad
+
+| Racionalización | Realidad |
+|-----------------|----------|
+| "Podemos desglosar las tareas sobre la marcha, no hace falta planificar" | Los desgloses no planificados generan huecos, retrabajo y tareas incompletas que bloquean a otros. El desglose previene el aumento de alcance a mitad del sprint. |
+| "Esto es demasiado detallado para una función simple" | Toda función, por simple que sea, necesita claridad en los criterios de aceptación. Las funciones simples solo tienen desgloses más simples (quizás 2-3 tareas en lugar de 15). |
+| "Escribiré la descripción del PR en su lugar" | Las descripciones de PR deberían validar el trabajo contra los criterios de aceptación previamente acordados. El desglose define lo que estás construyendo; el PR confirma que lo terminaste correctamente. |
+| "Usamos GitHub Projects, ¿verdad? Ese es nuestro plan" | GitHub Projects es donde vive el desglose. Las tareas en Projects son tu plan de implementación: las epopeyas vagas sin desglose a nivel de tarea llevan a sprints impredecibles. |

@@ -309,7 +309,7 @@ Nunca:
 
 ¿El proyecto puede entenderse sin leer el historial del chat?
 
-## Learning Signals — Cuándo Loggear Automáticamente
+## Learning Signals - Cuándo Loggear Automáticamente
 
 No esperes a que Gonzo te diga "anotá esto". Estas señales disparan logging automático a `docs/LEARNINGS.md` o `memory/YYYY-MM-DD.md`:
 
@@ -334,22 +334,22 @@ No esperes a que Gonzo te diga "anotá esto". Estas señales disparan logging au
 - Contexto específico de un archivo ("en este archivo...")
 - Hipótesis ("qué pasaría si...")
 
-## Conflict Resolution — Lecciones Contradictorias
+## Conflict Resolution - Lecciones Contradictorias
 
 Cuando dos lecciones en `docs/LEARNINGS.md` se contradicen:
 
-1. **Más específico gana** — proyecto > dominio > global
-2. **Más reciente gana** — mismo nivel de especificidad
-3. **Si ambiguo** — preguntar a Gonzo
+1. **Más específico gana** - proyecto > dominio > global
+2. **Más reciente gana** - mismo nivel de especificidad
+3. **Si ambiguo** - preguntar a Gonzo
 
-## Common Traps — Errores Típicos al Aprender
+## Common Traps - Errores Típicos al Aprender
 
-- **Aprender del silencio** — no inferir preferencias porque Gonzo no dijo nada. Esperar corrección explícita o evidencia repetida.
-- **Promover muy rápido** — una ocurrencia no es un patrón. Esperar 3+ repeticiones antes de promover a SOUL/TOOLS/AGENTS.
-- **Leer todo siempre** — no cargar archivos enteros si no hacen falta. Cargar solo lo que el contexto necesita.
-- **Compactar borrando** — no borrar lecciones viejas. Fusionar, resumir o archivar, pero no perder historia.
+- **Aprender del silencio** - no inferir preferencias porque Gonzo no dijo nada. Esperar corrección explícita o evidencia repetida.
+- **Promover muy rápido** - una ocurrencia no es un patrón. Esperar 3+ repeticiones antes de promover a SOUL/TOOLS/AGENTS.
+- **Leer todo siempre** - no cargar archivos enteros si no hacen falta. Cargar solo lo que el contexto necesita.
+- **Compactar borrando** - no borrar lecciones viejas. Fusionar, resumir o archivar, pero no perder historia.
 
-## DREAMS.md — Consolidación Programada de Memoria
+## DREAMS.md - Consolidación Programada de Memoria
 
 Los daily logs (`memory/YYYY-MM-DD.md`) son raw data. Periódicamente, consolidar lo importante en `MEMORY.md` y archivar lo viejo.
 

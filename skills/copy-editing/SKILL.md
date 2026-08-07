@@ -15,7 +15,7 @@ user-invocable: false
 
 ## Propósito
 
-Mejorar copy de marketing existente mediante 7 pasadas secuenciales de edición, cada una enfocada en una dimensión. No reescribe desde cero — realza el mensaje original.
+Mejorar copy de marketing existente mediante 7 pasadas secuenciales de edición, cada una enfocada en una dimensión. No reescribe desde cero - realza el mensaje original.
 
 ## Filosofía
 

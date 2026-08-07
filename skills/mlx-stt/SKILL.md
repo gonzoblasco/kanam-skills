@@ -22,6 +22,6 @@ Ejecuta transcripción de speech-to-text localmente en Apple Silicon usando MLX 
 4. Recibir el texto transcrito
 
 ## Notas
-- Requiere Apple Silicon (M1 o posterior) — MacBook Air M2 compatible
+- Requiere Apple Silicon (M1 o posterior) - MacBook Air M2 compatible
 - Sin costo de API, sin datos que salgan de la máquina
 - Modelo open-source, sin dependencia de servicios cloud

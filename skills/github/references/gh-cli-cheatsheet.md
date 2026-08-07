@@ -1,15 +1,15 @@
 # gh CLI Cheatsheet
 
-## Quick Reference
+## Referencia Rapida
 
 ### Auth
 ```bash
-gh auth status          # Check auth state
+gh auth status          # Revisa el estado del auth
 gh auth login           # Login / re-auth
-gh auth token           # Print token (for scripts)
+gh auth token           # Imprime el token (para scripts)
 ```
 
-### Repo Info
+### Info del Repo
 ```bash
 gh repo view owner/repo --json name,description,stargazers_count,forks_count
 gh repo clone owner/repo
@@ -46,7 +46,7 @@ gh workflow list --repo owner/repo
 gh workflow run <workflow> --repo owner/repo
 ```
 
-### API (for anything gh doesn't cover)
+### API (para cualquier cosa que gh no cubra)
 ```bash
 gh api repos/owner/repo --jq '.stargazers_count'
 gh api repos/owner/repo/pulls/55/comments --paginate
@@ -55,7 +55,7 @@ gh api repos/owner/repo/labels --jq '.[].name'
 ```
 
 ### Tips
-- Use `--json` + `--jq` for structured output
-- Use `--body-file` for bodies with backticks, shell snippets, or special chars
-- Use `--paginate` for results beyond default limit
-- Use `--cache 1h` for read-only API calls to avoid rate limits
+- Usa `--json` + `--jq` para una salida estructurada
+- Usa `--body-file` para cuerpos con backticks, fragmentos de shell o caracteres especiales
+- Usa `--paginate` para resultados mas alla del limite default
+- Usa `--cache 1h` para llamadas de API de solo lectura para evitar los rate limits

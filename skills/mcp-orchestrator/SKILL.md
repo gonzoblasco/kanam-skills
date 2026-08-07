@@ -117,6 +117,6 @@ INSERT INTO backlog (title, priority, status) VALUES
 
 ## References
 
-- `references/mcp-transports.md` — stdio, SSE, Streamable HTTP handshake details.
-- `references/wrapper-template.py` — template for stdio MCP wrapper.
-- `references/evaluation-criteria.md` — full checklist with examples.
+- `references/mcp-transports.md` - stdio, SSE, Streamable HTTP handshake details.
+- `references/wrapper-template.py` - template for stdio MCP wrapper.
+- `references/evaluation-criteria.md` - full checklist with examples.

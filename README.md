@@ -1,70 +1,72 @@
 # kanam-skills
 
-**Agent skills for the whole job — and the rest of your life.**
+**Skills de agente para todo el trabajo - y el resto de tu vida.**
 
-Production-grade skills for AI coding agents, packaged the same way as
-[addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) and
-[google/skills](https://github.com/google/skills) — but covering more than the
-SDLC. Engineering workflows, personal productivity, creative writing, and
-life admin, all in the open [Agent Skills](https://agentskills.io/specification.md)
-format.
+Skills de producción para agentes de IA, empaquetadas igual que
+[addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) y
+[google/skills](https://github.com/google/skills) - pero cubriendo más que el
+ciclo de desarrollo. Workflows de ingeniería, productividad personal,
+escritura creativa y gestión de vida, todo en el formato abierto
+[Agent Skills](https://agentskills.io/specification.md).
 
 ```bash
 npx skills add gonzoblasco/kanam-skills
 ```
 
-Works with 70+ agents: Claude Code, Codex, Cursor, Copilot, Windsurf, Cline,
-OpenCode, Kiro, and more — plus a **proven OpenClaw port**.
+Funciona con más de 70 agentes: Claude Code, Codex, Cursor, Copilot, Windsurf,
+Cline, OpenCode, Kiro y más - además de un **port probado en OpenClaw**.
 
 ---
 
-## Why another skills repo?
+## Por qué otro repo de skills
 
-The big collections cover the software lifecycle: Define → Plan → Build →
-Verify → Review → Ship. That's the engineering half of an agent's job.
+Las colecciones grandes cubren el ciclo de software: Define → Plan → Build →
+Verify → Review → Ship. Esa es la mitad de ingeniería del trabajo de un agente.
 
-This repo covers the **other half too** — the skills your agent needs to run
-*you*, not just your codebase: ADHD-friendly planning, photo libraries,
-calorie tracking, CV tailoring, fiction writing, local speech-to-text, and
-more. No other public collection ships these as first-class agent skills.
+Este repo cubre **la otra mitad también** - las skills que tu agente necesita
+para gestionar *tu* vida, no solo tu código: planificación adaptada a ADHD,
+bibliotecas de fotos, seguimiento de calorías, optimización de CV, escritura
+de ficción, speech-to-text local, y más. Ninguna otra colección pública ofrece
+estas como skills de agente de primera clase.
 
-**The only skills set with a proven OpenClaw port.** The OpenClaw ecosystem
-wasn't covered by the mainstream collections, so we adapted them — and
-verified they work.
+**El único set de skills con un port probado en OpenClaw.** El ecosistema de
+OpenClaw no estaba cubierto por las colecciones mainstream, así que lo
+adaptamos - y verificamos que funciona.
 
-## Install
+## Instalación
 
-### Any agent (skills.sh)
+### Cualquier agente (skills.sh)
 
 ```bash
-# Everything
+# Todo
 npx skills add gonzoblasco/kanam-skills
 
-# A single skill
+# Una skill específica
 npx skills add gonzoblasco/kanam-skills@narrative-content
 
-# From a subdirectory
+# Desde un subdirectorio
 npx skills add gonzoblasco/kanam-skills/skills/spec-driven-development
 ```
 
-The CLI detects your agent (Claude Code, Cursor, Codex, Copilot, Windsurf,
-Kiro, ...) and copies skills to the right directory automatically.
+El CLI detecta tu agente (Claude Code, Cursor, Codex, Copilot, Windsurf, Kiro,
+...) y copia las skills al directorio correcto automáticamente.
 
 ### OpenClaw
 
-OpenClaw loads skills from `<workspace>/skills`. Clone this repo (or the
-skills folder) into your workspace:
+OpenClaw carga las skills desde `<workspace>/skills`. Cloná este repo (o la
+carpeta skills) en tu workspace:
 
 ```bash
-# From your OpenClaw workspace
+# Desde tu workspace de OpenClaw
 git clone git@github.com:gonzoblasco/kanam-skills.git .kanam-skills
 cp -R .kanam-skills/skills/* skills/
 rm -rf .kanam-skills
 ```
 
-Then restart your OpenClaw session. Skills are discovered automatically.
+Después reiniciá tu sesión de OpenClaw. Las skills se descubren
+automáticamente.
 
-### Manual (any agent)
+### Manual (cualquier agente)
 
 ```bash
 git clone git@github.com:gonzoblasco/kanam-skills.git
@@ -76,15 +78,15 @@ cp -r skills/* .cursor/skills/
 cp -r skills/* $CODEX_HOME/skills/
 ```
 
-See [docs/](docs/) for per-agent guides.
+Mirá [docs/](docs/) para las guías por agente.
 
 ---
 
-## The catalog
+## El catálogo
 
-### Engineering — the SDLC (25 skills)
+### Ingeniería - el ciclo SDLC (25 skills)
 
-| Phase | Skills |
+| Fase | Skills |
 |---|---|
 | **Define** | interview-me, idea-refine, spec-driven-development |
 | **Plan** | planning-and-task-breakdown |
@@ -94,54 +96,54 @@ See [docs/](docs/) for per-agent guides.
 | **Ship** | git-workflow-and-versioning, ci-cd-and-automation, deprecation-and-migration, documentation-and-adrs, observability-and-instrumentation, shipping-and-launch |
 | **Meta** | using-agent-skills, openspec |
 
-### OpenClaw infrastructure (7 skills)
+### Infraestructura OpenClaw (7 skills)
 
 session-lifecycle, knowledge-management, memory-agent, background-execution,
 engineering-governance, git-changelog, mcp-orchestrator
 
-### Stack & tools (4 skills)
+### Stack y herramientas (4 skills)
 
 supabase-assistant, sql-insight, db-readonly, deepwiki
 
-### Specialized dev (5 skills)
+### Desarrollo especializado (5 skills)
 
-i18n-expert, shortcuts-generator, support-response-writer, tech-docs,
-github
+i18n-expert, shortcuts-generator, support-response-writer, tech-docs, github
 
-### Security & network (2 skills)
+### Seguridad y red (2 skills)
 
 clawdstrike, network-scanner
 
-### Career & growth (2 skills)
+### Carrera y crecimiento (2 skills)
 
 mock-interview-drill, cv-tailor
 
-### Content & creativity (7 skills)
+### Contenido y creatividad (7 skills)
 
 copy-editing, narrative-content, brand-name-forge, content-serializer,
 deslop, image-generation, curriculum-builder
 
-### Daily life & tools (7 skills)
+### Vida diaria y herramientas (7 skills)
 
 adhd-assistant, adhd-daily-planner, apple-photos, calorie-counter, mlx-stt,
 checkmate, godot-mcp
 
 **Total: 59 skills.**
 
-Browse the full catalog at [kanam-skills site](#) (GitHub Pages).
+Explorá el catálogo completo en el [sitio de kanam-skills](#) (GitHub Pages).
 
 ---
 
-## Quality
+## Calidad
 
-Every bash script ships with a [bats](https://github.com/bats-core/bats-core)
-test suite, run in CI on every push. Few skills repos do this.
+Cada script bash viene con un suite de tests
+[bats](https://github.com/bats-core/bats-core), que corre en CI en cada push.
+Pocos repos de skills hacen esto.
 
 ```bash
 npm ci
 npx bats tests/bash/
 ```
 
-## License
+## Licencia
 
-MIT — use them, fork them, ship them. See [LICENSE](LICENSE).
+MIT - usalas, forkearlas, publicarlas. Mirá [LICENSE](LICENSE).

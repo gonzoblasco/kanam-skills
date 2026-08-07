@@ -16,7 +16,7 @@ allowed-tools:
   - browser
 ---
 
-# Godot MCP — Aprender Godot juntos
+# Godot MCP - Aprender Godot juntos
 
 Este skill NO es sobre construir juegos de un prompt. Es sobre acompañar a Gonzo en su viaje de aprendizaje de Godot 4.7, paso a paso, hito por hito.
 
@@ -56,7 +56,7 @@ If this skill ever adds scripts under `skills/godot-mcp/scripts/`, run `npm test
 - **Editor**: Gonzo trabaja directamente. El MCP no reemplaza la experiencia de usar Godot.
 - **Ambos**: Gonzo puede tener el editor abierto mientras OpenClaw asiste con MCP.
 
-## Godot 4.7 — Qué hay de nuevo
+## Godot 4.7 - Qué hay de nuevo
 
 Godot 4.7 trae cambios sobre 4.6 que vale la pena explorar:
 

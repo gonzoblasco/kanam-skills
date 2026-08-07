@@ -15,7 +15,7 @@ const OUT_DIR = path.join(__dirname, "public");
 const SRC_DIR = path.join(__dirname, "src");
 
 const CATEGORIES = [
-  { id: "engineering", label: "Engineering - SDLC", match: [
+  { id: "engineering", label: "Ingeniería - ciclo SDLC", match: [
       "interview-me","idea-refine","spec-driven-development",
       "planning-and-task-breakdown","incremental-implementation",
       "test-driven-development","context-engineering","source-driven-development",
@@ -27,29 +27,29 @@ const CATEGORIES = [
       "observability-and-instrumentation","shipping-and-launch",
       "using-agent-skills","openspec",
   ]},
-  { id: "openclaw", label: "OpenClaw infrastructure", match: [
+  { id: "openclaw", label: "Infraestructura OpenClaw", match: [
       "session-lifecycle","knowledge-management","memory-agent",
       "background-execution","engineering-governance","git-changelog",
       "mcp-orchestrator",
   ]},
-  { id: "stack", label: "Stack & tools", match: [
+  { id: "stack", label: "Stack y herramientas", match: [
       "supabase-assistant","sql-insight","db-readonly","deepwiki",
   ]},
-  { id: "specialized", label: "Specialized dev", match: [
+  { id: "specialized", label: "Desarrollo especializado", match: [
       "i18n-expert","shortcuts-generator","support-response-writer",
       "tech-docs","github",
   ]},
-  { id: "security", label: "Security & network", match: [
+  { id: "security", label: "Seguridad y red", match: [
       "clawdstrike","network-scanner",
   ]},
-  { id: "career", label: "Career & growth", match: [
+  { id: "career", label: "Carrera y crecimiento", match: [
       "mock-interview-drill","cv-tailor",
   ]},
-  { id: "creative", label: "Content & creativity", match: [
+  { id: "creative", label: "Contenido y creatividad", match: [
       "copy-editing","narrative-content","brand-name-forge",
       "content-serializer","deslop","image-generation","curriculum-builder",
   ]},
-  { id: "life", label: "Daily life & tools", match: [
+  { id: "life", label: "Vida diaria y herramientas", match: [
       "adhd-assistant","adhd-daily-planner","apple-photos",
       "calorie-counter","mlx-stt","checkmate","godot-mcp",
   ]},
@@ -129,12 +129,12 @@ function buildIndex(skills) {
   const hero = `
   <header>
     <h1>kanam-skills</h1>
-    <p class="tagline">Agent skills for the whole job - and the rest of your life.</p>
+    <p class="tagline">Skills de agente para todo el trabajo - y el resto de tu vida.</p>
     <pre class="install">npx skills add gonzoblasco/kanam-skills</pre>
-    <p class="sub">Engineering workflows, personal productivity, creative writing, and life admin - ${skills.length} skills in the open Agent Skills format.</p>
+    <p class="sub">Workflows de ingeniería, productividad personal, escritura creativa y gestión de vida - ${skills.length} skills en el formato abierto Agent Skills.</p>
   </header>`;
 
-  return layout(`${hero}<main>${sections}</main><footer>MIT licensed - <a href="https://github.com/gonzoblasco/kanam-skills">github.com/gonzoblasco/kanam-skills</a></footer>`, "kanam-skills - Agent skills");
+  return layout(`${hero}<main>${sections}</main><footer>Licencia MIT - <a href="https://github.com/gonzoblasco/kanam-skills">github.com/gonzoblasco/kanam-skills</a></footer>`, "kanam-skills - Skills de agente");
 }
 
 function buildSkillPage(s, skills) {
@@ -151,15 +151,15 @@ function buildSkillPage(s, skills) {
 
   const html = `
   <header>
-    <a class="back" href="../index.html">&larr; catalog</a>
+    <a class="back" href="../index.html">&larr; catálogo</a>
     <h1>${esc(s.name)}</h1>
     <p class="tagline">${esc(s.description)}</p>
   </header>
   <main class="skill">
     <article><pre class="skill-body">${esc(body)}</pre></article>
-    ${related ? `<section><h3>Related</h3><div class="chips">${related}</div></section>` : ""}
+    ${related ? `<section><h3>Relacionadas</h3><div class="chips">${related}</div></section>` : ""}
   </main>
-  <footer>MIT licensed - kanam-skills</footer>`;
+  <footer>Licencia MIT - kanam-skills</footer>`;
 
   return layout(html, `${s.name} - kanam-skills`);
 }

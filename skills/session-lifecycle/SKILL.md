@@ -29,7 +29,7 @@ Gestión del ciclo de vida completo de una sesión de trabajo con IA.
 
 ## Fases
 
-### 1. Inicio — cargar contexto, memoria, handoff del proyecto activo
+### 1. Inicio - cargar contexto, memoria, handoff del proyecto activo
 
 El inicio de sesión se activa **solo cuando Gonzo lo pide explícitamente** ("iniciar sesión", "arrancar", "empezar a trabajar", etc.). No correr el ritual de inicio en consultas sueltas.
 
@@ -65,19 +65,19 @@ Si Gonzo dice `"iniciar sesión"`, `"brainstorming"`, `"aún no sé en qué proy
 
 **En todos los modos:**
 
-- Detectar sesión previa no guardada: si el `session_id` actual no existe en `session-context`, avisar: `"La sesión anterior no fue guardada — ¿querés guardarla antes de arrancar?"`.
+- Detectar sesión previa no guardada: si el `session_id` actual no existe en `session-context`, avisar: `"La sesión anterior no fue guardada - ¿querés guardarla antes de arrancar?"`.
 - **Session Goal:** definir objetivo explícito de la sesión. ¿Qué queremos lograr? ¿Cuál es el criterio de éxito?
 - Si el objetivo es difuso, clarificar antes de avanzar. No arrancar sin dirección.
 
-### 2. Dispatcher — spawnear sub-agentes según la tarea:
+### 2. Dispatcher - spawnear sub-agentes según la tarea:
 - **fork**: cuando el sub-agente necesita el transcript actual (ej: continuar una investigación, analizar una conversación)
 - **isolated**: cuando es trabajo independiente (ej: buscar issues, leer docs, hacer tareas paralelas sin contexto compartido)
 
-### 3. Ejecución — trabajo principal, decisiones, archivos tocados
+### 3. Ejecución - trabajo principal, decisiones, archivos tocados
 - **Mid-session checkpoint:** a mitad de sesión (o al cambiar de tarea), preguntar: "¿Sigo en el camino correcto hacia el objetivo? ¿Necesito ajustar algo?"
 - Si el checkpoint revela desvío, redefinir objetivo o restricciones antes de seguir.
 
-### 4. Cierre — escanear sesión, escribir HANDOFF, memory, CHANGELOG
+### 4. Cierre - escanear sesión, escribir HANDOFF, memory, CHANGELOG
 - Si la sesión tuvo un proyecto asociado, ejecutar `session-context:save` con el resumen de la sesión: `summary`, `leftOff`, `nextSteps`, `decisions`, `blockers`, y `goal` solo si cambió.
 - Si fue una sesión sin proyecto (brainstorming/triage), guardar el resumen en `memory/YYYY-MM-DD.md` y no tocar `session-context`.
 - Mostrar borrador al usuario para confirmación o edición antes de persistir.
@@ -86,9 +86,9 @@ Si Gonzo dice `"iniciar sesión"`, `"brainstorming"`, `"aún no sé en qué proy
 - **Self-reflection obligatoria:** si hubo correcciones de Gonzo, cambios estructurales, o aprendizajes significativos, registrar en LEARNINGS.md antes de cerrar. No esperar a que Gonzo pregunte "¿revisamos lecciones?"
 - Si se modificó CONTRIBUTING.md, skills, o AGENTS.md, verificar que el cambio esté completo y no falten adaptaciones en skills relacionadas
 
-### 5. Tareas — convertir pendientes en tareas accionables. Crear cron jobs para follow-ups, o escribir en TODO.md del proyecto. No dejar pendientes en el aire
+### 5. Tareas - convertir pendientes en tareas accionables. Crear cron jobs para follow-ups, o escribir en TODO.md del proyecto. No dejar pendientes en el aire
 
-### 6. Commit — commit + push del workspace (después de HANDOFF y memory, no antes)
+### 6. Commit - commit + push del workspace (después de HANDOFF y memory, no antes)
 
 ## Helper Scripts
 
@@ -120,25 +120,25 @@ BIASES DETECTED: [sunk cost / anchoring / confirmation / etc. o none]
 
 **Destino:** si es una lección nueva → `docs/LEARNINGS.md`. Si es un patrón que ya existe → actualizar Recurrence-Count.
 
-## WAL Protocol — Write-Ahead Logging
+## WAL Protocol - Write-Ahead Logging
 
-**Regla de oro:** si es importante recordarlo, ESCRIBILO AHORA — no después. El contexto desaparece. El archivo queda.
+**Regla de oro:** si es importante recordarlo, ESCRIBILO AHORA - no después. El contexto desaparece. El archivo queda.
 
 ### Escaneá cada mensaje en busca de:
-- ✏️ **Correcciones** — "Es X, no Y" / "En realidad..." / "No, quise decir..."
-- 📍 **Nombres propios** — personas, lugares, empresas, productos
-- 🎨 **Preferencias** — colores, estilos, approaches, "me gusta/no me gusta"
-- 📋 **Decisiones** — "Hagamos X" / "Vamos con Y" / "Usá Z"
-- 📝 **Cambios a drafts** — ediciones a algo que estamos trabajando
-- 🔢 **Valores específicos** — números, fechas, IDs, URLs
+- ✏️ **Correcciones** - "Es X, no Y" / "En realidad..." / "No, quise decir..."
+- 📍 **Nombres propios** - personas, lugares, empresas, productos
+- 🎨 **Preferencias** - colores, estilos, approaches, "me gusta/no me gusta"
+- 📋 **Decisiones** - "Hagamos X" / "Vamos con Y" / "Usá Z"
+- 📝 **Cambios a drafts** - ediciones a algo que estamos trabajando
+- 🔢 **Valores específicos** - números, fechas, IDs, URLs
 
 ### El Protocolo
 
 Si APARECE ALGUNO de estos:
 
-1. **STOP** — No empieces a redactar tu respuesta
-2. **WRITE** — Actualizá `memory/YYYY-MM-DD.md` o el archivo relevante con el detalle
-3. **THEN** — Respondé a Gonzo
+1. **STOP** - No empieces a redactar tu respuesta
+2. **WRITE** - Actualizá `memory/YYYY-MM-DD.md` o el archivo relevante con el detalle
+3. **THEN** - Respondé a Gonzo
 
 El impulso de responder es el enemigo. El detalle se siente tan claro en contexto que parece innecesario escribirlo. Pero el contexto se va a perder. Escribí primero.
 
@@ -149,7 +149,7 @@ Gonzo dice: "Usá el tema azul, no el rojo"
 ❌ MAL: "Dale, azul!" (parece obvio, para qué escribirlo)
 ✅ BIEN: Escribir a `memory/YYYY-MM-DD.md`: "Tema: azul (no rojo)" → LUEGO responder
 
-## Working Buffer — Zona de Peligro
+## Working Buffer - Zona de Peligro
 
 Cuando el contexto de sesión llegue al ~60% (verificable con `session_status`), activar el buffer:
 
@@ -177,30 +177,30 @@ Cuando el contexto de sesión llegue al ~60% (verificable con `session_status`),
 
 Si despertás sin contexto (compactación, reinicio, o Gonzo dice "dónde estábamos?"):
 
-1. **Leer** `memory/working-buffer.md` — exchanges crudos de la zona de peligro
+1. **Leer** `memory/working-buffer.md` - exchanges crudos de la zona de peligro
 2. **Leer** `memory/YYYY-MM-DD.md` del día de hoy y ayer
 3. **Search** `memory_search()` por contexto faltante
 4. **Extraer** lo importante del buffer a `memory/YYYY-MM-DD.md`
 5. **Presentar:** "Recuperado del working buffer. Última tarea era X. ¿Continuamos?"
 
-No preguntar "de qué estábamos hablando?" — el buffer tiene la conversación.
+No preguntar "de qué estábamos hablando?" - el buffer tiene la conversación.
 
 ## Handoff entre Subagentes
 
 Cuando un subagente pasa trabajo a otro (o devuelve resultados al main), el handoff debe incluir:
 
-- **Qué se hizo** — resumen de cambios/output
-- **Dónde están los artifacts** — rutas exactas de archivos
-- **Cómo verificar** — comandos de test o criterios de aceptación
-- **Issues conocidos** — todo lo que está incompleto o riesgoso
-- **Qué sigue** — próxima acción clara para el agente receptor
+- **Qué se hizo** - resumen de cambios/output
+- **Dónde están los artifacts** - rutas exactas de archivos
+- **Cómo verificar** - comandos de test o criterios de aceptación
+- **Issues conocidos** - todo lo que está incompleto o riesgoso
+- **Qué sigue** - próxima acción clara para el agente receptor
 
 **Mal handoff:** "Listo, revisá los archivos."
 **Buen handoff:** "Construí el módulo de auth en /shared/artifacts/auth/. Corré `npm test auth` para verificar. Issue conocido: rate limiting no implementado todavía. Siguiente: reviewer checkea edge cases de error handling."
 
 **Lección:** un handoff vago genera trabajo duplicado o errores. Ser explícito sobre qué se hizo, dónde está, y qué falta ahorra tiempo a ambos lados.
 
-## Productividad & ADHD — Cómo Trabajamos
+## Productividad & ADHD - Cómo Trabajamos
 
 Gonzo tiene ADHD. El sistema de productividad debe adaptarse a eso, no al revés.
 

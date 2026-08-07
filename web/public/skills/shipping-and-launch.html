@@ -168,201 +168,201 @@ main.skill { max-width: 860px; }
 <body>
 
   <header>
-    <a class="back" href="../index.html">&larr; catalog</a>
+    <a class="back" href="../index.html">&larr; catálogo</a>
     <h1>shipping-and-launch</h1>
-    <p class="tagline">Prepares production launches. Use when preparing to deploy to production. Use when you need a pre-launch checklist, when setting up monitoring, when planning a staged rollout, or when you need a rollback strategy.</p>
+    <p class="tagline">Prepara lanzamientos de produccion. Usalo cuando te prepares para desplegar a produccion. Usalo cuando necesites una checklist previa al lanzamiento, cuando configures monitoreo, cuando planifiques un rollout por etapas, o cuando necesites una estrategia de rollback.</p>
   </header>
   <main class="skill">
     <article><pre class="skill-body">
-# Shipping and Launch
+# Despliegue y Lanzamiento
 
-## Overview
+## Resumen
 
-Ship with confidence. The goal is not just to deploy — it's to deploy safely, with monitoring in place, a rollback plan ready, and a clear understanding of what success looks like. Every launch should be reversible, observable, and incremental.
+Desplega con confianza. La meta no es solo desplegar: es desplegar de forma segura, con monitoreo en su lugar, un plan de rollback listo y una comprension clara de como se ve el exito. Cada lanzamiento deberia ser reversible, observable e incremental.
 
-## When to Use
+## Cuando Usarlo
 
-- Deploying a feature to production for the first time
-- Releasing a significant change to users
-- Migrating data or infrastructure
-- Opening a beta or early access program
-- Any deployment that carries risk (all of them)
+- Desplegar una funcion a produccion por primera vez
+- Publicar un cambio significativo a los usuarios
+- Migrar datos o infraestructura
+- Abrir un programa beta o de acceso temprano
+- Cualquier despliegue que conlleve riesgo (todos)
 
-## The Pre-Launch Checklist
+## La Checklist Previa al Lanzamiento
 
-### Code Quality
+### Calidad del Codigo
 
-- [ ] All tests pass (unit, integration, e2e)
-- [ ] Build succeeds with no warnings
-- [ ] Lint and type checking pass
-- [ ] Code reviewed and approved
-- [ ] No TODO comments that should be resolved before launch
-- [ ] No `console.log` debugging statements in production code
-- [ ] Error handling covers expected failure modes
+- [ ] Todas las pruebas pasan (unit, integracion, e2e)
+- [ ] El build tiene exito sin advertencias
+- [ ] El lint y el type checking pasan
+- [ ] Codigo revisado y aprobado
+- [ ] No hay comentarios TODO que deberian resolverse antes del lanzamiento
+- [ ] No hay declaraciones de debug `console.log` en el codigo de produccion
+- [ ] El manejo de errores cubre los modos de falla esperados
 
-### Security
+### Seguridad
 
-- [ ] No secrets in code or version control
-- [ ] The ecosystem's dependency audit (`npm audit`, `pip-audit`, `cargo audit`, ...) shows no critical or high vulnerabilities
-- [ ] Input validation on all user-facing endpoints
-- [ ] Authentication and authorization checks in place
-- [ ] Security headers configured (CSP, HSTS, etc.)
-- [ ] Rate limiting on authentication endpoints
-- [ ] CORS configured to specific origins (not wildcard)
+- [ ] No hay secretos en el codigo ni en el control de versiones
+- [ ] La auditoria de dependencias del ecosistema (`npm audit`, `pip-audit`, `cargo audit`, ...) no muestra vulnerabilidades criticas ni altas
+- [ ] Validacion de entrada en todos los endpoints orientados al usuario
+- [ ] Chequeos de autenticacion y autorizacion en su lugar
+- [ ] Headers de seguridad configurados (CSP, HSTS, etc.)
+- [ ] Rate limiting en los endpoints de autenticacion
+- [ ] CORS configurado para origenes especificos (no wildcard)
 
-### Performance
+### Rendimiento
 
-- [ ] Core Web Vitals within "Good" thresholds
-- [ ] No N+1 queries in critical paths
-- [ ] Images optimized (compression, responsive sizes, lazy loading)
-- [ ] Bundle size within budget
-- [ ] Database queries have appropriate indexes
-- [ ] Caching configured for static assets and repeated queries
+- [ ] Core Web Vitals dentro de los umbrales "Bueno"
+- [ ] No hay consultas N+1 en los caminos criticos
+- [ ] Imagenes optimizadas (compresion, tamanos responsivos, lazy loading)
+- [ ] Tamano del bundle dentro del presupuesto
+- [ ] Las consultas de la base de datos tienen indices apropiados
+- [ ] Cache configurado para assets estaticos y consultas repetidas
 
-### Accessibility
+### Accesibilidad
 
-- [ ] Keyboard navigation works for all interactive elements
-- [ ] Screen reader can convey page content and structure
-- [ ] Color contrast meets WCAG 2.1 AA (4.5:1 for text)
-- [ ] Focus management correct for modals and dynamic content
-- [ ] Error messages are descriptive and associated with form fields
-- [ ] No accessibility warnings in axe-core or Lighthouse
+- [ ] La navegacion por teclado funciona para todos los elementos interactivos
+- [ ] El lector de pantalla puede transmitir el contenido y la estructura de la pagina
+- [ ] El contraste de color cumple con WCAG 2.1 AA (4.5:1 para texto)
+- [ ] La gestion del foco es correcta para modales y contenido dinamico
+- [ ] Los mensajes de error son descriptivos y estan asociados con los campos del formulario
+- [ ] No hay advertencias de accesibilidad en axe-core ni Lighthouse
 
-### Infrastructure
+### Infraestructura
 
-- [ ] Environment variables set in production
-- [ ] Database migrations applied (or ready to apply)
-- [ ] DNS and SSL configured
-- [ ] CDN configured for static assets
-- [ ] Logging and error reporting configured
-- [ ] Health check endpoint exists and responds
+- [ ] Variables de entorno configuradas en produccion
+- [ ] Migraciones de la base de datos aplicadas (o listas para aplicar)
+- [ ] DNS y SSL configurados
+- [ ] CDN configurado para assets estaticos
+- [ ] Logging y reporte de errores configurados
+- [ ] Existe un endpoint de health check y responde
 
-### Documentation
+### Documentacion
 
-- [ ] README updated with any new setup requirements
-- [ ] API documentation current
-- [ ] ADRs written for any architectural decisions
-- [ ] Changelog updated
-- [ ] User-facing documentation updated (if applicable)
+- [ ] README actualizado con cualquier nuevo requisito de configuracion
+- [ ] Documentacion de la API al dia
+- [ ] ADRs escritos para cualquier decision arquitectonica
+- [ ] Changelog actualizado
+- [ ] Documentacion orientada al usuario actualizada (si aplica)
 
-## Feature Flag Strategy
+## Estrategia de Feature Flags
 
-Ship behind feature flags to decouple deployment from release:
+Desplega detras de feature flags para desacoplar el despliegue del lanzamiento:
 
 ```typescript
-// Feature flag check
+// Chequeo de feature flag
 const flags = await getFeatureFlags(userId);
 
 if (flags.taskSharing) {
-  // New feature: task sharing
+  // Nueva funcion: compartir tareas
   return &lt;TaskSharingPanel task={task} /&gt;;
 }
 
-// Default: existing behavior
+// Default: comportamiento existente
 return null;
 ```
 
-**Feature flag lifecycle:**
+**Ciclo de vida del feature flag:**
 
 ```
-1. DEPLOY with flag OFF     → Code is in production but inactive
-2. ENABLE for team/beta     → Internal testing in production environment
-3. GRADUAL ROLLOUT          → 5% → 25% → 50% → 100% of users
-4. MONITOR at each stage    → Watch error rates, performance, user feedback
-5. CLEAN UP                 → Remove flag and dead code path after full rollout
+1. DESPLEGAR con el flag OFF     -&gt; El codigo esta en produccion pero inactivo
+2. HABILITAR para equipo/beta    -&gt; Pruebas internas en el entorno de produccion
+3. ROLLOUT GRADUAL               -&gt; 5% -&gt; 25% -&gt; 50% -&gt; 100% de los usuarios
+4. MONITOREAR en cada etapa      -&gt; Observa tasas de error, rendimiento, feedback de usuarios
+5. LIMPIEZA                      -&gt; Elimina el flag y el camino de codigo muerto despues del rollout completo
 ```
 
-**Rules:**
-- Every feature flag has an owner and an expiration date
-- Clean up flags within 2 weeks of full rollout
-- Don't nest feature flags (creates exponential combinations)
-- Test both flag states (on and off) in CI
+**Reglas:**
+- Cada feature flag tiene un dueno y una fecha de expiracion
+- Limpia los flags dentro de 2 semanas del rollout completo
+- No anides feature flags (crea combinaciones exponenciales)
+- Prueba ambos estados del flag (on y off) en CI
 
-## Staged Rollout
+## Rollout por Etapas
 
-### The Rollout Sequence
-
-```
-1. DEPLOY to staging
-   └── Full test suite in staging environment
-   └── Manual smoke test of critical flows
-
-2. DEPLOY to production (feature flag OFF)
-   └── Verify deployment succeeded (health check)
-   └── Check error monitoring (no new errors)
-
-3. ENABLE for team (flag ON for internal users)
-   └── Team uses the feature in production
-   └── 24-hour monitoring window
-
-4. CANARY rollout (flag ON for 5% of users)
-   └── Monitor error rates, latency, user behavior
-   └── Compare metrics: canary vs. baseline
-   └── 24-48 hour monitoring window
-   └── Advance only if all thresholds pass (see table below)
-
-5. GRADUAL increase (25% -&gt; 50% -&gt; 100%)
-   └── Same monitoring at each step
-   └── Ability to roll back to previous percentage at any point
-
-6. FULL rollout (flag ON for all users)
-   └── Monitor for 1 week
-   └── Clean up feature flag
-```
-
-### Rollout Decision Thresholds
-
-Use these thresholds to decide whether to advance, hold, or roll back at each stage:
-
-| Metric | Advance (green) | Hold and investigate (yellow) | Roll back (red) |
-|--------|-----------------|-------------------------------|-----------------|
-| Error rate | Within 10% of baseline | 10-100% above baseline | &gt;2x baseline |
-| P95 latency | Within 20% of baseline | 20-50% above baseline | &gt;50% above baseline |
-| Client JS errors | No new error types | New errors at &lt;0.1% of sessions | New errors at &gt;0.1% of sessions |
-| Business metrics | Neutral or positive | Decline &lt;5% (may be noise) | Decline &gt;5% |
-
-### When to Roll Back
-
-Roll back immediately if:
-- Error rate increases by more than 2x baseline
-- P95 latency increases by more than 50%
-- User-reported issues spike
-- Data integrity issues detected
-- Security vulnerability discovered
-
-## Monitoring and Observability
-
-### What to Monitor
+### La Secuencia de Rollout
 
 ```
-Application metrics:
-├── Error rate (total and by endpoint)
-├── Response time (p50, p95, p99)
-├── Request volume
-├── Active users
-└── Key business metrics (conversion, engagement)
+1. DESPLEGAR a staging
+   |-- Suite de pruebas completa en el entorno de staging
+   |-- Smoke test manual de los flujos criticos
 
-Infrastructure metrics:
-├── CPU and memory utilization
-├── Database connection pool usage
-├── Disk space
-├── Network latency
-└── Queue depth (if applicable)
+2. DESPLEGAR a produccion (feature flag OFF)
+   |-- Verifica que el despliegue tuvo exito (health check)
+   |-- Chequea el monitoreo de errores (sin errores nuevos)
 
-Client metrics:
-├── Core Web Vitals (LCP, INP, CLS)
-├── JavaScript errors
-├── API error rates from client perspective
-└── Page load time
+3. HABILITAR para el equipo (flag ON para usuarios internos)
+   |-- El equipo usa la funcion en produccion
+   |-- Ventana de monitoreo de 24 horas
+
+4. Rollout CANARY (flag ON para el 5% de los usuarios)
+   |-- Monitorea tasas de error, latencia, comportamiento del usuario
+   |-- Compara metricas: canary vs. baseline
+   |-- Ventana de monitoreo de 24-48 horas
+   |-- Avanza solo si todos los umbrales pasan (ver tabla abajo)
+
+5. AUMENTO gradual (25% -&gt; 50% -&gt; 100%)
+   |-- Mismo monitoreo en cada paso
+   |-- Capacidad de volver al porcentaje anterior en cualquier momento
+
+6. ROLLOUT completo (flag ON para todos los usuarios)
+   |-- Monitorea durante 1 semana
+   |-- Limpia el feature flag
 ```
 
-### Error Reporting
+### Umbrales de Decision de Rollout
+
+Usa estos umbrales para decidir si avanzar, mantener o volver atras en cada etapa:
+
+| Metrica | Avanzar (verde) | Mantener e investigar (amarillo) | Volver atras (rojo) |
+|---------|-----------------|----------------------------------|---------------------|
+| Tasa de error | Dentro del 10% del baseline | 10-100% por encima del baseline | &gt;2x el baseline |
+| Latencia P95 | Dentro del 20% del baseline | 20-50% por encima del baseline | &gt;50% por encima del baseline |
+| Errores JS del cliente | Sin tipos de error nuevos | Errores nuevos en &lt;0.1% de las sesiones | Errores nuevos en &gt;0.1% de las sesiones |
+| Metricas de negocio | Neutrales o positivas | Decline &lt;5% (puede ser ruido) | Decline &gt;5% |
+
+### Cuando Volver Atras
+
+Volve atras inmediatamente si:
+- La tasa de error aumenta mas de 2x el baseline
+- La latencia P95 aumenta mas del 50%
+- Los problemas reportados por usuarios suben de golpe
+- Se detectan problemas de integridad de datos
+- Se descubre una vulnerabilidad de seguridad
+
+## Monitoreo y Observabilidad
+
+### Que Monitorear
+
+```
+Metricas de la aplicacion:
+|-- Tasa de error (total y por endpoint)
+|-- Tiempo de respuesta (p50, p95, p99)
+|-- Volumen de solicitudes
+|-- Usuarios activos
+|-- Metricas de negocio clave (conversion, engagement)
+
+Metricas de infraestructura:
+|-- Utilizacion de CPU y memoria
+|-- Uso del pool de conexiones de la base de datos
+|-- Espacio en disco
+|-- Latencia de red
+|-- Profundidad de la cola (si aplica)
+
+Metricas del cliente:
+|-- Core Web Vitals (LCP, INP, CLS)
+|-- Errores de JavaScript
+|-- Tasas de error de API desde la perspectiva del cliente
+|-- Tiempo de carga de la pagina
+```
+
+### Reporte de Errores
 
 ```typescript
-// Set up error boundary with reporting
+// Configura el error boundary con reporte
 class ErrorBoundary extends React.Component {
   componentDidCatch(error: Error, info: React.ErrorInfo) {
-    // Report to error tracking service
+    // Reporta al servicio de seguimiento de errores
     reportError(error, {
       componentStack: info.componentStack,
       userId: getCurrentUser()?.id,
@@ -378,7 +378,7 @@ class ErrorBoundary extends React.Component {
   }
 }
 
-// Server-side error reporting
+// Reporte de errores del lado del servidor
 app.use((err: Error, req: Request, res: Response, next: NextFunction) =&gt; {
   reportError(err, {
     method: req.method,
@@ -386,102 +386,102 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) =&gt; {
     userId: req.user?.id,
   });
 
-  // Don't expose internals to users
+  // No expongas los internals a los usuarios
   res.status(500).json({
     error: { code: 'INTERNAL_ERROR', message: 'Something went wrong' },
   });
 });
 ```
 
-### Post-Launch Verification
+### Verificacion Post-Lanzamiento
 
-In the first hour after launch:
+En la primera hora despues del lanzamiento:
 
 ```
-1. Check health endpoint returns 200
-2. Check error monitoring dashboard (no new error types)
-3. Check latency dashboard (no regression)
-4. Test the critical user flow manually
-5. Verify logs are flowing and readable
-6. Confirm rollback mechanism works (dry run if possible)
+1. Chequea que el endpoint de salud devuelve 200
+2. Chequea el dashboard de monitoreo de errores (sin tipos de error nuevos)
+3. Chequea el dashboard de latencia (sin regresiones)
+4. Prueba el flujo critico del usuario manualmente
+5. Verifica que los logs fluyen y son legibles
+6. Confirma que el mecanismo de rollback funciona (dry run si es posible)
 ```
 
-## Rollback Strategy
+## Estrategia de Rollback
 
-Every deployment needs a rollback plan before it happens:
+Cada despliegue necesita un plan de rollback antes de que ocurra:
 
 ```markdown
-## Rollback Plan for [Feature/Release]
+## Plan de Rollback para [Funcion/Lanzamiento]
 
-### Trigger Conditions
-- Error rate &gt; 2x baseline
-- P95 latency &gt; [X]ms
-- User reports of [specific issue]
+### Condiciones de Activacion
+- Tasa de error &gt; 2x el baseline
+- Latencia P95 &gt; [X]ms
+- Reportes de usuarios de [problema especifico]
 
-### Rollback Steps
-1. Disable feature flag (if applicable)
-   OR
-1. Deploy previous version: `git revert &lt;commit&gt; &amp;&amp; git push`
-2. Verify rollback: health check, error monitoring
-3. Communicate: notify team of rollback
+### Pasos de Rollback
+1. Deshabilita el feature flag (si aplica)
+   O
+1. Despliega la version anterior: `git revert &lt;commit&gt; &amp;&amp; git push`
+2. Verifica el rollback: health check, monitoreo de errores
+3. Comunica: notifica al equipo del rollback
 
-### Database Considerations
-- Migration [X] has a rollback: `npx prisma migrate rollback`
-- Data inserted by new feature: [preserved / cleaned up]
+### Consideraciones de la Base de Datos
+- La migracion [X] tiene un rollback: `npx prisma migrate rollback`
+- Los datos insertados por la nueva funcion: [conservados / limpiados]
 
-### Time to Rollback
-- Feature flag: &lt; 1 minute
-- Redeploy previous version: &lt; 5 minutes
-- Database rollback: &lt; 15 minutes
+### Tiempo hasta el Rollback
+- Feature flag: &lt; 1 minuto
+- Redesplegar la version anterior: &lt; 5 minutos
+- Rollback de la base de datos: &lt; 15 minutos
 ```
-## See Also
+## Ver Tambien
 
-- For the project-wide Definition of Done that every change must clear before this checklist, see `references/definition-of-done.md`
-- For security pre-launch checks, see `references/security-checklist.md`
-- For performance pre-launch checklist, see `references/performance-checklist.md`
-- For accessibility verification before launch, see `references/accessibility-checklist.md`
+- Para la Definition of Done de todo el proyecto que cada cambio debe superar antes de esta checklist, ver `references/definition-of-done.md`
+- Para los chequeos de seguridad previos al lanzamiento, ver `references/security-checklist.md`
+- Para la checklist de rendimiento previa al lanzamiento, ver `references/performance-checklist.md`
+- Para la verificacion de accesibilidad antes del lanzamiento, ver `references/accessibility-checklist.md`
 
-## Common Rationalizations
+## Racionalizaciones Comunes
 
-| Rationalization | Reality |
+| Racionalizacion | Realidad |
 |---|---|
-| "It works in staging, it'll work in production" | Production has different data, traffic patterns, and edge cases. Monitor after deploy. |
-| "We don't need feature flags for this" | Every feature benefits from a kill switch. Even "simple" changes can break things. |
-| "Monitoring is overhead" | Not having monitoring means you discover problems from user complaints instead of dashboards. |
-| "We'll add monitoring later" | Add it before launch. You can't debug what you can't see. |
-| "Rolling back is admitting failure" | Rolling back is responsible engineering. Shipping a broken feature is the failure. |
+| "Funciona en staging, funcionara en produccion" | Produccion tiene datos, patrones de trafico y casos borde diferentes. Monitorea despues del despliegue. |
+| "No necesitamos feature flags para esto" | Toda funcion se beneficia de un kill switch. Incluso los cambios "simples" pueden romper cosas. |
+| "El monitoreo es overhead" | No tener monitoreo significa que descubris los problemas por quejas de usuarios en lugar de por dashboards. |
+| "Agregaremos el monitoreo despues" | Agregalo antes del lanzamiento. No podes depurar lo que no podes ver. |
+| "Volver atras es admitir el fracaso" | Volver atras es ingenieria responsable. Publicar una funcion rota es el fracaso. |
 
-## Red Flags
+## Senales de Alerta
 
-- Deploying without a rollback plan
-- No monitoring or error reporting in production
-- Big-bang releases (everything at once, no staging)
-- Feature flags with no expiration or owner
-- No one monitoring the deploy for the first hour
-- Production environment configuration done by memory, not code
-- "It's Friday afternoon, let's ship it"
+- Desplegar sin un plan de rollback
+- Sin monitoreo ni reporte de errores en produccion
+- Lanzamientos big-bang (todo a la vez, sin staging)
+- Feature flags sin expiracion ni dueno
+- Nadie monitoreando el despliegue durante la primera hora
+- Configuracion del entorno de produccion hecha de memoria, no por codigo
+- "Es viernes a la tarde, larguemos"
 
-## Verification
+## Verificacion
 
-Before deploying:
+Antes de desplegar:
 
-- [ ] Pre-launch checklist completed (all sections green)
-- [ ] Feature flag configured (if applicable)
-- [ ] Rollback plan documented
-- [ ] Monitoring dashboards set up
-- [ ] Team notified of deployment
+- [ ] Checklist previa al lanzamiento completada (todas las secciones en verde)
+- [ ] Feature flag configurado (si aplica)
+- [ ] Plan de rollback documentado
+- [ ] Dashboards de monitoreo configurados
+- [ ] Equipo notificado del despliegue
 
-After deploying:
+Despues de desplegar:
 
-- [ ] Health check returns 200
-- [ ] Error rate is normal
-- [ ] Latency is normal
-- [ ] Critical user flow works
-- [ ] Logs are flowing
-- [ ] Rollback tested or verified ready
+- [ ] El health check devuelve 200
+- [ ] La tasa de error es normal
+- [ ] La latencia es normal
+- [ ] El flujo critico del usuario funciona
+- [ ] Los logs fluyen
+- [ ] El rollback fue probado o verificado como listo
 </pre></article>
-    <section><h3>Related</h3><div class="chips"><a class="chip" href="api-and-interface-design.html">api-and-interface-design</a><a class="chip" href="browser-testing-with-devtools.html">browser-testing-with-devtools</a><a class="chip" href="ci-cd-and-automation.html">ci-cd-and-automation</a><a class="chip" href="code-review-and-quality.html">code-review-and-quality</a></div></section>
+    <section><h3>Relacionadas</h3><div class="chips"><a class="chip" href="api-and-interface-design.html">api-and-interface-design</a><a class="chip" href="browser-testing-with-devtools.html">browser-testing-with-devtools</a><a class="chip" href="ci-cd-and-automation.html">ci-cd-and-automation</a><a class="chip" href="code-review-and-quality.html">code-review-and-quality</a></div></section>
   </main>
-  <footer>MIT licensed - kanam-skills</footer>
+  <footer>Licencia MIT - kanam-skills</footer>
 </body>
 </html>

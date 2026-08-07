@@ -1,48 +1,48 @@
-# Install guides
+# Guías de instalación
 
-Per-agent installation instructions for kanam-skills.
+Instrucciones de instalación por agente para kanam-skills.
 
-## Quick reference
+## Referencia rápida
 
-| Agent | Command |
+| Agente | Comando |
 |---|---|
-| Any (skills.sh) | `npx skills add gonzoblasco/kanam-skills` |
-| OpenClaw | copy `skills/` into `<workspace>/skills` (see [openclaw.md](openclaw.md)) |
+| Cualquiera (skills.sh) | `npx skills add gonzoblasco/kanam-skills` |
+| OpenClaw | copiar `skills/` en `<workspace>/skills` (ver [openclaw.md](openclaw.md)) |
 | Claude Code | `cp -r skills/* ~/.claude/skills/` |
 | Cursor | `cp -r skills/* .cursor/skills/` |
 | Codex | `cp -r skills/* $CODEX_HOME/skills/` |
 | Windsurf | `cp -r skills/* ~/.codeium/windsurf/skills/` |
 | Kiro | `cp -r skills/* ~/.kiro/skills/` |
 
-## The recommended way: skills.sh
+## La forma recomendada: skills.sh
 
-The [skills.sh](https://skills.sh) CLI (from [vercel-labs/skills](https://github.com/vercel-labs/skills))
-detects your agent automatically and installs to the right directory:
+El CLI de [skills.sh](https://skills.sh) (de [vercel-labs/skills](https://github.com/vercel-labs/skills))
+detecta tu agente automáticamente e instala en el directorio correcto:
 
 ```bash
 npx skills add gonzoblasco/kanam-skills
 ```
 
-Install a single skill:
+Instalar una sola skill:
 
 ```bash
 npx skills add gonzoblasco/kanam-skills@narrative-content
 ```
 
-## Manual install
+## Instalación manual
 
-Clone and copy the skills you want:
+Cloná y copiá las skills que quieras:
 
 ```bash
 git clone git@github.com:gonzoblasco/kanam-skills.git
 cd kanam-skills
 ```
 
-Then copy `skills/*` into your agent's skills directory (see the table above).
+Después copiá `skills/*` al directorio de skills de tu agente (ver la tabla de arriba).
 
-## Detailed guides
+## Guías detalladas
 
-- [OpenClaw](openclaw.md) — the proven port (not covered by skills.sh)
+- [OpenClaw](openclaw.md) - el port probado (no cubierto por skills.sh)
 - [Claude Code](claude-code.md)
 - [Cursor](cursor.md)
 - [Codex](codex.md)

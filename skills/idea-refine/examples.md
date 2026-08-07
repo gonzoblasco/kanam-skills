@@ -1,238 +1,238 @@
-# Ideation Session Examples
+# Ejemplos de Sesiones de Ideacion
 
-These examples demonstrate what good ideation sessions look like across different kinds of ideas. Study the rhythm, tone, and structure — not just the content. The skill should feel equally at home with a vague startup concept, a feature for an existing product, or a process improvement.
-
----
-
-## Example 1: Vague Early-Stage Concept (Full 3-Phase Session)
-
-**User invokes:** `/ideate I want to help small local restaurants compete with the big delivery platforms`
-
-### Phase 1: Understand & Expand
-
-**Skill response:**
-
-> **How might we** give independent restaurants the reach and convenience customers expect from delivery platforms, without forcing them into a model that erodes their margins and brand?
-
-That's a big space. Let me sharpen it:
-
-1. **Which part of "compete"?** Customer acquisition? Delivery logistics? Online ordering UX? Loyalty/retention? Margin pressure from platform fees?
-2. **Who are you building for?** The restaurant owner? The diner? Both?
-3. **What's the constraint?** Are you thinking software? A cooperative model? Something physical?
-
-**User responds:** "Restaurant owners. The core pain is that they're paying 25-30% commission to delivery apps but feel they can't opt out because that's where the customers are. I'm thinking software but I'm open."
-
-**Skill continues:**
-
-So the problem isn't delivery logistics — it's **customer dependency**. The platforms own the customer relationship, and restaurants are renting access to their own customers at 30% of revenue. That's the leverage to break.
-
-Here are 6 variations:
-
-1. **Direct Channel Toolkit:** Give restaurants their own branded ordering — web, SMS, maybe a lightweight app — so they can move existing customers off-platform. The core bet: customers who *already know* a restaurant will order direct if it's easy enough. You don't need to compete with DoorDash for discovery, just for reordering.
-
-2. **Inversion — Charge the Customer, Not the Restaurant:** What if the delivery fee model flipped? Customers pay a small premium for direct ordering, restaurants pay zero commission. Position it as "support your local spot." The bet: enough customers care about supporting local businesses to pay $1-2 more per order.
-
-3. **Constraint Removal — What If Delivery Weren't Required?** The platforms bundle discovery + ordering + delivery, but most of their cost (and the restaurant's commission) is delivery. What if you only solved ordering and pickup? Pickup-first model. Restaurants keep 100% of revenue, customers save the delivery fee. Works best in dense neighborhoods.
-
-4. **Combination — Restaurant Collective:** A co-op model where 20-50 local restaurants in an area share a platform, split costs, and cross-promote each other. Individual restaurants can't afford marketing — but a neighborhood collective can. Think "local food hall" but digital.
-
-5. **Audience Shift — For Regular Customers:** Don't try to acquire new customers. Build exclusively for a restaurant's existing regulars — the people who come in weekly. A loyalty/reorder tool that's dead simple: "Your usual?" one-tap reorder. The 80/20 bet: 20% of customers drive 80% of revenue, and those people don't need DoorDash to discover the restaurant.
-
-6. **Expert Lens — What Restaurant Owners Actually Do:** Most small restaurant owners aren't looking at dashboards. They're in the kitchen. Any tool that requires them to "manage" something will fail. The winning approach might be something that runs itself — auto-texts regulars when they haven't ordered in 2 weeks, auto-posts the daily special, auto-handles reorders. Zero restaurant-side effort.
-
-Variation 5 and 6 together are interesting. Instead of trying to out-platform the platforms, you'd build something hyper-narrow: a reordering and retention tool for a restaurant's best existing customers. No discovery, no delivery, no marketplace. Just "keep your regulars ordering direct."
-
-Which directions interest you?
+Estos ejemplos demuestran como se ven las buenas sesiones de ideacion para distintos tipos de ideas. Estudia el ritmo, el tono y la estructura, no solo el contenido. La skill deberia sentirse igual de comoda con un concepto de startup vago, una funcion para un producto existente o una mejora de proceso.
 
 ---
 
-### Phase 2: Evaluate & Converge
+## Ejemplo 1: Concepto Vago en Etapa Temprana (Sesion Completa de 3 Fases)
 
-**User responds:** "I love the regulars angle (5 and 6). The direct channel toolkit (1) feels necessary but boring. The co-op idea (4) is interesting but complex. Let me focus on 1 + 5 + 6 combined."
+**El usuario invoca:** `/ideate quiero ayudar a los pequenos restaurantes locales a competir con las grandes plataformas de delivery`
 
-**Skill response:**
+### Fase 1: Entender y Expandir
 
-Good instincts. That combination has a clear thesis: **own the relationship with your best customers, make reordering effortless, and require zero effort from the restaurant owner.** Let me stress-test it.
+**Respuesta de la skill:**
 
-**Direction A: The "Regulars Engine" (Variations 5 + 6 fused)**
-A tool focused entirely on a restaurant's existing repeat customers. Auto-reorder, auto-engagement, zero management.
+> **Como podriamos** darle a los restaurantes independientes el alcance y la conveniencia que los clientes esperan de las plataformas de delivery, sin forzarlos a un modelo que erosiona sus margenes y su marca?
 
-- **Core bet:** A restaurant's top 20% of customers will shift to direct ordering if the experience is frictionless and personal. The restaurant doesn't need *new* customers — it needs to stop paying 30% on customers it already has.
-- **User value:** High and immediate. Every direct reorder saves the restaurant 25-30% commission. If a regular orders $30/week, that's ~$400/year in saved fees per customer. 50 regulars = $20K/year. That's real money for a small restaurant.
-- **Feasibility:** Medium. The ordering/payment tech is commodity. The hard parts: (a) how do you identify and onboard "regulars" without the restaurant doing manual work? (b) How do you handle the cold start — the first reorder needs an order history that lives on the delivery platform, not with you.
-- **Differentiation:** High for the niche. Platforms optimize for marketplace dynamics (new customer discovery, driver logistics). Nobody is optimizing specifically for "keep your regulars ordering direct." It's too small for DoorDash to care about, which is exactly why it's a good wedge.
-- **Hidden assumptions:**
-  - Regulars will install/use yet another ordering method (assumption most likely to be wrong)
-  - Restaurant owners will share customer contact info or let you access it
-  - Direct ordering won't cannibalize dine-in revenue
-- **What could kill it:** If customers simply won't switch channels. Habit is powerful — even if DoorDash costs more, it's already on their phone.
+Ese es un espacio grande. Dejame afinarlo:
 
-**Direction B: Direct Channel + Retention Hybrid (Variation 1 + 5)**
-Branded ordering for the restaurant *plus* the retention automation. More complete but more complex.
+1. **Que parte de "competir"?** Adquisicion de clientes? Logistica de delivery? UX de pedido online? Lealtad/retencion? Presion sobre los margenes por las comisiones de las plataformas?
+2. **Para quien lo estas construyendo?** Para el dueno del restaurante? Para el comensal? Para ambos?
+3. **Cual es la restriccion?** Estas pensando en software? Un modelo cooperativo? Algo fisico?
 
-- **Core bet:** Restaurants need both the channel (a way to accept orders) and the engine (a way to keep customers coming back through that channel).
-- **User value:** Higher ceiling, but only if both parts work together. The ordering channel alone is a commodity (Square, Toast already do this). The retention layer alone has no channel to retain customers *on*.
-- **Feasibility:** Lower. You're building two products and hoping they're better together.
-- **Differentiation:** Medium. The combination is interesting, but each piece individually has competitors.
-- **Hidden assumption:** That bundling these is better than partnering (e.g., retention layer on top of Square Online).
-- **What could kill it:** Scope. Building two things well is exponentially harder than building one thing well.
+**El usuario responde:** "Para los duenos de restaurantes. El dolor central es que pagan una comision del 25-30% a las apps de delivery pero sienten que no pueden optar por no usarlas porque ahi es donde estan los clientes. Estoy pensando en software, pero estoy abierto."
 
-**The honest read:** Direction A is the sharper bet. Direction B is safer but less differentiated. The biggest risk for A is the channel-switching problem — getting customers to order through a new method. If you can crack that (and variation 6's "zero effort" approach might help — an SMS-based reorder doesn't require a new app), the rest follows.
+**La skill continua:**
 
-One thing I want to push back on: you said variation 1 feels "necessary but boring." That instinct to include the "necessary" thing is how products lose focus. If the regulars engine works, you can add a branded ordering channel later. But if you build the channel first, you're just another Square Online competitor.
+Entonces el problema no es la logistica de delivery, es la **dependencia del cliente**. Las plataformas son duenas de la relacion con el cliente, y los restaurantes estan alquilando acceso a sus propios clientes al 30% de sus ingresos. Ese es el punto de apalancamiento a romper.
 
----
+Aca hay 6 variaciones:
 
-### Phase 3: Sharpen & Ship
+1. **Kit de canal directo:** Dales a los restaurantes su propio pedido con su marca, web, SMS, tal vez una app liviana, para que puedan mover a los clientes existentes fuera de la plataforma. La apuesta central: los clientes que *ya conocen* un restaurante van a pedir directo si es lo suficientemente facil. No necesitas competir con DoorDash por el descubrimiento, solo por el re-pedido.
 
-**Skill produces:**
+2. **Inversion: que el cliente pague, no el restaurante:** Que pasaria si el modelo de tarifa de delivery se invirtiera? Los clientes pagan una pequena prima por el pedido directo, los restaurantes pagan cero comision. Posicionalo como "apoya a tu local favorito". La apuesta: suficientes clientes se preocupan por apoyar negocios locales como para pagar $1-2 mas por pedido.
 
-# ReOrder: Keep Your Regulars Ordering Direct
+3. **Eliminacion de restricciones: que pasaria si el delivery no fuera necesario?** Las plataformas combinan descubrimiento + pedido + delivery, pero la mayor parte de su costo (y de la comision del restaurante) es el delivery. Que pasaria si solo resolveras el pedido y el pickup? Modelo pickup-first. Los restaurantes se quedan con el 100% de los ingresos, los clientes se ahorran la tarifa de delivery. Funciona mejor en barrios densos.
 
-## Problem Statement
-How might we help independent restaurants retain their best existing customers through direct ordering, eliminating the 25-30% platform commission on the revenue that matters most?
+4. **Combinacion: colectivo de restaurantes:** Un modelo cooperativo donde 20-50 restaurantes locales de una zona comparten una plataforma, dividen los costos y se promocionan cruzadamente. Los restaurantes individuales no pueden pagar marketing, pero un colectivo de barrio si. Pensa en "food hall local" pero digital.
 
-## Recommended Direction
-Build a **regulars-only retention engine** — not a marketplace, not a full ordering platform. Hyper-focused on one job: make it effortless for a restaurant's repeat customers to reorder directly.
+5. **Cambio de audiencia: para clientes habituales:** No intentes adquirir clientes nuevos. Construi exclusivamente para los habituales de un restaurante, la gente que viene todas las semanas. Una herramienta de lealtad/re-pedido que sea ultra simple: "Tu de siempre?" re-pedido con un toque. La apuesta 80/20: el 20% de los clientes genera el 80% de los ingresos, y esa gente no necesita DoorDash para descubrir el restaurante.
 
-The key insight is that restaurants don't need help *finding* their best customers — they know who walks in every Tuesday. They need help moving those relationships off-platform. And the tool needs to run itself, because the owner is in the kitchen, not at a dashboard.
+6. **Lente de experto: que hacen realmente los duenos de restaurantes:** La mayoria de los duenos de restaurantes pequenos no miran dashboards. Estan en la cocina. Cualquier herramienta que les exija "gestionar" algo va a fallar. El enfoque ganador podria ser algo que funcione solo: que les mande un texto automatico a los habituales cuando no pidieron en 2 semanas, que publique el especial del dia automaticamente, que maneje los re-pedidos automaticamente. Cero esfuerzo del lado del restaurante.
 
-SMS-first (not app-first) is likely the right channel. A text saying "Hey, want your usual Thursday order from Marco's?" with a one-tap confirmation is lower friction than any app install.
+La variacion 5 y la 6 juntas son interesantes. En lugar de intentar superar a las plataformas en su propio juego, construirias algo hiper-angosto: una herramienta de re-pedido y retencion para los mejores clientes existentes de un restaurante. Sin descubrimiento, sin delivery, sin marketplace. Solo "mante a tus habituales pidiendo directo".
 
-## Key Assumptions to Validate
-- [ ] Repeat customers will reorder via SMS/direct link instead of their usual delivery app — test with 5 restaurants, 20 regulars each, measure conversion over 4 weeks
-- [ ] Restaurant owners can identify their top 20-30 regulars and share contact info — test by asking 10 restaurant owners if they'd do this
-- [ ] The commission savings ($8-10 per order) is motivating enough for owners to invest initial setup effort — interview 10 owners about platform fee pain
-
-## MVP Scope
-- SMS-based reordering for a restaurant's self-identified regular customers
-- Restaurant owner adds regulars manually (name + phone + usual order) — 15-minute setup
-- Customer receives a text with their usual order, confirms with a reply, pays via link
-- Restaurant receives the order via text/simple dashboard
-- No delivery — pickup only in v1
-- No discovery, no marketplace, no app
-
-## Not Doing (and Why)
-- **Delivery logistics** — delivery is the expensive, complex part and not the core problem. Pickup-first validates demand without operational burden.
-- **Customer acquisition/discovery** — that's the platform's game. Competing on discovery means competing with DoorDash's budget. We compete on retention instead.
-- **Branded restaurant apps/websites** — commodity. Square and Toast already do this. Another branded channel doesn't solve the behavioral problem.
-- **Menu management, POS integration** — scope creep. "Your usual" doesn't need a dynamic menu. Start with static orders.
-- **Analytics dashboards** — the owner is in the kitchen. Build reporting that's passive (weekly text summary) not active (log in and look at charts).
-
-## Open Questions
-- What's the legal/compliance landscape for SMS marketing to restaurant customers?
-- How do you handle menu/price changes for "usual" orders?
-- Is there a way to bootstrap the regular customer list from existing POS data instead of manual entry?
-- What's the pricing model? Per-order fee? Monthly subscription?
+Que direcciones te interesan?
 
 ---
 
-## Example 2: Feature Idea Within an Existing Product (Codebase-Aware)
+### Fase 2: Evaluar y Converger
 
-**User invokes:** `/ideate adding real-time collaboration to our document editor`
+**El usuario responde:** "Amo el angulo de los habituales (5 y 6). El kit de canal directo (1) se siente necesario pero aburrido. La idea del colectivo (4) es interesante pero compleja. Dejame enfocarme en 1 + 5 + 6 combinadas."
 
-### Phase 1: Understand & Expand
+**Respuesta de la skill:**
 
-**Skill response:**
+Buenos instintos. Esa combinacion tiene una tesis clara: **dueñate de la relacion con tus mejores clientes, hace que re-pedir sea sin esfuerzo y no exijas nada del dueno del restaurante.** Dejame ponerla a prueba.
 
-> **How might we** let multiple people work on the same document simultaneously in a way that feels natural, not chaotic?
+**Direccion A: El "Motor de Habituales" (variaciones 5 + 6 fusionadas)**
+Una herramienta enfocada enteramente en los clientes repetidos existentes de un restaurante. Auto-re-pedido, auto-engagement, cero gestion.
 
-I scanned your codebase and see you're using a block-based editor architecture with a REST API for persistence. No WebSocket infrastructure currently. That's important context. A few questions:
+- **Apuesta central:** El 20% mejor de los clientes de un restaurante se pasara al pedido directo si la experiencia es fluida y personal. El restaurante no necesita clientes *nuevos*, necesita dejar de pagar el 30% por clientes que ya tiene.
+- **Valor para el usuario:** Alto e inmediato. Cada re-pedido directo le ahorra al restaurante una comision del 25-30%. Si un habitual pide $30/semana, eso son unos $400/año en tarifas ahorradas por cliente. 50 habituales = $20K/año. Eso es dinero real para un restaurante pequeno.
+- **Viabilidad:** Media. La tecnologia de pedido/pago es mercancia. Las partes dificiles: (a) como identificas y onboardeas a los "habituales" sin que el restaurante haga trabajo manual? (b) Como manejas el arranque en frio: el primer re-pedido necesita un historial de pedidos que vive en la plataforma de delivery, no con vos.
+- **Diferenciacion:** Alta para el nicho. Las plataformas optimizan para las dinamicas del marketplace (descubrimiento de clientes nuevos, logistica de choferes). Nadie esta optimizando especificamente para "mantene a tus habituales pidiendo directo". Es demasiado chico para que a DoorDash le importe, que es exactamente por que es una buena cuña.
+- **Suposiciones ocultas:**
+  - Los habituales instalaran/usaran otro metodo de pedido (suposicion con mas probabilidad de estar equivocada)
+  - Los duenos de restaurantes compartiran la informacion de contacto de los clientes o te dejaran accederla
+  - El pedido directo no canibalizara los ingresos del dine-in
+- **Que podria matarla:** Si los clientes simplemente no cambian de canal. El habito es poderoso: aunque DoorDash cueste mas, ya esta en su telefono.
 
-1. **What's the collaboration pattern?** Are people editing the same paragraph at the same time (Google Docs style)? Or working in different sections (Notion style)? Or reviewing/commenting while one person edits?
-2. **How many simultaneous users?** 2-3 (pair editing)? 10+ (team workspace)?
-3. **What's driving this now?** Customer requests? Competitive pressure? Internal need?
+**Direccion B: Hibrido de canal directo + retencion (variaciones 1 + 5)**
+Pedido con marca para el restaurante *mas* la automatizacion de retencion. Mas completo pero mas complejo.
 
-**User responds:** "2-5 people, usually working in different sections. Customers keep asking. We're losing deals to Notion because they assume any modern editor has this."
+- **Apuesta central:** Los restaurantes necesitan tanto el canal (una forma de aceptar pedidos) como el motor (una forma de hacer que los clientes vuelvan por ese canal).
+- **Valor para el usuario:** Techo mas alto, pero solo si ambas partes funcionan juntas. El canal de pedido solo es mercancia (Square, Toast ya hacen esto). La capa de retencion sola no tiene canal sobre el cual retener clientes.
+- **Viabilidad:** Menor. Estas construyendo dos productos y esperando que sean mejores juntos.
+- **Diferenciacion:** Media. La combinacion es interesante, pero cada pieza individual tiene competidores.
+- **Suposicion oculta:** Que agrupar estas piezas es mejor que asociarse (ej: la capa de retencion sobre Square Online).
+- **Que podria matarla:** El alcance. Construir bien dos cosas es exponencialmente mas dificil que construir bien una sola.
 
-**Skill continues:**
+**La lectura honesta:** La Direccion A es la apuesta mas afinada. La B es mas segura pero menos diferenciada. El riesgo mas grande para A es el problema del cambio de canal: lograr que los clientes pidan a traves de un metodo nuevo. Si podes resolver eso (y el enfoque de "cero esfuerzo" de la variacion 6 podria ayudar: un re-pedido por SMS no requiere una app nueva), el resto viene solo.
 
-The competitive pressure framing matters — this might be a checkbox feature (must-have to stay in the consideration set) rather than a differentiator. That changes how much you should invest.
-
-I see your document model uses independent blocks with a flat ordering system (`src/models/document.ts:45`). That's actually favorable — block-level granularity means conflicts are rarer than character-level editing.
-
-Here are 5 variations:
-
-1. **Block-Level Locking (Simplest Path):** When someone starts editing a block, it's locked for others. They see a presence indicator ("Alex is editing...") but can edit any other block freely. No conflict resolution needed. Your existing block model supports this with minimal changes — add a `locked_by` field and a WebSocket layer for presence.
-
-2. **Inversion — Async-First Collaboration:** Instead of real-time co-editing, lean into async. Inline suggestions, comments, and proposed edits that the document owner merges. Like suggestion mode, but as the *primary* collaboration model. Bet: for 2-5 people in different sections, async might actually be *better* than real-time.
-
-3. **Simplification — Presence Without Co-Editing:** Show who's viewing the document and what section they're looking at (cursors, avatars in margins), but don't enable simultaneous editing. People coordinate verbally. Sounds primitive, but might be 80% of the value at 10% of the engineering cost.
-
-4. **Combination — Collaboration + Version Branches:** Let people create "branches" of a document, edit independently, then merge. Each person gets their own space, no conflicts during editing, and you build a merge UI. Plays to your existing versioning system.
-
-5. **10x Version — AI-Mediated Collaboration:** Multiple people describe what they want in a section, and AI synthesizes their inputs into a draft they all iterate on. Nobody directly edits the same text — they all influence it. Radical, possibly too early, but worth naming.
-
-Given your architecture and the competitive context, I'd push you toward variation 1 or 3. You need to close deals, which means you need this shipped, which means you need the simplest version that checks the box. Variation 1 gives you real co-editing. Variation 3 is even cheaper but might not satisfy the "we need real-time" checkbox.
+Una cosa sobre la que quiero hacerte pushback: dijiste que la variacion 1 se siente "necesaria pero aburrida". Ese instinto de incluir lo "necesario" es como los productos pierden el foco. Si el motor de habituales funciona, podes agregar un canal de pedido con marca despues. Pero si construis el canal primero, sos solo otro competidor de Square Online.
 
 ---
 
-*Phase 2 would cluster into "minimum viable co-editing (1 or 3)" vs. "differentiated collaboration model (2 or 4)" — evaluating whether to check the competitive box quickly or invest in something that becomes a selling point.*
+### Fase 3: Afinar y Entregar
 
-*Phase 3 would produce a one-pager recommending block-level locking as the MVP, with a "Not Doing" list that includes character-level CRDT (too complex), offline sync (not needed for 2-5 users), and AI features (premature).*
+**La skill produce:**
 
----
+# ReOrder: Mantene a tus Habituales Pidiendo Directo
 
-## Example 3: Process/Workflow Idea (Non-Product)
+## Declaracion del problema
+Como podriamos ayudar a los restaurantes independientes a retener a sus mejores clientes existentes mediante el pedido directo, eliminando la comision del 25-30% de la plataforma sobre los ingresos que mas importan?
 
-**User invokes:** `/ideate a better way to run our weekly team retrospectives — they've gotten stale and people dread them`
+## Direccion recomendada
+Construi un **motor de retencion solo para habituales**, no un marketplace, no una plataforma completa de pedidos. Hiper-enfocado en un solo trabajo: hacer que sea sin esfuerzo para los clientes repetidos de un restaurante re-pedir directamente.
 
-### Phase 1: Understand & Expand
+La idea clave es que los restaurantes no necesitan ayuda para *encontrar* a sus mejores clientes: saben quien entra todos los martes. Necesitan ayuda para mover esas relaciones fuera de la plataforma. Y la herramienta necesita funcionar sola, porque el dueno esta en la cocina, no en un dashboard.
 
-**Skill response:**
+SMS-first (no app-first) es probablemente el canal correcto. Un texto que diga "Che, queres tu pedido de jueves de siempre de Marco's?" con una confirmacion de un toque tiene menos friccion que cualquier instalacion de app.
 
-> **How might we** make retrospectives genuinely useful — something the team looks forward to — instead of a recurring meeting people endure?
+## Suposiciones clave para validar
+- [ ] Los clientes repetidos re-pediran por SMS/enlace directo en lugar de su app de delivery habitual: probalo con 5 restaurantes, 20 habituales cada uno, media la conversion durante 4 semanas
+- [ ] Los duenos de restaurantes pueden identificar a sus 20-30 mejores habituales y compartir su informacion de contacto: probalo preguntandole a 10 duenos si lo harian
+- [ ] El ahorro en comisiones ($8-10 por pedido) es lo suficientemente motivador para que los duenos inviertan esfuerzo de configuracion inicial: entrevista a 10 duenos sobre el dolor de las tarifas de las plataformas
 
-Before expanding:
+## Alcance del MVP
+- Re-pedido basado en SMS para los clientes habituales auto-identificados de un restaurante
+- El dueno del restaurante agrega a los habituales manualmente (nombre + telefono + pedido usual): configuracion de 15 minutos
+- El cliente recibe un texto con su pedido usual, confirma con una respuesta, paga por enlace
+- El restaurante recibe el pedido por texto/dashboard simple
+- Sin delivery: solo pickup en v1
+- Sin descubrimiento, sin marketplace, sin app
 
-1. **What's stale about them?** Same format every time? Same people talking? Action items that never get done? Topics feel repetitive?
-2. **Team size and dynamic?** 5 people who all speak up, or 15 where 3 dominate?
-3. **What does a *good* retro look like to you?** Have you had one that worked? What made it different?
+## Lo que no se va a hacer (y por que)
+- **Logistica de delivery** - el delivery es la parte cara y compleja y no es el problema central. Pickup-first valida la demanda sin carga operativa.
+- **Adquisicion/descubrimiento de clientes** - ese es el juego de las plataformas. Competir en descubrimiento significa competir con el presupuesto de DoorDash. Nosotros competimos en retencion.
+- **Apps/sitios web de restaurantes con marca** - es mercancia. Square y Toast ya hacen esto. Otro canal con marca no resuelve el problema de comportamiento.
+- **Gestion de menu, integracion con POS** - scope creep. "Tu de siempre" no necesita un menu dinamico. Empeza con pedidos estaticos.
+- **Dashboards de analiticas** - el dueno esta en la cocina. Construi reportes que sean pasivos (resumen semanal por texto), no activos (loguearse y mirar graficos).
 
-**User responds:** "8 people, maybe 3-4 actually talk. Same 'what went well / what didn't / action items' format for a year. The action items pile up and nothing changes. People think it's theater."
-
-**Skill continues:**
-
-The action item problem is the real signal. If nothing changes after the retro, people rationally disengage. The meeting isn't stale — it's **broken at the output layer**. The format might be fine if the follow-through worked.
-
-Here are 6 variations:
-
-1. **Fix the Output, Not the Meeting:** Keep the retro format but completely change what happens after. One action item max per retro. Assigned an owner and a deadline during the meeting. Next retro starts with a 5-minute demo of the completed action. If it's not done, that *becomes* the retro topic. The constraint of one item forces prioritization.
-
-2. **Inversion — Kill the Meeting:** Replace the synchronous retro with an async one. Everyone submits reflections in writing during the week. A rotating facilitator synthesizes themes and proposes one change. The "meeting" is a 15-minute standup to agree or disagree. Bet: writing produces more honest feedback than speaking in a group.
-
-3. **Audience Shift — Retro for the Quiet Ones:** Design the format for the 4-5 people who don't talk. Anonymous submission of topics. Dot-voting to prioritize. Small-group breakouts (pairs) before full-group discussion. The loud voices still participate, but the structure prevents them from dominating.
-
-4. **Simplification — The One Question Retro:** Each retro has exactly one question, and it changes every week. "What's one thing that slowed you down?" "What did you learn that the team should know?" "If you could change one thing about how we work, what?" The constraint forces depth over breadth.
-
-5. **Combination — Retro + Experimentation:** Treat each retro output as a hypothesis. "We believe that [change] will improve [outcome]." Run it as a 2-week experiment. Next retro: did it work? Keep, modify, or kill. Turns the retro into a continuous improvement engine with built-in accountability.
-
-6. **Expert Lens — What Facilitators Know:** Experienced facilitators say the #1 retro killer is lack of safety, not format. People won't say what's really wrong if they fear consequences. The fix might not be structural — it might be starting with an anonymous "team health check" score (1-5) each week. When safety is high, retros naturally improve.
-
-The interesting tension: variations 1 and 5 fix the *output* problem (nothing changes). Variations 2, 3, and 4 fix the *input* problem (same voices, same topics). Variation 6 says both are symptoms of a deeper issue. Where do you think the real bottleneck is?
+## Preguntas abiertas
+- Cual es el panorama legal/de cumplimiento para el marketing por SMS a clientes de restaurantes?
+- Como manejas los cambios de menu/precio para los pedidos "de siempre"?
+- Hay una forma de arrancar la lista de clientes habituales desde los datos del POS existente en lugar de la carga manual?
+- Cual es el modelo de precios? Tarifa por pedido? Suscripcion mensual?
 
 ---
 
-*Phase 2 would evaluate in terms of: effort to try (most are free — just change how you run the next meeting), risk (variation 2 is the biggest departure), and whether the team's real problem is output (action items die) or input (not enough honesty).*
+## Ejemplo 2: Idea de Funcion Dentro de un Producto Existente (Consciente del Codebase)
 
-*Phase 3 would produce a one-pager recommending starting with variation 1 (one action item, demo next week) as a zero-cost experiment, combined with variation 3's anonymous submission. "Not Doing" list: new tools, elaborate facilitation techniques, or anything requiring budget. The first fix should take 0 minutes of prep and $0.*
+**El usuario invoca:** `/ideate agregar colaboracion en tiempo real a nuestro editor de documentos`
+
+### Fase 1: Entender y Expandir
+
+**Respuesta de la skill:**
+
+> **Como podriamos** dejar que varias personas trabajen en el mismo documento simultaneamente de una forma que se sienta natural, no caotica?
+
+Escanee tu codebase y veo que estas usando una arquitectura de editor basada en bloques con una API REST para la persistencia. No hay infraestructura de WebSocket actualmente. Ese es un contexto importante. Algunas preguntas:
+
+1. **Cual es el patron de colaboracion?** La gente esta editando el mismo parrafo al mismo tiempo (estilo Google Docs)? O trabajando en secciones diferentes (estilo Notion)? O revisando/comentando mientras una persona edita?
+2. **Cuantos usuarios simultaneos?** 2-3 (edicion en par)? 10+ (workspace de equipo)?
+3. **Que esta impulsando esto ahora?** Pedidos de clientes? Presion competitiva? Necesidad interna?
+
+**El usuario responde:** "2-5 personas, generalmente trabajando en secciones diferentes. Los clientes lo piden seguido. Estamos perdiendo ventas contra Notion porque asumen que cualquier editor moderno tiene esto."
+
+**La skill continua:**
+
+El encuadre de presion competitiva importa: esto podria ser una funcion de casilla de verificacion (must-have para seguir en el set de consideracion) en lugar de un diferenciador. Eso cambia cuanto deberias invertir.
+
+Veo que tu modelo de documento usa bloques independientes con un sistema de ordenamiento plano (`src/models/document.ts:45`). Eso es realmente favorable: la granularidad a nivel de bloque significa que los conflictos son mas raros que con la edicion a nivel de caracter.
+
+Aca hay 5 variaciones:
+
+1. **Bloqueo a nivel de bloque (el camino mas simple):** Cuando alguien empieza a editar un bloque, queda bloqueado para los demas. Ellos ven un indicador de presencia ("Alex esta editando...") pero pueden editar cualquier otro bloque libremente. No se necesita resolucion de conflictos. Tu modelo de bloques existente soporta esto con cambios minimos: agregale un campo `locked_by` y una capa de WebSocket para la presencia.
+
+2. **Inversion: colaboracion async-first:** En lugar de co-edicion en tiempo real, aposta por lo asincronico. Sugerencias en linea, comentarios y ediciones propuestas que el dueno del documento fusiona. Como el modo de sugerencias, pero como el modelo de colaboracion *primario*. Apuesta: para 2-5 personas en secciones diferentes, lo asincronico podria ser en realidad *mejor* que el tiempo real.
+
+3. **Simplificacion: presencia sin co-edicion:** Muestra quien esta viendo el documento y que seccion esta mirando (cursores, avatares en los margenes), pero no habilites la edicion simultanea. La gente se coordina verbalmente. Suena primitivo, pero podria ser el 80% del valor al 10% del costo de ingenieria.
+
+4. **Combinacion: colaboracion + ramas de version:** Deja que la gente cree "ramas" de un documento, edite independientemente y luego las fusione. Cada persona tiene su propio espacio, sin conflictos durante la edicion, y construis una UI de fusion. Juega a favor de tu sistema de versionado existente.
+
+5. **Version 10x: colaboracion mediada por IA:** Varias personas describen lo que quieren en una seccion, y la IA sintetiza sus aportes en un borrador sobre el que todos iteran. Nadie edita directamente el mismo texto: todos lo influyen. Radical, posiblemente demasiado temprano, pero vale la pena nombrarlo.
+
+Dada tu arquitectura y el contexto competitivo, te empujaria hacia la variacion 1 o la 3. Necesitas cerrar ventas, lo que significa que necesitas esto publicado, lo que significa que necesitas la version mas simple que marque la casilla. La variacion 1 te da co-edicion real. La 3 es aun mas barata pero podria no satisfacer la casilla de "necesitamos tiempo real".
 
 ---
 
-## What to Notice in These Examples
+*La Fase 2 agruparia en "co-edicion minima viable (1 o 3)" vs. "modelo de colaboracion diferenciado (2 o 4)", evaluando si marcar rapido la casilla competitiva o invertir en algo que se convierta en un punto de venta.*
 
-1. **The restatement changes the frame.** "Help restaurants compete" becomes "retain existing customers." "Add real-time collaboration" becomes "let people work simultaneously without chaos." "Fix stale retros" becomes "fix the output layer."
+*La Fase 3 produciria una pagina de una hoja recomendando el bloqueo a nivel de bloque como MVP, con una lista de "Lo que no se va a hacer" que incluye CRDT a nivel de caracter (demasiado complejo), sincronizacion offline (no necesaria para 2-5 usuarios) y funciones de IA (prematuras).*
 
-2. **Questions diagnose before prescribing.** Each question determines which *type* of problem this actually is. The retro example reveals the problem is action item follow-through, not meeting format — and that changes every variation.
+---
 
-3. **Variations have reasons.** Each one explains *why* it exists (what lens generated it), not just *what* it is. The label (Inversion, Simplification, etc.) teaches the user to think this way themselves.
+## Ejemplo 3: Idea de Proceso/Flujo de Trabajo (No Producto)
 
-4. **The skill has opinions.** "I'd push you toward 1 or 3." "Variation 6 is worth sitting with." It tells you what it thinks matters and why — not just neutral options.
+**El usuario invoca:** `/ideate una mejor forma de hacer nuestras retrospectivas semanales de equipo: se volvieron rancias y la gente las teme`
 
-5. **Phase 2 is honest.** Ideas get called out for low differentiation or high complexity. The skill pushes back: "That instinct to include the 'necessary' thing is how products lose focus."
+### Fase 1: Entender y Expandir
 
-6. **The output is actionable.** The one-pager ends with things you can *do* (validate assumptions, build the MVP, try the experiment), not things to *think about*.
+**Respuesta de la skill:**
 
-7. **The "Not Doing" list does real work.** It's specific and reasoned. Each item is something you might *want* to do but shouldn't yet.
+> **Como podriamos** hacer que las retrospectivas sean genuinamente utiles, algo que el equipo espere con ganas, en lugar de una reunion recurrente que la gente soporta?
 
-8. **The skill adapts to context.** A codebase-aware example references actual architecture. A process idea generates zero-cost experiments instead of products. The framework stays the same but the output matches the domain.
+Antes de expandir:
+
+1. **Que es lo que esta rancio?** El mismo formato cada vez? Las mismas personas hablando? Acciones que nunca se completan? Los temas se sienten repetitivos?
+2. **Tamano del equipo y dinamica?** 5 personas que todas hablan, o 15 donde 3 dominan?
+3. **Como se ve una retro *buena* para vos?** Tuviste alguna que funciono? Que la hizo diferente?
+
+**El usuario responde:** "8 personas, tal vez 3-4 realmente hablan. El mismo formato de 'que salio bien / que no / acciones' por un ano. Las acciones se acumulan y nada cambia. La gente piensa que es teatro."
+
+**La skill continua:**
+
+El problema de las acciones es la senal real. Si nada cambia despues de la retro, la gente se desengancha racionalmente. La reunion no esta rancia: esta **rota en la capa de salida**. El formato podria estar bien si el seguimiento funcionara.
+
+Aca hay 6 variaciones:
+
+1. **Arregla la salida, no la reunion:** Mantene el formato de retro pero cambia completamente lo que pasa despues. Un maximo de una accion por retro. Asignada a un dueno y con una fecha limite durante la reunion. La proxima retro empieza con una demo de 5 minutos de la accion completada. Si no se completo, eso se convierte *en* el tema de la retro. La restriccion de un solo item fuerza la priorizacion.
+
+2. **Inversion: mata la reunion:** Reemplaza la retro sincronica por una asincronica. Todos envian sus reflexiones por escrito durante la semana. Un facilitador rotativo sintetiza los temas y propone un cambio. La "reunion" es un standup de 15 minutos para estar de acuerdo o en desacuerdo. Apuesta: escribir produce feedback mas honesto que hablar en grupo.
+
+3. **Cambio de audiencia: retro para los callados:** Disena el formato para las 4-5 personas que no hablan. Envio anonimo de temas. Votacion con puntos para priorizar. Breakouts en grupos chicos (pares) antes de la discusion de grupo completo. Las voces fuertes siguen participando, pero la estructura evita que dominen.
+
+4. **Simplificacion: la retro de una sola pregunta:** Cada retro tiene exactamente una pregunta, y cambia cada semana. "Que es una cosa que te freno?" "Que aprendiste que el equipo deberia saber?" "Si pudieras cambiar una cosa sobre como trabajamos, cual?" La restriccion fuerza profundidad sobre amplitud.
+
+5. **Combinacion: retro + experimentacion:** Trata cada salida de la retro como una hipotesis. "Creemos que [cambio] mejorara [resultado]." Ejecutala como un experimento de 2 semanas. Proxima retro: funciono? Mantener, modificar o matar. Convierte la retro en un motor de mejora continua con rendicion de cuentas incorporada.
+
+6. **Lente de experto: que saben los facilitadores:** Los facilitadores experimentados dicen que el asesino numero 1 de las retros es la falta de seguridad psicologica, no el formato. La gente no dira lo que realmente esta mal si teme consecuencias. La solucion podria no ser estructural: podria ser empezar con un "chequeo de salud del equipo" anonimo (puntaje del 1-5) cada semana. Cuando la seguridad es alta, las retros mejoran naturalmente.
+
+La tension interesante: las variaciones 1 y 5 arreglan el problema de *salida* (nada cambia). Las variaciones 2, 3 y 4 arreglan el problema de *entrada* (las mismas voces, los mismos temas). La variacion 6 dice que ambas son sintomas de un problema mas profundo. Donde crees que esta el verdadero cuello de botella?
+
+---
+
+*La Fase 2 evaluaria en terminos de: esfuerzo para probar (la mayoria son gratis, solo cambia como haces la proxima reunion), riesgo (la variacion 2 es el mayor cambio) y si el problema real del equipo es la salida (las acciones mueren) o la entrada (no hay suficiente honestidad).*
+
+*La Fase 3 produciria una pagina de una hoja recomendando empezar con la variacion 1 (una accion, demo la proxima semana) como experimento de costo cero, combinada con la envio anonimo de la variacion 3. Lista de "Lo que no se va a hacer": herramientas nuevas, tecnicas de facilitacion elaboradas o cualquier cosa que requiera presupuesto. El primer arreglo deberia tomar 0 minutos de preparacion y costar $0.*
+
+---
+
+## Que Notar en Estos Ejemplos
+
+1. **La reformulacion cambia el encuadre.** "Ayudar a los restaurantes a competir" se convierte en "retener a los clientes existentes". "Agregar colaboracion en tiempo real" se convierte en "dejar que la gente trabaje simultaneamente sin caos". "Arreglar las retros rancias" se convierte en "arreglar la capa de salida".
+
+2. **Las preguntas diagnostican antes de recetar.** Cada pregunta determina que *tipo* de problema es este realmente. El ejemplo de la retro revela que el problema es el seguimiento de las acciones, no el formato de la reunion, y eso cambia cada variacion.
+
+3. **Las variaciones tienen razones.** Cada una explica *por que* existe (que lente la genero), no solo *que* es. La etiqueta (Inversion, Simplificacion, etc.) le ensena al usuario a pensar de esta forma el mismo.
+
+4. **La skill tiene opiniones.** "Te empujaria hacia la 1 o la 3." "La variacion 6 vale la pena pensarla." Te dice que es lo que cree que importa y por que, no solo opciones neutrales.
+
+5. **La Fase 2 es honesta.** Las ideas se señalan por baja diferenciacion o alta complejidad. La skill hace pushback: "Ese instinto de incluir lo 'necesario' es como los productos pierden el foco."
+
+6. **La salida es accionable.** La pagina de una hoja termina con cosas que podes *hacer* (validar suposiciones, construir el MVP, probar el experimento), no cosas sobre las que *pensar*.
+
+7. **La lista de "Lo que no se va a hacer" hace trabajo real.** Es especifica y razonada. Cada item es algo que podrias *querer* hacer pero que aun no deberias.
+
+8. **La skill se adapta al contexto.** Un ejemplo consciente del codebase referencia la arquitectura real. Una idea de proceso genera experimentos de costo cero en lugar de productos. El marco se mantiene igual pero la salida coincide con el dominio.

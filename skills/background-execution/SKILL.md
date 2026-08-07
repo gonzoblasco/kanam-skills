@@ -130,7 +130,7 @@ sessions_yield()
 
 **Regla:** `sessions_spawn` para tareas que necesitan razonamiento. `exec` + `process` para tareas que son puro comando (build, test, batch script).
 
-### Patrón 6: submit vs write — Input a Procesos
+### Patrón 6: submit vs write - Input a Procesos
 
 Cuando un proceso background espera input:
 
@@ -140,7 +140,7 @@ Cuando un proceso background espera input:
 | `process(action: write, data: "texto")` | Escribe texto crudo (sin Enter) | Streaming, input parcial |
 | `process(action: send-keys, keys: ["ctrl+c"])` | Envía combinación de teclas | Interrumpir, salir de modo insert |
 
-### Patrón 7: Intervención — Detectar y Rescatar Procesos Colgados
+### Patrón 7: Intervención - Detectar y Rescatar Procesos Colgados
 
 Cuando un proceso background no da señales de vida:
 

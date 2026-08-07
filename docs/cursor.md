@@ -1,23 +1,23 @@
-# Installing kanam-skills in Cursor
+# Instalar kanam-skills en Cursor
 
-## Option 1: skills.sh (recommended)
+## Opción 1: skills.sh (recomendada)
 
 ```bash
 npx skills add gonzoblasco/kanam-skills
 ```
 
-The CLI detects Cursor and installs to `.cursor/skills/`.
+El CLI detecta Cursor e instala en `.cursor/skills/`.
 
-## Option 2: manual
+## Opción 2: manual
 
-From your project root (or `~/.cursor` for global):
+Desde la raíz de tu proyecto (o `~/.cursor` para global):
 
 ```bash
 git clone git@github.com:gonzoblasco/kanam-skills.git
 cp -r skills/* .cursor/skills/
 ```
 
-## Verify
+## Verificar
 
-Restart Cursor and ask the agent to use a skill (e.g. "apply test-driven
-development"). Cursor should recognize it.
+Reiniciá Cursor y pedile al agente que use una skill (ej: "aplica
+test-driven development"). Cursor debería reconocerla.

@@ -1,23 +1,23 @@
-# Installing kanam-skills in Codex (OpenAI)
+# Instalar kanam-skills en Codex (OpenAI)
 
-## Option 1: skills.sh (recommended)
+## Opción 1: skills.sh (recomendada)
 
 ```bash
 npx skills add gonzoblasco/kanam-skills
 ```
 
-The CLI detects Codex and installs to `$CODEX_HOME/skills`.
+El CLI detecta Codex e instala en `$CODEX_HOME/skills`.
 
-## Option 2: manual
+## Opción 2: manual
 
 ```bash
 git clone git@github.com:gonzoblasco/kanam-skills.git
 cp -r skills/* $CODEX_HOME/skills/
 ```
 
-## Note
+## Nota
 
-If you later want to migrate Codex skills into OpenClaw, use:
+Si después querés migrar las skills de Codex a OpenClaw, usá:
 
 ```bash
 openclaw migrate plan codex

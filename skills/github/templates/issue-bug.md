@@ -1,29 +1,29 @@
-# Bug Report Template
+# Plantilla de Reporte de Bug
 
-## Description
+## Descripcion
 
-<!-- Clear and concise description of the bug -->
+<!-- Descripcion clara y concisa del bug -->
 
-## Steps to Reproduce
+## Pasos para Reproducir
 
 1. 
 2. 
 3. 
 
-## Expected Behavior
+## Comportamiento Esperado
 
-<!-- What should happen -->
+<!-- Que deberia pasar -->
 
-## Actual Behavior
+## Comportamiento Actual
 
-<!-- What actually happens -->
+<!-- Que pasa realmente -->
 
-## Environment
+## Entorno
 
 - OS: 
-- Browser: 
+- Navegador: 
 - Version: 
 
-## Additional Context
+## Contexto Adicional
 
-<!-- Screenshots, logs, or any other relevant info -->
+<!-- Screenshots, logs o cualquier otra info relevante -->

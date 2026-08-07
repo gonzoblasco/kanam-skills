@@ -168,7 +168,7 @@ main.skill { max-width: 860px; }
 <body>
 
   <header>
-    <a class="back" href="../index.html">&larr; catalog</a>
+    <a class="back" href="../index.html">&larr; catálogo</a>
     <h1>background-execution</h1>
     <p class="tagline">Patrones para ejecutar tareas en background: exec + process, parallel worktrees, auto-notify, isolated workspaces</p>
   </header>
@@ -292,7 +292,7 @@ sessions_yield()
 
 **Regla:** `sessions_spawn` para tareas que necesitan razonamiento. `exec` + `process` para tareas que son puro comando (build, test, batch script).
 
-### Patrón 6: submit vs write — Input a Procesos
+### Patrón 6: submit vs write - Input a Procesos
 
 Cuando un proceso background espera input:
 
@@ -302,7 +302,7 @@ Cuando un proceso background espera input:
 | `process(action: write, data: "texto")` | Escribe texto crudo (sin Enter) | Streaming, input parcial |
 | `process(action: send-keys, keys: ["ctrl+c"])` | Envía combinación de teclas | Interrumpir, salir de modo insert |
 
-### Patrón 7: Intervención — Detectar y Rescatar Procesos Colgados
+### Patrón 7: Intervención - Detectar y Rescatar Procesos Colgados
 
 Cuando un proceso background no da señales de vida:
 
@@ -412,8 +412,8 @@ Cuando una tarea background modifica scripts de skill del workspace, correr `npm
 - [Session Lifecycle](../session-lifecycle): Para handoffs y cierre de sesión
 - [Debug Investigation](../debug-investigation): Para debugging de procesos que fallan
 </pre></article>
-    <section><h3>Related</h3><div class="chips"><a class="chip" href="engineering-governance.html">engineering-governance</a><a class="chip" href="git-changelog.html">git-changelog</a><a class="chip" href="knowledge-management.html">knowledge-management</a><a class="chip" href="mcp-orchestrator.html">mcp-orchestrator</a></div></section>
+    <section><h3>Relacionadas</h3><div class="chips"><a class="chip" href="engineering-governance.html">engineering-governance</a><a class="chip" href="git-changelog.html">git-changelog</a><a class="chip" href="knowledge-management.html">knowledge-management</a><a class="chip" href="mcp-orchestrator.html">mcp-orchestrator</a></div></section>
   </main>
-  <footer>MIT licensed - kanam-skills</footer>
+  <footer>Licencia MIT - kanam-skills</footer>
 </body>
 </html>

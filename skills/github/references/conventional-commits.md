@@ -1,26 +1,26 @@
 # Conventional Commits
 
-## Format
+## Formato
 
 ```
-<type>(#<issue>): <description>
+<type>(#<issue>): <descripcion>
 ```
 
-## Types
+## Tipos
 
-| Type | When |
-|------|------|
-| `feat` | New feature |
-| `fix` | Bug fix |
-| `chore` | Maintenance, CI, deps |
-| `docs` | Documentation only |
-| `refactor` | Code change, no feature/fix |
-| `test` | Adding or fixing tests |
-| `style` | Formatting, semicolons, etc. |
-| `perf` | Performance improvement |
-| `ci` | CI/CD changes |
+| Tipo | Cuando |
+|------|--------|
+| `feat` | Nueva funcion |
+| `fix` | Correccion de bug |
+| `chore` | Mantenimiento, CI, deps |
+| `docs` | Solo documentacion |
+| `refactor` | Cambio de codigo, sin feature/fix |
+| `test` | Agregar o corregir pruebas |
+| `style` | Formateo, puntos y comas, etc. |
+| `perf` | Mejora de rendimiento |
+| `ci` | Cambios de CI/CD |
 
-## Examples
+## Ejemplos
 
 ```
 feat(#3): timeline page with reverse-chronological entry list
@@ -30,10 +30,10 @@ docs(#7): update README with setup instructions
 refactor(#15): extract auth logic to useAuth hook
 ```
 
-## Rules
+## Reglas
 
-- **Always in English** for repos that use English
-- **One commit per issue/task** - atomic commits
-- **Regular hyphen (-), never em dash (—)**
-- Issue number references the GitHub issue
-- Description in imperative mood ("add" not "added" or "adds")
+- **Siempre en ingles** para los repos que usan ingles
+- **Un commit por issue/tarea** - commits atomicos
+- **Guion comun (-), nunca guion largo (—)**
+- El numero de issue referencia el issue de GitHub
+- Descripcion en modo imperativo ("add" no "added" ni "adds")
