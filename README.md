@@ -105,9 +105,10 @@ engineering-governance, git-changelog, mcp-orchestrator
 
 supabase-assistant, sql-insight, db-readonly, deepwiki
 
-### Desarrollo especializado (5 skills)
+### Desarrollo especializado (6 skills)
 
-i18n-expert, shortcuts-generator, support-response-writer, tech-docs, github
+i18n-expert, shortcuts-generator, support-response-writer, tech-docs, github,
+oss-contribution
 
 ### Seguridad y red (2 skills)
 
@@ -127,7 +128,7 @@ deslop, image-generation, curriculum-builder
 adhd-assistant, apple-photos, calorie-counter, mlx-stt,
 checkmate, godot-mcp
 
-**Total: 58 skills.**
+**Total: 59 skills.**
 
 Explorá el catálogo completo en el [sitio de kanam-skills](#) (GitHub Pages).
 
