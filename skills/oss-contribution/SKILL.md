@@ -56,9 +56,9 @@ Además de trackear PRs, **revisar periódicamente los issues en los que ya come
   - **Esperar** si el issue está estancado esperando decisión de maintainers, o si ya respondimos y no hay nada nuevo accionable
 - Registrar el estado en el daily note y en CONTRIBUTING.md
 
-**Lección (astryx #4777):** cuando otro contributor "quiere tomar" un issue/PR en el que ya trabajamos, la jugada ganadora no es pelear por quién manda el PR de la opción débil - es **resolver su objeción dentro de la opción fuerte**. Validar su punto técnico (le da crédito), pero mostrar que la dirección que defendemos tiene una variante que resuelve su objeción.
+**Lección (robo de PR):** cuando otro contributor "quiere tomar" un issue/PR en el que ya trabajamos, la jugada ganadora no es pelear por quién manda el PR de la opción débil - es **resolver su objeción dentro de la opción fuerte**. Validar su punto técnico (le da crédito), pero mostrar que la dirección que defendemos tiene una variante que resuelve su objeción.
 
-**Lección (shadcn #11125):** hacer el análisis técnico en el issue **antes** de mandar el PR (validando el approach con otro contributor) hace que el PR salga limpio y con el root cause ya consensuado. El issue es el lugar para converger; el PR es la ejecución.
+**Lección (análisis antes del PR):** hacer el análisis técnico en el issue **antes** de mandar el PR (validando el approach con otro contributor) hace que el PR salga limpio y con el root cause ya consensuado. El issue es el lugar para converger; el PR es la ejecución.
 
 ## Reglas de búsqueda de PRs
 
