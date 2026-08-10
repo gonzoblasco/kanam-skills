@@ -40,7 +40,7 @@ El objetivo no es "postear por postear": es construir una serie con **arco**, do
 
 **Cuándo:** Siempre. Antes de escribir cualquier post, tenés que saber **quién habla**. Es tu voz, no la de un ghostwriter genérico.
 
-### Tu voz (Gonzo)
+### Tu voz (personal)
 
 - **Directa y honesta, sin vueltas.** Decís lo que pensás. No adornás para sonar más "profesional" - la honestidad ES tu profesionalismo.
 - **Suena a persona, no a manual de programación.** Nada de jerga corporativa ni tono de documentación técnica. Escribís como hablás.
@@ -71,7 +71,7 @@ El tono de marca personal no es una camisa de fuerza. Se modula según el tipo d
 ### Check de tono antes de publicar
 
 Releé el post y preguntate:
-- [ ] ¿Suena a Gonzo, o a un manual de programación?
+- [ ] ¿Suena a vos, o a un manual de programación?
 - [ ] ¿Hay algún guión largo (-) que deba ser guión común (-)?
 - [ ] ¿Está la lección/opinión, o solo el "qué hice"?
 - [ ] ¿Está adaptado a la ocasión (deep-dive vs anuncio vs opinión), o es todo igual?
@@ -163,7 +163,7 @@ Releé el post y preguntate:
 
 ### Antes de publicar cada post
 - **Releé en voz alta** - si no fluye, no va.
-- **Check de tono (Fase 0)** - ¿suena a Gonzo y está adaptado a la ocasión?
+- **Check de tono (Fase 0)** - ¿suena a vos y está adaptado a la ocasión?
 - **Check de insight** - ¿está la lección, o solo el "qué hice"?
 
 ### Métricas a trackear (por semana)

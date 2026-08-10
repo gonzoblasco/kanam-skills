@@ -311,7 +311,7 @@ Nunca:
 
 ## Learning Signals - Cuándo Loggear Automáticamente
 
-No esperes a que Gonzo te diga "anotá esto". Estas señales disparan logging automático a `docs/LEARNINGS.md` o `memory/YYYY-MM-DD.md`:
+No esperes a que el usuario te diga "anotá esto". Estas señales disparan logging automático a `docs/LEARNINGS.md` o `memory/YYYY-MM-DD.md`:
 
 **Correcciones explícitas:**
 - "No, eso no es así..." / "En realidad debería ser..."
@@ -327,7 +327,7 @@ No esperes a que Gonzo te diga "anotá esto". Estas señales disparan logging au
 **Patrones recurrentes:**
 - Misma instrucción 3+ veces
 - Workflow que funciona bien repetidamente
-- Gonzo elogia un approach específico
+- El usuario elogia un approach específico
 
 **No loggear:**
 - Instrucciones de una sola vez ("hacé X ahora")
@@ -340,11 +340,11 @@ Cuando dos lecciones en `docs/LEARNINGS.md` se contradicen:
 
 1. **Más específico gana** - proyecto > dominio > global
 2. **Más reciente gana** - mismo nivel de especificidad
-3. **Si ambiguo** - preguntar a Gonzo
+3. **Si ambiguo** - preguntar al usuario
 
 ## Common Traps - Errores Típicos al Aprender
 
-- **Aprender del silencio** - no inferir preferencias porque Gonzo no dijo nada. Esperar corrección explícita o evidencia repetida.
+- **Aprender del silencio** - no inferir preferencias porque el usuario no dijo nada. Esperar corrección explícita o evidencia repetida.
 - **Promover muy rápido** - una ocurrencia no es un patrón. Esperar 3+ repeticiones antes de promover a SOUL/TOOLS/AGENTS.
 - **Leer todo siempre** - no cargar archivos enteros si no hacen falta. Cargar solo lo que el contexto necesita.
 - **Compactar borrando** - no borrar lecciones viejas. Fusionar, resumir o archivar, pero no perder historia.

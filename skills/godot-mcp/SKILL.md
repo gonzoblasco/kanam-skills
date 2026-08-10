@@ -18,14 +18,14 @@ allowed-tools:
 
 # Godot MCP - Aprender Godot juntos
 
-Este skill NO es sobre construir juegos de un prompt. Es sobre acompañar a Gonzo en su viaje de aprendizaje de Godot 4.7, paso a paso, hito por hito.
+Este skill NO es sobre construir juegos de un prompt. Es sobre acompañar al usuario en su viaje de aprendizaje de Godot 4.7, paso a paso, hito por hito.
 
 ## Filosofía
 
-- **Gonzo aprende haciendo, no leyendo.** Cada hito es hands-on.
+- **El usuario aprende haciendo, no leyendo.** Cada hito es hands-on.
 - **Prueba y error.** Si algo se rompe, lo investigamos juntos.
 - **Descubrimiento compartido.** Godot 4.7 tiene cosas nuevas que neither of us knows. Las exploramos juntos.
-- **No automatizar el aprendizaje.** No construyo el juego por Gonzo. Soy guía, copiloto y herramienta.
+- **No automatizar el aprendizaje.** No construyo el juego por el usuario. Soy guía, copiloto y herramienta.
 - **Hitos pequeños y celebrables.** Cada paso genera algo visible que se puede probar.
 
 ## Rol de OpenClaw
@@ -34,7 +34,7 @@ Este skill NO es sobre construir juegos de un prompt. Es sobre acompañar a Gonz
 2. **Asistente MCP**: usar el MCP server para tareas repetitivas o de verificación.
 3. **Investigador**: buscar docs, ejemplos, cambios en Godot 4.7 vs versiones anteriores.
 4. **Debug companion**: ayudar a diagnosticar errores cuando algo no funciona.
-5. **NOT a builder**: no construyo escenas enteras de un prompt. Gonzo decide qué hacer y lo hacemos juntos.
+5. **NOT a builder**: no construyo escenas enteras de un prompt. El usuario decide qué hacer y lo hacemos juntos.
 
 ## Setup del MCP server (cuando se necesite)
 
@@ -53,8 +53,8 @@ If this skill ever adds scripts under `skills/godot-mcp/scripts/`, run `npm test
 ## Cuándo usar el MCP vs el editor
 
 - **MCP**: verificación rápida, lectura de estado, validación, operaciones repetitivas.
-- **Editor**: Gonzo trabaja directamente. El MCP no reemplaza la experiencia de usar Godot.
-- **Ambos**: Gonzo puede tener el editor abierto mientras OpenClaw asiste con MCP.
+- **Editor**: el usuario trabaja directamente. El MCP no reemplaza la experiencia de usar Godot.
+- **Ambos**: el usuario puede tener el editor abierto mientras OpenClaw asiste con MCP.
 
 ## Godot 4.7 - Qué hay de nuevo
 
@@ -117,4 +117,4 @@ Godot 4.7 trae cambios sobre 4.6 que vale la pena explorar:
 - Godot 4.7.1 instalado en `/Applications/Godot.app`
 - El MCP server `@yanhuifair/godot-mcp` v1.4.0 tiene 282 tools
 - No instalar el plugin del MCP en el proyecto a menos que sea necesario para algo específico
-- Preferir que Gonzo trabaje en el editor y use OpenClaw como guía
+- Preferir que el usuario trabaje en el editor y use OpenClaw como guía

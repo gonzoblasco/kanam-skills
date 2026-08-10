@@ -8,7 +8,7 @@
 set -euo pipefail
 
 OUTPUT_FILE="${2:-duplicates-report.md}"
-SKILLS_DIR="${SKILLS_DIR:-/Users/gonzoblasco/.openclaw/workspace/skills}"
+SKILLS_DIR="${SKILLS_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)}"
 
 TMP_DIR=$(mktemp -d)
 trap 'rm -rf "$TMP_DIR"' EXIT

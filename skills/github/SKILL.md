@@ -181,7 +181,7 @@ Scripts en `skills/github/scripts/`:
 
 | Script | Uso |
 |---|---|
-| `pr-batch-check.sh [--json] [--mine-only]` | Lista PRs abiertos en repos trackeados. Con `--mine-only` filtra por `gonzoblasco`. Usar para monitorear estado de contribuciones OSS. |
+| `pr-batch-check.sh [--json] [--mine-only]` | Lista PRs abiertos en repos trackeados. Con `--mine-only` filtra por el autor del gh autenticado. Usar para monitorear estado de contribuciones OSS. |
 | `github-mcp.py` | Wrapper del GitHub MCP server para operaciones avanzadas (security alerts, notifications, project boards). |
 
 Para triage de issues de un repo especifico, ver [oss-contribution/scripts/triage-issues.sh](../oss-contribution/scripts/triage-issues.sh).

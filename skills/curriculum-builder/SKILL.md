@@ -253,7 +253,7 @@ OLLAMA_MODEL=deepseek-v4-flash
 
 ## 12. Referencias
 
-- **Caso de uso:** EnSuLugar - github.com/gonzoblasco/ensulugar
+- **Caso de uso:** EnSuLugar - github.com/<usuario>/ensulugar
 - **Inspiración:** roadmap.sh
 - **Stack:** Vite 6 + React 19 + TypeScript + Node.js + SQLite + Ollama
 - **Patrón relacionado:** pipeline-detector (detectores locales + validación cruzada / IA contextual)

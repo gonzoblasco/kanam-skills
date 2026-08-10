@@ -85,7 +85,7 @@ echo ""
 echo "🔍 Checking open PRs..."
 PR_SCRIPT="skills/oss-contribution/scripts/pr-status-check.sh"
 if [[ -f "$PR_SCRIPT" ]]; then
-  bash "$PR_SCRIPT" --author gonzoblasco 2>/dev/null || echo "   (no PRs or gh not available)"
+  bash "$PR_SCRIPT" --author "$(gh api user --jq '.login' 2>/dev/null || echo "$USER")" 2>/dev/null || echo "   (no PRs or gh not available)"
 fi
 echo ""
 echo "📋 Don't forget to:"

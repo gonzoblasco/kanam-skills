@@ -64,7 +64,7 @@ Analizar daily logs y memoria para detectar:
 
 - Patrones de bugs recurrentes (misma causa, diferentes síntomas)
 - Decisiones que se repiten (misma pregunta, misma respuesta)
-- Preferencias que emergen (Gonzo dice "siempre hago X")
+- Preferencias que emergen (el usuario dice "siempre hago X")
 - Lecciones que deberían promoverse de daily logs a MEMORY.md
 
 ### Fase 5: Consolidation (DREAMS)
@@ -146,8 +146,8 @@ Al finalizar una sesión, el Memory Agent:
 BLOQUEO: Memory Agent - no puede resolver inconsistencia
 CAUSA: [dos documentos se contradicen y no hay forma de determinar cuál es correcto]
 INTENTOS: [qué documentos se revisaron]
-NECESITO: [decisión de Gonzo sobre cuál versión es la correcta]
-ALTERNATIVA: [marcar ambos como "en revisión" hasta que Gonzo decida]
+NECESITO: [decisión del usuario sobre cuál versión es la correcta]
+ALTERNATIVA: [marcar ambos como "en revisión" hasta que el usuario decida]
 ```
 
 ## Principios

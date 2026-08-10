@@ -3,12 +3,12 @@
 # Usage: ./pr-batch-check.sh [--json] [--mine-only]
 #
 # --json       Output as JSON array
-# --mine-only  Only show PRs authored by gonzoblasco
+# --mine-only  Only show PRs authored by the authenticated user
 
 set -euo pipefail
 
 # ── Config ──────────────────────────────────────────────────
-AUTHOR="gonzoblasco"
+AUTHOR="$(gh api user --jq '.login' 2>/dev/null || echo "$USER")"
 OUTPUT_JSON=false
 MINE_ONLY=false
 

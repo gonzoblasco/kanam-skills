@@ -5,7 +5,7 @@
 set -euo pipefail
 
 OUTPUT_FILE="${2:-GOVERNANCE_REPORT.md}"
-SKILLS_DIR="${SKILLS_DIR:-/Users/gonzoblasco/.openclaw/workspace/skills}"
+SKILLS_DIR="${SKILLS_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)}"
 
 echo "🔍 Auditing all workflows..."
 echo ""

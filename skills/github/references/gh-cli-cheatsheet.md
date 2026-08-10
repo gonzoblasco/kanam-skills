@@ -19,7 +19,7 @@ gh repo fork owner/repo --clone
 ### PRs
 ```bash
 gh pr list --repo owner/repo --state open --json number,title,author,updatedAt
-gh pr list --repo owner/repo --author gonzoblasco --state open
+gh pr list --repo owner/repo --author <tu-usuario> --state open
 gh pr view 55 --repo owner/repo --json title,body,reviews,reviewDecision
 gh pr checks 55 --repo owner/repo
 gh pr diff 55 --repo owner/repo

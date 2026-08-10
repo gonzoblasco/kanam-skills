@@ -47,7 +47,7 @@ Esta skill integra la **generación de OpenSpec**, el **scaffolding automatizado
 - **Estado:** Borrador | Revisión | Aprobada | Reemplazada
 - **Creada:** 2026-08-06
 - **Última actualización:** 2026-08-06
-- **Dueño:** @gonzoblasco
+- **Dueño:** @usuario
 - **Stakeholders:** [Lista de personas/equipos afectados]
 
 ---
