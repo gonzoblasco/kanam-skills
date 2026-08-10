@@ -6,6 +6,8 @@ set -euo pipefail
 
 REPO="${1:?Usage: $0 <owner/repo>}"
 FORK_DIR=$(basename "$REPO")
+# Username del gh autenticado (el fork se crea bajo la cuenta logueada)
+GH_USER=$(gh api user --jq '.login' 2>/dev/null || echo "$USER")
 
 echo "🔧 Setting up fork for: $REPO"
 echo ""
@@ -18,7 +20,7 @@ gh repo fork "$REPO" --clone --remote=false 2>&1 || {
 
 # Clone the fork
 echo "📌 Cloning fork..."
-gh repo clone "gonzoblasco/$FORK_DIR" 2>/dev/null || {
+gh repo clone "$GH_USER/$FORK_DIR" 2>/dev/null || {
   echo "⚠️  Fork not found, cloning original..."
   gh repo clone "$REPO"
 }

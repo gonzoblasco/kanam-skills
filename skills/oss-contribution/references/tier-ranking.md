@@ -40,6 +40,6 @@ Repos donde construir presencia sin presión de review.
 Buscar issues abiertos sin PRs competidores (usar `scripts/triage-issues.sh`). Priorizar:
 
 - Bugs concretos con repro claro (fix rápido, alto valor)
-- Issues de accesibilidad (especialización de Gonzo)
+- Issues de accesibilidad (especialización del usuario)
 - Issues donde el reporter ya identificó la causa raíz (análisis más rápido)
 - Issues con etiqueta `good first issue` o `help wanted` en repos Tier 0/1

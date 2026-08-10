@@ -49,7 +49,7 @@ Contribución estratégica a repositorios open source externos: elegir dónde ap
 
 Además de trackear PRs, **revisar periódicamente los issues en los que ya comentamos**:
 
-- Listar issues donde Gonzo comentó (autor o commenter) y que siguen abiertos
+- Listar issues donde el usuario comentó (autor o commenter) y que siguen abiertos
 - Leer los comentarios nuevos: ¿alguien confirmó el bug? ¿otro contributor propuso un approach? ¿un maintainer pidió algo?
 - Decidir **actuar vs esperar**:
   - **Actuar** si hay una pregunta directa, un approach que podemos implementar, o una oportunidad de posicionar (mandar el PR, responder con análisis técnico)
@@ -62,8 +62,8 @@ Además de trackear PRs, **revisar periódicamente los issues en los que ya come
 
 ## Reglas de búsqueda de PRs
 
-- Cuando Gonzo pide ver un PR por número + repo, buscar directamente en ese repo con `gh pr view <n> --repo <org/repo>`
-- **No filtrar por autor propio** a menos que Gonzo especifique "mis PRs" o "PRs míos"
+- Cuando el usuario pide ver un PR por número + repo, buscar directamente en ese repo con `gh pr view <n> --repo <org/repo>`
+- **No filtrar por autor propio** a menos que el usuario especifique "mis PRs" o "PRs míos"
 - Si el PR no se encuentra, verificar que el repo esté bien escrito (org/repo-name completo)
 
 ## Reglas de interacción en PRs/Issues de terceros
@@ -76,9 +76,9 @@ Además de trackear PRs, **revisar periódicamente los issues en los que ya come
 
 ### Hilos y menciones
 
-- **No meterse en hilos cerrados/muertos.** Si un PR está closed y no hay una pregunta directa hacia Gonzo, no comentar. El silencio no es una invitación.
-- **Menciones como referencia técnica ≠ llamado a la acción.** Si alguien menciona a Gonzo como referencia de un bug (ej: "como @gonzoblasco observó"), no requiere respuesta a menos que haya una pregunta explícita.
-- **PRs cerrados por detección de automatización:** evaluar caso por caso. Por defecto no intervenir. Si hay una razón para mostrar empatía, comentar con cuidado y consultar a Gonzo primero.
+- **No meterse en hilos cerrados/muertos.** Si un PR está closed y no hay una pregunta directa hacia el usuario, no comentar. El silencio no es una invitación.
+- **Menciones como referencia técnica ≠ llamado a la acción.** Si alguien menciona al usuario como referencia de un bug (ej: "como @usuario observó"), no requiere respuesta a menos que haya una pregunta explícita.
+- **PRs cerrados por detección de automatización:** evaluar caso por caso. Por defecto no intervenir. Si hay una razón para mostrar empatía, comentar con cuidado y consultar al usuario primero.
 
 ## Outputs
 
