@@ -1,6 +1,6 @@
 # Session Templates - Session Lifecycle Reference
 
-Templates para inicio y cierre de sesión.
+Templates para inicio y guardado de sesión.
 
 ## Session Start Template
 

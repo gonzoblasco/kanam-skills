@@ -105,5 +105,5 @@ Scripts de `github` (referenciados, no duplicados):
 ## Related
 
 - `github` — el cómo: comandos gh, MCP, scripts de operación
-- `session-lifecycle` — ejecuta el batch check al cerrar sesión
+- `session-lifecycle` — ejecuta el batch check al guardar sesión
 - `code-review-and-quality` — review de PRs propios y ajenos

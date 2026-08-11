@@ -211,7 +211,7 @@ exec(command: "echo 'Tarea completada: $(date)' >> /tmp/logs/task-xyz-result.txt
 - Resumen de output (primeras y últimas líneas)
 - Si falló: mensaje de error
 
-**Regla:** los logs de procesos background se guardan en `/tmp/logs/` con nombre descriptivo. Se limpian al cerrar sesión o cuando ocupen más de 50MB.
+**Regla:** los logs de procesos background se guardan en `/tmp/logs/` con nombre descriptivo. Se limpian al guardar sesión o cuando ocupen más de 50MB.
 
 ## Reglas de PTY
 
@@ -247,5 +247,5 @@ Cuando una tarea background modifica scripts de skill del workspace, correr `npm
 ## Related Skills
 
 - [Task Execution](../task-execution): Para el workflow completo de tareas
-- [Session Lifecycle](../session-lifecycle): Para handoffs y cierre de sesión
+- [Session Lifecycle](../session-lifecycle): Para handoffs y guardado de sesión
 - [Debug Investigation](../debug-investigation): Para debugging de procesos que fallan

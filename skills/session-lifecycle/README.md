@@ -30,7 +30,7 @@ Para **estructurar cada sesión de trabajo** con IA: inicio (cargar contexto + m
 # Iniciar sesión
 ./scripts/session-start.sh --project "mi-app" --objective "Implementar auth con Google"
 
-# Cerrar sesión
+# Guardar sesión
 ./scripts/session-end.sh --project "mi-app" --summary "Auth implementada, PR abierto"
 ```
 
