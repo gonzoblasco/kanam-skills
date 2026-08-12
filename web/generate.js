@@ -39,7 +39,7 @@ const CATEGORIES = [
   ]},
   { id: "specialized", label: "Desarrollo especializado", match: [
       "i18n-expert","shortcuts-generator","support-response-writer",
-      "tech-docs","github","oss-contribution",
+      "tech-docs","github","oss-contribution","a11y-at-validation",
   ]},
   { id: "security", label: "Seguridad y red", match: [
       "clawdstrike","network-scanner",
