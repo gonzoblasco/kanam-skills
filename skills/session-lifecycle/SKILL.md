@@ -37,7 +37,7 @@ El inicio de sesión se activa **solo cuando el usuario lo pide explícitamente*
 
 #### A. Inicio con proyecto explícito
 
-Si el usuario dice `"iniciar sesión en a11y-fixer"` o similar:
+Si el usuario dice `"iniciar sesión en <proyecto>"` o similar:
 
 1. Resolver el proyecto por nombre: `node skills/session-context/commands/resume.mjs <nombre>`.
 2. Si no existe, ofrecer `session-context:init`.
