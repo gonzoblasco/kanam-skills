@@ -1,45 +1,45 @@
-# RFC Template - Propuesta de Mejora
+# RFC Template - Improvement Proposal
 
 ```markdown
-# RFC: [Título de la propuesta]
+# RFC: [Proposal title]
 
-**Fecha:** YYYY-MM-DD
-**Autor:** [Kanam / usuario]
-**Estado:** Draft / Review / Approved / Rejected / Implemented
+**Date:** YYYY-MM-DD
+**Author:** [Kanam / user]
+**Status:** Draft / Review / Approved / Rejected / Implemented
 
-## Problema
+## Problem
 
-¿Qué problema concreto estamos resolviendo?
+What concrete problem are we solving?
 
-## Evidencia
+## Evidence
 
-¿Qué datos respaldan que este es un problema real?
+What data supports that this is a real problem?
 
-## Propuesta
+## Proposal
 
-¿Qué proponemos hacer?
+What do we propose to do?
 
-## Impacto
+## Impact
 
-- Positivo:
-- Negativo:
-- Riesgos:
+- Positive:
+- Negative:
+- Risks:
 
-## Migración
+## Migration
 
-¿Cómo migramos del estado actual al propuesto?
+How do we migrate from the current state to the proposed one?
 
-## Alternativas Consideradas
+## Alternatives Considered
 
-- Alternativa A: [por qué no]
-- Alternativa B: [por qué no]
+- Alternative A: [why not]
+- Alternative B: [why not]
 
-## Decisión
+## Decision
 
-[Se completa después de la revisión]
+[Filled in after the review]
 ```
 
 ## Related
 
-- [SKILL.md](../SKILL.md) - Workflow principal
-- [Audit Checklist](./audit-checklist.md) - Checklist de auditoría
+- [SKILL.md](../SKILL.md) - Main workflow
+- [Audit Checklist](./audit-checklist.md) - Audit checklist

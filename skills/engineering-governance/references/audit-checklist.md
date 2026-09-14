@@ -1,39 +1,39 @@
-# Audit Checklist de Workflows - Referencia
+# Workflow Audit Checklist - Reference
 
-## Responsabilidad Única
+## Single Responsibility
 
-- [ ] ¿El workflow hace una sola cosa?
-- [ ] ¿Su nombre refleja exactamente lo que hace?
-- [ ] ¿Hay responsabilidades mezcladas?
-- [ ] ¿Depende de otro workflow para algo que debería hacer solo?
+- [ ] Does the workflow do one thing?
+- [ ] Does its name reflect exactly what it does?
+- [ ] Are there mixed responsibilities?
+- [ ] Does it depend on another workflow for something it should do on its own?
 
-## Duplicación
+## Duplication
 
-- [ ] ¿Hay checklists repetidos en múltiples workflows?
-- [ ] ¿Hay fases idénticas en diferentes workflows?
-- [ ] ¿Hay prompts similares que deberían unificarse?
-- [ ] ¿Hay validaciones duplicadas?
+- [ ] Are there repeated checklists across multiple workflows?
+- [ ] Are there identical phases in different workflows?
+- [ ] Are there similar prompts that should be unified?
+- [ ] Are there duplicated validations?
 
-## Actualización
+## Currency
 
-- [ ] ¿El SKILL.md refleja la práctica actual?
-- [ ] ¿Las referencias están actualizadas?
-- [ ] ¿Los templates siguen siendo válidos?
-- [ ] ¿Los principios que referencia siguen vigentes?
+- [ ] Does the SKILL.md reflect current practice?
+- [ ] Are the references up to date?
+- [ ] Are the templates still valid?
+- [ ] Are the principles it references still in force?
 
 ## Engineering Principles
 
-- [ ] ¿Respeta los principios de ingeniería del OS?
-- [ ] ¿Hay contradicciones con otros workflows?
-- [ ] ¿Promueve buenas prácticas?
-- [ ] ¿Desalienta malas prácticas?
+- [ ] Does it respect the engineering principles of the OS?
+- [ ] Are there contradictions with other workflows?
+- [ ] Does it promote good practices?
+- [ ] Does it discourage bad practices?
 
-## Tamaño
+## Size
 
-- [ ] ¿Es demasiado largo? (>300 líneas → considerar split)
-- [ ] ¿Es demasiado corto? (<30 líneas → ¿realmente es un workflow?)
-- [ ] ¿Tiene contenido referencial que debería estar en `references/`?
+- [ ] Is it too long? (>300 lines -> consider a split)
+- [ ] Is it too short? (<30 lines -> is it really a workflow?)
+- [ ] Does it have reference content that should live in `references/`?
 
 ## Related
 
-- [SKILL.md](../SKILL.md) - Workflow principal
+- [SKILL.md](../SKILL.md) - Main workflow

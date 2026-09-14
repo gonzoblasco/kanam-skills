@@ -1,6 +1,6 @@
 # Industry Sources - Engineering Governance Reference
 
-Fuentes a monitorear para Industry Review.
+Sources to monitor for the Industry Review.
 
 ## AI Engineering
 
@@ -57,6 +57,6 @@ Fuentes a monitorear para Industry Review.
 
 ## Related
 
-- [SKILL.md](../SKILL.md) - Workflow principal
-- [Metrics Definitions](./metrics-definitions.md) - Métricas del sistema
-- [Audit Checklist](../references/audit-checklist.md) - Checklist de auditoría
+- [SKILL.md](../SKILL.md) - Main workflow
+- [Metrics Definitions](./metrics-definitions.md) - System metrics
+- [Audit Checklist](./audit-checklist.md) - Audit checklist

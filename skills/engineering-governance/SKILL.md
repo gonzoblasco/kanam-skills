@@ -3,105 +3,105 @@ name: "engineering-governance"
 metadata:
   category: "Governance"
   tags:
-    - gobernanza
-    - auditoria
-    - mejora-continua
-description: "Workflow de Engineering Governance: evolución continua del AI Engineering OS. Audita workflows, consolida aprendizajes, elimina duplicaciones y propone mejoras sistémicas."
+    - governance
+    - audit
+    - continuous-improvement
+description: "Engineering Governance workflow: continuous evolution of the AI Engineering OS. Audits workflows, consolidates learnings, removes duplication and proposes systemic improvements."
 user-invocable: false
 ---
 
 # Workflow: Engineering Governance
 
-## Propósito
+## Purpose
 
-Mantener y evolucionar el sistema de workflows, principios y estándares de ingeniería.
+Maintain and evolve the system of workflows, principles and engineering standards.
 
-No desarrolla features.
-No escribe código de producto.
+It does not develop features.
+It does not write product code.
 
-Su cliente es el propio AI Engineering OS.
+Its client is the AI Engineering OS itself.
 
 ---
 
-# Filosofía
+# Philosophy
 
 > Build the system that builds the system.
 
-El objetivo no es optimizar un proyecto.
+The goal is not to optimize one project.
 
-El objetivo es mejorar continuamente la organización que desarrolla proyectos.
+The goal is to continuously improve the organization that develops projects.
 
 ---
 
-# Cuándo usarlo
+# When to use it
 
-- después de cerrar un milestone
-- después de cerrar un epic importante
-- después de varios PRs similares
-- después de una retrospectiva
-- cuando aparecen bugs repetitivos
-- cuando varios workflows empiezan a duplicar responsabilidades
-- cuando cambian las mejores prácticas de la industria
+- after closing a milestone
+- after closing an important epic
+- after several similar PRs
+- after a retrospective
+- when repetitive bugs appear
+- when several workflows start duplicating responsibilities
+- when industry best practices change
 
-Nunca durante la implementación de una tarea.
+Never during the implementation of a task.
 
 ---
 
 # Inputs
 
-- todos los workflows
+- all workflows
 - ADRs
 - retrospectives
 - STATUS.md
 - CHANGELOG.md
 - HANDOFF.md
-- métricas de ejecución
+- execution metrics
 - bugs
-- incidentes
-- feedback humano
-- **incidentes externos** (ej: OpenAI/Hugging Face julio 2026) - lecciones de seguridad, arquitectura de agentes, patrones de ataque/defensa
+- incidents
+- human feedback
+- **external incidents** (e.g. OpenAI/Hugging Face July 2026) - lessons on security, agent architecture, attack/defense patterns
 
 ---
 
-# Fases
+# Phases
 
 ## 1. System Health Check
 
-Responder:
+Answer:
 
-- ¿Qué workflows casi nunca se usan?
-- ¿Qué workflows generan más valor?
-- ¿Qué partes del proceso generan fricción?
-- ¿Dónde aparecen cuellos de botella?
-- ¿Qué tareas siguen siendo manuales?
+- Which workflows are almost never used?
+- Which workflows generate the most value?
+- Which parts of the process generate friction?
+- Where do bottlenecks appear?
+- Which tasks are still manual?
 
 ---
 
 ## 2. Pattern Mining
 
-Buscar patrones repetitivos.
+Look for repetitive patterns.
 
-Ejemplos:
+Examples:
 
-- mismo checklist copiado
-- mismas validaciones
-- mismas decisiones
-- mismos prompts
-- mismos errores
-- mismas soluciones
-- **mismos patrones de incidentes externos** (ej: agentes escapando sandboxes, zero-days en infraestructura compartida)
+- same checklist copied over
+- same validations
+- same decisions
+- same prompts
+- same errors
+- same solutions
+- **same patterns in external incidents** (e.g. agents escaping sandboxes, zero-days in shared infrastructure)
 
-Si un patrón aparece repetidamente:
+If a pattern appears repeatedly:
 
-proponer extraerlo.
+propose extracting it.
 
 ---
 
 ## 3. Workflow Audit
 
-Auditar cada workflow. Ver [audit checklist](./references/audit-checklist.md).
+Audit each workflow. See [audit checklist](./references/audit-checklist.md).
 
-Clasificar:
+Classify:
 
 🟢 Healthy
 
@@ -113,7 +113,7 @@ Clasificar:
 
 ## 4. Knowledge Consistency
 
-Buscar inconsistencias entre:
+Look for inconsistencies between:
 
 - ADRs
 - STATUS
@@ -122,19 +122,19 @@ Buscar inconsistencias entre:
 - HANDOFF
 - CHANGELOG
 
-Detectar documentos contradictorios.
+Detect contradictory documents.
 
-Nunca modificar automáticamente.
+Never modify automatically.
 
-Generar recomendaciones.
+Generate recommendations.
 
 ---
 
 ## 5. Industry Review
 
-Comparar el AI Engineering OS con el estado del arte.
+Compare the AI Engineering OS against the state of the art.
 
-Buscar nuevas prácticas relacionadas con:
+Look for new practices related to:
 
 - AI Engineering
 - Agentic Systems
@@ -146,48 +146,48 @@ Buscar nuevas prácticas relacionadas con:
 - Architecture
 - OSS
 
-Responder:
+Answer:
 
-¿Qué deberíamos adoptar?
+What should we adopt?
 
-¿Qué deberíamos abandonar?
+What should we drop?
 
 ---
 
 ## 6. Governance Review
 
-Verificar:
+Verify:
 
-- workflows obsoletos
-- workflows muy grandes
-- responsabilidades mezcladas
-- skills que deberían fusionarse
-- skills demasiado genéricas
+- obsolete workflows
+- workflows that are too large
+- mixed responsibilities
+- skills that should be merged
+- skills that are too generic
 
-Proponer:
+Propose:
 
 - merge
 - split
-- deprecación
-- nueva versión
+- deprecation
+- new version
 
-Nunca modificar automáticamente.
+Never modify automatically.
 
 ---
 
 ## 7. Engineering Principles
 
-Auditar los principios.
+Audit the principles.
 
-Preguntas:
+Questions:
 
-¿Siguen siendo válidos?
+Are they still valid?
 
-¿Hay contradicciones?
+Are there contradictions?
 
-¿Falta alguno?
+Is any missing?
 
-Ejemplos:
+Examples:
 
 - Accessibility First
 - Security by Default
@@ -201,9 +201,9 @@ Ejemplos:
 
 ## 8. Improvement Proposal
 
-Generar RFCs. Ver [template de RFC](./references/rfc-template.md).
+Generate RFCs. See [RFC template](./references/rfc-template.md).
 
-Nunca aplicar cambios automáticamente.
+Never apply changes automatically.
 
 ---
 
@@ -213,163 +213,163 @@ Nunca aplicar cambios automáticamente.
 
 - RFCs
 
-- propuestas de nuevos workflows
+- proposals for new workflows
 
-- propuestas de deprecación
+- deprecation proposals
 
-- mejoras de Engineering Principles
+- improvements to Engineering Principles
 
-- backlog de mejoras del AI Engineering OS
+- improvement backlog for the AI Engineering OS
 
 ---
 
-# Quality Gates para Skills
+# Quality Gates for Skills
 
-Todo cambio a un script de skill debe pasar por los siguientes gates antes de llegar a `main`:
+Every change to a skill script must pass the following gates before reaching `main`:
 
 ## 1. Syntax Check
 
-`./scripts/test-skills.sh` verifica que todos los `.sh` pasen `bash -n` y todos los `.py` pasen `python3 -m py_compile`.
+`./scripts/test-skills.sh` verifies that every `.sh` file passes `bash -n` and every `.py` file passes `python3 -m py_compile`.
 
-- 75 bash scripts y 28 python scripts se chequean en segundos.
-- Corre en el pre-commit hook y en CI.
+- 75 bash scripts and 28 python scripts are checked in seconds.
+- It runs in the pre-commit hook and in CI.
 
 ## 2. Functional Tests
 
-`npm test` corre:
+`npm test` runs:
 
 - `test-skills.sh` (syntax)
-- `npx bats tests/bash/` - 17 tests funcionales sobre scripts criticos
-- `pytest tests/python/` - 8 tests funcionales sobre scripts Python criticos
+- `npx bats tests/bash/` - 17 functional tests over critical scripts
+- `pytest tests/python/` - 8 functional tests over critical Python scripts
 
-Los tests viven en `tests/bash/` y `tests/python/`. Cuando agregas o modificas un script con riesgo de regresion, agrega un test.
+Tests live in `tests/bash/` and `tests/python/`. When you add or modify a script with regression risk, add a test.
 
 ## 3. Pre-commit Hook
 
-`.git/hooks/pre-commit` corre syntax + bats + pytest. Si falla, el commit no se crea.
+`.git/hooks/pre-commit` runs syntax + bats + pytest. If it fails, the commit is not created.
 
-Instalacion:
+Installation:
 
 ```bash
 cp scripts/pre-commit.template .git/hooks/pre-commit
 chmod +x .git/hooks/pre-commit
 ```
 
-## 4. CI en GitHub Actions
+## 4. CI on GitHub Actions
 
-`.github/workflows/skills-ci.yml` corre el mismo `npm test` en Ubuntu para cada push/PR.
+`.github/workflows/skills-ci.yml` runs the same `npm test` on Ubuntu for every push/PR.
 
-## Cuando exigir tests
+## When to require tests
 
-- Si el script usa `eval`, pipes con `grep -c`, `date` macOS-specific, o aritmetica con contadores.
-- Si el script toca filesystem, git, o hace parsing de archivos.
-- Si el script es usado por otra skill en su flujo normal.
+- If the script uses `eval`, pipes with `grep -c`, macOS-specific `date`, or arithmetic with counters.
+- If the script touches the filesystem, git, or parses files.
+- If the script is used by another skill in its normal flow.
 
-## Anti-patrones documentados
+## Documented anti-patterns
 
-- `eval "$cmd"` - reemplazar por funciones con nombre.
-- `grep -c ... || echo "0"` - produce `0\n0`; usar `|| true` + `${VAR:-0}`.
-- `sed 's/.*/\u&/'` - GNU-only; usar `awk` o `perl`.
-- `find A -name B -o -name C -exec ...` - aplica `-exec` solo al segundo `-name`; usar `\( ... \)`.
-- `PASS=***` o `PASS=*** + 1))` - rompe contadores; inicializar a `0` y usar `$((PASS + 1))`.
-- `sed -i ''` - macOS-only; usar `sed -i.bak` + `rm .bak`.
+- `eval "$cmd"` - replace with named functions.
+- `grep -c ... || echo "0"` - produces `0\n0`; use `|| true` + `${VAR:-0}`.
+- `sed 's/.*/\u&/'` - GNU-only; use `awk` or `perl`.
+- `find A -name B -o -name C -exec ...` - applies `-exec` only to the second `-name`; use `\( ... \)`.
+- `PASS=***` or `PASS=*** + 1))` - breaks counters; initialize to `0` and use `$((PASS + 1))`.
+- `sed -i ''` - macOS-only; use `sed -i.bak` + `rm .bak`.
 
-# Decisiones
+# Decisions
 
-Puede:
+It can:
 
-✔ recomendar
+✔ recommend
 
-✔ priorizar
+✔ prioritize
 
-✔ detectar
+✔ detect
 
-✔ comparar
+✔ compare
 
-✔ generar RFCs
+✔ generate RFCs
 
-Nunca:
+Never:
 
-✖ modificar workflows automáticamente
+✖ modify workflows automatically
 
-✖ editar ADRs
+✖ edit ADRs
 
-✖ cambiar principios
+✖ change principles
 
-✖ eliminar documentación
+✖ delete documentation
 
-Todo cambio requiere aprobación humana.
-
----
-
-# Principios
-
-La estabilidad vale más que la novedad.
-
-No optimizar sin evidencia.
-
-Eliminar complejidad antes que agregar funcionalidades.
-
-Cada workflow debe tener una única responsabilidad.
-
-Las mejoras deben ser incrementales.
-
-Las decisiones deben quedar documentadas.
-
-La gobernanza existe para reducir la entropía del sistema.
+Every change requires human approval.
 
 ---
 
-# Checklist final
+# Principles
 
-- ¿Hay duplicación?
+Stability is worth more than novelty.
 
-- ¿Hay contradicciones?
+Do not optimize without evidence.
 
-- ¿Hay deuda de proceso?
+Remove complexity before adding features.
 
-- ¿Hay workflows obsoletos?
+Every workflow must have a single responsibility.
 
-- ¿Hay conocimiento sin documentar?
+Improvements must be incremental.
 
-- ¿Hay nuevos patrones que merecen un workflow?
+Decisions must be documented.
 
-- ¿El sistema es hoy mejor que hace un mes?
+Governance exists to reduce the entropy of the system.
+
+---
+
+# Final checklist
+
+- Is there duplication?
+
+- Are there contradictions?
+
+- Is there process debt?
+
+- Are there obsolete workflows?
+
+- Is there undocumented knowledge?
+
+- Are there new patterns that deserve a workflow?
+
+- Is the system better today than a month ago?
 
 ## Related Skills
 
-- [Knowledge Management](../knowledge-management): Para mantener la base de conocimiento actualizada
-- [Observability](../observability): Para medir la salud del sistema
+- [Knowledge Management](../knowledge-management): To keep the knowledge base up to date
+- [Observability](../observability-and-instrumentation): To measure system health
 
-## Growth Loops - Ciclos de Mejora Continua
+## Growth Loops - Continuous Improvement Cycles
 
-Cuatro ciclos que mantienen el sistema evolucionando:
+Four cycles that keep the system evolving:
 
-### 1. Curiosidad
-Periódicamente, preguntarse: "¿Qué no sé que me ayudaría a hacer mejor mi trabajo?" Investigar skills de ClawHub, leer documentación, explorar tools nuevas.
+### 1. Curiosity
+Periodically, ask yourself: "What don't I know that would help me do my job better?" Research skills on ClawHub, read documentation, explore new tools.
 
-### 2. Reconocimiento de Patrones
-Cuando una situación se repite 3+ veces, no es coincidencia - es un patrón. Documentarlo en LEARNINGS.md y considerar promoverlo a SOUL/TOOLS/AGENTS.
+### 2. Pattern Recognition
+When a situation repeats 3+ times, it is not a coincidence - it is a pattern. Document it in LEARNINGS.md and consider promoting it to SOUL/TOOLS/AGENTS.
 
-### 3. Expansión de Capacidades
-Cuando una tarea se hace 2+ veces y requiere el mismo proceso manual, considerar: ¿se puede skill-izar? ¿se puede automatizar? ¿se puede documentar como workflow?
+### 3. Capability Expansion
+When a task is done 2+ times and requires the same manual process, consider: can it be skill-ified? can it be automated? can it be documented as a workflow?
 
-### 4. Seguimiento de Resultados
-Después de implementar una mejora, verificar: ¿realmente mejoró algo? ¿O solo agregó complejidad? Si no hay mejora medible, revertir.
+### 4. Outcome Tracking
+After implementing an improvement, verify: did it actually improve anything? Or did it only add complexity? If there is no measurable improvement, revert.
 
-**Lección:** la mejora continua no es automática - necesita ciclos explícitos. Sin ellos, el sistema se estanca o empeora.
+**Lesson:** continuous improvement is not automatic - it needs explicit cycles. Without them, the system stagnates or gets worse.
 
-## Evaluación de Skills Externas - Cómo Decidir
+## Evaluating External Skills - How to Decide
 
-Cuando revisemos skills de ClawHub (o cualquier skill externa), seguir este proceso:
+When reviewing skills from ClawHub (or any external skill), follow this process:
 
-1. **Leer el SKILL.md completo** - entender qué hace realmente
-2. **Identificar qué pisa** - ¿ya tenemos algo equivalente? ¿en AGENTS.md, LEARNINGS.md, MEMORY.md?
-3. **Identificar qué aporta** - ¿tiene patrones, frameworks o ideas que no tenemos?
-4. **Decidir:**
-   - **Instalar** - solo si aporta algo que no tenemos Y no podemos integrar como convención
-   - **Robar ideas** - si tiene patrones útiles que podemos adoptar en nuestro sistema
-   - **Pasar** - si pisa lo que tenemos o no es relevante
-5. **Si robamos:** documentar en LEARNINGS.md, actualizar AGENTS.md/MEMORY.md según corresponda
+1. **Read the full SKILL.md** - understand what it actually does
+2. **Identify what it overlaps** - do we already have an equivalent? in AGENTS.md, LEARNINGS.md, MEMORY.md?
+3. **Identify what it adds** - does it have patterns, frameworks or ideas we don't have?
+4. **Decide:**
+   - **Install** - only if it adds something we don't have AND we cannot integrate it as a convention
+   - **Steal ideas** - if it has useful patterns we can adopt in our system
+   - **Pass** - if it overlaps what we have or is not relevant
+5. **If we steal:** document it in LEARNINGS.md, update AGENTS.md/MEMORY.md as appropriate
 
-**Regla:** preferir integrar patrones como convención propia antes que instalar skills externas. Menos skills = menos contexto quemado = sistema más rápido y predecible.
+**Rule:** prefer integrating patterns as your own convention over installing external skills. Fewer skills = less context burned = a faster and more predictable system.
