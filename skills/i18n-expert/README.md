@@ -45,5 +45,5 @@ Reports: missing keys, orphaned keys, parity gap between locales.
 
 ## Related skills
 
-- [Build & Scaffold](../build-scaffold) - To include i18n in the initial scaffolding
-- [Review & Quality](../review-quality) - To review that there are no hardcoded strings
+- [Spec-Driven Development](../spec-driven-development) - To include i18n in the initial scaffolding
+- [Code Review & Quality](../code-review-and-quality) - To review that there are no hardcoded strings

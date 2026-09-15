@@ -46,4 +46,4 @@ It returns:
 ## Related Skills
 
 - [Copy Editing](../copy-editing) - To polish the tone of responses
-- [Campaign Plan](../campaign-plan) - For customer communication campaigns
+- [Idea Refine](../idea-refine) - For customer communication campaigns

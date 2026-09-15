@@ -37,5 +37,5 @@ Includes a top recommendation with justification and a name quality check (cross
 
 ## Related Skills
 
-- [Product Discovery](../product-discovery) - To define the product before naming it
+- [Idea Refine](../idea-refine) - To define the product before naming it
 - [Copy Editing](../copy-editing) - To polish the brand messaging

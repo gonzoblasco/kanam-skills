@@ -37,4 +37,4 @@ It does 7 sweeps in order, and after each one it re-checks the previous ones:
 
 ## Related skills
 
-- [Campaign Plan](../campaign-plan) - For planning campaigns
+- [Idea Refine](../idea-refine) - For planning campaigns

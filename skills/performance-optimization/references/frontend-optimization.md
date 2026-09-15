@@ -81,4 +81,4 @@ import { Virtualizer } from '@tanstack/react-virtual';
 
 - [SKILL.md](../SKILL.md) - Main workflow
 - [Backend Optimization](./backend-optimization.md) - Backend optimization
-- [Database Optimization](./database-optimization.md) - DB optimization
+- Database Optimization - indexes, N+1, query plans (see `references/domains.md`)

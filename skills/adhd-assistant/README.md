@@ -40,4 +40,4 @@ It is conversational. You tell it what is happening to you and it guides you.
 ## Related skills
 
 - [Session Lifecycle](../session-lifecycle) - For structuring work sessions
-- [Task Execution](../task-execution) - For executing broken-down tasks
+- [Incremental Implementation](../incremental-implementation) - For executing broken-down tasks

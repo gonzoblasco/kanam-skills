@@ -44,4 +44,4 @@ Quick guide to words to avoid and replace.
 ## Related
 
 - [SKILL.md](../SKILL.md) - Main workflow
-- [Seven Sweeps](../references/seven-sweeps.md) - Complete editing framework
+- Seven Sweeps - a complete editing framework (not documented in this skill yet)

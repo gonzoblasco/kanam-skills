@@ -51,5 +51,5 @@ To **improve system performance** through evidence, measurement and incremental 
 
 ## Related skills
 
-- [Observability](../observability) - To measure and monitor performance
-- [Debug Investigation](../debug-investigation) - To investigate causes of degradation
+- [Observability & Instrumentation](../observability-and-instrumentation) - To measure and monitor performance
+- [Debugging & Error Recovery](../debugging-and-error-recovery) - To investigate causes of degradation

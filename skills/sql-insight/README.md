@@ -54,5 +54,5 @@ python3 scripts/sql_query_helper.py --db-path data.db explain "SELECT * FROM ord
 
 ## Related skills
 
-- [Observability](../observability) - For monitoring DB performance
+- [Observability & Instrumentation](../observability-and-instrumentation) - For monitoring DB performance
 - [Performance Optimization](../performance-optimization) - For optimizing slow queries

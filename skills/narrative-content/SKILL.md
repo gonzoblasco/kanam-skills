@@ -349,4 +349,4 @@ Writer's block is not a lack of inspiration - it is fear of writing badly.
 ## Related Skills
 
 - [Copy Editing](../copy-editing): For the final text revision
-- [Timeline Builder](../timeline-builder): For visual timelines of complex stories
+- [Planning & Task Breakdown](../planning-and-task-breakdown): For visual timelines of complex stories

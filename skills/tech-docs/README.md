@@ -49,4 +49,4 @@ python3 scripts/analyze_codebase.py ./src --type architecture
 ## Related skills
 
 - [Knowledge Management](../knowledge-management) - To keep the knowledge base up to date
-- [Build & Scaffold](../build-scaffold) - To document scaffolding decisions
+- [Spec-Driven Development](../spec-driven-development) - To document scaffolding decisions

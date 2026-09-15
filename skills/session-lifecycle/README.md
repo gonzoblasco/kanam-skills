@@ -43,5 +43,5 @@ To **structure every AI work session**: start (load context + memory), dispatche
 
 ## Related skills
 
-- [Task Execution](../task-execution) - To execute tasks within the session
+- [Incremental Implementation](../incremental-implementation) - To execute tasks within the session
 - [Knowledge Management](../knowledge-management) - To record session learnings

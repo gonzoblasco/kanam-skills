@@ -22,4 +22,4 @@ Phrases to avoid and recommended alternatives.
 ## Related
 
 - [SKILL.md](../SKILL.md) - Main workflow
-- [Emotional De-Escalation](./de-escalation.md) - Strategies by emotional level
+- Emotional De-Escalation - strategies by emotional level (not documented in this skill yet)

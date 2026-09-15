@@ -51,4 +51,4 @@ It asks you an open-ended question, waits for your answer, and then 3-5 probing 
 ## Related skills
 
 - [CV Tailor](../cv-tailor) - To optimize the CV before interviews
-- [Code Mentor](../code-mentor) - To practice algorithms and concepts
+- [Code Review & Quality](../code-review-and-quality) - For feedback on algorithms and concepts

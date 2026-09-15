@@ -70,4 +70,4 @@ const pool = new Pool({
 
 - [SKILL.md](../SKILL.md) - Main workflow
 - [Frontend Optimization](./frontend-optimization.md) - Frontend optimization
-- [Database Optimization](./database-optimization.md) - DB optimization
+- Database Optimization - indexes, N+1, query plans (see `references/domains.md`)

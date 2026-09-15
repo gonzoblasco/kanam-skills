@@ -87,4 +87,4 @@ Templates for session start and save.
 ## Related
 
 - [SKILL.md](../SKILL.md) - Main workflow
-- [Task Execution](../../task-execution) - Task execution
+- [Incremental Implementation](../../incremental-implementation) - Task execution
