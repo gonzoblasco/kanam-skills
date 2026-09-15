@@ -1,6 +1,6 @@
 ---
 name: "oss-contribution"
-description: "Update oss-contribution (rebase 00:12, final)"
+description: "Contribute strategically to external open source repos: pick targets, triage issues without competing PRs, send PRs, and follow up on the threads we already joined."
 metadata:
   category: "Contribution"
   tags:

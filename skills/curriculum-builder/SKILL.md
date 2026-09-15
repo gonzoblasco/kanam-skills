@@ -16,7 +16,7 @@ Complete scaffold to build **adaptive AI tutors** for any topic. Takes structure
 - SQLite cache with TTL
 
 **Inspired by:** roadmap.sh (but open source + generative AI)
-**Pilot use case:** EnSuLugar - cooking tutor (15 recipes, 28 techniques)
+**Pilot use case:** an adaptive cooking tutor (15 recipes, 28 techniques)
 
 ---
 
@@ -253,7 +253,7 @@ OLLAMA_MODEL=deepseek-v4-flash
 
 ## 12. References
 
-- **Use case:** EnSuLugar - github.com/user/a project
+- **Use case:** an adaptive cooking tutor (15 recipes, 28 techniques)
 - **Inspiration:** roadmap.sh
 - **Stack:** Vite 6 + React 19 + TypeScript + Node.js + SQLite + Ollama
 - **Related pattern:** pipeline-detector (local detectors + cross-validation / contextual AI)

@@ -1,6 +1,6 @@
 ---
 name: "github"
-description: "Update github (rebase of 20260902 proposal)"
+description: "Run GitHub operations with the gh CLI and the official GitHub MCP Server: PRs, issues, CI runs, reviews, notifications and discussions."
 metadata:
   category: "Development"
   tags:
