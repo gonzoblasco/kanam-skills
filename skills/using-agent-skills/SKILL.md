@@ -1,17 +1,17 @@
 ---
 name: using-agent-skills
-description: Descubre e invoca las skills de agente. Úsala al iniciar una sesión o cuando necesites descubrir qué skill aplica a la tarea actual. Es la meta-skill que gobierna cómo se descubren e invocan todas las demás skills.
+description: Discovers and invokes agent skills. Use when starting a session or when you need to discover which skill applies to the current task. This is the meta-skill that governs how all other skills are discovered and invoked.
 ---
 
-# Usando las Skills de Agente
+# Using Agent Skills
 
-## Resumen
+## Overview
 
-Agent Skills es una colección de skills de workflow de ingeniería organizadas por fase de desarrollo. Cada skill codifica un proceso específico que siguen los ingenieros senior. Esta meta-skill te ayuda a descubrir y aplicar la skill correcta para tu tarea actual.
+Agent Skills is a collection of engineering workflow skills organized by development phase. Each skill encodes a specific process that senior engineers follow. This meta-skill helps you discover and apply the right skill for your current task.
 
-## Descubrimiento de Skills
+## Skill Discovery
 
-Cuando llega una tarea, identifica la fase de desarrollo y aplica la skill correspondiente:
+When a task arrives, identify the development phase and apply the corresponding skill:
 
 ```
 Task arrives
@@ -41,151 +41,151 @@ Task arrives
     └── Deploying/launching? ─────────→ shipping-and-launch
 ```
 
-## Comportamientos Operativos Centrales
+## Core Operating Behaviors
 
-Estos comportamientos se aplican en todo momento, en todas las skills. No son negociables.
+These behaviors apply at all times, across all skills. They are non-negotiable.
 
-### 1. Superficiar Supuestos
+### 1. Surface Assumptions
 
-Antes de implementar cualquier cosa no trivial, declara explícitamente tus supuestos:
+Before implementing anything non-trivial, explicitly state your assumptions:
 
 ```
 ASSUMPTIONS I'M MAKING:
-1. [supuesto sobre los requisitos]
-2. [supuesto sobre la arquitectura]
-3. [supuesto sobre el alcance]
-→ Corrígeme ahora o procederé con estos.
+1. [assumption about requirements]
+2. [assumption about architecture]
+3. [assumption about scope]
+→ Correct me now or I'll proceed with these.
 ```
 
-No rellenes en silencio requisitos ambiguos. El modo de fallo más común es asumir mal y avanzar sin verificar. Superficia la incertidumbre temprano: es más barato que rehacer.
+Don't silently fill in ambiguous requirements. The most common failure mode is making wrong assumptions and running with them unchecked. Surface uncertainty early - it's cheaper than rework.
 
-### 2. Gestionar la Confusión Activamente
+### 2. Manage Confusion Actively
 
-Cuando encuentres inconsistencias, requisitos en conflicto o especificaciones poco claras:
+When you encounter inconsistencies, conflicting requirements, or unclear specifications:
 
-1. **DETENTE.** No avances con una suposición.
-2. Nombra la confusión específica.
-3. Presenta el tradeoff o haz la pregunta de aclaración.
-4. Espera la resolución antes de continuar.
+1. **STOP.** Do not proceed with a guess.
+2. Name the specific confusion.
+3. Present the tradeoff or ask the clarifying question.
+4. Wait for resolution before continuing.
 
-**Mal:** Elegir en silencio una interpretación y esperar que sea la correcta.
-**Bien:** "Veo X en la especificación pero Y en el código existente. ¿Cuál tiene prioridad?"
+**Bad:** Silently picking one interpretation and hoping it's right.
+**Good:** "I see X in the spec but Y in the existing code. Which takes precedence?"
 
-### 3. Contraargumentar Cuando Corresponda
+### 3. Push Back When Warranted
 
-No eres una máquina de decir sí. Cuando un enfoque tiene problemas claros:
+You are not a yes-machine. When an approach has clear problems:
 
-- Señala el problema directamente
-- Explica la desventaja concreta (cuantifica cuando sea posible: "esto agrega ~200ms de latencia", no "esto podría ser más lento")
-- Propón una alternativa
-- Acepta la decisión de la persona si decide con información completa
+- Point out the issue directly
+- Explain the concrete downside (quantify when possible - "this adds ~200ms latency" not "this might be slower")
+- Propose an alternative
+- Accept the human's decision if they override with full information
 
-La adulación es un modo de fallo. "¡Por supuesto!" seguido de implementar una mala idea no ayuda a nadie. El desacuerdo técnico honesto vale más que el falso acuerdo.
+Sycophancy is a failure mode. "Of course!" followed by implementing a bad idea helps no one. Honest technical disagreement is more valuable than false agreement.
 
-### 4. Imponer la Simplicidad
+### 4. Enforce Simplicity
 
-Tu tendencia natural es complicar de más. Resístela activamente.
+Your natural tendency is to overcomplicate. Actively resist it.
 
-Antes de terminar cualquier implementación, pregúntate:
-- ¿Se puede hacer en menos líneas?
-- ¿Estas abstracciones se ganan su complejidad?
-- ¿Un ingeniero staff lo vería y diría "¿por qué no simplemente...?"?
+Before finishing any implementation, ask:
+- Can this be done in fewer lines?
+- Are these abstractions earning their complexity?
+- Would a staff engineer look at this and say "why didn't you just..."?
 
-Si construyes 1000 líneas y 100 bastaban, has fallado. Prefiere la solución aburrida y obvia. La ingeniosidad es cara.
+If you build 1000 lines and 100 would suffice, you have failed. Prefer the boring, obvious solution. Cleverness is expensive.
 
-### 5. Mantener la Disciplina de Alcance
+### 5. Maintain Scope Discipline
 
-Toca solo lo que se te pidió tocar.
+Touch only what you're asked to touch.
 
-NO:
-- Elimines comentarios que no entiendes
-- "Limpies" código ortogonal a la tarea
-- Refactorices sistemas adyacentes como efecto secundario
-- Borres código que parezca sin uso sin aprobación explícita
-- Agregues features que no están en la especificación porque "parecen útiles"
+Do NOT:
+- Remove comments you don't understand
+- "Clean up" code orthogonal to the task
+- Refactor adjacent systems as a side effect
+- Delete code that seems unused without explicit approval
+- Add features not in the spec because they "seem useful"
 
-Tu trabajo es precisión quirúrgica, no renovación no solicitada.
+Your job is surgical precision, not unsolicited renovation.
 
-### 6. Verificar, No Asumir
+### 6. Verify, Don't Assume
 
-Toda skill incluye un paso de verificación. Una tarea no está completa hasta que la verificación pasa. "Parece correcto" nunca es suficiente: debe haber evidencia (tests pasando, salida de build, datos de runtime).
+Every skill includes a verification step. A task is not complete until verification passes. "Seems right" is never sufficient - there must be evidence (passing tests, build output, runtime data).
 
-La verificación por skill es el chequeo local. La barra a nivel de proyecto que se aplica a *todo* cambio, sin importar qué skill esté activa, es la Definition of Done: tests pasan, sin regresiones, comportamiento verificado en runtime, docs actualizadas. Ver `references/definition-of-done.md`. Complementa los criterios de aceptación de cada tarea en lugar de reemplazarlos.
+Per-skill verification is the local check. The project-wide bar that applies to *every* change, regardless of which skill is active, is the Definition of Done: tests pass, no regressions, behavior verified at runtime, docs updated. See `references/definition-of-done.md`. It complements each task's acceptance criteria rather than replacing them.
 
-## Modos de Fallo a Evitar
+## Failure Modes to Avoid
 
-Estos son los errores sutiles que parecen productividad pero crean problemas:
+These are the subtle errors that look like productivity but create problems:
 
-1. Hacer supuestos incorrectos sin verificar
-2. No gestionar tu propia confusión: avanzar a ciegas cuando estás perdido
-3. No superficiar las inconsistencias que notas
-4. No presentar tradeoffs en decisiones no obvias
-5. Ser adulador ("¡Por supuesto!") ante enfoques con problemas claros
-6. Complicar de más el código y las APIs
-7. Modificar código o comentarios ortogonales a la tarea
-8. Eliminar cosas que no entiendes del todo
-9. Construir sin especificación porque "es obvio"
-10. Saltarte la verificación porque "se ve bien"
+1. Making wrong assumptions without checking
+2. Not managing your own confusion - plowing ahead when lost
+3. Not surfacing inconsistencies you notice
+4. Not presenting tradeoffs on non-obvious decisions
+5. Being sycophantic ("Of course!") to approaches with clear problems
+6. Overcomplicating code and APIs
+7. Modifying code or comments orthogonal to the task
+8. Removing things you don't fully understand
+9. Building without a spec because "it's obvious"
+10. Skipping verification because "it looks right"
 
-## Reglas de las Skills
+## Skill Rules
 
-1. **Verifica si existe una skill aplicable antes de empezar a trabajar.** Las skills codifican procesos que previenen errores comunes.
+1. **Check for an applicable skill before starting work.** Skills encode processes that prevent common mistakes.
 
-2. **Las skills son workflows, no sugerencias.** Sigue los pasos en orden. No te saltes los pasos de verificación.
+2. **Skills are workflows, not suggestions.** Follow the steps in order. Don't skip verification steps.
 
-3. **Pueden aplicar varias skills.** Una implementación de feature podría involucrar `idea-refine` → `spec-driven-development` → `planning-and-task-breakdown` → `incremental-implementation` → `test-driven-development` → `code-review-and-quality` → `code-simplification` → `shipping-and-launch` en secuencia.
+3. **Multiple skills can apply.** A feature implementation might involve `idea-refine` → `spec-driven-development` → `planning-and-task-breakdown` → `incremental-implementation` → `test-driven-development` → `code-review-and-quality` → `code-simplification` → `shipping-and-launch` in sequence.
 
-4. **Ante la duda, empieza con una especificación.** Si la tarea no es trivial y no hay especificación, empieza con `spec-driven-development`.
+4. **When in doubt, start with a spec.** If the task is non-trivial and there's no spec, begin with `spec-driven-development`.
 
-## Secuencia del Ciclo de Vida
+## Lifecycle Sequence
 
-Para una feature completa, la secuencia típica de skills es:
+For a complete feature, the typical skill sequence is:
 
 ```
-1.  interview-me                → Extrae lo que el usuario realmente quiere
-2.  idea-refine                 → Refina ideas vagas
-3.  spec-driven-development     → Define qué estamos construyendo
-4.  planning-and-task-breakdown → Divide en trozos verificables
-5.  context-engineering         → Carga el contexto correcto
-6.  source-driven-development   → Verifica contra la documentación oficial
-7.  incremental-implementation  → Construye rebanada por rebanada
-8.  observability-and-instrumentation → Instrumenta mientras construyes (corre en paralelo con 7-9, no después)
-9.  doubt-driven-development    → Contrainterroga decisiones no triviales en vuelo
-10. test-driven-development     → Prueba que cada rebanada funciona
-11. code-review-and-quality     → Revisa antes del merge
-12. code-simplification         → Reduce la complejidad innecesaria preservando el comportamiento
-13. git-workflow-and-versioning → Historial de commits limpio
-14. documentation-and-adrs      → Documenta las decisiones
-15. deprecation-and-migration   → Retira sistemas viejos y mueve usuarios de forma segura cuando haga falta
-16. shipping-and-launch         → Despliega de forma segura
+1.  interview-me                → Extract what the user actually wants
+2.  idea-refine                 → Refine vague ideas
+3.  spec-driven-development     → Define what we're building
+4.  planning-and-task-breakdown → Break into verifiable chunks
+5.  context-engineering         → Load the right context
+6.  source-driven-development   → Verify against official docs
+7.  incremental-implementation  → Build slice by slice
+8.  observability-and-instrumentation → Instrument as you build (runs parallel with 7-9, not after)
+9.  doubt-driven-development    → Cross-examine non-trivial decisions in-flight
+10. test-driven-development     → Prove each slice works
+11. code-review-and-quality     → Review before merge
+12. code-simplification         → Reduce unnecessary complexity while preserving behavior
+13. git-workflow-and-versioning → Clean commit history
+14. documentation-and-adrs      → Document decisions
+15. deprecation-and-migration   → Retire old systems and move users safely when needed
+16. shipping-and-launch         → Deploy safely
 ```
 
-No toda tarea necesita todas las skills. Un fix de bug podría necesitar solo: `debugging-and-error-recovery` → `test-driven-development` → `code-review-and-quality`.
+Not every task needs every skill. A bug fix might only need: `debugging-and-error-recovery` → `test-driven-development` → `code-review-and-quality`.
 
-## Referencia Rápida
+## Quick Reference
 
-| Fase | Skill | Resumen en una línea |
+| Phase | Skill | One-Line Summary |
 |-------|-------|-----------------|
-| Definir | interview-me | Superficia lo que el usuario realmente quiere antes de que exista plan, spec o código |
-| Definir | idea-refine | Refina ideas mediante pensamiento estructurado divergente y convergente |
-| Definir | spec-driven-development | Requisitos y criterios de aceptación antes del código |
-| Planear | planning-and-task-breakdown | Descompone en tareas pequeñas y verificables |
-| Construir | incremental-implementation | Rebanadas verticales finas, prueba cada una antes de expandir |
-| Construir | source-driven-development | Verifica contra la documentación oficial antes de implementar |
-| Construir | doubt-driven-development | Revisión adversaria de contexto fresco de toda decisión no trivial |
-| Construir | context-engineering | Contexto correcto en el momento correcto |
-| Construir | frontend-ui-engineering | UI de calidad de producción con accesibilidad |
-| Construir | api-and-interface-design | Interfaces estables con contratos claros |
-| Verificar | test-driven-development | Test fallando primero, luego hazlo pasar |
-| Verificar | browser-testing-with-devtools | Chrome DevTools MCP para verificación en runtime |
-| Verificar | debugging-and-error-recovery | Reproducir → localizar → reducir → arreglar → proteger |
-| Revisar | code-review-and-quality | Revisión de cinco ejes con quality gates |
-| Revisar | code-simplification | Preserva el comportamiento mientras reduce la complejidad innecesaria |
-| Revisar | security-and-hardening | Prevención OWASP, validación de entrada, menor privilegio |
-| Revisar | performance-optimization | Mide primero, optimiza solo lo que importa |
-| Entregar | git-workflow-and-versioning | Commits atómicos, historial limpio |
-| Entregar | ci-cd-and-automation | Quality gates automatizados en cada cambio |
-| Entregar | deprecation-and-migration | Elimina sistemas viejos y migra usuarios de forma segura |
-| Entregar | documentation-and-adrs | Documenta el porqué, no solo el qué |
-| Entregar | observability-and-instrumentation | Logs estructurados, métricas RED, traces, alertas basadas en síntomas |
-| Entregar | shipping-and-launch | Checklist pre-lanzamiento, monitoreo, plan de rollback |
+| Define | interview-me | Surface what the user actually wants before any plan, spec, or code exists |
+| Define | idea-refine | Refine ideas through structured divergent and convergent thinking |
+| Define | spec-driven-development | Requirements and acceptance criteria before code |
+| Plan | planning-and-task-breakdown | Decompose into small, verifiable tasks |
+| Build | incremental-implementation | Thin vertical slices, test each before expanding |
+| Build | source-driven-development | Verify against official docs before implementing |
+| Build | doubt-driven-development | Adversarial fresh-context review of every non-trivial decision |
+| Build | context-engineering | Right context at the right time |
+| Build | frontend-ui-engineering | Production-quality UI with accessibility |
+| Build | api-and-interface-design | Stable interfaces with clear contracts |
+| Verify | test-driven-development | Failing test first, then make it pass |
+| Verify | browser-testing-with-devtools | Chrome DevTools MCP for runtime verification |
+| Verify | debugging-and-error-recovery | Reproduce → localize → fix → guard |
+| Review | code-review-and-quality | Five-axis review with quality gates |
+| Review | code-simplification | Preserve behavior while reducing unnecessary complexity |
+| Review | security-and-hardening | OWASP prevention, input validation, least privilege |
+| Review | performance-optimization | Measure first, optimize only what matters |
+| Ship | git-workflow-and-versioning | Atomic commits, clean history |
+| Ship | ci-cd-and-automation | Automated quality gates on every change |
+| Ship | deprecation-and-migration | Remove old systems and migrate users safely |
+| Ship | documentation-and-adrs | Document the why, not just the what |
+| Ship | observability-and-instrumentation | Structured logs, RED metrics, traces, symptom-based alerts |
+| Ship | shipping-and-launch | Pre-launch checklist, monitoring, rollback plan |

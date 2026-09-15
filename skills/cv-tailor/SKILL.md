@@ -20,7 +20,7 @@ Optimizar currículums para maximizar el rate de aprobación en procesos de sele
 
 ## Filosofía
 
-> Tu CV no consigue el trabajo. Consigue la entrevista.
+> Your resume doesn't get you the job. It gets you the interview.
 
 Cada palabra cuenta. Cada número suma. Cada keyword mal ubicada resta.
 
@@ -38,14 +38,14 @@ Cada palabra cuenta. Cada número suma. Cada keyword mal ubicada resta.
 
 # Fases
 
-## 1. Recopilación de inputs
+## 1. Input Collection
 
 Recolectar:
 - CV actual (texto o archivo)
 - JD target (texto o descripción del rol)
 - Si no hay JD, preguntar: industria + posición + seniority
 
-## 2. Análisis de matching de keywords
+## 2. Keyword Match Analysis
 
 Extraer keywords del JD en 3 categorías:
 
@@ -61,14 +61,14 @@ Generar matriz de matching:
 
 ### ⚠️ Checkpoint obligatorio
 
-**Después de la Fase 2, PAUSAR.** Presentar al usuario:
+**Después de Fase 2, PAUSAR.** Presentar al usuario:
 - Matriz de cobertura con gaps identificados
 - Preguntar: ¿tenés experiencia en [gap 1], [gap 2], [gap 3]?
-- Esperar respuesta antes de continuar a la Fase 3
+- Esperar respuesta antes de continuar a Fase 3
 
 No asumir ni inventar. El usuario decide qué gaps puede cubrir y cómo.
 
-## 3. Reescritura STAR
+## 3. STAR Rewriting
 
 Reescribir cada entrada de experiencia:
 
@@ -79,24 +79,24 @@ Reescribir cada entrada de experiencia:
 | **A** Action | Acciones específicas, métodos, herramientas |
 | **R** Result | Outcomes cuantificados, datos |
 
-Cada rewrite de entry debe:
+Cada entry rewrite debe:
 - [ ] Al menos 1 dato cuantificado
 - [ ] Cubrir ≥ 3 de 4 elementos STAR
 - [ ] Empezar con verbo de acción (led, built, optimized, drove)
 - [ ] Máximo 3 líneas (legibilidad ATS)
-- [ ] Incorporar keywords faltantes de la Fase 2, según lo confirmado por el usuario
+- [ ] Incorporar keywords faltantes del Phase 2, según lo confirmado por el usuario
 
-## 4. Verificación de compatibilidad ATS
+## 4. ATS Compatibility Check
 
-| Check | Estándar |
+| Check | Standard |
 |---|---|
-| Formato de archivo | PDF o DOCX (PDF preferred) |
-| Layout | Una sola columna, headings estándar |
-| Fuentes | Arial, Calibri, Times New Roman |
-| Tablas | Evitar layouts complejos |
-| Títulos de sección | "Work Experience", "Education", "Skills" |
-| Formato de fechas | Consistente (Jan 2023 – Jun 2024) |
-| Nombre de archivo | FirstName_LastName_Role_Resume.pdf |
+| File format | PDF o DOCX (PDF preferred) |
+| Layout | Single-column, standard headings |
+| Fonts | Arial, Calibri, Times New Roman |
+| Tables | Avoid complex layouts |
+| Section titles | "Work Experience", "Education", "Skills" |
+| Date format | Consistent (Jan 2023 - Jun 2024) |
+| File naming | FirstName_LastName_Role_Resume.pdf |
 
 ## 5. Output
 
@@ -109,17 +109,17 @@ Cada rewrite de entry debe:
 # Outputs
 
 - Keyword match matrix
-- Comparación STAR antes/después
-- Scorecard de compatibilidad ATS
+- Before/after STAR comparison
+- ATS compatibility scorecard
 - CV optimizado listo para postular
 
-## Scripts auxiliares
+## Helper Scripts
 
 Scripts en `skills/cv-tailor/scripts/`:
 
 | Script | Uso |
 |---|---|
-| `keyword-matcher.py <cv.txt> <jd.txt>` | Compara keywords del CV contra la descripción del puesto y genera matriz de cobertura. Usar en la Fase 2 (Keyword Match Analysis). |
+| `keyword-matcher.py <cv.txt> <jd.txt>` | Compara keywords del CV contra la descripción del puesto y genera matriz de cobertura. Usar en Fase 2 (Keyword Match Analysis). |
 
 ---
 
@@ -132,43 +132,42 @@ Scripts en `skills/cv-tailor/scripts/`:
 
 ---
 
-## Ejemplos STAR por rol
+## STAR Examples by Role
 
 ### Frontend Engineer
 
-**Antes:** "Construí componentes de UI para el dashboard"
-**Después:** "Diseñé y construí 12 componentes React reutilizables para el dashboard de analytics, adoptados en 3 equipos de producto, reduciendo el tiempo de desarrollo de UI en 40% y mejorando el score de accesibilidad de Lighthouse de 72 a 94."
+**Before:** "Built UI components for the dashboard"
+**After:** "Designed and built 12 reusable React components for the analytics dashboard, adopted across 3 product teams, reducing UI development time by 40% and improving Lighthouse accessibility score from 72 to 94."
 
-**Antes:** "Responsable de mejoras de performance"
-**Después:** "Lideré la iniciativa de performance del frontend de un producto SaaS (MAU 200K+), implementando code splitting, lazy loading y optimización de imágenes. Reduje el LCP de 4.2s a 1.8s y mejoré el score de Performance de Lighthouse de 55 a 92, impactando directamente en la retención de usuarios."
+**Before:** "Responsible for performance improvements"
+**After:** "Led frontend performance initiative for a SaaS product (MAU 200K+), implementing code splitting, lazy loading, and image optimization. Reduced LCP from 4.2s to 1.8s and improved Lighthouse Performance score from 55 to 92, directly impacting user retention."
 
 ### Fullstack Engineer
 
-**Antes:** "Trabajé en el sistema de billing"
-**Después:** "Arquitecté y construí desde cero el sistema completo de billing (Stripe + Supabase + Edge Functions), manejando gestión de suscripciones, facturación y conciliación de pagos. Procesé $50K+ MRR con 99.9% de uptime y cero fallos de pago en 6 meses."
+**Before:** "Worked on the billing system"
+**After:** "Architected and built the complete billing system from scratch (Stripe + Supabase + Edge Functions), handling subscription management, invoicing, and payment reconciliation. Processed $50K+ MRR with 99.9% uptime and zero payment failures in 6 months."
 
-**Antes:** "Construí APIs y features de frontend"
-**Después:** "Diseñé e implementé 15 endpoints RESTful de API para el sistema de gestión de usuarios (Node.js + PostgreSQL), sirviendo 50K+ requests diarios con <100ms de latencia p95. Construí el panel de admin en React correspondiente, reduciendo el tiempo de gestión manual de usuarios en 80%."
+**Before:** "Built APIs and frontend features"
+**After:** "Designed and implemented 15 RESTful API endpoints for the user management system (Node.js + PostgreSQL), serving 50K+ daily requests with <100ms p95 latency. Built the corresponding React admin panel, reducing manual user management time by 80%."
 
 ### Product / Growth Engineer
 
-**Antes:** "Trabajé en iniciativas de crecimiento de usuarios"
-**Después:** "Durante una meseta de crecimiento de usuarios (DAU 500K+), lideré el análisis del funnel de activación, identifiqué 3 puntos críticos de abandono y diseñé un flujo de onboarding testeado con A/B. Incrementé la retención D1 de 32% a 45% y el MAU en 18% en 3 meses."
+**Before:** "Worked on user growth initiatives"
+**After:** "During a user growth plateau (DAU 500K+), led activation funnel analysis, identified 3 critical drop-off points, and designed an A/B tested onboarding flow. Increased D1 retention from 32% to 45% and MAU by 18% within 3 months."
 
-**Antes:** "Hice A/B testing"
-**Después:** "Diseñé y ejecuté 20+ experimentos A/B en la página de precios, analizando significancia estadística (p<0.05) y comportamiento de usuarios. La variante ganadora incrementó la conversión de trial a pago en 22%, sumando $15K MRR."
+**Before:** "Did A/B testing"
+**After:** "Designed and executed 20+ A/B experiments on the pricing page, analyzing statistical significance (p<0.05) and user behavior. The winning variant increased trial-to-paid conversion by 22%, adding $15K MRR."
 
 ### Accessibility Specialist
 
-**Antes:** "Hice la app accesible"
-**Después:** "Conduje una auditoría completa de WCAG 2.1 AA de una SPA de React (200+ componentes), identificando y arreglando 85 problemas de accesibilidad. Implementé testing automatizado de a11y con axe-core en CI, logrando 100% de pass rate. Reduje los reportes de bugs relacionados con accesibilidad en 90%."
+**Before:** "Made the app accessible"
+**After:** "Conducted a full WCAG 2.1 AA audit of a React SPA (200+ components), identifying and fixing 85 accessibility issues. Implemented automated a11y testing with axe-core in CI, achieving 100% pass rate. Reduced accessibility-related bug reports by 90%."
 
-**Antes:** "Trabajé en accesibilidad"
-**Después:** "Lideré la remediación de accesibilidad de un dashboard legacy usado por 10K+ empleados del gobierno. Subí de cumplimiento WCAG 2.0 A a WCAG 2.1 AA, entrené a 5 developers en patrones ARIA y establecí a11y como criterio de gating en code review."
+**Before:** "Worked on accessibility"
+**After:** "Led the accessibility remediation of a legacy dashboard used by 10K+ government employees. Upgraded from WCAG 2.0 A to WCAG 2.1 AA compliance, trained 5 developers on ARIA patterns, and established a11y as a gating criterion in code review."
 
 ---
 
-# Skills relacionadas
+# Related Skills
 
 - [Mock Interview Drill](../mock-interview-drill): Para practicar entrevistas post-CV
-- [Narrative Content](../narrative-content): Para contar tu historia profesional

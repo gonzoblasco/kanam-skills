@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-supabase-mcp.py — stdio wrapper for @supabase/mcp-server-supabase
+supabase-mcp.py - stdio wrapper for @supabase/mcp-server-supabase
 Usage:
   python3 supabase-mcp.py list
   python3 supabase-mcp.py call list_projects

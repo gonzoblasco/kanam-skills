@@ -10,104 +10,113 @@ metadata:
 
 # MCP Orchestrator
 
-Skill central para gestionar servidores MCP como infraestructura descubrible. Decide si instalar un MCP externo, absorber su idea en una skill nativa de OpenClaw, o descartarlo.
+Central skill for managing MCP servers as discoverable infrastructure. Decides whether to install an external MCP, absorb its idea into a native OpenClaw skill, or discard it.
 
-## Cuándo usar
+## When to use
 
-- Alguien comparte un servidor MCP, una awesome list o un plugin de MCPMarket.
-- Necesitás comparar múltiples servidores MCP para la misma tarea.
-- Querés envolver un servidor MCP en un script helper local (stdio, SSE, Streamable HTTP).
-- Necesitás combinar múltiples servidores MCP en un solo workflow.
-- Estás evaluando si una herramienta externa debería convertirse en una skill nativa.
+- Someone shares an MCP server, awesome list, or MCPMarket plugin.
+- Need to compare multiple MCP servers for the same task.
+- Want to wrap an MCP server in a local helper script (stdio, SSE, Streamable HTTP).
+- Need to combine multiple MCP servers into a single workflow.
+- Evaluating whether an external tool should become a native skill.
 
-## Principios
+## Principles
 
-1. Preferir skills nativas de OpenClaw por sobre servidores MCP frágiles/de pago/redundantes.
-2. Absorber buenas ideas de herramientas externas en skills nativas en vez de instalar dependencias.
-3. Guardar todas las API keys y tokens fuera del workspace en `~/.openclaw/secrets/`.
-4. Nunca instalar un servidor que requiera riesgo de cuenta personal (WhatsApp, Instagram, email personal) sin aprobación explícita.
-5. Favorecer servidores que sean: open source, mantenidos activamente, con free tier que funciona de verdad, local-first, sin laberinto de OAuth.
+1. Prefer native OpenClaw skills over fragile/paid/redundant MCP servers.
+2. Absorb good ideas from external tools into native skills instead of installing dependencies.
+3. Store all API keys and tokens outside the workspace in `~/.openclaw/secrets/`.
+4. Never install a server that requires personal account risk (WhatsApp, Instagram, personal email) without explicit approval.
+5. Favor servers that are: open source, actively maintained, free tier actually works, local-first, no OAuth maze.
 
-## Workflow: evaluar un servidor MCP
+## Workflow: evaluate one MCP server
 
-1. Obtener el README y la info del paquete. Usar `web_fetch` o `web_search`.
-2. Puntuar contra el checklist:
-   - ¿OpenClaw ya tiene cobertura nativa? (browser, web_search, db_query, etc.)
-   - ¿Es open source y está mantenido? (último commit, issues, estrellas)
-   - ¿El free tier funciona de verdad? (probar si hace falta)
-   - ¿Requiere credenciales personales o un servicio de pago?
-   - ¿Es lo bastante estable como para depender de él? (stdio/SSE/HTTP, manejo de errores)
-   - ¿Es redundante con una skill existente?
-3. Decidir:
-   - **Instalar**: correr el servidor, envolverlo en `scripts/<server>-mcp.py` o `.sh`, verificar `tools/list`.
-   - **Absorber**: capturar la idea útil en una propuesta de skill existente o nueva vía `skill_workshop`.
-   - **Descartar**: documentar el motivo en las daily notes y seguir adelante.
-4. Si se instala, guardar el wrapper bajo `skills/<skill>/scripts/`, nunca guardar secrets en el código.
-5. Si se absorbe, crear o actualizar una propuesta de `skill_workshop` de inmediato.
-6. Registrar la decisión en `memory/YYYY-MM-DD.md`.
+1. Fetch README and package info. Use `web_fetch` or `web_search`.
+2. Score against checklist:
+   - Does OpenClaw already have native coverage? (browser, web_search, db_query, etc.)
+   - Is it open source and maintained? (last commit, issues, stars)
+   - Does the free tier actually work? (test if needed)
+   - Does it require personal credentials or paid service?
+   - Is it stable enough to rely on? (stdio/SSE/HTTP, error handling)
+   - Is it redundant with an existing skill?
+3. Decide:
+   - **Install**: run the server, wrap it in `scripts/<server>-mcp.py` or `.sh`, verify `tools/list`.
+   - **Absorb**: capture the useful idea in an existing or new skill proposal via `skill_workshop`.
+   - **Discard**: document reason in daily notes and move on.
+4. If installing, store wrapper under `skills/<skill>/scripts/`, never store secrets in code.
+5. If absorbing, create or update a `skill_workshop` proposal immediately.
+6. Log decision in `memory/YYYY-MM-DD.md`.
 
-## Workflow: evaluar una awesome list o colección de MCPMarket
+## Workflow: evaluate an awesome list or MCPMarket collection
 
-1. Obtener la lista completa. Guardarla como artefacto markdown si es grande.
-2. Categorizar las entradas (DB, web, social, dev tools, multimedia, cloud, etc.).
-3. Para cada entrada, correr rápido el checklist de servidor único.
-4. Producir una tabla de triage: install / absorb / discard / standby.
-5. Destacar los mejores candidatos e ideas a absorber.
-6. Registrar los items de backlog en la tabla SQLite `backlog` para skills de seguimiento.
+1. Fetch full list. Save as markdown artifact if large.
+2. Categorize entries (DB, web, social, dev tools, multimedia, cloud, etc.).
+3. For each entry, run the single-server checklist quickly.
+4. Produce triage table: install / absorb / discard / standby.
+5. Surface top candidates and ideas to absorb.
+6. Register backlog items in SQLite `backlog` table for follow-up skills.
 
-## Workflow: envolver un servidor MCP
+## Workflow: wrap an MCP server
 
-1. Identificar el transporte: stdio, SSE o Streamable HTTP.
-2. Para servidores stdio (la mayoría de los MCP de Node/Python):
-   - Crear un wrapper Python `scripts/<server>-mcp.py` que haga el handshake completo de initialize de MCP.
-   - Soportar subcomandos `list` y `call <tool> [args]`.
-   - Leer el token de `~/.openclaw/secrets/<name>` si hace falta.
-   - Patrón de ejemplo: `skills/github/scripts/github-mcp.py`.
-3. Para servidores HTTP:
-   - Crear `scripts/<server>-mcp.sh` o un helper Python que gestione la sesión y envíe JSON-RPC.
-   - Patrón de ejemplo: `/tmp/godot-mcp.sh`.
-4. Probar con `tools/list` y una llamada a tool antes de considerarlo funcionando.
+1. Identify transport: stdio, SSE, or Streamable HTTP.
+2. For stdio servers (most Node/Python MCPs):
+   - Create `scripts/<server>-mcp.py` Python wrapper that performs full MCP initialize handshake.
+   - Support subcommands `list` and `call <tool> [args]`.
+   - Read token from `~/.openclaw/secrets/<name>` if needed.
+   - Example pattern: `skills/github/scripts/github-mcp.py`.
+3. For HTTP servers:
+   - Create `scripts/<server>-mcp.sh` or Python helper that manages session and posts JSON-RPC.
+   - Example pattern: `/tmp/godot-mcp.sh`.
+4. Test with `tools/list` and one tool call before considering it working.
 
-## Workflow: orquestar múltiples MCPs
+## Workflow: register a server natively in OpenClaw
 
-1. Definir la tarea y los MCPs involucrados.
-2. Usar los scripts wrapper como límites deterministas de pasos.
-3. Encadenar salidas: el resultado de un MCP se vuelve la entrada del siguiente.
-4. Mantener las salidas intermedias en artefactos de `/tmp/` o `memory/` para inspección.
-5. Agregar manejo de errores: si falla una llamada MCP, detenerse y reportar.
-6. Documentar la receta de orquestación en el `.knowledge/` del proyecto relevante o en `references/` de la skill.
+1. Add the server: `openclaw mcp add <name> --url <url> --transport streamable-http` (remote) or `--command`/`--arg` (stdio).
+2. Probe it: `openclaw mcp doctor <name> --probe`. A probe that fails with `Proxy response (403) !== 200 when HTTP Tunneling` means the host is not in `secrets.egressProxy.allowedHosts`.
+3. Fix egress: bind the secret to the host with `openclaw secrets store set <NAME> --allow-host <host>` (repeatable), and add the host to `secrets.egressProxy.allowedHosts` if the proxy allowlist is set. Restart the Gateway after changing the allowlist.
+4. For OAuth servers, run `openclaw mcp login <name>` and approve in the browser; verify with `openclaw mcp status --verbose`.
+5. `mcp.servers.*.headers.*` does not accept SecretRef; keep tokens out of config literals and prefer OAuth or env-template refs.
+6. Reload runtimes with `openclaw mcp reload` so the agent picks up the new server.
+
+## Workflow: orchestrate multiple MCPs
+
+1. Define the task and the MCPs involved.
+2. Use wrapper scripts as deterministic step boundaries.
+3. Chain outputs: one MCP's result becomes the next MCP's input.
+4. Keep intermediate outputs in `/tmp/` or `memory/` artifacts for inspection.
+5. Add error handling: if an MCP call fails, stop and report.
+6. Document the orchestration recipe in the relevant project `.knowledge/` or skill `references/`.
 
 ## Helpers
 
-- `scripts/discover-mcp.py`: Buscar en awesome lists y MCPMarket servidores MCP que coincidan con una query.
-- `scripts/evaluate-mcp.py`: Puntuar un candidato contra el checklist y devolver install/absorb/discard/standby.
-- `scripts/wrap-stdio-mcp.py`: Generar un wrapper stdio MCP a partir del comando del servidor y un nombre de secret opcional.
-- `scripts/wrap-http-mcp.py`: Generar un wrapper HTTP MCP para endpoints SSE/Streamable.
+- `scripts/discover-mcp.py`: Search awesome lists and MCPMarket for MCP servers matching a query.
+- `scripts/evaluate-mcp.py`: Score a candidate against the checklist and return install/absorb/discard/standby.
+- `scripts/wrap-stdio-mcp.py`: Generate a stdio MCP wrapper from server command and optional secret name.
+- `scripts/wrap-http-mcp.py`: Generate an HTTP MCP wrapper for SSE/Streamable endpoints.
 
-Si modificás alguno de estos scripts, corré `npm test` desde la raíz del workspace antes de commitear.
+If you modify any of these scripts, run `npm test` from the workspace root before committing.
 
-## Reglas de seguridad
+## Safety rules
 
-- No ejecutar comandos de instalación arbitrarios de READMEs externos sin inspeccionarlos.
-- Preferir `npx -y <package>` o `pip install --user` por sobre instalaciones globales al probar.
-- Nunca pegar API keys en el chat, archivos del workspace o commits de Git.
-- Si un servidor pide OAuth, login por browser o escaneo de QR, pausar y preguntar al usuario.
-- Si un servidor envía mensajes, publica contenido público o accede a cuentas personales, preguntar primero.
+- Do not execute arbitrary install commands from external READMEs without inspecting them.
+- Prefer `npx -y <package>` or `pip install --user` over global installs when testing.
+- Never paste API keys into chat, workspace files, or Git commits.
+- If a server wants OAuth, browser login, or QR scan, pause and ask the user.
+- If a server sends messages, posts public content, or accesses personal accounts, ask first.
 
-## Decisiones comunes
+## Common decisions
 
-- Búsqueda web / fetch / automatización de browser → usar las tools nativas de OpenClaw, descartar MCPs externos.
-- Acceso a bases de datos → preferir `db_query`/`db_execute` y skills específicas de proyecto como `supabase-assistant`.
-- Generación de imágenes → usar la skill nativa `image-generation` (OpenAI/Gemini).
-- Componentes UI / shadcn → usar la skill nativa `ui-generation`.
-- Investigación de diseño / revisión visual → usar la skill nativa `design-orchestrator`.
-- Agent workflow / multi-agente → usar la skill nativa `agent-workflow`.
-- Desarrollo de juegos Godot → usar la skill nativa `godot-mcp` con `yanhuifair/godot-mcp`.
-- GitHub → usar la skill nativa `github` con el wrapper opcional `github-mcp.py`.
+- Web search / fetch / browser automation → use native OpenClaw tools, discard external MCPs.
+- Database access → prefer `db_query`/`db_execute` and project-specific skills like `supabase-assistant`.
+- Image generation → use native `image-generation` skill (OpenAI/Gemini).
+- UI components / shadcn → use native `ui-generation` skill.
+- Design research / visual review → use native `design-orchestrator` skill.
+- Agent workflow / multi-agent → use native `agent-workflow` skill.
+- Godot game dev → use native `godot-mcp` skill with `yanhuifair/godot-mcp`.
+- GitHub → use native `github` skill with optional `github-mcp.py` wrapper.
 
-## Integración con backlog
+## Backlog integration
 
-Después de evaluar, registrar las ideas de seguimiento en la tabla SQLite `backlog`:
+After evaluation, register follow-up ideas in the SQLite `backlog` table:
 
 ```sql
 INSERT INTO backlog (title, priority, status) VALUES
@@ -115,8 +124,8 @@ INSERT INTO backlog (title, priority, status) VALUES
 ('Crear skill docker-assistant con docker-mcp', 'low', 'pending');
 ```
 
-## Referencias
+## References
 
-- `references/mcp-transports.md` - detalles de handshake de stdio, SSE, Streamable HTTP.
-- `references/wrapper-template.py` - plantilla para wrapper stdio MCP.
-- `references/evaluation-criteria.md` - checklist completo con ejemplos.
+- `references/mcp-transports.md` - stdio, SSE, Streamable HTTP handshake details.
+- `references/wrapper-template.py` - template for stdio MCP wrapper.
+- `references/evaluation-criteria.md` - full checklist with examples.

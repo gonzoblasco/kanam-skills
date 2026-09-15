@@ -1,113 +1,113 @@
-# Criterios de Refinamiento y Evaluacion
+# Refinement & Evaluation Criteria
 
-Usa esta rubrica durante la Fase 2 (Evaluar y Converger) para poner a prueba las direcciones de la idea. No todos los criterios aplican a todas las ideas: usa tu criterio sobre que dimensiones importan mas para el contexto especifico.
+Use this rubric during Phase 2 (Evaluate & Converge) to stress-test idea directions. Not every criterion applies to every idea - use judgment about which dimensions matter most for the specific context.
 
-## Dimensiones Centrales de Evaluacion
+## Core Evaluation Dimensions
 
-### 1. Valor para el Usuario
+### 1. User Value
 
-La dimension mas importante. Si el valor no esta claro, nada mas importa.
+The most important dimension. If the value isn't clear, nothing else matters.
 
-**Calmante del dolor vs. Vitamina:**
-- **Calmante del dolor:** Resuelve un problema agudo y frecuente. Los usuarios lo buscaran activamente. Cambiaran de su solucion actual. Senales: la gente describe el problema con emocion, ha construido workarounds, pagara por una solucion.
-- **Vitamina:** Agradable de tener. Hace algo marginalmente mejor. Los usuarios no se van a esforzar. Senales: la gente asiente cortesmente, dice "que copado", y luego no cambia su comportamiento.
+**Painkiller vs. Vitamin:**
+- **Painkiller:** Solves an acute, frequent problem. Users will actively seek this out. They'll switch from their current solution. Signs: people describe the problem with emotion, they've built workarounds, they'll pay for a solution.
+- **Vitamin:** Nice to have. Makes something marginally better. Users won't go out of their way. Signs: people nod politely, say "that's cool," then don't change behavior.
 
-**Preguntas para hacer:**
-- Podes nombrar 3 personas especificas que tienen este problema ahora mismo?
-- Que estan haciendo hoy en su lugar? (El competidor real es siempre el workaround actual.)
-- Cambiarian de su enfoque actual? Que los haria cambiar?
-- Con que frecuencia se encuentran con este problema? (Los problemas diarios > los mensuales.)
-- Es un problema de "pull" (los usuarios lo estan pidiendo) o de "push" (vos crees que deberian quererlo)?
+**Questions to ask:**
+- Can you name 3 specific people who have this problem right now?
+- What are they doing today instead? (The real competitor is always the current workaround.)
+- Would they switch from their current approach? What would make them switch?
+- How often do they encounter this problem? (Daily problems > monthly problems)
+- Is this a "pull" problem (users are asking for this) or a "push" problem (you think they should want this)?
 
-**Senales de alerta:**
-- "Todos podrian usar esto" - si no podes nombrar un usuario especifico, el valor no esta claro
-- "Es como X pero mejor" - las mejoras marginales rara vez impulsan la adopcion
-- El problema es real pero raro: alta intensidad pero baja frecuencia rara vez justifica un producto
+**Red flags:**
+- "Everyone could use this" - if you can't name a specific user, the value isn't clear
+- "It's like X but better" - marginal improvements rarely drive adoption
+- The problem is real but rare - high intensity but low frequency rarely justifies a product
 
-### 2. Viabilidad
+### 2. Feasibility
 
-Podes construir esto realmente? No solo tecnicamente, sino practicamente.
+Can you actually build this? Not just technically, but practically.
 
-**Viabilidad tecnica:**
-- La tecnologia central existe y funciona de forma confiable?
-- Cual es el problema tecnico mas dificil? Es un problema conocido-dificil o uno novedoso?
-- Hay dependencias de terceros, APIs o fuentes de datos que no controlas?
-- Cual es el stack tecnico minimo necesario? (Si la respuesta es "mucho", eso es una senal.)
+**Technical feasibility:**
+- Does the core technology exist and work reliably?
+- What's the hardest technical problem? Is it a known-hard problem or a novel one?
+- Are there dependencies on third parties, APIs, or data sources you don't control?
+- What's the minimum technical stack needed? (If the answer is "a lot," that's a signal.)
 
-**Viabilidad de recursos:**
-- Cual es el equipo/esfuerzo minimo para construir un MVP?
-- Requiere experiencia especializada que no tenes?
-- Hay requisitos regulatorios, legales o de cumplimiento?
+**Resource feasibility:**
+- What's the minimum team/effort to build an MVP?
+- Does it require specialized expertise you don't have?
+- Are there regulatory, legal, or compliance requirements?
 
-**Tiempo-hasta-valor:**
-- Que tan rapido podes poner algo frente a los usuarios?
-- Hay una version que entregue valor en dias/semanas, no meses?
-- Cual es el camino critico? Que tiene que pasar primero?
+**Time-to-value:**
+- How quickly can you get something in front of users?
+- Is there a version that delivers value in days/weeks, not months?
+- What's the critical path? What has to happen first?
 
-**Senales de alerta:**
-- "Solo necesitamos resolver [problema de investigacion muy dificil] primero"
-- Multiples dependencias que necesitan funcionar todas simultaneamente
-- El MVP aun requiere meses de trabajo, probablemente no es lo suficientemente minimo
+**Red flags:**
+- "We just need to solve [very hard research problem] first"
+- Multiple dependencies that all need to work simultaneously
+- MVP still requires months of work - likely not minimal enough
 
-### 3. Diferenciacion
+### 3. Differentiation
 
-Que lo hace genuinamente diferente? No mejor: *diferente*.
+What makes this genuinely different? Not better - *different*.
 
-**Preguntas para hacer:**
-- Si un usuario le describiera esto a un amigo, que diria? Esa descripcion es convincente?
-- Que es la unica cosa que esto hace que nada mas hace? (Si no podes nombrar una, eso es un problema.)
-- Esta diferenciacion es duradera? Puede un competidor copiarla en una semana?
-- Es la diferencia algo que a los usuarios realmente les importa, o solo algo que a los constructores les resulta interesante?
+**Questions to ask:**
+- If a user described this to a friend, what would they say? Is that description compelling?
+- What's the one thing this does that nothing else does? (If you can't name one, that's a problem.)
+- Is this differentiation durable? Can a competitor copy it in a week?
+- Is the difference something users actually care about, or just something builders find interesting?
 
-**Tipos de diferenciacion (de mas fuerte a mas debil):**
-1. **Nueva capacidad:** Hace algo que antes era imposible
-2. **Mejora 10x:** Tan mejor en una dimension clave que cambia el comportamiento
-3. **Nueva audiencia:** Lleva una capacidad existente a personas que estaban excluidas
-4. **Nuevo contexto:** Funciona en una situacion donde las soluciones existentes fallan
-5. **Mejor UX:** Misma capacidad, experiencia dramaticamente mas simple
-6. **Mas barato:** Lo mismo, menor costo (la mas debil: facil de competir en contra)
+**Types of differentiation (strongest to weakest):**
+1. **New capability:** Does something that was previously impossible
+2. **10x improvement:** So much better on a key dimension that it changes behavior
+3. **New audience:** Brings an existing capability to people who were excluded
+4. **New context:** Works in a situation where existing solutions fail
+5. **Better UX:** Same capability, dramatically simpler experience
+6. **Cheaper:** Same thing, lower cost (weakest - easily competed away)
 
-**Senales de alerta:**
-- La diferenciacion es enteramente sobre tecnologia, no sobre experiencia del usuario
-- "Somos mas rapidos/baratos/lindos" sin una razon estructural
-- La funcion que diferencia no es la funcion que mas les importa a los usuarios
+**Red flags:**
+- Differentiation is entirely about technology, not user experience
+- "We're faster/cheaper/prettier" without a structural reason why
+- The feature that differentiates is not the feature users care most about
 
-## Auditoria de Suposiciones
+## Assumption Audit
 
-Para cada direccion de la idea, lista explicitamente las suposiciones en tres categorias:
+For every idea direction, explicitly list assumptions in three categories:
 
-### Debe Ser Verdad (Rompe-acuerdos)
-Suposiciones que, si estan equivocadas, matan la idea por completo. Estas necesitan validacion antes de construir.
+### Must Be True (Dealbreakers)
+Assumptions that, if wrong, kill the idea entirely. These need validation before building.
 
-Ejemplo: "Los usuarios compartiran sus datos con nosotros" - si no lo hacen, el producto entero no funciona.
+Example: "Users will share their data with us" - if they won't, the entire product doesn't work.
 
-### Deberia Ser Verdad (Importante)
-Suposiciones que impactan significativamente el exito pero no matan la idea. Podes ajustar el enfoque si estan equivocadas.
+### Should Be True (Important)
+Assumptions that significantly impact success but don't kill the idea. You can adjust the approach if these are wrong.
 
-Ejemplo: "Los usuarios prefieren el autoservicio a hablar con una persona" - si esta equivocada, necesitas un go-to-market diferente, pero el producto central aun puede funcionar.
+Example: "Users prefer self-serve over talking to a person" - if wrong, you need a different go-to-market, but the core product can still work.
 
-### Podria Ser Verdad (Agradable de Tener)
-Suposiciones sobre funciones secundarias u optimizaciones. No las valides hasta que el nucleo este probado.
+### Might Be True (Nice to Have)
+Assumptions about secondary features or optimizations. Don't validate these until the core is proven.
 
-Ejemplo: "Los usuarios querran compartir sus resultados con companeros" - una funcion de crecimiento, no una propuesta de valor central.
+Example: "Users will want to share their results with teammates" - a growth feature, not a core value proposition.
 
-## Marco de Decision
+## Decision Framework
 
-Cuando elijas entre direcciones, clasificalas en esta matriz:
+When choosing between directions, rank on this matrix:
 
-|                    | Alta Viabilidad | Baja Viabilidad |
-|--------------------|-----------------|-----------------|
-| **Alto Valor**     | Hace esto primero | Vale la pena el riesgo |
-| **Bajo Valor**     | Solo si es trivial | No hagas esto |
+|                    | High Feasibility | Low Feasibility |
+|--------------------|-------------------|-----------------|
+| **High Value**     | Do this first     | Worth the risk   |
+| **Low Value**      | Only if trivial   | Don't do this    |
 
-Luego usa la diferenciacion como desempate entre opciones en el mismo cuadrante.
+Then use differentiation as the tiebreaker between options in the same quadrant.
 
-## Principios de Alcance del MVP
+## MVP Scoping Principles
 
-Cuando definas el alcance del MVP para la direccion elegida:
+When defining MVP scope for the chosen direction:
 
-1. **Un solo trabajo, bien hecho.** El MVP deberia clavar exactamente un trabajo de usuario. No tres trabajos hechos parcialmente.
-2. **La suposicion mas riesgosa primero.** El proposito principal del MVP es probar la suposicion con mas probabilidad de estar equivocada.
-3. **Time-box, no lista de funciones.** "Que podemos construir y probar en [periodo]?" es mejor que "Que funciones necesitamos?"
-4. **La lista de 'Lo que no se va a hacer' es obligatoria.** Nombra explicitamente lo que estas recortando y por que. Esto previene el scope creep y fuerza una priorizacion honesta.
-5. **Si no es vergonzoso, esperaste demasiado.** La primera version deberia sentirse incompleta para el constructor. Si no lo es, sobre-construiste.
+1. **One job, done well.** The MVP should nail exactly one user job. Not three jobs done partially.
+2. **The riskiest assumption first.** The MVP's primary purpose is to test the assumption most likely to be wrong.
+3. **Time-box, not feature-list.** "What can we build and test in [timeframe]?" is better than "What features do we need?"
+4. **The 'Not Doing' list is mandatory.** Explicitly name what you're cutting and why. This prevents scope creep and forces honest prioritization.
+5. **If it's not embarrassing, you waited too long.** The first version should feel incomplete to the builder. If it doesn't, you over-built.

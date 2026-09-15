@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""keyword-matcher.py — Match CV keywords against a job description.
+"""keyword-matcher.py - Match CV keywords against a job description.
 
 Usage:
   python3 keyword-matcher.py <cv-file> <jd-file> [--output <file>]

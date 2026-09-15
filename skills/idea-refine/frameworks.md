@@ -1,99 +1,99 @@
-# Referencia de Marcos de Ideacion
+# Ideation Frameworks Reference
 
-Usa estos marcos de forma selectiva. Elige el lente que encaje con la idea, no ejecutes cada marco mecanicamente. El objetivo es desbloquear el pensamiento, no seguir una checklist.
+Use these frameworks selectively. Pick the lens that fits the idea - don't mechanically run every framework. The goal is to unlock thinking, not to follow a checklist.
 
 ## SCAMPER
 
-Una forma estructurada de transformar una idea existente aplicando siete operaciones diferentes:
+A structured way to transform an existing idea by applying seven different operations:
 
-- **Substitute (Sustituir):** Que componente, material o proceso podrias intercambiar? Que pasaria si reemplazaras la tecnologia central? La audiencia objetivo? El modelo de negocio?
-- **Combine (Combinar):** Que pasaria si fusionaras esto con otro producto, servicio o idea? Que dos cosas que normalmente no van juntas crearian algo nuevo?
-- **Adapt (Adaptar):** Que mas es como esto? Que ideas de otras industrias, dominios o periodos podrias tomar prestadas? Que paralelo existe en la naturaleza?
-- **Modify (Modificar, Magnificar/Minimizar):** Que pasaria si lo hicieras 10 veces mas grande? 10 veces mas chico? Que pasaria si exageraras una funcion? Que pasaria si lo redujeras al minimo absoluto?
-- **Put to other uses (Otros usos):** Quien mas podria usar esto? Que otros problemas podria resolver? Que pasa si lo usas en un contexto completamente diferente?
-- **Eliminate (Eliminar):** Que pasa si eliminas una funcion por completo? Cual es la version con cero configuracion? Como se veria con la mitad de los pasos?
-- **Reverse/Rearrange (Invertir/Reordenar):** Que pasaria si hicieras los pasos en orden inverso? Que pasaria si el usuario hiciera el trabajo en lugar del sistema (o viceversa)? Que pasaria si invirtieras la cadena de valor?
+- **Substitute:** What component, material, or process could you swap out? What if you replaced the core technology? The target audience? The business model?
+- **Combine:** What if you merged this with another product, service, or idea? What two things that don't usually go together would create something new?
+- **Adapt:** What else is like this? What ideas from other industries, domains, or time periods could you borrow? What parallel exists in nature?
+- **Modify (Magnify/Minimize):** What if you made it 10x bigger? 10x smaller? What if you exaggerated one feature? What if you stripped it to the absolute minimum?
+- **Put to other uses:** Who else could use this? What other problems could it solve? What happens if you use it in a completely different context?
+- **Eliminate:** What happens if you remove a feature entirely? What's the version with zero configuration? What would it look like with half the steps?
+- **Reverse/Rearrange:** What if you did the steps in the opposite order? What if the user did the work instead of the system (or vice versa)? What if you reversed the value chain?
 
-**Mejor para:** Mejorar o reimaginar productos/funciones existentes. Menos util para ideas greenfield.
+**Best for:** Improving or reimagining existing products/features. Less useful for greenfield ideas.
 
-## How Might We (HMW, Como Podriamos)
+## How Might We (HMW)
 
-Reformula los problemas como oportunidades usando el formato "How Might We..." (Como podriamos...):
+Reframe problems as opportunities using the "How Might We..." format:
 
-- Empeza con una observacion o punto de dolor
-- Reformulalo como "Como podriamos [resultado deseado] para [usuario especifico] sin [restriccion clave]?"
-- Genera multiples encuadres HMW del mismo problema: encuadres diferentes desbloquean soluciones diferentes
+- Start with an observation or pain point
+- Reframe it as "How might we [desired outcome] for [specific user] without [key constraint]?"
+- Generate multiple HMW framings of the same problem - different framings unlock different solutions
 
-**Cualidades de un buen HMW:**
-- Lo suficientemente angosto para ser accionable ("...ayudar a los usuarios nuevos a encontrar contenido relevante en sus primeros 5 minutos")
-- Lo suficientemente amplio para permitir soluciones creativas (no "...agregar una barra lateral de recomendaciones")
-- Contiene una tension o restriccion que fuerce la creatividad
+**Good HMW qualities:**
+- Narrow enough to be actionable ("...help new users find relevant content in their first 5 minutes")
+- Broad enough to allow creative solutions (not "...add a recommendation sidebar")
+- Contains a tension or constraint that forces creativity
 
-**Cualidades de un mal HMW:**
-- Demasiado amplio: "Como podriamos hacer felices a los usuarios?"
-- Demasiado angosto: "Como podriamos agregar un boton a la pagina de configuracion?"
-- Con la solucion incrustada: "Como podriamos construir un chatbot para soporte?"
+**Bad HMW qualities:**
+- Too broad: "How might we make users happy?"
+- Too narrow: "How might we add a button to the settings page?"
+- Solution-embedded: "How might we build a chatbot for support?"
 
-**Mejor para:** Reformular pensamientos estancados. Cuando alguien esta anclado en una solucion, traelo de vuelta al problema.
+**Best for:** Reframing stuck thinking. When someone is anchored on a solution, pull them back to the problem.
 
-## Pensamiento de Primeros Principios
+## First Principles Thinking
 
-Descompone la idea hasta sus verdades fundamentales y reconstrui desde ahi:
+Break the idea down to its fundamental truths, then rebuild from there:
 
-1. **Que sabemos que es verdad?** (no asumido, no convencional, realmente verdadero)
-2. **Que estamos asumiendo?** Lista cada suposicion, incluso las que se sienten obvias
-3. **Que suposiciones podemos cuestionar?** Para cada una, preguntate: "Esto es realmente una ley de la fisica, o solo como se ha hecho siempre?"
-4. **Reconstrui desde las verdades.** Si solo tuvieras las verdades fundamentales, que construirias?
+1. **What do we know is true?** (not assumed, not conventional - actually true)
+2. **What are we assuming?** List every assumption, even the ones that feel obvious
+3. **Which assumptions can we challenge?** For each, ask: "Is this actually a law of physics, or just how it's been done?"
+4. **Rebuild from the truths.** If you only had the fundamental truths, what would you build?
 
-**Mejor para:** Salir del pensamiento incremental. Cuando cada idea se siente como una pequena mejora sobre el status quo.
+**Best for:** Breaking out of incremental thinking. When every idea feels like a small improvement on the status quo.
 
-## Jobs to Be Done (JTBD, Trabajos por Hacer)
+## Jobs to Be Done (JTBD)
 
-Enfocate en lo que el usuario esta tratando de lograr, no en lo que dice que quiere:
+Focus on what the user is trying to accomplish, not what they say they want:
 
-- **Trabajo funcional:** Que tarea esta tratando de completar?
-- **Trabajo emocional:** Como quiere sentirse?
-- **Trabajo social:** Como quiere ser percibido?
+- **Functional job:** What task are they trying to complete?
+- **Emotional job:** How do they want to feel?
+- **Social job:** How do they want to be perceived?
 
-Formato: "Cuando [situacion], quiero [motivacion], para poder [resultado esperado]."
+Format: "When I [situation], I want to [motivation], so I can [expected outcome]."
 
-**Perspectiva clave:** La gente no compra productos, los contrata para hacer un trabajo. El producto competidor no siempre esta en la misma categoria. (Netflix compite con el sueno, no solo con otros servicios de streaming.)
+**Key insight:** People don't buy products - they hire them to do a job. The competing product isn't always in the same category. (Netflix competes with sleep, not just other streaming services.)
 
-**Mejor para:** Entender el problema real. Cuando no estas seguro de si estas resolviendo lo correcto.
+**Best for:** Understanding the real problem. When you're not sure if you're solving the right thing.
 
-## Ideacion Basada en Restricciones
+## Constraint-Based Ideation
 
-Impone restricciones deliberadamente para forzar soluciones creativas:
+Deliberately impose constraints to force creative solutions:
 
-- **Restriccion de tiempo:** "Que pasaria si solo tuvieras 1 dia para construir esto?"
-- **Restriccion de funciones:** "Que pasaria si solo pudiera tener una funcion?"
-- **Restriccion de tecnologia:** "Que pasaria si no pudieras usar [la tecnologia obvia]?"
-- **Restriccion de costo:** "Que pasaria si tuviera que ser gratis para siempre?"
-- **Restriccion de audiencia:** "Que pasaria si tu usuario nunca hubiera usado una computadora antes?"
-- **Restriccion de escala:** "Que pasaria si necesitara funcionar para 1.000 millones de usuarios? Y que tal solo para 10?"
+- **Time constraint:** "What if you only had 1 day to build this?"
+- **Feature constraint:** "What if it could only have one feature?"
+- **Tech constraint:** "What if you couldn't use [the obvious technology]?"
+- **Cost constraint:** "What if it had to be free forever?"
+- **Audience constraint:** "What if your user had never used a computer before?"
+- **Scale constraint:** "What if it needed to work for 1 billion users? What about just 10?"
 
-**Mejor para:** Cortar a traves de la complejidad. Cuando la idea esta creciendo demasiado o se esta volviendo demasiado vaga.
+**Best for:** Cutting through complexity. When the idea is growing too large or too vague.
 
 ## Pre-mortem
 
-Imagina que la idea ya fracaso. Trabaja hacia atras:
+Imagine the idea has already failed. Work backwards:
 
-1. Estamos dentro de 12 meses. El proyecto salio y fracaso. Que salio mal?
-2. Lista cada razon plausible del fracaso: tecnica, de mercado, de equipo, de timing
-3. Para cada modo de falla: Esto es prevenible? Es una senal de que la idea necesita cambiar?
-4. Que modos de falla estas dispuesto a aceptar? Cuales matarian el proyecto?
+1. It's 12 months from now. The project shipped and flopped. What went wrong?
+2. List every plausible reason for failure - technical, market, team, timing
+3. For each failure mode: Is this preventable? Is this a signal the idea needs to change?
+4. Which failure modes are you willing to accept? Which ones would kill the project?
 
-**Mejor para:** Evaluacion de la Fase 2. Poner a prueba ideas que se sienten bien pero que no han sido sometidas a presion.
+**Best for:** Phase 2 evaluation. Stress-testing ideas that feel good but haven't been pressure-tested.
 
-## Inspiracion Analogica
+## Analogous Inspiration
 
-Mira como otros dominios resolvieron problemas similares:
+Look at how other domains solved similar problems:
 
-- Que industria ya resolvio una version de este problema?
-- Como se veria esto si [empresa/producto especifico] lo construyera?
-- Que sistema natural funciona de esta forma?
-- Que precedente historico existe?
+- What industry has already solved a version of this problem?
+- What would this look like if [specific company/product] built it?
+- What natural system works this way?
+- What historical precedent exists?
 
-La clave es encontrar similitudes *estructurales*, no superficiales. "Uber para X" es superficial. "Un marketplace de dos lados que resuelve un problema de confianza entre extranos" es estructural.
+The key is finding *structural* similarities, not surface-level ones. "Uber for X" is surface-level. "A two-sided marketplace that solves a trust problem between strangers" is structural.
 
-**Mejor para:** Expansion de la Fase 1. Generar variaciones que se sientan genuinamente diferentes del enfoque obvio.
+**Best for:** Phase 1 expansion. Generating variations that feel genuinely different from the obvious approach.

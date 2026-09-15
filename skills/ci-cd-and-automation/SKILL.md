@@ -1,29 +1,29 @@
 ---
 name: ci-cd-and-automation
-description: Automatiza la configuración de pipelines de CI/CD. Usar al configurar o modificar pipelines de build y deployment. Usar cuando necesitás automatizar quality gates, configurar test runners en CI, o establecer estrategias de deployment.
+description: Automates CI/CD pipeline setup. Use when setting up or modifying build and deployment pipelines. Use when you need to automate quality gates, configure test runners in CI, or establish deployment strategies.
 ---
 
-# CI/CD y Automatización
+# CI/CD and Automation
 
-## Resumen
+## Overview
 
-Automatizá los quality gates para que ningún cambio llegue a producción sin pasar tests, lint, type checking y build. CI/CD es el mecanismo de enforcement para todas las demás skills - atrapa lo que los humanos y los agentes se pierden, y lo hace de forma consistente en cada cambio.
+Automate quality gates so that no change reaches production without passing tests, lint, type checking, and build. CI/CD is the enforcement mechanism for every other skill - it catches what humans and agents miss, and it does so consistently on every single change.
 
-**Shift Left:** Atrapá los problemas lo antes posible en el pipeline. Un bug atrapado en el linting cuesta minutos; el mismo bug atrapado en producción cuesta horas. Mové los checks hacia arriba - análisis estático antes de los tests, tests antes de staging, staging antes de producción.
+**Shift Left:** Catch problems as early in the pipeline as possible. A bug caught in linting costs minutes; the same bug caught in production costs hours. Move checks upstream - static analysis before tests, tests before staging, staging before production.
 
-**Más Rápido es Más Seguro:** Lotes más chicos y releases más frecuentes reducen el riesgo, no lo aumentan. Un deployment con 3 cambios es más fácil de debuggear que uno con 30. Los releases frecuentes generan confianza en el proceso de release en sí.
+**Faster is Safer:** Smaller batches and more frequent releases reduce risk, not increase it. A deployment with 3 changes is easier to debug than one with 30. Frequent releases build confidence in the release process itself.
 
-## Cuándo Usarlo
+## When to Use
 
-- Al configurar el pipeline de CI de un proyecto nuevo
-- Al agregar o modificar checks automatizados
-- Al configurar pipelines de deployment
-- Cuando un cambio debería disparar verificación automatizada
-- Al debuggear fallas de CI
+- Setting up a new project's CI pipeline
+- Adding or modifying automated checks
+- Configuring deployment pipelines
+- When a change should trigger automated verification
+- Debugging CI failures
 
-## El Pipeline de Quality Gates
+## The Quality Gate Pipeline
 
-Cada cambio pasa por estos gates antes del merge:
+Every change goes through these gates before merge:
 
 ```
 Pull Request Opened
@@ -51,11 +51,11 @@ Pull Request Opened
   Ready for review
 ```
 
-**Ningún gate se puede saltar.** Si el lint falla, arreglá el lint - no desactives la regla. Si un test falla, arreglá el código - no saltes el test.
+**No gate can be skipped.** If lint fails, fix lint - don't disable the rule. If a test fails, fix the code - don't skip the test.
 
-## Configuración de GitHub Actions
+## GitHub Actions Configuration
 
-### Pipeline Básico de CI
+### Basic CI Pipeline
 
 ```yaml
 # .github/workflows/ci.yml
@@ -97,7 +97,7 @@ jobs:
         run: npm audit --audit-level=high
 ```
 
-### Con Tests de Integración de Base de Datos
+### With Database Integration Tests
 
 ```yaml
   integration:
@@ -134,9 +134,9 @@ jobs:
           DATABASE_URL: postgresql://ci_user:${{ secrets.CI_DB_PASSWORD }}@localhost:5432/testdb
 ```
 
-> **Nota:** Incluso para bases de datos de test solo-CI, usá GitHub Secrets para las credenciales en vez de hardcodear valores. Esto genera buenos hábitos y previene la reutilización accidental de credenciales de test en otros contextos.
+> **Note:** Even for CI-only test databases, use GitHub Secrets for credentials rather than hardcoding values. This builds good habits and prevents accidental reuse of test credentials in other contexts.
 
-### Tests E2E
+### E2E Tests
 
 ```yaml
   e2e:
@@ -161,40 +161,40 @@ jobs:
           path: playwright-report/
 ```
 
-## Devolviendo las Fallas de CI a los Agentes
+## Feeding CI Failures Back to Agents
 
-El poder de CI con agentes de IA es el loop de feedback. Cuando CI falla:
+The power of CI with AI agents is the feedback loop. When CI fails:
 
 ```
-CI falla
+CI fails
     │
     ▼
-Copiar la salida de la falla
+Copy the failure output
     │
     ▼
-Pasarla al agente:
-"El pipeline de CI falló con este error:
-[pegar el error específico]
-Arreglá el problema y verificá localmente antes de pushear de nuevo."
+Feed it to the agent:
+"The CI pipeline failed with this error:
+[paste specific error]
+Fix the issue and verify locally before pushing again."
     │
     ▼
-El agente arregla → pushea → CI corre de nuevo
+Agent fixes → pushes → CI runs again
 ```
 
-**Patrones clave:**
+**Key patterns:**
 
 ```
-Falla de lint → El agente corre `npm run lint --fix` y commitea
-Error de tipo → El agente lee la ubicación del error y arregla el tipo
-Falla de test → El agente sigue la skill debugging-and-error-recovery
-Error de build → El agente revisa config y dependencias
+Lint failure → Agent runs `npm run lint --fix` and commits
+Type error  → Agent reads the error location and fixes the type
+Test failure → Agent follows debugging-and-error-recovery skill
+Build error → Agent checks config and dependencies
 ```
 
-## Estrategias de Deployment
+## Deployment Strategies
 
-### Preview Deployments (Deployments de Vista Previa)
+### Preview Deployments
 
-Cada PR obtiene un preview deployment para testing manual:
+Every PR gets a preview deployment for manual testing:
 
 ```yaml
 # Deploy preview on PR (Vercel/Netlify/etc.)
@@ -209,24 +209,24 @@ deploy-preview:
 
 ### Feature Flags
 
-Los feature flags desacoplan el deployment del release. Desplegá features incompletas o riesgosas detrás de flags para poder:
+Feature flags decouple deployment from release. Deploy incomplete or risky features behind flags so you can:
 
-- **Enviar código sin habilitarlo.** Mergeá a main temprano, habilitalo cuando esté listo.
-- **Hacer rollback sin redesplegar.** Desactivá el flag en vez de revertir el código.
-- **Probar features con canary.** Habilitalo para el 1% de los usuarios, después 10%, después 100%.
-- **Correr tests A/B.** Compará el comportamiento con y sin la feature.
+- **Ship code without enabling it.** Merge to main early, enable when ready.
+- **Roll back without redeploying.** Disable the flag instead of reverting code.
+- **Canary new features.** Enable for 1% of users, then 10%, then 100%.
+- **Run A/B tests.** Compare behavior with and without the feature.
 
 ```typescript
-// Patrón simple de feature flag
+// Simple feature flag pattern
 if (featureFlags.isEnabled('new-checkout-flow', { userId })) {
   return renderNewCheckout();
 }
 return renderLegacyCheckout();
 ```
 
-**Ciclo de vida del flag:** Crear → Habilitar para testing → Canary → Rollout completo → Eliminar el flag y el código muerto. Los flags que viven para siempre se convierten en deuda técnica - establecé una fecha de limpieza cuando los creás.
+**Flag lifecycle:** Create → Enable for testing → Canary → Full rollout → Remove the flag and dead code. Flags that live forever become technical debt - set a cleanup date when you create them.
 
-### Rollouts por Etapas
+### Staged Rollouts
 
 ```
 PR merged to main
@@ -244,9 +244,9 @@ PR merged to main
     └── Clean → Done
 ```
 
-### Plan de Rollback
+### Rollback Plan
 
-Cada deployment debería ser reversible:
+Every deployment should be reversible:
 
 ```yaml
 # Manual rollback workflow
@@ -268,7 +268,7 @@ jobs:
           npx vercel rollback ${{ inputs.version }}
 ```
 
-## Gestión de Entornos
+## Environment Management
 
 ```
 .env.example       → Committed (template for developers)
@@ -278,9 +278,9 @@ CI secrets          → Stored in GitHub Secrets / vault
 Production secrets  → Stored in deployment platform / vault
 ```
 
-CI nunca debería tener secretos de producción. Usá secretos separados para el testing de CI.
+CI should never have production secrets. Use separate secrets for CI testing.
 
-## Automatización Más Allá de CI
+## Automation Beyond CI
 
 ### Dependabot / Renovate
 
@@ -295,20 +295,20 @@ updates:
     open-pull-requests-limit: 5
 ```
 
-### Rol de Build Cop
+### Build Cop Role
 
-Designá a alguien responsable de mantener el CI en verde. Cuando el build se rompe, el trabajo del Build Cop es arreglarlo o revertirlo - no la persona cuyo cambio causó la rotura. Esto previene que los builds rotos se acumulen mientras todos asumen que otra persona lo va a arreglar.
+Designate someone responsible for keeping CI green. When the build breaks, the Build Cop's job is to fix or revert - not the person whose change caused the break. This prevents broken builds from accumulating while everyone assumes someone else will fix it.
 
-### Checks de PR
+### PR Checks
 
-- **Reviews requeridos:** Al menos 1 aprobación antes del merge
-- **Status checks requeridos:** El CI debe pasar antes del merge
-- **Protección de rama:** Sin force-pushes a main
-- **Auto-merge:** Si todos los checks pasan y está aprobado, mergear automáticamente
+- **Required reviews:** At least 1 approval before merge
+- **Required status checks:** CI must pass before merge
+- **Branch protection:** No force-pushes to main
+- **Auto-merge:** If all checks pass and approved, merge automatically
 
-## Optimización de CI
+## CI Optimization
 
-Cuando el pipeline supera los 10 minutos, aplicá estas estrategias en orden de impacto:
+When the pipeline exceeds 10 minutes, apply these strategies in order of impact:
 
 ```
 Slow CI pipeline?
@@ -326,7 +326,7 @@ Slow CI pipeline?
     └── GitHub-hosted larger runners or self-hosted for CPU-heavy builds
 ```
 
-**Ejemplo: cache y paralelismo**
+**Example: caching and parallelism**
 ```yaml
 jobs:
   lint:
@@ -357,34 +357,34 @@ jobs:
       - run: npm test -- --coverage
 ```
 
-## Racionalizaciones Comunes
+## Common Rationalizations
 
-| Racionalización | Realidad |
+| Rationalization | Reality |
 |---|---|
-| "CI es demasiado lento" | Optimizá el pipeline (ver Optimización de CI abajo), no lo saltes. Un pipeline de 5 minutos previene horas de debuggeo. |
-| "Este cambio es trivial, saltate el CI" | Los cambios triviales rompen builds. CI es rápido para cambios triviales de todas formas. |
-| "El test es flaky, simplemente volvé a correrlo" | Los tests flaky esconden bugs reales y desperdician el tiempo de todos. Arreglá el flakiness. |
-| "Agregamos CI después" | Los proyectos sin CI acumulan estados rotos. Configuralo desde el primer día. |
-| "El testing manual es suficiente" | El testing manual no escala y no es repetible. Automatizá lo que puedas. |
+| "CI is too slow" | Optimize the pipeline (see CI Optimization below), don't skip it. A 5-minute pipeline prevents hours of debugging. |
+| "This change is trivial, skip CI" | Trivial changes break builds. CI is fast for trivial changes anyway. |
+| "The test is flaky, just re-run" | Flaky tests mask real bugs and waste everyone's time. Fix the flakiness. |
+| "We'll add CI later" | Projects without CI accumulate broken states. Set it up on day one. |
+| "Manual testing is enough" | Manual testing doesn't scale and isn't repeatable. Automate what you can. |
 
 ## Red Flags
 
-- No hay pipeline de CI en el proyecto
-- Las fallas de CI se ignoran o silencian
-- Los tests se desactivan en CI para que el pipeline pase
-- Deployments de producción sin verificación en staging
-- No hay mecanismo de rollback
-- Secretos almacenados en código o archivos de config de CI (no en un secrets manager)
-- Tiempos de CI largos sin esfuerzo de optimización
+- No CI pipeline in the project
+- CI failures ignored or silenced
+- Tests disabled in CI to make the pipeline pass
+- Production deploys without staging verification
+- No rollback mechanism
+- Secrets stored in code or CI config files (not secrets manager)
+- Long CI times with no optimization effort
 
-## Verificación
+## Verification
 
-Después de configurar o modificar CI:
+After setting up or modifying CI:
 
-- [ ] Todos los quality gates están presentes (lint, types, tests, build, audit)
-- [ ] El pipeline corre en cada PR y push a main
-- [ ] Las fallas bloquean el merge (protección de rama configurada)
-- [ ] Los resultados de CI vuelven al loop de desarrollo
-- [ ] Los secretos están en el secrets manager, no en el código
-- [ ] El deployment tiene un mecanismo de rollback
-- [ ] El pipeline corre en menos de 10 minutos para la suite de tests
+- [ ] All quality gates are present (lint, types, tests, build, audit)
+- [ ] Pipeline runs on every PR and push to main
+- [ ] Failures block merge (branch protection configured)
+- [ ] CI results feed back into the development loop
+- [ ] Secrets are stored in the secrets manager, not in code
+- [ ] Deployment has a rollback mechanism
+- [ ] Pipeline runs in under 10 minutes for the test suite

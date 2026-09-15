@@ -1,26 +1,26 @@
-# Criterios de evaluación de MCP
+# MCP evaluation criteria
 
-Puntuar cada candidato con estas preguntas. Responder sí/no/desconocido.
+Score every candidate with these questions. Answer yes/no/unknown.
 
-1. **Cobertura nativa**: ¿OpenClaw ya provee funcionalidad equivalente?
+1. **Native coverage**: Does OpenClaw already provide equivalent functionality?
    - browser, web_search, web_fetch, db_query, db_execute, image, exec, etc.
-2. **Open source**: ¿El código fuente está disponible y es inspeccionable?
-3. **Mantenimiento**: ¿Último commit dentro de 3 meses? ¿Responden los issues?
-4. **Free tier**: ¿El free tier funciona de verdad con nuestras keys?
-5. **Modelo de auth**: ¿API key, OAuth, login por browser, QR o cuenta personal?
-   - API key en `~/.openclaw/secrets/` está OK.
-   - OAuth/QR/cuenta personal → pausar y preguntar.
-6. **Estabilidad**: ¿Funciona `tools/list`? ¿Funciona una llamada de muestra a una tool?
-7. **Redundancia**: ¿Se superpone con una skill existente?
-8. **Riesgo**: ¿Puede publicar públicamente, enviar mensajes, gastar dinero o acceder a datos privados?
+2. **Open source**: Is the source code available and inspectable?
+3. **Maintenance**: Last commit within 3 months? Issues responded?
+4. **Free tier**: Does the free tier actually work with our keys?
+5. **Auth model**: API key, OAuth, browser login, QR, or personal account?
+   - API key in `~/.openclaw/secrets/` is OK.
+   - OAuth/QR/personal account → pause and ask.
+6. **Stability**: Does `tools/list` work? Does a sample tool call work?
+7. **Redundancy**: Overlaps with an existing skill?
+8. **Risk**: Can it post publicly, send messages, spend money, or access private data?
 
-Matriz de decisión:
+Decision matrix:
 
-| Condición | Decisión |
+| Condition | Decision |
 |---|---|
-| Existe cobertura nativa | Descartar |
-| Riesgo de cuenta personal | Descartar (preguntar primero) |
-| Solo pago / free tier roto | Descartar |
-| Buena idea, implementación frágil | Absorber en skill nativa |
-| Útil, estable, local-first, sin equivalente nativo | Instalar + envolver |
-| Útil pero no ahora | Standby / backlog |
+| Native coverage exists | Discard |
+| Personal account risk | Discard (ask first) |
+| Paid-only / free tier broken | Discard |
+| Good idea, fragile implementation | Absorb into native skill |
+| Useful, stable, local-first, no native equivalent | Install + wrap |
+| Useful but not now | Standby / backlog |

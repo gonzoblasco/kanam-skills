@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# generate-image.sh — helper for the image-generation skill
+# generate-image.sh - helper for the image-generation skill
 # Usage: generate-image.sh <provider> <prompt> <output-path> [size]
 # Providers: openai, gemini
 

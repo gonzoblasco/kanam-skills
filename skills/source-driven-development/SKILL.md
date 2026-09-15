@@ -1,43 +1,43 @@
 ---
 name: source-driven-development
-description: Fundamenta toda decisión de implementación en la documentación oficial. Úsala cuando quieras código con autoridad, citado de fuentes y libre de patrones obsoletos. Úsala al construir con cualquier framework o librería donde la corrección importe.
+description: Grounds every implementation decision in official documentation. Use when you want authoritative, source-cited code free from outdated patterns. Use when building with any framework or library where correctness matters.
 ---
 
-# Desarrollo Impulsado por Fuentes
+# Source-Driven Development
 
-## Resumen
+## Overview
 
-Toda decisión de código específica de un framework debe estar respaldada por documentación oficial. No implementes de memoria: verifica, cita y deja que el usuario vea tus fuentes. Los datos de entrenamiento se vuelven obsoletos, las APIs se deprecan, las mejores prácticas evolucionan. Esta skill garantiza que el usuario reciba código en el que pueda confiar porque cada patrón se remonta a una fuente autoritativa que puede verificar.
+Every framework-specific code decision must be backed by official documentation. Don't implement from memory - verify, cite, and let the user see your sources. Training data goes stale, APIs get deprecated, best practices evolve. This skill ensures the user gets code they can trust because every pattern traces back to an authoritative source they can check.
 
-## Cuándo Usarla
+## When to Use
 
-- El usuario quiere código que siga las mejores prácticas actuales para un framework dado
-- Construir boilerplate, código de arranque o patrones que se copiarán en todo un proyecto
-- El usuario pide explícitamente una implementación documentada, verificada o "correcta"
-- Implementar features donde el enfoque recomendado del framework importa (formularios, routing, fetching de datos, manejo de estado, auth)
-- Revisar o mejorar código que usa patrones específicos de un framework
-- Cada vez que estés a punto de escribir código específico de un framework desde la memoria
+- The user wants code that follows current best practices for a given framework
+- Building boilerplate, starter code, or patterns that will be copied across a project
+- The user explicitly asks for documented, verified, or "correct" implementation
+- Implementing features where the framework's recommended approach matters (forms, routing, data fetching, state management, auth)
+- Reviewing or improving code that uses framework-specific patterns
+- Any time you are about to write framework-specific code from memory
 
-**Cuándo NO usarla:**
+**When NOT to use:**
 
-- La corrección no depende de una versión específica (renombrar variables, corregir typos, mover archivos)
-- Lógica pura que funciona igual en todas las versiones (loops, condicionales, estructuras de datos)
-- El usuario quiere explícitamente velocidad sobre verificación ("hazlo rápido nomás")
+- Correctness does not depend on a specific version (renaming variables, fixing typos, moving files)
+- Pure logic that works the same across all versions (loops, conditionals, data structures)
+- The user explicitly wants speed over verification ("just do it quickly")
 
-## El Proceso
+## The Process
 
 ```
-DETECTAR ──→ OBTENER ──→ IMPLEMENTAR ──→ CITAR
+DETECT ──→ FETCH ──→ IMPLEMENT ──→ CITE
   │          │           │            │
   ▼          ▼           ▼            ▼
- Qué        Conseguir   Seguir los   Mostrar tus
- stack?     la doc      patrones      fuentes
-            relevante   documentados
+ What       Get the    Follow the   Show your
+ stack?     relevant   documented   sources
+            docs       patterns
 ```
 
-### Paso 1: Detectar Stack y Versiones
+### Step 1: Detect Stack and Versions
 
-Lee el archivo de dependencias del proyecto para identificar las versiones exactas:
+Read the project's dependency file to identify exact versions:
 
 ```
 package.json    → Node/React/Vue/Angular/Svelte
@@ -48,147 +48,147 @@ Cargo.toml      → Rust
 Gemfile         → Ruby/Rails
 ```
 
-Declara explícitamente lo que encontraste:
+State what you found explicitly:
 
 ```
-STACK DETECTADO:
-- React 19.1.0 (de package.json)
+STACK DETECTED:
+- React 19.1.0 (from package.json)
 - Vite 6.2.0
 - Tailwind CSS 4.0.3
-→ Obteniendo la documentación oficial de los patrones relevantes.
+→ Fetching official docs for the relevant patterns.
 ```
 
-Si faltan versiones o son ambiguas, **pregunta al usuario**. No adivines: la versión determina qué patrones son correctos.
+If versions are missing or ambiguous, **ask the user**. Don't guess - the version determines which patterns are correct.
 
-### Paso 2: Obtener Documentación Oficial
+### Step 2: Fetch Official Documentation
 
-Obtén la página de documentación específica de la feature que estás implementando. No la homepage, no la doc completa: la página relevante.
+Fetch the specific documentation page for the feature you're implementing. Not the homepage, not the full docs - the relevant page.
 
-**Jerarquía de fuentes (en orden de autoridad):**
+**Source hierarchy (in order of authority):**
 
-| Prioridad | Fuente | Ejemplo |
+| Priority | Source | Example |
 |----------|--------|---------|
-| 1 | Documentación oficial | react.dev, docs.djangoproject.com, symfony.com/doc |
-| 2 | Blog / changelog oficial | react.dev/blog, nextjs.org/blog |
-| 3 | Referencias de estándares web | MDN, web.dev, html.spec.whatwg.org |
-| 4 | Compatibilidad de navegador/runtime | caniuse.com, node.green |
+| 1 | Official documentation | react.dev, docs.djangoproject.com, symfony.com/doc |
+| 2 | Official blog / changelog | react.dev/blog, nextjs.org/blog |
+| 3 | Web standards references | MDN, web.dev, html.spec.whatwg.org |
+| 4 | Browser/runtime compatibility | caniuse.com, node.green |
 
-**No autoritativas: nunca citar como fuentes primarias:**
+**Not authoritative - never cite as primary sources:**
 
-- Respuestas de Stack Overflow
-- Posts de blog o tutoriales (incluso populares)
-- Documentación o resúmenes generados por IA
-- Tus propios datos de entrenamiento (ese es el punto: verifícalo)
+- Stack Overflow answers
+- Blog posts or tutorials (even popular ones)
+- AI-generated documentation or summaries
+- Your own training data (that is the whole point - verify it)
 
-**Sé preciso con lo que obtienes:**
-
-```
-MAL:  Obtener la homepage de React
-BIEN: Obtener react.dev/reference/react/useActionState
-
-MAL:  Buscar "django authentication best practices"
-BIEN: Obtener docs.djangoproject.com/en/6.0/topics/auth/
-```
-
-Después de obtener, extrae los patrones clave y anota cualquier advertencia de deprecación o guía de migración.
-
-Cuando las fuentes oficiales se contradicen entre sí (ej: una guía de migración contradice la referencia de la API), superficial la discrepancia al usuario y verifica qué patrón realmente funciona contra la versión detectada.
-
-### Paso 3: Implementar Siguiendo los Patrones Documentados
-
-Escribe código que coincida con lo que muestra la documentación:
-
-- Usa las firmas de API de la doc, no de memoria
-- Si la doc muestra una forma nueva de hacer algo, usa la forma nueva
-- Si la doc depreca un patrón, no uses la versión deprecada
-- Si la doc no cubre algo, márcalo como no verificado
-
-**Cuando la doc conflictúa con el código existente del proyecto:**
+**Be precise with what you fetch:**
 
 ```
-CONFLICTO DETECTADO:
-La base de código existente usa useState para el estado de carga del formulario,
-pero la doc de React 19 recomienda useActionState para este patrón.
-(Fuente: react.dev/reference/react/useActionState)
+BAD:  Fetch the React homepage
+GOOD: Fetch react.dev/reference/react/useActionState
 
-Opciones:
-A) Usar el patrón moderno (useActionState): consistente con la doc actual
-B) Coincidir con el código existente (useState): consistente con la base de código
-→ ¿Qué enfoque prefieres?
+BAD:  Search "django authentication best practices"
+GOOD: Fetch docs.djangoproject.com/en/6.0/topics/auth/
 ```
 
-Superficia el conflicto. No elijas uno en silencio.
+After fetching, extract the key patterns and note any deprecation warnings or migration guidance.
 
-### Paso 4: Citar Tus Fuentes
+When official sources conflict with each other (e.g. a migration guide contradicts the API reference), surface the discrepancy to the user and verify which pattern actually works against the detected version.
 
-Todo patrón específico de framework recibe una cita. El usuario debe poder verificar cada decisión.
+### Step 3: Implement Following Documented Patterns
 
-**En comentarios de código:**
+Write code that matches what the documentation shows:
+
+- Use the API signatures from the docs, not from memory
+- If the docs show a new way to do something, use the new way
+- If the docs deprecate a pattern, don't use the deprecated version
+- If the docs don't cover something, flag it as unverified
+
+**When docs conflict with existing project code:**
+
+```
+CONFLICT DETECTED:
+The existing codebase uses useState for form loading state,
+but React 19 docs recommend useActionState for this pattern.
+(Source: react.dev/reference/react/useActionState)
+
+Options:
+A) Use the modern pattern (useActionState) - consistent with current docs
+B) Match existing code (useState) - consistent with codebase
+→ Which approach do you prefer?
+```
+
+Surface the conflict. Don't silently pick one.
+
+### Step 4: Cite Your Sources
+
+Every framework-specific pattern gets a citation. The user must be able to verify every decision.
+
+**In code comments:**
 
 ```typescript
-// Manejo de formularios React 19 con useActionState
-// Fuente: https://react.dev/reference/react/useActionState#usage
+// React 19 form handling with useActionState
+// Source: https://react.dev/reference/react/useActionState#usage
 const [state, formAction, isPending] = useActionState(submitOrder, initialState);
 ```
 
-**En la conversación:**
+**In conversation:**
 
 ```
-Estoy usando useActionState en lugar de useState manual para el
-estado de envío del formulario. React 19 reemplazó el patrón manual
-isPending/setIsPending con este hook.
+I'm using useActionState instead of manual useState for the
+form submission state. React 19 replaced the manual
+isPending/setIsPending pattern with this hook.
 
-Fuente: https://react.dev/blog/2024/12/05/react-19#actions
+Source: https://react.dev/blog/2024/12/05/react-19#actions
 "useTransition now supports async functions [...] to handle
 pending states automatically"
 ```
 
-**Reglas de citación:**
+**Citation rules:**
 
-- URLs completas, no acortadas
-- Prefiere enlaces profundos con anclas cuando sea posible (ej: `/useActionState#usage` sobre `/useActionState`): las anclas sobreviven mejor a la reestructuración de la doc que las páginas de nivel superior
-- Cita el pasaje relevante cuando respalda una decisión no obvia
-- Incluye datos de soporte de navegador/runtime al recomendar features de plataforma
-- Si no puedes encontrar documentación para un patrón, dilo explícitamente:
+- Full URLs, not shortened
+- Prefer deep links with anchors where possible (e.g. `/useActionState#usage` over `/useActionState`) - anchors survive doc restructuring better than top-level pages
+- Quote the relevant passage when it supports a non-obvious decision
+- Include browser/runtime support data when recommending platform features
+- If you cannot find documentation for a pattern, say so explicitly:
 
 ```
-SIN VERIFICAR: No pude encontrar documentación oficial para este
-patrón. Se basa en datos de entrenamiento y puede estar desactualizado.
-Verifica antes de usarlo en producción.
+UNVERIFIED: I could not find official documentation for this
+pattern. This is based on training data and may be outdated.
+Verify before using in production.
 ```
 
-La honestidad sobre lo que no pudiste verificar vale más que la falsa confianza.
+Honesty about what you couldn't verify is more valuable than false confidence.
 
-## Racionalizaciones Comunes
+## Common Rationalizations
 
-| Racionalización | Realidad |
+| Rationalization | Reality |
 |---|---|
-| "Estoy seguro sobre esta API" | La confianza no es evidencia. Los datos de entrenamiento contienen patrones obsoletos que parecen correctos pero se rompen contra versiones actuales. Verifica. |
-| "Obtener la doc gasta tokens" | Alucinar una API gasta más. El usuario depura durante una hora y luego descubre que la firma de la función cambió. Una sola fetch previene horas de retrabajo. |
-| "La doc no tendrá lo que necesito" | Si la doc no lo cubre, esa es información valiosa: el patrón puede no estar recomendado oficialmente. |
-| "Solo lo mencionaré como posiblemente desactualizado" | Un disclaimer no ayuda. O verifica y cita, o márcalo claramente como sin verificar. El subterfugio es la peor opción. |
-| "Esto es una tarea simple, no hace falta verificar" | Las tareas simples con patrones incorrectos se vuelven plantillas. El usuario copia tu handler de formulario deprecado a diez componentes antes de descubrir que existe el enfoque moderno. |
+| "I'm confident about this API" | Confidence is not evidence. Training data contains outdated patterns that look correct but break against current versions. Verify. |
+| "Fetching docs wastes tokens" | Hallucinating an API wastes more. The user debugs for an hour, then discovers the function signature changed. One fetch prevents hours of rework. |
+| "The docs won't have what I need" | If the docs don't cover it, that's valuable information - the pattern may not be officially recommended. |
+| "I'll just mention it might be outdated" | A disclaimer doesn't help. Either verify and cite, or clearly flag it as unverified. Hedging is the worst option. |
+| "This is a simple task, no need to check" | Simple tasks with wrong patterns become templates. The user copies your deprecated form handler into ten components before discovering the modern approach exists. |
 
 ## Red Flags
 
-- Escribir código específico de un framework sin revisar la doc de esa versión
-- Usar "creo" o "me parece" sobre una API en lugar de citar la fuente
-- Implementar un patrón sin saber a qué versión aplica
-- Citar Stack Overflow o posts de blog en lugar de documentación oficial
-- Usar APIs deprecadas porque aparecen en los datos de entrenamiento
-- No leer `package.json` / archivos de dependencias antes de implementar
-- Entregar código sin citas de fuente para decisiones específicas de framework
-- Obtener un sitio de doc completo cuando solo una página es relevante
+- Writing framework-specific code without checking the docs for that version
+- Using "I believe" or "I think" about an API instead of citing the source
+- Implementing a pattern without knowing which version it applies to
+- Citing Stack Overflow or blog posts instead of official documentation
+- Using deprecated APIs because they appear in training data
+- Not reading `package.json` / dependency files before implementing
+- Delivering code without source citations for framework-specific decisions
+- Fetching an entire docs site when only one page is relevant
 
-## Verificación
+## Verification
 
-Después de implementar con desarrollo impulsado por fuentes:
+After implementing with source-driven development:
 
-- [ ] Las versiones de framework y librerías se identificaron desde el archivo de dependencias
-- [ ] Se obtuvo documentación oficial para los patrones específicos del framework
-- [ ] Todas las fuentes son documentación oficial, no posts de blog ni datos de entrenamiento
-- [ ] El código sigue los patrones que muestra la documentación de la versión actual
-- [ ] Las decisiones no triviales incluyen citas de fuente con URLs completas
-- [ ] No se usan APIs deprecadas (verificado contra guías de migración)
-- [ ] Los conflictos entre la doc y el código existente se superficial al usuario
-- [ ] Cualquier cosa que no se pudo verificar está marcada explícitamente como sin verificar
+- [ ] Framework and library versions were identified from the dependency file
+- [ ] Official documentation was fetched for framework-specific patterns
+- [ ] All sources are official documentation, not blog posts or training data
+- [ ] Code follows the patterns shown in the current version's documentation
+- [ ] Non-trivial decisions include source citations with full URLs
+- [ ] No deprecated APIs are used (checked against migration guides)
+- [ ] Conflicts between docs and existing code were surfaced to the user
+- [ ] Anything that could not be verified is explicitly flagged as unverified

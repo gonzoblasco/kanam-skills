@@ -1,114 +1,114 @@
 ---
 name: security-and-hardening
-description: Endurece el código contra vulnerabilidades. Usar al manejar entrada de usuario, autenticación, almacenamiento de datos o integraciones externas. Usar al construir cualquier funcionalidad que acepte datos no confiables, administre sesiones de usuario o interactúe con servicios de terceros.
+description: Hardens code against vulnerabilities. Use when handling user input, authentication, data storage, or external integrations. Use when building any feature that accepts untrusted data, manages user sessions, or interacts with third-party services.
 ---
 
-# Seguridad y endurecimiento
+# Security and Hardening
 
-## Descripción general
+## Overview
 
-Prácticas de desarrollo que priorizan la seguridad para aplicaciones web. Trata cada entrada externa como hostil, cada secreto como sagrado y cada verificación de autorización como obligatoria. La seguridad no es una fase: es una restricción en cada línea de código que toca datos de usuario, autenticación o sistemas externos.
+Security-first development practices for web applications. Treat every external input as hostile, every secret as sacred, and every authorization check as mandatory. Security isn't a phase - it's a constraint on every line of code that touches user data, authentication, or external systems.
 
-## Cuándo usar
+## When to Use
 
-- Al construir cualquier cosa que acepte entrada de usuario
-- Al implementar autenticación o autorización
-- Al almacenar o transmitir datos sensibles
-- Al integrarse con APIs o servicios externos
-- Al agregar subidas de archivos, webhooks o callbacks
-- Al manejar datos de pago o PII
+- Building anything that accepts user input
+- Implementing authentication or authorization
+- Storing or transmitting sensitive data
+- Integrating with external APIs or services
+- Adding file uploads, webhooks, or callbacks
+- Handling payment or PII data
 
-## Proceso: modelo de amenazas primero
+## Process: Threat Model First
 
-Los controles añadidos sin un modelo de amenazas son conjeturas. Antes de endurecer, dedica cinco minutos a pensar como un atacante:
+Controls bolted on without a threat model are guesses. Before hardening, spend five minutes thinking like an attacker:
 
-1. **Mapea los límites de confianza.** ¿Dónde cruza la entrada no confiable hacia tu sistema? Peticiones HTTP, campos de formulario, subidas de archivos, webhooks, APIs de terceros, colas de mensajes y **salida de LLM**. Cada límite es superficie de ataque.
-2. **Nombra los activos.** ¿Qué vale la pena robar o romper? Credenciales, PII, datos de pago, acciones de administrador, movimiento de dinero.
-3. **Ejecuta STRIDE sobre cada límite**, una lente rápida, no una ceremonia:
+1. **Map the trust boundaries.** Where does untrusted data cross into your system? HTTP requests, form fields, file uploads, webhooks, third-party APIs, message queues, and **LLM output**. Every boundary is attack surface.
+2. **Name the assets.** What's worth stealing or breaking? Credentials, PII, payment data, admin actions, money movement.
+3. **Run STRIDE over each boundary** - a quick lens, not a ceremony:
 
-| Amenaza | Pregunta | Mitigación típica |
+| Threat | Ask | Typical mitigation |
 |---|---|---|
-| **S**poofing (suplantación) | ¿Puede alguien hacerse pasar por un usuario/servicio? | Autenticación, verificación de firmas |
-| **T**ampering (manipulación) | ¿Pueden alterarse los datos en tránsito o en reposo? | Comprobaciones de integridad, consultas parametrizadas, HTTPS |
-| **R**epudiation (repudio) | ¿Puede negarse una acción después? | Registro de auditoría de eventos de seguridad |
-| **I**nformation disclosure (divulgación de información) | ¿Pueden filtrarse los datos? | Cifrado, listas blancas de campos, errores genéricos |
-| **D**enial of service (denegación de servicio) | ¿Puede verse sobrecargado? | Límite de peticiones, límites de tamaño de entrada, timeouts |
-| **E**levation of privilege (elevación de privilegios) | ¿Puede un usuario obtener derechos que no debería? | Verificaciones de autorización, mínimo privilegio |
+| **S**poofing | Can someone impersonate a user/service? | Authentication, signature verification |
+| **T**ampering | Can data be altered in transit or at rest? | Integrity checks, parameterized queries, HTTPS |
+| **R**epudiation | Can an action be denied later? | Audit logging of security events |
+| **I**nformation disclosure | Can data leak? | Encryption, field allowlists, generic errors |
+| **D**enial of service | Can it be overwhelmed? | Rate limiting, input size caps, timeouts |
+| **E**levation of privilege | Can a user gain rights they shouldn't? | Authorization checks, least privilege |
 
-4. **Escribe casos de abuso junto a los casos de uso.** Para cada funcionalidad, pregúntate "¿cómo abusaría yo de esto?" y haz de eso tu primera prueba.
+4. **Write abuse cases next to use cases.** For each feature, ask "how would I misuse this?" - then make that your first test.
 
-Si no puedes nombrar los límites de confianza de una funcionalidad, no estás listo para asegurarla. Esto es OWASP **A04: Diseño inseguro**; la mayoría de las brechas comienzan en el diseño, no en el código.
+If you can't name the trust boundaries for a feature, you're not ready to secure it. This is OWASP **A04: Insecure Design** - most breaches begin in design, not code.
 
-## El sistema de límites de tres niveles
+## The Three-Tier Boundary System
 
-### Siempre hacer (sin excepciones)
+### Always Do (No Exceptions)
 
-- **Valida toda la entrada externa** en el límite del sistema (rutas de API, manejadores de formularios)
-- **Parametriza todas las consultas de base de datos**; nunca concatenes entrada de usuario en SQL
-- **Codifica la salida** para prevenir XSS (usa el escape automático del framework, no lo eludas)
-- **Usa HTTPS** para toda la comunicación externa
-- **Hashea las contraseñas** con bcrypt/scrypt/argon2 (nunca almacenes texto plano)
-- **Configura las cabeceras de seguridad** (CSP, HSTS, X-Frame-Options, X-Content-Type-Options)
-- **Usa cookies httpOnly, secure, sameSite** para las sesiones
-- **Ejecuta la auditoría nativa del gestor de paquetes detectado** contra el lockfile confirmado antes de cada release
+- **Validate all external input** at the system boundary (API routes, form handlers)
+- **Parameterize all database queries** - never concatenate user input into SQL
+- **Encode output** to prevent XSS (use framework auto-escaping, don't bypass it)
+- **Use HTTPS** for all external communication
+- **Hash passwords** with bcrypt/scrypt/argon2 (never store plaintext)
+- **Set security headers** (CSP, HSTS, X-Frame-Options, X-Content-Type-Options)
+- **Use httpOnly, secure, sameSite cookies** for sessions
+- **Run the detected package manager's native audit** against the committed lockfile before every release
 
-### Preguntar primero (requiere aprobación humana)
+### Ask First (Requires Human Approval)
 
-- Agregar nuevos flujos de autenticación o cambiar la lógica de auth
-- Almacenar nuevas categorías de datos sensibles (PII, información de pago)
-- Agregar nuevas integraciones con servicios externos
-- Cambiar la configuración de CORS
-- Agregar manejadores de subida de archivos
-- Modificar el límite de peticiones o el throttling
-- Otorgar permisos o roles elevados
+- Adding new authentication flows or changing auth logic
+- Storing new categories of sensitive data (PII, payment info)
+- Adding new external service integrations
+- Changing CORS configuration
+- Adding file upload handlers
+- Modifying rate limiting or throttling
+- Granting elevated permissions or roles
 
-### Nunca hacer
+### Never Do
 
-- **Nunca confirmes secretos** en el control de versiones (API keys, contraseñas, tokens)
-- **Nunca registres datos sensibles** (contraseñas, tokens, números completos de tarjeta de crédito)
-- **Nunca confíes en la validación del lado del cliente** como límite de seguridad
-- **Nunca desactives las cabeceras de seguridad** por conveniencia
-- **Nunca uses `eval()` o `innerHTML`** con datos proporcionados por el usuario
-- **Nunca almacenes sesiones en almacenamiento accesible por el cliente** (localStorage para tokens de autenticación)
-- **Nunca expongas stack traces** ni detalles internos de errores a los usuarios
+- **Never commit secrets** to version control (API keys, passwords, tokens)
+- **Never log sensitive data** (passwords, tokens, full credit card numbers)
+- **Never trust client-side validation** as a security boundary
+- **Never disable security headers** for convenience
+- **Never use `eval()` or `innerHTML`** with user-provided data
+- **Never store sessions in client-accessible storage** (localStorage for auth tokens)
+- **Never expose stack traces** or internal error details to users
 
-## Patrones de prevención del OWASP Top 10
+## OWASP Top 10 Prevention Patterns
 
-Estos son patrones de prevención, no un ranking. Para el ordenamiento de 2021, consulta la tabla de referencia rápida en `references/security-checklist.md`.
+These are prevention patterns, not a ranking. For the 2021 ordering, see the quick-reference table in `references/security-checklist.md`.
 
-### Inyección (SQL, NoSQL, comando de SO)
+### Injection (SQL, NoSQL, OS Command)
 
 ```typescript
-// MAL: inyección SQL mediante concatenación de cadenas
+// BAD: SQL injection via string concatenation
 const query = `SELECT * FROM users WHERE id = '${userId}'`;
 
-// BIEN: consulta parametrizada
+// GOOD: Parameterized query
 const user = await db.query('SELECT * FROM users WHERE id = $1', [userId]);
 
-// BIEN: ORM con entrada parametrizada
+// GOOD: ORM with parameterized input
 const user = await prisma.user.findUnique({ where: { id: userId } });
 ```
 
-### Autenticación rota
+### Broken Authentication
 
 ```typescript
-// Hash de contraseñas
+// Password hashing
 import { hash, compare } from 'bcrypt';
 
 const SALT_ROUNDS = 12;
 const hashedPassword = await hash(plaintext, SALT_ROUNDS);
 const isValid = await compare(plaintext, hashedPassword);
 
-// Gestión de sesiones
+// Session management
 app.use(session({
-  secret: process.env.SESSION_SECRET,  // Desde el entorno, no del código
+  secret: process.env.SESSION_SECRET,  // From environment, not code
   resave: false,
   saveUninitialized: false,
   cookie: {
-    httpOnly: true,     // No accesible vía JavaScript
-    secure: true,       // Solo HTTPS
-    sameSite: 'lax',    // Protección CSRF
-    maxAge: 24 * 60 * 60 * 1000,  // 24 horas
+    httpOnly: true,     // Not accessible via JavaScript
+    secure: true,       // HTTPS only
+    sameSite: 'lax',    // CSRF protection
+    maxAge: 24 * 60 * 60 * 1000,  // 24 hours
   },
 }));
 ```
@@ -116,41 +116,41 @@ app.use(session({
 ### Cross-Site Scripting (XSS)
 
 ```typescript
-// MAL: renderizar entrada de usuario como HTML
+// BAD: Rendering user input as HTML
 element.innerHTML = userInput;
 
-// BIEN: usar el escape automático del framework (React lo hace por defecto)
+// GOOD: Use framework auto-escaping (React does this by default)
 return <div>{userInput}</div>;
 
-// Si DEBES renderizar HTML, sanitiza primero
+// If you MUST render HTML, sanitize first
 import DOMPurify from 'dompurify';
 const clean = DOMPurify.sanitize(userInput);
 ```
 
-### Control de acceso roto
+### Broken Access Control
 
 ```typescript
-// Siempre verifica la autorización, no solo la autenticación
+// Always check authorization, not just authentication
 app.patch('/api/tasks/:id', authenticate, async (req, res) => {
   const task = await taskService.findById(req.params.id);
 
-  // Verifica que el usuario autenticado es dueño de este recurso
+  // Check that the authenticated user owns this resource
   if (task.ownerId !== req.user.id) {
     return res.status(403).json({
-      error: { code: 'FORBIDDEN', message: 'No autorizado para modificar esta tarea' }
+      error: { code: 'FORBIDDEN', message: 'Not authorized to modify this task' }
     });
   }
 
-  // Continúa con la actualización
+  // Proceed with update
   const updated = await taskService.update(req.params.id, req.body);
   return res.json(updated);
 });
 ```
 
-### Mala configuración de seguridad
+### Security Misconfiguration
 
 ```typescript
-// Cabeceras de seguridad (usa helmet para Express)
+// Security headers (use helmet for Express)
 import helmet from 'helmet';
 app.use(helmet());
 
@@ -159,42 +159,42 @@ app.use(helmet.contentSecurityPolicy({
   directives: {
     defaultSrc: ["'self'"],
     scriptSrc: ["'self'"],
-    styleSrc: ["'self'", "'unsafe-inline'"],  // Aprieta si es posible
+    styleSrc: ["'self'", "'unsafe-inline'"],  // Tighten if possible
     imgSrc: ["'self'", 'data:', 'https:'],
     connectSrc: ["'self'"],
   },
 }));
 
-// CORS: restringe a orígenes conocidos
+// CORS - restrict to known origins
 app.use(cors({
   origin: process.env.ALLOWED_ORIGINS?.split(',') || 'http://localhost:3000',
   credentials: true,
 }));
 ```
 
-### Exposición de datos sensibles
+### Sensitive Data Exposure
 
 ```typescript
-// Nunca devuelvas campos sensibles en respuestas de API
+// Never return sensitive fields in API responses
 function sanitizeUser(user: UserRecord): PublicUser {
   const { passwordHash, resetToken, ...publicFields } = user;
   return publicFields;
 }
 
-// Usa variables de entorno para los secretos
+// Use environment variables for secrets
 const API_KEY = process.env.STRIPE_API_KEY;
-if (!API_KEY) throw new Error('STRIPE_API_KEY no configurada');
+if (!API_KEY) throw new Error('STRIPE_API_KEY not configured');
 ```
 
 ### Server-Side Request Forgery (SSRF)
 
-Cada vez que el servidor obtiene una URL influenciada por el usuario, ya sean webhooks, "importar desde URL", proxies de imágenes o vistas previas de enlaces, un atacante puede apuntarla a servicios internos (metadata de la nube, `localhost`, IPs privadas).
+Any time the server fetches a URL the user influenced - webhooks, "import from URL", image proxies, link previews - an attacker can aim it at internal services (cloud metadata, `localhost`, private IPs).
 
 ```typescript
-// MAL: obtener lo que sea que el usuario te dé
+// BAD: fetch whatever the user gives you
 await fetch(req.body.webhookUrl);
 
-// BIEN: lista blanca de esquema + host, rechaza si CUALQUIER IP resuelta es privada, prohíbe redirecciones
+// GOOD: allowlist scheme + host, reject if ANY resolved IP is private, forbid redirects
 import { lookup } from 'node:dns/promises';
 import ipaddr from 'ipaddr.js';
 
@@ -202,12 +202,12 @@ const ALLOWED_HOSTS = new Set(['hooks.example.com']);
 
 async function assertSafeUrl(raw: string): Promise<URL> {
   const url = new URL(raw);
-  if (url.protocol !== 'https:') throw new Error('solo https');
-  if (!ALLOWED_HOSTS.has(url.hostname)) throw new Error('host no permitido');
-  // Resuelve TODOS los registros; una sola dirección privada/reservada falla la verificación.
+  if (url.protocol !== 'https:') throw new Error('https only');
+  if (!ALLOWED_HOSTS.has(url.hostname)) throw new Error('host not allowed');
+  // Resolve ALL records; a single private/reserved address fails the check.
   const addrs = await lookup(url.hostname, { all: true });
   if (addrs.some((a) => ipaddr.parse(a.address).range() !== 'unicast')) {
-    throw new Error('IP privada/reservada');
+    throw new Error('private/reserved IP');
   }
   return url;
 }
@@ -215,13 +215,13 @@ async function assertSafeUrl(raw: string): Promise<URL> {
 await fetch(await assertSafeUrl(req.body.webhookUrl), { redirect: 'error' });
 ```
 
-La verificación `range() !== 'unicast'` cubre loopback, link-local `169.254.169.254` (metadata de la nube, el objetivo SSRF #1), privada y rangos unique-local en IPv4 e IPv6.
+The `range() !== 'unicast'` check covers loopback, link-local `169.254.169.254` (cloud metadata, the #1 SSRF target), private, and unique-local ranges across IPv4 and IPv6.
 
-**Advertencia: esto aún tiene un hueco TOCTOU.** `fetch` resuelve DNS de nuevo después de la verificación, así que un atacante que use un registro de TTL corto puede reenlazarse a una IP interna entre la validación y la conexión. Para superficies de alto riesgo, resuelve una vez y conéctate a la IP fijada, o pon un agente de filtrado por delante (`request-filtering-agent` / `ssrf-req-filter`).
+**Caveat - this still has a TOCTOU gap.** `fetch` resolves DNS again after the check, so an attacker using a short-TTL record can rebind to an internal IP between validation and connection. For high-risk surfaces, resolve once and connect to the pinned IP, or put a filtering agent in front (`request-filtering-agent` / `ssrf-req-filter`).
 
-## Patrones de validación de entrada
+## Input Validation Patterns
 
-### Validación de esquema en los límites
+### Schema Validation at Boundaries
 
 ```typescript
 import { z } from 'zod';
@@ -233,111 +233,111 @@ const CreateTaskSchema = z.object({
   dueDate: z.string().datetime().optional(),
 });
 
-// Valida en el manejador de ruta
+// Validate at the route handler
 app.post('/api/tasks', async (req, res) => {
   const result = CreateTaskSchema.safeParse(req.body);
   if (!result.success) {
     return res.status(422).json({
       error: {
         code: 'VALIDATION_ERROR',
-        message: 'Entrada inválida',
+        message: 'Invalid input',
         details: result.error.flatten(),
       },
     });
   }
-  // result.data ahora está tipado y validado
+  // result.data is now typed and validated
   const task = await taskService.create(result.data);
   return res.status(201).json(task);
 });
 ```
 
-### Seguridad en la subida de archivos
+### File Upload Safety
 
 ```typescript
-// Restringe tipos y tamaños de archivos
+// Restrict file types and sizes
 const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/webp'];
 const MAX_SIZE = 5 * 1024 * 1024; // 5MB
 
 function validateUpload(file: UploadedFile) {
   if (!ALLOWED_TYPES.includes(file.mimetype)) {
-    throw new ValidationError('Tipo de archivo no permitido');
+    throw new ValidationError('File type not allowed');
   }
   if (file.size > MAX_SIZE) {
-    throw new ValidationError('Archivo demasiado grande (máx 5MB)');
+    throw new ValidationError('File too large (max 5MB)');
   }
-  // No confíes en la extensión del archivo: verifica los magic bytes si es crítico
+  // Don't trust the file extension - check magic bytes if critical
 }
 ```
 
-## Triaje de los resultados de auditoría de dependencias
+## Triaging Dependency Audit Results
 
-Las auditorías de gestores de paquetes reportan advisory conocidos; no prueban que un paquete sea confiable ni que el código vulnerable sea alcanzable. Usa este árbol de decisiones:
+Package-manager audits report known advisories; they do not prove a package is trustworthy or that vulnerable code is reachable. Use this decision tree:
 
 ```
-La auditoría nativa del gestor de paquetes reporta una vulnerabilidad
-├── Severidad: crítica o alta
-│   ├── ¿Es alcanzable el código vulnerable en rutas de runtime, build, test o despliegue?
-│   │   ├── SÍ --> Arreglar de inmediato (actualizar, parchear o reemplazar la dependencia)
-│   │   └── NO (confirmado sin uso en esas rutas) --> Arreglar pronto, pero no es bloqueante
-│   └── ¿Hay un arreglo disponible?
-│       ├── SÍ --> Actualizar a la versión parcheada
-│       └── NO --> Revisar workarounds, considerar reemplazar la dependencia, o añadir a la lista blanca con una fecha de revisión
-├── Severidad: moderada
-│   ├── ¿Alcanzable en producción? --> Arreglar en el próximo ciclo de release
-│   └── ¿Solo dev? --> Arreglar cuando convenga, registrar en el backlog
-└── Severidad: baja
-    └── Rastrear y arreglar durante las actualizaciones regulares de dependencias
+The native package-manager audit reports a vulnerability
+├── Severity: critical or high
+│   ├── Is the vulnerable code reachable in runtime, build, test, or deployment paths?
+│   │   ├── YES --> Fix immediately (update, patch, or replace the dependency)
+│   │   └── NO (confirmed unused across those paths) --> Fix soon, but not a blocker
+│   └── Is a fix available?
+│       ├── YES --> Update to the patched version
+│       └── NO --> Check for workarounds, consider replacing the dependency, or add to allowlist with a review date
+├── Severity: moderate
+│   ├── Reachable in production? --> Fix in the next release cycle
+│   └── Dev-only? --> Fix when convenient, track in backlog
+└── Severity: low
+    └── Track and fix during regular dependency updates
 ```
 
-**Preguntas clave:**
-- ¿La función vulnerable se llama realmente en tu ruta de código?
-- ¿La dependencia es de runtime o solo de dev?
-- ¿Es explotable la vulnerabilidad dado tu contexto de despliegue (por ejemplo, una vulnerabilidad del lado del servidor en una app solo de cliente)?
+**Key questions:**
+- Is the vulnerable function actually called in your code path?
+- Is the dependency a runtime dependency or dev-only?
+- Is the vulnerability exploitable given your deployment context (e.g., a server-side vulnerability in a client-only app)?
 
-Cuando difieras un arreglo, documenta el motivo y fija una fecha de revisión.
+When you defer a fix, document the reason and set a review date.
 
-### Higiene de la cadena de suministro
+### Supply-Chain Hygiene
 
-No asumas npm ni trates el manifest más cercano como la raíz de instalación. Aplica este orden:
+Do not assume npm or treat the nearest manifest as the install root. Apply this order:
 
-1. **Encuentra el límite de instalación y el gestor.** Usa la raíz del workspace que posee el lockfile, o un proyecto anidado independiente solo cuando esté fuera de ese workspace. Allí, corrobora `packageManager` (cuando esté presente), el lockfile y CI; detente ante desacuerdos o lockfiles en competencia. Fija la versión del gestor y usa la matriz en `references/security-checklist.md`.
-2. **Bloquea los scripts de dependencias antes de la primera ejecución.** Inicializa con scripts desactivados o una política documentada de fallo cerrado, inspecciona el código fuente de los scripts pendientes, aprueba solo los paquetes mínimos requeridos, confirma la política y luego verifica con una instalación limpia frozen/inmutable. Nunca apruebes scripts de forma generalizada.
+1. **Find the installation boundary and manager.** Use the workspace root that owns the lockfile, or an independent nested project only when it is outside that workspace. There, corroborate `packageManager` (when present), the lockfile, and CI; stop on disagreement or competing lockfiles. Pin the manager version and use the matrix in `references/security-checklist.md`.
+2. **Block dependency scripts before first execution.** Bootstrap with scripts disabled or a documented fail-closed policy, inspect the pending script source, approve only the minimum required packages, commit the policy, then verify with a clean frozen/immutable install. Never blanket-approve scripts.
 
-Las auditorías solo encuentran advisory conocidos; no detectan un paquete recién malicioso o con typosquatting. Por lo tanto:
+Audits only find known advisories; they do not catch a newly malicious or typosquatted package. Therefore:
 
-- **Nunca apliques remediación de auditoría forzada automáticamente** (`npm audit fix --force` o equivalente). Previsualiza la remediación, lee los changelogs y prueba cada actualización resultante; los arreglos forzados pueden cruzar los rangos de dependencias declarados.
-- **Verifica firmas y procedencia del registro donde se soporte** (`npm audit signatures`, `pnpm audit signatures`) y trata su ausencia como una señal para investigar, no como prueba automática de compromiso.
-- **Revisa las nuevas dependencias, los diffs del lockfile y los cambios de política de scripts juntos**: propiedad, mantenimiento, antigüedad del release, procedencia, grafo transitivo y typosquats como `cross-env` vs `crossenv` (OWASP **A06**, **LLM03**).
+- **Never apply forced audit remediation automatically** (`npm audit fix --force` or equivalent). Preview the remediation, read changelogs, and test each resulting upgrade; forced fixes may cross declared dependency ranges.
+- **Verify registry signatures and provenance where supported** (`npm audit signatures`, `pnpm audit signatures`) and treat absence as a signal to investigate, not automatic proof of compromise.
+- **Review new dependencies, lockfile diffs, and script-policy changes together** - ownership, maintenance, release age, provenance, transitive graph, and typosquats such as `cross-env` vs `crossenv` (OWASP **A06**, **LLM03**).
 
-## Límite de peticiones
+## Rate Limiting
 
 ```typescript
 import rateLimit from 'express-rate-limit';
 
-// Límite de peticiones general de API
+// General API rate limit
 app.use('/api/', rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutos
-  max: 100,                   // 100 peticiones por ventana
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100,                   // 100 requests per window
   standardHeaders: true,
   legacyHeaders: false,
 }));
 
-// Límite más estricto para endpoints de auth
+// Stricter limit for auth endpoints
 app.use('/api/auth/', rateLimit({
   windowMs: 15 * 60 * 1000,
-  max: 10,  // 10 intentos por 15 minutos
+  max: 10,  // 10 attempts per 15 minutes
 }));
 ```
 
-## Gestión de secretos
+## Secrets Management
 
 ```
-Archivos .env:
-  ├── .env.example  → Confirmado (plantilla con valores de ejemplo)
-  ├── .env          → NO confirmado (contiene secretos reales)
-  └── .env.local    → NO confirmado (overrides locales)
+.env files:
+  ├── .env.example  → Committed (template with placeholder values)
+  ├── .env          → NOT committed (contains real secrets)
+  └── .env.local    → NOT committed (local overrides)
 
-.gitignore debe incluir:
+.gitignore must include:
   .env
   .env.local
   .env.*.local
@@ -345,123 +345,123 @@ Archivos .env:
   *.key
 ```
 
-**Siempre verifica antes de confirmar:**
+**Always check before committing:**
 ```bash
-# Revisa secretos subidos por accidente
+# Check for accidentally staged secrets
 git diff --cached | grep -i "password\|secret\|api_key\|token"
 ```
 
-**Si algún secreto se confirma alguna vez, rótalo.** Borrar la línea o reescribir el historial no es suficiente: asume que está comprometido en el momento en que llega a un remoto. Revoca y reemite la clave primero, y luego elimínala del historial.
+**If a secret is ever committed, rotate it.** Deleting the line or rewriting history is not enough - assume it's compromised the moment it reaches a remote. Revoke and reissue the key first, then purge it from history.
 
-## Asegurar funcionalidades de IA / LLM
+## Securing AI / LLM Features
 
-Si tu app llama a un LLM, ya sean chatbots, resumidores, agentes o RAG, hereda una nueva superficie de ataque. Mapéala al [OWASP Top 10 para aplicaciones LLM (2025)](https://genai.owasp.org/llm-top-10/):
+If your app calls an LLM - chatbots, summarizers, agents, RAG - it inherits a new attack surface. Map it to the [OWASP Top 10 for LLM Applications (2025)](https://genai.owasp.org/llm-top-10/):
 
-- **Trata toda la salida del modelo como entrada no confiable (LLM05: manejo inadecuado de la salida).** Nunca pases salida de LLM directamente a `eval`, SQL, una shell, `innerHTML` o una ruta de archivo. Valídala y codifícala exactamente como lo harías con entrada de usuario cruda.
-- **Asume que los prompts pueden ser secuestrados (LLM01: inyección de prompts).** Texto no confiable en la ventana de contexto, ya sea un mensaje de usuario, una página web obtenida o un PDF, puede portar instrucciones. El system prompt no es un límite de seguridad; aplica permisos en código, no en el prompt.
-- **Mantén secretos y datos de otros usuarios fuera de los prompts (LLM02 / LLM07).** Cualquier cosa en el contexto puede repetirse. No pongas API keys, datos entre tenants ni el system prompt completo donde el modelo pueda repetirlos.
-- **Restringe los permisos de herramientas y agentes (LLM06: agencia excesiva).** Limita las herramientas al mínimo, exige confirmación para acciones destructivas o irreversibles y valida cada argumento de herramienta.
-- **Acota el consumo (LLM10: consumo ilimitado).** Limita tokens, tasa de peticiones y profundidad de loops/recursión para que una entrada manipulada no dispare costos ni cuelgue el sistema.
-- **Aísla los datos de recuperación (LLM08: debilidades de vectores y embeddings).** En RAG, trata el vector store como un límite de confianza: particiona los embeddings por tenant para que un usuario no pueda recuperar datos de otro, y valida los documentos antes de indexarlos para que el contenido envenenado no dirija las respuestas.
+- **Treat all model output as untrusted input (LLM05: Improper Output Handling).** Never pass LLM output straight into `eval`, SQL, a shell, `innerHTML`, or a file path. Validate and encode it exactly as you would raw user input.
+- **Assume prompts can be hijacked (LLM01: Prompt Injection).** Untrusted text in the context window - a user message, a fetched web page, a PDF - can carry instructions. The system prompt is not a security boundary; enforce permissions in code, not in the prompt.
+- **Keep secrets and other users' data out of prompts (LLM02 / LLM07).** Anything in the context can be echoed back. Don't put API keys, cross-tenant data, or the full system prompt where the model can repeat it.
+- **Constrain tool and agent permissions (LLM06: Excessive Agency).** Scope tools to the minimum, require confirmation for destructive or irreversible actions, and validate every tool argument.
+- **Bound consumption (LLM10: Unbounded Consumption).** Cap tokens, request rate, and loop/recursion depth so a crafted input can't run up cost or hang the system.
+- **Isolate retrieval data (LLM08: Vector and Embedding Weaknesses).** In RAG, treat the vector store as a trust boundary: partition embeddings per tenant so one user can't retrieve another's data, and validate documents before indexing so poisoned content can't steer answers.
 
 ```typescript
-// MAL: confiar en la salida del modelo como comando o como markup
-const sql = await llm.generate(`Escribe SQL para: ${userQuestion}`);
-await db.query(sql);                                   // ejecución arbitraria de consultas
-container.innerHTML = await llm.reply(userMessage);   // XSS almacenado, vía el modelo
+// BAD: trusting model output as a command or as markup
+const sql = await llm.generate(`Write SQL for: ${userQuestion}`);
+await db.query(sql);                                   // arbitrary query execution
+container.innerHTML = await llm.reply(userMessage);   // stored XSS, via the model
 
-// BIEN: la salida del modelo es dato: parsea defensivamente, luego valida, luego codifica
+// GOOD: model output is data - parse defensively, then validate, then encode
 let intent;
 try {
   intent = CommandSchema.parse(JSON.parse(await llm.replyJson(userMessage)));
 } catch {
-  throw new ValidationError('salida inesperada del modelo'); // JSON.parse o el esquema falló
+  throw new ValidationError('unexpected model output'); // JSON.parse or schema failed
 }
 await runAllowlistedAction(intent.action, intent.params);
 container.textContent = await llm.reply(userMessage);
 ```
 
-## Lista de verificación de revisión de seguridad
+## Security Review Checklist
 
 ```markdown
-### Autenticación
-- [ ] Contraseñas hasheadas con bcrypt/scrypt/argon2 (salt rounds ≥ 12)
-- [ ] Tokens de sesión httpOnly, secure, sameSite
-- [ ] El login tiene límite de peticiones
-- [ ] Los tokens de reset de contraseña expiran
+### Authentication
+- [ ] Passwords hashed with bcrypt/scrypt/argon2 (salt rounds ≥ 12)
+- [ ] Session tokens are httpOnly, secure, sameSite
+- [ ] Login has rate limiting
+- [ ] Password reset tokens expire
 
-### Autorización
-- [ ] Cada endpoint verifica los permisos del usuario
-- [ ] Los usuarios solo pueden acceder a sus propios recursos
-- [ ] Las acciones de administrador requieren verificación de rol de admin
+### Authorization
+- [ ] Every endpoint checks user permissions
+- [ ] Users can only access their own resources
+- [ ] Admin actions require admin role verification
 
-### Entrada
-- [ ] Toda la entrada de usuario validada en el límite
-- [ ] Las consultas SQL están parametrizadas
-- [ ] La salida HTML está codificada/escapada
-- [ ] Las obtenciones de URL del lado del servidor están en lista blanca (sin SSRF a servicios internos)
+### Input
+- [ ] All user input validated at the boundary
+- [ ] SQL queries are parameterized
+- [ ] HTML output is encoded/escaped
+- [ ] Server-side URL fetches are allowlisted (no SSRF to internal services)
 
-### Datos
-- [ ] Sin secretos en código ni en control de versiones
-- [ ] Campos sensibles excluidos de las respuestas de API
-- [ ] PII cifrada en reposo (si aplica)
+### Data
+- [ ] No secrets in code or version control
+- [ ] Sensitive fields excluded from API responses
+- [ ] PII encrypted at rest (if applicable)
 
-### Infraestructura
-- [ ] Cabeceras de seguridad configuradas (CSP, HSTS, etc.)
-- [ ] CORS restringido a orígenes conocidos
-- [ ] Dependencias auditadas por vulnerabilidades
-- [ ] Los mensajes de error no exponen internos
+### Infrastructure
+- [ ] Security headers configured (CSP, HSTS, etc.)
+- [ ] CORS restricted to known origins
+- [ ] Dependencies audited for vulnerabilities
+- [ ] Error messages don't expose internals
 
-### Cadena de suministro
-- [ ] Un lockfile autoritativo confirmado; CI usa la instalación frozen/inmutable de ese gestor
-- [ ] Auditoría nativa con triaje por alcanzabilidad y riesgo de arreglo; scripts de instalación de dependencias bloqueados salvo aprobación explícita
-- [ ] Nuevas dependencias revisadas (propiedad, procedencia, antigüedad del release, grafo transitivo)
+### Supply Chain
+- [ ] One authoritative lockfile committed; CI uses that manager's frozen/immutable install
+- [ ] Native audit triaged by reachability and fix risk; dependency install scripts blocked unless explicitly approved
+- [ ] New dependencies reviewed (ownership, provenance, release age, transitive graph)
 
-### IA / LLM (si se usa)
-- [ ] Salida del modelo tratada como no confiable (sin eval/SQL/innerHTML/shell)
-- [ ] Secretos y datos de otros usuarios fuera de los prompts
-- [ ] Permisos de herramientas/agentes limitados; las acciones destructivas requieren confirmación
+### AI / LLM (if used)
+- [ ] Model output treated as untrusted (no eval/SQL/innerHTML/shell)
+- [ ] Secrets and other users' data kept out of prompts
+- [ ] Tool/agent permissions scoped; destructive actions require confirmation
 ```
-## Ver también
+## See Also
 
-Para listas de verificación de seguridad detalladas y pasos de verificación previos al commit, consulta `references/security-checklist.md`.
+For detailed security checklists and pre-commit verification steps, see `references/security-checklist.md`.
 
-## Racionalizaciones comunes
+## Common Rationalizations
 
-| Racionalización | Realidad |
+| Rationalization | Reality |
 |---|---|
-| "Es una herramienta interna, la seguridad no importa" | Las herramientas internas se ven comprometidas. Los atacantes apuntan al eslabón más débil. |
-| "Añadiremos la seguridad después" | Readaptar la seguridad es 10 veces más difícil que construirla desde el inicio. Añádela ahora. |
-| "Nadie intentaría explotar esto" | Los escáneres automatizados lo encontrarán. La seguridad por oscuridad no es seguridad. |
-| "El framework maneja la seguridad" | Los frameworks proveen herramientas, no garantías. Aún necesitas usarlas correctamente. |
-| "Es solo un prototipo" | Los prototipos se vuelven producción. Hábitos de seguridad desde el primer día. |
-| "El modelado de amenazas es excesivo aquí" | Cinco minutos de "¿cómo atacaría yo esto?" previenen los defectos de diseño que ningún control puede parchear después. |
-| "Es solo salida de LLM, es solo texto" | Ese "texto" puede ser un statement de SQL, una etiqueta de script o un comando de shell. Trátalo como cualquier entrada no confiable. |
-| "La auditoría pasó, así que la dependencia es segura" | Las auditorías coinciden con advisory conocidos. No detectan un paquete recién malicioso ni hacen seguros de ejecutar los scripts de instalación sin revisar. |
+| "This is an internal tool, security doesn't matter" | Internal tools get compromised. Attackers target the weakest link. |
+| "We'll add security later" | Security retrofitting is 10x harder than building it in. Add it now. |
+| "No one would try to exploit this" | Automated scanners will find it. Security by obscurity is not security. |
+| "The framework handles security" | Frameworks provide tools, not guarantees. You still need to use them correctly. |
+| "It's just a prototype" | Prototypes become production. Security habits from day one. |
+| "Threat modeling is overkill here" | Five minutes of "how would I attack this?" prevents the design flaws no control can patch later. |
+| "It's just LLM output, it's only text" | That "text" can be a SQL statement, a script tag, or a shell command. Treat it like any untrusted input. |
+| "The audit passed, so the dependency is safe" | Audits match known advisories. They do not detect a newly malicious package or make unreviewed install scripts safe to execute. |
 
-## Red flags
+## Red Flags
 
-- Entrada de usuario pasada directamente a consultas de base de datos, comandos de shell o renderizado HTML
-- Secretos en código fuente o historial de commits
-- Endpoints de API sin verificaciones de autenticación o autorización
-- Configuración CORS faltante u orígenes wildcard (`*`)
-- Sin límite de peticiones en endpoints de autenticación
-- Stack traces o errores internos expuestos a los usuarios
-- Dependencias con vulnerabilidades críticas conocidas, lockfiles en competencia en un mismo límite de instalación, instalaciones no reproducibles o scripts aprobados de forma generalizada
-- El servidor obtiene URLs proporcionadas por el usuario sin lista blanca (SSRF)
-- Salida de LLM/modelo pasada a una consulta, el DOM, una shell o `eval`
-- Secretos, PII o el system prompt completo colocados dentro de una ventana de contexto de LLM
+- User input passed directly to database queries, shell commands, or HTML rendering
+- Secrets in source code or commit history
+- API endpoints without authentication or authorization checks
+- Missing CORS configuration or wildcard (`*`) origins
+- No rate limiting on authentication endpoints
+- Stack traces or internal errors exposed to users
+- Dependencies with known critical vulnerabilities, competing lockfiles at one installation boundary, non-reproducible installs, or blanket-approved scripts
+- Server fetches user-supplied URLs without an allowlist (SSRF)
+- LLM/model output passed into a query, the DOM, a shell, or `eval`
+- Secrets, PII, or the full system prompt placed inside an LLM context window
 
-## Verificación
+## Verification
 
-Después de implementar código relevante para la seguridad:
+After implementing security-relevant code:
 
-- [ ] La auditoría nativa no tiene hallazgos críticos/altos alcanzables sin mitigar; CI preserva el lockfile autoritativo y bloquea scripts de dependencias sin revisar
-- [ ] Sin secretos en código fuente o historial de git
-- [ ] Toda la entrada de usuario validada en los límites del sistema
-- [ ] Autenticación y autorización verificadas en cada endpoint protegido
-- [ ] Cabeceras de seguridad presentes en la respuesta (verifica con DevTools del navegador)
-- [ ] Las respuestas de error no exponen detalles internos
-- [ ] Límite de peticiones activo en endpoints de auth
-- [ ] Obtenciones de URL del lado del servidor validadas contra una lista blanca (sin SSRF)
-- [ ] Salida de LLM/modelo validada y codificada antes de usarla (si hay funcionalidades de IA)
+- [ ] The native audit has no unmitigated reachable critical/high findings; CI preserves the authoritative lockfile and blocks unreviewed dependency scripts
+- [ ] No secrets in source code or git history
+- [ ] All user input validated at system boundaries
+- [ ] Authentication and authorization checked on every protected endpoint
+- [ ] Security headers present in response (check with browser DevTools)
+- [ ] Error responses don't expose internal details
+- [ ] Rate limiting active on auth endpoints
+- [ ] Server-side URL fetches validated against an allowlist (no SSRF)
+- [ ] LLM/model output validated and encoded before use (if AI features present)

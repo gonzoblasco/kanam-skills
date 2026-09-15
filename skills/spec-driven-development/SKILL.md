@@ -1,104 +1,104 @@
 ---
 name: spec-driven-development
-description: Crea especificaciones integrales antes de escribir cualquier código. Integra la generación de OpenSpec, el scaffolding de builds desde specs, los artefactos de documentación y la trazabilidad de requisitos. Usar al comenzar proyectos/funcionalidades nuevos con requisitos ambiguos/vagos o cuando aún no exista una especificación: NO para arreglos de una línea ni correcciones de typos.
+description: Creates comprehensive specifications before any code is written. Integrates OpenSpec generation, build scaffolding from specs, documentation artifacts, and requirements traceability. Use when starting new projects/features with ambiguous/vague requirements or when no specification exists yet - NOT for single-line fixes or typo corrections.
 ---
 
-# Desarrollo guiado por especificación: construye desde la spec, no adivinando
+# Spec-Driven Development: Build from Specification, Not Guessing
 
-## Descripción general
+## Overview
 
-Escribe especificaciones estructuradas antes de escribir cualquier código. La spec es la fuente de verdad compartida entre tú y el ingeniero humano: define **qué** estamos construyendo, **por qué** y **cómo** sabremos que está terminado. El código sin spec es adivinar.
+Write structured specifications before writing any code. The spec is the shared source of truth between you and the human engineer - it defines **what** we're building, **why**, and **how** we'll know it's done. Code without a spec is guessing.
 
-Esta skill integra la **generación de OpenSpec**, el **scaffolding automatizado de builds desde specs**, la **documentación de trazabilidad de requisitos** y la **preservación de artefactos** para referencia futura.
-
----
-
-## 🎯 Fase 1: cuándo escribir una spec
-
-### ✅ Escribe una spec cuando
-
-- [ ] Los requisitos son ambiguos, incompletos o solo existen como ideas vagas
-- [ ] El cambio toca múltiples archivos/módulos/equipos
-- [ ] Estás a punto de tomar una decisión de arquitectura
-- [ ] La tarea tomaría >30 minutos de implementación
-- [ ] Existen múltiples enfoques de implementación
-- [ ] Los stakeholders de negocio necesitarán criterios de aceptación claros
-- [ ] El código necesita sobrevivir a cambios organizacionales
-
-### ❌ Omite la spec, ve directo a la implementación cuando
-
-- [ ] Arreglo de una línea o corrección de typo
-- [ ] Cambio trivial (<10 líneas de código)
-- [ ] Requisitos bien definidos y autocontenidos
-- [ ] Cambio solo de configuración/contenido sin impacto de comportamiento
-- [ ] Ya sabes exactamente qué construir y es <5 min de implementación
+This skill integrates **OpenSpec generation**, **automated build scaffolding from specs**, **requirements traceability documentation**, and **artifact preservation** for future reference.
 
 ---
 
-## 📋 Fase 2: estructura de la spec (formato OpenSpec)
+## 🎯 Phase 1: When to Write a Spec
 
-### Plantilla completa de spec
+### ✅ Write a Spec When
+
+- [ ] Requirements are ambiguous, incomplete, or only exist as vague ideas
+- [ ] The change touches multiple files/modules/teams
+- [ ] You're about to make an architectural decision
+- [ ] The task would take >30 minutes to implement
+- [ ] Multiple implementation approaches exist
+- [ ] Business stakeholders will need clear acceptance criteria
+- [ ] Code needs to survive organizational changes
+
+### ❌ Skip Spec, Go Directly to Implementation When
+
+- [ ] Single-line fix or typo correction
+- [ ] Trivial change (<10 lines of code)
+- [ ] Well-defined, self-contained requirements
+- [ ] Configuration/content-only change with no behavioral impact
+- [ ] You already know exactly what to build and it's <5 min implementation
+
+---
+
+## 📋 Phase 2: Spec Structure (OpenSpec Format)
+
+### Complete Spec Template
 
 ```markdown
-# SPECIFICATION: [Nombre de la funcionalidad/proyecto]
+# SPECIFICATION: [Feature/Project Name]
 
 ## 📌 Metadata
-- **ID:** SPEC-[PROYECTO]-[NÚMERO]
-- **Estado:** Borrador | Revisión | Aprobada | Reemplazada
-- **Creada:** 2026-08-06
-- **Última actualización:** 2026-08-06
-- **Dueño:** @usuario
-- **Stakeholders:** [Lista de personas/equipos afectados]
+- **ID:** SPEC-[PROJECT]-[NUMBER]
+- **Status:** Draft | Review | Approved | Superseded
+- **Created:** 2026-08-06
+- **Last Updated:** 2026-08-06
+- **Owner:** @user
+- **Stakeholders:** [List people/teams affected]
 
 ---
 
-## 🎯 Metas y objetivos
+## 🎯 Goals & Objectives
 
-### Meta principal
-[Una frase: ¿qué problema estamos resolviendo?]
+### Primary Goal
+[One sentence: what problem are we solving?]
 
-### Criterios de éxito
-- [ ] La métrica A mejora un X%
-- [ ] La funcionalidad B queda disponible para los usuarios
-- [ ] El rendimiento se mantiene dentro del presupuesto Y
+### Success Criteria
+- [ ] Metric A improves by X%
+- [ ] Feature B becomes available to users
+- [ ] Performance stays within Y budget
 
-### Fuera de alcance
-[Lista de lo que NO estamos construyendo]
-
----
-
-## 🔍 Declaración del problema
-
-[Explicación detallada del problema que se resuelve. Incluye:]
-- Puntos de dolor o limitaciones actuales
-- Investigación de usuarios o feedback que impulsa esto
-- Datos/métricas que muestran por qué importa
-- Soluciones alternativas consideradas y rechazadas
+### Out of Scope
+[List what we're NOT building]
 
 ---
 
-## 🏗️ Descripción general de la arquitectura
+## 🔍 Problem Statement
 
-### Límites del sistema
+[Detailed explanation of the problem being solved. Include:]
+- Current pain points or limitations
+- User research or feedback driving this
+- Data/metrics showing why this matters
+- Alternative solutions considered and rejected
+
+---
+
+## 🏗️ Architecture Overview
+
+### System Boundaries
 ```
 ┌─────────────────┐      ┌─────────────────┐      ┌─────────────────┐
-│   Componente A  │  →   │   Componente B  │  →   │   Componente C  │
+│   Component A   │  →   │  Component B   │  →   │  Component C   │
 └─────────────────┘      └─────────────────┘      └─────────────────┘
      ↓                          ↓                          ↓
- [Entrada]                 [Procesamiento]            [Salida/Almacenamiento]
+ [Input]                   [Processing]                [Output/Storage]
 ```
 
-### Elecciones de tecnología
-| Decisión | Opción elegida | Razonamiento | Alternativas consideradas |
+### Technology Choices
+| Decision | Option Chosen | Reasoning | Alternatives Considered |
 |----------|---------------|-----------|-------------------------|
-| Gestión de estado | React Query | Mejor práctica para estado del servidor, caché integrada | Zustand, Redux, SWR |
-| Estrategia de auth | Basada en sesión | Simple, sin base de datos requerida para escalar | JWT, OAuth2, SAML |
+| State Management | React Query | Server-state best practice, built-in caching | Zustand, Redux, SWR |
+| Auth Strategy | Session-based | Simple, no DB required for scale | JWT, OAuth2, SAML |
 
 ---
 
-## 📁 Modelo de datos
+## 📁 Data Model
 
-### Esquema de base de datos (si aplica)
+### Database Schema (if applicable)
 ```sql
 CREATE TABLE users (
   id UUID PRIMARY KEY,
@@ -108,12 +108,12 @@ CREATE TABLE users (
   updated_at TIMESTAMP DEFAULT NOW()
 );
 
--- Índices para rendimiento
+-- Indexes for performance
 CREATE INDEX idx_users_email ON users(email);
 CREATE INDEX idx_users_role ON users(role);
 ```
 
-### Definiciones de tipos (si es TypeScript)
+### Type Definitions (if TypeScript)
 ```typescript
 interface User {
   id: string;
@@ -126,345 +126,345 @@ interface User {
 
 ---
 
-## 🎨 Mockups y wireframes de UI
+## 🎨 UI Mockups & Wireframes
 
-[Incluye arte ASCII, diagramas mermaid o enlaces a mockups de Figma]
+[Include ASCII art, mermaid diagrams, or link to Figma mockups]
 
-### Estado actual (Antes)
+### Current State (Before)
 ```
 ┌─────────────────────────────┐
-│     Componente existente    │
+│     Existing Component       │
 │                             │
-│   (Describe la UX actual)   │
+│   (Describe current UX)      │
 │                             │
 └─────────────────────────────┘
 ```
 
-### Estado deseado (Después)
+### Desired State (After)
 ```
 ┌─────────────────────────────┐
-│     NUEVA funcionalidad      │
-│  ↑ Mejoras clave aquí ↓      │
+│     NEW Feature/Component    │
+│  ↑ Key improvements here ↓   │
 │                             │
 └─────────────────────────────┘
 ```
 
 ---
 
-## 🔄 Flujos de usuario
+## 🔄 User Flows
 
-### Camino feliz
+### Happy Path
 ```mermaid
 graph LR
-  A[Acción del usuario] --> B[Validación frontend]
-  B --> C[Llamada de API]
-  C --> D[Procesamiento backend]
-  D --> E[Base de datos]
-  E --> F[Respuesta exitosa]
-  F --> G[Actualización de UI]
-  G --> H[Confirmación]
+  A[User Action] --> B[Frontend Validation]
+  B --> C[API Call]
+  C --> D[Backend Processing]
+  D --> E[Database]
+  E --> F[Success Response]
+  F --> G[UI Update]
+  G --> H[Confirmation]
 ```
 
-### Camino de manejo de errores
+### Error Handling Path
 ```mermaid
 graph TD
-  A[Acción del usuario] --> B[Error de validación]
-  B --> C[Mostrar UI de error]
-  C --> D[El usuario corrige la entrada]
+  A[User Action] --> B[Validation Error]
+  B --> C[Show Error UI]
+  C --> D[User Corrects Input]
   D --> A
 ```
 
 ---
 
-## 🧪 Criterios de aceptación (Given-When-Then)
+## 🧪 Acceptance Criteria (Given-When-Then)
 
-### Escenario 1: registro de usuario exitoso
-**Dado** que el usuario ingresa un email válido  
-**Cuando** hace clic en 'Registrarse'  
-**Entonces** es redirigido al dashboard  
-**Y** se envía un email de bienvenida  
+### Scenario 1: Successful User Registration
+**Given** the user enters a valid email  
+**When** they click 'Sign Up'  
+**Then** they are redirected to the dashboard  
+**And** a welcome email is sent  
 
-### Escenario 2: formato de email inválido
-**Dado** que el usuario ingresa un email inválido  
-**Cuando** hace clic en 'Registrarse'  
-**Entonces** aparece un mensaje de error explicando el problema  
-**Y** permanece en la página de registro
-
----
-
-## 🔒 Consideraciones de seguridad
-
-- [ ] Validación y sanitización de entrada
-- [ ] Verificaciones de autenticación/autorización
-- [ ] Implementación de límite de peticiones
-- [ ] Aplicación de HTTPS
-- [ ] Requisitos de cifrado de datos sensibles
-- [ ] Requisitos de cumplimiento (GDPR, CCPA, etc.)
+### Scenario 2: Invalid Email Format
+**Given** the user enters an invalid email  
+**When** they click 'Sign Up'  
+**Then** an error message appears explaining the issue  
+**And** they remain on the registration page
 
 ---
 
-## 📈 Requisitos de rendimiento
+## 🔒 Security Considerations
 
-| Métrica | Objetivo | Herramienta de medición |
+- [ ] Input validation and sanitization
+- [ ] Authentication/Authorization checks
+- [ ] Rate limiting implementation
+- [ ] HTTPS enforcement
+- [ ] Sensitive data encryption requirements
+- [ ] Compliance requirements (GDPR, CCPA, etc.)
+
+---
+
+## 📈 Performance Requirements
+
+| Metric | Target | Measurement Tool |
 |--------|--------|------------------|
-| Tiempo de carga inicial | < 1s | Lighthouse |
-| Tiempo hasta interacción | < 3s | Web Vitals |
-| Tiempo de respuesta del servidor | < 200ms | Métricas de API Gateway |
-| Aumento de tamaño del bundle | < 10KB | Estadísticas de esbuild |
+| Initial Load Time | < 1s | Lighthouse |
+| Time to Interactive | < 3s | Web Vitals |
+| Server Response Time | < 200ms | API Gateway metrics |
+| Bundle Size Increase | < 10KB | esbuild stats |
 
 ---
 
-## 🧩 Desglose de componentes
+## 🧩 Component Breakdown
 
-### Árbol de componentes
+### Component Tree
 ```
 FeatureName/
 ├── components/
-│   ├── FeatureHeader/          # Componente de encabezado visual
+│   ├── FeatureHeader/          # Visual header component
 │   │   ├── FeatureHeader.tsx
 │   │   ├── FeatureHeader.test.tsx
 │   │   └── stories/
 │   │       └── FeatureHeader.stories.tsx
-│   ├── FeatureForm/            # Formulario de entrada con validación
+│   ├── FeatureForm/            # Input form with validation
 │   │   ├── FeatureForm.tsx
 │   │   ├── FeatureForm.hooks.ts
 │   │   └── types/
 │   │       └── feature-form.types.ts
-│   └── FeatureResults/         # Visualización de resultados
+│   └── FeatureResults/         # Results display
 │       ├── FeatureResults.tsx
 │       └── types/
 │           └── result-types.ts
 ├── hooks/
-│   └── useFeatureLogic.ts      # Hook de lógica de negocio
+│   └── useFeatureLogic.ts      # Business logic hook
 ├── services/
-│   └── feature-api.ts          # Capa de integración de API
+│   └── feature-api.ts          # API integration layer
 └── tests/
     └── e2e/
-        └── feature.spec.ts     # Test de punta a punta
+        └── feature.spec.ts     # End-to-end test
 ```
 
 ---
 
-## 🛠️ Plan de implementación
+## 🛠️ Implementation Plan
 
-### Fase 1: Fundación (Semana 1)
-- [ ] Configurar el scaffolding del proyecto con OpenSpec
-- [ ] Definir tipos/interfaces compartidos
-- [ ] Crear funciones/hooks de utilidad
+### Phase 1: Foundation (Week 1)
+- [ ] Set up project scaffolding with OpenSpec
+- [ ] Define shared types/interfaces
+- [ ] Create utility functions/hooks
 
-### Fase 2: Funcionalidades principales (Semanas 2-3)
-- [ ] Implementar la lógica de negocio principal
-- [ ] Construir la capa de validación de formularios
-- [ ] Configurar la integración de API
+### Phase 2: Core Features (Week 2-3)
+- [ ] Implement main business logic
+- [ ] Build form validation layer
+- [ ] Set up API integration
 
-### Fase 3: Pulido y pruebas (Semana 4)
-- [ ] Agregar pulido de UI y animaciones
-- [ ] Escribir tests integrales
-- [ ] Optimización de rendimiento
-- [ ] Actualización de documentación
+### Phase 3: Polish & Test (Week 4)
+- [ ] Add UI polish and animations
+- [ ] Write comprehensive tests
+- [ ] Performance optimization
+- [ ] Documentation update
 
 ---
 
-## 📝 Registro de decisiones
+## 📝 Decision Log
 
-| Fecha | Decisión tomada | Alternativas consideradas | Impacto |
+| Date | Decision Made | Alternatives Considered | Impact |
 |-------|---------------|------------------------|---------|
-| 2026-08-06 | Usar React Query para el estado del servidor | Zustand, SWR, Redux | Proporciona caché, estados de carga y manejo de errores listos para usar |
+| 2026-08-06 | Use React Query for server state | Zustand, SWR, Redux | Provides caching, loading states, error handling out of the box |
 
 ---
 
-## 🔗 Matriz de trazabilidad
+## 🔗 Traceability Matrix
 
-| ID de requisito | Sección de la spec | Archivo de test | Estado |
+| Requirement ID | Spec Section | Test File | Status |
 |----------------|-------------|-----------|--------|
-| REQ-001 | Metas y objetivos | tests/registration.test.ts | ✅ Implementado |
-| REQ-002 | Consideraciones de seguridad | tests/auth-security.test.ts | 🔄 En progreso |
-| REQ-003 | Requisitos de rendimiento | perf/bundle-size.spec.ts | ⏳ Pendiente |
+| REQ-001 | Goals & Objectives | tests/registration.test.ts | ✅ Implemented |
+| REQ-002 | Security Considerations | tests/auth-security.test.ts | 🔄 In Progress |
+| REQ-003 | Performance Requirements | perf/bundle-size.spec.ts | ⏳ Pending |
 
 ---
 
-## 📚 Documentos relacionados
+## 📚 Related Documents
 
-- [Registro de decisión de arquitectura #1](../docs/adr/adr-001-state-management.md): enfoque de gestión de estado
-- [Guía de OpenSpec](https://openspec.dev/guide): referencia del formato de spec
-- [Contrato de API](../../api/docs/openapi.json): especificación de API
-- [Mockups de Figma](../design/mockups/): referencia de diseño visual
-
----
-
-## 🚀 Estrategia de despliegue
-
-### Plan de rollback
-Si el despliegue falla:
-1. Revierte a la versión anterior usando el tag/commit de Git
-2. Notifica a los usuarios afectados vía página de estado
-3. Depura y reintenta después de identificar la causa raíz
-
-### Estrategia de feature flags
-Envuelve la nueva funcionalidad detrás del flag `feature.new-feature.enabled` para un rollout gradual.
+- [Architecture Decision Record #1](../docs/adr/adr-001-state-management.md) - State management approach
+- [OpenSpec Guide](https://openspec.dev/guide) - Spec format reference
+- [API Contract](../../api/docs/openapi.json) - API specification
+- [Figma Mockups](../design/mockups/) - Visual design reference
 
 ---
 
-## 📣 Plan de comunicación
+## 🚀 Deployment Strategy
 
-### Pre-implementación
-- [ ] Reunión de revisión con stakeholders (Fecha: TBD)
-- [ ] Sincronización del equipo para discutir el enfoque de implementación
-- [ ] Creación del PR con la spec enlazada en la descripción
+### Rollback Plan
+If deployment fails:
+1. Revert to previous version using Git tag/commit
+2. Notify affected users via status page
+3. Debug and retry after root cause identified
 
-### Durante la implementación
-- [ ] Actualizaciones de estado semanales
-- [ ] Bloqueadores documentados y escalados
-- [ ] Congelación del diseño después de la aprobación
+### Feature Flag Strategy
+Wrap new feature behind flag `feature.new-feature.enabled` for gradual rollout.
 
-### Post-implementación
-- [ ] Anuncio del lanzamiento
-- [ ] Documentación de lecciones aprendidas
-- [ ] Traspaso al equipo de mantenimiento
+---
+
+## 📣 Communication Plan
+
+### Pre-Implementation
+- [ ] Stakeholder review meeting (Date: TBD)
+- [ ] Team sync to discuss implementation approach
+- [ ] PR creation with spec linked in description
+
+### During Implementation
+- [ ] Weekly status updates
+- [ ] Blockers documented and escalated
+- [ ] Design freeze after approval
+
+### Post-Implementation
+- [ ] Launch announcement
+- [ ] Lessons learned documentation
+- [ ] Handover to maintenance team
 ```
 
 ---
 
-## 🎮 Fase 3: scaffolding automatizado de builds desde specs
+## 🎮 Phase 3: Automated Build Scaffolding from Specs
 
-### Workflow de integración con OpenSpec
+### OpenSpec Integration Workflow
 
-Usando **OpenSpec** para auto-generar la estructura del proyecto a partir de las especificaciones:
+Using **OpenSpec** to auto-generate project structure from specifications:
 
 ```bash
-# Paso 1: escribe la spec en markdown
+# Step 1: Write spec in markdown
 cat > specs/feature-name/spec.md <<EOF
-[Pega aquí la especificación completa]
+[Paste full specification here]
 EOF
 
-# Paso 2: genera el esqueleto del proyecto
+# Step 2: Generate project skeleton
 npx open-spec generate --input specs/feature-name/spec.md --output projects/feature-name
 
-# Paso 3: revisa la estructura generada
+# Step 3: Review generated structure
 cd projects/feature-name
 ls -laR
 
-# Paso 4: personaliza e implementa
-# (Edita los archivos generados, agrega la implementación real)
+# Step 4: Customize and implement
+# (Edit generated files, add actual implementation)
 ```
 
-### Ejemplo de estructura generada
-A partir de la spec de arriba, OpenSpec genera:
+### Generated Structure Example
+From the spec above, OpenSpec generates:
 ```
 projects/feature-name/
-├── specs/                  # Especificación original
-│   └── spec.md            ← Tu spec de entrada
-├── packages/               # Estructura de monorepo (si aplica)
+├── specs/                  # Original specification
+│   └── spec.md            ← Your input spec
+├── packages/               # Monorepo structure (if applicable)
 │   ├── frontend/
 │   │   ├── src/
-│   │   │   ├── components/  ← Árbol de componentes desde la spec
-│   │   │   ├── hooks/       ← Hooks definidos en la spec
-│   │   │   ├── services/    ← Servicios de API
-│   │   │   └── types/       ← Definiciones de tipos
+│   │   │   ├── components/  ← Component tree from spec
+│   │   │   ├── hooks/       ← Hooks defined in spec
+│   │   │   ├── services/    ← API services
+│   │   │   └── types/       ← Type definitions
 │   │   ├── package.json
 │   │   └── vite.config.ts
-│   └── shared/              # Utilidades/tipos compartidos
+│   └── shared/              # Shared utilities/types
 │       ├── package.json
 │       └── src/
-├── docs/                   # Documentación desde la spec
-├── scripts/                # Scripts de build/generación
-└── README.md               # Auto-generado a partir de la metadata de la spec
+├── docs/                   # Documentation from spec
+├── scripts/                # Build/generation scripts
+└── README.md               # Auto-generated from spec metadata
 ```
 
 ---
 
-## 🔄 Fase 4: trazabilidad de requisitos
+## 🔄 Phase 4: Requirements Traceability
 
-### Mapear la especificación a la implementación
+### Mapping Specification to Implementation
 
-Crea un **documento de trazabilidad de requisitos** que mapee cada requisito a:
+Create a **requirements traceability document** that maps every requirement to:
 
-1. **Sección de la spec:** dónde está definido en la especificación
-2. **Archivo de implementación:** qué archivo contiene el código
-3. **Cobertura de tests:** qué tests lo validan
-4. **Estado:** ✅ Implementado | 🔄 En progreso | ⏳ No iniciado
+1. **Spec Section:** Where it's defined in the specification
+2. **Implementation File:** Which file contains the code
+3. **Test Coverage:** Which tests validate it
+4. **Status:** ✅ Implemented | 🔄 In Progress | ⏳ Not Started
 
-### Ejemplo de entrada de trazabilidad
+### Example Traceability Entry
 ```markdown
-| ID | Descripción | Ubicación en la spec | Implementación | Tests | Estado |
+| ID | Description | Spec Location | Implementation | Tests | Status |
 |-----|-------------|---------------|----------------|-------|--------|
-| AUTH-01 | El usuario debe autenticarse antes de acceder al dashboard | Consideraciones de seguridad, sección de flujo de auth | `packages/frontend/src/auth-guard.tsx` | `packages/frontend/tests/auth-guard.test.tsx` | ✅ Implementado
+| AUTH-01 | User must authenticate before accessing dashboard | Security Considerations, Auth Flow section | `packages/frontend/src/auth-guard.tsx` | `packages/frontend/tests/auth-guard.test.tsx` | ✅ Implemented
 ```
 
 ---
 
-## 🧪 Fase 5: lista de verificación de calidad de la spec
+## 🧪 Phase 5: Specification Quality Checklist
 
-Antes de aprobar una spec para implementación:
+Before approving a spec for implementation:
 
-### Completitud
-- [ ] Declaración clara del problema (no solo "necesitamos X")
-- [ ] Criterios de éxito medibles
-- [ ] Fuera de alcance definido explícitamente
-- [ ] Casos límite considerados
+### Completeness
+- [ ] Clear problem statement (not just "we need X")
+- [ ] Success criteria are measurable
+- [ ] Out of scope is explicitly defined
+- [ ] Edge cases are considered
 
-### Claridad
-- [ ] Los stakeholders no técnicos la entienden
-- [ ] Sin jerga sin definición
-- [ ] Los diagramas ilustran conceptos clave
-- [ ] Los flujos de usuario están completos (camino feliz + caminos de error)
+### Clarity
+- [ ] Non-technical stakeholders understand it
+- [ ] No jargon without definition
+- [ ] Diagrams illustrate key concepts
+- [ ] User flows are complete (happy path + error paths)
 
-### Testabilidad
-- [ ] Cada criterio de aceptación se mapea a un escenario testeable
-- [ ] Las métricas de éxito son cuantificables
-- [ ] La estrategia de rollback está definida si la funcionalidad falla
+### Testability
+- [ ] Each acceptance criterion maps to a testable scenario
+- [ ] Success metrics are quantifiable
+- [ ] Rollback strategy is defined if feature fails
 
-### Arquitectura
-- [ ] Elecciones de tecnología justificadas con alternativas consideradas
-- [ ] Consideraciones de escalabilidad y rendimiento abordadas
-- [ ] Implicaciones de seguridad evaluadas
-- [ ] Existe un plan de mantenimiento para actualizaciones futuras
+### Architecture
+- [ ] Technology choices justified with alternatives considered
+- [ ] Scalability and performance considerations addressed
+- [ ] Security implications evaluated
+- [ ] Maintenance plan exists for future updates
 
-### Alineación
-- [ ] Consistente con los patrones de arquitectura existentes
-- [ ] Encaja dentro de las capacidades de velocidad del equipo
-- [ ] Restricciones de presupuesto/cronograma consideradas
-- [ ] Dependencias identificadas y comunicadas
+### Alignment
+- [ ] Consistent with existing architecture patterns
+- [ ] Fits within team velocity capabilities
+- [ ] Budget/timeline constraints considered
+- [ ] Dependencies identified and communicated
 
 ---
 
-## 🚨 Racionalizaciones comunes y verificación de la realidad
+## 🚨 Common Rationalizations & Reality Check
 
-| Racionalización | Realidad |
+| Rationalization | Reality |
 |-----------------|---------|
-| "Resolveremos los detalles mientras codeamos" | Las ambigüedades se vuelven rework costoso; las specs previenen la deuda técnica antes de que empiece. |
-| "Las specs nos frenan, mejor hagamos un MVP" | Las specs para MVPs siguen existiendo. Son más cortas, sí, pero aún necesitas claridad sobre qué construir. |
-| "Usamos Agile, ¿verdad? Sin docs necesarios" | Los equipos Agile escriben user stories (que son specs). El mapeo de user stories es desarrollo guiado por especificación. |
-| "Los mockups de Figma son nuestra spec" | El diseño visual ≠ requisitos. Los mockups muestran apariencia; las specs definen comportamiento, casos límite y criterios de éxito. |
-| "Actualizaremos la documentación después" | La documentación que siempre es "después" se vuelve una instantánea incorrecta de la base de código en la que los nuevos miembros del equipo (y tú) confían erróneamente. |
+| "We'll figure the details as we code" | Ambiguities become expensive rework; specs prevent technical debt before it starts. |
+| "Specs slow us down, let's just MVP this" | Specs for MVPs still exist. They're shorter, yes, but you still need clarity on what to build. |
+| "We use Agile, right? No docs needed" | Agile teams write user stories (which are specs). User story mapping is spec-driven development. |
+| "The Figma mockups are our spec" | Visual design ≠ requirements. Mockups show appearance; specs define behavior, edge cases, success criteria. |
+| "We'll update the docs later" | Documentation that's always 'later' becomes wrong codebase snapshot that new team members (and you) rely on incorrectly. |
 
 ---
 
-## ✅ Puerta de verificación
+## ✅ Verification Gate
 
-### Antes de aprobar la spec para implementación:
+### Before Approving Spec for Implementation:
 
-- [ ] Todos los stakeholders la revisaron y aprobaron
-- [ ] Los criterios de aceptación son testeables y medibles
-- [ ] Decisiones de arquitectura documentadas (ADR creado si es necesario)
-- [ ] Implicaciones de seguridad evaluadas
-- [ ] Presupuesto de rendimiento establecido
-- [ ] Capacidad del equipo confirmada
-- [ ] Dependencias comunicadas a los equipos afectados
+- [ ] All stakeholders reviewed and approved
+- [ ] Acceptance criteria are testable and measurable
+- [ ] Architecture decisions documented (ADR created if needed)
+- [ ] Security implications evaluated
+- [ ] Performance budget set
+- [ ] Team capacity confirmed
+- [ ] Dependencies communicated to affected teams
 
-### Después de la implementación:
+### After Implementation:
 
-- [ ] El código coincide exactamente con la spec (¡sin scope creep!)
-- [ ] Todos los criterios de aceptación pasaron
-- [ ] Tests agregados para cada escenario
-- [ ] Documentación actualizada (README, ADRs, docs en línea)
-- [ ] Conocimiento compartido en la sincronización del equipo
-- [ ] Spec marcada como 'Reemplazada' con enlace a la implementación
+- [ ] Code matches spec exactly (no scope creep!)
+- [ ] All acceptance criteria passed
+- [ ] Tests added for every scenario
+- [ ] Documentation updated (README, ADRs, inline docs)
+- [ ] Knowledge shared in team sync
+- [ ] Spec marked as 'Superseded' with link to implementation
 
 ---
 
-## 📚 Referencias
+## 📚 References
 
-Consulta `references/spec-template.md` para plantillas y ejemplos de specs.  
-Consulta `references/open-spec-guide/` para la referencia de comandos de OpenSpec.  
-Consulta `docs/architecture/adr-001-state-management.md` para los patrones de arquitectura usados en este proyecto.
+See `references/spec-template.md` for spec templates and examples.  
+See `references/open-spec-guide/` for OpenSpec command reference.  
+See `docs/architecture/adr-001-state-management.md` for architectural patterns used in this project.
