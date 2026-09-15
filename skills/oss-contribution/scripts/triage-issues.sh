@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# triage-issues.sh — Find open issues without PRs in target repos
+# triage-issues.sh - Find open issues without PRs in target repos
 # Usage: ./triage-issues.sh <repo> [--label <label>] [--limit <n>]
 
 set -euo pipefail

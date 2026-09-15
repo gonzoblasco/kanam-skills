@@ -1,35 +1,33 @@
 ---
 name: "git-changelog"
-description: "Auto-genera CHANGELOG.md desde git history con conventional commits"
+description: "Auto-generate CHANGELOG.md from git history with conventional commits"
 ---
 
 # git-changelog
 
-## Descripción
-Lee el historial de git commits convencionales y produce un changelog categorizado y formateado en markdown, agrupado por tipo (feat, fix, breaking change, etc.). El output está listo para pegar en CHANGELOG.md o en una GitHub release.
+## Description
+Reads the git history of conventional commits and produces a categorized, markdown-formatted changelog, grouped by type (feat, fix, breaking change, etc.). The output is ready to paste into CHANGELOG.md or a GitHub release.
 
-## Cuándo usarlo
-- Antes de taggear una nueva versión
-- Al crear una entrada en CHANGELOG.md después de un sprint
-- Para revisar qué cambió entre dos tags de git
-- Para detectar breaking changes antes de publicar un paquete
-- Para resumir commits recientes en una update de equipo
+## When to use it
+- Before tagging a new version
+- When creating a CHANGELOG.md entry after a sprint
+- To review what changed between two git tags
+- To detect breaking changes before publishing a package
+- To summarize recent commits in a team update
 
 ## Workflow
-1. Identificar el rango de commits (entre tags, fechas, o desde el último changelog)
-2. Ejecutar git-changelog con el rango especificado
-3. Revisar el output y pegarlo en CHANGELOG.md
-4. Hacer commit del changelog actualizado
+1. Identify the commit range (between tags, dates, or since the last changelog)
+2. Run git-changelog with the specified range
+3. Review the output and paste it into CHANGELOG.md
+4. Commit the updated changelog
 
-## Tooling relacionado
+## Related tooling
 
-| Skill / Script | Uso |
+| Skill / Script | Use |
 |---|---|
-| `tech-docs/scripts/update-changelog.sh` | Inserta una entrada `[Unreleased]` en CHANGELOG.md. |
-| `release-management/scripts/generate-release-notes.sh` | Genera notas de release desde commits/tags para GitHub. |
-| `release-management/scripts/release-check.sh` | Verifica que CHANGELOG tenga la version antes de taggear. |
+| `tech-docs/scripts/update-changelog.sh` | Inserts an `[Unreleased]` entry into CHANGELOG.md. |
 
-## Notas
-- Asume que los commits siguen Conventional Commits format
-- No requiere API keys externas
-- El output es markdown, listo para usar
+## Notes
+- Assumes commits follow the Conventional Commits format
+- Requires no external API keys
+- The output is markdown, ready to use

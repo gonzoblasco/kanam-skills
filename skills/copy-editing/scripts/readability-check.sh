@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# readability-check.sh — Quick readability metrics for a text file
+# readability-check.sh - Quick readability metrics for a text file
 # Usage: ./readability-check.sh <file>
 
 set -euo pipefail
@@ -50,24 +50,24 @@ echo ""
 if [ "$FK" != "N/A" ]; then
   FK_INT=$(echo "$FK" | cut -d. -f1)
   if [ "$FK_INT" -le 6 ]; then
-    echo "✅ Grade $FK_INT — Very easy to read (5th-6th grade)"
+    echo "✅ Grade $FK_INT - Very easy to read (5th-6th grade)"
   elif [ "$FK_INT" -le 8 ]; then
-    echo "✅ Grade $FK_INT — Conversational (7th-8th grade)"
+    echo "✅ Grade $FK_INT - Conversational (7th-8th grade)"
   elif [ "$FK_INT" -le 12 ]; then
-    echo "⚠️  Grade $FK_INT — Somewhat difficult (high school)"
+    echo "⚠️  Grade $FK_INT - Somewhat difficult (high school)"
   else
-    echo "🔴 Grade $FK_INT — Difficult (college level)"
+    echo "🔴 Grade $FK_INT - Difficult (college level)"
   fi
 fi
 
 if [ "$FRE" != "N/A" ]; then
   FRE_INT=$(echo "$FRE" | cut -d. -f1)
   if [ "$FRE_INT" -ge 60 ]; then
-    echo "✅ Ease $FRE — Plain English, easy to consume"
+    echo "✅ Ease $FRE - Plain English, easy to consume"
   elif [ "$FRE_INT" -ge 30 ]; then
-    echo "⚠️  Ease $FRE — Somewhat difficult"
+    echo "⚠️  Ease $FRE - Somewhat difficult"
   else
-    echo "🔴 Ease $FRE — Very difficult, academic/legal"
+    echo "🔴 Ease $FRE - Very difficult, academic/legal"
   fi
 fi
 

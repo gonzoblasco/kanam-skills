@@ -1,6 +1,6 @@
 # Architecture Diagrams - Technical Documentation Reference
 
-Guía para crear diagramas de arquitectura con Mermaid.
+Guide to creating architecture diagrams with Mermaid.
 
 ## C4 Model
 
@@ -64,6 +64,6 @@ graph TD
 
 ## Related
 
-- [SKILL.md](../SKILL.md) - Workflow principal
-- [ADR Patterns](./adr-patterns.md) - Patrones de ADRs
-- [CHANGELOG Guide](./changelog-guide.md) - Guía de CHANGELOG
+- [SKILL.md](../SKILL.md) - Main workflow
+- [ADR Patterns](./adr-patterns.md) - ADR patterns
+- [CHANGELOG Guide](./changelog-guide.md) - CHANGELOG guide

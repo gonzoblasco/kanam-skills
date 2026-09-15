@@ -1,6 +1,6 @@
 # Translation Strategy - I18n Expert Reference
 
-Estrategias para generar y mantener traducciones.
+Strategies for generating and maintaining translations.
 
 ## Quality Tiers
 
@@ -43,11 +43,11 @@ new Intl.NumberFormat('es-AR', {
 
 ## RTL Support
 
-- Usar propiedades CSS lógicas (`margin-inline-start` en vez de `margin-left`)
-- Testear layout con texto en árabe/hebreo
-- El framework de i18n debe soportar `direction` por locale
+- Use logical CSS properties (`margin-inline-start` instead of `margin-left`)
+- Test layout with Arabic/Hebrew text
+- The i18n framework must support `direction` per locale
 
 ## Related
 
-- [SKILL.md](../SKILL.md) - Workflow principal
-- [Locale Setup](./locale-setup.md) - Configuración por framework
+- [SKILL.md](../SKILL.md) - Main workflow
+- [Locale Setup](./locale-setup.md) - Configuration by framework

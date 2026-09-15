@@ -1,35 +1,34 @@
 ---
 name: "deepwiki"
-description: "Consulta documentación de repos GitHub via DeepWiki MCP"
+description: "Query GitHub repo documentation via DeepWiki MCP"
 ---
 
 # deepwiki
 
-## Descripción
-Accede a documentación de repositorios públicos de GitHub mediante el servidor MCP de DeepWiki. Soporta tres operaciones: preguntas con IA sobre un repo, listar su estructura wiki, y leer páginas específicas. Funciona con cualquier repo público sin autenticación.
+## Description
+Accesses documentation of public GitHub repositories through the DeepWiki MCP server. Supports three operations: AI questions about a repo, listing its wiki structure, and reading specific pages. Works with any public repo without authentication.
 
-## Cuándo usarlo
-- Para entender la arquitectura de una librería antes de mandar un PR
-- Para verificar si un proyecto documenta una feature específica sin clonar el repo
-- Para obtener respuestas sobre API usage basadas en la documentación real del proyecto
-- Para explorar la estructura wiki de un codebase open-source no familiar
-- Para investigar cómo un framework popular maneja un patrón particular
+## When to use it
+- To understand a library's architecture before sending a PR
+- To verify whether a project documents a specific feature without cloning the repo
+- To get answers about API usage based on the project's real documentation
+- To explore the wiki structure of an unfamiliar open-source codebase
+- To research how a popular framework handles a particular pattern
 
 ## Workflow
-1. Identificar el repo público a consultar (owner/name)
-2. Elegir operación: pregunta, listar wiki, o leer página
-3. Ejecutar deepwiki con la operación y el repo
-4. Recibir respuesta basada en la documentación real del proyecto
+1. Identify the public repo to query (owner/name)
+2. Choose the operation: question, list wiki, or read page
+3. Run deepwiki with the operation and the repo
+4. Receive the answer based on the project's real documentation
 
-## Tooling relacionado
+## Related tooling
 
-| Skill / Script | Uso |
+| Skill / Script | Use |
 |---|---|
-| `oss-contribution/scripts/triage-issues.sh` | Encontrar issues en el repo consultado para aplicar lo aprendido. |
-| `oss-contribution/scripts/setup-fork.sh` | Preparar fork local si se decide contribuir. |
-| `research-spike/scripts/compare-alternatives.sh` | Comparar el framework/documentado contra alternativas. |
+| `oss-contribution/scripts/triage-issues.sh` | Find issues in the queried repo to apply what was learned. |
+| `oss-contribution/scripts/setup-fork.sh` | Prepare a local fork if you decide to contribute. |
 
-## Notas
-- Sin autenticación requerida
-- Respuestas basadas en documentación real, no en training data
-- Útil para OSS contributions (shadcn/ui, TanStack, vercel/ai)
+## Notes
+- No authentication required
+- Answers based on real documentation, not training data
+- Useful for OSS contributions (shadcn/ui, TanStack, vercel/ai)

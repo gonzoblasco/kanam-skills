@@ -1,110 +1,110 @@
 # Scene Craft - Narrative Content
 
-Anatomía de una escena: cómo escribir escenas que funcionen, una por una.
+Anatomy of a scene: how to write scenes that work, one by one.
 
-## ¿Qué es una escena?
+## What is a scene?
 
-Una escena es una unidad de historia que ocurre en un tiempo y lugar específico. Tiene un objetivo, un conflicto, y un cambio. Si no hay cambio, no es una escena - es relleno.
+A scene is a unit of story that happens at a specific time and place. It has a goal, a conflict, and a change. If there is no change, it is not a scene - it is filler.
 
-## La fórmula de la escena
+## The scene formula
 
 ```
-Escena = Personaje + Objetivo + Conflicto + Cambio
+Scene = Character + Goal + Conflict + Change
 ```
 
-Cada escena debe responder:
-- **¿Qué quiere el personaje?** (objetivo)
-- **¿Qué se lo impide?** (conflicto)
-- **¿Cómo cambia después?** (cambio)
+Every scene must answer:
+- **What does the character want?** (goal)
+- **What stands in the way?** (conflict)
+- **How do they change afterwards?** (change)
 
-## Template de escena
+## Scene template
 
 ```markdown
-## [Título de la escena]
+## [Scene title]
 
-**POV:** [Personaje]
-**Setting:** [Dónde y cuándo]
-**Time of day:** [Mañana / Tarde / Noche / Madrugada]
+**POV:** [Character]
+**Setting:** [Where and when]
+**Time of day:** [Morning / Afternoon / Night / Pre-dawn]
 
-### Objetivo del personaje
-¿Qué quiere lograr en esta escena?
+### Character goal
+What do they want to achieve in this scene?
 
-### Conflicto
-¿Qué se interpone? ¿Interno, externo, o ambos?
+### Conflict
+What gets in the way? Internal, external, or both?
 
 ### Beats
-1. [Beat 1 - entrada, establece la escena]
-2. [Beat 2 - el conflicto emerge]
-3. [Beat 3 - punto de inflexión]
-4. [Beat 4 - resolución o nueva pregunta]
+1. [Beat 1 - entry, establishes the scene]
+2. [Beat 2 - the conflict emerges]
+3. [Beat 3 - turning point]
+4. [Beat 4 - resolution or new question]
 
-### Cambio
-¿Cómo sale el personaje de esta escena? ¿Qué aprendió, decidió, o perdió?
+### Change
+How does the character leave this scene? What did they learn, decide, or lose?
 
-### Notas
-- [Algo que revisar después]
-- [Conexión con la escena anterior/siguiente]
+### Notes
+- [Something to review later]
+- [Connection with the previous/next scene]
 ```
 
-## Tipos de escena
+## Scene types
 
-### Escena de acción
-- **Propósito:** Avanzar la trama, crear tensión
-- **Ritmo:** Rápido, oraciones cortas, párrafos breves
-- **Diálogo:** Corto, funcional, sin adornos
-- **Descripción:** Mínima - solo lo que importa para la acción
+### Action scene
+- **Purpose:** Advance the plot, create tension
+- **Pacing:** Fast, short sentences, brief paragraphs
+- **Dialogue:** Short, functional, no frills
+- **Description:** Minimal - only what matters for the action
 
-### Escena de diálogo
-- **Propósito:** Revelar personaje, avanzar relación, exponer información
-- **Ritmo:** Medio, depende del tono de la conversación
-- **Diálogo:** El centro - cada línea debe servir a la escena
-- **Descripción:** Gestos, miradas, silencios - lo que no se dice
+### Dialogue scene
+- **Purpose:** Reveal character, advance a relationship, expose information
+- **Pacing:** Medium, depends on the tone of the conversation
+- **Dialogue:** The center - every line must serve the scene
+- **Description:** Gestures, glances, silences - what is not said
 
-### Escena de reflexión
-- **Propósito:** Mostrar el mundo interior del personaje
-- **Ritmo:** Lento, oraciones más largas, espacio para pensar
-- **Diálogo:** Interno (monólogo interior) o mínimo
-- **Descripción:** Rica - el setting refleja el estado del personaje
+### Reflection scene
+- **Purpose:** Show the character's inner world
+- **Pacing:** Slow, longer sentences, room to think
+- **Dialogue:** Internal (interior monologue) or minimal
+- **Description:** Rich - the setting reflects the character's state
 
-### Escena de transición
-- **Propósito:** Conectar dos escenas importantes, mostrar paso del tiempo
-- **Ritmo:** Variable, pero breve
-- **Regla:** Si no pasa nada importante, no la escribas - usá un salto temporal
+### Transition scene
+- **Purpose:** Connect two important scenes, show the passage of time
+- **Pacing:** Variable, but brief
+- **Rule:** If nothing important happens, don't write it - use a time skip
 
-## Checklist de escena
+## Scene checklist
 
-Antes de escribir:
-- [ ] ¿Qué quiere el personaje en esta escena?
-- [ ] ¿Qué se lo impide?
-- [ ] ¿Cómo cambia al final?
+Before writing:
+- [ ] What does the character want in this scene?
+- [ ] What stands in the way?
+- [ ] How do they change by the end?
 
-Después de escribir:
-- [ ] ¿La escena avanza la trama o desarrolla personaje? (Si no hace ninguna, borrala)
-- [ ] ¿El conflicto es claro?
-- [ ] ¿El lector quiere saber qué pasa después?
-- [ ] ¿Hay al menos un momento de tensión o sorpresa?
-- [ ] ¿El final de la escena deja una pregunta abierta?
+After writing:
+- [ ] Does the scene advance the plot or develop character? (If it does neither, delete it)
+- [ ] Is the conflict clear?
+- [ ] Does the reader want to know what happens next?
+- [ ] Is there at least one moment of tension or surprise?
+- [ ] Does the scene ending leave an open question?
 
-## Señales de que una escena no funciona
+## Signs a scene is not working
 
-- **No sabés qué quiere el personaje** - la escena va a ser confusa
-- **Nada cambia** - el personaje entra y sale igual
-- **Es solo exposición** - estás informando, no contando una historia
-- **Es demasiado larga** - si no pasa nada durante 3 páginas, cortá
-- **No sabés por qué está ahí** - probablemente no debería estar
+- **You don't know what the character wants** - the scene will be confusing
+- **Nothing changes** - the character enters and leaves the same
+- **It's only exposition** - you're informing, not telling a story
+- **It's too long** - if nothing happens for 3 pages, cut it
+- **You don't know why it's there** - it probably shouldn't be
 
-## Cómo unir escenas
+## How to join scenes
 
-Cada escena debería terminar con una razón para leer la siguiente:
+Every scene should end with a reason to read the next one:
 
-- **Cliffhanger:** "Y entonces vio la figura en la ventana."
-- **Pregunta:** "¿Qué había querido decir con eso?"
-- **Decisión:** "Mañana iba a hacerlo. Iba a dejar todo."
-- **Revelación:** "No era su padre. Nunca lo había sido."
+- **Cliffhanger:** "And then he saw the figure in the window."
+- **Question:** "What had she meant by that?"
+- **Decision:** "Tomorrow he would do it. He would leave everything."
+- **Revelation:** "He was not his father. He never had been."
 
 ## Related
 
-- [SKILL.md](../SKILL.md) - Workflow principal
-- [Narrative Structures](../references/narrative-structures.md) - Estructuras narrativas
-- [Dialogue](../references/dialogue.md) - Cómo escribir diálogo
-- [Character Development](../references/character-development.md) - Fichas de personajes
+- [SKILL.md](../SKILL.md) - Main workflow
+- [Narrative Structures](./narrative-structures.md) - Narrative structures
+- [Dialogue](./dialogue.md) - How to write dialogue
+- [Character Development](./character-development.md) - Character sheets

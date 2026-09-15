@@ -1,17 +1,17 @@
 # Daily Planning - ADHD Assistant Reference
 
-Plantilla y conceptos para el check-in diario y el planning del día, construidos alrededor de la neurología ADHD: time blindness, executive function depletion y dopamine-aware task design. Proporciona estructuras diarias flexibles con pivots incorporados en lugar de schedules rígidos. Reemplaza la productividad basada en culpa con sistemas adaptados al cerebro ADHD.
+Template and concepts for the daily check-in and day planning, built around ADHD neurology: time blindness, executive function depletion and dopamine-aware task design. Provides flexible daily structures with built-in pivots instead of rigid schedules. Replaces guilt-based productivity with systems adapted to the ADHD brain.
 
-## Conceptos clave
+## Key concepts
 
-- **Energy windows, no horas fijas**: planificar por ventanas de energía (alta/media/baja) en lugar de horarios rígidos. La energía ADHD fluctúa; el plan debe plegarse a ella.
-- **Transition buffers**: reservar espacio entre tareas para el costo real de cambiar de contexto. Cambiar de tarea cuesta energía; el buffer lo absorbe.
-- **Dopamine-aware sequencing**: ordenar tareas según el dopamine que aportan. Alternar tareas de baja dopamina (difíciles) con micro-recompensas.
-- **Shutdown ritual**: cierre explícito del día que permite dejar de trabajar sin culpa residual.
-- **Recovery protocol**: plan para días de baja executive function, sin exigir rendimiento normal.
-- **Morning brain dump**: descargar todo lo que ocupa la mente antes de priorizar.
+- **Energy windows, not fixed hours**: plan by energy windows (high/medium/low) instead of rigid schedules. ADHD energy fluctuates; the plan must bend to it.
+- **Transition buffers**: reserve space between tasks for the real cost of switching context. Switching tasks costs energy; the buffer absorbs it.
+- **Dopamine-aware sequencing**: order tasks according to the dopamine they provide. Alternate low-dopamine (difficult) tasks with micro-rewards.
+- **Shutdown ritual**: explicit end of the day that allows you to stop working without residual guilt.
+- **Recovery protocol**: plan for low executive function days, without demanding normal performance.
+- **Morning brain dump**: download everything occupying your mind before prioritizing.
 
-## Morning Template (con energy windows)
+## Morning Template (with energy windows)
 
 ```markdown
 ## Daily Plan - [Date]
@@ -19,27 +19,27 @@ Plantilla y conceptos para el check-in diario y el planning del día, construido
 ### Check-in
 - Energy (1-10):
 - Mood:
-- Executive function today: alta / media / baja
+- Executive function today: high / medium / low
 - Any deadlines today?
 
 ### Brain Dump
-- [todo lo que ocupe la mente, sin filtrar]
+- [everything occupying your mind, unfiltered]
 
 ### Top 3 Priorities (energy-aligned)
-1. [ ] [Priority 1] - [energy window: alta/media/baja] - [time block]
+1. [ ] [Priority 1] - [energy window: high/medium/low] - [time block]
 2. [ ] [Priority 2] - [energy window] - [time block]
 3. [ ] [Priority 3] - [energy window] - [time block]
 
-### Schedule (flexible, con pivots)
-- Ventana alta: [priority 1] - tarea que requiere foco
-- Ventana media: [priority 2 o shallow work]
+### Schedule (flexible, with pivots)
+- High window: [priority 1] - task that requires focus
+- Medium window: [priority 2 or shallow work]
 - Transition buffer: [ ]
-- Ventana baja: [priority 3 o tarea mecánica]
+- Low window: [priority 3 or mechanical task]
 - End-of-day: [capture time + shutdown ritual]
 
 ### Dopamine sequencing
-- Después de tarea difícil: [micro-recompensa]
-- Primera tarea del día: [la más fácil de arrancar]
+- After difficult task: [micro-reward]
+- First task of the day: [the easiest to start]
 
 ### First Step
 [The very first 2-5 min action for priority 1]
@@ -56,7 +56,7 @@ Plantilla y conceptos para el check-in diario y el planning del día, construido
 ### Incomplete
 - [ ] → [do now / schedule / drop]
 
-### Open Loops (capturados, no pendientes en la cabeza)
+### Open Loops (captured, not pending in your head)
 - [ ]
 
 ### Tomorrow Preview
@@ -64,22 +64,22 @@ Plantilla y conceptos para el check-in diario y el planning del día, construido
 2. [ ]
 3. [ ]
 
-### Cierre
-- [Guardar el plan de mañana]
-- [Dejar de trabajar: la tarea está capturada, no perdida]
+### Closure
+- [Save tomorrow's plan]
+- [Stop working: the task is captured, not lost]
 ```
 
-## Recovery Protocol (días de baja executive function)
+## Recovery Protocol (low executive function days)
 
-Cuando el check-in marca executive function baja:
+When the check-in shows low executive function:
 
-1. **Bajar la expectativa**: 1 prioridad real, no 3. El objetivo es avanzar, no rendir.
-2. **Tarea más pequeña posible**: reducir al micro-step de 2-5 minutos más fácil.
-3. **Body doubling** si ayuda: arrancar acompañado baja la barrera de inicio.
-4. **Sin culpa**: "hoy el cerebro rinde menos" es un dato, no un veredicto.
-5. **Reintentar en la próxima ventana de energía**: no forzar la misma ventana.
+1. **Lower the expectation**: 1 real priority, not 3. The goal is to move forward, not to perform.
+2. **Smallest possible task**: reduce to the easiest 2-5 minute micro-step.
+3. **Body doubling** if it helps: starting accompanied lowers the start barrier.
+4. **No guilt**: "today the brain performs less" is data, not a verdict.
+5. **Retry in the next energy window**: don't force the same window.
 
 ## Related
 
-- [SKILL.md](../SKILL.md) - Workflow principal
-- [Dopamine Menu](./dopamine-menu.md) - Menú de estímulos y micro-recompensas
+- [SKILL.md](../SKILL.md) - Main workflow
+- [Dopamine Menu](./dopamine-menu.md) - Menu of stimuli and micro-rewards

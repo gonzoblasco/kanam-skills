@@ -1,49 +1,49 @@
 # I18n Expert
 
-Internacionalización y localización de proyectos UI.
+Internationalization and localization of UI projects.
 
-## ¿Para qué sirve?
+## What is it for?
 
-Para **configurar, auditar y mantener la internacionalización** en proyectos web. Incluye setup del framework de i18n, reemplazo de strings hardcodeadas por claves traducibles, validación de paridad entre locales, y localización de mensajes de error.
+To **configure, audit and maintain internationalization** in web projects. Includes framework setup, replacing hardcoded strings with translatable keys, validating parity between locales, and localizing error messages.
 
-**Filosofía:** Every user deserves the app in their language. La internacionalización no es un feature post-hoc, es una decisión arquitectónica.
+**Philosophy:** Every user deserves the app in their language. Internationalization is not a post-hoc feature, it's an architectural decision.
 
-## ¿Cuándo usarlo?
+## When to use it?
 
-- Cuando arrancás un proyecto que va a tener múltiples idiomas
-- Cuando querés auditar que no haya strings sin traducir
-- Cuando necesitás agregar un nuevo locale
-- Cuando querés localizar mensajes de error (nunca exponer raw error.message)
+- When you start a project that will have multiple languages
+- When you want to audit that there are no untranslated strings
+- When you need to add a new locale
+- When you want to localize error messages (never expose raw error.message)
 
-## ¿Cómo se usa?
+## How do you use it?
 
-### Workflow completo
+### Full workflow
 
-1. **Scope** - framework, estado actual, locales target, formato
-2. **Setup** - instalar framework (next-intl, react-i18next, vue-i18n)
-3. **Auditoría** - ejecutar script para detectar keys faltantes y huérfanas
-4. **Reemplazo** - buscar strings hardcodeadas y reemplazar con `t('key')`
-5. **Localización de errores** - mapear códigos a claves localizadas
-6. **Validación** - re-ejecutar auditoría hasta 0 issues
-7. **Performance** - lazy-load locale bundles, split archivos grandes
+1. **Scope** - framework, current state, target locales, format
+2. **Setup** - install framework (next-intl, react-i18next, vue-i18n)
+3. **Audit** - run script to detect missing and orphaned keys
+4. **Replacement** - find hardcoded strings and replace with `t('key')`
+5. **Error localization** - map codes to localized keys
+6. **Validation** - re-run audit until 0 issues
+7. **Performance** - lazy-load locale bundles, split large files
 
 ### Script
 
 ```bash
-# Auditar paridad entre locales
+# Audit parity between locales
 python3 scripts/i18n_audit.py --src src/ --locale public/locales/en-US.json --locale public/locales/es-AR.json
 ```
 
-Reporta: keys faltantes, keys huérfanas, brecha de paridad entre locales.
+Reports: missing keys, orphaned keys, parity gap between locales.
 
-## Referencias
+## References
 
-| Archivo | Qué contiene |
+| File | What it contains |
 |---|---|
-| `references/locale-setup.md` | Configuración por framework: next-intl, react-i18next |
-| `references/translation-strategy.md` | AI vs professional vs community, pluralización, RTL |
+| `references/locale-setup.md` | Configuration by framework: next-intl, react-i18next |
+| `references/translation-strategy.md` | AI vs professional vs community, pluralization, RTL |
 
-## Skills relacionadas
+## Related skills
 
-- [Build & Scaffold](../build-scaffold) - Para incluir i18n en el scaffolding inicial
-- [Review & Quality](../review-quality) - Para revisar que no haya strings hardcodeadas
+- [Build & Scaffold](../build-scaffold) - To include i18n in the initial scaffolding
+- [Review & Quality](../review-quality) - To review that there are no hardcoded strings

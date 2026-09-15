@@ -1,168 +1,168 @@
 # Revision Guide - Narrative Content
 
-Los 3 niveles de revisión: estructural, de línea, y de copy. Cómo hacer cada uno.
+The 3 levels of revision: structural, line, and copy. How to do each one.
 
-## Filosofía
+## Philosophy
 
 > Writing is rewriting. No one gets it right the first time.
 
-La primera versión es para descubrir la historia. La revisión es para contarla bien.
+The first version is for discovering the story. Revision is for telling it well.
 
-## Los 3 niveles
+## The 3 levels
 
 ```
-1. Revisión Estructural   → ¿La historia funciona?
-2. Revisión de Línea      → ¿Cada escena funciona?
-3. Revisión de Copy       → ¿Cada palabra funciona?
+1. Structural Revision   → Does the story work?
+2. Line Revision         → Does each scene work?
+3. Copy Revision         → Does each word work?
 ```
 
-**Regla:** Siempre en este orden. No corrijas comas si el capítulo no debería existir.
+**Rule:** Always in this order. Don't fix commas if the chapter shouldn't exist.
 
 ---
 
-## Nivel 1: Revisión Estructural
+## Level 1: Structural Revision
 
-**Cuándo hacerla:** Después de terminar el primer borrador completo. No antes.
+**When to do it:** After finishing the complete first draft. Not before.
 
-**Qué mirar:** La historia como un todo.
+**What to look at:** The story as a whole.
 
-### Checklist estructural
+### Structural checklist
 
-- [ ] **¿La premisa es clara?** - ¿Podés resumir la historia en 1-2 oraciones?
-- [ ] **¿El arco del protagonista funciona?** - ¿Cambia de principio a fin? ¿El cambio es creíble?
-- [ ] **¿La estructura tiene sentido?** - Three-Act, Hero's Journey, etc. ¿Cada acto tiene propósito?
-- [ ] **¿El pacing es consistente?** - ¿Hay partes que se arrastran? ¿Partes que van demasiado rápido?
-- [ ] **¿Cada escena es necesaria?** - Si podés saltarte una escena sin perder la historia, borrala.
-- [ ] **¿Los plot holes son manejables?** - Anotalos todos. Algunos se resuelven solos, otros necesitan reescritura.
-- [ ] **¿El final es satisfactorio?** - No tiene que ser feliz, pero tiene que ser *justo*.
+- [ ] **Is the premise clear?** - can you summarize the story in 1-2 sentences?
+- [ ] **Does the protagonist's arc work?** - do they change from start to finish? Is the change believable?
+- [ ] **Does the structure make sense?** - Three-Act, Hero's Journey, etc. Does each act have a purpose?
+- [ ] **Is the pacing consistent?** - are there parts that drag? Parts that go too fast?
+- [ ] **Is every scene necessary?** - if you can skip a scene without losing the story, delete it.
+- [ ] **Are the plot holes manageable?** - write them all down. Some resolve themselves, others need rewriting.
+- [ ] **Is the ending satisfying?** - it doesn't have to be happy, but it has to be *fair*.
 
-### Cómo hacer una revisión estructural
+### How to do a structural revision
 
-1. **Leé la historia completa de una sentada** - como si fueras un lector, no el autor
-2. **Tomá notas de lo que funciona y lo que no** - no corrijas todavía, solo observá
-3. **Hacé un outline post-hoc** - escribí lo que realmente pasa, no lo que querías que pasara
-4. **Identificá los problemas grandes** - personajes planos, estructura débil, pacing roto
-5. **Decidí qué vas a cambiar** - no arregles todo, priorizá los problemas que más impacto tienen
+1. **Read the whole story in one sitting** - as if you were a reader, not the author
+2. **Take notes on what works and what doesn't** - don't fix yet, just observe
+3. **Make a post-hoc outline** - write what actually happens, not what you wanted to happen
+4. **Identify the big problems** - flat characters, weak structure, broken pacing
+5. **Decide what you'll change** - don't fix everything, prioritize the problems with the biggest impact
 
-### Problemas comunes y soluciones
+### Common problems and solutions
 
-| Problema | Síntoma | Solución |
+| Problem | Symptom | Solution |
 |---|---|---|
-| **Protagonista pasivo** | Las cosas le pasan, no las hace | Reescribí escenas donde elija activamente |
-| **Segundo acto débil** | La historia pierde energía después del primer acto | Agregá obstáculos, subplots, giros |
-| **Demasiados personajes** | No recordás quién es quién | Fusioná personajes, eliminá los que no son necesarios |
-| **Final insatisfactorio** | El lector cierra el libro y dice "¿eso es todo?" | Revisá si el arco del protagonista se completa |
-| **Plot holes** | Cosas que no cierran | Anotalos, resolvelos en orden de impacto |
+| **Passive protagonist** | Things happen to them, they don't make things happen | Rewrite scenes where they choose actively |
+| **Weak second act** | The story loses energy after the first act | Add obstacles, subplots, twists |
+| **Too many characters** | You can't remember who's who | Merge characters, cut the unnecessary ones |
+| **Unsatisfying ending** | The reader closes the book and says "that's it?" | Check whether the protagonist's arc completes |
+| **Plot holes** | Things that don't add up | Write them down, resolve them in order of impact |
 
 ---
 
-## Nivel 2: Revisión de Línea
+## Level 2: Line Revision
 
-**Cuándo hacerla:** Después de la revisión estructural. Cuando la historia ya funciona como todo.
+**When to do it:** After the structural revision. When the story already works as a whole.
 
-**Qué mirar:** Cada escena, cada párrafo, cada línea de diálogo.
+**What to look at:** Each scene, each paragraph, each line of dialogue.
 
-### Checklist de línea
+### Line checklist
 
-- [ ] **¿Cada escena tiene un propósito claro?** - Si no sabés por qué está, borrala.
-- [ ] **¿Cada escena tiene conflicto?** - Sin conflicto, no hay tensión.
-- [ ] **¿Cada escena termina con un gancho?** - El lector debería querer leer la siguiente.
-- [ ] **¿El diálogo suena natural?** - Leelo en voz alta. Si suena falso, reescribilo.
-- [ ] **¿Hay demasiada descripción?** - Mostrá lo que importa, omití el resto.
-- [ ] **¿Hay demasiado diálogo?** - Si solo hablan sin hacer nada, agregá acción.
-- [ ] **¿El ritmo de la escena es correcto?** - Escenas de acción: rápido. Escenas de reflexión: lento.
-- [ ] **¿Cada personaje tiene una voz distinta?** - Cubrí los nombres y leé el diálogo. ¿Podés distinguir quién habla?
+- [ ] **Does every scene have a clear purpose?** - if you don't know why it's there, delete it.
+- [ ] **Does every scene have conflict?** - no conflict, no tension.
+- [ ] **Does every scene end with a hook?** - the reader should want to read the next one.
+- [ ] **Does the dialogue sound natural?** - read it out loud. If it sounds fake, rewrite it.
+- [ ] **Is there too much description?** - show what matters, omit the rest.
+- [ ] **Is there too much dialogue?** - if they only talk without doing anything, add action.
+- [ ] **Is the scene's rhythm right?** - action scenes: fast. Reflection scenes: slow.
+- [ ] **Does every character have a distinct voice?** - cover the names and read the dialogue. Can you tell who's speaking?
 
-### Técnicas de línea
+### Line techniques
 
 **Show, Don't Tell**
 
 | Tell | Show |
 |---|---|
-| "Estaba enojado" | "Apretó los puños. La vena en su sien latía." |
-| "Era un lugar triste" | "Las cortinas grises, el polvo en los rincones, una taza de café frío." |
-| "Tenía miedo" | "Miró hacia la puerta. Otra vez. No podía dejar de mirar." |
+| "He was angry" | "He clenched his fists. The vein in his temple throbbed." |
+| "It was a sad place" | "The gray curtains, the dust in the corners, a cup of cold coffee." |
+| "He was afraid" | "He looked at the door. Again. He couldn't stop looking." |
 
-**Cortar lo innecesario**
+**Cut what's unnecessary**
 
-Antes:
-> Él se levantó de la silla y caminó lentamente hacia la ventana, mirando hacia afuera por un momento antes de darse la vuelta y decir algo.
+Before:
+> He got up from the chair and walked slowly to the window, looking outside for a moment before turning around and saying something.
 
-Después:
-> Se levantó, miró por la ventana, y dijo:
+After:
+> He got up, looked out the window, and said:
 
-**Variar la longitud de las oraciones**
+**Vary sentence length**
 
-- Oraciones cortas → tensión, acción, urgencia
-- Oraciones largas → reflexión, atmósfera, calma
-- Una oración corta después de varias largas → impacto
+- Short sentences → tension, action, urgency
+- Long sentences → reflection, atmosphere, calm
+- A short sentence after several long ones → impact
 
 ---
 
-## Nivel 3: Revisión de Copy
+## Level 3: Copy Revision
 
-**Cuándo hacerla:** Al final. Cuando la historia y las escenas ya están resueltas.
+**When to do it:** At the end. When the story and scenes are already resolved.
 
-**Qué mirar:** Cada palabra, cada coma, cada espacio.
+**What to look at:** Every word, every comma, every space.
 
-### Checklist de copy
+### Copy checklist
 
-- [ ] **Palabras repetidas** - buscá palabras que aparecen demasiado cerca
-- [ ] **Adjetivos y adverbios innecesarios** - "muy", "realmente", "bastante" casi siempre sobran
-- [ ] **Voz pasiva** - "La pelota fue pateada por Juan" → "Juan pateó la pelota"
-- [ ] **Tiempos verbales consistentes** - no mezcles pasado y presente sin razón
-- [ ] **Puntuación** - comas, puntos, rayas de diálogo, todo consistente
-- [ ] **Ortografía** - acentos, mayúsculas, nombres propios
-- [ ] **Formato** - sangrías, espacios, separación de párrafos
+- [ ] **Repeated words** - look for words appearing too close together
+- [ ] **Unnecessary adjectives and adverbs** - "very", "really", "quite" are almost always redundant
+- [ ] **Passive voice** - "The ball was kicked by Juan" → "Juan kicked the ball"
+- [ ] **Consistent tenses** - don't mix past and present without reason
+- [ ] **Punctuation** - commas, periods, dialogue dashes, all consistent
+- [ ] **Spelling** - accents, capitals, proper nouns
+- [ ] **Formatting** - indentation, spaces, paragraph separation
 
-### Herramientas de copy
+### Copy tools
 
-- **Leé en voz alta** - el oído detecta lo que el ojo no ve
-- **Cambiá la fuente** - un cambio visual revela errores
-- **Imprimilo** - en papel se ven cosas que en pantalla no
-- **Dejalo reposar** - 24 horas sin mirarlo, después releé
+- **Read out loud** - the ear catches what the eye misses
+- **Change the font** - a visual change reveals errors
+- **Print it** - on paper you see things you don't on screen
+- **Let it rest** - 24 hours without looking at it, then re-read
 
 ---
 
 ## Revision Log Template
 
-Usá este log para trackear qué revisaste y qué falta.
+Use this log to track what you revised and what's left.
 
 ```markdown
 # Revision Log - [Project Name]
 
 ## Structural Review - [Date]
-- [ ] Premisa clara
-- [ ] Arco del protagonista
-- [ ] Estructura
+- [ ] Clear premise
+- [ ] Protagonist's arc
+- [ ] Structure
 - [ ] Pacing
-- [ ] Escenas necesarias
-- [ ] Plot holes anotados
-- [ ] Final satisfactorio
+- [ ] Necessary scenes
+- [ ] Plot holes written down
+- [ ] Satisfying ending
 
 Issues found:
 - [Issue 1]
 - [Issue 2]
 
 ## Line Review - [Date]
-- [ ] Cada escena tiene propósito
-- [ ] Cada escena tiene conflicto
-- [ ] Ganchos al final de cada escena
-- [ ] Diálogo suena natural
-- [ ] Ritmo correcto
-- [ ] Voces de personajes distintas
+- [ ] Every scene has purpose
+- [ ] Every scene has conflict
+- [ ] Hooks at the end of every scene
+- [ ] Dialogue sounds natural
+- [ ] Correct rhythm
+- [ ] Distinct character voices
 
 Issues found:
 - [Issue 1]
 
 ## Copy Review - [Date]
-- [ ] Palabras repetidas
-- [ ] Adverbios innecesarios
-- [ ] Voz pasiva
-- [ ] Tiempos verbales
-- [ ] Puntuación
-- [ ] Ortografía
-- [ ] Formato
+- [ ] Repeated words
+- [ ] Unnecessary adverbs
+- [ ] Passive voice
+- [ ] Tenses
+- [ ] Punctuation
+- [ ] Spelling
+- [ ] Formatting
 
 Issues found:
 - [Issue 1]
@@ -172,7 +172,7 @@ Issues found:
 
 ## Related
 
-- [SKILL.md](../SKILL.md) - Workflow principal
-- [Scene Craft](../references/scene-craft.md) - Anatomía de una escena
-- [Dialogue](../references/dialogue.md) - Cómo escribir diálogo
-- [Narrative Structures](../references/narrative-structures.md) - Estructuras narrativas
+- [SKILL.md](../SKILL.md) - Main workflow
+- [Scene Craft](./scene-craft.md) - Anatomy of a scene
+- [Dialogue](./dialogue.md) - How to write dialogue
+- [Narrative Structures](./narrative-structures.md) - Narrative structures

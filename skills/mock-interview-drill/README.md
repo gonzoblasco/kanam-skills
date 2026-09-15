@@ -1,34 +1,34 @@
 # Mock Interview Drill
 
-Simulacros de entrevistas con follow-up questions.
+Mock interviews with follow-up questions.
 
-## ¿Para qué sirve?
+## What is it for?
 
-Para **practicar entrevistas laborales** con simulacros realistas en 3 modalidades: Behavioral (con método STAR), Technical (system design, algoritmos) y Case (consulting, producto). Después de cada ronda te da un diagnóstico estructurado con rating A-D y respuestas de muestra.
+To **practice job interviews** with realistic mocks in 3 modes: Behavioral (with the STAR method), Technical (system design, algorithms) and Case (consulting, product). After each round it gives you a structured diagnosis with an A-D rating and sample answers.
 
-## ¿Cuándo usarlo?
+## When to use it?
 
-- Cuando estás en proceso de entrevistas
-- Cuando querés practicar behavioral questions
-- Cuando querés preparar un system design interview
-- Después de tener el CV optimizado con cv-tailor
+- When you are in an interview process
+- When you want to practice behavioral questions
+- When you want to prepare for a system design interview
+- After having your CV optimized with cv-tailor
 
-## ¿Cómo se usa?
+## How is it used?
 
-Es conversacional. Elegís modalidad y arranca.
+It is conversational. You choose the mode and it starts.
 
 **Behavioral:**
-> "Simulacro behavioral para Senior Frontend. Practiquemos liderazgo."
+> "Behavioral mock for Senior Frontend. Let's practice leadership."
 
-Te hace una pregunta abierta, espera tu respuesta, y después 3-5 follow-ups de profundización (una por vez). Al final, diagnóstico STAR completo.
+It asks you an open-ended question, waits for your answer, and then 3-5 probing follow-ups (one at a time). At the end, complete STAR diagnosis.
 
 **Technical:**
-> "Dame un problema de system design. Diseñar un URL shortener."
+> "Give me a system design problem. Design a URL shortener."
 
 **Case:**
-> "Simulacro case interview. Una cadena de cafés perdió 20% de ganancias."
+> "Case interview mock. A coffee chain lost 20% of profits."
 
-### Output del diagnóstico
+### Diagnosis output
 
 ```
 ## STAR Diagnostic Report
@@ -48,7 +48,7 @@ Te hace una pregunta abierta, espera tu respuesta, y después 3-5 follow-ups de 
 [versión mejorada usando tu material]
 ```
 
-## Skills relacionadas
+## Related skills
 
-- [CV Tailor](../cv-tailor) - Para optimizar el CV antes de las entrevistas
-- [Code Mentor](../code-mentor) - Para practicar algoritmos y conceptos
+- [CV Tailor](../cv-tailor) - To optimize the CV before interviews
+- [Code Mentor](../code-mentor) - To practice algorithms and concepts

@@ -1,6 +1,6 @@
 # CHANGELOG Guide - Technical Documentation Reference
 
-Guía para mantener un CHANGELOG útil.
+Guide to keeping a useful CHANGELOG.
 
 ## Format (Keep a Changelog)
 
@@ -43,6 +43,6 @@ Guía para mantener un CHANGELOG útil.
 
 ## Related
 
-- [SKILL.md](../SKILL.md) - Workflow principal
-- [ADR Patterns](./adr-patterns.md) - Patrones de ADRs
-- [Architecture Diagrams](./architecture-diagrams.md) - Diagramas C4
+- [SKILL.md](../SKILL.md) - Main workflow
+- [ADR Patterns](./adr-patterns.md) - ADR patterns
+- [Architecture Diagrams](./architecture-diagrams.md) - C4 diagrams

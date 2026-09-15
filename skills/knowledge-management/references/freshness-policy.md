@@ -1,6 +1,6 @@
 # Freshness Policy - Knowledge Management Reference
 
-Política de actualización y obsolescencia de documentación.
+Documentation update and obsolescence policy.
 
 ## Freshness Tiers
 
@@ -53,6 +53,6 @@ done
 
 ## Related
 
-- [SKILL.md](../SKILL.md) - Workflow principal
-- [Artifacts](../references/artifacts.md) - Catálogo de artefactos
-- [Knowledge Graph](./knowledge-graph.md) - Grafo de conocimiento
+- [SKILL.md](../SKILL.md) - Main workflow
+- [Artifacts](../references/artifacts.md) - Artifact catalog
+- [Knowledge Graph](./knowledge-graph.md) - Knowledge graph

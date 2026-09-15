@@ -1,6 +1,6 @@
 # EXPLAIN Guide - SQL Insight Reference
 
-Interpretación de planes de ejecución.
+Execution plan interpretation.
 
 ## SQLite
 
@@ -8,17 +8,17 @@ Interpretación de planes de ejecución.
 EXPLAIN QUERY PLAN SELECT * FROM users WHERE email = 'test@example.com';
 ```
 
-Output típico:
+Typical output:
 ```
 SEARCH users USING INDEX idx_users_email (email=?)
 ```
 
-| Señal | Significado | Acción |
+| Signal | Meaning | Action |
 |---|---|---|
-| `SCAN TABLE` | Full table scan | Agregar índice |
-| `SEARCH ... USING INDEX` | Index lookup | ✅ Bueno |
-| `SEARCH ... USING COVERING INDEX` | Index-only scan | ✅ Excelente |
-| `AUTO-TEMPORARY INDEX` | SQLite creó índice temporal | Crear índice permanente |
+| `SCAN TABLE` | Full table scan | Add index |
+| `SEARCH ... USING INDEX` | Index lookup | ✅ Good |
+| `SEARCH ... USING COVERING INDEX` | Index-only scan | ✅ Excellent |
+| `AUTO-TEMPORARY INDEX` | SQLite created a temporary index | Create a permanent index |
 
 ## PostgreSQL
 
@@ -26,16 +26,16 @@ SEARCH users USING INDEX idx_users_email (email=?)
 EXPLAIN (ANALYZE, BUFFERS) SELECT * FROM users WHERE email = 'test@example.com';
 ```
 
-| Señal | Significado | Acción |
+| Signal | Meaning | Action |
 |---|---|---|
-| `Seq Scan` | Full table scan | Agregar índice |
-| `Index Scan` | Index lookup | ✅ Bueno |
-| `Index Only Scan` | Index-only | ✅ Excelente |
-| `Sort (external sort)` | Disk sort | Aumentar work_mem |
-| `Nested Loop` en tablas grandes | Loop ineficiente | Usar Hash Join |
-| `Rows Removed by Filter` | Muchas filas filtradas | Mejorar índice |
+| `Seq Scan` | Full table scan | Add index |
+| `Index Scan` | Index lookup | ✅ Good |
+| `Index Only Scan` | Index-only | ✅ Excellent |
+| `Sort (external sort)` | Disk sort | Increase work_mem |
+| `Nested Loop` on large tables | Inefficient loop | Use Hash Join |
+| `Rows Removed by Filter` | Many rows filtered | Improve index |
 
-## Interpretación Rápida
+## Quick Interpretation
 
 ```bash
 python3 scripts/sql_query_helper.py --db-path data.db explain "SELECT * FROM orders WHERE user_id = 100"
@@ -57,5 +57,5 @@ Output:
 
 ## Related
 
-- [SKILL.md](../SKILL.md) - Workflow principal
-- [Optimization Rules](./optimization-rules.md) - Reglas de optimización
+- [SKILL.md](../SKILL.md) - Main workflow
+- [Optimization Rules](./optimization-rules.md) - Optimization rules

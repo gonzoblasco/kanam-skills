@@ -1,266 +1,266 @@
 # Genre Guide - Narrative Content
 
-Guía de géneros narrativos: qué los define, qué los hace únicos, trampas comunes, y referentes.
+Guide to narrative genres: what defines them, what makes them unique, common pitfalls, and touchstones.
 
-## Cómo usar esta guía
+## How to use this guide
 
-1. **Encontrá tu género** - leé las descripciones y fijate cuál resuena con tu idea
-2. **Estudiá la estructura** - cada género tiene pacing y estructura recomendada
-3. **Evitá las trampas** - los errores clásicos de cada género
-4. **Leé a los maestros** - cada género tiene sus referentes
+1. **Find your genre** - read the descriptions and see which one resonates with your idea
+2. **Study the structure** - each genre has a recommended pacing and structure
+3. **Avoid the pitfalls** - the classic mistakes of each genre
+4. **Read the masters** - each genre has its touchstones
 
 ---
 
 ## Fantasy
 
-**Qué lo define:** Mundos imaginarios, magia, sistemas de reglas sobrenaturales, épica, bien vs mal (con matices).
+**What defines it:** Imaginary worlds, magic, systems of supernatural rules, epic scope, good vs evil (with nuance).
 
-**Qué lo hace único:** Libertad total para crear reglas, geografías, historias y culturas desde cero. No hay límite de imaginación - solo consistencia interna.
+**What makes it unique:** Total freedom to create rules, geographies, histories and cultures from scratch. There is no limit to imagination - only internal consistency.
 
-**Estructura recomendada:** Hero's Journey o Save the Cat! (15 beats). La fantasy épica necesita espacio para worldbuilding sin perder ritmo.
+**Recommended structure:** Hero's Journey or Save the Cat! (15 beats). Epic fantasy needs room for worldbuilding without losing pace.
 
-**Pacing:** Medio-lento. Necesita establecer el mundo antes de que la historia despegue. Los primeros capítulos son los más difíciles.
+**Pacing:** Medium-slow. It needs to establish the world before the story takes off. The first chapters are the hardest.
 
-**Trampas comunes:**
-- **Info dumps:** Explicar el mundo en párrafos interminables. Mostralo a través de la acción y el diálogo.
-- **Sistemas de magia sin reglas:** Si la magia puede hacer cualquier cosa, no hay conflicto real. Poné límites y costos.
-- **Elegido sin personalidad:** El protagonista es especial porque sí. Dále una personalidad que lo haga interesante más allá de su destino.
-- **Mapa antes que historia:** Pasás meses dibujando el mapa pero no escribís el primer capítulo.
+**Common pitfalls:**
+- **Info dumps:** Explaining the world in endless paragraphs. Show it through action and dialogue.
+- **Magic systems without rules:** If magic can do anything, there is no real conflict. Set limits and costs.
+- **Chosen one with no personality:** The protagonist is special just because. Give them a personality that makes them interesting beyond their destiny.
+- **Map before story:** You spend months drawing the map but never write the first chapter.
 
-**Referentes:**
-- Brandon Sanderson - sistemas de magia con reglas claras (Mistborn, Stormlight Archive)
-- Ursula K. Le Guin - worldbuilding poético y profundo (Terramar)
-- Patrick Rothfuss - prosa cuidada, personajes memorables (El nombre del viento)
-- J.R.R. Tolkien - el padre del género, worldbuilding sin precedentes
+**Touchstones:**
+- Brandon Sanderson - magic systems with clear rules (Mistborn, Stormlight Archive)
+- Ursula K. Le Guin - poetic, deep worldbuilding (Earthsea)
+- Patrick Rothfuss - polished prose, memorable characters (The Name of the Wind)
+- J.R.R. Tolkien - the father of the genre, unprecedented worldbuilding
 
-**Para leer primero:** *El nombre del viento* (Rothfuss) - cómo hacer worldbuilding sin info dumps.
+**Read first:** *The Name of the Wind* (Rothfuss) - how to do worldbuilding without info dumps.
 
 ---
 
-## Ciencia Ficción (Sci-Fi)
+## Science Fiction (Sci-Fi)
 
-**Qué lo define:** Tecnología, futuro, exploración de "what if" a través de la ciencia. No es solo naves espaciales - es usar la ciencia para explorar la condición humana.
+**What defines it:** Technology, the future, exploring "what if" through science. It is not just spaceships - it is using science to explore the human condition.
 
-**Qué lo hace único:** Podés explorar ideas filosóficas, políticas y sociales a través de un lente tecnológico. La ciencia ficción no predice el futuro - lo usa para hablar del presente.
+**What makes it unique:** You can explore philosophical, political and social ideas through a technological lens. Science fiction does not predict the future - it uses it to talk about the present.
 
-**Estructura recomendada:** Three-Act Structure. La sci-fi suele tener un misterio o revelación central que estructura la trama.
+**Recommended structure:** Three-Act Structure. Sci-fi usually has a central mystery or revelation that structures the plot.
 
-**Pacing:** Variable. Sci-fi de acción (Altered Carbon) es rápido. Sci-fi filosófica (Solaris) es lento. Elegí según tu historia.
+**Pacing:** Variable. Action sci-fi (Altered Carbon) is fast. Philosophical sci-fi (Solaris) is slow. Choose according to your story.
 
-**Trampas comunes:**
-- **Olvidar los personajes por las ideas:** Tenés una idea genial de tecnología pero los personajes son cardboard cutouts.
-- **Tecnología sin consecuencias:** Inventás algo increíble pero no explorás cómo cambia la sociedad.
-- **Explicar demasiado:** El lector no necesita saber cómo funciona el motor warp - necesita saber cómo afecta a los personajes.
-- **Futuro idéntico al presente:** La sociedad del futuro debería ser diferente, no solo con pantallas flotantes.
+**Common pitfalls:**
+- **Forgetting the characters for the ideas:** You have a great technology idea but the characters are cardboard cutouts.
+- **Technology without consequences:** You invent something amazing but never explore how it changes society.
+- **Over-explaining:** The reader doesn't need to know how the warp engine works - they need to know how it affects the characters.
+- **A future identical to the present:** The society of the future should be different, not just with floating screens.
 
-**Subgéneros:**
-- **Hard SF:** Basada en ciencia real (The Martian, Project Hail Mary)
-- **Soft SF:** La ciencia es un vehículo para explorar ideas (Left Hand of Darkness)
-- **Cyberpunk:** Alto tech, bajo life (Neuromancer, Snow Crash)
-- **Space Opera:** Épica espacial (Hyperion, The Expanse)
-- **Solarpunk:** Futuro optimista, sostenible (A Psalm for the Wild-Built)
+**Subgenres:**
+- **Hard SF:** Based on real science (The Martian, Project Hail Mary)
+- **Soft SF:** Science is a vehicle to explore ideas (Left Hand of Darkness)
+- **Cyberpunk:** High tech, low life (Neuromancer, Snow Crash)
+- **Space Opera:** Space epic (Hyperion, The Expanse)
+- **Solarpunk:** Optimistic, sustainable future (A Psalm for the Wild-Built)
 
-**Referentes:**
-- Isaac Asimov - ideas que definieron el género (Fundación, Yo, Robot)
-- Frank Herbert - worldbuilding político y ecológico (Dune)
-- Liu Cixin - escala cósmica, ideas alucinantes (El problema de los tres cuerpos)
-- Ursula K. Le Guin - sci-fi antropológica (Los desposeídos)
+**Touchstones:**
+- Isaac Asimov - ideas that defined the genre (Foundation, I, Robot)
+- Frank Herbert - political and ecological worldbuilding (Dune)
+- Liu Cixin - cosmic scale, mind-bending ideas (The Three-Body Problem)
+- Ursula K. Le Guin - anthropological sci-fi (The Dispossessed)
 
-**Para leer primero:** *El problema de los tres cuerpos* (Liu Cixin) - cómo hacer sci-fi de ideas sin perder al lector.
+**Read first:** *The Three-Body Problem* (Liu Cixin) - how to do idea-driven sci-fi without losing the reader.
 
 ---
 
 ## Thriller
 
-**Qué lo define:** Tensión, ritmo acelerado, giros argumentales, peligro inminente. El lector debería querer pasar la página.
+**What defines it:** Tension, fast pace, plot twists, imminent danger. The reader should want to turn the page.
 
-**Qué lo hace único:** La promesa de que algo malo va a pasar, y el placer de descubrir qué. Cada capítulo debería terminar con una razón para leer el siguiente.
+**What makes it unique:** The promise that something bad will happen, and the pleasure of finding out what. Every chapter should end with a reason to read the next one.
 
-**Estructura recomendada:** Three-Act Structure con capítulos cortos. El thriller necesita ritmo - capítulos de 3-5 páginas, cada uno con un mini-cliffhanger.
+**Recommended structure:** Three-Act Structure with short chapters. Thrillers need pace - 3-5 page chapters, each with a mini-cliffhanger.
 
-**Pacing:** Rápido. No hay espacio para descripciones largas o digresiones. Cada escena debe avanzar la trama o desarrollar la tensión.
+**Pacing:** Fast. There is no room for long descriptions or digressions. Every scene must advance the plot or build tension.
 
-**Trampas comunes:**
-- **Giros forzados:** El asesino era el gemelo perdido que nunca mencionaste. El lector se siente engañado, no sorprendido.
-- **Ritmo inconsistente:** Arrancás con una escena de acción y después tenés 3 capítulos de relleno.
-- **Personajes planos:** El detective es "brillante pero atormentado" sin más capas.
-- **Deus ex machina:** El protagonista se salva porque sí, no porque hizo algo inteligente.
+**Common pitfalls:**
+- **Forced twists:** The killer was the lost twin you never mentioned. The reader feels cheated, not surprised.
+- **Inconsistent pacing:** You start with an action scene and then have 3 filler chapters.
+- **Flat characters:** The detective is "brilliant but tormented" with no other layers.
+- **Deus ex machina:** The protagonist survives just because, not because they did something smart.
 
-**Subgéneros:**
-- **Psicológico:** La tensión está en la mente (Gone Girl, Shutter Island)
-- **Policial:** Investigación criminal (The Girl with the Dragon Tattoo)
-- **Espionaje:** Agentes, traiciones (Tinker Tailor Soldier Spy)
-- **Legal:** Juicios, abogados (Presumed Innocent)
-- **Tecnothriller:** Tecnología como amenaza (Daemon)
+**Subgenres:**
+- **Psychological:** The tension is in the mind (Gone Girl, Shutter Island)
+- **Police procedural:** Criminal investigation (The Girl with the Dragon Tattoo)
+- **Espionage:** Agents, betrayals (Tinker Tailor Soldier Spy)
+- **Legal:** Trials, lawyers (Presumed Innocent)
+- **Techno-thriller:** Technology as a threat (Daemon)
 
-**Referentes:**
-- Gillian Flynn - giros que redefinen la historia (Gone Girl, Sharp Objects)
-- John le Carré - espionaje realista, moral ambigua (El topo)
-- Dennis Lehane - thriller con alma (Shutter Island, Mystic River)
-- Lee Child - ritmo implacable, protagonista carismático (Jack Reacher)
+**Touchstones:**
+- Gillian Flynn - twists that redefine the story (Gone Girl, Sharp Objects)
+- John le Carré - realistic espionage, moral ambiguity (Tinker Tailor Soldier Spy)
+- Dennis Lehane - thrillers with soul (Shutter Island, Mystic River)
+- Lee Child - relentless pace, charismatic protagonist (Jack Reacher)
 
-**Para leer primero:** *Gone Girl* (Flynn) - cómo hacer un giro que funcione.
-
----
-
-## Terror
-
-**Qué lo define:** Miedo, atmósfera opresiva, lo desconocido, lo que no se ve. El terror no es sustos - es incomodidad que no se va.
-
-**Qué lo hace único:** Lo que no se ve da más miedo que lo que se muestra. El terror más efectivo es el que el lector completa en su imaginación.
-
-**Estructura recomendada:** Three-Act Structure con escalada gradual. El terror necesita construir atmósfera antes del horror.
-
-**Pacing:** Lento-medio. El terror necesita tiempo para establecer la atmósfera. Si apurás el horror, perdés el miedo.
-
-**Trampas comunes:**
-- **Explicar el monstruo:** En el momento en que explicás qué es, deja de dar miedo.
-- **Sobreexplicar:** "Era una sombra que representaba su culpa" - no, mostralo y dejá que el lector lo interprete.
-- **Personajes que hacen cosas estúpidas:** "Voy a revisar el ruido en el sótano sin linterna" - el lector pierde la paciencia.
-- **Jump scares en vez de atmósfera:** Un gato que salta de un armario no es terror, es un susto barato.
-
-**Subgéneros:**
-- **Gótico:** Mansiones, secretos familiares, atmósfera (The Haunting of Hill House)
-- **Cosmic Horror:** El horror de lo incomprensible (Lovecraft)
-- **Psicológico:** El horror está en la mente (The Shining)
-- **Body Horror:** El cuerpo como fuente de horror (Annihilation)
-- **Folk Horror:** Tradiciones antiguas, rituales (The Wicker Man)
-
-**Referentes:**
-- H.P. Lovecraft - el horror cósmico, lo que no se puede comprender
-- Stephen King - el maestro del terror moderno (It, The Shining, Misery)
-- Shirley Jackson - terror psicológico, atmósfera (The Haunting of Hill House)
-- Jeff VanderMeer - body horror, naturaleza alienígena (Annihilation)
-
-**Para leer primero:** *The Haunting of Hill House* (Jackson) - terror de atmósfera sin monstruos.
+**Read first:** *Gone Girl* (Flynn) - how to make a twist that works.
 
 ---
 
-## Realismo Mágico
+## Horror
 
-**Qué lo define:** Elementos fantásticos en un mundo realista, presentados como si fueran naturales. Lo mágico no sorprende a los personajes - sorprende al lector.
+**What defines it:** Fear, oppressive atmosphere, the unknown, what is not seen. Horror is not jump scares - it is discomfort that doesn't go away.
 
-**Qué lo hace único:** Hacer creíble lo imposible. La magia no necesita explicación - es parte de la realidad. El género latinoamericano por excelencia.
+**What makes it unique:** What isn't seen is scarier than what is shown. The most effective horror is the kind the reader completes in their imagination.
 
-**Estructura recomendada:** Menos estructurada que otros géneros. La historia puede fluir como la vida real, con digresiones, historias dentro de historias.
+**Recommended structure:** Three-Act Structure with gradual escalation. Horror needs to build atmosphere before the horror.
 
-**Pacing:** Lento. El realismo mágico se saborea, no se devora. La prosa es tan importante como la trama.
+**Pacing:** Slow-medium. Horror needs time to establish atmosphere. If you rush the horror, you lose the fear.
 
-**Trampas comunes:**
-- **Que se sienta fantasía disfrazada:** Si la magia es el centro de la trama, es fantasía, no realismo mágico.
-- **Explicar lo mágico:** "Era un fantasma porque..." - no. Simplemente es.
-- **Olvidar el realismo:** Si todo es mágico, nada es mágico. Necesitás una base realista para que lo fantástico impacte.
-- **Prosa descuidada:** El realismo mágico exige prosa cuidada. No es un género para escribir rápido.
+**Common pitfalls:**
+- **Explaining the monster:** The moment you explain what it is, it stops being scary.
+- **Over-explaining:** "It was a shadow that represented his guilt" - no, show it and let the reader interpret it.
+- **Characters doing stupid things:** "I'll go check the noise in the basement without a flashlight" - the reader loses patience.
+- **Jump scares instead of atmosphere:** A cat jumping out of a closet is not horror, it's a cheap scare.
 
-**Referentes:**
-- Gabriel García Márquez - el padre del género (Cien años de soledad, El amor en los tiempos del cólera)
-- Haruki Murakami - realismo mágico japonés (Kafka en la orilla, Tokio blues)
-- Isabel Allende - realismo mágico latinoamericano (La casa de los espíritus)
-- Jorge Luis Borges - cuentos que definieron el género (Ficciones)
+**Subgenres:**
+- **Gothic:** Mansions, family secrets, atmosphere (The Haunting of Hill House)
+- **Cosmic Horror:** The horror of the incomprehensible (Lovecraft)
+- **Psychological:** The horror is in the mind (The Shining)
+- **Body Horror:** The body as a source of horror (Annihilation)
+- **Folk Horror:** Ancient traditions, rituals (The Wicker Man)
 
-**Para leer primero:** *Cien años de soledad* (García Márquez) - el realismo mágico en su forma más pura.
+**Touchstones:**
+- H.P. Lovecraft - cosmic horror, what cannot be comprehended
+- Stephen King - the master of modern horror (It, The Shining, Misery)
+- Shirley Jackson - psychological horror, atmosphere (The Haunting of Hill House)
+- Jeff VanderMeer - body horror, alien nature (Annihilation)
+
+**Read first:** *The Haunting of Hill House* (Jackson) - atmospheric horror without monsters.
+
+---
+
+## Magical Realism
+
+**What defines it:** Fantastic elements in a realistic world, presented as if they were natural. The magical doesn't surprise the characters - it surprises the reader.
+
+**What makes it unique:** Making the impossible believable. Magic needs no explanation - it is part of reality. The quintessential Latin American genre.
+
+**Recommended structure:** Less structured than other genres. The story can flow like real life, with digressions, stories within stories.
+
+**Pacing:** Slow. Magical realism is savored, not devoured. The prose matters as much as the plot.
+
+**Common pitfalls:**
+- **Feeling like disguised fantasy:** If magic is the center of the plot, it's fantasy, not magical realism.
+- **Explaining the magical:** "It was a ghost because..." - no. It simply is.
+- **Forgetting the realism:** If everything is magical, nothing is magical. You need a realistic base for the fantastic to land.
+- **Careless prose:** Magical realism demands careful prose. It is not a genre for writing fast.
+
+**Touchstones:**
+- Gabriel García Márquez - the father of the genre (One Hundred Years of Solitude, Love in the Time of Cholera)
+- Haruki Murakami - Japanese magical realism (Kafka on the Shore, Norwegian Wood)
+- Isabel Allende - Latin American magical realism (The House of the Spirits)
+- Jorge Luis Borges - stories that defined the genre (Ficciones)
+
+**Read first:** *One Hundred Years of Solitude* (García Márquez) - magical realism in its purest form.
 
 ---
 
 ## Romance
 
-**Qué lo define:** El viaje emocional del encuentro amoroso. Tensión sexual, obstáculos, crecimiento mutuo, y un final feliz (HEA - Happily Ever After).
+**What defines it:** The emotional journey of a love story. Sexual tension, obstacles, mutual growth, and a happy ending (HEA - Happily Ever After).
 
-**Qué lo hace único:** La promesa de un final feliz. El lector de romance no lee para saber si van a terminar juntos - lee para ver *cómo* llegan ahí.
+**What makes it unique:** The promise of a happy ending. The romance reader doesn't read to find out whether they end up together - they read to see *how* they get there.
 
-**Estructura recomendada:** Romance Beat Sheet (basada en Save the Cat!). 15 beats específicos para romance: Meet Cute, Love Interest, First Kiss, Dark Moment, Grand Gesture, HEA.
+**Recommended structure:** Romance Beat Sheet (based on Save the Cat!). 15 beats specific to romance: Meet Cute, Love Interest, First Kiss, Dark Moment, Grand Gesture, HEA.
 
-**Pacing:** Medio. El romance necesita tiempo para desarrollar la química entre los personajes. No apures el primer beso.
+**Pacing:** Medium. Romance needs time to develop chemistry between the characters. Don't rush the first kiss.
 
-**Trampas comunes:**
-- **Fórmulas predecibles:** "Chica conoce chico, hay obstáculo, se separan, vuelven, final feliz" sin nada nuevo.
-- **Falta de química:** Los personajes están juntos porque la trama lo dice, no porque el lector lo sienta.
-- **Problemas que se resuelven solos:** El conflicto desaparece mágicamente sin que los personajes hagan algo.
-- **Personajes planos:** Él es "el malo que en realidad es bueno" y ella es "la buena que necesita ser salvada".
+**Common pitfalls:**
+- **Predictable formulas:** "Girl meets boy, there's an obstacle, they split up, they get back together, happy ending" with nothing new.
+- **Lack of chemistry:** The characters are together because the plot says so, not because the reader feels it.
+- **Problems that solve themselves:** The conflict disappears magically without the characters doing anything.
+- **Flat characters:** He is "the bad guy who's actually good" and she is "the good one who needs saving".
 
-**Subgéneros:**
-- **Contemporáneo:** Hoy, aquí (The Hating Game, Beach Read)
-- **Histórico:** Otra época (Outlander, Bridgerton)
+**Subgenres:**
+- **Contemporary:** Today, here (The Hating Game, Beach Read)
+- **Historical:** Another era (Outlander, Bridgerton)
 - **Fantasy Romance:** Romance + worldbuilding (A Court of Thorns and Roses)
-- **Rom-Com:** Ligero, divertido (The Hating Game)
-- **New Adult:** 20s, autodescubrimiento (It Ends With Us)
+- **Rom-Com:** Light, fun (The Hating Game)
+- **New Adult:** Twenties, self-discovery (It Ends With Us)
 
-**Referentes:**
-- Jane Austen - el romance literario (Orgullo y prejuicio, Emma)
-- Emily Henry - romance contemporáneo inteligente (Beach Read, Book Lovers)
-- Sally Rooney - romance literario moderno (Normal People)
-- Nora Roberts - la reina del romance comercial
+**Touchstones:**
+- Jane Austen - literary romance (Pride and Prejudice, Emma)
+- Emily Henry - smart contemporary romance (Beach Read, Book Lovers)
+- Sally Rooney - modern literary romance (Normal People)
+- Nora Roberts - the queen of commercial romance
 
-**Para leer primero:** *Beach Read* (Henry) - romance contemporáneo con sustancia.
-
----
-
-## Histórica / Ficción Histórica
-
-**Qué lo define:** Precisión histórica, atmósfera de época, personajes reales o ficticios en contextos históricos.
-
-**Qué lo hace único:** Transportar al lector a otro tiempo. La historia no es el decorado - es parte de la trama.
-
-**Estructura recomendada:** Three-Act Structure. La historia real provee la estructura - usala como esqueleto, no como camisa de fuerza.
-
-**Pacing:** Medio-lento. Necesita establecer la época sin que se sienta como clase de historia.
-
-**Trampas comunes:**
-- **Anacronismos:** Personajes del siglo XVIII que piensan como personas del siglo XXI.
-- **Data dumping:** "Era el año 1348, cuando la peste negra..." - mostralo a través de los personajes.
-- **Olvidar la historia por la trama:** Si la historia es solo decorado, mejor escribí ficción contemporánea.
-- **Demasiada investigación, poca escritura:** Pasás meses investigando y nunca escribís.
-
-**Referentes:**
-- Hilary Mantel - precisión histórica + prosa brillante (Wolf Hall)
-- Ken Follett - épica histórica accesible (Los pilares de la tierra)
-- Umberto Eco - histórico + intelectual (El nombre de la rosa)
-- Robert Graves - primera persona histórica (Yo, Claudio)
-
-**Para leer primero:** *Los pilares de la tierra* (Follett) - cómo hacer histórica que se lee como thriller.
+**Read first:** *Beach Read* (Henry) - contemporary romance with substance.
 
 ---
 
-## Noir / Crimen
+## Historical / Historical Fiction
 
-**Qué lo define:** Moral ambigua, atmósfera densa, detectives, crímenes, corrupción. El noir no es solo quién lo hizo - es *por qué*.
+**What defines it:** Historical accuracy, period atmosphere, real or fictional characters in historical contexts.
 
-**Qué lo hace único:** El detective como lente de la sociedad. A través de la investigación, explorás la podredumbre del sistema.
+**What makes it unique:** Transporting the reader to another time. History is not the backdrop - it is part of the plot.
 
-**Estructura recomendada:** Three-Act Structure con revelaciones graduales. Cada acto revela una capa más profunda del misterio.
+**Recommended structure:** Three-Act Structure. Real history provides the structure - use it as a skeleton, not a straitjacket.
 
-**Pacing:** Medio. Necesita atmósfera tanto como trama. Los mejores noir tienen momentos de quietud que construyen tensión.
+**Pacing:** Medium-slow. It needs to establish the era without feeling like a history class.
 
-**Trampas comunes:**
-- **Clichés del género:** Detective alcohólico, femme fatale, "un último caso antes de retirarme".
-- **Misterio sin alma:** Solo pistas y revelaciones, sin explorar el costo humano.
-- **Voz narrativa genérica:** El noir necesita una voz distintiva - cínica, poética, resignada.
-- **Resolver todo al final:** El final debería dejar preguntas, no cerrar todo prolijamente.
+**Common pitfalls:**
+- **Anachronisms:** 18th-century characters who think like 21st-century people.
+- **Data dumping:** "It was the year 1348, when the Black Death..." - show it through the characters.
+- **Forgetting history for the plot:** If history is only a backdrop, you'd be better off writing contemporary fiction.
+- **Too much research, too little writing:** You spend months researching and never write.
 
-**Referentes:**
-- Raymond Chandler - el detective como voz narrativa (El sueño eterno)
-- Patricia Highsmith - noir psicológico (El talento de Mr. Ripley)
-- Dashiell Hammett - el padre del hard-boiled (El halcón maltés)
-- James Ellroy - noir histórico, corrupción sistémica (L.A. Confidential)
+**Touchstones:**
+- Hilary Mantel - historical accuracy + brilliant prose (Wolf Hall)
+- Ken Follett - accessible historical epic (The Pillars of the Earth)
+- Umberto Eco - historical + intellectual (The Name of the Rose)
+- Robert Graves - historical first person (I, Claudius)
 
-**Para leer primero:** *El sueño eterno* (Chandler) - la voz narrativa que definió el género.
+**Read first:** *The Pillars of the Earth* (Follett) - how to write historical fiction that reads like a thriller.
 
 ---
 
-## Cómo elegir tu género
+## Noir / Crime
 
-1. **¿Qué historias te apasiona leer?** - escribí en el género que más leés
-2. **¿Qué tipo de historia querés contar?** - ¿una idea filosófica? (sci-fi). ¿una emoción? (romance). ¿tensión? (thriller)
-3. **¿Cuál es tu voz natural?** - algunos géneros exigen prosa cuidada (realismo mágico), otros priorizan ritmo (thriller)
-4. **¿Qué género se vende?** - si querés publicar, investigá qué está funcionando
+**What defines it:** Moral ambiguity, thick atmosphere, detectives, crimes, corruption. Noir is not just who did it - it is *why*.
 
-**No tengas miedo de mezclar géneros.** Algunas de las mejores historias cruzan fronteras: *El problema de los tres cuerpos* es sci-fi + thriller + filosófico. *Outlander* es romance + histórica + fantasy.
+**What makes it unique:** The detective as a lens on society. Through the investigation, you explore the rot of the system.
+
+**Recommended structure:** Three-Act Structure with gradual revelations. Each act reveals a deeper layer of the mystery.
+
+**Pacing:** Medium. It needs atmosphere as much as plot. The best noir has moments of stillness that build tension.
+
+**Common pitfalls:**
+- **Genre clichés:** Alcoholic detective, femme fatale, "one last case before I retire".
+- **A mystery without a soul:** Only clues and revelations, without exploring the human cost.
+- **Generic narrative voice:** Noir needs a distinctive voice - cynical, poetic, resigned.
+- **Resolving everything at the end:** The ending should leave questions, not tie everything up neatly.
+
+**Touchstones:**
+- Raymond Chandler - the detective as narrative voice (The Big Sleep)
+- Patricia Highsmith - psychological noir (The Talented Mr. Ripley)
+- Dashiell Hammett - the father of hard-boiled (The Maltese Falcon)
+- James Ellroy - historical noir, systemic corruption (L.A. Confidential)
+
+**Read first:** *The Big Sleep* (Chandler) - the narrative voice that defined the genre.
+
+---
+
+## How to choose your genre
+
+1. **What stories do you love reading?** - write in the genre you read most
+2. **What kind of story do you want to tell?** - a philosophical idea? (sci-fi). an emotion? (romance). tension? (thriller)
+3. **What is your natural voice?** - some genres demand careful prose (magical realism), others prioritize pace (thriller)
+4. **What genre sells?** - if you want to publish, research what's working
+
+**Don't be afraid to mix genres.** Some of the best stories cross borders: *The Three-Body Problem* is sci-fi + thriller + philosophical. *Outlander* is romance + historical + fantasy.
 
 ---
 
 ## Related
 
-- [SKILL.md](../SKILL.md) - Workflow principal
-- [Narrative Structures](../references/narrative-structures.md) - Estructuras narrativas
-- [Character Development](../references/character-development.md) - Fichas de personajes
-- [Worldbuilding](../references/worldbuilding.md) - Construcción de mundos
+- [SKILL.md](../SKILL.md) - Main workflow
+- [Narrative Structures](./narrative-structures.md) - Narrative structures
+- [Character Development](./character-development.md) - Character sheets
+- [Worldbuilding](./worldbuilding.md) - World construction

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""knowledge-graph.py — Generate knowledge graph from project documents.
+"""knowledge-graph.py - Generate knowledge graph from project documents.
 
 Usage:
   python3 knowledge-graph.py [--output <file>]
@@ -120,7 +120,7 @@ def main():
 """
 
     for doc_name, info in sorted(docs.items()):
-        refs = ", ".join(info["refs"][:5]) if info["refs"] else "—"
+        refs = ", ".join(info["refs"][:5]) if info["refs"] else "-"
         report += f"| {doc_name} | {info['type']} | {info['size']}B | {refs} |\n"
 
     report += f"\n## Graph\n\n{graph}\n"

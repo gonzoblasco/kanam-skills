@@ -1,152 +1,152 @@
 # Preparation Guide - Mock Interview Drill
 
-Qué estudiar antes de una entrevista según el target.
+What to study before an interview based on the target.
 
-## Por empresa
+## By company
 
 ### FAANG / Big Tech (Meta, Google, Amazon, Apple, Netflix)
 
-| Área | Qué estudiar | Prioridad |
+| Area | What to study | Priority |
 |---|---|---|
-| **Algorithms** | LeetCode Medium/Hard, arrays, graphs, DP, trees | 🔴 Alta |
-| **System Design** | Distributed systems, CAP theorem, scalability | 🔴 Alta |
-| **Behavioral** | Leadership principles (Amazon LP, Google Googleyness) | 🟡 Media |
-| **Domain** | Stack-specific (React, iOS, Android según el rol) | 🟢 Baja |
+| **Algorithms** | LeetCode Medium/Hard, arrays, graphs, DP, trees | 🔴 High |
+| **System Design** | Distributed systems, CAP theorem, scalability | 🔴 High |
+| **Behavioral** | Leadership principles (Amazon LP, Google Googleyness) | 🟡 Medium |
+| **Domain** | Stack-specific (React, iOS, Android depending on the role) | 🟢 Low |
 
 **Tips:**
-- Amazon: prepará historias STAR para cada Leadership Principle
-- Google: focus en algorithms y system design (menos behavioral)
+- Amazon: prepare STAR stories for each Leadership Principle
+- Google: focus on algorithms and system design (less behavioral)
 - Meta: product sense + system design + algorithms
 - Apple: craftsmanship, attention to detail, cross-functional
 
 ### Startup / Scale-up (Series A-C)
 
-| Área | Qué estudiar | Prioridad |
+| Area | What to study | Priority |
 |---|---|---|
-| **System Design** | Practical, not theoretical. How would you build X? | 🔴 Alta |
-| **Domain** | Stack-specific, deep knowledge | 🔴 Alta |
-| **Behavioral** | Ownership, impact, growth mindset | 🟡 Media |
-| **Algorithms** | LeetCode Easy/Medium, practical problems | 🟢 Baja |
+| **System Design** | Practical, not theoretical. How would you build X? | 🔴 High |
+| **Domain** | Stack-specific, deep knowledge | 🔴 High |
+| **Behavioral** | Ownership, impact, growth mindset | 🟡 Medium |
+| **Algorithms** | LeetCode Easy/Medium, practical problems | 🟢 Low |
 
 **Tips:**
-- Valoran más el impacto que la teoría
-- Prepárate para "build X feature" más que "invert a binary tree"
-- Preguntan mucho por trade-offs y decisiones técnicas
-- Quieren ver que podés ser dueño de un área
+- They value impact more than theory
+- Prepare for "build X feature" more than "invert a binary tree"
+- They ask a lot about trade-offs and technical decisions
+- They want to see that you can own an area
 
-### Consultora (McKinsey, BCG, Bain)
+### Consulting firm (McKinsey, BCG, Bain)
 
-| Área | Qué estudiar | Prioridad |
+| Area | What to study | Priority |
 |---|---|---|
-| **Case interviews** | Profitability, market entry, M&A frameworks | 🔴 Alta |
-| **Math** | Mental math, percentages, break-even | 🔴 Alta |
-| **Behavioral** | Leadership, impact, teamwork | 🟡 Media |
-| **Domain** | Industry knowledge (opcional) | 🟢 Baja |
+| **Case interviews** | Profitability, market entry, M&A frameworks | 🔴 High |
+| **Math** | Mental math, percentages, break-even | 🔴 High |
+| **Behavioral** | Leadership, impact, teamwork | 🟡 Medium |
+| **Domain** | Industry knowledge (optional) | 🟢 Low |
 
 **Tips:**
-- Los case interviews son el filtro principal
-- Practicá mental math todos los días
-- Estructurá todo: pensamiento estructurado > respuesta correcta
-- Usá frameworks pero no seas robótico
+- Case interviews are the main filter
+- Practice mental math every day
+- Structure everything: structured thinking > correct answer
+- Use frameworks but don't be robotic
 
 ---
 
-## Por seniority
+## By seniority
 
 ### Junior (< 3 years)
 
-| Qué enfocar | Tiempo sugerido |
+| What to focus on | Suggested time |
 |---|---|
 | **Algorithms** (LeetCode Easy/Medium) | 60% |
 | **Behavioral** (STAR stories) | 20% |
 | **Domain** (stack fundamentals) | 20% |
 
-**Qué esperan:** Potencial > experiencia actual. Buenas bases, ganas de aprender, comunicación clara.
+**What they expect:** Potential > current experience. Good foundations, willingness to learn, clear communication.
 
 ### Mid (3-6 years)
 
-| Qué enfocar | Tiempo sugerido |
+| What to focus on | Suggested time |
 |---|---|
 | **System Design** (practical) | 40% |
 | **Domain** (stack depth) | 30% |
 | **Algorithms** (LeetCode Medium) | 20% |
 | **Behavioral** (ownership, impact) | 10% |
 
-**Qué esperan:** Pueden ser dueños de una feature o área. Toman decisiones técnicas informadas. Muestran liderazgo técnico.
+**What they expect:** They can own a feature or area. They make informed technical decisions. They show technical leadership.
 
 ### Senior (6+ years)
 
-| Qué enfocar | Tiempo sugerido |
+| What to focus on | Suggested time |
 |---|---|
 | **System Design** (distributed, scalable) | 50% |
 | **Behavioral** (leadership, mentoring, strategy) | 25% |
 | **Domain** (architecture, trade-offs) | 20% |
 | **Algorithms** (review, not study) | 5% |
 
-**Qué esperan:** Liderazgo técnico, visión de producto, capacidad de mentorear, comunicación con stakeholders no técnicos.
+**What they expect:** Technical leadership, product vision, ability to mentor, communication with non-technical stakeholders.
 
 ---
 
-## Checklist de preparación
+## Preparation checklist
 
-### 1 semana antes
-- [ ] Investigá la empresa: producto, stack, cultura, funding
-- [ ] Leé el JD de nuevo y anotá keywords clave
-- [ ] Prepará 5-6 historias STAR versátiles (conflict, leadership, failure, growth, impact, teamwork)
-- [ ] Revisá system design patterns (si aplica)
-- [ ] Configurá el entorno (cámara, micrófono, luz, fondo)
+### 1 week before
+- [ ] Research the company: product, stack, culture, funding
+- [ ] Re-read the JD and note key keywords
+- [ ] Prepare 5-6 versatile STAR stories (conflict, leadership, failure, growth, impact, teamwork)
+- [ ] Review system design patterns (if applicable)
+- [ ] Set up the environment (camera, microphone, light, background)
 
-### 1 día antes
-- [ ] Repasá tus historias STAR en voz alta
-- [ ] Hacé 1-2 preguntas de práctica (behavioral o technical)
-- [ ] Prepará 3 preguntas para hacerle al entrevistador
-- [ ] Dormí bien (no estudies hasta tarde)
+### 1 day before
+- [ ] Review your STAR stories out loud
+- [ ] Do 1-2 practice questions (behavioral or technical)
+- [ ] Prepare 3 questions to ask the interviewer
+- [ ] Sleep well (don't study late)
 
-### El día de la entrevista
-- [ ] 15 min antes: abrí el link, testé cámara y audio
-- [ ] Tené agua al lado
-- [ ] Tené el CV abierto por si necesitás referenciar algo
-- [ ] Respirá hondo antes de empezar
-- [ ] Si no sabés algo: "No lo sé, pero esto es lo que haría para averiguarlo"
+### On interview day
+- [ ] 15 min before: open the link, test camera and audio
+- [ ] Have water nearby
+- [ ] Have your CV open in case you need to reference something
+- [ ] Take a deep breath before starting
+- [ ] If you don't know something: "I don't know, but here's what I would do to find out"
 
-### Preguntas para hacerle al entrevistador
+### Questions to ask the interviewer
 
-**Sobre el rol:**
+**About the role:**
 - "What does success look like in this role after 3 months / 6 months / 1 year?"
 - "What's the biggest challenge the team is facing right now?"
 - "How is performance measured for this role?"
 
-**Sobre el equipo:**
+**About the team:**
 - "How does the team handle technical decisions?"
 - "What's the engineering culture like?"
 - "How often do you do code reviews / pair programming?"
 
-**Sobre la empresa:**
+**About the company:**
 - "What's something you wish you knew before joining?"
 - "How does the company think about career growth for engineers?"
 - "What's the most impactful project the team shipped recently?"
 
 ---
 
-## Recursos recomendados
+## Recommended resources
 
 ### System Design
 - [System Design Interview](https://github.com/donnemartin/system-design-primer) - donnemartin
-- [Designing Data-Intensive Applications](https://dataintensive.net/) - Kleppmann (libro)
+- [Designing Data-Intensive Applications](https://dataintensive.net/) - Kleppmann (book)
 - [ByteByteGo](https://www.youtube.com/@ByteByteGo) - YouTube
 
 ### Algorithms
 - [LeetCode](https://leetcode.com/) - practice problems
 - [NeetCode](https://neetcode.io/) - curated problem list
-- [Cracking the Coding Interview](https://www.crackingthecodinginterview.com/) - libro
+- [Cracking the Coding Interview](https://www.crackingthecodinginterview.com/) - book
 
 ### Behavioral
-- [STAR Method](https://www.themuse.com/advice/star-interview-method) - guía
+- [STAR Method](https://www.themuse.com/advice/star-interview-method) - guide
 - [Amazon Leadership Principles](https://www.amazon.jobs/content/en/our-workplace/leadership-principles)
 - [Google Googleyness](https://www.levels.fyi/blog/what-is-googleyness.html)
 
 ### Case Interviews (consulting)
-- [Case in Point](https://www.amazon.com/Case-Point-Complete-Interview-Preparation/dp/0971015888) - libro
+- [Case in Point](https://www.amazon.com/Case-Point-Complete-Interview-Preparation/dp/0971015888) - book
 - [Preplounge](https://www.preplounge.com/) - practice cases
 - [Crafting Cases](https://www.craftingcases.com/) - free cases
 
@@ -154,7 +154,7 @@ Qué estudiar antes de una entrevista según el target.
 
 ## Related
 
-- [SKILL.md](../SKILL.md) - Workflow principal
-- [Behavioral Questions](./behavioral-questions.md) - Banco de preguntas
-- [System Design Guide](./system-design-guide.md) - Guía de system design
-- [Case Frameworks](./case-frameworks.md) - Frameworks de case
+- [SKILL.md](../SKILL.md) - Main workflow
+- [Behavioral Questions](./behavioral-questions.md) - Question bank
+- [System Design Guide](./system-design-guide.md) - System design guide
+- [Case Frameworks](./case-frameworks.md) - Case frameworks

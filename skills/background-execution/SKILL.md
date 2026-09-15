@@ -1,12 +1,12 @@
 ---
 name: "background-execution"
-description: "Patrones para ejecutar tareas en background: exec + process, parallel worktrees, auto-notify, isolated workspaces"
+description: "Patterns for running tasks in the background: exec + process, parallel worktrees, auto-notify, isolated workspaces"
 metadata:
   category: "Workflow"
   tags:
     - background
-    - procesos
-    - paralelismo
+    - processes
+    - parallelism
     - exec
     - process
 user-invocable: false
@@ -14,238 +14,259 @@ user-invocable: false
 
 # Workflow: Background Execution
 
-## Propósito
-Ejecutar tareas largas, batch, o paralelas en background usando `exec` + `process`, con monitoreo, notificación al completar, y aislamiento de workspace. Complementa a `task-execution` para tareas que no requieren interacción constante.
+## Purpose
+Run long, batch, or parallel tasks in the background using `exec` + `process`, with monitoring, completion notification, and workspace isolation. Complements `task-execution` for tasks that do not require constant interaction.
 
-## Cuándo usarlo
-- Tareas largas (>30s) que no necesitan supervisión constante
-- Batch processing (múltiples archivos, reviews, fixes)
-- Tareas paralelas independientes (un proceso por issue, por PR, por módulo)
-- Cualquier proceso interactivo que requiera PTY (coding agents, TUIs, REPLs)
-- Cuando necesitás lanzar algo y que avise cuando termine sin esperar heartbeat
+## When to use it
+- Long tasks (>30s) that do not need constant supervision
+- Batch processing (multiple files, reviews, fixes)
+- Independent parallel tasks (one process per issue, per PR, per module)
+- Any interactive process that requires PTY (coding agents, TUIs, REPLs)
+- When you need to launch something and have it notify when it finishes without waiting for a heartbeat
 
-## Principios
+## Principles
 
-1. **Nunca esperar pasivamente.** Si una tarea va a tardar, lanzarla en background y seguir con otra cosa.
-2. **Siempre aislar.** Cada tarea en su propio directorio temporal o git worktree. Nunca tocar el repo principal sin approval explícito.
-3. **Siempre notificar.** Toda tarea background debe terminar con un wake event. No dejar que el usuario pregunte "¿ya terminó?".
-4. **PTY para interactivos, no para batch.** Procesos interactivos (coding agents, prompts) → `pty:true`. Scripts batch → `pty:false` (default).
-5. **Siempre loggear.** Cada proceso background deja un archivo de log con resultado, tiempo, y métricas. No confiar en la memoria de la sesión.
-6. **Intervenir antes de que sea tarde.** Si un proceso no da señales de vida, intervenir. No esperar a que se cuelgue definitivamente.
+1. **Never wait passively.** If a task will take a while, launch it in the background and continue with something else.
+2. **Always isolate.** Each task in its own temporary directory or git worktree. Never touch the main repo without explicit approval.
+3. **Always notify.** Every background task must end with a wake event. Do not leave the user asking "is it done yet?".
+4. **PTY for interactive, not for batch.** Interactive processes (coding agents, prompts) → `pty:true`. Batch scripts → `pty:false` (default).
+5. **Always log.** Each background process leaves a log file with result, time, and metrics. Do not rely on session memory.
+6. **Intervene before it is too late.** If a process shows no signs of life, intervene. Do not wait for it to hang permanently.
 
-## Patrones
+## Patterns
 
-### Patrón 1: Lanzar y Monitorear
+### Pattern 1: Launch and Monitor
 
-El patrón base para cualquier tarea background:
+The base pattern for any background task:
 
 ```yaml
-# 1. Lanzar
+# 1. Launch
 exec(command: "...", pty: true, background: true, workdir: "/tmp/task-xyz")
 
-# 2. Monitorear (cuando quieras ver estado)
+# 2. Monitor (when you want to check status)
 process(action: poll, sessionId: "<id>")
 
-# 3. Ver logs
+# 3. View logs
 process(action: log, sessionId: "<id>", offset: 0, limit: 50)
 
-# 4. Enviar input (si el proceso pregunta algo)
+# 4. Send input (if the process asks something)
 process(action: submit, sessionId: "<id>", text: "y")
 
-# 5. Matar (si se cuelga)
+# 5. Kill (if it hangs)
 process(action: kill, sessionId: "<id>")
 ```
 
-**Regla:** después de lanzar, no hacer poll loop. Seguir con otra cosa y dejar que el completion wake avise.
+**Rule:** after launching, do not poll loop. Continue with something else and let the completion wake notify.
 
-### Patrón 2: Aislar en Temp Dir
+### Pattern 2: Isolate in Temp Dir
 
-Para tareas que necesitan un workspace limpio:
+For tasks that need a clean workspace:
 
 ```yaml
-# 1. Crear temp dir
+# 1. Create temp dir
 exec(command: "mktemp -d")
-# → devuelve /tmp/tmp.XXXXX
+# → returns /tmp/tmp.XXXXX
 
-# 2. Clonar / preparar en ese dir
+# 2. Clone / prepare in that dir
 exec(command: "git clone <url> /tmp/tmp.XXXXX/repo", workdir: "/tmp/tmp.XXXXX")
 
-# 3. Trabajar ahí
+# 3. Work there
 exec(command: "npm run build", workdir: "/tmp/tmp.XXXXX/repo", background: true)
 
-# 4. Al terminar, limpiar
+# 4. When done, clean up
 exec(command: "trash /tmp/tmp.XXXXX")
 ```
 
-**Regla:** siempre limpiar al terminar. Usar `trash` (no `rm -rf`) por si algo sale mal.
+**Rule:** always clean up when done. Use `trash` (not `rm -rf`) in case something goes wrong.
 
-### Patrón 3: Git Worktree para Tareas Paralelas
+### Pattern 3: Git Worktree for Parallel Tasks
 
-Para trabajar en múltiples issues/PRs en paralelo sin contaminar el repo:
+To work on multiple issues/PRs in parallel without contaminating the repo:
 
 ```yaml
-# 1. Crear worktree por tarea
+# 1. Create a worktree per task
 exec(command: "git worktree add -b fix/issue-78 /tmp/issue-78 main")
 exec(command: "git worktree add -b fix/issue-79 /tmp/issue-79 main")
 
-# 2. Lanzar proceso en cada worktree
-exec(command: "<comando>", workdir: "/tmp/issue-78", background: true, pty: true)
-exec(command: "<comando>", workdir: "/tmp/issue-79", background: true, pty: true)
+# 2. Launch a process in each worktree
+exec(command: "<command>", workdir: "/tmp/issue-78", background: true, pty: true)
+exec(command: "<command>", workdir: "/tmp/issue-79", background: true, pty: true)
 
-# 3. Monitorear todos
+# 3. Monitor all of them
 process(action: list)
 
-# 4. Al terminar, mergear y limpiar
+# 4. When done, merge and clean up
 exec(command: "cd /repo/main && git merge fix/issue-78")
 exec(command: "git worktree remove /tmp/issue-78")
 ```
 
-**Regla:** un worktree por tarea. Nombrar branches descriptivamente. Mergear solo después de verificar que cada tarea está completa.
+**Rule:** one worktree per task. Name branches descriptively. Merge only after verifying that each task is complete.
 
-### Patrón 4: Auto-Notify al Completar
+### Pattern 4: Auto-Notify on Completion
 
-Para que una tarea background avise inmediatamente cuando termina:
+So a background task notifies immediately when it finishes:
 
 ```yaml
-# Incluir al final del comando o script:
-cron(action: wake, text: "✅ Tarea X completada: [resumen]", mode: "now")
+# Include at the end of the command or script:
+cron(action: wake, text: "✅ Task X completed: [summary]", mode: "now")
 ```
 
-**Regla:** toda tarea background DEBE terminar con un wake event. No confiar en heartbeats ni en que el usuario va a preguntar.
+**Rule:** every background task MUST end with a wake event. Do not rely on heartbeats or on the user asking.
 
-**Formato del texto:** incluir qué tarea, resultado (éxito/fallo), y qué sigue. Ej: "✅ Batch review completado: 3 PRs revisados, 1 con cambios solicitados. Revisar PR #78."
+**Text format:** include what task, result (success/failure), and what is next. E.g.: "✅ Batch review completed: 3 PRs reviewed, 1 with requested changes. Review PR #78."
 
-### Patrón 5: Parallel Batch con Sessions Spawn
+### Pattern 5: Parallel Batch with Sessions Spawn
 
-Para tareas que requieren contexto conversacional (reviews, análisis):
+For tasks that require conversational context (reviews, analysis):
 
 ```yaml
-# Lanzar sub-agentes en paralelo
-sessions_spawn(task: "Revisar PR #78 en <repo>", context: "isolated")
-sessions_spawn(task: "Revisar PR #79 en <repo>", context: "isolated")
+# Launch sub-agents in parallel
+sessions_spawn(task: "Review PR #78 in <repo>", context: "isolated")
+sessions_spawn(task: "Review PR #79 in <repo>", context: "isolated")
 
-# Esperar resultados
+# Wait for results
 sessions_yield()
 ```
 
-**Regla:** `sessions_spawn` para tareas que necesitan razonamiento. `exec` + `process` para tareas que son puro comando (build, test, batch script).
+**Rule:** use `sessions_spawn` for tasks that need reasoning. Use `exec` + `process` for tasks that are pure commands (build, test, batch script).
 
-### Patrón 6: submit vs write - Input a Procesos
+### Pattern 6: submit vs write - Input to Processes
 
-Cuando un proceso background espera input:
+When a background process waits for input:
 
-| Acción | Qué hace | Cuándo usarlo |
+| Action | What it does | When to use it |
 |---|---|---|
-| `process(action: submit, text: "y")` | Escribe texto + Enter | Respuestas a prompts ("¿Continuar? [y/N]") |
-| `process(action: write, data: "texto")` | Escribe texto crudo (sin Enter) | Streaming, input parcial |
-| `process(action: send-keys, keys: ["ctrl+c"])` | Envía combinación de teclas | Interrumpir, salir de modo insert |
+| `process(action: submit, text: "y")` | Writes text + Enter | Responses to prompts ("Continue? [y/N]") |
+| `process(action: write, data: "text")` | Writes raw text (no Enter) | Streaming, partial input |
+| `process(action: send-keys, keys: ["ctrl+c"])` | Sends key combination | Interrupt, exit insert mode |
 
-### Patrón 7: Intervención - Detectar y Rescatar Procesos Colgados
+### Pattern 7: Intervention - Detecting and Rescuing Hung Processes
 
-Cuando un proceso background no da señales de vida:
+When a background process shows no signs of life:
 
 ```yaml
-# 1. Verificar si sigue vivo
+# 1. Check if it is still alive
 process(action: poll, sessionId: "<id>")
 
-# 2. Si está vivo pero no produce output, ver logs recientes
+# 2. If it is alive but produces no output, view recent logs
 process(action: log, sessionId: "<id>", offset: -20)
 
-# 3. Si está esperando input sin mostrar prompt, enviar señal
+# 3. If it is waiting for input without showing a prompt, send a signal
 process(action: send-keys, sessionId: "<id>", keys: ["ctrl+c"])
-# o forzar salida
+# or force exit
 process(action: submit, sessionId: "<id>", text: "exit")
 
-# 4. Si no responde, matar
+# 4. If it does not respond, kill it
 process(action: kill, sessionId: "<id>")
 
-# 5. Decidir: reintentar con menos carga, o escalar
+# 5. Decide: retry with less load, or escalate
 ```
 
-**Señales de proceso colgado:**
-- `process(action: poll)` devuelve "running" pero no hay output nuevo en minutos
-- El proceso debería haber terminado pero sigue activo
-- Logs muestran el mismo mensaje repetido (loop infinito)
+**Signs of a hung process:**
+- `process(action: poll)` returns "running" but there is no new output in minutes
+- The process should have finished but is still active
+- Logs show the same message repeated (infinite loop)
 
-**Regla:** si un proceso lleva más del doble del tiempo esperado sin output nuevo, intervenir. No esperar a que se cuelgue definitivamente.
+**Rule:** if a process has been running for more than double the expected time without new output, intervene. Do not wait for it to hang permanently.
 
-### Patrón 8: Consolidación de Resultados Paralelos
+### Anti-pattern: the polling loop of ephemeral sessions
 
-Después de lanzar N procesos en paralelo, consolidar resultados:
+**Symptom:** `process(action: poll, sessionId: "<id>")` returns `No session found for <id>` right after launching an `exec` in the background.
+
+**Cause:** some background `exec` use ephemeral sessions that are not accessible for `process poll`. The real result is obtained by reading the command's log file or waiting for the completion wake, not by querying the session.
+
+**Anti-pattern to avoid:** when `process poll` says `No session found`, do NOT chain `sleep N && ps -p <pid>` in a loop waiting for the process to finish. That can become an infinite loop that burns context and real time (it happened: ~25 min of polling for a 10s build).
+
+**Correct:**
+```
+# 1. Run with a bounded timeout and yieldMs, redirecting to a log file
+exec(command: "npm run build > /tmp/build.log 2>&1; echo EXIT=$?; tail -6 /tmp/build.log", yieldMs: 60000)
+
+# 2. If the tool returns the output directly, use it. If it returns a session
+#    that later does not respond, re-read the log file with a single
+#    read/exec call instead of poll looping.
+exec(command: "tail -20 /tmp/build.log")
+```
+
+**Golden rule:** if `process poll` does not find the session, do not insist with sleep/ps. Re-read the command's log file once. If it is not ready yet, let the completion wake notify and continue with something else.
+
+### Pattern 8: Consolidating Parallel Results
+
+After launching N processes in parallel, consolidate results:
 
 ```yaml
-# 1. Cada proceso escribe su resultado a un archivo compartido
+# 1. Each process writes its result to a shared file
 exec(command: "echo '{\"status\":\"ok\",\"task\":\"issue-78\"}' >> /tmp/batch-results.jsonl")
 
-# 2. Al final, leer todos los resultados
+# 2. At the end, read all results
 exec(command: "cat /tmp/batch-results.jsonl")
 
-# 3. Consolidar: contar éxitos, fallos, pendientes
-# 4. Decidir próximos pasos según resultados
+# 3. Consolidate: count successes, failures, pending
+# 4. Decide next steps based on results
 ```
 
-**Formato de resultado (cada proceso escribe una línea JSON):**
+**Result format (each process writes one JSON line):**
 ```json
-{"task": "issue-78", "status": "ok", "duration": 45, "output": "resumen"}
-{"task": "issue-79", "status": "fail", "duration": 120, "error": "timeout en paso 3"}
+{"task": "issue-78", "status": "ok", "duration": 45, "output": "summary"}
+{"task": "issue-79", "status": "fail", "duration": 120, "error": "timeout at step 3"}
 ```
 
-**Regla:** no consolidar en memoria. Cada proceso escribe su resultado a disco. Después se lee todo junto.
+**Rule:** do not consolidate in memory. Each process writes its result to disk. Then read everything together.
 
-### Patrón 9: Logging de Procesos
+### Pattern 9: Process Logging
 
-Cada proceso background debe dejar un rastro:
+Each background process must leave a trace:
 
 ```yaml
-# Al lanzar, redirigir output a un archivo de log
-exec(command: "<comando> 2>&1 | tee /tmp/logs/task-xyz-$(date +%s).log", background: true)
+# When launching, redirect output to a log file
+exec(command: "<command> 2>&1 | tee /tmp/logs/task-xyz-$(date +%s).log", background: true)
 
-# O al final, escribir un resumen
-exec(command: "echo 'Tarea completada: $(date)' >> /tmp/logs/task-xyz-result.txt")
+# Or at the end, write a summary
+exec(command: "echo 'Task completed: $(date)' >> /tmp/logs/task-xyz-result.txt")
 ```
 
-**Qué loggear por proceso:**
-- Timestamp de inicio y fin
-- Comando ejecutado
-- Código de salida (0 = éxito, != 0 = fallo)
-- Resumen de output (primeras y últimas líneas)
-- Si falló: mensaje de error
+**What to log per process:**
+- Start and end timestamp
+- Executed command
+- Exit code (0 = success, != 0 = failure)
+- Output summary (first and last lines)
+- If it failed: error message
 
-**Regla:** los logs de procesos background se guardan en `/tmp/logs/` con nombre descriptivo. Se limpian al guardar sesión o cuando ocupen más de 50MB.
+**Rule:** background process logs are saved in `/tmp/logs/` with a descriptive name. They are cleaned up when saving the session or when they exceed 50MB.
 
-## Reglas de PTY
+## PTY Rules
 
-| Tipo de proceso | pty | Razón |
+| Process type | pty | Reason |
 |---|---|---|
-| Coding agent (Codex, Claude Code) | `true` | Son TUIs interactivos, sin PTY se cuelgan |
-| Script batch (build, test, lint) | `false` | No necesita terminal, ahorra recursos |
-| REPL (node, python, psql) | `true` | Espera input interactivo |
-| git command | `false` | Batch, no interactivo |
-| npm/pnpm command | `false` | Batch, salida estructurada |
+| Coding agent (Codex, Claude Code) | `true` | They are interactive TUIs, without PTY they hang |
+| Batch script (build, test, lint) | `false` | Does not need a terminal, saves resources |
+| REPL (node, python, psql) | `true` | Waits for interactive input |
+| git command | `false` | Batch, not interactive |
+| npm/pnpm command | `false` | Batch, structured output |
 
-## Integración con task-execution
+## Integration with task-execution
 
-Cuando una tarea de `task-execution` tiene pasos que son largos o paralelizables:
+When a `task-execution` task has steps that are long or parallelizable:
 
-1. **Planificar** normalmente en `task-execution`
-2. **Los pasos batch/paralelos** se ejecutan con estos patrones
-3. **Monitorear** con `process` o esperar wake events
-4. **Consolidar resultados** con el patrón 8
-5. **Continuar** cuando todos los pasos background completaron
+1. **Plan** normally in `task-execution`
+2. **The batch/parallel steps** run with these patterns
+3. **Monitor** with `process` or wait for wake events
+4. **Consolidate results** with pattern 8
+5. **Continue** when all background steps completed
 
 ## Outputs
-- Procesos lanzados y monitoreados
-- Resultados consolidados al completar
-- Wake events de notificación
-- Temp dirs / worktrees limpiados
-- Logs de cada proceso en `/tmp/logs/`
+- Launched and monitored processes
+- Consolidated results on completion
+- Notification wake events
+- Cleaned temp dirs / worktrees
+- Logs for each process in `/tmp/logs/`
 
-## Tooling de calidad
+## Quality tooling
 
-Cuando una tarea background modifica scripts de skill del workspace, correr `npm test` antes de considerarla completa. Esto ejecuta `test-skills.sh`, bats y pytest.
+When a background task modifies skill scripts of the workspace, run `npm test` before considering it complete. This runs `test-skills.sh`, bats and pytest.
 
 ## Related Skills
 
-- [Task Execution](../task-execution): Para el workflow completo de tareas
-- [Session Lifecycle](../session-lifecycle): Para handoffs y guardado de sesión
-- [Debug Investigation](../debug-investigation): Para debugging de procesos que fallan
+- [Task Execution](../planning-and-task-breakdown): For the full task workflow
+- [Session Lifecycle](../session-lifecycle): For handoffs and session saving
+- [Debug Investigation](../debugging-and-error-recovery): For debugging failing processes

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# hotfiles.sh — Identify most frequently changed files in git history
+# hotfiles.sh - Identify most frequently changed files in git history
 # Usage: ./hotfiles.sh [--repo <path>] [--top <n>] [--since <date>]
 
 set -euo pipefail

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# character-sheet.sh — Generate character sheet template
+# character-sheet.sh - Generate character sheet template
 # Usage: ./character-sheet.sh <name> [--role protagonist|antagonist|supporting]
 
 set -euo pipefail

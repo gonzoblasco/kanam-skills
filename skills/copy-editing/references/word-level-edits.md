@@ -1,6 +1,6 @@
 # Word-Level Edits - Copy Editing Reference
 
-Guía rápida de palabras a evitar y reemplazar.
+Quick guide to words to avoid and replace.
 
 ## Cut These Words
 
@@ -43,5 +43,5 @@ Guía rápida de palabras a evitar y reemplazar.
 
 ## Related
 
-- [SKILL.md](../SKILL.md) - Workflow principal
-- [Seven Sweeps](../references/seven-sweeps.md) - Framework completo de edición
+- [SKILL.md](../SKILL.md) - Main workflow
+- [Seven Sweeps](../references/seven-sweeps.md) - Complete editing framework

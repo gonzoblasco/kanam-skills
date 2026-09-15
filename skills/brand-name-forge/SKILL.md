@@ -5,51 +5,50 @@ metadata:
   tags:
     - branding
     - naming
-    - marcas
-    - creatividad
-description: "Workshop sistemático de naming de marca: 8 métodos clásicos para generar candidatos de nombre con significado, justificación y sugerencias de dominio."
+    - trademarks
+    - creativity
+description: "Systematic brand naming workshop: 8 classic methods to generate name candidates with meaning, rationale and domain suggestions."
 user-invocable: false
 ---
 
 # Workflow: Brand Name Forge
 
-## Propósito
+## Purpose
 
-Workshop sistemático de naming que genera 8 candidatos de nombre usando métodos clásicos, cada uno con significado, justificación y sugerencias de dominio.
+Systematic naming workshop that generates 8 name candidates using classic methods, each with meaning, rationale and domain suggestions.
 
-## Cuándo usarlo
+## When to Use It
 
-- Nombrar un producto, servicio o empresa
-- Brainstorming de nombres de marca
-- Renombrar un proyecto existente
+- Naming a product, service or company
+- Brainstorming brand names
+- Renaming an existing project
 
 ## 8 Naming Methods
 
 | # | Method | Description | Example |
 |---|---|---|---|
-| 1 | **Portmanteau** | Fusionar dos palabras | Pinterest = Pin + Interest |
-| 2 | **Metaphor** | Imagen que simboliza el valor | Amazon (río vasto) |
-| 3 | **Onomatopoeia** | Sonido que evoca la experiencia | Zoom, Snap |
-| 4 | **Acronym** | Iniciales de una frase | IBM, BMW |
-| 5 | **Foreign Borrowing** | Préstamo de otro idioma | Volvo (latín: "ruedo") |
-| 6 | **Eponym/Toponym** | Fundador, mito o lugar | Tesla, Patagonia |
-| 7 | **Coined Word** | Palabra inventada | Kodak, Xerox |
-| 8 | **Pun/Wordplay** | Homófonos, deletreos alternativos | Flickr, Lyft |
+| 1 | **Portmanteau** | Fuse two words | Pinterest = Pin + Interest |
+| 2 | **Metaphor** | Image that symbolizes the value | Amazon (vast river) |
+| 3 | **Onomatopoeia** | Sound that evokes the experience | Zoom, Snap |
+| 4 | **Acronym** | Initials of a phrase | IBM, BMW |
+| 5 | **Foreign Borrowing** | Loan from another language | Volvo (Latin: "I roll") |
+| 6 | **Eponym/Toponym** | Founder, myth or place | Tesla, Patagonia |
+| 7 | **Coined Word** | Invented word | Kodak, Xerox |
+| 8 | **Pun/Wordplay** | Homophones, alternative spellings | Flickr, Lyft |
 
 ## Outputs
 
-- 8 name candidates con meaning, rationale, domain suggestions
-- Top recommendation con justificación
+- 8 name candidates with meaning, rationale, domain suggestions
+- Top recommendation with justification
 - Name quality check (cross-language safety, trademarkability, pronounceability)
 
-## Tooling relacionado
+## Related Tooling
 
-| Skill / Script | Uso |
+| Skill / Script | Usage |
 |---|---|
-| `copy-editing/scripts/word-count.sh` | Verificar longitud y legibilidad de taglines asociadas. |
-| `copy-editing/scripts/readability-check.sh` | Medir legibilidad de explicaciones de marca. |
+| `copy-editing/scripts/word-count.sh` | Verify length and readability of associated taglines. |
+| `copy-editing/scripts/readability-check.sh` | Measure readability of brand explanations. |
 
 ## Related Skills
 
-- [Product Discovery](../product-discovery): Para definir producto antes de nombrarlo
-- [Copy Editing](../copy-editing): Para pulir el messaging de la marca
+- [Copy Editing](../copy-editing): To polish the brand messaging

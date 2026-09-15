@@ -1,41 +1,41 @@
-# Checklist de Conocimiento - Referencia
+# Knowledge Checklist - Reference
 
 ## Discovery
 
-- [ ] ¿Existe un mapa de conocimiento del proyecto?
-- [ ] ¿Hay documentos huérfanos (sin dueño)?
-- [ ] ¿Hay documentos vacíos o placeholder?
-- [ ] ¿Hay documentos abandonados (>30 días sin actualizar)?
+- [ ] Is there a knowledge map of the project?
+- [ ] Are there orphan documents (without an owner)?
+- [ ] Are there empty or placeholder documents?
+- [ ] Are there abandoned documents (>30 days without updates)?
 
 ## Consistency
 
-- [ ] ¿ROADMAP y STATUS coinciden?
-- [ ] ¿ADRs y README no se contradicen?
-- [ ] ¿CHANGELOG refleja los cambios reales?
-- [ ] ¿HANDOFF está actualizado?
+- [ ] Do ROADMAP and STATUS match?
+- [ ] Do ADRs and README not contradict each other?
+- [ ] Does CHANGELOG reflect the actual changes?
+- [ ] Is HANDOFF up to date?
 
 ## Freshness
 
-- [ ] ¿Cada documento tiene fecha de última actualización?
-- [ ] ¿Hay referencias a archivos eliminados?
-- [ ] ¿Hay features que ya no existen pero siguen documentadas?
-- [ ] ¿Las decisiones documentadas siguen vigentes?
+- [ ] Does every document have a last-updated date?
+- [ ] Are there references to deleted files?
+- [ ] Are there features that no longer exist but are still documented?
+- [ ] Are the documented decisions still in effect?
 
 ## Knowledge Graph
 
-- [ ] ¿Cada feature tiene trazabilidad hasta su ADR?
-- [ ] ¿Cada ADR tiene link al PR que lo implementó?
-- [ ] ¿Cada PR tiene link al CHANGELOG?
-- [ ] ¿Cada CHANGELOG tiene link al HANDOFF?
+- [ ] Does every feature have traceability to its ADR?
+- [ ] Does every ADR link to the PR that implemented it?
+- [ ] Does every PR link to the CHANGELOG?
+- [ ] Does every CHANGELOG link to the HANDOFF?
 
 ## Compression
 
-- [ ] ¿Hay información duplicada en múltiples archivos?
-- [ ] ¿Hay tablas o listas repetidas?
-- [ ] ¿Hay ejemplos redundantes?
-- [ ] ¿Hay decisiones documentadas en múltiples ADRs?
+- [ ] Is there duplicated information across multiple files?
+- [ ] Are there repeated tables or lists?
+- [ ] Are there redundant examples?
+- [ ] Are there decisions documented in multiple ADRs?
 
 ## Related
 
-- [SKILL.md](../SKILL.md) - Workflow principal
-- [Artifacts](./artifacts.md) - Catálogo de artefactos
+- [SKILL.md](../SKILL.md) - Main workflow
+- [Artifacts](./artifacts.md) - Artifact catalog

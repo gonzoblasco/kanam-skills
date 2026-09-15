@@ -1,39 +1,39 @@
 # Dopamine Menu - ADHD Assistant Reference
 
-Menú personalizado de estímulos para regulación de dopamina.
+Customized menu of stimuli for dopamine regulation.
 
 ## Appetizers (1-5 min)
 
-- Una canción para bailar
-- Estirarse o caminar por la habitación
-- Snack favorito
-- Mirar por la ventana
-- 5 respiraciones profundas
+- A song to dance to
+- Stretching or walking around the room
+- Favorite snack
+- Look out the window
+- 5 deep breaths
 
 ## Entrees (10-30 min)
 
-- Caminata afuera
-- Hobby creativo
-- Ejercicio
-- Conexión social
+- Walk outside
+- Creative hobby
+- Exercise
+- Social connection
 - Journaling
 
 ## Sides (during boring tasks)
 
-- Música de fondo / podcast
+- Background music / podcast
 - Fidget toy
 - Standing desk
 - Timer challenges
-- Utensilios de colores
+- Colorful utensils
 
 ## Desserts (use sparingly)
 
-- Redes sociales (con timer)
-- Videojuegos
+- Social media (with timer)
+- Video games
 - Series
-- Scrolling infinito
+- Infinite scrolling
 
 ## Related
 
-- [SKILL.md](../SKILL.md) - Workflow principal
-- [Daily Planning](./daily-planning.md) - Plantilla de plan diario
+- [SKILL.md](../SKILL.md) - Main workflow
+- [Daily Planning](./daily-planning.md) - Daily plan template

@@ -3,149 +3,149 @@ name: "mock-interview-drill"
 metadata:
   category: "Career"
   tags:
-    - entrevistas
-    - preparacion
+    - interviews
+    - preparation
     - star
-    - busqueda-laboral
-description: "Simulacros realistas de entrevistas con follow-up questions: Behavioral (STAR), Technical y Case, con diagnóstico estructurado."
+    - job-search
+description: "Realistic mock interviews with follow-up questions: Behavioral (STAR), Technical and Case, with structured diagnosis."
 user-invocable: false
 ---
 
 # Workflow: Mock Interview Drill
 
-## Propósito
+## Purpose
 
-Simulacros realistas de entrevistas con follow-up questions en 3 modalidades: Behavioral, Technical y Case. Proporciona diagnóstico STAR estructurado, evaluación técnica y respuestas de muestra.
+Realistic mock interviews with follow-up questions in 3 modes: Behavioral, Technical and Case. Provides structured STAR diagnosis, technical evaluation and sample answers.
 
-## Filosofía
+## Philosophy
 
 > Practice doesn't make perfect. Practice makes permanent. Practice the right way.
 
-Cada simulacro debe sentirse real. No es un cuestionario - es una conversación con presión controlada, seguimiento y diagnóstico.
+Each mock should feel real. It is not a questionnaire - it is a conversation with controlled pressure, follow-up and diagnosis.
 
-## Cuándo usarlo
+## When to use it
 
-- Practicar entrevistas laborales
-- Preparar behavioral questions con STAR
-- Practicar system design o algoritmos
-- Preparar case interviews (consulting, product)
-- Obtener feedback estructurado post-simulacro
+- To practice job interviews
+- To prepare behavioral questions with STAR
+- To practice system design or algorithms
+- To prepare for case interviews (consulting, product)
+- To get structured feedback after a mock
 
-## Antes de empezar
+## Before you start
 
-Configurá el simulacro:
+Set up the mock:
 
-1. **Elegí el tipo** - Behavioral, Technical, Case, o combinado
-2. **Definí el target** - FAANG, startup, consultora (cambia el enfoque)
-3. **Definí seniority** - junior, mid, senior (cambia la profundidad)
-4. **Tiempo** - 30-45 min por simulacro
-5. **Modo** - conversación real, no lectura de guión
+1. **Choose the type** - Behavioral, Technical, Case, or combined
+2. **Define the target** - FAANG, startup, consulting firm (changes the focus)
+3. **Define seniority** - junior, mid, senior (changes the depth)
+4. **Time** - 30-45 min per mock
+5. **Mode** - real conversation, not script reading
 
-> **Tip:** Usá `question-generator.py` para generar preguntas automáticamente según rol, seniority y target.
+> **Tip:** Use `question-generator.py` to automatically generate questions based on role, seniority and target.
 
 ---
 
 ## Workflow A: Behavioral Interview
 
-### Cómo funciona
+### How it works
 
-1. **Hacé la pregunta** - abierta, sin interrumpir
-2. **Escuchá la respuesta** - tomá notas de los 4 elementos STAR
-3. **Follow-ups** - 3-5 preguntas de profundización
-4. **Diagnóstico** - rating A-D con criterios específicos
+1. **Ask the question** - open-ended, without interrupting
+2. **Listen to the answer** - take notes on the 4 STAR elements
+3. **Follow-ups** - 3-5 probing questions
+4. **Diagnosis** - A-D rating with specific criteria
 
-### Cómo evaluar una respuesta STAR
+### How to evaluate a STAR answer
 
-| Elemento | Qué buscar | Señales de alerta |
+| Element | What to look for | Red flags |
 |---|---|---|
-| **S** Situation | Contexto claro (cuándo, dónde, escala) | Vago, sin fechas, sin métricas |
-| **T** Task | Rol personal definido | "El equipo hizo..." sin su rol |
-| **A** Action | Acciones concretas, no genéricas | "Hice lo que había que hacer" |
-| **R** Result | Outcome cuantificado o cualitativo | "Salió bien" sin datos |
+| **S** Situation | Clear context (when, where, scale) | Vague, no dates, no metrics |
+| **T** Task | Defined personal role | "The team did..." without their role |
+| **A** Action | Concrete actions, not generic ones | "I did what needed to be done" |
+| **R** Result | Quantified or qualitative outcome | "It went well" without data |
 
 ### STAR Diagnostic Rating
 
-| Rating | Criterio |
+| Rating | Criterion |
 |---|---|
-| **A** | Cubre 4/4 STAR, datos cuantificados, aprendizaje explícito |
-| **B** | Cubre 3/4 STAR, datos parciales, algo de reflexión |
-| **C** | Cubre 2/4 STAR, sin datos, respuesta genérica |
-| **D** | Cubre 0-1/4 STAR, sin estructura, no responde la pregunta |
+| **A** | Covers 4/4 STAR, quantified data, explicit learning |
+| **B** | Covers 3/4 STAR, partial data, some reflection |
+| **C** | Covers 2/4 STAR, no data, generic answer |
+| **D** | Covers 0-1/4 STAR, no structure, does not answer the question |
 
-### Follow-ups comunes
+### Common follow-ups
 
-- "¿Qué hubieras hecho diferente?"
-- "¿Cómo reaccionaron los demás?"
-- "¿Qué aprendiste de esa experiencia?"
-- "¿Había algo que no sabías en ese momento?"
-- "¿Cómo mediste el resultado?"
+- "What would you have done differently?"
+- "How did the others react?"
+- "What did you learn from that experience?"
+- "Was there something you didn't know at that moment?"
+- "How did you measure the result?"
 
-### Qué hacer si no tiene respuesta preparada
+### What to do if they have no prepared answer
 
-- Dále tiempo para pensar (10-15 segundos de silencio está bien)
-- Reformulá la pregunta: "¿Otra situación similar?"
-- Si insiste en que no tiene: "Contame de un proyecto que no salió como esperabas"
+- Give them time to think (10-15 seconds of silence is fine)
+- Rephrase the question: "Another similar situation?"
+- If they insist they have none: "Tell me about a project that didn't go as you expected"
 
 ---
 
 ## Workflow B: Technical Interview
 
-### Cómo funciona
+### How it works
 
-1. **Presentá el problema** - system design, algoritmo, o domain knowledge
-2. **Dále tiempo para pensar** - 2-3 min de silencio es normal
-3. **Escuchá el approach** - no interrumpas, tomá notas
-4. **Follow-ups** - edge cases, trade-offs, performance, extensibilidad
-5. **Evaluación** - rating A-D con criterios técnicos
+1. **Present the problem** - system design, algorithm, or domain knowledge
+2. **Give them time to think** - 2-3 min of silence is normal
+3. **Listen to the approach** - don't interrupt, take notes
+4. **Follow-ups** - edge cases, trade-offs, performance, extensibility
+5. **Evaluation** - A-D rating with technical criteria
 
-### System Design: qué evaluar según seniority
+### System Design: what to evaluate by seniority
 
-| Seniority | Qué esperar | Qué evaluar |
+| Seniority | What to expect | What to evaluate |
 |---|---|---|
-| **Junior** | Solución funcional, monolítica | Claridad, fundamentos, comunicación |
-| **Mid** | Solución escalable, con trade-offs | Caching, DB indexing, API design |
-| **Senior** | Solución distribuida, fault-tolerant | CAP theorem, sharding, consistency |
+| **Junior** | Functional, monolithic solution | Clarity, fundamentals, communication |
+| **Mid** | Scalable solution with trade-offs | Caching, DB indexing, API design |
+| **Senior** | Distributed, fault-tolerant solution | CAP theorem, sharding, consistency |
 
-### Algoritmos: qué nivel según target
+### Algorithms: what level by target
 
-| Target | Nivel | Ejemplos |
+| Target | Level | Examples |
 |---|---|---|
 | **FAANG** | LeetCode Medium/Hard | Graphs, DP, trees, arrays |
 | **Startup** | LeetCode Easy/Medium | Arrays, strings, hash maps |
-| **Consulting** | No aplica | No suelen preguntar algoritmos |
+| **Consulting** | Not applicable | They usually don't ask algorithms |
 
 ### Technical Answer Evaluation
 
-| Rating | Criterio |
+| Rating | Criterion |
 |---|---|
-| **A** | Clarificó reqs, diseño completo, trade-offs explícitos, edge cases cubiertos |
-| **B** | Diseño funcional, algunos trade-offs, edge cases parciales |
-| **C** | Diseño básico, sin trade-offs, no consideró fallos |
-| **D** | Sin estructura, no clarificó, solución incorrecta |
+| **A** | Clarified requirements, complete design, explicit trade-offs, edge cases covered |
+| **B** | Functional design, some trade-offs, partial edge cases |
+| **C** | Basic design, no trade-offs, didn't consider failures |
+| **D** | No structure, no clarification, incorrect solution |
 
-### Follow-ups comunes
+### Common follow-ups
 
-- "¿Qué pasa si el tráfico se duplica?"
-- "¿Cómo manejarías un fallo en [componente]?"
-- "¿Hay otra forma de resolverlo?"
-- "¿Cuál es el cuello de botella de tu diseño?"
-- "¿Cómo monitorearías este sistema?"
+- "What happens if traffic doubles?"
+- "How would you handle a failure in [component]?"
+- "Is there another way to solve it?"
+- "What is the bottleneck of your design?"
+- "How would you monitor this system?"
 
 ---
 
 ## Workflow C: Case Interview
 
-### Cómo funciona
+### How it works
 
-1. **Presentá el case** - problema de negocio abierto
-2. **Dále tiempo para estructurar** - 2-3 min
-3. **Escuchá el approach** - framework, assumptions, análisis
-4. **Follow-ups** - datos, riesgos, recomendación
-5. **Evaluación** - rating A-D con criterios de case
+1. **Present the case** - open business problem
+2. **Give them time to structure** - 2-3 min
+3. **Listen to the approach** - framework, assumptions, analysis
+4. **Follow-ups** - data, risks, recommendation
+5. **Evaluation** - A-D rating with case criteria
 
-### Frameworks por tipo de case
+### Frameworks by case type
 
-| Tipo de case | Framework recomendado |
+| Case type | Recommended framework |
 |---|---|
 | **Profitability** | Revenue - Cost = Profit |
 | **Market Entry** | Market attractiveness + Company capability + GTM strategy |
@@ -153,57 +153,56 @@ Configurá el simulacro:
 | **Operations** | Process mapping + Cost analysis + Improvement levers |
 | **Growth** | Customer funnel + Revenue levers + Competitive position |
 
-> **Ver:** [Case Frameworks](./references/case-frameworks.md) para detalle de cada framework.
+> **See:** [Case Frameworks](./references/case-frameworks.md) for details on each framework.
 
 ### Case Answer Evaluation
 
-| Rating | Criterio |
+| Rating | Criterion |
 |---|---|
-| **A** | Framework apropiado, assumptions explícitas, análisis estructurado, recomendación clara |
-| **B** | Framework ok, assumptions parciales, análisis básico, recomendación presente |
-| **C** | Sin framework claro, salta a conclusiones, análisis superficial |
-| **D** | Desorganizado, no estructura el problema, no llega a recomendación |
+| **A** | Appropriate framework, explicit assumptions, structured analysis, clear recommendation |
+| **B** | OK framework, partial assumptions, basic analysis, recommendation present |
+| **C** | No clear framework, jumps to conclusions, superficial analysis |
+| **D** | Disorganized, doesn't structure the problem, doesn't reach a recommendation |
 
-### Follow-ups comunes
+### Common follow-ups
 
-- "¿Qué datos necesitarías para validar tu hipótesis?"
-- "¿Cuál es el mayor riesgo de tu recomendación?"
-- "¿Cómo priorizarías entre [opción A] y [opción B]?"
-- "¿Qué assumptions estás haciendo?"
-- "Si tuvieras que decidir hoy con la información disponible, ¿qué harías?"
+- "What data would you need to validate your hypothesis?"
+- "What is the biggest risk of your recommendation?"
+- "How would you prioritize between [option A] and [option B]?"
+- "What assumptions are you making?"
+- "If you had to decide today with the available information, what would you do?"
 
 ---
 
 ## Outputs
 
-- **STAR Diagnostic Report** - rating A-D con breakdown por elemento
-- **Technical Answer Evaluation** - rating A-D con observaciones
-- **Case Answer Evaluation** - rating A-D con feedback de estructura
-- **Polished sample answers** - versión mejorada de la respuesta
-- **Improvement suggestions** - qué practicar para la próxima
+- **STAR Diagnostic Report** - A-D rating with element-by-element breakdown
+- **Technical Answer Evaluation** - A-D rating with observations
+- **Case Answer Evaluation** - A-D rating with structure feedback
+- **Polished sample answers** - improved version of the answer
+- **Improvement suggestions** - what to practice for next time
 
 ---
 
 ## References
 
-- [Behavioral Questions](./references/behavioral-questions.md) - Banco de 24+ preguntas por categoría con criterios de evaluación
-- [System Design Guide](./references/system-design-guide.md) - Cómo estructurar respuestas de system design, trade-offs, seniority levels
-- [Case Frameworks](./references/case-frameworks.md) - Frameworks de case con cuándo usar cada uno
-- [Preparation Guide](./references/preparation-guide.md) - Qué estudiar según target y seniority
+- [Behavioral Questions](./references/behavioral-questions.md) - Bank of 24+ questions by category with evaluation criteria
+- [System Design Guide](./references/system-design-guide.md) - How to structure system design answers, trade-offs, seniority levels
+- [Case Frameworks](./references/case-frameworks.md) - Case frameworks with when to use each one
+- [Preparation Guide](./references/preparation-guide.md) - What to study by target and seniority
 
 ## Scripts
 
-- [question-generator.py](./scripts/question-generator.py) - Genera preguntas de práctica según rol, seniority y target
+- [question-generator.py](./scripts/question-generator.py) - Generates practice questions by role, seniority and target
 
 ## Helper Scripts
 
-Scripts en `skills/mock-interview-drill/scripts/`:
+Scripts in `skills/mock-interview-drill/scripts/`:
 
-| Script | Uso |
+| Script | Use |
 |---|---|
-| `question-generator.py` | Genera preguntas de entrevista según rol, seniority y target. Usar en "Antes de empezar" y entre simulacros para variar el banco de preguntas. |
+| `question-generator.py` | Generates interview questions by role, seniority and target. Use in "Before you start" and between mocks to vary the question bank. |
 
 ## Related Skills
 
-- [CV Tailor](../cv-tailor): Para optimizar CV antes de las entrevistas
-- [Code Mentor](../code-mentor): Para practicar algoritmos y system design
+- [CV Tailor](../cv-tailor): To optimize the CV before interviews

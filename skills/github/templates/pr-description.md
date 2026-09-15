@@ -1,36 +1,36 @@
-# Plantilla de Descripcion de PR
+# PR Description Template
 
-## Resumen
+## Summary
 
-<!-- Descripcion breve de que hace este PR y por que -->
+<!-- Brief description of what this PR does and why -->
 
-## Issue Relacionado
+## Related Issue
 
-<!-- Enlace al issue que aborda este PR -->
+<!-- Link to the issue this PR addresses -->
 
-Cierra #
+Closes #
 
-## Cambios
+## Changes
 
-<!-- Lista de cambios clave de este PR -->
+<!-- List of key changes in this PR -->
 
 - 
 
-## Pruebas
+## Testing
 
-<!-- Como se probo esto? Pasos para verificar -->
+<!-- How was this tested? Steps to verify -->
 
-- [ ] Pruebas manuales
-- [ ] Las pruebas unitarias pasan
-- [ ] CI en verde
+- [ ] Manual testing
+- [ ] Unit tests pass
+- [ ] CI green
 
-## Screenshots / Grabaciones
+## Screenshots / Recordings
 
-<!-- Si aplica, agrega screenshots o grabaciones -->
+<!-- If applicable, add screenshots or recordings -->
 
 ## Checklist
 
-- [ ] El codigo sigue las convenciones del proyecto
-- [ ] No se incluyeron cambios innecesarios
-- [ ] Auto-revision completada
-- [ ] Documentacion actualizada (si es necesario)
+- [ ] Code follows project conventions
+- [ ] No unnecessary changes included
+- [ ] Self-review completed
+- [ ] Documentation updated (if needed)

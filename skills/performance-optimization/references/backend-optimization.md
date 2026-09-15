@@ -1,6 +1,6 @@
 # Backend Optimization - Performance Optimization Reference
 
-Técnicas de optimización para backend.
+Backend optimization techniques.
 
 ## Caching Strategies
 
@@ -68,6 +68,6 @@ const pool = new Pool({
 
 ## Related
 
-- [SKILL.md](../SKILL.md) - Workflow principal
-- [Frontend Optimization](./frontend-optimization.md) - Optimización frontend
-- [Database Optimization](./database-optimization.md) - Optimización DB
+- [SKILL.md](../SKILL.md) - Main workflow
+- [Frontend Optimization](./frontend-optimization.md) - Frontend optimization
+- [Database Optimization](./database-optimization.md) - DB optimization

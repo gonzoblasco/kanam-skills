@@ -1,37 +1,37 @@
 ---
 name: "checkmate"
-description: "Goal-to-execution-to-verification loop con worker + judge"
+description: "Goal-to-execution-to-verification loop with worker + judge"
 ---
 
 # checkmate
 
-## Descripción
-Convierte una descripción de tarea en criterios pass/fail explícitos, spawnéa un worker agent para intentar la tarea, corre un judge agent contra los criterios, y loopea con feedback acumulado hasta que todo pase. Modo interactivo (revisás criterios y aprobás cada checkpoint) o batch (autónomo).
+## Description
+Turns a task description into explicit pass/fail criteria, spawns a worker agent to attempt the task, runs a judge agent against the criteria, and loops with accumulated feedback until everything passes. Interactive mode (you review criteria and approve each checkpoint) or batch (autonomous).
 
-## Cuándo usarlo
-- Para tareas de código donde el definition of done no debe driftar
-- Para research reports que deben cubrir temas específicos
-- Para documentos que deben cumplir una quality checklist
-- Para transformaciones de datos donde el output debe matchear un spec
-- Para automatizar QA loops que requerirían revisiones manuales
+## When to use it
+- For coding tasks where the definition of done must not drift
+- For research reports that must cover specific topics
+- For documents that must meet a quality checklist
+- For data transformations where the output must match a spec
+- To automate QA loops that would require manual reviews
 
 ## Workflow
-1. Describir la tarea en lenguaje natural
-2. checkmate genera criterios pass/fail (revisar en modo interactivo)
-3. Worker intenta la tarea
-4. Judge evalúa contra los criterios
-5. Si falla, feedback loop con accumulated context
-6. Cuando todo pasa, entregar resultado
+1. Describe the task in natural language
+2. checkmate generates pass/fail criteria (review in interactive mode)
+3. Worker attempts the task
+4. Judge evaluates against the criteria
+5. If it fails, feedback loop with accumulated context
+6. When everything passes, deliver the result
 
-## Tooling relacionado
+## Related tooling
 
-| Skill / Script | Uso |
+| Skill / Script | Use |
 |---|---|
-| `engineering-governance/scripts/test-skills.sh` | Validar scripts que el worker/judge generen para el workspace. |
-| `code-review-and-quality` | Revisión de calidad del output cuando es código (absorbio a review-quality). |
-| `qa-patrol` | QA automatizado adicional para verificar criterios de aceptación. |
+| `scripts/test-skills.sh` (workspace root) | Validate scripts that the worker/judge generate for the workspace. |
+| `code-review-and-quality` | Quality review of the output when it is code (absorbed into review-quality). |
+| `qa-patrol` | Additional automated QA to verify acceptance criteria. |
 
-## Notas
-- Usar modo interactivo para tareas críticas (auth, payments, data models)
-- Modo batch solo para tareas bien definidas y de bajo riesgo
-- El judge es un rol separado del worker, evitando drift del definition of done
+## Notes
+- Use interactive mode for critical tasks (auth, payments, data models)
+- Batch mode only for well-defined, low-risk tasks
+- The judge is a role separate from the worker, preventing definition of done drift

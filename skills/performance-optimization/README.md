@@ -1,55 +1,55 @@
 # Performance Optimization
 
-Optimización de rendimiento del sistema.
+System performance optimization.
 
-## ¿Para qué sirve?
+## What is it for?
 
-Para **mejorar el rendimiento** del sistema mediante evidencia, medición y optimizaciones incrementales. No desarrolla features, no corrige bugs funcionales. Elimina cuellos de botella reales.
+To **improve system performance** through evidence, measurement and incremental optimizations. It does not develop features, does not fix functional bugs. It removes real bottlenecks.
 
-**Filosofía:** Measure. Understand. Optimize. Verify. Nunca optimizar por intuición.
+**Philosophy:** Measure. Understand. Optimize. Verify. Never optimize by intuition.
 
-## ¿Cuándo usarlo?
+## When to use it?
 
-- Lighthouse bajo
-- Tiempos de respuesta altos
-- CPU/memoria excesivos
-- Queries lentas
-- Bundles grandes
-- Degradación después de releases
+- Low Lighthouse scores
+- High response times
+- Excessive CPU/memory
+- Slow queries
+- Large bundles
+- Degradation after releases
 
-## ¿Cómo se usa?
+## How is it used?
 
-### Workflow completo
+### Full workflow
 
-1. **Baseline** - medir antes de optimizar
-2. **Profiling** - encontrar cuellos de botella
-3. **Bottleneck Analysis** - clasificar (CPU, memoria, I/O, network, DB, rendering, LLM)
-4. **Optimization Strategy** - elegir intervención mínima
-5. **Implementation Planning** - definir impacto, riesgo, esfuerzo, rollback
-6. **Verification** - volver a medir, comparar contra baseline
-7. **Cost/Benefit** - ¿cuánto costó? ¿cuánto mejoró?
-8. **Knowledge Capture** - benchmark before/after, ADRs, CHANGELOG
+1. **Baseline** - measure before optimizing
+2. **Profiling** - find bottlenecks
+3. **Bottleneck Analysis** - classify (CPU, memory, I/O, network, DB, rendering, LLM)
+4. **Optimization Strategy** - choose the minimal intervention
+5. **Implementation Planning** - define impact, risk, effort, rollback
+6. **Verification** - measure again, compare against baseline
+7. **Cost/Benefit** - how much did it cost? how much did it improve?
+8. **Knowledge Capture** - before/after benchmark, ADRs, CHANGELOG
 
-### Scripts útiles
+### Useful scripts
 
 ```bash
-# Benchmark de response times
-./scripts/benchmark.sh --url https://tusitio.com
+# Response times benchmark
+./scripts/benchmark.sh --url https://yoursite.com
 
-# Lighthouse check con threshold
-./scripts/lighthouse-check.sh https://tusitio.com --min-score 90
+# Lighthouse check with threshold
+./scripts/lighthouse-check.sh https://yoursite.com --min-score 90
 ```
 
-## Referencias
+## References
 
-| Archivo | Qué contiene |
+| File | What it contains |
 |---|---|
-| `references/domains.md` | Dominios de performance |
-| `references/tools.md` | Herramientas de profiling |
-| `references/frontend-optimization.md` | Bundle, imágenes, rendering, Core Web Vitals |
+| `references/domains.md` | Performance domains |
+| `references/tools.md` | Profiling tools |
+| `references/frontend-optimization.md` | Bundle, images, rendering, Core Web Vitals |
 | `references/backend-optimization.md` | Caching, indexing, query optimization, connection pooling |
 
-## Skills relacionadas
+## Related skills
 
-- [Observability](../observability) - Para medir y monitorear performance
-- [Debug Investigation](../debug-investigation) - Para investigar causas de degradación
+- [Observability](../observability) - To measure and monitor performance
+- [Debug Investigation](../debug-investigation) - To investigate causes of degradation

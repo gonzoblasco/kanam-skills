@@ -1,6 +1,6 @@
 # Sub-agent Patterns - Session Lifecycle Reference
 
-Patrones para spawnear sub-agentes.
+Patterns for spawning sub-agents.
 
 ## Fork vs Isolated
 
@@ -66,5 +66,5 @@ Main session: merge results
 
 ## Related
 
-- [SKILL.md](../SKILL.md) - Workflow principal
-- [Session Templates](./session-templates.md) - Templates de sesión
+- [SKILL.md](../SKILL.md) - Main workflow
+- [Session Templates](./session-templates.md) - Session templates

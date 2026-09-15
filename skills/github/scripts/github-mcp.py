@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-github-mcp.py — stdio wrapper for the official GitHub MCP server.
+github-mcp.py - stdio wrapper for the official GitHub MCP server.
 Usage:
   python3 github-mcp.py list
   python3 github-mcp.py call list_issues '{"owner": "facebook", "repo": "astryx", "state": "open"}'

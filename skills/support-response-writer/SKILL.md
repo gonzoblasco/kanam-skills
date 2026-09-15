@@ -3,29 +3,29 @@ name: "support-response-writer"
 metadata:
   category: "Customer"
   tags:
-    - soporte
+    - support
     - customer-service
-    - atencion-al-cliente
-    - de-escalacion
-description: "Generar respuestas profesionales de customer support: pre-venta, post-venta, reclamos y devoluciones, con estrategias de de-escalación emocional."
+    - customer-care
+    - de-escalation
+description: "Generate professional customer support responses: pre-sale, after-sale, complaints and returns, with emotional de-escalation strategies."
 user-invocable: false
 ---
 
 # Workflow: Support Response Writer
 
-## Propósito
+## Purpose
 
-Generar respuestas profesionales de customer support para distintos escenarios: pre-venta, post-venta, reclamos y devoluciones. Incluye estrategias de de-escalación emocional según el nivel de intensidad del cliente.
+Generate professional customer support responses for different scenarios: pre-sale, after-sale, complaints and returns. Includes emotional de-escalation strategies based on the customer's intensity level.
 
-## Cuándo usarlo
+## When to Use It
 
-- Redactar respuesta de soporte
-- Cliente furioso o frustrado
-- Gestionar devolución o cambio
-- Responder consulta pre-venta
-- Manejar reclamo
+- Drafting a support response
+- Angry or frustrated customer
+- Handling a return or exchange
+- Answering a pre-sale inquiry
+- Managing a complaint
 
-## Escenarios
+## Scenarios
 
 ### Pre-Sale Inquiry
 1. Warm greeting
@@ -68,23 +68,22 @@ Generar respuestas profesionales de customer support para distintos escenarios: 
 
 ## Outputs
 
-- Script de respuesta inicial
+- Initial response script
 - Follow-up response
 - Escalation response
-- Estrategia de de-escalación
+- De-escalation strategy
 - Communication tips
 
 ## Helper Scripts
 
-Scripts en `skills/support-response-writer/scripts/`:
+Scripts in `skills/support-response-writer/scripts/`:
 
-| Script | Uso |
+| Script | Usage |
 |---|---|
-| `sentiment-check.sh <file>` | Detecta el tono/emoción de un mensaje de soporte y sugiere nivel de de-escalación. Usar antes de redactar la respuesta. |
+| `sentiment-check.sh <file>` | Detects the tone/emotion of a support message and suggests a de-escalation level. Use before drafting the response. |
 
-Tambien ver [copy-editing/scripts/readability-check.sh](../copy-editing/scripts/readability-check.sh) para pulir legibilidad y [word-count.sh](../copy-editing/scripts/word-count.sh) para controlar longitud.
+Also see [copy-editing/scripts/readability-check.sh](../copy-editing/scripts/readability-check.sh) to polish readability and [word-count.sh](../copy-editing/scripts/word-count.sh) to control length.
 
 ## Related Skills
 
-- [Copy Editing](../copy-editing): Para pulir el tono de las respuestas
-- [Campaign Plan](../campaign-plan): Para campañas de customer communication
+- [Copy Editing](../copy-editing): To polish the tone of responses

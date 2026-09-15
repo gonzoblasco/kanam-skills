@@ -1,7 +1,7 @@
 #!/bin/bash
-# consolidate.sh — Ejecuta DREAMS consolidation parcial
-# Uso: ./consolidate.sh <workspace-path> [days-back]
-# Output: JSON con resumen de consolidación
+# consolidate.sh - Runs partial DREAMS consolidation
+# Usage: ./consolidate.sh <workspace-path> [days-back]
+# Output: JSON with consolidation summary
 
 WORKSPACE="$1"
 DAYS="${2:-7}"
@@ -21,13 +21,13 @@ fi
 
 mkdir -p "$ARCHIVE_DIR"
 
-# Encontrar daily logs de los últimos N días
+# Find daily logs from the last N days
 RECENT_LOGS=$(find "$MEMORY_DIR" -name "*.md" -maxdepth 1 -mtime -"$DAYS" 2>/dev/null | sort)
 
-# Contar
+# Count
 LOG_COUNT=$(echo "$RECENT_LOGS" | grep -c . 2>/dev/null || echo 0)
 
-# Archivar logs individuales (formato YYYY-MM-DD-HHMM.md)
+# Archive individual logs (format YYYY-MM-DD-HHMM.md)
 INDIVIDUAL_LOGS=$(find "$MEMORY_DIR" -name "????-??-??-????.md" -maxdepth 1 -mtime +"$DAYS" 2>/dev/null)
 ARCHIVED=0
 
@@ -35,7 +35,7 @@ for LOG in $INDIVIDUAL_LOGS; do
   mv "$LOG" "$ARCHIVE_DIR/" 2>/dev/null && ARCHIVED=$((ARCHIVED + 1))
 done
 
-# Contar daily consolidados
+# Count consolidated dailies
 DAILY_COUNT=$(find "$MEMORY_DIR" -name "????-??-??.md" -maxdepth 1 2>/dev/null | wc -l | tr -d ' ')
 
 cat <<EOF

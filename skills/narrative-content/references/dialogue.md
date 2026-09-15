@@ -1,131 +1,131 @@
 # Dialogue - Narrative Content
 
-Cómo escribir diálogo que suene real, sirva a la historia, y revele personaje.
+How to write dialogue that sounds real, serves the story, and reveals character.
 
-## Principios del buen diálogo
+## Principles of good dialogue
 
-### 1. El diálogo no es conversación real
+### 1. Dialogue is not real conversation
 
-La conversación real es llena de "eh", "mmm", "o sea", interrupciones, cambios de tema. El diálogo en ficción es **conversación destilada** - solo lo que importa.
+Real conversation is full of "uh", "um", "like", interruptions, topic changes. Dialogue in fiction is **distilled conversation** - only what matters.
 
-**Regla:** Cada línea de diálogo debe hacer al menos una de estas cosas:
-- Revelar carácter
-- Avanzar la trama
-- Crear tensión
-- Revelar información que el lector necesita
+**Rule:** Every line of dialogue must do at least one of these things:
+- Reveal character
+- Advance the plot
+- Create tension
+- Reveal information the reader needs
 
-Si una línea no hace nada de esto, borrala.
+If a line does none of this, delete it.
 
-### 2. Subtexto > Texto
+### 2. Subtext > Text
 
-Lo que los personajes **no dicen** es más importante que lo que dicen.
+What characters **don't say** matters more than what they say.
 
-| Texto (lo que dice) | Subtexto (lo que significa) |
+| Text (what they say) | Subtext (what it means) |
 |---|---|
-| "Está bien, no pasa nada." | "Estoy furioso pero no quiero decirlo." |
-| "¿Otra vez llegás tarde?" | "Me importa que no te importe." |
-| "Qué lindo día, ¿no?" | "No sé cómo empezar esta conversación incómoda." |
-| "Hacé lo que quieras." | "Si hacés eso, me voy a enojar mucho." |
+| "It's fine, no problem." | "I'm furious but I don't want to say it." |
+| "Late again?" | "I care that you don't care." |
+| "Nice day, isn't it?" | "I don't know how to start this awkward conversation." |
+| "Do whatever you want." | "If you do that, I'll be very angry." |
 
-**Ejercicio:** Escribí una escena donde dos personajes discuten sin decir lo que realmente quieren decir. Todo es subtexto.
+**Exercise:** Write a scene where two characters argue without saying what they really mean. Everything is subtext.
 
-### 3. Cada personaje debe sonar diferente
+### 3. Every character must sound different
 
-No todos hablan igual. El diálogo es una de las herramientas más poderosas para diferenciar personajes.
+Not everyone talks the same. Dialogue is one of the most powerful tools for differentiating characters.
 
-| Personaje | Cómo habla |
+| Character | How they speak |
 |---|---|
-| **El intelectual** | Oraciones largas, vocabulario preciso, pausas para pensar |
-| **El impulsivo** | Frases cortas, interrumpe, habla rápido |
-| **El inseguro** | Preguntas, titubeos, "no sé", "quizás" |
-| **El autoritario** | Órdenes, afirmaciones, no pregunta |
-| **El sarcástico** | Ironía, responde con preguntas, nunca es directo |
+| **The intellectual** | Long sentences, precise vocabulary, pauses to think |
+| **The impulsive** | Short phrases, interrupts, talks fast |
+| **The insecure** | Questions, hesitations, "I don't know", "maybe" |
+| **The authoritarian** | Orders, statements, doesn't ask |
+| **The sarcastic** | Irony, answers with questions, never direct |
 
-**Ejercicio:** Escribí "¿Querés café?" con 5 personajes distintos. Cada uno debería sonar diferente.
+**Exercise:** Write "Do you want coffee?" for 5 different characters. Each should sound different.
 
-### 4. Ritmo
+### 4. Rhythm
 
-El ritmo del diálogo afecta cómo se siente la escena:
+Dialogue rhythm affects how the scene feels:
 
-- **Rápido** (líneas cortas, sin tags, sin descripción) → tensión, pelea, urgencia
-- **Lento** (pausas, descripciones entre líneas, tags elaborados) → intimidad, reflexión, incomodidad
-- **Interrumpido** (personajes que se cortan) → conflicto, ansiedad
-- **Silencioso** (largas pausas, "-... - dijo") → tensión no resuelta
+- **Fast** (short lines, no tags, no description) → tension, fight, urgency
+- **Slow** (pauses, descriptions between lines, elaborate tags) → intimacy, reflection, discomfort
+- **Interrupted** (characters cutting each other off) → conflict, anxiety
+- **Silent** (long pauses, "-... - she said") → unresolved tension
 
-## Tags de diálogo
+## Dialogue tags
 
-### Regla de oro: "dijo" es casi siempre suficiente
+### Golden rule: "said" is almost always enough
 
-El lector saltea "dijo" inconscientemente. Usar "exclamó", "replicó", "inquirió" distrae.
+The reader skips over "said" unconsciously. Using "exclaimed", "retorted", "inquired" distracts.
 
-**Bien:**
--No sé -dijo ella-. Quizás deberíamos esperar.
+**Good:**
+"I don't know," she said. "Maybe we should wait."
 
-**Mal:**
--No sé -exclamó ella vehementemente-. Quizás deberíamos esperar -añadió con incertidumbre.
+**Bad:**
+"I don't know," she exclaimed vehemently. "Maybe we should wait," she added with uncertainty.
 
-### Cuándo usar tags descriptivos
+### When to use descriptive tags
 
-Usalos con moderación, solo cuando el tono no sea obvio:
+Use them sparingly, only when the tone isn't obvious:
 
--No sé -dijo ella, mirando al piso-. Quizás deberíamos esperar.
+"I don't know," she said, looking at the floor. "Maybe we should wait."
 
-### Cuándo no usar tags
+### When not to use tags
 
-Cuando es obvio quién habla por el contenido o el ritmo:
+When it's obvious who's speaking from the content or rhythm:
 
--¿Vas a venir?
--No sé.
--¿Por qué no?
--Porque no quiero.
+"Are you coming?"
+"I don't know."
+"Why not?"
+"Because I don't want to."
 
-## Exposición en diálogo
+## Exposition in dialogue
 
-**Malo:**
--Como sabés, hermano, desde que papá murió hace cinco años, la empresa familiar está en crisis.
+**Bad:**
+"As you know, brother, ever since Dad died five years ago, the family business has been in crisis."
 
-**Bueno:**
--Papá se estaría muriendo de vergüenza.
--No empecemos.
--¿Viste los números? Estamos en terapia intensiva.
+**Good:**
+"Dad would be dying of shame."
+"Don't start."
+"Did you see the numbers? We're in intensive care."
 
-**Regla:** Si el personaje está diciendo algo que ambos personajes ya saben, es exposición barata. Encontrala otra forma.
+**Rule:** If a character is saying something both characters already know, it's cheap exposition. Find another way.
 
-## Dialecto y acentos
+## Dialect and accents
 
-**Regla:** Menos es más. Una palabra cada tanto sugiere el acento sin cansar al lector.
+**Rule:** Less is more. One word here and there suggests the accent without tiring the reader.
 
-**Mal:**
--¡Ah, me mon, je ne sais pas, but ze whole ting ees a mess, no?
+**Bad:**
+"Ah, me mon, je ne sais pas, but ze whole ting ees a mess, no?"
 
-**Bien:**
--No sé, mon ami. Todo esto es un desastre.
+**Good:**
+"I don't know, mon ami. All this is a mess."
 
-## Formato
+## Format
 
 ```
--Línea de diálogo -dijo el personaje-. Continuación.
--Otra línea.
--Y otra.
+"-Line of dialogue," the character said. "Continuation."
+"-Another line."
+"-And another."
 
--Nuevo parlamento -dijo otro personaje.
+"-New speech," another character said.
 ```
 
-- **Raya (-)** al inicio de cada parlamento (no guión, no comillas)
-- **Sin espacio** entre la raya y el texto
-- **Punto** después del tag si el diálogo termina ahí
-- **Coma** después del tag si el diálogo continúa
+- **Dash (-)** at the start of each speech (not a hyphen, not quotes)
+- **No space** between the dash and the text
+- **Period** after the tag if the dialogue ends there
+- **Comma** after the tag if the dialogue continues
 
-## Ejercicios de práctica
+## Practice exercises
 
-1. **Subtexto:** Escribí una escena donde dos personas cenan y una quiere terminar la relación, pero no lo dice directamente.
-2. **Voz:** Escribí la misma escena (un robo) desde 3 personajes distintos: el ladrón, la víctima, un testigo. Cada uno debe sonar diferente.
-3. **Ritmo:** Escribí una discusión que escala. Arrancá lento, terminá rápido. Sin tags de diálogo.
-4. **Silencio:** Escribí una escena donde lo que no se dice es más importante que lo que se dice.
+1. **Subtext:** Write a scene where two people have dinner and one wants to end the relationship, but doesn't say it directly.
+2. **Voice:** Write the same scene (a robbery) from 3 different characters: the thief, the victim, a witness. Each must sound different.
+3. **Rhythm:** Write an argument that escalates. Start slow, end fast. No dialogue tags.
+4. **Silence:** Write a scene where what isn't said matters more than what is.
 
 ## Related
 
-- [SKILL.md](../SKILL.md) - Workflow principal
-- [Scene Craft](../references/scene-craft.md) - Anatomía de una escena
-- [Character Development](../references/character-development.md) - Fichas de personajes
-- [Genre Guide](../references/genre-guide.md) - Guía de géneros
+- [SKILL.md](../SKILL.md) - Main workflow
+- [Scene Craft](./scene-craft.md) - Anatomy of a scene
+- [Character Development](./character-development.md) - Character sheets
+- [Genre Guide](./genre-guide.md) - Genre guide

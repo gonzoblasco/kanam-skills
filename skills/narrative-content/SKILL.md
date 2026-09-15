@@ -3,333 +3,333 @@ name: "narrative-content"
 metadata:
   category: "Content"
   tags:
-    - ficcion
-    - escritura
-    - narrativa
-    - novelas
-    - taller
-description: "Tu taller de escritura de ficción: mentoría, técnicas, y guía para escribir novelas, cuentos, y cualquier historia."
+    - fiction
+    - writing
+    - narrative
+    - novels
+    - workshop
+description: "Your fiction writing workshop: mentorship, techniques, and guidance to write novels, short stories, and any story."
 user-invocable: false
 ---
 
-# Workflow: Narrative Content - Tu Taller de Escritura
+# Workflow: Narrative Content - Your Writing Workshop
 
-## Propósito
+## Purpose
 
-Este skill es tu compañero de escritura. No es un checklist - es un mentor que te guía según dónde estés en tu viaje de escritura. Te enseña técnicas, te ayuda a destrabarte, y te da estructura sin atarte.
+This skill is your writing companion. It is not a checklist - it is a mentor that guides you based on where you are in your writing journey. It teaches you techniques, helps you get unstuck, and gives you structure without tying you down.
 
-## Filosofía
+## Philosophy
 
-> Escribir es reescribir. Pero primero hay que escribir.
+> Writing is rewriting. But first you have to write.
 
-Acá no hay culpa, no hay "debería escribir más", no hay comparación. Hay un proyecto, un plan, y ganas de contar una historia. El resto se construye paso a paso.
+There is no guilt here, no "I should write more", no comparison. There is a project, a plan, and the desire to tell a story. The rest gets built step by step.
 
 ---
 
-## Menú de entrada
+## Entry menu
 
-¿Qué querés hacer hoy?
+What do you want to do today?
 
-| Opción | Para qué | Script recomendado |
+| Option | What for | Recommended script |
 |---|---|---|
-| **📝 Arrancar una historia nueva** | Tenés una idea y querés convertirla en un plan | `outline-generator.sh` |
-| **📐 Estructurar lo que ya tenés** | Tenés escenas sueltas o un borrador desordenado | `outline-generator.sh` |
-| **✍️ Escribir el próximo capítulo** | Ya sabés qué sigue, necesitás sentarte a escribir | `progress-tracker.sh --add <palabras>` |
-| **🔍 Revisar lo que escribiste** | Terminaste algo y querés mejorarlo | `revision-check.sh` |
-| **📦 Exportar / publicar** | Querés pasar a DOCX, EPUB, o Markdown | `export-novel.py` |
-| **🎯 Elegir un género** | No sabés qué género es el tuyo o querés explorar | - |
-| **🧊 Estoy trabado** | Writer's block, pérdida de rumbo, "esto es una mierda" | - |
-| **📚 Quiero aprender** | Querés mejorar tu oficio | - |
+| **📝 Start a new story** | You have an idea and want to turn it into a plan | `outline-generator.sh` |
+| **📐 Structure what you already have** | You have loose scenes or a messy draft | `outline-generator.sh` |
+| **✍️ Write the next chapter** | You know what comes next, you need to sit down and write | `progress-tracker.sh --add <words>` |
+| **🔍 Revise what you wrote** | You finished something and want to improve it | `revision-check.sh` |
+| **📦 Export / publish** | You want DOCX, EPUB, or Markdown | `export-novel.py` |
+| **🎯 Pick a genre** | You don't know what your genre is, or you want to explore | - |
+| **🧊 I'm stuck** | Writer's block, lost direction, "this is garbage" | - |
+| **📚 I want to learn** | You want to improve your craft | - |
 
-Elegí una opción y arrancamos.
+Pick an option and let's go.
 
 ## Helper Scripts
 
-Scripts en `skills/narrative-content/scripts/`:
+Scripts in `skills/narrative-content/scripts/`:
 
-| Script | Uso |
+| Script | Use |
 |---|---|
-| `outline-generator.sh` | Genera un outline estructurado a partir de una premisa. Usar en Fase 1-2. |
-| `progress-tracker.sh [--log file] [--add words] [--status]` | Registra palabras escritas por día y muestra racha. Usar en cada sesión de escritura. |
-| `revision-check.sh` | Verifica estructura de capítulos, arcos, consistencia. Usar en Fase 4. |
-| `export-novel.py` | Exporta la novela a Markdown, DOCX o EPUB. Usar en Fase 6. |
-| `character-sheet.sh` | Crea ficha de personaje. Usar en Fase 2-3. |
+| `outline-generator.sh` | Generates a structured outline from a premise. Use in Phase 1-2. |
+| `progress-tracker.sh [--log file] [--add words] [--status]` | Logs words written per day and shows your streak. Use in every writing session. |
+| `revision-check.sh` | Checks chapter structure, arcs, consistency. Use in Phase 4. |
+| `export-novel.py` | Exports the novel to Markdown, DOCX or EPUB. Use in Phase 6. |
+| `character-sheet.sh` | Creates a character sheet. Use in Phase 2-3. |
 
 
 ---
 
-## Fase 1: Premisa - De idea a plan
+## Phase 1: Premise - From idea to plan
 
-**Cuándo:** Tenés una idea, una imagen, un personaje, o solo ganas de escribir algo.
+**When:** You have an idea, an image, a character, or just the urge to write something.
 
-### Lo que vamos a hacer
+### What we're going to do
 
-1. **Encontremos tu idea central** - ¿de qué trata realmente? No la trama, el corazón.
-2. **Probemos que funcione** - ¿la idea sostiene una novela? ¿Un cuento? ¿Una saga?
-3. **Definamos género y tono** - ¿qué tipo de historia es? ¿Qué va a sentir el lector?
-4. **Escribamos la premisa en 1-2 oraciones** - si no podés resumirla, no está clara.
+1. **Find your central idea** - what is it really about? Not the plot, the heart.
+2. **Test that it works** - does the idea sustain a novel? A short story? A saga?
+3. **Define genre and tone** - what kind of story is it? What will the reader feel?
+4. **Write the premise in 1-2 sentences** - if you can't summarize it, it isn't clear.
 
-### Ejercicios de premisa
+### Premise exercises
 
-**"Qué pasaría si..."**
-> ¿Qué pasaría si los muertos pudieran hablar, pero solo dijeran mentiras?
-> ¿Qué pasaría si el último bibliotecario de la humanidad tuviera que quemar libros para sobrevivir?
+**"What if..."**
+> What if the dead could talk, but only told lies?
+> What if the last librarian of humanity had to burn books to survive?
 
-**"Y entonces..."**
-> Un detective encuentra una carta de su yo del futuro. Y entonces descubre que el asesino es él mismo.
+**"And then..."**
+> A detective finds a letter from his future self. And then he discovers the killer is himself.
 
-**"Pero..."**
-> Una mujer descubre que puede viajar en el tiempo. Pero cada viaje le cuesta un año de vida.
+**"But..."**
+> A woman discovers she can travel through time. But every trip costs her a year of life.
 
-### Test de premisa
+### Premise test
 
-- [ ] **¿Tiene conflicto?** - sin conflicto no hay historia
-- [ ] **¿Es específica?** - "un chico descubre que es especial" no es una premisa
-- [ ] **¿Tiene un gancho?** - ¿por qué alguien querría leer esto?
-- [ ] **¿Te apasiona?** - vas a pasar meses con esto. Tiene que importarte.
+- [ ] **Does it have conflict?** - no conflict, no story
+- [ ] **Is it specific?** - "a boy discovers he's special" is not a premise
+- [ ] **Does it have a hook?** - why would someone want to read this?
+- [ ] **Does it excite you?** - you'll spend months on this. It has to matter to you.
 
-### Output de esta fase
+### Output of this phase
 
-- Premisa en 1-2 oraciones
-- Género y tono definidos
-- Decisión: ¿novela, cuento, o serie?
+- Premise in 1-2 sentences
+- Genre and tone defined
+- Decision: novel, short story, or series?
 
 ---
 
-## Fase 2: Estructura - El esqueleto
+## Phase 2: Structure - The skeleton
 
-**Cuándo:** Tenés la premisa. Ahora necesitás saber qué pasa y en qué orden.
+**When:** You have the premise. Now you need to know what happens and in what order.
 
-### Lo que vamos a hacer
+### What we're going to do
 
-1. **Elegí una estructura** - Three-Act, Hero's Journey, Save the Cat!, Snowflake
-2. **Pasá de estructura a scene list** - cada beat → una o más escenas
-3. **Identificá weak scenes** - las que no tienen conflicto o no cambian nada
-4. **Definí el arco del protagonista** - ¿cómo cambia de principio a fin?
+1. **Pick a structure** - Three-Act, Hero's Journey, Save the Cat!, Snowflake
+2. **Go from structure to scene list** - each beat → one or more scenes
+3. **Identify weak scenes** - the ones with no conflict or that change nothing
+4. **Define the protagonist's arc** - how do they change from start to finish?
 
-### ¿Qué estructura elegir?
+### Which structure to pick?
 
-| Si tu historia es... | Usá |
+| If your story is... | Use |
 |---|---|
-| **Épica, fantasy, aventura** | Hero's Journey |
-| **Thriller, misterio, ritmo rápido** | Three-Act |
-| **Romance, comercial, mainstream** | Save the Cat! |
-| **Compleja, múltiples POVs** | Snowflake Method |
-| **No sabés** | Three-Act (es la más flexible) |
+| **Epic, fantasy, adventure** | Hero's Journey |
+| **Thriller, mystery, fast-paced** | Three-Act |
+| **Romance, commercial, mainstream** | Save the Cat! |
+| **Complex, multiple POVs** | Snowflake Method |
+| **You don't know** | Three-Act (it's the most flexible) |
 
-> **Ver:** [Narrative Structures](./references/narrative-structures.md) para detalle de cada una.
+> **See:** [Narrative Structures](./references/narrative-structures.md) for details on each one.
 
-### De estructura a scene list
+### From structure to scene list
 
-Tomá cada beat de la estructura y convertilo en 1-3 escenas:
+Take each beat of the structure and turn it into 1-3 scenes:
 
 ```
 Three-Act:
   Act I - Setup
-    Inciting Incident → Escena 1: [descripción]
-                       → Escena 2: [descripción]
-    First Plot Point  → Escena 3: [descripción]
+    Inciting Incident → Scene 1: [description]
+                       → Scene 2: [description]
+    First Plot Point  → Scene 3: [description]
 ```
 
-Cada escena debe tener:
-- **POV** - ¿quién ve esta escena?
-- **Objetivo** - ¿qué quiere el personaje?
-- **Conflicto** - ¿qué se lo impide?
-- **Cambio** - ¿cómo sale diferente?
+Every scene must have:
+- **POV** - who sees this scene?
+- **Goal** - what does the character want?
+- **Conflict** - what stands in the way?
+- **Change** - how do they come out different?
 
-### Output de esta fase
+### Output of this phase
 
-- Estructura elegida
-- Scene list (escena por escena)
-- Arco del protagonista definido
+- Chosen structure
+- Scene list (scene by scene)
+- Protagonist's arc defined
 
 ---
 
-## Fase 3: Redacción - Escribir, no editar
+## Phase 3: Drafting - Write, don't edit
 
-**Cuándo:** Tenés el plan. Ahora hay que escribir.
+**When:** You have the plan. Now it's time to write.
 
-### Lo que vamos a hacer
+### What we're going to do
 
-1. **Escribí sin editar** - el borrador es para descubrir la historia
-2. **Usá técnicas de drafting** - vomit draft, pomodoro, word count goals
-3. **Mantené el ritmo** - no pares a corregir, no mires atrás
-4. **Trackeá progreso** - sin presión, solo datos
+1. **Write without editing** - the draft is for discovering the story
+2. **Use drafting techniques** - vomit draft, pomodoro, word count goals
+3. **Keep the pace** - don't stop to fix, don't look back
+4. **Track progress** - no pressure, just data
 
 ### Vomit Draft
 
-Escribí sin parar, sin corregir, sin mirar atrás.
+Write without stopping, without correcting, without looking back.
 
-**Reglas:**
-- Sin editar - ni siquiera typos
-- Sin leer lo que escribiste ayer
-- Sin juzgar - "esto es una mierda" es parte del proceso
-- Sin parar - si no sabés qué sigue, escribí "no sé qué sigue" hasta que se te ocurra
+**Rules:**
+- No editing - not even typos
+- Don't read what you wrote yesterday
+- No judging - "this is garbage" is part of the process
+- Don't stop - if you don't know what comes next, write "I don't know what comes next" until something occurs to you
 
-**Meta:** 250-500 palabras por sesión. No importa si son malas. Las malas se arreglan después.
+**Goal:** 250-500 words per session. It doesn't matter if they're bad. Bad gets fixed later.
 
-### Co-writing asistido
+### Assisted co-writing
 
-La IA puede ayudarte, pero **no escribas por vos**. Usala para:
+AI can help you, but **it doesn't write for you**. Use it to:
 
-- **Desbloquearte:** "Dame 3 formas en que este personaje podría salir de esta situación"
-- **Explorar opciones:** "¿Qué pasaría si en vez de X, pasara Y?"
-- **Feedback rápido:** "¿Este diálogo suena natural?"
-- **Investigación:** "¿Cómo era la vestimenta en la Inglaterra victoriana?"
+- **Get unstuck:** "Give me 3 ways this character could get out of this situation"
+- **Explore options:** "What if instead of X, Y happened?"
+- **Quick feedback:** "Does this dialogue sound natural?"
+- **Research:** "What did people wear in Victorian England?"
 
-**No uses IA para:**
-- Escribir párrafos completos por vos (se nota y no es tuyo)
-- Reemplazar tu voz narrativa
-- Decidir la trama (las mejores decisiones son tuyas)
+**Don't use AI to:**
+- Write entire paragraphs for you (it shows, and it isn't yours)
+- Replace your narrative voice
+- Decide the plot (the best decisions are yours)
 
-### Output de esta fase
+### Output of this phase
 
-- Capítulos escritos (borrador)
-- Writing log con progreso
+- Written chapters (draft)
+- Writing log with progress
 
-### Registro automático
+### Automatic logging
 
-Cada 1-2 capítulos (o al final de cada sesión), ejecutar el protocolo de registro:
+Every 1-2 chapters (or at the end of each session), run the logging protocol:
 
-1. **Persistir en el archivo principal** del proyecto (`projects/<slug>/<slug>.md`):
-   - Agregar el nuevo contenido al final de la sección correspondiente
-   - Mantener la estructura de numeración de capítulos
+1. **Persist to the project's main file** (`projects/<slug>/<slug>.md`):
+   - Append the new content at the end of the matching section
+   - Keep the chapter numbering structure
 
-2. **Actualizar STATUS.md** en `.knowledge/STATUS.md`:
-   - Registrar qué se escribió (capítulos, personajes nuevos, giros)
-   - Mantener un resumen actualizado del estado del proyecto
+2. **Update STATUS.md** in `.knowledge/STATUS.md`:
+   - Log what was written (chapters, new characters, twists)
+   - Keep an up-to-date summary of the project state
 
-3. **Commit al repo del proyecto:**
+3. **Commit to the project repo:**
    ```bash
-   cd projects/<slug> && git add -A && git commit -m "feat: <resumen de lo escrito>"
+   cd projects/<slug> && git add -A && git commit -m "feat: <summary of what was written>"
    ```
 
-4. **Commit al workspace** (incluyendo mirror de skills):
+4. **Commit to the workspace** (including the skills mirror):
    ```bash
-   cd <workspace> && rsync -a --delete --exclude='.DS_Store' skills/ .github/skills/ && git add -A && git commit -m "feat(<slug>): <resumen>" && git pull --rebase && git push
+   cd <workspace> && rsync -a --delete --exclude='.DS_Store' skills/ .github/skills/ && git add -A && git commit -m "feat(<slug>): <summary>" && git pull --rebase && git push
    ```
 
-**Excepciones:**
-- Si el capítulo es muy corto (< 10 líneas), se puede esperar al siguiente
-- Si se está en medio de una escena que no se puede interrumpir, terminar la escena primero
-- No esperar más de 2 capítulos sin registrar
-- Si la sesión se va a cerrar, registrar todo antes del cierre
+**Exceptions:**
+- If the chapter is very short (< 10 lines), you can wait for the next one
+- If you're in the middle of a scene you can't interrupt, finish the scene first
+- Don't wait more than 2 chapters without logging
+- If the session is about to close, log everything before closing
 
 ---
 
-## Fase 4: Revisión - De borrador a historia
+## Phase 4: Revision - From draft to story
 
-**Cuándo:** Terminaste el borrador. Ahora empezá de nuevo, pero mejor.
+**When:** You finished the draft. Now start again, but better.
 
-### Los 3 niveles de revisión
+### The 3 levels of revision
 
-Siempre en este orden:
+Always in this order:
 
 ```
-1. Revisión Estructural   → ¿La historia funciona?
-2. Revisión de Línea      → ¿Cada escena funciona?
-3. Revisión de Copy       → ¿Cada palabra funciona?
+1. Structural Revision   → Does the story work?
+2. Line Revision         → Does each scene work?
+3. Copy Revision         → Does each word work?
 ```
 
-### Nivel 1: Estructural
+### Level 1: Structural
 
-- Leé la historia completa de una sentada
-- ¿El arco del protagonista funciona?
-- ¿Cada escena es necesaria?
-- ¿Hay plot holes?
-- **No corrijas comas todavía**
+- Read the whole story in one sitting
+- Does the protagonist's arc work?
+- Is every scene necessary?
+- Are there plot holes?
+- **Don't fix commas yet**
 
-### Nivel 2: Línea
+### Level 2: Line
 
-- ¿Cada escena tiene conflicto?
-- ¿El diálogo suena natural?
-- ¿El ritmo es correcto?
-- ¿Cada personaje tiene una voz distinta?
+- Does every scene have conflict?
+- Does the dialogue sound natural?
+- Is the pacing right?
+- Does every character have a distinct voice?
 
-### Nivel 3: Copy
+### Level 3: Copy
 
-- Palabras repetidas
-- Adverbios innecesarios
-- Voz pasiva
-- Puntuación y ortografía
+- Repeated words
+- Unnecessary adverbs
+- Passive voice
+- Punctuation and spelling
 
-> **Ver:** [Revision Guide](./references/revision-guide.md) para el detalle completo.
+> **See:** [Revision Guide](./references/revision-guide.md) for the full detail.
 
-### Output de esta fase
+### Output of this phase
 
-- Historia revisada (estructural, línea, copy)
-- Revision log con issues encontrados y resueltos
+- Revised story (structural, line, copy)
+- Revision log with issues found and resolved
 
 ---
 
-## Fase 5: Exportación - A publicar
+## Phase 5: Export - Ready to publish
 
-**Cuándo:** La historia está lista. Querés pasarla a formato publicable.
+**When:** The story is ready. You want it in a publishable format.
 
-### Formatos disponibles
+### Available formats
 
-| Formato | Para qué | Cómo |
+| Format | What for | How |
 |---|---|---|
-| **Markdown** | Web, GitHub, edición colaborativa | `export-novel.py --format md` |
-| **DOCX** | Word, Google Docs, impresión | `export-novel.py --format docx` |
-| **EPUB** | eBook, Kindle, lectores | `export-novel.py --format epub` |
+| **Markdown** | Web, GitHub, collaborative editing | `export-novel.py --format md` |
+| **DOCX** | Word, Google Docs, printing | `export-novel.py --format docx` |
+| **EPUB** | eBook, Kindle, e-readers | `export-novel.py --format epub` |
 
-### Output de esta fase
+### Output of this phase
 
-- Archivo exportado en el formato elegido
-- Listo para compartir, publicar, o imprimir
-
----
-
-## 🧊 Estoy trabado - Writer's Block Rescue
-
-El writer's block no es falta de inspiración - es miedo a escribir mal.
-
-### Diagnosticá el bloqueo
-
-| Síntoma | Probable causa |
-|---|---|
-| "No sé qué escribir" | No tenés claro qué sigue en la historia |
-| "Todo lo que escribo es malo" | Estás juzgando antes de tiempo |
-| "No tengo ganas" | Fatiga, saturación, necesitás un descanso |
-| "Perdí el rumbo" | La historia se fue a algún lado que no planeaste |
-| "Esto ya no me interesa" | Tal vez el proyecto no es para vos (y está bien) |
-
-### Técnicas de rescue
-
-1. **Escribí 100 palabras de mierda** - a propósito. "Esto es una mierda y lo sé." Después de 100 palabras, el bloque suele romperse.
-2. **Cambiá de escena** - escribí la escena que más ganas tenés de escribir, aunque sea del final.
-3. **Escribí out of order** - no necesitás escribir en orden cronológico.
-4. **Cambiá de medio** - escribí a mano, en una app distinta, en una servilleta.
-5. **Hablá la escena** - grabate contándola como si se la contaras a un amigo.
-6. **Saltá el bloque** - escribí "ACÁ HAY UN BLOQUEO" y seguí con la siguiente escena.
+- File exported in the chosen format
+- Ready to share, publish, or print
 
 ---
 
-## 📚 Quiero aprender - Recursos
+## 🧊 I'm stuck - Writer's Block Rescue
 
-### References del skill
+Writer's block is not a lack of inspiration - it is fear of writing badly.
 
-| Reference | Para qué |
+### Diagnose the block
+
+| Symptom | Likely cause |
 |---|---|
-| [Genre Guide](./references/genre-guide.md) | 8 géneros con estructura, trampas, referentes |
-| [Narrative Structures](./references/narrative-structures.md) | 4 estructuras narrativas detalladas |
-| [Scene Craft](./references/scene-craft.md) | Anatomía de una escena, template, checklist |
-| [Dialogue](./references/dialogue.md) | Cómo escribir diálogo que suene real |
-| [Character Development](./references/character-development.md) | Fichas de personajes, arquetipos, motivación |
-| [Worldbuilding](./references/worldbuilding.md) | Construcción de mundos, consistencia, show don't tell |
-| [Revision Guide](./references/revision-guide.md) | 3 niveles de revisión con checklist |
-| [Writing Routines](./references/writing-routines.md) | Rutinas ADHD-friendly, word count goals, tracking |
+| "I don't know what to write" | You're not clear on what comes next in the story |
+| "Everything I write is bad" | You're judging too early |
+| "I don't feel like it" | Fatigue, saturation, you need a break |
+| "I lost the thread" | The story went somewhere you didn't plan |
+| "This doesn't interest me anymore" | Maybe the project isn't for you (and that's fine) |
 
-### Lectura recomendada
+### Rescue techniques
 
-**Sobre el oficio:**
-- *On Writing* - Stephen King (parte memoir, parte manual)
-- *Bird by Bird* - Anne Lamott (escritura y vida)
-- *The Anatomy of Story* - John Truby (estructura narrativa)
-- *Steering the Craft* - Ursula K. Le Guin (el oficio de escribir)
+1. **Write 100 words of garbage** - on purpose. "This is garbage and I know it." After 100 words, the block usually breaks.
+2. **Switch scenes** - write the scene you most want to write, even if it's from the end.
+3. **Write out of order** - you don't need to write chronologically.
+4. **Switch medium** - write by hand, in a different app, on a napkin.
+5. **Speak the scene** - record yourself telling it as if to a friend.
+6. **Skip the block** - write "BLOCK HERE" and move on to the next scene.
 
-**Sobre géneros específicos:**
+---
+
+## 📚 I want to learn - Resources
+
+### Skill references
+
+| Reference | What for |
+|---|---|
+| [Genre Guide](./references/genre-guide.md) | 8 genres with structure, pitfalls, touchstones |
+| [Narrative Structures](./references/narrative-structures.md) | 4 narrative structures in detail |
+| [Scene Craft](./references/scene-craft.md) | Anatomy of a scene, template, checklist |
+| [Dialogue](./references/dialogue.md) | How to write dialogue that sounds real |
+| [Character Development](./references/character-development.md) | Character sheets, archetypes, motivation |
+| [Worldbuilding](./references/worldbuilding.md) | World construction, consistency, show don't tell |
+| [Revision Guide](./references/revision-guide.md) | 3 levels of revision with checklist |
+| [Writing Routines](./references/writing-routines.md) | ADHD-friendly routines, word count goals, tracking |
+
+### Recommended reading
+
+**On the craft:**
+- *On Writing* - Stephen King (part memoir, part manual)
+- *Bird by Bird* - Anne Lamott (writing and life)
+- *The Anatomy of Story* - John Truby (narrative structure)
+- *Steering the Craft* - Ursula K. Le Guin (the craft of writing)
+
+**On specific genres:**
 - *The Fantasy Fiction Formula* - Deborah Chester
 - *Writing the Thriller* - T. Macdonald Skillman
 - *Romance Writing* - various (workshop-based)
@@ -338,15 +338,15 @@ El writer's block no es falta de inspiración - es miedo a escribir mal.
 
 ## Scripts
 
-| Script | Para qué |
+| Script | What for |
 |---|---|
-| [outline-generator.sh](./scripts/outline-generator.sh) | Genera outline desde una premisa |
-| [character-sheet.sh](./scripts/character-sheet.sh) | Crea fichas de personaje |
-| [export-novel.py](./scripts/export-novel.py) | Exporta a DOCX, EPUB, MD |
-| [revision-check.sh](./scripts/revision-check.sh) | Verifica consistencia narrativa |
-| [progress-tracker.sh](./scripts/progress-tracker.sh) | Tracking de word count y rachas |
+| [outline-generator.sh](./scripts/outline-generator.sh) | Generates an outline from a premise |
+| [character-sheet.sh](./scripts/character-sheet.sh) | Creates character sheets |
+| [export-novel.py](./scripts/export-novel.py) | Exports to DOCX, EPUB, MD |
+| [revision-check.sh](./scripts/revision-check.sh) | Checks narrative consistency |
+| [progress-tracker.sh](./scripts/progress-tracker.sh) | Word count and streak tracking |
 
 ## Related Skills
 
-- [Copy Editing](../copy-editing): Para la revisión final de texto
-- [Timeline Builder](../timeline-builder): Para timelines visuales de historias complejas
+- [Copy Editing](../copy-editing): For the final text revision
+- [Timeline Builder](../timeline-builder): For visual timelines of complex stories

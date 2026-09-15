@@ -1,35 +1,35 @@
 ---
 name: "calorie-counter"
-description: "Tracking diario de calorías y proteína en SQLite local"
+description: "Daily calorie and protein tracking in local SQLite"
 ---
 
 # calorie-counter
 
-## Descripción
-Trackea ingesta diaria de calorías y proteína usando una base SQLite local. Acepta entradas de alimentos por nombre con valores de calorías y proteína, estima proteína cuando no se especifica, y muestra totales acumulados después de cada entrada. También logea peso corporal y mantiene historial entre días.
+## Description
+Tracks daily calorie and protein intake using a local SQLite database. Accepts food entries by name with calorie and protein values, estimates protein when not specified, and shows accumulated totals after each entry. Also logs body weight and keeps history across days.
 
-## Cuándo usarlo
-- Para loguear comidas durante el día sin abrir una app
-- Para verificar cuántas calorías quedan antes de la cena
-- Para establecer un nuevo objetivo calórico antes de empezar una dieta
-- Para trackear cambios de peso durante el último mes
-- Para eliminar una entrada de comida logueada por error
+## When to use it
+- To log meals during the day without opening an app
+- To check how many calories remain before dinner
+- To set a new calorie goal before starting a diet
+- To track weight changes over the last month
+- To delete a food entry logged by mistake
 
 ## Workflow
-1. Configurar objetivos diarios (calorías, proteína)
-2. Durante el día, loguear cada comida con nombre y valores
-3. Revisar totales acumulados después de cada entrada
-4. Al final del día, loguear peso corporal
-5. Revisar historial semanal/mensual
+1. Set daily goals (calories, protein)
+2. During the day, log each meal with name and values
+3. Review accumulated totals after each entry
+4. At the end of the day, log body weight
+5. Review weekly/monthly history
 
-## Tooling relacionado
+## Related tooling
 
-| Skill / Script | Uso |
+| Skill / Script | Usage |
 |---|---|
-| `sql-insight/scripts/sql_query_helper.py` | Consultar y analizar el historial SQLite de calorías/peso. |
-| `db-readonly` | Queries read-only seguras contra la SQLite local. |
+| `sql-insight/scripts/sql_query_helper.py` | Query and analyze the SQLite calorie/weight history. |
+| `db-readonly` | Safe read-only queries against the local SQLite. |
 
-## Notas
-- Todo local, sin cuenta ni suscripción
-- Estima proteína automáticamente cuando no se especifica
-- SQLite local, datos nunca salen de la máquina
+## Notes
+- Everything local, no account or subscription
+- Estimates protein automatically when not specified
+- Local SQLite, data never leaves the machine

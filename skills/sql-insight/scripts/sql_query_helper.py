@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""sql_query_helper.py — SQL query assistant: schema extraction, optimization, EXPLAIN.
+"""sql_query_helper.py - SQL query assistant: schema extraction, optimization, EXPLAIN.
 
 Usage:
   # Schema extraction

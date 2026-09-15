@@ -1,6 +1,6 @@
 # Narrative Structures - Narrative Content Reference
 
-Estructuras narrativas para planificar obras de ficción.
+Narrative structures for planning works of fiction.
 
 ## Three-Act Structure
 
@@ -68,6 +68,6 @@ Act III - Resolution (25%)
 
 ## Related
 
-- [SKILL.md](../SKILL.md) - Workflow principal
-- [Character Development](./character-development.md) - Fichas de personajes
-- [Worldbuilding](./worldbuilding.md) - Construcción de mundos
+- [SKILL.md](../SKILL.md) - Main workflow
+- [Character Development](./character-development.md) - Character sheets
+- [Worldbuilding](./worldbuilding.md) - World construction

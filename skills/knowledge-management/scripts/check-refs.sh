@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# check-refs.sh — Verify all cross-references between documents are valid
+# check-refs.sh - Verify all cross-references between documents are valid
 # Usage: ./check-refs.sh [--fix]
 
 set -euo pipefail

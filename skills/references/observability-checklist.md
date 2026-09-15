@@ -17,7 +17,7 @@ Quick reference for instrumenting production code. Use alongside the `observabil
 
 Telemetry without a question is noise. Before instrumenting anything:
 
-- [ ] 2–4 questions an on-call engineer will ask about this feature are written down
+- [ ] 2-4 questions an on-call engineer will ask about this feature are written down
 - [ ] Every signal below maps to one of those questions
 - [ ] Each question is matched to the right signal type: metrics say **that** something is wrong, traces say **where**, logs say **why**
 
@@ -67,7 +67,7 @@ Telemetry without a question is noise. Before instrumenting anything:
 - [ ] Service health dashboard exists: error rate, latency p99, traffic, saturation
 - [ ] Dependency health panel shows per-service error rates and latency
 - [ ] Dashboard answers the on-call questions from the top of this checklist - not "everything except the answer"
-- [ ] Default time range is sensible (1h–6h, not 30d)
+- [ ] Default time range is sensible (1h-6h, not 30d)
 
 ## Verify the Telemetry
 

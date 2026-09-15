@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# generate-adr.sh — Create a new ADR
+# generate-adr.sh - Create a new ADR
 # Usage: ./generate-adr.sh --title "<title>" --status proposed|accepted
 
 set -euo pipefail

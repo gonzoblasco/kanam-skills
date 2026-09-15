@@ -1,6 +1,6 @@
 # Locale Setup - I18n Expert Reference
 
-Guía de configuración para distintos frameworks.
+Configuration guide for different frameworks.
 
 ## next-intl (Next.js App Router)
 
@@ -85,5 +85,5 @@ namespace.section.action
 
 ## Related
 
-- [SKILL.md](../SKILL.md) - Workflow principal
-- [Audit Script](../scripts/i18n_audit.py) - Script de auditoría
+- [SKILL.md](../SKILL.md) - Main workflow
+- [Audit Script](../scripts/i18n_audit.py) - Audit script

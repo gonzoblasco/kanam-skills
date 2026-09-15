@@ -1,58 +1,58 @@
 # SQL Insight
 
-Asistente de SQL: traducción, optimización y EXPLAIN.
+SQL assistant: translation, optimization and EXPLAIN.
 
-## ¿Para qué sirve?
+## What is it for?
 
-Para **escribir SQL, optimizar queries lentas y entender planes de ejecución**. Traduce lenguaje natural a SQL, detecta anti-patrones (SELECT *, N+1, funciones en WHERE), e interpreta EXPLAIN para SQLite y PostgreSQL.
+For **writing SQL, optimizing slow queries and understanding execution plans**. Translates natural language to SQL, detects anti-patterns (SELECT *, N+1, functions in WHERE), and interprets EXPLAIN for SQLite and PostgreSQL.
 
-## ¿Cuándo usarlo?
+## When to use it?
 
-- Cuando necesitás escribir una SQL y no te acordás la sintaxis
-- Cuando tenés una query lenta y no sabés por qué
-- Cuando querés entender un EXPLAIN plan
-- Cuando querés detectar anti-patrones en queries existentes
+- When you need to write SQL and don't remember the syntax
+- When you have a slow query and don't know why
+- When you want to understand an EXPLAIN plan
+- When you want to detect anti-patterns in existing queries
 
-## ¿Cómo se usa?
+## How is it used?
 
 ### Workflow
 
-1. **Schema Extraction** - extraer estructura de tablas para dar contexto
-2. **NL → SQL** - describís lo que querés en lenguaje natural
-3. **Query Optimization** - analizar contra 13 reglas anti-patrón
-4. **EXPLAIN Analysis** - verificar el plan de ejecución
+1. **Schema Extraction** - extract table structure to provide context
+2. **NL → SQL** - you describe what you want in natural language
+3. **Query Optimization** - analyze against 13 anti-pattern rules
+4. **EXPLAIN Analysis** - verify the execution plan
 
 ### Script
 
 ```bash
-# Extraer schema (compacto, para dar contexto al modelo)
+# Extract schema (compact, to provide context to the model)
 python3 scripts/sql_query_helper.py --db-path data.db schema --compact
 
-# Analizar SQL en busca de anti-patrones (no necesita DB)
+# Analyze SQL for anti-patterns (no DB needed)
 python3 scripts/sql_query_helper.py optimize "SELECT * FROM orders WHERE user_id = 100"
 
-# Correr EXPLAIN e interpretar
+# Run EXPLAIN and interpret
 python3 scripts/sql_query_helper.py --db-path data.db explain "SELECT * FROM orders WHERE user_id = 100"
 ```
 
-### Anti-patrones que detecta
+### Anti-patterns it detects
 
-| Regla | Severidad | Ejemplo |
+| Rule | Severity | Example |
 |---|---|---|
 | SELECT * | warning | `SELECT * FROM users` |
 | LIKE '%...' | warning | `WHERE name LIKE '%text'` |
-| Función en WHERE | warning | `WHERE UPPER(email) = 'X'` |
+| Function in WHERE | warning | `WHERE UPPER(email) = 'X'` |
 | NOT IN subquery | warning | `WHERE id NOT IN (SELECT ...)` |
-| Scalar subquery | warning | Subquery en SELECT que se ejecuta por fila |
+| Scalar subquery | warning | Subquery in SELECT that runs per row |
 
-## Referencias
+## References
 
-| Archivo | Qué contiene |
+| File | What it contains |
 |---|---|
-| `references/optimization-rules.md` | Las 13 reglas con ejemplos before/after |
-| `references/explain-guide.md` | Interpretación de EXPLAIN para SQLite y PostgreSQL |
+| `references/optimization-rules.md` | The 13 rules with before/after examples |
+| `references/explain-guide.md` | EXPLAIN interpretation for SQLite and PostgreSQL |
 
-## Skills relacionadas
+## Related skills
 
-- [Observability](../observability) - Para monitorear performance de DB
-- [Performance Optimization](../performance-optimization) - Para optimizar queries lentas
+- [Observability](../observability) - For monitoring DB performance
+- [Performance Optimization](../performance-optimization) - For optimizing slow queries

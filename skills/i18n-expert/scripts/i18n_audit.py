@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""i18n_audit.py — Audit locale files for missing keys, orphaned keys, and parity.
+"""i18n_audit.py - Audit locale files for missing keys, orphaned keys, and parity.
 
 Usage:
   python3 i18n_audit.py --src <src-dir> --locale <locale-file> [--locale <locale-file> ...]

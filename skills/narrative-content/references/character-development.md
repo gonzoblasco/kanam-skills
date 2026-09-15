@@ -1,6 +1,6 @@
 # Character Development - Narrative Content Reference
 
-Fichas y arquetipos para construir personajes.
+Sheets and archetypes for building characters.
 
 ## Character Sheet Template
 
@@ -65,6 +65,6 @@ Fichas y arquetipos para construir personajes.
 
 ## Related
 
-- [SKILL.md](../SKILL.md) - Workflow principal
-- [Narrative Structures](./narrative-structures.md) - Estructuras narrativas
-- [Worldbuilding](./worldbuilding.md) - Construcción de mundos
+- [SKILL.md](../SKILL.md) - Main workflow
+- [Narrative Structures](./narrative-structures.md) - Narrative structures
+- [Worldbuilding](./worldbuilding.md) - World construction

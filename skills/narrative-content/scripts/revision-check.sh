@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# revision-check.sh — Check narrative consistency across chapters
+# revision-check.sh - Check narrative consistency across chapters
 # Usage: ./revision-check.sh <chapters-dir> [--bible <story-bible>]
 #
 # Checks:
@@ -89,7 +89,7 @@ DATE_PATTERNS=$(grep -ohnE '\b(January|February|March|April|May|June|July|August
 if [[ -n "$DATE_PATTERNS" ]]; then
   echo "   Timeline references found:"
   echo "$DATE_PATTERNS" | while IFS=: read -r file line content; do
-    echo "     • $(basename "$file"):$line — $content"
+    echo "     • $(basename "$file"):$line - $content"
   done
 else
   echo "   No explicit dates found (not necessarily an issue)"
@@ -122,9 +122,9 @@ if [[ -n "$BIBLE_FILE" && -f "$BIBLE_FILE" ]]; then
       if [[ -n "$char" ]]; then
         # Check if character appears in chapters
         if grep -q "$char" "${CHAPTER_FILES[@]}" 2>/dev/null; then
-          echo "     ✅ $char — found in chapters"
+          echo "     ✅ $char - found in chapters"
         else
-          echo "     ⚠️  $char — NOT found in chapters"
+          echo "     ⚠️  $char - NOT found in chapters"
         fi
       fi
     done <<< "$BIBLE_CHARACTERS"

@@ -1,6 +1,6 @@
 # Session Templates - Session Lifecycle Reference
 
-Templates para inicio y guardado de sesión.
+Templates for session start and save.
 
 ## Session Start Template
 
@@ -86,5 +86,5 @@ Templates para inicio y guardado de sesión.
 
 ## Related
 
-- [SKILL.md](../SKILL.md) - Workflow principal
-- [Task Execution](../../task-execution) - Ejecución de tareas
+- [SKILL.md](../SKILL.md) - Main workflow
+- [Task Execution](../../task-execution) - Task execution

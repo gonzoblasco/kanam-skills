@@ -1,85 +1,85 @@
 # Writing Routines - Narrative Content
 
-Cómo construir una rutina de escritura que funcione para vos. ADHD-friendly, sin culpa, sostenible.
+How to build a writing routine that works for you. ADHD-friendly, guilt-free, sustainable.
 
-## Filosofía
+## Philosophy
 
 > The secret of getting ahead is getting started. - Mark Twain
 
-No necesitás escribir 4 horas por día. Necesitás escribir con consistencia. 15 minutos todos los días > 4 horas un sábado cada dos meses.
+You don't need to write 4 hours a day. You need to write consistently. 15 minutes every day > 4 hours one Saturday every two months.
 
-## Encontrá tu momento
+## Find your moment
 
-No hay un "mejor momento" para escribir. Hay tu momento.
+There is no "best time" to write. There is your time.
 
-| Perfil | Cuándo | Por qué funciona |
+| Profile | When | Why it works |
 |---|---|---|
-| **Madrugador** | 6-8 AM | Mente fresca, sin distracciones, antes de las obligaciones |
-| **Diurno** | 10-12 AM | Después del café, antes del almuerzo, energía estable |
-| **Tardecita** | 4-6 PM | Después de la jornada, antes de la cena, momento de transición |
-| **Nocturno** | 10 PM-12 AM | Silencio, sin interrupciones, el día terminó |
+| **Early bird** | 6-8 AM | Fresh mind, no distractions, before obligations |
+| **Daytime** | 10-12 AM | After coffee, before lunch, steady energy |
+| **Late afternoon** | 4-6 PM | After the workday, before dinner, a transition moment |
+| **Night owl** | 10 PM-12 AM | Silence, no interruptions, the day is over |
 
-**Probalos.** Una semana cada uno. El que se sienta más natural, ese es.
+**Try them.** One week each. The one that feels most natural is yours.
 
-## Técnicas de escritura
+## Writing techniques
 
-### Vomit Draft (borrador de vomitar)
+### Vomit Draft
 
-Escribí sin parar, sin corregir, sin mirar atrás. El objetivo no es escribir bien - es terminar.
+Write without stopping, without correcting, without looking back. The goal isn't to write well - it's to finish.
 
-**Reglas:**
-- Sin editar - ni siquiera typos
-- Sin leer lo que escribiste ayer
-- Sin juzgar - "esto es una mierda" es parte del proceso
-- Sin parar - si no sabés qué sigue, escribí "no sé qué sigue" hasta que se te ocurra algo
+**Rules:**
+- No editing - not even typos
+- Don't read what you wrote yesterday
+- No judging - "this is garbage" is part of the process
+- Don't stop - if you don't know what comes next, write "I don't know what comes next" until something occurs to you
 
-**Meta:** 500 palabras por sesión. No importa si son malas. Las malas se arreglan después.
+**Goal:** 500 words per session. It doesn't matter if they're bad. Bad gets fixed later.
 
-### Revisiones en capas
+### Layered revision
 
-No intentés escribir bien de una. Escribí mal, después mejorá.
+Don't try to write well the first time. Write badly, then improve.
 
-1. **Vomit draft** - escribí sin parar
-2. **Structural pass** - ¿la historia funciona?
-3. **Line pass** - ¿cada escena funciona?
-4. **Copy pass** - ¿cada palabra funciona?
+1. **Vomit draft** - write without stopping
+2. **Structural pass** - does the story work?
+3. **Line pass** - does each scene work?
+4. **Copy pass** - does each word work?
 
-Cada capa es más fácil que la anterior porque ya tenés algo sobre qué trabajar.
+Each layer is easier than the last because you already have something to work on.
 
-### Pomodoro para escritura
+### Pomodoro for writing
 
-- **25 min de escritura** - sin interrupciones, sin internet, sin revisar nada
-- **5 min de descanso** - estirate, tomá agua, no pienses en lo que escribiste
-- **Repetí 3-4 veces** - después de 4 pomodoros, tomate 15-30 min
+- **25 min of writing** - no interruptions, no internet, no checking anything
+- **5 min break** - stretch, drink water, don't think about what you wrote
+- **Repeat 3-4 times** - after 4 pomodoros, take 15-30 min
 
-**Variante ADHD:** 15 min de escritura, 5 de descanso. La consistencia importa más que la duración.
+**ADHD variant:** 15 min writing, 5 break. Consistency matters more than duration.
 
 ## Word count goals
 
-| Nivel | Palabras/día | Tiempo estimado | Novela de 80K en |
+| Level | Words/day | Estimated time | 80K novel in |
 |---|---|---|---|
-| **Micro** | 100 | 10-15 min | 800 días (~2.2 años) |
-| **Suave** | 250 | 20-30 min | 320 días (~10 meses) |
-| **Constante** | 500 | 30-45 min | 160 días (~5 meses) |
-| **Serio** | 1000 | 60-90 min | 80 días (~3 meses) |
-| **Intensivo** | 2000 | 2-3 horas | 40 días (~1 mes) |
+| **Micro** | 100 | 10-15 min | 800 days (~2.2 years) |
+| **Gentle** | 250 | 20-30 min | 320 days (~10 months) |
+| **Steady** | 500 | 30-45 min | 160 days (~5 months) |
+| **Serious** | 1000 | 60-90 min | 80 days (~3 months) |
+| **Intensive** | 2000 | 2-3 hours | 40 days (~1 month) |
 
-**Recomendación:** Arrancá con 250 palabras/día. Es tan poco que no podés fallar. Cuando sea automático, subí a 500.
+**Recommendation:** Start at 250 words/day. It's so little you can't fail. Once it's automatic, go up to 500.
 
-## Cómo retomar después de una pausa
+## How to restart after a break
 
-No importa cuánto tiempo pasó. Lo que importa es volver.
+It doesn't matter how long it's been. What matters is coming back.
 
-1. **No leas lo que escribiste** - te vas a sentir mal y no vas a escribir
-2. **Escribí 100 palabras** - de lo que sea, aunque sea "no sé qué escribir"
-3. **No juzgues** - el objetivo es volver, no escribir bien
-4. **Mañana, 100 palabras otra vez** - hasta que el hábito vuelva
+1. **Don't read what you wrote** - you'll feel bad and won't write
+2. **Write 100 words** - about anything, even "I don't know what to write"
+3. **Don't judge** - the goal is to come back, not to write well
+4. **Tomorrow, 100 words again** - until the habit returns
 
-**No hay culpa.** La escritura no es una carrera. No hay "debería haber escrito más". Hay "hoy escribí".
+**No guilt.** Writing is not a race. There is no "I should have written more". There is "today I wrote".
 
-## Tracking de progreso
+## Progress tracking
 
-Sin presión, sin culpa. Solo datos.
+No pressure, no guilt. Just data.
 
 ```markdown
 # Writing Log - [Project Name]
@@ -88,47 +88,47 @@ Sin presión, sin culpa. Solo datos.
 
 | Day | Words | Time | Notes |
 |---|---|---|---|
-| Mon | 500 | 30m | Buen ritmo, escena de diálogo |
-| Tue | 0 | - | No pude, está bien |
-| Wed | 250 | 20m | Arranqué de nuevo, costó |
-| Thu | 500 | 35m | Agarré ritmo |
-| Fri | 750 | 45m | Mejor sesión de la semana |
-| Sat | 0 | - | Finde, descanso |
-| Sun | 300 | 25m | Cerré la semana |
+| Mon | 500 | 30m | Good pace, dialogue scene |
+| Tue | 0 | - | Couldn't, that's fine |
+| Wed | 250 | 20m | Started again, it was hard |
+| Thu | 500 | 35m | Found my rhythm |
+| Fri | 750 | 45m | Best session of the week |
+| Sat | 0 | - | Weekend, rest |
+| Sun | 300 | 25m | Closed the week |
 
-**Total:** 2,300 palabras
-**Racha actual:** 2 días
-**Nota:** Semana despareja pero positiva. La pausa del martes no mató el hábito.
+**Total:** 2,300 words
+**Current streak:** 2 days
+**Note:** Uneven but positive week. Tuesday's pause didn't kill the habit.
 ```
 
 ## Writer's block rescue
 
-El writer's block no es falta de inspiración - es miedo a escribir mal.
+Writer's block is not a lack of inspiration - it is fear of writing badly.
 
-**Técnicas para romperlo:**
+**Techniques to break it:**
 
-1. **Escribí 100 palabras de mierda** - a propósito. "Esto es una mierda y lo sé." Después de 100 palabras, el bloque suele romperse.
-2. **Cambiá de escena** - escribí la escena que más ganas tenés de escribir, aunque sea del final.
-3. **Escribí out of order** - no necesitás escribir en orden cronológico. Escribí la parte que te divierte.
-4. **Cambiá de medio** - escribí a mano, en una app distinta, en una servilleta. El cambio físico a veces destraba.
-5. **Hablá la escena** - grabate contando la escena como si se la estuvieras contando a un amigo. Después transcribí.
-6. **Saltá el bloque** - si una escena no sale, escribí "ACÁ HAY UN BLOQUEO" y seguí con la siguiente. Volvé después.
+1. **Write 100 words of garbage** - on purpose. "This is garbage and I know it." After 100 words, the block usually breaks.
+2. **Switch scenes** - write the scene you most want to write, even if it's from the end.
+3. **Write out of order** - you don't need to write chronologically. Write the part that's fun.
+4. **Switch medium** - write by hand, in a different app, on a napkin. The physical change sometimes unblocks things.
+5. **Speak the scene** - record yourself telling the scene as if to a friend. Then transcribe.
+6. **Skip the block** - if a scene won't come, write "BLOCK HERE" and move to the next one. Come back later.
 
-## Checklist de rutina
+## Routine checklist
 
-- [ ] Elegí un momento del día para escribir
-- [ ] Arrancá con 250 palabras/día (o menos)
-- [ ] Usá pomodoro (25/5 o 15/5)
-- [ ] No edites mientras escribís
-- [ ] Trackeá progreso sin presión
-- [ ] Si te trabás, usá una técnica de rescue
-- [ ] Si te saltás un día, no pasa nada - volvé al siguiente
+- [ ] Pick a time of day to write
+- [ ] Start at 250 words/day (or less)
+- [ ] Use pomodoro (25/5 or 15/5)
+- [ ] Don't edit while writing
+- [ ] Track progress without pressure
+- [ ] If you get stuck, use a rescue technique
+- [ ] If you skip a day, no problem - come back the next one
 
 ---
 
 ## Related
 
-- [SKILL.md](../SKILL.md) - Workflow principal
-- [Scene Craft](../references/scene-craft.md) - Anatomía de una escena
-- [Revision Guide](../references/revision-guide.md) - Cómo revisar
-- [Genre Guide](../references/genre-guide.md) - Guía de géneros
+- [SKILL.md](../SKILL.md) - Main workflow
+- [Scene Craft](./scene-craft.md) - Anatomy of a scene
+- [Revision Guide](./revision-guide.md) - How to revise
+- [Genre Guide](./genre-guide.md) - Genre guide

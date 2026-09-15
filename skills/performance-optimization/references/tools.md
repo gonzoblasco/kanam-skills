@@ -1,42 +1,42 @@
-# Herramientas de Performance - Referencia
+# Performance Tools - Reference
 
 ## Frontend
 
-| Herramienta | Para qué | Uso |
+| Tool | What for | Usage |
 |---|---|---|
-| **Chrome DevTools Performance** | Timeline, flamegraph, frames, memoria | Grabación de perfil de rendimiento |
-| **React Profiler** | Re-renders, componentes lentos | `Profiler` API o DevTools |
-| **Lighthouse** | Core Web Vitals, auditoría general | CLI o DevTools |
-| **WebPageTest** | Pruebas desde múltiples ubicaciones | webpagetest.org |
-| **Bundle Analyzer** | Tamaño de bundles, code splitting | `@next/bundle-analyzer` o `vite-bundle-visualizer` |
+| **Chrome DevTools Performance** | Timeline, flamegraph, frames, memory | Record performance profile |
+| **React Profiler** | Re-renders, slow components | `Profiler` API or DevTools |
+| **Lighthouse** | Core Web Vitals, general audit | CLI or DevTools |
+| **WebPageTest** | Tests from multiple locations | webpagetest.org |
+| **Bundle Analyzer** | Bundle sizes, code splitting | `@next/bundle-analyzer` or `vite-bundle-visualizer` |
 
 ## Backend
 
-| Herramienta | Para qué | Uso |
+| Tool | What for | Usage |
 |---|---|---|
-| **Node CPU Profiler** | CPU hotspots | `--prof` flag o `clinic` |
-| **Heap Snapshots** | Memory leaks, uso de memoria | Chrome DevTools Memory o `heapdump` |
+| **Node CPU Profiler** | CPU hotspots | `--prof` flag or `clinic` |
+| **Heap Snapshots** | Memory leaks, memory usage | Chrome DevTools Memory or `heapdump` |
 | **clinic.js** | Doctor, flame, bubbleprof | `npx clinic` |
 | **0x** | Flamegraphs | `npx 0x` |
 | **autocannon** | HTTP benchmarking | `npx autocannon` |
 
-## Base de Datos
+## Database
 
-| Herramienta | Para qué | Uso |
+| Tool | What for | Usage |
 |---|---|---|
-| **EXPLAIN ANALYZE** | Plan de ejecución de queries | SQL directo |
-| **pg_stat_statements** | Queries lentas en PostgreSQL | Extensión de Postgres |
-| **Index Advisor** | Recomendación de índices | `pg_hint_plan` o Supabase Advisor |
+| **EXPLAIN ANALYZE** | Query execution plan | Direct SQL |
+| **pg_stat_statements** | Slow queries in PostgreSQL | Postgres extension |
+| **Index Advisor** | Index recommendations | `pg_hint_plan` or Supabase Advisor |
 
 ## AI / LLM
 
-| Herramienta | Para qué | Uso |
+| Tool | What for | Usage |
 |---|---|---|
-| **Prompt timing** | Latencia de prompts | Logging manual o SDK |
-| **Token counter** | Consumo de tokens | `tiktoken` o SDK del provider |
-| **Cache hits** | Efectividad de caché de respuestas | Métricas del provider |
+| **Prompt timing** | Prompt latency | Manual logging or SDK |
+| **Token counter** | Token consumption | `tiktoken` or provider SDK |
+| **Cache hits** | Response cache effectiveness | Provider metrics |
 
 ## Related
 
-- [SKILL.md](../SKILL.md) - Workflow principal
-- [Domains](./domains.md) - Dominios de performance
+- [SKILL.md](../SKILL.md) - Main workflow
+- [Domains](./domains.md) - Performance domains

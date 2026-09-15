@@ -1,6 +1,6 @@
 ---
 name: "github"
-description: "Agrega un wrapper del GitHub MCP server oficial para herramientas avanzadas: alertas de seguridad, notificaciones, discusiones, project boards, analisis de codigo."
+description: "Update github (rebase of 20260902 proposal)"
 metadata:
   category: "Development"
   tags:
@@ -17,39 +17,39 @@ metadata:
 
 # GitHub
 
-Usa `gh` para las operaciones comunes de GitHub y el GitHub MCP Server oficial para las herramientas avanzadas que no estan disponibles en `gh`.
+Use `gh` for common GitHub operations and the official GitHub MCP Server for advanced tools not available in `gh`.
 
-## Dos interfaces
+## Two interfaces
 
-### 1. CLI `gh` (default)
+### 1. `gh` CLI (default)
 
-Usalo para:
-- Listar/ver PRs e issues
-- Crear PRs/issues/comentarios
-- Chequear corridas de CI
-- Consultas basicas de API
-- Mergear PRs
+Use for:
+- Listing/viewing PRs and issues
+- Creating PRs/issues/comments
+- Checking CI runs
+- Basic API queries
+- Merging PRs
 
-### 2. GitHub MCP Server (avanzado)
+### 2. GitHub MCP Server (advanced)
 
-Usa el wrapper `~/.openclaw/workspace/skills/github/scripts/github-mcp.py` para:
-- Alertas de seguridad / Dependabot
+Use the wrapper `~/.openclaw/workspace/skills/github/scripts/github-mcp.py` for:
+- Security alerts / Dependabot
 - Code scanning
-- Notificaciones
-- Discusiones
+- Notifications
+- Discussions
 - Project boards
-- Operaciones avanzadas de PR/issue
-- Herramientas de analisis de codigo
+- Advanced PR/issue operations
+- Code analysis tools
 
-## Requisitos
+## Requirements
 
-- CLI `gh` autenticado (`gh auth status`)
-- GitHub Personal Access Token guardado en `~/.openclaw/secrets/github-token`
-- Binario oficial de GitHub MCP en `~/.openclaw/bin/github-mcp`
+- `gh` CLI authenticated (`gh auth status`)
+- GitHub Personal Access Token stored in `~/.openclaw/secrets/github-token`
+- Official GitHub MCP binary at `~/.openclaw/bin/github-mcp`
 
-## Reglas de Escritura
+## Writing Rules
 
-- **Usa siempre guion comun (-), nunca guion largo (-).** El guion largo no esta en un teclado estandar y hace evidente que el texto no fue escrito por un desarrollador. Esto aplica a descripciones de PR, comentarios, issues y cualquier texto orientado a GitHub.
+- **Always use regular hyphen (-), never em dash (-).** The em dash isn't on a standard keyboard and makes it obvious the text wasn't written by a developer. This applies to PR descriptions, comments, issues, and any GitHub-facing text.
 
 ## Auth
 
@@ -58,9 +58,22 @@ gh auth status
 gh auth login
 ```
 
-El wrapper de MCP lee `~/.openclaw/secrets/github-token` automaticamente.
+The MCP wrapper reads `~/.openclaw/secrets/github-token` automatically.
 
-## CLI gh: PRs
+### ⚠️ OAuth token write-block in orgs with OAuth App restrictions
+
+The OpenClaw OAuth token (`gho_`) CANNOT write (comment, open PRs/issues) in orgs with OAuth App access restrictions: shadcn-ui, radix-ui, facebook, TanStack, adobe, mui, vercel, etc. Reading works; writes fail with `GraphQL: ... OAuth App access restrictions`. It is not a token or casing problem.
+
+**Symptom:** `gh issue comment` / `gh pr create` fail with that error in third-party orgs, but work in our own repos.
+
+**Solution applied (03/09):** the user's classic PAT in the secrets store (`GITHUB_PERSONAL_ACCESS_TOKEN`) + `secrets.egressProxy.enabled=true` + `allowedHosts=["api.github.com","github.com"]` in openclaw.json + gateway restart. The proxy injects into gateway exec: secret sentinel, `HTTPS_PROXY`, `SSL_CERT_FILE`/`CURL_CA_BUNDLE`/`NODE_EXTRA_CA_CERTS` pointing to the ephemeral CA.
+
+**TLS gotcha (macOS):** `gh` (Go) and `git` (libcurl) do NOT respect `SSL_CERT_FILE` on macOS - they fail with `x509: certificate is not trusted` / `SSL certificate problem` when the proxy is active.
+- API calls: use `curl -sS https://api.github.com/...` (respects the proxy CA bundle) instead of `gh api`.
+- Git push/pull: prefix `GIT_SSL_CAINFO="$SSL_CERT_FILE"` (e.g.: `GIT_SSL_CAINFO="$SSL_CERT_FILE" git push`).
+- Verify active proxy: `echo $HTTPS_PROXY` and `echo $SSL_CERT_FILE` in gateway exec (host=gateway).
+
+## gh CLI: PRs
 
 ```bash
 gh pr list --repo owner/repo --json number,title,state,author,url
@@ -71,9 +84,20 @@ gh pr create --repo owner/repo --title "feat: title" --body-file /tmp/pr.md
 gh pr merge 55 --repo owner/repo --squash
 ```
 
-Las URLs funcionan directamente: `gh pr view https://github.com/owner/repo/pull/55`.
+URLs work directly: `gh pr view https://github.com/owner/repo/pull/55`.
 
-## CLI gh: Issues
+### ⚠️ Listing YOUR PRs across all repos (known gotcha)
+
+`gh pr list --author <user>` **without `--repo` returns an empty `[]`** - the `--author` flag without a concrete repo does not iterate over the user's repos. It is not a fix that depends on the token or casing.
+
+**Forms that DO work:**
+- Search for the user themselves: `gh api "search/issues?q=author:<user>+is:pr+is:open&per_page=100" --jq '.items[] | ...'` (the GitHub Search API, a reliable source, returns everything).
+- List by tracked repo: the script `skills/github/scripts/pr-batch-check.sh --mine-only` (uses `--repo` + `--author`, which does work).
+- For a specific repo: `gh pr list --repo owner/repo --author <user> --state open`.
+
+**Rule:** to review the status of ALL of the user's OSS PRs, use the **Search API** (complete) or the script `pr-batch-check.sh --mine-only` (tracked repos). Never `gh pr list --author` by itself.
+
+## gh CLI: Issues
 
 ```bash
 gh issue list --repo owner/repo --state open --json number,title,labels,url
@@ -83,7 +107,7 @@ gh issue comment 42 --repo owner/repo --body-file /tmp/comment.md
 gh issue close 42 --repo owner/repo --comment "Fixed in ..."
 ```
 
-## CLI gh: CI / Runs
+## gh CLI: CI / Runs
 
 ```bash
 gh run list --repo owner/repo --limit 10
@@ -92,30 +116,30 @@ gh run view <run-id> --repo owner/repo --log-failed
 gh run rerun <run-id> --repo owner/repo --failed
 ```
 
-## Wrapper del GitHub MCP Server
+## GitHub MCP Server wrapper
 
 ```bash
-# Lista las herramientas disponibles
+# List available tools
 ~/.openclaw/workspace/skills/github/scripts/github-mcp.py list
 
-# Llama a una herramienta
+# Call a tool
 ~/.openclaw/workspace/skills/github/scripts/github-mcp.py call list_pull_requests '{"owner": "facebook", "repo": "astryx", "state": "open", "limit": 5}'
 
-# Usa toolsets adicionales (security, notifications, discussions, etc.)
+# Use additional toolsets (security, notifications, discussions, etc.)
 ~/.openclaw/workspace/skills/github/scripts/github-mcp.py call list_security_alerts '{"owner": "facebook", "repo": "astryx"}' --toolsets=default,code_security,notifications
 ```
 
-Toolsets disponibles: `actions`, `code_quality`, `code_security`, `copilot`, `copilot_issue_intents`, `dependabot`, `discussions`, `gists`, `git`, `issues`, `labels`, `notifications`, `orgs`, `projects`, `pull_requests`, `repos`, `secret_protection`, `security_advisories`, `stargazers`, `users`.
+Available toolsets: `actions`, `code_quality`, `code_security`, `copilot`, `copilot_issue_intents`, `dependabot`, `discussions`, `gists`, `git`, `issues`, `labels`, `notifications`, `orgs`, `projects`, `pull_requests`, `repos`, `secret_protection`, `security_advisories`, `stargazers`, `users`.
 
 Default: `context`, `copilot`, `issues`, `pull_requests`, `repos`, `users`.
 
-## Flujo de trabajo de alertas de seguridad
+## Security alerts workflow
 
 ```bash
 ~/.openclaw/workspace/skills/github/scripts/github-mcp.py call list_code_scanning_alerts '{"owner": "facebook", "repo": "astryx"}' --toolsets=code_security
 ```
 
-## Flujo de trabajo de notificaciones
+## Notifications workflow
 
 ```bash
 ~/.openclaw/workspace/skills/github/scripts/github-mcp.py call list_notifications '{"limit": 10}' --toolsets=notifications
@@ -127,7 +151,7 @@ Default: `context`, `copilot`, `issues`, `pull_requests`, `repos`, `users`.
 ~/.openclaw/workspace/skills/github/scripts/github-mcp.py call list_projects '{"owner": "facebook"}' --toolsets=projects
 ```
 
-## CLI gh: API
+## gh CLI: API
 
 ```bash
 gh api repos/owner/repo/pulls/55 --jq '.title, .state, .user.login'
@@ -135,58 +159,62 @@ gh api repos/owner/repo/labels --jq '.[].name'
 gh api --cache 1h repos/owner/repo --jq '{stars: .stargazers_count, forks: .forks_count}'
 ```
 
-Usa `--json` + `--jq` para una salida estructurada. Usa `--body-file` para comentarios/cuerpos que contengan backticks, fragmentos de shell, nombres de env o texto de usuario.
+Use `--json` + `--jq` for structured output. Use `--body-file` for comments/bodies containing backticks, shell snippets, env names, or user text.
 
-## CLI gh: Comentarios y Reviews
+### ⚠️ Referenced #NNNN may be a Discussion, not an Issue
+
+When a thread references `#NNNN` and `gh api repos/owner/repo/issues/NNNN` returns 404, the number is probably a **Discussion** (its own numbering, not queryable through the issues API). Verify with `curl -s -o /dev/null -w "%{http_code}" https://github.com/owner/repo/discussions/NNNN` (200 = discussion) or with the Search API. Do not assume the number is a nonexistent issue.
+
+## gh CLI: Comments & Reviews
 
 ```bash
-# Publica un comentario
+# Post a comment
 gh api repos/owner/repo/issues/42/comments -f body="Your comment here"
 
-# Obtiene todos los comentarios de un issue/PR
+# Get all comments on an issue/PR
 gh api repos/owner/repo/issues/42/comments --paginate
 
-# Obtiene un comentario especifico por ID
+# Get a specific comment by ID
 gh api repos/owner/repo/issues/comments/<comment-id>
 
-# Responde a un review
+# Reply to a review
 gh api repos/owner/repo/pulls/55/comments -f body="Thanks, fixed!" -f in_reply_to=<review-comment-id>
 ```
 
-## Cuando usar gh vs MCP
+## When to use gh vs MCP
 
-| Tarea | Usa |
+| Task | Use |
 |---|---|
-| Operaciones comunes de PR/issue | `gh` |
-| Corridas de CI | `gh` |
-| Comentarios/reviews | `gh` |
-| Alertas de seguridad | MCP |
-| Notificaciones | MCP |
-| Discusiones | MCP |
+| Common PR/issue ops | `gh` |
+| CI runs | `gh` |
+| Comments/reviews | `gh` |
+| Security alerts | MCP |
+| Notifications | MCP |
+| Discussions | MCP |
 | Project boards | MCP |
 | Code scanning | MCP |
 | Dependabot | MCP |
-| Consultas de API complejas | MCP o `gh api` |
+| Complex API queries | MCP or `gh api` |
 
-## Seguridad
+## Security
 
-- Mantene `~/.openclaw/secrets/github-token` con `chmod 600`.
-- Nunca commitees el token.
-- El MCP server puede realizar operaciones de escritura (create/update/delete). Para seguridad de solo lectura, ejecutalo con `--toolsets=default` o usa el flag `--read-only` en el binario si es necesario.
-- Prefiere `gh` para operaciones destructivas donde quieras confirmacion explicita.
+- Keep `~/.openclaw/secrets/github-token` with `chmod 600`.
+- Never commit the token.
+- The MCP server can perform write operations (create/update/delete). For read-only safety, run with `--toolsets=default` or use `--read-only` flag on the binary if needed.
+- Prefer `gh` for destructive operations where you want explicit confirmation.
 
-## Scripts de Ayuda
+## Helper Scripts
 
-Scripts en `skills/github/scripts/`:
+Scripts in `skills/github/scripts/`:
 
-| Script | Uso |
+| Script | Usage |
 |---|---|
-| `pr-batch-check.sh [--json] [--mine-only]` | Lista PRs abiertos en repos trackeados. Con `--mine-only` filtra por el autor del gh autenticado. Usar para monitorear estado de contribuciones OSS. |
-| `github-mcp.py` | Wrapper del GitHub MCP server para operaciones avanzadas (security alerts, notifications, project boards). |
+| `pr-batch-check.sh [--json] [--mine-only]` | Lists open PRs in tracked repos. With `--mine-only` filters by the authenticated user. Use to monitor the status of OSS contributions. |
+| `github-mcp.py` | GitHub MCP server wrapper for advanced operations (security alerts, notifications, project boards). |
 
-Para triage de issues de un repo especifico, ver [oss-contribution/scripts/triage-issues.sh](../oss-contribution/scripts/triage-issues.sh).
+For issue triage of a specific repo, see [oss-contribution/scripts/triage-issues.sh](../oss-contribution/scripts/triage-issues.sh).
 
-## Relacionados
+## Related
 
-- `gh-issue-planner`: Para planificar proyectos en GitHub Issues (epics -> stories -> subtasks). SOLO para repos personales.
-- `code-review-agent`: Para revision de codigo detallada usando subagentes.
+- `gh-issue-planner`: For planning projects into GitHub Issues (epics -> stories -> subtasks). ONLY for personal repos.
+- `code-review-agent`: For detailed code review using subagents.

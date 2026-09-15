@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# lighthouse-check.sh — Run Lighthouse and check scores
+# lighthouse-check.sh - Run Lighthouse and check scores
 # Usage: ./lighthouse-check.sh <url> [--min-score <n>]
 
 set -euo pipefail

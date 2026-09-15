@@ -1,47 +1,47 @@
 # Session Lifecycle
 
-Ciclo de vida completo de una sesión de trabajo con IA.
+Complete lifecycle of an AI work session.
 
-## ¿Para qué sirve?
+## What is it for?
 
-Para **estructurar cada sesión de trabajo** con IA: inicio (cargar contexto + memoria), dispatcher (spawnear sub-agentes), ejecución, cierre (escribir HANDOFF, memory, CHANGELOG), tareas (convertir pendientes en accionables), y commit del workspace.
+To **structure every AI work session**: start (load context + memory), dispatcher (spawn sub-agents), execution, close (write HANDOFF, memory, CHANGELOG), tasks (turn pending items into actionable ones), and workspace commit.
 
-## ¿Cuándo usarlo?
+## When to use it?
 
-- Al iniciar cada sesión de trabajo
-- Al cerrar cada sesión
-- Cuando necesitás spawnear sub-agentes
-- Cuando hay pendientes que convertir en tareas
+- When starting each work session
+- When closing each session
+- When you need to spawn sub-agents
+- When there are pending items to turn into tasks
 
-## ¿Cómo se usa?
+## How is it used?
 
-### Fases
+### Phases
 
-1. **Inicio** - cargar contexto, memoria, handoff del proyecto activo
-2. **Dispatcher** - spawnear sub-agentes: fork (necesita transcript) vs isolated (independiente)
-3. **Ejecución** - trabajo principal, decisiones, archivos tocados
-4. **Cierre** - escanear sesión, escribir HANDOFF, memory, CHANGELOG
-5. **Tareas** - convertir pendientes en accionables (cron jobs o TODO.md)
-6. **Commit** - commit + push del workspace
+1. **Start** - load context, memory, handoff of the active project
+2. **Dispatcher** - spawn sub-agents: fork (needs transcript) vs isolated (independent)
+3. **Execution** - main work, decisions, files touched
+4. **Close** - scan session, write HANDOFF, memory, CHANGELOG
+5. **Tasks** - turn pending items into actionable ones (cron jobs or TODO.md)
+6. **Commit** - commit + push the workspace
 
-### Scripts útiles
+### Useful scripts
 
 ```bash
-# Iniciar sesión
-./scripts/session-start.sh --project "mi-app" --objective "Implementar auth con Google"
+# Start session
+./scripts/session-start.sh --project "my-app" --objective "Implement Google auth"
 
-# Guardar sesión
-./scripts/session-end.sh --project "mi-app" --summary "Auth implementada, PR abierto"
+# Save session
+./scripts/session-end.sh --project "my-app" --summary "Auth implemented, PR opened"
 ```
 
-## Referencias
+## References
 
-| Archivo | Qué contiene |
+| File | What it contains |
 |---|---|
 | `references/session-templates.md` | Templates: session start, session end, HANDOFF |
-| `references/subagent-patterns.md` | Fork vs isolated, patrones comunes, handoff entre sub-agentes |
+| `references/subagent-patterns.md` | Fork vs isolated, common patterns, handoff between sub-agents |
 
-## Skills relacionadas
+## Related skills
 
-- [Task Execution](../task-execution) - Para ejecutar tareas dentro de la sesión
-- [Knowledge Management](../knowledge-management) - Para registrar aprendizajes de la sesión
+- [Task Execution](../task-execution) - To execute tasks within the session
+- [Knowledge Management](../knowledge-management) - To record session learnings

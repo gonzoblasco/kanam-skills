@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# outline-generator.sh — Generate story outline from premise
+# outline-generator.sh - Generate story outline from premise
 # Usage: ./outline-generator.sh <premise-file> [--structure 3act|hero|savethecat]
 
 set -euo pipefail
@@ -39,57 +39,57 @@ case "$STRUCTURE" in
     cat >> "$OUTPUT" << 'HERO'
 ## Hero's Journey Outline
 
-1. **Ordinary World** — [ ]
-2. **Call to Adventure** — [ ]
-3. **Refusal of the Call** — [ ]
-4. **Meeting the Mentor** — [ ]
-5. **Crossing the Threshold** — [ ]
-6. **Tests, Allies, Enemies** — [ ]
-7. **Approach to the Inmost Cave** — [ ]
-8. **Ordeal** — [ ]
-9. **Reward** — [ ]
-10. **The Road Back** — [ ]
-11. **Resurrection** — [ ]
-12. **Return with the Elixir** — [ ]
+1. **Ordinary World** - [ ]
+2. **Call to Adventure** - [ ]
+3. **Refusal of the Call** - [ ]
+4. **Meeting the Mentor** - [ ]
+5. **Crossing the Threshold** - [ ]
+6. **Tests, Allies, Enemies** - [ ]
+7. **Approach to the Inmost Cave** - [ ]
+8. **Ordeal** - [ ]
+9. **Reward** - [ ]
+10. **The Road Back** - [ ]
+11. **Resurrection** - [ ]
+12. **Return with the Elixir** - [ ]
 HERO
     ;;
   savethecat)
     cat >> "$OUTPUT" << 'SAVETHECAT'
 ## Save the Cat! Outline
 
-1. **Opening Image** — [ ]
-2. **Theme Stated** — [ ]
-3. **Set-Up** — [ ]
-4. **Catalyst** — [ ]
-5. **Debate** — [ ]
-6. **Break into Two** — [ ]
-7. **B Story** — [ ]
-8. **Fun and Games** — [ ]
-9. **Midpoint** — [ ]
-10. **Bad Guys Close In** — [ ]
-11. **All Is Lost** — [ ]
-12. **Dark Night of the Soul** — [ ]
-13. **Break into Three** — [ ]
-14. **Finale** — [ ]
-15. **Final Image** — [ ]
+1. **Opening Image** - [ ]
+2. **Theme Stated** - [ ]
+3. **Set-Up** - [ ]
+4. **Catalyst** - [ ]
+5. **Debate** - [ ]
+6. **Break into Two** - [ ]
+7. **B Story** - [ ]
+8. **Fun and Games** - [ ]
+9. **Midpoint** - [ ]
+10. **Bad Guys Close In** - [ ]
+11. **All Is Lost** - [ ]
+12. **Dark Night of the Soul** - [ ]
+13. **Break into Three** - [ ]
+14. **Finale** - [ ]
+15. **Final Image** - [ ]
 SAVETHECAT
     ;;
   *)
     cat >> "$OUTPUT" << 'THREEACT'
 ## Three-Act Structure Outline
 
-### Act I — Setup
+### Act I - Setup
 - [ ] Inciting Incident
 - [ ] Establish world, characters, conflict
 - [ ] First Plot Point
 
-### Act II — Confrontation
+### Act II - Confrontation
 - [ ] Rising action
 - [ ] Midpoint
 - [ ] Darkest moment
 - [ ] Second Plot Point
 
-### Act III — Resolution
+### Act III - Resolution
 - [ ] Climax
 - [ ] Falling action
 - [ ] Denouement

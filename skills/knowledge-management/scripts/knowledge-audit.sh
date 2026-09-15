@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# knowledge-audit.sh — Audit knowledge base: freshness, broken refs, orphans
+# knowledge-audit.sh - Audit knowledge base: freshness, broken refs, orphans
 # Usage: ./knowledge-audit.sh [--output <file>]
 
 set -euo pipefail

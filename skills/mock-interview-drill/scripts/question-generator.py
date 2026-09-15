@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""question-generator.py — Generate practice interview questions.
+"""question-generator.py - Generate practice interview questions.
 
 Usage:
   python3 question-generator.py [--role frontend|fullstack|backend|product|data]
@@ -232,7 +232,7 @@ def print_questions(questions: list[dict]):
     """Print questions in a readable format."""
     for i, q in enumerate(questions, 1):
         print(f"\n{'=' * 60}")
-        print(f"QUESTION {i} — {q['type'].upper()}")
+        print(f"QUESTION {i} - {q['type'].upper()}")
         print(f"{'=' * 60}")
         print(f"\n{q['question']}\n")
 

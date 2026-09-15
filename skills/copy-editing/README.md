@@ -1,41 +1,40 @@
 # Copy Editing
 
-Edición profesional de copy de marketing.
+Professional editing of marketing copy.
 
-## ¿Para qué sirve?
+## What is it for?
 
-Para **mejorar copy existente** (landing pages, emails, ads, blogs) sin reescribirlo desde cero. Usa 7 pasadas secuenciales (The Seven Sweeps), cada una enfocada en una dimensión: claridad, tono, beneficio, evidencia, especificidad, emoción y eliminación de riesgo.
+To **improve existing copy** (landing pages, emails, ads, blogs) without rewriting it from scratch. It uses 7 sequential passes (The Seven Sweeps), each focused on one dimension: clarity, tone, benefit, evidence, specificity, emotion and risk removal.
 
-## ¿Cuándo usarlo?
+## When to use it?
 
-- Cuando tenés copy escrito y querés que convierta más
-- Antes de publicar una landing page o campaña de emails
-- Cuando el copy "no suena bien" pero no sabés exactamente qué
+- When you have written copy and want it to convert more
+- Before publishing a landing page or email campaign
+- When the copy "doesn't sound right" but you don't know exactly what's wrong
 
-## ¿Cómo se usa?
+## How do you use it?
 
-Es conversacional. Le pasás el copy y decís "editá esto".
+It's conversational. You pass it the copy and say "edit this".
 
-> "Editá este copy de landing page. Es para una herramienta de AI testing."
+> "Edit this landing page copy. It's for an AI testing tool."
 
-Hace 7 sweeps en orden, y después de cada uno vuelve a verificar los anteriores:
+It does 7 sweeps in order, and after each one it re-checks the previous ones:
 
-1. **Clarity** - ¿Se entiende? Sin jerga, una idea por oración
-2. **Voice & Tone** - ¿Suena consistente? Leélo en voz alta
-3. **So What** - Cada claim responde "¿y qué?" (feature → benefit)
-4. **Prove It** - ¿Hay evidencia? Testimonios, datos, garantías
-5. **Specificity** - ¿Es concreto? "Save time" → "Save 4 hours every week"
-6. **Heightened Emotion** - ¿Hace sentir algo? Pain points que se sienten
-7. **Zero Risk** - ¿Eliminamos barreras? Fricción cerca del CTA, objeciones
+1. **Clarity** - Is it understandable? No jargon, one idea per sentence
+2. **Voice & Tone** - Does it sound consistent? Read it out loud
+3. **So What** - Does every claim answer "so what?" (feature -> benefit)
+4. **Prove It** - Is there evidence? Testimonials, data, guarantees
+5. **Specificity** - Is it concrete? "Save time" -> "Save 4 hours every week"
+6. **Heightened Emotion** - Does it make you feel something? Pain points you can feel
+7. **Zero Risk** - Do we remove barriers? Friction near the CTA, objections
 
-## Referencias
+## References
 
-| Archivo | Qué contiene |
+| File | What it contains |
 |---|---|
-| `references/word-level-edits.md` | Palabras a evitar y reemplazar, checks por nivel |
-| `references/common-problems.md` | Problemas frecuentes: wall of features, corporate speak, weak opening |
+| `references/word-level-edits.md` | Words to avoid and replace, checks by level |
+| `references/common-problems.md` | Frequent problems: wall of features, corporate speak, weak opening |
 
-## Skills relacionadas
+## Related skills
 
-- [Narrative Content](../narrative-content) - Para escritura de ficción
-- [Campaign Plan](../campaign-plan) - Para planificar campañas
+- [Campaign Plan](../campaign-plan) - For planning campaigns

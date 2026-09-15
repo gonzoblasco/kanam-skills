@@ -1,6 +1,6 @@
 # Knowledge Graph - Knowledge Management Reference
 
-Cómo construir y mantener el grafo de conocimiento del proyecto.
+How to build and maintain the project's knowledge graph.
 
 ## Node Types
 
@@ -54,6 +54,6 @@ done
 
 ## Related
 
-- [SKILL.md](../SKILL.md) - Workflow principal
-- [Artifacts](../references/artifacts.md) - Catálogo de artefactos
-- [Checklist](../references/checklist.md) - Checklist de conocimiento
+- [SKILL.md](../SKILL.md) - Main workflow
+- [Artifacts](../references/artifacts.md) - Artifact catalog
+- [Checklist](../references/checklist.md) - Knowledge checklist

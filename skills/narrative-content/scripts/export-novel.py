@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""export-novel.py — Export narrative content to DOCX, EPUB, or Markdown.
+"""export-novel.py - Export narrative content to DOCX, EPUB, or Markdown.
 
 Usage:
   python3 export-novel.py <input-dir> [--format docx|epub|md] [--output <file>]

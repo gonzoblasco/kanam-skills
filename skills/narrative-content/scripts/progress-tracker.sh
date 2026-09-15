@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# progress-tracker.sh — Track writing progress
+# progress-tracker.sh - Track writing progress
 # Usage: ./progress-tracker.sh [--log <log-file>] [--add <words>] [--status]
 #
 # Tracks word count, sessions, streaks. ADHD-friendly, no guilt.
@@ -159,9 +159,9 @@ date_yesterday() {
       ENTRY=$(grep "^| $DAY |" "$LOG_FILE" 2>/dev/null || true)
       if [[ -n "$ENTRY" ]]; then
         WORDS=$(echo "$ENTRY" | awk -F'|' '{print $3}' | tr -d ' ')
-        echo "     ✅ $DAY — $WORDS words"
+        echo "     ✅ $DAY - $WORDS words"
       else
-        echo "     ❌ $DAY — no writing"
+        echo "     ❌ $DAY - no writing"
       fi
     fi
   done

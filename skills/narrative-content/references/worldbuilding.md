@@ -1,6 +1,6 @@
 # Worldbuilding - Narrative Content Reference
 
-Guía para construir mundos de ficción creíbles.
+Guide to building believable fictional worlds.
 
 ## Worldbuilding Bible Structure
 
@@ -76,6 +76,6 @@ Guía para construir mundos de ficción creíbles.
 
 ## Related
 
-- [SKILL.md](../SKILL.md) - Workflow principal
-- [Narrative Structures](./narrative-structures.md) - Estructuras narrativas
-- [Character Development](./character-development.md) - Fichas de personajes
+- [SKILL.md](../SKILL.md) - Main workflow
+- [Narrative Structures](./narrative-structures.md) - Narrative structures
+- [Character Development](./character-development.md) - Character sheets

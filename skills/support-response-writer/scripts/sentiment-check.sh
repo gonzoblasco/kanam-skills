@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# sentiment-check.sh — Quick tone/sentiment analysis of a support response draft
+# sentiment-check.sh - Quick tone/sentiment analysis of a support response draft
 # Usage: ./sentiment-check.sh <file> or echo "text" | ./sentiment-check.sh
 
 set -euo pipefail
@@ -26,32 +26,32 @@ RED_FLAGS=0
 
 # Passive-aggressive patterns
 if echo "$TEXT" | grep -qiE 'as (I|we) (said|mentioned|stated)'; then
-  echo "🔴 Passive-aggressive: 'as I said/mentioned' — sounds condescending"
+  echo "🔴 Passive-aggressive: 'as I said/mentioned' - sounds condescending"
   RED_FLAGS=$((RED_FLAGS + 1))
 fi
 
 if echo "$TEXT" | grep -qiE 'actually|unfortunately|regrettably'; then
-  echo "🟡 Softening words: 'actually/unfortunately' — can sound dismissive"
+  echo "🟡 Softening words: 'actually/unfortunately' - can sound dismissive"
   RED_FLAGS=$((RED_FLAGS + 1))
 fi
 
 if echo "$TEXT" | grep -qiE 'you (should|must|need to|have to)'; then
-  echo "🔴 Demanding: 'you should/must/need to' — sounds bossy"
+  echo "🔴 Demanding: 'you should/must/need to' - sounds bossy"
   RED_FLAGS=$((RED_FLAGS + 1))
 fi
 
 if echo "$TEXT" | grep -qiE "that's (not|never) (our|my) (problem|fault|responsibility)"; then
-  echo "🔴 Defensive: 'not our problem/fault' — never say this"
+  echo "🔴 Defensive: 'not our problem/fault' - never say this"
   RED_FLAGS=$((RED_FLAGS + 1))
 fi
 
 if echo "$TEXT" | grep -qiE 'calm down|relax|chill|take it easy'; then
-  echo "🔴 Inflammatory: 'calm down/relax' — will escalate anger"
+  echo "🔴 Inflammatory: 'calm down/relax' - will escalate anger"
   RED_FLAGS=$((RED_FLAGS + 1))
 fi
 
 if echo "$TEXT" | grep -qiE 'per our (policy|terms|agreement)'; then
-  echo "🟡 Policy-speak: 'per our policy' — sounds robotic, rephrase"
+  echo "🟡 Policy-speak: 'per our policy' - sounds robotic, rephrase"
   RED_FLAGS=$((RED_FLAGS + 1))
 fi
 

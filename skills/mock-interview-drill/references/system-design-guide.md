@@ -1,97 +1,97 @@
 # System Design Guide - Mock Interview Drill
 
-Guía para entrevistas de system design. Cómo estructurar la respuesta, qué preguntar, trade-offs comunes.
+Guide for system design interviews. How to structure the answer, what to ask, common trade-offs.
 
-## Estructura de la respuesta
+## Answer structure
 
-Usá este framework para cualquier pregunta de system design:
+Use this framework for any system design question:
 
 ### 1. Clarify Requirements (2-3 min)
 
-No arranques a diseñar. Primero entendé qué te piden:
+Don't start designing. First understand what they're asking:
 
 **Functional requirements:**
-- ¿Qué features necesita el sistema?
-- ¿Quiénes son los usuarios?
-- ¿Qué acciones pueden hacer?
+- What features does the system need?
+- Who are the users?
+- What actions can they take?
 
 **Non-functional requirements:**
-- ¿Cuántos usuarios? (DAU, MAU, concurrentes)
-- ¿Latencia esperada?
-- ¿Disponibilidad? (99.9%, 99.99%)
-- ¿Consistencia o disponibilidad? (CP vs AP)
+- How many users? (DAU, MAU, concurrent)
+- Expected latency?
+- Availability? (99.9%, 99.99%)
+- Consistency or availability? (CP vs AP)
 
-**Ejemplo:**
+**Example:**
 > "Before I start, let me clarify: is this a real-time chat or async messaging? How many DAU are we targeting? Do we need message persistence?"
 
 ### 2. High-Level Design (5 min)
 
-Dibujá la arquitectura general:
+Sketch the general architecture:
 
 - **Client** → **Load Balancer** → **API Gateway** → **Services** → **Database**
-- Explicá cada componente a alto nivel
-- No entres en detalles todavía
+- Explain each component at a high level
+- Don't go into details yet
 
 ### 3. Deep Dive (10-15 min)
 
-Elegí 1-2 componentes y profundizá:
+Choose 1-2 components and go deeper:
 
-- **Database schema** - tablas, índices, particionamiento
-- **API design** - endpoints, métodos, payloads
-- **Data flow** - cómo viajan los datos entre componentes
-- **Caching** - qué cacheás, dónde, por cuánto tiempo
+- **Database schema** - tables, indexes, partitioning
+- **API design** - endpoints, methods, payloads
+- **Data flow** - how data travels between components
+- **Caching** - what you cache, where, for how long
 
 ### 4. Trade-offs & Edge Cases (5 min)
 
-- **Trade-offs:** ¿Por qué elegiste X sobre Y?
-- **Edge cases:** ¿Qué pasa si un servicio cae? ¿Y si hay pico de tráfico?
-- **Monitoring:** ¿Cómo sabés que funciona?
+- **Trade-offs:** Why did you choose X over Y?
+- **Edge cases:** What happens if a service goes down? What about a traffic spike?
+- **Monitoring:** How do you know it works?
 
 ---
 
-## Preguntas por seniority
+## Questions by seniority
 
 ### Junior (< 3 years)
 - "Design a URL shortener" (tinyurl)
 - "Design a rate limiter"
 - "Design a chat system for 2 users"
 
-**Qué evaluar:** Entendimiento básico de client-server, APIs, databases.
+**What to evaluate:** Basic understanding of client-server, APIs, databases.
 
 ### Mid (3-6 years)
 - "Design a real-time chat system" (WhatsApp)
 - "Design a news feed" (Facebook, Twitter)
 - "Design a ride-sharing system" (Uber)
 
-**Qué evaluar:** Capacidad de escalar, caching, particionamiento, trade-offs.
+**What to evaluate:** Ability to scale, caching, partitioning, trade-offs.
 
 ### Senior (6+ years)
 - "Design YouTube/Netflix" (video streaming)
 - "Design a distributed key-value store"
 - "Design a payment system"
 
-**Qué evaluar:** Consistencia distribuida, fault tolerance, CAP theorem, cost optimization.
+**What to evaluate:** Distributed consistency, fault tolerance, CAP theorem, cost optimization.
 
 ---
 
-## Trade-offs comunes
+## Common trade-offs
 
-| Decisión | Pro | Contra |
+| Decision | Pro | Against |
 |---|---|---|
-| **SQL vs NoSQL** | SQL: consistencia, joins, transacciones | NoSQL: escalabilidad horizontal, schemaless |
-| **Monolith vs Microservices** | Monolith: simple, rápido de desarrollar | Microservices: escalado independiente, desacople |
-| **Sync vs Async** | Sync: simple, consistente | Async: resiliente, scalable |
-| **Cache (Redis) vs DB** | Cache: rápido, baja latencia | DB: durable, consistente |
-| **Read replicas vs Sharding** | Replicas: simple, buena para read-heavy | Sharding: escala writes, complejo |
-| **Strong vs Eventual consistency** | Strong: predecible, simple | Eventual: disponible, scalable |
+| **SQL vs NoSQL** | SQL: consistency, joins, transactions | NoSQL: horizontal scalability, schemaless |
+| **Monolith vs Microservices** | Monolith: simple, fast to develop | Microservices: independent scaling, decoupling |
+| **Sync vs Async** | Sync: simple, consistent | Async: resilient, scalable |
+| **Cache (Redis) vs DB** | Cache: fast, low latency | DB: durable, consistent |
+| **Read replicas vs Sharding** | Replicas: simple, good for read-heavy | Sharding: scales writes, complex |
+| **Strong vs Eventual consistency** | Strong: predictable, simple | Eventual: available, scalable |
 
 ---
 
 ## Database design patterns
 
 ### Normalization vs Denormalization
-- **Normalized:** Menos redundancia, más joins
-- **Denormalized:** Más rápido de leer, más storage
+- **Normalized:** Less redundancy, more joins
+- **Denormalized:** Faster reads, more storage
 
 ### Indexing
 - **Primary key:** Unique, clustered
@@ -108,12 +108,12 @@ Elegí 1-2 componentes y profundizá:
 
 ## Caching strategies
 
-| Strategy | Cómo funciona | Cuándo usarlo |
+| Strategy | How it works | When to use it |
 |---|---|---|
-| **Cache Aside** | App checkea cache primero, miss → DB → populate cache | Lecturas frecuentes, writes ocasionales |
-| **Write Through** | Escribe en cache y DB simultáneamente | Datos que siempre deben estar en cache |
-| **Write Behind** | Escribe en cache, después asíncrono a DB | Alta throughput de writes |
-| **Refresh Ahead** | Cache se refresca antes de expirar | Datos predecibles, latencia crítica |
+| **Cache Aside** | App checks cache first, miss → DB → populate cache | Frequent reads, occasional writes |
+| **Write Through** | Writes to cache and DB simultaneously | Data that must always be in cache |
+| **Write Behind** | Writes to cache, then asynchronously to DB | High write throughput |
+| **Refresh Ahead** | Cache refreshes before expiring | Predictable data, critical latency |
 
 ---
 
@@ -129,7 +129,7 @@ Elegí 1-2 componentes y profundizá:
 
 ## Related
 
-- [SKILL.md](../SKILL.md) - Workflow principal
-- [Behavioral Questions](./behavioral-questions.md) - Banco de preguntas behavioral
-- [Case Frameworks](./case-frameworks.md) - Para case interviews
-- [Preparation Guide](./preparation-guide.md) - Qué estudiar antes
+- [SKILL.md](../SKILL.md) - Main workflow
+- [Behavioral Questions](./behavioral-questions.md) - Behavioral question bank
+- [Case Frameworks](./case-frameworks.md) - For case interviews
+- [Preparation Guide](./preparation-guide.md) - What to study before

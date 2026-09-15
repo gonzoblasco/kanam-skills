@@ -1,191 +1,189 @@
 ---
 name: "content-serializer"
-description: "Convierte contenido (cursos, blog posts, docs) en posts sociales semanales multi-plataforma para LinkedIn y X."
+description: "Convert content (courses, blog posts, docs) into weekly multi-platform social posts for LinkedIn and X."
 metadata:
   category: Content
   tags:
-    - contenido
+    - content
     - linkedin
     - twitter
     - x
-    - serie
+    - series
     - posts
     - tutorial
 user-invocable: false
 ---
 
-# Workflow: Content Serializer - Contenido técnico a serie semanal
+# Workflow: Content Serializer - Technical content into a weekly series
 
-## Propósito
+## Purpose
 
-Convertir contenido técnico que ya existe (un curso, un blog, documentación) en una **serie de posts semanales** para **LinkedIn** y **X**, con formato adaptado por plataforma, calendario de publicación y métricas de ajuste.
+Convert technical content that already exists (a course, a blog, documentation) into a **weekly post series** for **LinkedIn** and **X**, with per-platform format, publishing calendar and adjustment metrics.
 
-No es para generar contenido de cero - es para **serializar material que ya tenés** (el bootcamp, un tutorial, tus docs) en presencia pública consistente.
+It's not for generating content from scratch - it's for **serializing material you already have** (the bootcamp, a tutorial, your docs) into consistent public presence.
 
-## Cuándo usarlo
+## When to use it
 
-- Tenés un curso/tutorial/bootcamp terminado y querés publicarlo como serie
-- Querés convertir documentación o notas en posts semanales
-- Querés posicionarte publicando contenido técnico de forma sostenida
+- You have a finished course/tutorial/bootcamp and want to publish it as a series
+- You want to turn documentation or notes into weekly posts
+- You want to position yourself by publishing technical content sustainably
 
-## Filosofía
+## Philosophy
 
-> Publicar no es "subir contenido" - es una conversación semanal con tu audiencia.
+> Publishing isn't "uploading content" - it's a weekly conversation with your audience.
 
-El objetivo no es "postear por postear": es construir una serie con **arco**, donde cada post se apoya en el anterior y engancha al siguiente. La consistencia semanal gana sobre el post viral aislado.
+The goal is not "posting for the sake of posting": it's building a series with an **arc**, where each post leans on the previous one and hooks into the next. Weekly consistency beats the isolated viral post.
 
 ---
 
-## Fase 0: Tono de marca personal
+## Phase 0: Personal brand voice
 
-**Cuándo:** Siempre. Antes de escribir cualquier post, tenés que saber **quién habla**. Es tu voz, no la de un ghostwriter genérico.
+**When:** Always. Before writing any post, you must know **who is speaking**. It's your voice, not a generic ghostwriter's.
 
-### Tu voz (personal)
+### Your voice (the user)
 
-- **Directa y honesta, sin vueltas.** Decís lo que pensás. No adornás para sonar más "profesional" - la honestidad ES tu profesionalismo.
-- **Suena a persona, no a manual de programación.** Nada de jerga corporativa ni tono de documentación técnica. Escribís como hablás.
-- **Primera persona real.** "Construí", "encontré un bug", "me costó". No "se construye", no "uno encuentra".
-- **Suelto y natural.** Frases cortas. Sin relleno. Que se lea como un dev contando algo, no como un comunicado.
-- **Con opinión.** Tenés criterio y lo mostrás. Preferís cosas, encontrás cosas aburridas, disentís. Eso te hace humano y te diferencia.
-- **Documentás decisiones, no solo código.** Contás el "porqué", no solo el "qué hice". Eso es lo que te posiciona como senior.
+- **Direct and honest, no beating around the bush.** You say what you think. You don't dress it up to sound more "professional" - honesty IS your professionalism.
+- **Sounds like a person, not a programming manual.** No corporate jargon or technical documentation tone. You write the way you talk.
+- **Real first person.** "I built", "I found a bug", "it cost me". Not "it is built", not "one finds".
+- **Loose and natural.** Short sentences. No filler. It should read like a dev telling a story, not like a press release.
+- **With opinions.** You have judgment and you show it. You prefer some things, find others boring, disagree. That makes you human and sets you apart.
+- **You document decisions, not just code.** You tell the "why", not only the "what I did". That's what positions you as senior.
 
-### Regla de oro del tono
+### Golden rule of tone
 
-> **La voz es la base, pero NO es rígida - se adapta a la ocasión.**
+> **The voice is the foundation, but it's NOT rigid - it adapts to the occasion.**
 
-El tono de marca personal no es una camisa de fuerza. Se modula según el tipo de post:
+The personal brand tone is not a straitjacket. It modulates based on the post type:
 
-| Ocasión | Cómo suena tu voz |
+| Occasion | How your voice sounds |
 |---------|-------------------|
-| **Deep-dive técnico** (cómo resolviste X) | Directo, concreto, con evidencia. La honestidad sobre el bug que encontraste vale oro. |
-| **Anuncio / lanzamiento** (el bootcamp, un release) | Entusiasmo medido, sin hype falso. "Armé esto" en vez de "¡Mira este INCREÍBLE proyecto!". |
-| **Thought-leadership / opinión** (una lección, una postura) | Provocador pero sin clickbait barato. Afirmación + evidencia + por qué importa. |
-| **Pedido / CTA** (¿te sirve?, seguí la serie) | Directo y genuino. Una sola pregunta clara, sin suplicar. |
+| **Technical deep-dive** (how you solved X) | Direct, concrete, with evidence. Honesty about the bug you found is gold. |
+| **Announcement / launch** (the bootcamp, a release) | Measured enthusiasm, no fake hype. "I built this" instead of "Look at this INCREDIBLE project!". |
+| **Thought-leadership / opinion** (a lesson, a stance) | Provocative but without cheap clickbait. Claim + evidence + why it matters. |
+| **Request / CTA** (is it useful to you?, follow the series) | Direct and genuine. A single clear question, no begging. |
 
-**Reglas duras del tono (no negociables):**
-- **Nunca guión largo (-).** Usá siempre guión común (-). El guión largo no está en el teclado y delata que no es un dev escribiendo. (USER.md)
-- **Nada de "Great question!" ni "I'd be happy to help!".** Esa calidez falsa de chatbot te hace sonar a bot.
-- **Nada de "en este post voy a enseñarte...".** Contalo, no lo anuncies.
-- **No te des la razón solo por ser vos.** Si algo falló, decilo. La vulnerabilidad técnica (encontré un bug, me equivoqué) es tu mayor activo de credibilidad.
+**Hard tone rules (non-negotiable):**
+- **Never em dash (-).** Always use plain hyphen (-). The em dash is not on the keyboard and gives away that it's not a dev writing. (USER.md)
+- **No "Great question!" or "I'd be happy to help!".** That fake chatbot warmth makes you sound like a bot.
+- **No "in this post I'm going to teach you...".** Tell it, don't announce it.
+- **Don't give yourself credit just for being you.** If something failed, say it. Technical vulnerability (I found a bug, I got it wrong) is your biggest credibility asset.
 
-### Check de tono antes de publicar
+### Tone check before publishing
 
-Releé el post y preguntate:
-- [ ] ¿Suena a vos, o a un manual de programación?
-- [ ] ¿Hay algún guión largo (-) que deba ser guión común (-)?
-- [ ] ¿Está la lección/opinión, o solo el "qué hice"?
-- [ ] ¿Está adaptado a la ocasión (deep-dive vs anuncio vs opinión), o es todo igual?
-
----
-
-## Fase 1: Inventario del contenido fuente
-
-**Cuándo:** Tenés el material. Antes de escribir un solo post, sabé qué tenés.
-
-1. **Listá las unidades** de tu contenido. Para un curso: los niveles/módulos/capítulos. Para un blog: los artículos. Para docs: las secciones grandes.
-
-2. **Para cada unidad, extraé** (anotá en una tabla):
-   - **Tema** - de qué trata
-   - **Un insight / lección** - el "porqué" que vale la pena compartir
-   - **Una pieza de evidencia** - un ejemplo, un resultado, un bug encontrado
-   - **Un gancho posible** - por qué alguien lo leería
-
-3. **Marcá el arco narrativo** - las unidades no son independientes: forman una progresión (en el bootcamp: de generar código a probar sistemas completos). Ese arco es tu serie.
-
-> 💡 El insight no es "qué hace el nivel" - es *la lección que aprendiste*. En el bootcamp: "un validador que nunca viste fallar no te protege de nada". Eso es lo que se comparte, no el detalle técnico.
+Re-read the post and ask yourself:
+- [ ] Does it sound like the user, or like a programming manual?
+- [ ] Is there any em dash (-) that should be a plain hyphen (-)?
+- [ ] Is the lesson/opinion there, or only the "what I did"?
+- [ ] Is it adapted to the occasion (deep-dive vs announcement vs opinion), or is it all the same?
 
 ---
 
-## Fase 2: Adaptación por plataforma
+## Phase 1: Source content inventory
 
-**Cuándo:** Tenés el inventario. Cada unidad se convierte en 1+ posts, con formato distinto por plataforma.
+**When:** You have the material. Before writing a single post, know what you have.
 
-### LinkedIn - storytelling + valor
+1. **List the units** of your content. For a course: the levels/modules/chapters. For a blog: the articles. For docs: the major sections.
 
-- **Largo:** 150-300 palabras. Post + línea de cierre.
-- **Estructura:**
-  1. **Hook** (1 línea) - la lección/insight, en primera persona o como afirmación provocadora
-  2. **Setup** (2-3 líneas) - contexto: qué estaba construyendo
-  3. **Desarrollo** (3-6 líneas) - el "cómo", con la evidencia concreta
-  4. **Lección** (2-3 líneas) - el aprendizaje universal, aplicable fuera del contexto
-  5. **CTA / cierre** (1 línea) - pregunta, invitación, o "próximo nivel"
-- **Tono:** tu voz de marca personal (Fase 0), modulada por la ocasión.
-- **Hashtags:** 3-5 al final, relevantes al tema (#AIEngineering, #NodeJS, etc.)
+2. **For each unit, extract** (note it in a table):
+   - **Topic** - what it's about
+   - **An insight / lesson** - the "why" worth sharing
+   - **A piece of evidence** - an example, a result, a bug found
+   - **A possible hook** - why someone would read it
 
-### X - conciso + hilo
+3. **Mark the narrative arc** - the units aren't independent: they form a progression (in the bootcamp: from generating code to testing complete systems). That arc is your series.
 
-- **Post individual:** máx 280 caracteres. Un solo insight, cortante.
-- **Hilo:** 4-8 posts. Gancho en el primero, detalle técnico en los del medio, lección + CTA en el último.
-- **Estructura de hilo:**
-  1. **Post 1 (gancho):** la afirmación que genera curiosidad ("Construí un sistema de microservicios con IA. El bug más caro no estaba en el código - estaba en el validador.")
-  2. **Posts 2-5 (desarrollo):** pasos, evidencia, datos. Cada post auto-contenido pero con continuidad.
-  3. **Post final (lección + CTA):** el insight + pregunta o invitación a seguir la serie.
-- **Regla:** cada post del hilo debe tener sentido por sí solo (la gente lo lee suelto al hacer scroll).
-- **Sin hashtags spam:** máx 1-2, o ninguno.
+> 💡 The insight isn't "what the level does" - it's *the lesson you learned*. In the bootcamp: "a validator you never saw fail protects you from nothing". That's what gets shared, not the technical detail.
 
-### Tabla de adaptación (resumen)
+---
 
-| Dimensión | LinkedIn | X |
+## Phase 2: Per-platform adaptation
+
+**When:** You have the inventory. Each unit becomes 1+ posts, with different format per platform.
+
+### LinkedIn - storytelling + value
+
+- **Length:** 150-300 words. Post + closing line.
+- **Structure:**
+  1. **Hook** (1 line) - the lesson/insight, in first person or as a provocative claim
+  2. **Setup** (2-3 lines) - context: what you were building
+  3. **Development** (3-6 lines) - the "how", with concrete evidence
+  4. **Lesson** (2-3 lines) - the universal takeaway, applicable outside the context
+  5. **CTA / closing** (1 line) - question, invitation, or "next level"
+- **Tone:** your personal brand voice (Phase 0), modulated by the occasion.
+- **Hashtags:** 3-5 at the end, relevant to the topic (#AIEngineering, #NodeJS, etc.)
+
+### X - concise + thread
+
+- **Single post:** max 280 characters. One sharp insight.
+- **Thread:** 4-8 posts. Hook in the first, technical detail in the middle ones, lesson + CTA in the last.
+- **Thread structure:**
+  1. **Post 1 (hook):** the claim that sparks curiosity ("I built a microservices system with AI. The most expensive bug wasn't in the code - it was in the validator.")
+  2. **Posts 2-5 (development):** steps, evidence, data. Each post self-contained but with continuity.
+  3. **Final post (lesson + CTA):** the insight + question or invitation to follow the series.
+- **Rule:** each post in the thread must make sense on its own (people read it standalone while scrolling).
+- **No hashtag spam:** max 1-2, or none.
+
+### Adaptation table (summary)
+
+| Dimension | LinkedIn | X |
 |-----------|----------|---|
-| Formato | Post 150-300 palabras | Hilo 4-8 posts |
-| Tono | Storytelling + valor | Cortante, directo |
-| Hook | Primera persona, provocador | Curiosidad, afirmación |
-| Hashtags | 3-5 al final | 0-2 |
-| CTA | Pregunta o invitación | Pregunta o "seguí la serie" |
+| Format | 150-300 word post | 4-8 post thread |
+| Tone | Storytelling + value | Sharp, direct |
+| Hook | First person, provocative | Curiosity, claim |
+| Hashtags | 3-5 at the end | 0-2 |
+| CTA | Question or invitation | Question or "follow the series" |
 
 ---
 
-## Fase 3: Calendario semanal
+## Phase 3: Weekly calendar
 
-**Cuándo:** Tenés los posts adaptados. Organizá la publicación.
+**When:** You have the adapted posts. Organize the publishing.
 
-1. **Definí el ritmo.** Default: **1 unidad de contenido por semana** (1 post LinkedIn + 1 hilo X por unidad). Ajustable.
+1. **Define the rhythm.** Default: **1 content unit per week** (1 LinkedIn post + 1 X thread per unit). Adjustable.
 
-2. **Asigná fechas** en orden del arco narrativo. El bootcamp: semana 1 = nivel 1, semana 2 = nivel 2, etc.
+2. **Assign dates** in narrative arc order. The bootcamp: week 1 = level 1, week 2 = level 2, etc.
 
-3. **Creá el calendario** como tabla:
+3. **Create the calendar** as a table:
    ```
-   | Semana | Unidad | Tema | LinkedIn | X (hilo) | Posteado |
+   | Week | Unit | Topic | LinkedIn | X (thread) | Posted |
    |--------|--------|------|----------|----------|----------|
-   | 1 | Nivel 1 | Hello World | ✅ | ✅ | - |
-   | 2 | Nivel 2 | Prompts | ✅ | ✅ | - |
+   | 1 | Level 1 | Hello World | ✅ | ✅ | - |
+   | 2 | Level 2 | Prompts | ✅ | ✅ | - |
    ```
 
-4. **Bach de preparación:** escribí 2-3 semanas de posts por adelantado (buffer). Así la semana de publicación solo es "revisar y subir", no escribir bajo presión.
+4. **Prep batch:** write 2-3 weeks of posts in advance (buffer). That way the publishing week is only "review and post", not writing under pressure.
 
-> 💡 El buffer semanal es lo que hace sostenible la serie. Publicar es el hábito; escribir con anticipación es lo que lo permite.
+> 💡 The weekly buffer is what makes the series sustainable. Publishing is the habit; writing ahead is what enables it.
 
 ---
 
-## Fase 4: Publicación + métricas
+## Phase 4: Publishing + metrics
 
-**Cuándo:** Empezás a publicar. La serie se ajusta con datos, no con opiniones.
+**When:** You start publishing. The series adjusts with data, not opinions.
 
-### Antes de publicar cada post
-- **Releé en voz alta** - si no fluye, no va.
-- **Check de tono (Fase 0)** - ¿suena a vos y está adaptado a la ocasión?
-- **Check de insight** - ¿está la lección, o solo el "qué hice"?
+### Before publishing each post
+- **Re-read out loud** - if it doesn't flow, it doesn't go.
+- **Tone check (Phase 0)** - does it sound like the user and is it adapted to the occasion?
+- **Insight check** - is the lesson there, or only the "what I did"?
 
-### Métricas a trackear (por semana)
-- **LinkedIn:** impresiones, reacciones, comentarios. El comentario vale más que el like.
-- **X:** impresiones, likes, replies, retweets. El reply es la señal de conversación.
+### Metrics to track (per week)
+- **LinkedIn:** impressions, reactions, comments. A comment is worth more than a like.
+- **X:** impressions, likes, replies, retweets. A reply is the conversation signal.
 
-### Reglas de ajuste (semana a semana)
-- **Si un formato funciona** (muchos comentarios en LinkedIn, muchos replies en X) → repetilo la próxima semana.
-- **Si un post muere** → no es necesariamente mal contenido; puede ser el gancho. Cambiá el hook y reusá el cuerpo.
-- **Si la audiencia pide más de X tema** → adelantalo en el arco, atrasá el resto.
+### Adjustment rules (week to week)
+- **If a format works** (many comments on LinkedIn, many replies on X) -> repeat it next week.
+- **If a post dies** -> it's not necessarily bad content; it may be the hook. Change the hook and reuse the body.
+- **If the audience asks for more of topic X** -> move it forward in the arc, push the rest back.
 
 ---
 
 ## Outputs
 
-- Inventario de unidades (tema, insight, evidencia, gancho)
-- Posts LinkedIn (150-300 palabras c/u) + hilos X (4-8 posts c/u)
-- Calendario semanal con buffer de 2-3 semanas
-- Log de métricas + decisiones de ajuste
+- Unit inventory (topic, insight, evidence, hook)
+- LinkedIn posts (150-300 words each) + X threads (4-8 posts each)
+- Weekly calendar with a 2-3 week buffer
+- Metrics log + adjustment decisions
 
 ## Related Skills
 
-- [Copy Editing](../copy-editing): Revisión final de cada post antes de publicar
-- [Campaign Plan](../campaign-plan): Si además querés un brief de campaña completo (audiencia, canales, KPI)
-- [Narrative Content](../narrative-content): Si el contenido es ficción/narrativa (no técnico)
+- [Copy Editing](../copy-editing): Final review of each post before publishing

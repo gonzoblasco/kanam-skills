@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""analyze_codebase.py — Analyze codebase and generate architecture diagrams.
+"""analyze_codebase.py - Analyze codebase and generate architecture diagrams.
 
 Usage:
   python3 analyze_codebase.py /path/to/project

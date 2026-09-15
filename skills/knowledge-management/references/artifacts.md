@@ -1,45 +1,45 @@
-# Artefactos de Conocimiento - Referencia
+# Knowledge Artifacts - Reference
 
-## Estratégicos
+## Strategic
 
-| Archivo | Propósito | Dueño |
+| File | Purpose | Owner |
 |---|---|---|
-| `BRIEF.md` | Visión, problema, audiencia, objetivos del proyecto | Producto |
-| `EVALUATION.md` | Evaluación de alternativas, decisión de inversión | Producto / Tech Lead |
-| `DEFINITION.md` | Definición detallada del producto: features, alcance, criterios | Producto |
-| `ROADMAP.md` | Plan de entregas, milestones, dependencias | Producto / Engineering |
+| `BRIEF.md` | Vision, problem, audience, project goals | Product |
+| `EVALUATION.md` | Evaluation of alternatives, investment decision | Product / Tech Lead |
+| `DEFINITION.md` | Detailed product definition: features, scope, criteria | Product |
+| `ROADMAP.md` | Delivery plan, milestones, dependencies | Product / Engineering |
 
-## Arquitectura
+## Architecture
 
-| Archivo | Propósito | Dueño |
+| File | Purpose | Owner |
 |---|---|---|
-| `ARCHITECTURE.md` | Arquitectura del sistema, componentes, relaciones | Tech Lead |
-| `DATA_MODEL.md` | Modelo de datos, entidades, relaciones, flujos | Backend |
-| `DESIGN.md` | Decisiones de diseño, trade-offs, patrones | Engineering |
-| `docs/adr/` | Architecture Decision Records, decisiones técnicas | Engineering |
+| `ARCHITECTURE.md` | System architecture, components, relationships | Tech Lead |
+| `DATA_MODEL.md` | Data model, entities, relationships, flows | Backend |
+| `DESIGN.md` | Design decisions, trade-offs, patterns | Engineering |
+| `docs/adr/` | Architecture Decision Records, technical decisions | Engineering |
 
-## Estado
+## Status
 
-| Archivo | Propósito | Dueño |
+| File | Purpose | Owner |
 |---|---|---|
-| `STATUS.md` | Estado actual del proyecto, qué está pasando | Engineering |
-| `TRACKER.md` | Tracking de tareas, issues, blockers | Engineering |
-| `HANDOFF.md` | Handoff entre sesiones, contexto retomado | Agentes |
+| `STATUS.md` | Current project state, what is happening | Engineering |
+| `TRACKER.md` | Task tracking, issues, blockers | Engineering |
+| `HANDOFF.md` | Handoff between sessions, resumed context | Agents |
 
-## Proyecto
+## Project
 
-| Archivo | Propósito | Dueño |
+| File | Purpose | Owner |
 |---|---|---|
-| `README.md` | Puerta de entrada al proyecto | Engineering |
-| `CHANGELOG.md` | Historial de cambios, versiones | Engineering |
-| `CONTRIBUTING.md` | Guía para contribuir, estándares | Engineering |
+| `README.md` | Project entrance point | Engineering |
+| `CHANGELOG.md` | Change history, versions | Engineering |
+| `CONTRIBUTING.md` | Contribution guide, standards | Engineering |
 
-## Memoria
+## Memory
 
-| Archivo | Propósito | Dueño |
+| File | Purpose | Owner |
 |---|---|---|
-| `memory/YYYY-MM-DD.md` | Registro diario de sesiones, decisiones, eventos | Agentes |
+| `memory/YYYY-MM-DD.md` | Daily record of sessions, decisions, events | Agents |
 
 ## Related
 
-- [SKILL.md](../SKILL.md) - Workflow principal
+- [SKILL.md](../SKILL.md) - Main workflow

@@ -4,75 +4,75 @@ metadata:
   category: "Life"
   tags:
     - adhd
-    - productividad
-    - planificacion
-    - salud-mental
-description: "Asistente de gestión de vida diaria para ADHD: planificación, desglose de tareas, gestión del tiempo y mantenimiento de rutinas."
+    - productivity
+    - planning
+    - mental-health
+description: "Daily life management assistant for ADHD: planning, task breakdown, time management and routine maintenance."
 user-invocable: false
 ---
 
 # Workflow: ADHD Assistant
 
-## Propósito
+## Purpose
 
-Proporcionar andamiaje externo para desafíos de función ejecutiva relacionados con ADHD. Ayuda a planificar, priorizar, desglosar tareas, gestionar el tiempo y mantener la regulación emocional.
+Provide external scaffolding for executive function challenges related to ADHD. Helps plan, prioritize, break down tasks, manage time and maintain emotional regulation.
 
-## Filosofía
+## Philosophy
 
 > Externalize everything. Small steps win. Progress over perfection.
 
-El ADHD no es un defecto de carácter. Es una diferencia neurológica que requiere sistemas externos, no fuerza de voluntad.
+ADHD is not a character flaw. It is a neurological difference that requires external systems, not willpower.
 
 ---
 
-# Cuándo usarlo
+# When to use it
 
-- Planificar el día
-- Desglosar tareas abrumadoras
-- Gestionar el tiempo (time blindness)
-- Superar la procrastinación
-- Sesiones de body doubling
-- Regulación emocional (shame, guilt, RSD)
-- Revisiones semanales
+- Planning the day
+- Breaking down overwhelming tasks
+- Managing time (time blindness)
+- Overcoming procrastination
+- Body doubling sessions
+- Emotional regulation (shame, guilt, RSD)
+- Weekly reviews
 
 ---
 
-# Fases
+# Phases
 
 ## 1. Daily Check-In (Morning)
 
-- Assessment: energía 1-10, estado de ánimo, executive function (alta/media/baja), deadlines
-- Morning brain dump: descargar todo antes de priorizar
-- Priority selection: 1-3 prioridades máximas alineadas a energy windows (no horas fijas)
-- Time blocks con transition buffers entre tareas
-- Dopamine-aware sequencing: alternar tareas difíciles con micro-recompensas
-- Output: plan del día (ver [Daily Planning reference](./references/daily-planning.md))
+- Assessment: energy 1-10, mood, executive function (high/medium/low), deadlines
+- Morning brain dump: download everything before prioritizing
+- Priority selection: 1-3 top priorities aligned to energy windows (not fixed hours)
+- Time blocks with transition buffers between tasks
+- Dopamine-aware sequencing: alternate difficult tasks with micro-rewards
+- Output: daily plan (see [Daily Planning reference](./references/daily-planning.md))
 
 ## 2. Task Breakdown
 
-Cuando el usuario está stuck:
-1. Clarificar el objetivo
-2. Identificar constraints
-3. Romper en micro-steps de 2-5 minutos
+When the user is stuck:
+1. Clarify the goal
+2. Identify constraints
+3. Break into micro-steps of 2-5 minutes
 4. Highlight "Next Action"
 
 ## 3. Time Management
 
-- Time blindness recovery: normalizar, re-calcular, ajustar
-- Visual timers y time-blocking
-- Gentle recovery cuando fallan los bloques
+- Time blindness recovery: normalize, re-calculate, adjust
+- Visual timers and time-blocking
+- Gentle recovery when blocks fail
 
 ## 4. Body Doubling
 
-- Sesiones de 25-50 min
-- Check-in al inicio, midpoint, final
-- Accountability sin juicio
+- Sessions of 25-50 min
+- Check-in at start, midpoint, end
+- Accountability without judgment
 
 ## 5. Emotional Support
 
-- Validar: "Esto es neurológico, no un defecto de carácter"
-- Reframing: distinguir "no hice la cosa" de "soy malo"
-- RSD support: nombrar, normalizar, crear espacio
+- Validate: "This is neurological, not a character flaw"
+- Reframing: distinguish "I didn't do the thing" from "I am bad"
+- RSD support: name it, normalize it, create space
 
 ## 6. End-of-Day Review
 
@@ -91,41 +91,41 @@ Cuando el usuario está stuck:
 
 # Outputs
 
-- Plan diario con time blocks
-- Checklist de micro-steps
-- Dopamine menu personalizado
+- Daily plan with time blocks
+- Micro-step checklist
+- Customized dopamine menu
 - Weekly review summary
-- Patrones de energía y productividad
+- Energy and productivity patterns
 
 ---
 
-# Principios
+# Principles
 
-- Externalizar todo (tiempo, tareas, prioridades, memoria)
-- Pasos pequeños: "abrir la laptop" es un primer paso válido
-- Progreso sobre perfección
-- Motivación basada en interés, no en importancia
-- Accountability gentil, sin presión
+- Externalize everything (time, tasks, priorities, memory)
+- Small steps: "open the laptop" is a valid first step
+- Progress over perfection
+- Motivation based on interest, not importance
+- Gentle accountability, without pressure
 
 ## Helper Scripts
 
-Scripts en `skills/adhd-assistant/scripts/`:
+Scripts in `skills/adhd-assistant/scripts/`:
 
-| Script | Uso |
+| Script | Usage |
 |---|---|
-| `pomodoro-timer.sh [minutos]` | Timer Pomodoro con notificaciones. Usar en Fase 3 (Time Management) y Fase 4 (Body Doubling). Default 25 minutos. |
+| `pomodoro-timer.sh [minutos]` | Pomodoro timer with notifications. Use in Phase 3 (Time Management) and Phase 4 (Body Doubling). Default 25 minutes. |
 
-## Referencias y templates
+## References and templates
 
-| Archivo | Uso |
+| File | Usage |
 |---|---|
-| `references/daily-planning.md` | Planning diario con energy windows, transition buffers, dopamine sequencing, shutdown ritual y recovery protocol (absorbe `adhd-daily-planner`) |
-| `references/dopamine-menu.md` | Menú de estímulos y micro-recompensas |
-| `templates/daily-plan.md` | Plantilla de plan diario |
-| `templates/focus-session.md` | Plantilla de sesión de focus |
-| `templates/task-breakdown.md` | Plantilla de desglose de tareas |
+| `references/daily-planning.md` | Daily planning with energy windows, transition buffers, dopamine sequencing, shutdown ritual and recovery protocol (absorbs `adhd-daily-planner`) |
+| `references/dopamine-menu.md` | Menu of stimuli and micro-rewards |
+| `templates/daily-plan.md` | Daily plan template |
+| `templates/focus-session.md` | Focus session template |
+| `templates/task-breakdown.md` | Task breakdown template |
 
 # Related Skills
 
-- [Session Lifecycle](../session-lifecycle): Para estructurar sesiones de trabajo
-- [Task Execution](../task-execution): Para ejecutar tareas desglosadas
+- [Session Lifecycle](../session-lifecycle): For structuring work sessions
+- [Task Execution](../planning-and-task-breakdown): For executing broken-down tasks

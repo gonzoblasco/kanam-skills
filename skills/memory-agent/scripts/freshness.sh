@@ -1,7 +1,7 @@
 #!/bin/bash
-# freshness.sh — Clasifica documentos por antigüedad
-# Uso: ./freshness.sh <file1> [file2] ...
-# Output: JSON con clasificación 🟢🟡🔴
+# freshness.sh - Classifies documents by age
+# Usage: ./freshness.sh <file1> [file2] ...
+# Output: JSON with 🟢🟡🔴 classification
 
 if [ $# -eq 0 ]; then
   echo '{"status":"error","error":"At least one file required"}'
@@ -22,13 +22,13 @@ for FILE in "$@"; do
 
   if [ "$AGE_DAYS" -le 30 ]; then
     STATUS="green"
-    LABEL="Vigente"
+    LABEL="Current"
   elif [ "$AGE_DAYS" -le 90 ]; then
     STATUS="yellow"
-    LABEL="Revisar"
+    LABEL="Review"
   else
     STATUS="red"
-    LABEL="Obsoleto"
+    LABEL="Outdated"
   fi
 
   if [ "$FIRST" = true ]; then

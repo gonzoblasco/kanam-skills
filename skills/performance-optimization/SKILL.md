@@ -4,54 +4,54 @@ metadata:
   category: "Workflow"
   tags:
     - performance
-    - optimizacion
+    - optimization
     - profiling
-description: "Workflow de Performance Optimization: análisis, profiling y optimización sistemática de frontend, backend, base de datos e infraestructura sin cambiar el comportamiento funcional."
+description: "Performance Optimization workflow: systematic analysis, profiling and optimization of frontend, backend, database and infrastructure without changing functional behavior."
 user-invocable: false
 ---
 
 # Workflow: Performance Optimization
 
-## Propósito
+## Purpose
 
-Mejorar el rendimiento del sistema mediante evidencia, medición y optimizaciones incrementales.
+Improve system performance through evidence, measurement and incremental optimizations.
 
-No desarrolla nuevas funcionalidades.
+Does not develop new features.
 
-No corrige bugs funcionales.
+Does not fix functional bugs.
 
-No persigue métricas arbitrarias.
+Does not chase arbitrary metrics.
 
-Su misión es eliminar cuellos de botella reales.
+Its mission is to remove real bottlenecks.
 
 ---
 
-# Filosofía
+# Philosophy
 
 > Measure. Understand. Optimize. Verify.
 
-Nunca optimizar por intuición.
+Never optimize by intuition.
 
-Nunca sacrificar mantenibilidad por micro-optimizaciones.
+Never sacrifice maintainability for micro-optimizations.
 
-Optimizar donde exista impacto medible.
-
----
-
-# Cuándo usarlo
-
-- Lighthouse bajo
-- tiempos de respuesta altos
-- consumo excesivo de CPU
-- consumo excesivo de memoria
-- consultas lentas
-- bundles grandes
-- degradación después de releases
-- crecimiento de usuarios
+Optimize where there is measurable impact.
 
 ---
 
-# Relación con otros workflows
+# When to use it
+
+- Low Lighthouse scores
+- high response times
+- excessive CPU usage
+- excessive memory usage
+- slow queries
+- large bundles
+- degradation after releases
+- user growth
+
+---
+
+# Relationship with other workflows
 
 Observability
 
@@ -73,43 +73,43 @@ Pre-Deploy QA
 
 ---
 
-# Dominios
+# Domains
 
-Ver [dominios de performance](./references/domains.md).
+See [performance domains](./references/domains.md).
 
 ---
 
-# Fases
+# Phases
 
 ## 1. Baseline
 
-Medir.
+Measure.
 
-Nunca comenzar optimizando.
+Never start by optimizing.
 
-Registrar:
+Record:
 
-- tiempos
-- consumo
-- métricas actuales
+- times
+- usage
+- current metrics
 
-Construir línea base.
+Build the baseline.
 
 ---
 
 ## 2. Profiling
 
-Encontrar cuellos de botella. Ver [herramientas de performance](./references/tools.md).
+Find bottlenecks. See [performance tools](./references/tools.md).
 
 ---
 
 ## 3. Bottleneck Analysis
 
-Clasificar.
+Classify.
 
 CPU
 
-Memoria
+Memory
 
 I/O
 
@@ -123,17 +123,17 @@ LLM
 
 Cache
 
-Identificar el cuello dominante.
+Identify the dominant bottleneck.
 
-Nunca optimizar varios al mismo tiempo.
+Never optimize several at the same time.
 
 ---
 
 ## 4. Optimization Strategy
 
-Elegir la intervención mínima.
+Choose the minimal intervention.
 
-Ejemplos:
+Examples:
 
 Frontend
 
@@ -153,9 +153,9 @@ Backend
 
 Database
 
-- índices
+- indexes
 - query rewrite
-- eliminar N+1
+- eliminate N+1
 
 AI
 
@@ -169,57 +169,57 @@ AI
 
 ## 5. Implementation Planning
 
-Definir:
+Define:
 
-impacto esperado
+expected impact
 
-riesgo
+risk
 
-esfuerzo
+effort
 
 rollback
 
-No escribir código.
+Do not write code.
 
-Generar plan.
+Generate a plan.
 
 ---
 
 ## 6. Verification
 
-Volver a medir.
+Measure again.
 
-Comparar contra baseline.
+Compare against baseline.
 
-Responder:
+Answer:
 
-¿Realmente mejoró?
+Did it really improve?
 
-¿Cuánto?
+By how much?
 
-¿Hubo regresiones?
+Were there regressions?
 
 ---
 
 ## 7. Cost / Benefit
 
-Evaluar.
+Evaluate.
 
-¿Cuánto costó optimizar?
+How much did optimizing cost?
 
-¿Cuánto mejoró?
+How much did it improve?
 
-¿Vale la pena?
+Is it worth it?
 
-Evitar optimizaciones prematuras.
+Avoid premature optimizations.
 
 ---
 
 ## 8. Knowledge Capture
 
-Actualizar:
+Update:
 
-ADRs (si cambia arquitectura)
+ADRs (if architecture changes)
 
 CHANGELOG
 
@@ -227,7 +227,7 @@ Performance Notes
 
 Engineering Knowledge
 
-Registrar benchmark antes/después.
+Record the before/after benchmark.
 
 ---
 
@@ -237,84 +237,84 @@ PERFORMANCE_REPORT.md
 
 Baseline
 
-Perfil de rendimiento
+Performance profile
 
-Cuellos de botella
+Bottlenecks
 
-Plan de optimización
+Optimization plan
 
-Benchmark Before / After
+Before / After Benchmark
 
-Recomendaciones
+Recommendations
 
 ---
 
 # Checklist
 
-¿Existe baseline?
+Is there a baseline?
 
-¿Existe profiling?
+Is there profiling?
 
-¿Hay evidencia?
+Is there evidence?
 
-¿Se identificó el cuello dominante?
+Was the dominant bottleneck identified?
 
-¿La mejora fue medida?
+Was the improvement measured?
 
-¿Se documentó?
+Was it documented?
 
-¿Hubo regresiones?
-
----
-
-# Decisiones
-
-Puede:
-
-✔ medir
-
-✔ perfilar
-
-✔ recomendar optimizaciones
-
-✔ priorizar cuellos de botella
-
-✔ generar benchmarks
-
-Nunca:
-
-✖ optimizar sin métricas
-
-✖ modificar comportamiento funcional
-
-✖ perseguir micro-optimizaciones
-
-✖ sacrificar legibilidad sin justificación
+Were there regressions?
 
 ---
 
-# Principios
+# Decisions
 
-La medición precede a la optimización.
+May:
 
-Optimizar el cuello dominante produce el mayor impacto.
+✔ measure
 
-Una mejora no medida es una opinión.
+✔ profile
 
-La simplicidad sigue siendo un requisito de rendimiento.
+✔ recommend optimizations
 
-El mejor código es el que no necesita ejecutarse.
+✔ prioritize bottlenecks
+
+✔ generate benchmarks
+
+Never:
+
+✖ optimize without metrics
+
+✖ modify functional behavior
+
+✖ chase micro-optimizations
+
+✖ sacrifice readability without justification
+
+---
+
+# Principles
+
+Measurement precedes optimization.
+
+Optimizing the dominant bottleneck produces the greatest impact.
+
+An unmeasured improvement is an opinion.
+
+Simplicity is still a performance requirement.
+
+The best code is the code that does not need to run.
 
 ## Helper Scripts
 
-Scripts en `skills/performance-optimization/scripts/`:
+Scripts in `skills/performance-optimization/scripts/`:
 
-| Script | Uso |
+| Script | Usage |
 |---|---|
-| `benchmark.sh` | Corre benchmarks automatizados y compara antes/después. Usar en Fase 1 (Baseline) y Fase 7 (Verify). |
-| `lighthouse-check.sh <url>` | Corre Lighthouse CI contra una URL y genera reporte. Usar en Fase 2 (Profiling) y Fase 7. |
+| `benchmark.sh` | Runs automated benchmarks and compares before/after. Use in Phase 1 (Baseline) and Phase 7 (Verify). |
+| `lighthouse-check.sh <url>` | Runs Lighthouse CI against a URL and generates a report. Use in Phase 2 (Profiling) and Phase 7. |
 
 ## Related Skills
 
-- [Observability](../observability): Para medir y monitorear performance
-- [Debug Investigation](../debug-investigation): Para investigar causas de degradación
+- [Observability](../observability-and-instrumentation): To measure and monitor performance
+- [Debug Investigation](../debugging-and-error-recovery): To investigate causes of degradation

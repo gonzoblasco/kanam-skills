@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# secret-scan.sh — Scan git history for leaked secrets
+# secret-scan.sh - Scan git history for leaked secrets
 # Usage: ./secret-scan.sh [--repo <path>] [--branch <branch>] [--severity low|medium|high]
 
 set -euo pipefail

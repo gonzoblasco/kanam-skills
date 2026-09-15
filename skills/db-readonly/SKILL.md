@@ -1,35 +1,34 @@
 ---
 name: "db-readonly"
-description: "Queries read-only seguras a PostgreSQL y MySQL"
+description: "Safe read-only queries for PostgreSQL and MySQL"
 ---
 
 # db-readonly
 
-## Descripción
-Ejecuta consultas SELECT, WITH y EXPLAIN contra bases de datos PostgreSQL o MySQL. Bloquea INSERT, UPDATE, DELETE, DROP y ALTER para prevenir modificaciones accidentales. Exporta resultados a CSV, TSV o JSON.
+## Description
+Executes SELECT, WITH and EXPLAIN queries against PostgreSQL or MySQL databases. Blocks INSERT, UPDATE, DELETE, DROP and ALTER to prevent accidental modifications. Exports results to CSV, TSV or JSON.
 
-## Cuándo usarlo
-- Para inspeccionar schemas de tablas antes de escribir una migración
-- Para contar rows y verificar que un import de datos se completó
-- Para samplear registros y debuggear un issue reportado
-- Para exportar resultados de queries a CSV para reportes
-- Para ejecutar EXPLAIN en queries lentas y diagnosticar performance
+## When to Use It
+- To inspect table schemas before writing a migration
+- To count rows and verify that a data import completed
+- To sample records and debug a reported issue
+- To export query results to CSV for reports
+- To run EXPLAIN on slow queries and diagnose performance
 
 ## Workflow
-1. Configurar variables de entorno con credenciales de DB (PGHOST, PGDATABASE, etc.)
-2. Escribir la consulta SELECT/WITH/EXPLAIN
-3. Ejecutar db-readonly con la consulta
-4. Recibir resultados en el formato solicitado
+1. Set environment variables with DB credentials (PGHOST, PGDATABASE, etc.)
+2. Write the SELECT/WITH/EXPLAIN query
+3. Run db-readonly with the query
+4. Receive results in the requested format
 
-## Tooling relacionado
+## Related Tooling
 
-| Skill / Script | Uso |
+| Skill / Script | Usage |
 |---|---|
-| `sql-insight/scripts/sql_query_helper.py` | Optimizar queries lentas, interpretar EXPLAIN, y extraer schema en formato compacto. |
-| `observability/scripts/metrics-report.sh` | Generar reportes de metricas a partir de resultados exportados. |
-| `performance-optimization/scripts/benchmark.sh` | Medir impacto de performance de queries. |
+| `sql-insight/scripts/sql_query_helper.py` | Optimize slow queries, interpret EXPLAIN, and extract schema in compact format. |
+| `performance-optimization/scripts/benchmark.sh` | Measure the performance impact of queries. |
 
-## Notas
-- Bloquea writes a nivel skill, no solo a nivel de promesa
-- Requiere configurar conexión vía environment variables
-- Soporta múltiples conexiones (PostgreSQL y MySQL)
+## Notes
+- Blocks writes at the skill level, not only at the promise level
+- Requires configuring the connection via environment variables
+- Supports multiple connections (PostgreSQL and MySQL)

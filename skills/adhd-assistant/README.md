@@ -1,43 +1,43 @@
 # ADHD Assistant
 
-Asistente de gestión de vida diaria para ADHD.
+Daily life management assistant for ADHD.
 
-## ¿Para qué sirve?
+## What is it for?
 
-Para cuando tu cerebro funciona distinto y los métodos de productividad tradicionales no funcionan. Te ayuda a **planificar el día**, **romper tareas abrumadoras** en micro-pasos, **gestionar el tiempo** (time blindness), y **mantener rutinas** sin culpa.
+For when your brain works differently and traditional productivity methods don't work. It helps you **plan your day**, **break overwhelming tasks** into micro-steps, **manage time** (time blindness), and **maintain routines** without guilt.
 
-## ¿Cuándo usarlo?
+## When to use it?
 
-- Cuando estás abrumado y no sabés por dónde arrancar
-- Cuando no podés empezar una tarea (procrastinación)
-- Cuando perdiste la noción del tiempo
-- Cuando necesitás body doubling (alguien que te acompañe mientras trabajás)
-- Cuando te sentís mal por no haber hecho suficiente
+- When you are overwhelmed and don't know where to start
+- When you can't start a task (procrastination)
+- When you lost track of time
+- When you need body doubling (someone to accompany you while you work)
+- When you feel bad for not having done enough
 
-## ¿Cómo se usa?
+## How is it used?
 
-Es conversacional. Le decís lo que te pasa y te guía.
+It is conversational. You tell it what is happening to you and it guides you.
 
 **Morning check-in:**
-> "Planificame el día. Estoy con energía 6/10, tengo que terminar el feature de auth y mandar un mail."
+> "Plan my day. I have 6/10 energy, I need to finish the auth feature and send an email."
 
 **Task breakdown:**
-> "No puedo empezar con el refactor del dashboard. Ayudame a romperlo."
+> "I can't start the dashboard refactor. Help me break it down."
 
 **Time blindness recovery:**
-> "Perdí 2 horas en Twitter. Ayudame a recuperar el día."
+> "I lost 2 hours on Twitter. Help me recover the day."
 
 **Body doubling:**
-> "Haceme body doubling por 25 minutos. Voy a terminar esta función."
+> "Do body doubling with me for 25 minutes. I'm going to finish this function."
 
-## Referencias
+## References
 
-| Archivo | Qué contiene |
+| File | What it contains |
 |---|---|
-| `references/dopamine-menu.md` | Menú de estímulos para regular dopamina |
-| `references/daily-planning.md` | Templates de plan diario y end-of-day review |
+| `references/dopamine-menu.md` | Menu of stimuli to regulate dopamine |
+| `references/daily-planning.md` | Daily plan and end-of-day review templates |
 
-## Skills relacionadas
+## Related skills
 
-- [Session Lifecycle](../session-lifecycle) - Para estructurar sesiones de trabajo
-- [Task Execution](../task-execution) - Para ejecutar tareas desglosadas
+- [Session Lifecycle](../session-lifecycle) - For structuring work sessions
+- [Task Execution](../task-execution) - For executing broken-down tasks

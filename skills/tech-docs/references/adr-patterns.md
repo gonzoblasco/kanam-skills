@@ -1,6 +1,6 @@
 # ADR Patterns - Technical Documentation Reference
 
-Patrones comunes de Architecture Decision Records.
+Common Architecture Decision Record patterns.
 
 ## ADR Template
 
@@ -72,6 +72,6 @@ graph LR
 
 ## Related
 
-- [SKILL.md](../SKILL.md) - Workflow principal
-- [Architecture Diagrams](./architecture-diagrams.md) - Diagramas C4
-- [CHANGELOG Guide](./changelog-guide.md) - Guía de CHANGELOG
+- [SKILL.md](../SKILL.md) - Main workflow
+- [Architecture Diagrams](./architecture-diagrams.md) - C4 diagrams
+- [CHANGELOG Guide](./changelog-guide.md) - CHANGELOG guide

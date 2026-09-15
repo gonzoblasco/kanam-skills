@@ -3,82 +3,81 @@ name: "tech-docs"
 metadata:
   category: "Content"
   tags:
-    - documentacion
+    - documentation
     - adr
     - changelog
-description: "Workflow de Technical Documentation: ADRs, README, API docs, CHANGELOG, guías técnicas y diseño arquitectónico."
+description: "Technical Documentation workflow: ADRs, README, API docs, CHANGELOG, technical guides and architectural design."
 user-invocable: false
 ---
 
 # Workflow: Technical Documentation
 
-## Skills que reemplaza
+## Skills it replaces
 - `adr-framework`
 - `adr-sync`
 
-## Propósito
-Creación y gestión de documentación técnica de proyectos: ADRs, README, API docs, CHANGELOG, guías de contribución y diseño arquitectónico.
+## Purpose
+Creation and management of project technical documentation: ADRs, README, API docs, CHANGELOG, contribution guides and architectural design.
 
-## Fases
+## Phases
 
-### 1. Audiencia
-¿Quién lee estos docs? (devs del equipo, contributors externos, usuarios finales, stakeholders)
+### 1. Audience
+Who reads these docs? (team devs, external contributors, end users, stakeholders)
 
-### 2. Diseño Arquitectónico (pre-ADRs)
-Antes de documentar decisiones, diseñar la arquitectura:
-- **Diagramas C4/Mermaid** - contexto, contenedores, componentes, código
-- **Trade-offs** - evaluar opciones de stack, patrones, base de datos
-- **Análisis de dependencias** - salud del proyecto, versiones, compatibilidad
-- **Riesgos técnicos** - identificar temprano
+### 2. Architectural Design (pre-ADRs)
+Before documenting decisions, design the architecture:
+- **C4/Mermaid diagrams** - context, containers, components, code
+- **Trade-offs** - evaluate stack, pattern and database options
+- **Dependency analysis** - project health, versions, compatibility
+- **Technical risks** - identify them early
 
-### 3. Estructura
-Qué docs necesita el proyecto (README, API docs, guías, ADRs, CHANGELOG, CONTRIBUTING).
+### 3. Structure
+Which docs the project needs (README, API docs, guides, ADRs, CHANGELOG, CONTRIBUTING).
 
 ### 4. ADRs
-Crear o sincronizar decisiones arquitecturales con el formato estándar: contexto, decisión, consecuencias, alternativas consideradas.
+Create or sync architectural decisions using the standard format: context, decision, consequences, alternatives considered.
 
-Referencia de patrones:
-- **Hexagonal Architecture** - puertos y adaptadores, dependencias inward
-- **Clean Architecture** - capas, reglas de dependencia
-- **Domain-Driven Design** - bounded contexts, entidades, value objects
+Pattern reference:
+- **Hexagonal Architecture** - ports and adapters, inward dependencies
+- **Clean Architecture** - layers, dependency rules
+- **Domain-Driven Design** - bounded contexts, entities, value objects
 
-### 5. Redacción técnica
-Escribir o actualizar docs con ejemplos concretos, no teoría. Código real, no pseudocódigo.
+### 5. Technical Writing
+Write or update docs with concrete examples, not theory. Real code, not pseudocode.
 
-### 6. Revisión
-Coherencia, completitud, ejemplos funcionan, enlaces no rotos, tono consistente.
+### 6. Review
+Coherence, completeness, examples actually work, no broken links, consistent tone.
 
-### 7. Publicación
-Commit + push, integración con el proyecto.
+### 7. Publication
+Commit + push, integration with the project.
 
 ## Outputs
-- README.md actualizado
-- Diagramas C4 de arquitectura
-- ADRs en `docs/adr/` (creados o sincronizados)
-- CHANGELOG.md actualizado
-- API docs, guías técnicas
-- CONTRIBUTING.md si aplica
+- Updated README.md
+- C4 architecture diagrams
+- ADRs in `docs/adr/` (created or synced)
+- Updated CHANGELOG.md
+- API docs, technical guides
+- CONTRIBUTING.md if applicable
 
-## Cuándo usarlo
-- Al arrancar un proyecto nuevo (docs iniciales + diseño)
-- Cuando se cambia una API o feature (actualizar docs)
-- Al cerrar un epic o milestone (actualizar CHANGELOG + ADRs)
-- Cuando se necesita documentar una decisión arquitectónica
-- Cuando un contributor necesita guías claras
+## When to use it
+- When starting a new project (initial docs + design)
+- When an API or feature changes (update docs)
+- When closing an epic or milestone (update CHANGELOG + ADRs)
+- When an architectural decision needs to be documented
+- When a contributor needs clear guides
 
 ## Helper Scripts
 
-Scripts en `skills/tech-docs/scripts/`:
+Scripts in `skills/tech-docs/scripts/`:
 
-| Script | Uso |
+| Script | Use |
 |---|---|
-| `generate-adr.sh "Titulo de la decision"` | Crea un ADR numerado secuencialmente en `docs/adr/`. Usar en Fase 4. |
-| `update-changelog.sh` | Inserta una entrada `[Unreleased]` en CHANGELOG.md. Usar al cerrar un epic o feature. |
-| `analyze_codebase.py` | Analiza el codebase para extraer patrones y generar contexto para docs. Usar en Fase 2 (Diseño Arquitectónico) y Fase 5. |
+| `generate-adr.sh "Decision title"` | Creates a sequentially numbered ADR in `docs/adr/`. Use in Phase 4. |
+| `update-changelog.sh` | Inserts an `[Unreleased]` entry in CHANGELOG.md. Use when closing an epic or feature. |
+| `analyze_codebase.py` | Analyzes the codebase to extract patterns and generate context for docs. Use in Phase 2 (Architectural Design) and Phase 5. |
 
-Si se tocan estos scripts, correr `npm test` en el workspace antes de commitear.
+If these scripts are touched, run `npm test` in the workspace before committing.
 
 ## Related Skills
 
-- [Knowledge Management](../knowledge-management): Para mantener la base de conocimiento
-- [Build & Scaffold](../build-scaffold): Para documentar decisiones de scaffolding
+- [Knowledge Management](../knowledge-management): To keep the knowledge base up to date

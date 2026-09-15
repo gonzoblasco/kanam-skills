@@ -1,49 +1,49 @@
 # Narrative Content
 
-Planificación y escritura de ficción.
+Planning and writing fiction.
 
-## ¿Para qué sirve?
+## What is it for?
 
-Para **escribir novelas, cuentos y ficción** con estructura profesional. Incluye planificación (premisa, estructura, personajes, worldbuilding), redacción asistida, revisión de coherencia, y exportación a DOCX, EPUB o Markdown.
+To **write novels, short stories and fiction** with professional structure. It covers planning (premise, structure, characters, worldbuilding), assisted drafting, consistency revision, and export to DOCX, EPUB or Markdown.
 
-## ¿Cuándo usarlo?
+## When to use it?
 
-- Cuando querés empezar a escribir una novela o cuento
-- Cuando necesitás estructurar una historia existente
-- Cuando querés exportar contenido narrativo a formato publicable
+- When you want to start writing a novel or short story
+- When you need to structure an existing story
+- When you want to export narrative content into a publishable format
 
-## ¿Cómo se usa?
+## How is it used?
 
-### Workflow completo
+### Full workflow
 
-1. **Premisa** - idea central, género, tono, audiencia, conflicto principal
-2. **Estructura** - arco narrativo, capítulos, personajes, worldbuilding
-3. **Redacción** - escritura de capítulos, escenas, diálogos
-4. **Revisión** - coherencia narrativa, consistencia, plot holes
-5. **Exportación** - DOCX, EPUB, Markdown
+1. **Premise** - central idea, genre, tone, audience, main conflict
+2. **Structure** - narrative arc, chapters, characters, worldbuilding
+3. **Drafting** - writing chapters, scenes, dialogue
+4. **Revision** - narrative coherence, consistency, plot holes
+5. **Export** - DOCX, EPUB, Markdown
 
-### Scripts útiles
+### Useful scripts
 
 ```bash
-# Generar outline desde premisa
-./scripts/outline-generator.sh premisa.txt --structure hero
+# Generate an outline from a premise
+./scripts/outline-generator.sh premise.txt --structure hero
 
-# Crear ficha de personaje
+# Create a character sheet
 ./scripts/character-sheet.sh "Arya Stark" --role protagonist
 
-# Exportar capítulos a EPUB
-python3 scripts/export-novel.py ./capitulos/ --format epub --output novela.epub
+# Export chapters to EPUB
+python3 scripts/export-novel.py ./chapters/ --format epub --output novel.epub
 ```
 
-## Referencias
+## References
 
-| Archivo | Qué contiene |
+| File | What it contains |
 |---|---|
-| `references/narrative-structures.md` | 4 estructuras: Three-Act, Hero's Journey, Save the Cat, Snowflake |
-| `references/character-development.md` | Fichas de personaje, arquetipos, matriz de motivación |
+| `references/narrative-structures.md` | 4 structures: Three-Act, Hero's Journey, Save the Cat, Snowflake |
+| `references/character-development.md` | Character sheets, archetypes, motivation matrix |
 | `references/worldbuilding.md` | Worldbuilding bible, consistency checklist, show don't tell |
 
-## Skills relacionadas
+## Related skills
 
-- [Copy Editing](../copy-editing) - Para editar el texto narrativo
-- [Technical Documentation](../tech-docs) - Para documentar estructura narrativa
+- [Copy Editing](../copy-editing) - To edit narrative text
+- [Technical Documentation](../tech-docs) - To document narrative structure

@@ -1,49 +1,49 @@
 # Reflection Template - Session Lifecycle Reference
 
-Template de reflexión post-sesión para identificar aprendizajes y patrones.
+Post-session reflection template to identify learnings and patterns.
 
-## Cuándo usarlo
+## When to use it
 
-Al final de cada sesión significativa (no sesiones de 5 min). Como parte del cierre, antes del HANDOFF.
+At the end of every significant session (not 5-minute sessions). As part of closing, before the HANDOFF.
 
-## Preguntas guía
+## Guide questions
 
-### ¿Qué aprendimos?
-- ¿Algo nos sorprendió?
-- ¿Algo funcionó mejor o peor de lo esperado?
-- ¿Hubo algún error que no queremos repetir?
+### What did we learn?
+- Did anything surprise us?
+- Did anything work better or worse than expected?
+- Was there any mistake we do not want to repeat?
 
-### ¿Qué patrones identificamos?
-- ¿Repetimos algún proceso sin pensarlo?
-- ¿Podemos extraer un "mega-patrón" que aplique a otros contextos?
-- ¿Hay algo que debería ser automático y hoy es manual?
+### What patterns did we identify?
+- Did we repeat any process without thinking about it?
+- Can we extract a "mega-pattern" that applies to other contexts?
+- Is there anything that should be automatic and today is manual?
 
-### ¿Es global o de proyecto?
-- 🌍 **Global** - aplica a cualquier proyecto, dominio o contexto
-- 🏗️ **Proyecto** - específico del AI Engineering OS o del workspace
-- 📦 **Contexto** - específico de un proyecto de producto en particular
+### Is it global or project-specific?
+- 🌍 **Global** - applies to any project, domain or context
+- 🏗️ **Project** - specific to the AI Engineering OS or the workspace
+- 📦 **Context** - specific to a particular product project
 
-### ¿Dónde va?
-| Si es... | Va a... |
+### Where does it go?
+| If it is... | It goes to... |
 |---|---|
-| 🌍 Global | `docs/LEARNINGS.md` + evaluar si merece AGENTS.md/SOUL.md |
-| 🏗️ Proyecto | `docs/LEARNINGS.md` |
-| 📦 Contexto | `projects/<slug>/.knowledge/LEARNINGS.md` |
+| 🌍 Global | `docs/LEARNINGS.md` + evaluate whether it deserves AGENTS.md/SOUL.md |
+| 🏗️ Project | `docs/LEARNINGS.md` |
+| 📦 Context | `projects/<slug>/.knowledge/LEARNINGS.md` |
 
-## Formato de entrada
+## Entry format
 
 ```markdown
-## YYYY-MM-DD - [Título corto]
+## YYYY-MM-DD - [Short title]
 
-### N. [Título de la lección]
-[Descripción de 2-4 párrafos]
+### N. [Lesson title]
+[2-4 paragraph description]
 
-**Lección:** [una frase que capture la esencia]
+**Lesson:** [one sentence that captures the essence]
 
-**Clasificación:** 🌍 Global / 🏗️ Proyecto / 📦 Contexto
+**Classification:** 🌍 Global / 🏗️ Project / 📦 Context
 ```
 
 ## Related
 
-- [SKILL.md](../SKILL.md) - Workflow principal
-- [Session Templates](./session-templates.md) - Templates de inicio y cierre
+- [SKILL.md](../SKILL.md) - Main workflow
+- [Session Templates](./session-templates.md) - Start and close templates

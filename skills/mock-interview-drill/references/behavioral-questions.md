@@ -1,121 +1,121 @@
 # Behavioral Questions - Mock Interview Drill
 
-Banco de preguntas behavioral por categoría con criterios de evaluación.
+Behavioral question bank by category with evaluation criteria.
 
-## Cómo usar este banco
+## How to use this bank
 
-1. Elegí 1-2 categorías según el rol (ej: "leadership" para senior, "growth" para startup)
-2. Hacé 1 pregunta por categoría
-3. Evaluá con los criterios de cada pregunta
-4. No hagas más de 3-4 preguntas behavioral en un simulacro (se vuelve repetitivo)
+1. Choose 1-2 categories based on the role (e.g.: "leadership" for senior, "growth" for startup)
+2. Ask 1 question per category
+3. Evaluate with each question's criteria
+4. Don't ask more than 3-4 behavioral questions in a mock (it becomes repetitive)
 
 ---
 
 ## Conflict & Disagreement
 
-| Pregunta | Qué evalúa |
+| Question | What it evaluates |
 |---|---|
-| "Tell me about a time you disagreed with a teammate or manager. How did you handle it?" | Comunicación, asertividad, resolución |
-| "Describe a situation where you had to work with someone difficult. What did you do?" | Empatía, adaptabilidad, profesionalismo |
-| "Tell me about a time you had to push back on a requirement or deadline." | Priorización, comunicación de trade-offs |
+| "Tell me about a time you disagreed with a teammate or manager. How did you handle it?" | Communication, assertiveness, resolution |
+| "Describe a situation where you had to work with someone difficult. What did you do?" | Empathy, adaptability, professionalism |
+| "Tell me about a time you had to push back on a requirement or deadline." | Prioritization, communicating trade-offs |
 
-**Criterios de evaluación:**
-- ✅ Describe el conflicto sin culpar a la otra persona
-- ✅ Explica qué hizo para resolverlo (no solo "hablamos")
-- ✅ Muestra aprendizaje o cambio de approach
-- ❌ "Nunca tuve conflictos" (red flag - o no tiene experiencia o no es honesto)
-- ❌ Culpa a otros sin autoreflexión
+**Evaluation criteria:**
+- ✅ Describes the conflict without blaming the other person
+- ✅ Explains what they did to resolve it (not just "we talked")
+- ✅ Shows learning or a change of approach
+- ❌ "I never had conflicts" (red flag - either no experience or not honest)
+- ❌ Blames others without self-reflection
 
 ---
 
 ## Leadership & Ownership
 
-| Pregunta | Qué evalúa |
+| Question | What it evaluates |
 |---|---|
-| "Tell me about a time you led a project or initiative. What was your approach?" | Iniciativa, organización, influencia |
-| "Describe a situation where you took ownership of something outside your responsibilities." | Proactividad, compromiso |
-| "Tell me about a time you mentored or helped someone grow." | Generosidad técnica, comunicación |
+| "Tell me about a time you led a project or initiative. What was your approach?" | Initiative, organization, influence |
+| "Describe a situation where you took ownership of something outside your responsibilities." | Proactivity, commitment |
+| "Tell me about a time you mentored or helped someone grow." | Technical generosity, communication |
 
-**Criterios de evaluación:**
-- ✅ Define claramente su rol (no "nosotros" ambiguo)
-- ✅ Menciona cómo coordinó con otros
-- ✅ Resultado concreto, no "salió bien"
-- ❌ "Lideré" sin especificar qué hizo realmente
-- ❌ No menciona desafíos
+**Evaluation criteria:**
+- ✅ Clearly defines their role (not an ambiguous "we")
+- ✅ Mentions how they coordinated with others
+- ✅ Concrete result, not "it went well"
+- ❌ "I led" without specifying what they actually did
+- ❌ Doesn't mention challenges
 
 ---
 
 ## Failure & Mistakes
 
-| Pregunta | Qué evalúa |
+| Question | What it evaluates |
 |---|---|
-| "Tell me about a time you made a mistake at work. What happened and what did you learn?" | Honestidad, autoreflexión, crecimiento |
-| "Describe a project that didn't go as planned. What would you do differently?" | Análisis post-mortem, aprendizaje |
-| "Tell me about a time you had to deliver bad news to a stakeholder." | Comunicación, responsabilidad |
+| "Tell me about a time you made a mistake at work. What happened and what did you learn?" | Honesty, self-reflection, growth |
+| "Describe a project that didn't go as planned. What would you do differently?" | Post-mortem analysis, learning |
+| "Tell me about a time you had to deliver bad news to a stakeholder." | Communication, responsibility |
 
-**Criterios de evaluación:**
-- ✅ Admite el error sin excusas
-- ✅ Explica qué aprendió y cómo cambió su comportamiento
-- ✅ El error no fue catastrófico (buen filtro de candidatos)
-- ❌ "No recuerdo ningún error" (no es creíble)
-- ❌ Culpa a otros o a circunstancias externas
+**Evaluation criteria:**
+- ✅ Admits the mistake without excuses
+- ✅ Explains what they learned and how they changed their behavior
+- ✅ The mistake was not catastrophic (good candidate filter)
+- ❌ "I don't remember any mistake" (not believable)
+- ❌ Blames others or external circumstances
 
 ---
 
 ## Teamwork & Collaboration
 
-| Pregunta | Qué evalúa |
+| Question | What it evaluates |
 |---|---|
-| "Tell me about a time you worked on a cross-functional team. How did you contribute?" | Colaboración, comunicación interdisciplinaria |
-| "Describe a situation where you had to align multiple stakeholders with different priorities." | Negociación, alineación |
-| "Tell me about a time you helped a teammate who was struggling." | Generosidad, trabajo en equipo |
+| "Tell me about a time you worked on a cross-functional team. How did you contribute?" | Collaboration, interdisciplinary communication |
+| "Describe a situation where you had to align multiple stakeholders with different priorities." | Negotiation, alignment |
+| "Tell me about a time you helped a teammate who was struggling." | Generosity, teamwork |
 
-**Criterios de evaluación:**
-- ✅ Menciona cómo se adaptó a diferentes estilos de trabajo
-- ✅ Resultado del equipo, no solo logro individual
-- ✅ Muestra cómo facilitó la comunicación
-- ❌ Solo habla de su contribución individual
-- ❌ No menciona desafíos de coordinación
+**Evaluation criteria:**
+- ✅ Mentions how they adapted to different working styles
+- ✅ Team result, not just individual achievement
+- ✅ Shows how they facilitated communication
+- ❌ Only talks about their individual contribution
+- ❌ Doesn't mention coordination challenges
 
 ---
 
 ## Growth & Learning
 
-| Pregunta | Qué evalúa |
+| Question | What it evaluates |
 |---|---|
-| "Tell me about a time you learned a new technology or skill for a project." | Adaptabilidad, iniciativa de aprendizaje |
-| "Describe a situation where you had to work outside your comfort zone." | Versatilidad, crecimiento |
-| "Tell me about a time you sought feedback and acted on it." | Receptividad, mejora continua |
+| "Tell me about a time you learned a new technology or skill for a project." | Adaptability, learning initiative |
+| "Describe a situation where you had to work outside your comfort zone." | Versatility, growth |
+| "Tell me about a time you sought feedback and acted on it." | Receptiveness, continuous improvement |
 
-**Criterios de evaluación:**
-- ✅ Específico sobre qué aprendió y cómo
-- ✅ Menciona el resultado de aplicar lo aprendido
-- ✅ Muestra que busca activamente crecer
-- ❌ "Aprendo rápido" sin ejemplo concreto
-- ❌ No menciona dificultades del aprendizaje
+**Evaluation criteria:**
+- ✅ Specific about what they learned and how
+- ✅ Mentions the result of applying what they learned
+- ✅ Shows they actively seek to grow
+- ❌ "I learn fast" without a concrete example
+- ❌ Doesn't mention learning difficulties
 
 ---
 
 ## Ambition & Impact
 
-| Pregunta | Qué evalúa |
+| Question | What it evaluates |
 |---|---|
-| "Tell me about a time you went above and beyond what was expected." | Iniciativa, estándar de calidad |
-| "Describe a project where you drove measurable impact for the business." | Impacto, orientación a resultados |
-| "Tell me about a time you identified a problem no one else saw and fixed it." | Visión, proactividad |
+| "Tell me about a time you went above and beyond what was expected." | Initiative, quality standard |
+| "Describe a project where you drove measurable impact for the business." | Impact, results orientation |
+| "Tell me about a time you identified a problem no one else saw and fixed it." | Vision, proactivity |
 
-**Criterios de evaluación:**
-- ✅ Impacto cuantificado (datos, métricas)
-- ✅ Explica por qué nadie más lo había visto
-- ✅ Muestra que entiende el negocio, no solo el código
-- ❌ Impacto vago ("mejoró la experiencia del usuario")
-- ❌ No menciona cómo midió el resultado
+**Evaluation criteria:**
+- ✅ Quantified impact (data, metrics)
+- ✅ Explains why no one else had seen it
+- ✅ Shows they understand the business, not just the code
+- ❌ Vague impact ("improved the user experience")
+- ❌ Doesn't mention how they measured the result
 
 ---
 
 ## Related
 
-- [SKILL.md](../SKILL.md) - Workflow principal
-- [System Design Guide](./system-design-guide.md) - Para technical interviews
-- [Case Frameworks](./case-frameworks.md) - Para case interviews
-- [Preparation Guide](./preparation-guide.md) - Qué estudiar antes
+- [SKILL.md](../SKILL.md) - Main workflow
+- [System Design Guide](./system-design-guide.md) - For technical interviews
+- [Case Frameworks](./case-frameworks.md) - For case interviews
+- [Preparation Guide](./preparation-guide.md) - What to study before

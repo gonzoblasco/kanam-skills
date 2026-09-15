@@ -1,40 +1,40 @@
 # Common Copy Problems - Copy Editing Reference
 
-Problemas frecuentes y cómo arreglarlos.
+Frequent problems and how to fix them.
 
 ## Wall of Features
-**Symptom:** Lista de lo que el producto hace sin decir por qué importa.
-**Fix:** Agregar "which means..." después de cada feature para puentear a beneficios.
+**Symptom:** List of what the product does without saying why it matters.
+**Fix:** Add "which means..." after each feature to bridge to benefits.
 
 ## Corporate Speak
 **Symptom:** "Leverage synergies to optimize outcomes"
-**Fix:** Preguntar "¿cómo diría esto un humano?" y usar esas palabras.
+**Fix:** Ask "how would a human say this?" and use those words.
 
 ## Weak Opening
-**Symptom:** Empezar con historia de la empresa o afirmaciones vagas.
-**Fix:** Abrir con el problema del lector o el resultado deseado.
+**Symptom:** Starting with company history or vague claims.
+**Fix:** Open with the reader's problem or the desired result.
 
 ## Buried CTA
-**Symptom:** El pedido de acción llega después de mucho buildup.
-**Fix:** Hacer el CTA obvio, temprano y repetido.
+**Symptom:** The call to action comes after a lot of buildup.
+**Fix:** Make the CTA obvious, early and repeated.
 
 ## No Proof
-**Symptom:** "Customers love us" sin evidencia.
-**Fix:** Agregar testimonios específicos, números o referencias de casos.
+**Symptom:** "Customers love us" without evidence.
+**Fix:** Add specific testimonials, numbers or case references.
 
 ## Generic Claims
 **Symptom:** "We help businesses grow"
-**Fix:** Especificar quién, cómo y cuánto.
+**Fix:** Specify who, how and how much.
 
 ## Mixed Audiences
-**Symptom:** Copy que intenta hablarle a todos, resuena con nadie.
-**Fix:** Elegir una audiencia y escribirle directamente.
+**Symptom:** Copy that tries to talk to everyone, resonates with no one.
+**Fix:** Choose one audience and write directly to it.
 
 ## Feature Overload
-**Symptom:** Listar cada capacidad, abrumando al lector.
-**Fix:** Enfocar en 3-5 beneficios clave que más importan a la audiencia.
+**Symptom:** Listing every capability, overwhelming the reader.
+**Fix:** Focus on the 3-5 key benefits that matter most to the audience.
 
 ## Related
 
-- [SKILL.md](../SKILL.md) - Workflow principal
-- [Word-Level Edits](./word-level-edits.md) - Ediciones a nivel palabra
+- [SKILL.md](../SKILL.md) - Main workflow
+- [Word-Level Edits](./word-level-edits.md) - Word-level edits

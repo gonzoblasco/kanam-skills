@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# workflow-audit.sh — Audit all skills, apply audit checklist, generate health report
+# workflow-audit.sh - Audit all skills, apply audit checklist, generate health report
 # Usage: ./workflow-audit.sh [--output <file>]
 
 set -euo pipefail
@@ -11,7 +11,7 @@ echo "🔍 Auditing all workflows..."
 echo ""
 
 cat > "$OUTPUT_FILE" << 'HEADER'
-# Governance Report — Workflow Audit
+# Governance Report - Workflow Audit
 
 HEADER
 echo "**Date:** $(date '+%Y-%m-%d %H:%M')" >> "$OUTPUT_FILE"

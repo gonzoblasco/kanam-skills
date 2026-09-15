@@ -1,27 +1,27 @@
 ---
 name: "mlx-stt"
-description: "Speech-to-text local en Apple Silicon con MLX"
+description: "Local speech-to-text on Apple Silicon with MLX"
 ---
 
 # mlx-stt
 
-## Descripción
-Ejecuta transcripción de speech-to-text localmente en Apple Silicon usando MLX y modelos open-source. Sin API key ni servidor externo. Modelo default: GLM-ASR-Nano-2512. Todo corre en el dispositivo.
+## Description
+Runs speech-to-text transcription locally on Apple Silicon using MLX and open-source models. No API key or external server needed. Default model: GLM-ASR-Nano-2512. Everything runs on the device.
 
-## Cuándo usarlo
-- Para transcribir meetings o entrevistas grabadas
-- Para convertir voice memos a texto
-- Para generar captions de videos almacenados localmente
-- Para transcribir episodios de podcast offline
-- Para convertir notas de audio en texto buscable
+## When to use it
+- To transcribe recorded meetings or interviews
+- To convert voice memos to text
+- To generate captions for locally stored videos
+- To transcribe podcast episodes offline
+- To turn audio notes into searchable text
 
 ## Workflow
-1. Tener el archivo de audio disponible localmente
-2. Ejecutar mlx-stt con la ruta del archivo
-3. Esperar la transcripción (corre localmente en Apple Silicon)
-4. Recibir el texto transcrito
+1. Have the audio file available locally
+2. Run mlx-stt with the file path
+3. Wait for the transcription (it runs locally on Apple Silicon)
+4. Receive the transcribed text
 
-## Notas
-- Requiere Apple Silicon (M1 o posterior) - MacBook Air M2 compatible
-- Sin costo de API, sin datos que salgan de la máquina
-- Modelo open-source, sin dependencia de servicios cloud
+## Notes
+- Requires Apple Silicon (M1 or later) - MacBook Air M2 compatible
+- No API cost, no data leaves the machine
+- Open-source model, no dependency on cloud services

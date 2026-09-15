@@ -1,6 +1,6 @@
 # Phrases to Avoid - Support Response Writer Reference
 
-Frases a evitar y alternativas recomendadas.
+Phrases to avoid and recommended alternatives.
 
 | Avoid | Recommended |
 |---|---|
@@ -21,5 +21,5 @@ Frases a evitar y alternativas recomendadas.
 
 ## Related
 
-- [SKILL.md](../SKILL.md) - Workflow principal
-- [Emotional De-Escalation](./de-escalation.md) - Estrategias por nivel emocional
+- [SKILL.md](../SKILL.md) - Main workflow
+- [Emotional De-Escalation](./de-escalation.md) - Strategies by emotional level

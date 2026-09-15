@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""generate-governance-report.py — Compile GOVERNANCE_REPORT.md from audit outputs.
+"""generate-governance-report.py - Compile GOVERNANCE_REPORT.md from audit outputs.
 
 Usage:
   python3 generate-governance-report.py [--audit <audit-file>] [--duplicates <duplicates-file>] [--output <file>]

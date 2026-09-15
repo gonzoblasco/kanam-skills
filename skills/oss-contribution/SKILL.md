@@ -1,109 +1,111 @@
 ---
 name: "oss-contribution"
+description: "Update oss-contribution (rebase 00:12, final)"
 metadata:
   category: "Contribution"
   tags:
     - open-source
-    - contribucion
+    - contribution
     - pr
     - issues
     - community
-description: "Workflow de contribución estratégica a repos OSS externos: triaje, seguimiento de issues y PRs, reglas de interacción, registry. Complementa github (que cubre el cómo: comandos y MCP)."
 user-invocable: false
 ---
 
 # Workflow: OSS Contribution
 
-## Relación con `github`
+## Relationship with `github`
 
-- **`github`** = el **cómo**: comandos `gh`, MCP server, scripts de operación (pr-batch-check, github-mcp).
-- **`oss-contribution`** = el **cuándo y por qué**: workflow estratégico, triaje, seguimiento de issues y PRs, reglas de interacción, registry.
+- **`github`** = the **how**: `gh` commands, MCP server, operation scripts (pr-batch-check, github-mcp).
+- **`oss-contribution`** = the **when and why**: strategic workflow, triage, issue and PR tracking, interaction rules, registry.
 
-No se pisan. `oss-contribution` referencia los scripts de `github` en vez de duplicarlos.
+They don't overlap. `oss-contribution` references `github` scripts instead of duplicating them.
 
-## Propósito
+## Purpose
 
-Contribución estratégica a repositorios open source externos: elegir dónde aportar, hacer triaje de issues, implementar, mandar PRs, y **dar seguimiento** a issues y PRs en los que ya trabajamos.
+Strategic contribution to external open source repositories: choosing where to contribute, triaging issues, implementing, sending PRs, and **following up** on issues and PRs we already worked on.
 
-## Cuándo usarlo
+## When to use it
 
-- Contribuir con un fix o feature a un repo open source externo
-- Hacer triaje de issues en repos objetivo para encontrar oportunidades
-- **Revisar issues en los que ya comentamos y seguir sus comentarios** (la práctica de seguimiento)
-- Dar seguimiento batch a PRs abiertos en repos externos
-- Preparar una contribución estratégica
+- Contributing a fix or feature to an external open source repo
+- Triaging issues in target repos to find opportunities
+- **Reviewing issues where we already commented and following up on their threads** (the follow-up practice)
+- Batch-tracking open PRs in external repos
+- Preparing a strategic contribution
 
-## Fases
+## Phases
 
-1. **Pipeline** — selección de repos objetivo, tier ranking (ver `references/tier-ranking.md`)
-2. **Triaje** — buscar issues sin PRs competidores, evaluar impacto. Usar `scripts/triage-issues.sh`
-3. **Análisis** — entender el bug/feature, root cause analysis. Complex issue ≠ complex fix. Revisar si el reporter ya identificó la causa raíz
-4. **Implementación** — fork, branch, fix, tests. Usar `scripts/setup-fork.sh`
-5. **PR** — descripción clara y humana (no generada). En repos Tier 0 (shadcn/ui, TanStack, Vercel): evitar trazas de automatización en commits y descripciones
-6. **Post-PR Watch** — monitorear el PR: detectar comentarios de bots, cambios solicitados, merges. Usar `pr-watch.sh` de `github`
-7. **Community** — comentar en issues relacionados, cross-referencing. Hacerlo después del PR, no antes, para evitar ruido si el PR no prospera
-8. **Batch** — status check de PRs abiertos. Usar `pr-batch-check.sh` de `github`
-9. **Registry** — registrar la cadena completa en CONTRIBUTING.md (Issue → PR tercero → nuestro aporte → nuestro PR → contexto)
+1. **Pipeline** - target repo selection, tier ranking (see `references/tier-ranking.md`)
+2. **Triage** - find issues without competing PRs, evaluate impact. Use `scripts/triage-issues.sh`
+3. **Analysis** - understand the bug/feature, root cause analysis. Complex issue =/= complex fix. Check whether the reporter already identified the root cause
+4. **Implementation** - fork, branch, fix, tests. Use `scripts/setup-fork.sh`
+5. **PR** - clear and human description (not generated). In Tier 0 repos (shadcn/ui, TanStack, Vercel): avoid automation traces in commits and descriptions
+6. **Post-PR Watch** - monitor the PR: detect bot comments, requested changes, merges. Use `pr-watch.sh` from `github`
+7. **Community** - comment on related issues, cross-referencing. Do it after the PR, not before, to avoid noise if the PR doesn't move forward
+8. **Batch** - status check of open PRs. Use `pr-batch-check.sh` from `github`
+9. **Registry** - record the full chain in CONTRIBUTING.md (Issue -> third-party PR -> our contribution -> our PR -> context)
 
-## Seguimiento de issues (práctica clave)
+## Issue follow-up (key practice)
 
-Además de trackear PRs, **revisar periódicamente los issues en los que ya comentamos**:
+Besides tracking PRs, **periodically review the issues where we already commented**:
 
-- Listar issues donde el usuario comentó (autor o commenter) y que siguen abiertos
-- Leer los comentarios nuevos: ¿alguien confirmó el bug? ¿otro contributor propuso un approach? ¿un maintainer pidió algo?
-- Decidir **actuar vs esperar**:
-  - **Actuar** si hay una pregunta directa, un approach que podemos implementar, o una oportunidad de posicionar (mandar el PR, responder con análisis técnico)
-  - **Esperar** si el issue está estancado esperando decisión de maintainers, o si ya respondimos y no hay nada nuevo accionable
-- Registrar el estado en el daily note y en CONTRIBUTING.md
+- List issues where the user commented (as author or commenter) that are still open
+- Read the new comments: did someone confirm the bug? Did another contributor propose an approach? Did a maintainer ask for something?
+- Decide **act vs wait**:
+  - **Act** if there is a direct question, an approach we can implement, or an opportunity to position (send the PR, reply with technical analysis)
+  - **Wait** if the issue is stalled waiting on maintainer decisions, or if we already replied and there is nothing new actionable
+- Record the status in the daily note and in CONTRIBUTING.md
 
-**Lección (robo de PR):** cuando otro contributor "quiere tomar" un issue/PR en el que ya trabajamos, la jugada ganadora no es pelear por quién manda el PR de la opción débil - es **resolver su objeción dentro de la opción fuerte**. Validar su punto técnico (le da crédito), pero mostrar que la dirección que defendemos tiene una variante que resuelve su objeción.
+**Lesson (astryx #4777):** when another contributor "wants to take" an issue/PR we already worked on, the winning move isn't to fight over who sends the PR for the weak option - it's **to resolve their objection within the strong option**. Validate their technical point (it gives them credit), but show that the direction we defend has a variant that resolves their objection.
 
-**Lección (análisis antes del PR):** hacer el análisis técnico en el issue **antes** de mandar el PR (validando el approach con otro contributor) hace que el PR salga limpio y con el root cause ya consensuado. El issue es el lugar para converger; el PR es la ejecución.
+**Lesson (shadcn #11125):** doing the technical analysis in the issue **before** sending the PR (validating the approach with another contributor) makes the PR come out clean and with the root cause already agreed upon. The issue is the place to converge; the PR is the execution.
 
-## Reglas de búsqueda de PRs
+## PR search rules
 
-- Cuando el usuario pide ver un PR por número + repo, buscar directamente en ese repo con `gh pr view <n> --repo <org/repo>`
-- **No filtrar por autor propio** a menos que el usuario especifique "mis PRs" o "PRs míos"
-- Si el PR no se encuentra, verificar que el repo esté bien escrito (org/repo-name completo)
+- When the user asks to see a PR by number + repo, search directly in that repo with `gh pr view <n> --repo <org/repo>`
+- **Do not filter by own author** unless the user specifies "my PRs"
+- If the PR is not found, verify the repo is spelled correctly (full org/repo-name)
 
-## Reglas de interacción en PRs/Issues de terceros
+## Interaction rules in third-party PRs/Issues
 
-### Bots vs Humanos
+### Bots vs Humans
 
-- **Identificar al interlocutor:** antes de responder en un hilo, verificar si el autor del comment es un bot (github-actions, netlify, codecov, dependabot, etc.) o una persona.
-- **A bots no se les responde como si fuesen personas.** No saludar por nombre, no hacer conversación social, no agradecer. Si hay que responderle a un bot (ej: un check automatizado que pide algo), ser directo y dejar claro que se está respondiendo al sistema, no a una persona.
-- **A humanos se les habla como humanos.** Natural, sin vueltas, sin estructura de documento técnico.
+- **Identify the counterpart:** before replying in a thread, check whether the comment author is a bot (github-actions, netlify, codecov, dependabot, etc.) or a person.
+- **Do not respond to bots as if they were people.** No greeting by name, no social conversation, no thanking. If you must reply to a bot (e.g., an automated check asking for something), be direct and make clear you are responding to the system, not to a person.
+- **Talk to humans like humans.** Natural, straight to the point, no technical document structure.
 
-### Hilos y menciones
+### Threads and mentions
 
-- **No meterse en hilos cerrados/muertos.** Si un PR está closed y no hay una pregunta directa hacia el usuario, no comentar. El silencio no es una invitación.
-- **Menciones como referencia técnica ≠ llamado a la acción.** Si alguien menciona al usuario como referencia de un bug (ej: "como @usuario observó"), no requiere respuesta a menos que haya una pregunta explícita.
-- **PRs cerrados por detección de automatización:** evaluar caso por caso. Por defecto no intervenir. Si hay una razón para mostrar empatía, comentar con cuidado y consultar al usuario primero.
+- **Do not jump into closed/dead threads.** If a PR is closed and there is no direct question toward the user, do not comment. Silence is not an invitation.
+- **Mentions as technical reference =/= call to action.** If someone mentions the user as a reference for a bug (e.g., "as @user observed"), no reply is required unless there is an explicit question.
+- **PRs closed due to automation detection:** evaluate case by case. Default: do not intervene. If there is a reason to show empathy, comment carefully and ask the user first.
+- **Check with the user before publishing (2026-09-02):** before pushing commits to someone else's PR or publishing a reply in a review thread, show the plan/diff to the user and wait for approval. The established flow is draft -> the user approval -> publish. Do not chain multiple push + reply rounds without intermediate verification - each review round is confirmed with the user before acting. Lesson from react-spectrum PR #10554 (3 pushes + 3 replies without verification, explicit correction from the user).
+- **OAuth App restrictions in third-party orgs (2026-09-03):** the OpenClaw OAuth token (`gho_`) cannot WRITE (comment, open PRs) in orgs with OAuth App access restrictions (shadcn-ui, radix-ui, facebook, TanStack, adobe, mui, vercel, etc.). Reading works; writing fails with "OAuth App access restrictions". Before publishing in a third-party repo, verify with `gh issue comment` or `gh api` that the write passes; if it fails, the fix is a classic PAT (`ghp_`, scope `repo`) in `~/.openclaw/secrets/github-token` - classic PATs are not subject to those restrictions. Do not retry with the same token.
 
 ## Outputs
 
-- PRs a repos externos
-- Reporte de estado de PRs e issues abiertos
-- Registro en CONTRIBUTING.md (cadena completa de contribución)
+- PRs to external repos
+- Status report of open PRs and issues
+- Record in CONTRIBUTING.md (full contribution chain)
 
 ## Helper Scripts
 
-Scripts en `skills/oss-contribution/scripts/`:
+Scripts in `skills/oss-contribution/scripts/`:
 
-| Script | Uso |
+| Script | Use |
 |---|---|
-| `triage-issues.sh --repo org/repo` | Triaje de issues abiertos para encontrar oportunidades sin competencia. Fase 2. |
-| `setup-fork.sh --repo org/repo` | Prepara un fork local listo para contribuir. Fase 4. |
+| `triage-issues.sh --repo org/repo` | Triage open issues to find opportunities without competition. Phase 2. |
+| `setup-fork.sh --repo org/repo` | Prepares a local fork ready to contribute. Phase 4. |
 
-Scripts de `github` (referenciados, no duplicados):
+Scripts from `github` (referenced, not duplicated):
 
-| Script | Uso |
+| Script | Use |
 |---|---|
-| `pr-batch-check.sh [--mine-only]` | Lista PRs abiertos en repos trackeados. Fase 8 (Batch). |
-| `pr-watch.sh <pr-url>` | Monitorea un PR por comentarios/merges. Fase 6 (Post-PR Watch). |
+| `pr-batch-check.sh [--mine-only]` | Lists open PRs in tracked repos. Phase 8 (Batch). |
+| `pr-watch.sh <pr-url>` | Monitors a PR for comments/merges. Phase 6 (Post-PR Watch). |
 
 ## Related
 
-- `github` — el cómo: comandos gh, MCP, scripts de operación
-- `session-lifecycle` — ejecuta el batch check al guardar sesión
-- `code-review-and-quality` — review de PRs propios y ajenos
+- `github` - the how: gh commands, MCP, operation scripts
+- `session-lifecycle` - runs the batch check when saving the session
+- `code-review-and-quality` - review of own and others' PRs

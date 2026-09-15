@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# pomodoro-timer.sh — Simple Pomodoro timer with desktop notifications
+# pomodoro-timer.sh - Simple Pomodoro timer with desktop notifications
 # Usage: ./pomodoro-timer.sh [work_minutes] [break_minutes] [rounds]
 # Default: 25 min work, 5 min break, 4 rounds
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# ownership.sh — Analyze code ownership by contributor
+# ownership.sh - Analyze code ownership by contributor
 # Usage: ./ownership.sh [--repo <path>] [--path <subpath>] [--top <n>]
 
 set -euo pipefail

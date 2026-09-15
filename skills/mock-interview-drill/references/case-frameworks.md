@@ -1,24 +1,24 @@
 # Case Frameworks - Mock Interview Drill
 
-Frameworks de case interview con cuándo usar cada uno.
+Case interview frameworks with when to use each one.
 
-## Cómo usar un framework
+## How to use a framework
 
-1. **Escuchá el case** - no interrumpas, tomá notas
-2. **Clarificá** - preguntá lo que no entendiste
-3. **Elegí el framework** - según el tipo de problema
-4. **Estructurá tu respuesta** - usá el framework como guía, no como receta
-5. **Hacé assumptions** - explicitá lo que asumís
-6. **Analizá** - aplicá datos si los hay
-7. **Recomendá** - con fundamento
+1. **Listen to the case** - don't interrupt, take notes
+2. **Clarify** - ask about what you didn't understand
+3. **Choose the framework** - based on the problem type
+4. **Structure your answer** - use the framework as a guide, not a recipe
+5. **Make assumptions** - state explicitly what you assume
+6. **Analyze** - apply data if available
+7. **Recommend** - with reasoning
 
 ---
 
 ## Profitability Framework
 
-**Cuándo usarlo:** El cliente perdió ganancias, quiere mejorar márgenes, o evaluar un nuevo producto.
+**When to use it:** The client lost profits, wants to improve margins, or is evaluating a new product.
 
-**Estructura:**
+**Structure:**
 
 ```
 Profit = Revenue - Cost
@@ -32,19 +32,19 @@ Cost = Fixed + Variable
   └── Variable: COGS, marketing, distribution
 ```
 
-**Preguntas guía:**
-- ¿Cayeron los ingresos o subieron los costos?
-- ¿Es un problema de precio, volumen, o ambos?
-- ¿Hay estacionalidad?
-- ¿Qué pasó con la competencia?
+**Guiding questions:**
+- Did revenues fall or did costs rise?
+- Is it a price problem, a volume problem, or both?
+- Is there seasonality?
+- What happened with the competition?
 
 ---
 
 ## Market Entry Framework
 
-**Cuándo usarlo:** El cliente quiere entrar a un nuevo mercado, lanzar un nuevo producto, o expandirse geográficamente.
+**When to use it:** The client wants to enter a new market, launch a new product, or expand geographically.
 
-**Estructura:**
+**Structure:**
 
 ```
 1. Market Attractiveness
@@ -66,19 +66,19 @@ Cost = Fixed + Variable
    └── Timeline & milestones
 ```
 
-**Preguntas guía:**
-- ¿Por qué este mercado y no otro?
-- ¿Qué ventaja competitiva tenés?
-- ¿Cuánto capital necesitás?
-- ¿Cuál es el riesgo de no entrar?
+**Guiding questions:**
+- Why this market and not another?
+- What competitive advantage do you have?
+- How much capital do you need?
+- What is the risk of not entering?
 
 ---
 
 ## M&A / Investment Framework
 
-**Cuándo usarlo:** El cliente quiere adquirir una empresa, evaluar una inversión, o decidir entre comprar vs construir.
+**When to use it:** The client wants to acquire a company, evaluate an investment, or decide between buying vs building.
 
-**Estructura:**
+**Structure:**
 
 ```
 1. Strategic Fit
@@ -100,19 +100,19 @@ Cost = Fixed + Variable
    └── Customer churn
 ```
 
-**Preguntas guía:**
-- ¿Por qué este target y no otro?
-- ¿Cuánto están dispuestos a pagar?
-- ¿Qué pasa si la integración falla?
-- ¿Hay otros compradores?
+**Guiding questions:**
+- Why this target and not another?
+- How much are they willing to pay?
+- What happens if the integration fails?
+- Are there other buyers?
 
 ---
 
 ## Operations Framework
 
-**Cuándo usarlo:** El cliente quiere mejorar eficiencia operativa, reducir costos, o optimizar procesos.
+**When to use it:** The client wants to improve operational efficiency, reduce costs, or optimize processes.
 
-**Estructura:**
+**Structure:**
 
 ```
 1. Process Mapping
@@ -134,19 +134,19 @@ Cost = Fixed + Variable
    └── Technology adoption
 ```
 
-**Preguntas guía:**
-- ¿Dónde está el bottleneck?
-- ¿Cuánto cuesta cada unidad?
-- ¿Qué procesos se pueden automatizar?
-- ¿Cómo compara con la competencia?
+**Guiding questions:**
+- Where is the bottleneck?
+- How much does each unit cost?
+- Which processes can be automated?
+- How does it compare with the competition?
 
 ---
 
 ## Growth / Revenue Framework
 
-**Cuándo usarlo:** El cliente quiere crecer, mejorar retención, o aumentar revenue.
+**When to use it:** The client wants to grow, improve retention, or increase revenue.
 
-**Estructura:**
+**Structure:**
 
 ```
 1. Customer Funnel
@@ -167,30 +167,30 @@ Cost = Fixed + Variable
    └── Switching costs
 ```
 
-**Preguntas guía:**
-- ¿Dónde está el mayor drop-off en el funnel?
-- ¿Cuánto cuesta adquirir un cliente vs cuánto vale?
-- ¿Hay espacio para subir precios?
-- ¿Qué canales no están explotados?
+**Guiding questions:**
+- Where is the biggest drop-off in the funnel?
+- How much does it cost to acquire a customer vs how much is it worth?
+- Is there room to raise prices?
+- Which channels are unexploited?
 
 ---
 
-## Errores comunes
+## Common mistakes
 
-| Error | Por qué es malo | Cómo evitarlo |
+| Mistake | Why it is bad | How to avoid it |
 |---|---|---|
-| **No tener framework** | Parecés desorganizado | Elegí uno antes de hablar |
-| **Framework rígido** | No se adapta al case | Usalo como guía, no como receta |
-| **No clarificar** | Asumís cosas incorrectas | Preguntá antes de analizar |
-| **No hacer assumptions** | No podés avanzar sin datos | Explicitá: "asumiendo que..." |
-| **No recomendar** | El análisis sin acción no sirve | Terminá con una recomendación clara |
-| **Olvidar riesgos** | Parecés poco realista | Mencioná 1-2 riesgos y mitigaciones |
+| **Not having a framework** | You look disorganized | Choose one before speaking |
+| **Rigid framework** | It doesn't adapt to the case | Use it as a guide, not a recipe |
+| **Not clarifying** | You assume incorrect things | Ask before analyzing |
+| **Not making assumptions** | You can't move forward without data | State explicitly: "assuming that..." |
+| **Not recommending** | Analysis without action is useless | End with a clear recommendation |
+| **Forgetting risks** | You look unrealistic | Mention 1-2 risks and mitigations |
 
 ---
 
 ## Related
 
-- [SKILL.md](../SKILL.md) - Workflow principal
-- [Behavioral Questions](./behavioral-questions.md) - Banco de preguntas behavioral
-- [System Design Guide](./system-design-guide.md) - Para technical interviews
-- [Preparation Guide](./preparation-guide.md) - Qué estudiar antes
+- [SKILL.md](../SKILL.md) - Main workflow
+- [Behavioral Questions](./behavioral-questions.md) - Behavioral question bank
+- [System Design Guide](./system-design-guide.md) - For technical interviews
+- [Preparation Guide](./preparation-guide.md) - What to study before

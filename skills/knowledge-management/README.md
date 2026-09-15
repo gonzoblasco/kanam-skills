@@ -1,57 +1,57 @@
 # Knowledge Management
 
-Gestión de la base de conocimiento del proyecto.
+Manages the project's knowledge base.
 
-## ¿Para qué sirve?
+## What Is It For?
 
-Para **mantener la documentación consistente, actualizada y útil** para humanos y agentes. Una única fuente de verdad. No desarrolla features, no modifica código de negocio.
+To **keep documentation consistent, updated and useful** for humans and agents. A single source of truth. It does not develop features or modify business code.
 
-**Filosofía:** Every decision deserves a home. La documentación no es un entregable, es una memoria compartida.
+**Philosophy:** Every decision deserves a home. Documentation is not a deliverable; it is shared memory.
 
-## ¿Cuándo usarlo?
+## When to Use It?
 
-- Al finalizar un workflow
-- Antes de iniciar una nueva sesión
-- Después de cerrar un epic
-- Cuando cambian decisiones arquitectónicas
-- Cuando aparecen inconsistencias entre documentos
+- When finishing a workflow
+- Before starting a new session
+- After closing an epic
+- When architectural decisions change
+- When inconsistencies appear between documents
 
-## ¿Cómo se usa?
+## How Is It Used?
 
-### Workflow completo
+### Full Workflow
 
-1. **Discovery** - detectar qué docs existen, cuáles faltan, cuáles están abandonados
-2. **Ownership** - determinar dueño de cada información
-3. **Consistency Audit** - buscar contradicciones entre documentos
-4. **Freshness** - detectar conocimiento viejo (🟢 Vigente / 🟡 Revisar / 🔴 Obsoleto)
-5. **Knowledge Graph** - relacionar información (Feature → ADR → PR → CHANGELOG)
-6. **Compression** - reducir redundancia, proponer consolidación
-7. **Evolution** - detectar docs que deberían dividirse o fusionarse
-8. **Publishing** - actualizar índice, verificar enlaces
+1. **Discovery** - detect which docs exist, which are missing, which are abandoned
+2. **Ownership** - determine the owner of each piece of information
+3. **Consistency Audit** - look for contradictions between documents
+4. **Freshness** - detect old knowledge (🟢 Current / 🟡 Review / 🔴 Obsolete)
+5. **Knowledge Graph** - relate information (Feature → ADR → PR → CHANGELOG)
+6. **Compression** - reduce redundancy, propose consolidation
+7. **Evolution** - detect docs that should be split or merged
+8. **Publishing** - update index, verify links
 
-### Scripts útiles
+### Useful Scripts
 
 ```bash
-# Auditar la base de conocimiento
+# Audit the knowledge base
 ./scripts/knowledge-audit.sh
 
-# Verificar referencias cruzadas
+# Verify cross-references
 ./scripts/check-refs.sh
 
-# Generar grafo de conocimiento
+# Generate knowledge graph
 python3 scripts/knowledge-graph.py
 ```
 
-## Referencias
+## References
 
-| Archivo | Qué contiene |
+| File | Contents |
 |---|---|
-| `references/artifacts.md` | Catálogo completo de artefactos de conocimiento |
+| `references/artifacts.md` | Complete catalog of knowledge artifacts |
 | `references/checklist.md` | Checklist: discovery, consistency, freshness, graph, compression |
-| `references/knowledge-graph.md` | Cómo construir el grafo de conocimiento |
-| `references/freshness-policy.md` | Política de actualización y archivado |
+| `references/knowledge-graph.md` | How to build the knowledge graph |
+| `references/freshness-policy.md` | Update and archival policy |
 
-## Skills relacionadas
+## Related Skills
 
-- [Engineering Governance](../engineering-governance) - Para auditar la calidad del conocimiento
-- [Technical Documentation](../tech-docs) - Para crear y mantener documentación técnica
+- [Engineering Governance](../engineering-governance) - To audit knowledge quality
+- [Technical Documentation](../tech-docs) - To create and maintain technical documentation

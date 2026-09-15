@@ -4,78 +4,78 @@ metadata:
   category: "Content"
   tags:
     - copy
-    - edicion
+    - editing
     - marketing
-    - escritura
-description: "Edición profesional de copy de marketing: 7 sweeps de claridad, tono, beneficio, prueba, especificidad, emoción y riesgo."
+    - writing
+description: "Professional editing of marketing copy: 7 sweeps of clarity, tone, benefit, proof, specificity, emotion and risk."
 user-invocable: false
 ---
 
 # Workflow: Copy Editing
 
-## Propósito
+## Purpose
 
-Mejorar copy de marketing existente mediante 7 pasadas secuenciales de edición, cada una enfocada en una dimensión. No reescribe desde cero - realza el mensaje original.
+Improve existing marketing copy through 7 sequential editing passes, each focused on one dimension. It doesn't rewrite from scratch - it enhances the original message.
 
-## Filosofía
+## Philosophy
 
 > Good copy editing isn't about rewriting. It's about enhancing.
 
-Cada pasada se enfoca en una dimensión. Cada edición tiene una razón clara. Se preserva la voz del autor mientras se mejora claridad y conversión.
+Each pass focuses on one dimension. Each edit has a clear reason. The author's voice is preserved while clarity and conversion are improved.
 
 ---
 
-# Cuándo usarlo
+# When to use it
 
-- Editar copy de landing pages, emails, ads
-- Revisar marketing copy antes de publicar
-- Pulir mensajes de producto
-- Mejorar conversión de copy existente
-- Hacer copy sweep antes de un lanzamiento
+- Edit landing page copy, emails, ads
+- Review marketing copy before publishing
+- Polish product messages
+- Improve conversion of existing copy
+- Do a copy sweep before a launch
 
 ---
 
-# Fases: The Seven Sweeps
+# Phases: The Seven Sweeps
 
 ## Sweep 1: Clarity
 
-¿El lector entiende lo que decís?
+Does the reader understand what you're saying?
 
-- Estructuras de oraciones confusas
-- Jerga o insider language
-- Afirmaciones ambiguas
-- Una idea por oración
+- Confusing sentence structures
+- Jargon or insider language
+- Ambiguous claims
+- One idea per sentence
 
 ## Sweep 2: Voice and Tone
 
-¿El copy suena consistente?
+Does the copy sound consistent?
 
-- Shifts entre formal y casual
-- Personalidad de marca inconsistente
-- Lectura en voz alta para detectar
+- Shifts between formal and casual
+- Inconsistent brand personality
+- Reading out loud to detect
 
 ## Sweep 3: So What
 
-¿Cada afirmación responde "¿y qué?"
+Does every claim answer "so what?"
 
-- Features sin benefits
-- Afirmaciones sin consecuencias
-- Test: para cada claim, preguntar "so what?"
+- Features without benefits
+- Claims without consequences
+- Test: for every claim, ask "so what?"
 
 ## Sweep 4: Prove It
 
-¿Cada claim tiene evidencia?
+Does every claim have evidence?
 
-- Testimonios con nombres
-- Estadísticas y datos
-- Validación de terceros
-- Garantías y risk reversals
+- Testimonials with names
+- Statistics and data
+- Third-party validation
+- Guarantees and risk reversals
 
 ## Sweep 5: Specificity
 
-¿El copy es concreto?
+Is the copy concrete?
 
-| Vago | Específico |
+| Vague | Specific |
 |---|---|
 | Save time | Save 4 hours every week |
 | Many customers | 2,847 teams |
@@ -83,50 +83,47 @@ Cada pasada se enfoca en una dimensión. Cada edición tiene una razón clara. S
 
 ## Sweep 6: Heightened Emotion
 
-¿El copy hace sentir algo?
+Does the copy make you feel something?
 
-- Pain points que se sienten, no solo se mencionan
-- Lenguaje sensorial
-- Micro-historias
+- Pain points that are felt, not just mentioned
+- Sensory language
+- Micro-stories
 
 ## Sweep 7: Zero Risk
 
-¿Eliminamos todas las barreras a la acción?
+Do we remove all barriers to action?
 
-- Fricción cerca del CTA
-- Objeciones sin responder
-- Trust signals faltantes
+- Friction near the CTA
+- Unanswered objections
+- Missing trust signals
 
 ---
 
 # Outputs
 
-- Copy editado con cambios marcados
-- Reporte por sweep con issues encontrados
-- Versión final pulida
+- Edited copy with marked changes
+- Report per sweep with issues found
+- Polished final version
 
 ## Helper Scripts
 
-Scripts en `skills/copy-editing/scripts/`:
+Scripts in `skills/copy-editing/scripts/`:
 
-| Script | Uso |
+| Script | Use |
 |---|---|
-| `word-count.sh <file>` | Cuenta palabras, caracteres, oraciones, párrafos, promedio de palabras por oración y tiempo de lectura. Usar para ajustar longitud de copy. |
-| `readability-check.sh <file>` | Mide legibilidad del texto. Usar en Sweep 1 (Clarity). |
-| `sentiment-check.sh <file>` | Detecta tono/emoción del texto. Usar en Sweep 2 (Voice and Tone). |
+| `word-count.sh <file>` | Counts words, characters, sentences, paragraphs, average words per sentence and reading time. Use to adjust copy length. |
+| `readability-check.sh <file>` | Measures text readability. Use in Sweep 1 (Clarity). |
+| `sentiment-check.sh <file>` | Detects text tone/emotion. Use in Sweep 2 (Voice and Tone). |
 
 ---
 
-# Principios
+# Principles
 
-- No cambiar el mensaje core; enfocarse en realzarlo
-- Múltiples pasadas enfocadas > una revisión general
-- Cada edición debe tener una razón clara
-- Preservar la voz del autor
+- Don't change the core message; focus on enhancing it
+- Multiple focused passes > one general review
+- Every edit must have a clear reason
+- Preserve the author's voice
 
 ---
 
 # Related Skills
-
-- [Narrative Content](../narrative-content): Para escritura de ficción y narrativa
-- [Campaign Plan](../campaign-plan): Para planificar campañas de marketing

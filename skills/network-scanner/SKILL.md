@@ -1,34 +1,33 @@
 ---
 name: "network-scanner"
-description: "Escáner de red local para descubrir dispositivos"
+description: "Local network scanner to discover devices"
 ---
 
 # network-scanner
 
-## Descripción
-Escanea redes locales usando nmap para descubrir dispositivos conectados y recolectar sus direcciones IP, MAC, vendor names y hostnames via reverse DNS. Bloquea rangos de IP públicas y blocklists para prevenir escaneos accidentales.
+## Description
+Scans local networks using nmap to discover connected devices and collect their IP addresses, MAC, vendor names and hostnames via reverse DNS. Blocks public IP ranges and blocklists to prevent accidental scans.
 
-## Cuándo usarlo
-- Para verificar qué dispositivos están conectados a la red local
-- Para identificar un dispositivo desconocido por su MAC address y vendor
-- Para generar un inventario de dispositivos para documentación de red
-- Para detectar nuevos dispositivos en la red
-- Para presencia detection automatizada
+## When to use it
+- To check which devices are connected to the local network
+- To identify an unknown device by its MAC address and vendor
+- To generate a device inventory for network documentation
+- To detect new devices on the network
+- For automated presence detection
 
 ## Workflow
-1. Ejecutar network-scanner
-2. Esperar que nmap escanee la red local
-3. Recibir lista de dispositivos: IP, MAC, vendor, hostname
-4. Revisar dispositivos conocidos vs desconocidos
+1. Run network-scanner
+2. Wait for nmap to scan the local network
+3. Receive the device list: IP, MAC, vendor, hostname
+4. Review known vs unknown devices
 
-## Tooling relacionado
+## Related tooling
 
-| Skill / Script | Uso |
+| Skill / Script | Use |
 |---|---|
-| `clawdstrike` | Auditoría de seguridad del gateway y red después de descubrir dispositivos. |
-| `observability/scripts/health-check.sh` | Verificar salud de servicios en dispositivos descubiertos. |
+| `clawdstrike` | Gateway and network security audit after discovering devices. |
 
-## Notas
-- Requiere nmap instalado (brew install nmap)
-- Requiere sudo para MAC address discovery
-- Built-in safety blocks previenen escaneo de rangos públicos
+## Notes
+- Requires nmap installed (brew install nmap)
+- Requires sudo for MAC address discovery
+- Built-in safety blocks prevent scanning public ranges

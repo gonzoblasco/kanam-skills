@@ -1,52 +1,52 @@
 # Technical Documentation
 
-Documentación técnica: ADRs, diagramas, CHANGELOG.
+Technical documentation: ADRs, diagrams, CHANGELOG.
 
-## ¿Para qué sirve?
+## What is it for?
 
-Para **crear y gestionar documentación técnica** de proyectos: ADRs (Architecture Decision Records), README, API docs, CHANGELOG, guías de contribución y diagramas de arquitectura C4 con Mermaid.
+To **create and manage project technical documentation**: ADRs (Architecture Decision Records), README, API docs, CHANGELOG, contribution guides and C4 architecture diagrams with Mermaid.
 
-## ¿Cuándo usarlo?
+## When to use it?
 
-- Al arrancar un proyecto nuevo (docs iniciales + diseño)
-- Cuando cambiás una API o feature (actualizar docs)
-- Al cerrar un epic o milestone (CHANGELOG + ADRs)
-- Cuando necesitás documentar una decisión arquitectónica
+- When starting a new project (initial docs + design)
+- When you change an API or feature (update docs)
+- When closing an epic or milestone (CHANGELOG + ADRs)
+- When you need to document an architectural decision
 
-## ¿Cómo se usa?
+## How is it used?
 
-### Workflow completo
+### Full workflow
 
-1. **Audiencia** - ¿quién lee estos docs?
-2. **Diseño Arquitectónico** - diagramas C4, trade-offs, dependencias, riesgos
-3. **Estructura** - qué docs necesita el proyecto
-4. **ADRs** - crear o sincronizar decisiones arquitecturales
-5. **Redacción técnica** - ejemplos concretos, código real
-6. **Revisión** - coherencia, completitud, enlaces no rotos
-7. **Publicación** - commit + push
+1. **Audience** - who reads these docs?
+2. **Architectural Design** - C4 diagrams, trade-offs, dependencies, risks
+3. **Structure** - which docs the project needs
+4. **ADRs** - create or sync architectural decisions
+5. **Technical Writing** - concrete examples, real code
+6. **Review** - coherence, completeness, no broken links
+7. **Publication** - commit + push
 
-### Scripts útiles
+### Useful scripts
 
 ```bash
-# Crear nuevo ADR
-./scripts/generate-adr.sh --title "Usar Supabase para backend" --status proposed
+# Create a new ADR
+./scripts/generate-adr.sh --title "Use Supabase for the backend" --status proposed
 
-# Agregar entrada al CHANGELOG
-./scripts/update-changelog.sh --type added --message "Login con Google"
+# Add a CHANGELOG entry
+./scripts/update-changelog.sh --type added --message "Sign in with Google"
 
-# Generar diagramas desde el código
+# Generate diagrams from the code
 python3 scripts/analyze_codebase.py ./src --type architecture
 ```
 
-## Referencias
+## References
 
-| Archivo | Qué contiene |
+| File | What it contains |
 |---|---|
-| `references/adr-patterns.md` | Template ADR, patrones comunes, ciclo de vida |
-| `references/architecture-diagrams.md` | C4 model con Mermaid: context, containers, components |
-| `references/changelog-guide.md` | Formato Keep a Changelog, cuándo actualizar |
+| `references/adr-patterns.md` | ADR template, common patterns, lifecycle |
+| `references/architecture-diagrams.md` | C4 model with Mermaid: context, containers, components |
+| `references/changelog-guide.md` | Keep a Changelog format, when to update |
 
-## Skills relacionadas
+## Related skills
 
-- [Knowledge Management](../knowledge-management) - Para mantener la base de conocimiento
-- [Build & Scaffold](../build-scaffold) - Para documentar decisiones de scaffolding
+- [Knowledge Management](../knowledge-management) - To keep the knowledge base up to date
+- [Build & Scaffold](../build-scaffold) - To document scaffolding decisions

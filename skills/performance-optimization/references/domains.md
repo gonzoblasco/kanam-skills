@@ -1,47 +1,47 @@
-# Dominios de Performance
+# Performance Domains
 
 ## Frontend
 
 - rendering
 - hydration
 - bundle size
-- imágenes
-- fuentes
+- images
+- fonts
 - CSS
 - JavaScript
 
 ## Backend
 
 - CPU
-- memoria
-- concurrencia
+- memory
+- concurrency
 - APIs
-- serialización
+- serialization
 - cache
 
 ## Database
 
-- índices
+- indexes
 - N+1
 - joins
 - locks
-- planes de ejecución
+- execution plans
 
-## Infraestructura
+## Infrastructure
 
 - CDN
 - cache
-- compresión
-- escalabilidad
+- compression
+- scalability
 - workers
-- colas
+- queues
 
 ## AI
 
 - tokens
 - prompts
-- contexto
+- context
 - embeddings
 - RAG
 - MCP
-- latencia del modelo
+- model latency

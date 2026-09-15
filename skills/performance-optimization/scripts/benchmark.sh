@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# benchmark.sh — Run performance benchmarks and compare against baseline
+# benchmark.sh - Run performance benchmarks and compare against baseline
 # Usage: ./benchmark.sh [--url <url>] [--baseline <file>]
 
 set -euo pipefail

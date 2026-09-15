@@ -1,49 +1,49 @@
 # Support Response Writer
 
-Generador de respuestas de customer support.
+Customer support response generator.
 
-## ¿Para qué sirve?
+## What Is It For?
 
-Para **redactar respuestas profesionales** de customer support para 4 escenarios: pre-venta, post-venta, reclamos y devoluciones. Incluye estrategias de de-escalación emocional según el nivel de intensidad del cliente.
+To **draft professional responses** for customer support across 4 scenarios: pre-sale, after-sale, complaints and returns. Includes emotional de-escalation strategies based on the customer's intensity level.
 
-## ¿Cuándo usarlo?
+## When to Use It?
 
-- Cuando tenés que responder un ticket de soporte
-- Cuando un cliente está furioso y no sabés cómo responder
-- Cuando necesitás gestionar una devolución o cambio
-- Cuando querés responder una consulta pre-venta
+- When you have to answer a support ticket
+- When a customer is furious and you do not know how to respond
+- When you need to handle a return or exchange
+- When you want to answer a pre-sale inquiry
 
-## ¿Cómo se usa?
+## How Is It Used?
 
-Es conversacional. Le describís el escenario y genera todo.
+It is conversational. You describe the scenario and it generates everything.
 
-> "Un cliente compró un producto y llegó roto. Está muy enojado. Ayudame a responder."
+> "A customer bought a product and it arrived broken. He is very angry. Help me respond."
 
-Te devuelve:
+It returns:
 
-1. **Respuesta inicial** - lista para copiar y usar
-2. **Follow-up response** - si el cliente sigue preguntando
-3. **Escalation response** - si no se puede resolver en el momento
-4. **Estrategia de de-escalación** - según el nivel emocional
-5. **Communication tips** - qué evitar, qué decir
+1. **Initial response** - ready to copy and use
+2. **Follow-up response** - if the customer keeps asking
+3. **Escalation response** - if it cannot be resolved on the spot
+4. **De-escalation strategy** - based on the emotional level
+5. **Communication tips** - what to avoid, what to say
 
-### Niveles de de-escalación
+### De-escalation levels
 
-| Nivel | Estrategia |
+| Level | Strategy |
 |---|---|
-| Calm | Profesional, eficiente |
-| Anxious | Empatía + timeline claro |
-| Dissatisfied | Validar + ownership + compensación |
-| Angry | Escuchar + empatía profunda + escalar |
-| Disappointed | Warm care + exceder expectativas |
+| Calm | Professional, efficient |
+| Anxious | Empathy + clear timeline |
+| Dissatisfied | Validate + ownership + compensation |
+| Angry | Listen + deep empathy + escalate |
+| Disappointed | Warm care + exceed expectations |
 
-## Referencias
+## References
 
-| Archivo | Qué contiene |
+| File | Contents |
 |---|---|
-| `references/phrases-to-avoid.md` | Frases a evitar y alternativas, golden rules |
+| `references/phrases-to-avoid.md` | Phrases to avoid and alternatives, golden rules |
 
-## Skills relacionadas
+## Related Skills
 
-- [Copy Editing](../copy-editing) - Para pulir el tono de las respuestas
-- [Campaign Plan](../campaign-plan) - Para campañas de customer communication
+- [Copy Editing](../copy-editing) - To polish the tone of responses
+- [Campaign Plan](../campaign-plan) - For customer communication campaigns

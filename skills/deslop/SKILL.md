@@ -1,37 +1,37 @@
 ---
 name: "deslop"
-description: "Limpia código AI slop de branches antes de PRs"
+description: "Clean AI slop code from branches before PRs"
 ---
 
 # deslop
 
-## Descripción
-Escanea el diff de una branch y remueve ruido generado por IA: null checks defensivos innecesarios, try/catch que no matchean el estilo del proyecto, type casts redundantes, comentarios placeholder, y lint-disable comments agregados defensivamente. Verifica que el build pase después de cada eliminación.
+## Description
+Scans the diff of a branch and removes AI-generated noise: unnecessary defensive null checks, try/catch that doesn't match the project style, redundant type casts, placeholder comments, and lint-disable comments added defensively. Verifies that the build passes after each removal.
 
-## Cuándo usarlo
-- Antes de abrir un PR con código generado por IA
-- Para limpiar verbose null checks de código generado
-- Para remover try/catch blocks defensivos que no corresponden
-- Para eliminar comentarios TODO/placeholder de scaffolding
-- Para quitar lint-disable comments agregados por IA
+## When to use it
+- Before opening a PR with AI-generated code
+- To clean verbose null checks from generated code
+- To remove defensive try/catch blocks that don't belong
+- To remove TODO/placeholder comments from scaffolding
+- To remove lint-disable comments added by AI
 
 ## Workflow
-1. Tener la branch con los cambios generados por IA
-2. Ejecutar deslop sobre la branch
-3. Revisar los cambios propuestos (modo review)
-4. Si todo ok, ejecutar en modo auto con approval
-5. Verificar que el build pase
-6. Abrir el PR
+1. Have the branch with the AI-generated changes
+2. Run deslop on the branch
+3. Review the proposed changes (review mode)
+4. If all good, run in auto mode with approval
+5. Verify that the build passes
+6. Open the PR
 
-## Tooling relacionado
+## Related tooling
 
-| Skill / Script | Uso |
+| Skill / Script | Use |
 |---|---|
-| `code-review-and-quality` | Scan general de deuda técnica y AI slop (absorbio a vibe-code-cleanup). Usar antes de deslop para priorizar. |
-| `ci-cd-and-automation` | Validar build, typecheck, lint y tests despues de limpiar. |
-| `code-review-and-quality` | Revision automatica final del PR (absorbio a review-quality). |
+| `code-review-and-quality` | General technical debt and AI slop scan (absorbed into vibe-code-cleanup). Use before deslop to prioritize. |
+| `ci-cd-and-automation` | Validate build, typecheck, lint and tests after cleaning. |
+| `code-review-and-quality` | Automatic final PR review (absorbed into review-quality). |
 
-## Notas
-- Compara cada candidato contra el contexto local antes de borrar
-- Preserva guards legítimos en trust boundaries
-- Verifica el build después de cada cambio
+## Notes
+- Compares each candidate against local context before deleting
+- Preserves legitimate guards at trust boundaries
+- Verifies the build after each change

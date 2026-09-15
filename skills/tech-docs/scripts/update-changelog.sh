@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# update-changelog.sh — Add entry to CHANGELOG
+# update-changelog.sh - Add entry to CHANGELOG
 # Usage: ./update-changelog.sh --type added|changed|fixed|removed --message "<message>"
 
 set -euo pipefail

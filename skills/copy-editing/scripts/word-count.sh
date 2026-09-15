@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# word-count.sh — Word, character, sentence, and readability stats for a text file
+# word-count.sh - Word, character, sentence, and readability stats for a text file
 # Usage: ./word-count.sh <file>
 
 set -euo pipefail

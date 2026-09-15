@@ -57,7 +57,7 @@ When TTFB is slow (> 800ms), check each component in DevTools Network waterfall:
 - [ ] No CSS-in-JS runtime cost in production (use extraction)
 
 ### Fonts
-- [ ] Limited to 2–3 font families, 2–3 weights each (every additional weight is another request)
+- [ ] Limited to 2-3 font families, 2-3 weights each (every additional weight is another request)
 - [ ] WOFF2 format only (smallest, universal support - skip WOFF/TTF/EOT)
 - [ ] Self-hosted when possible (third-party font CDNs add DNS + TCP + TLS round-trips)
 - [ ] LCP-critical fonts preloaded: `<link rel="preload" as="font" type="font/woff2" crossorigin>`
@@ -111,7 +111,7 @@ When TTFB is slow (> 800ms), check each component in DevTools Network waterfall:
 
 1. **Field data first** - check [CrUX Vis](https://developer.chrome.com/docs/crux/vis) or your RUM tool for real-user INP before optimising
 2. **Identify slow interactions** - open DevTools → Performance panel → record while interacting; look for long tasks triggered by clicks/keystrokes
-3. **Test on mid-range Android** - INP issues often only surface on slower hardware; use a real device or DevTools CPU throttling (4×–6× slowdown)
+3. **Test on mid-range Android** - INP issues often only surface on slower hardware; use a real device or DevTools CPU throttling (4×-6× slowdown)
 
 ```bash
 # Lighthouse CLI

@@ -1,16 +1,16 @@
-# PR Checklist — OSS Contribution Reference
+# PR Checklist - OSS Contribution Reference
 
-Checklist para PRs a repositorios externos.
+Checklist for PRs to external repositories.
 
 ## Pre-PR
 
-- [ ] Fork creado desde el repo original (no clonar directo)
-- [ ] Branch con nombre descriptivo: `fix/issue-123`, `feat/add-x`
-- [ ] Upstream configurado: `git remote add upstream <original-url>`
-- [ ] Sin cambios de formato/whitespace no relacionados
-- [ ] Sin cambios a archivos no relacionados
-- [ ] Commits firmados con SSH
-- [ ] Sin trazas de automatización en commits (repos Tier 0)
+- [ ] Fork created from the original repo (do not clone directly)
+- [ ] Branch with a descriptive name: `fix/issue-123`, `feat/add-x`
+- [ ] Upstream configured: `git remote add upstream <original-url>`
+- [ ] No unrelated formatting/whitespace changes
+- [ ] No changes to unrelated files
+- [ ] Commits signed with SSH
+- [ ] No automation traces in commits (Tier 0 repos)
 
 ## PR Description
 
@@ -36,6 +36,6 @@ Closes #123
 
 ## Post-PR
 
-- [ ] Responder a comments de maintainers dentro de 24h
-- [ ] Si piden cambios, hacerlos rápido
-- [ ] Registrar la cadena completa en CONTRIBUTING.md (Issue → PR tercero → nuestro aporte → nuestro PR → contexto)
+- [ ] Reply to maintainer comments within 24h
+- [ ] If they ask for changes, do them quickly
+- [ ] Record the full chain in CONTRIBUTING.md (Issue -> third-party PR -> our contribution -> our PR -> context)

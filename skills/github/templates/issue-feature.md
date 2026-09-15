@@ -1,17 +1,17 @@
-# Plantilla de Solicitud de Funcion
+# Feature Request Template
 
-## Problema
+## Problem
 
-<!-- Que problema resuelve esto? -->
+<!-- What problem does this solve? -->
 
-## Solucion Propuesta
+## Proposed Solution
 
-<!-- Como lo resolverias? -->
+<!-- How would you solve it? -->
 
-## Alternativas Consideradas
+## Alternatives Considered
 
-<!-- Que otros enfoques pensaste? -->
+<!-- What other approaches did you think about? -->
 
-## Contexto Adicional
+## Additional Context
 
-<!-- Screenshots, referencias o cualquier otra info relevante -->
+<!-- Screenshots, references, or any other relevant info -->

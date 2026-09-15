@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
-# pr-batch-check.sh — Check open PRs across all tracked OSS repos
+# pr-batch-check.sh - Check open PRs across all tracked OSS repos
 # Usage: ./pr-batch-check.sh [--json] [--mine-only]
 #
 # --json       Output as JSON array
-# --mine-only  Only show PRs authored by the authenticated user
+# --mine-only  Only show PRs authored by the current gh user
 
 set -euo pipefail
 
 # ── Config ──────────────────────────────────────────────────
-AUTHOR="$(gh api user --jq '.login' 2>/dev/null || echo "$USER")"
+# Authenticated gh username (override with --author <user>)
+AUTHOR="${GH_AUTHOR:-$(gh api user --jq '.login' 2>/dev/null || echo "$USER")}"
 OUTPUT_JSON=false
 MINE_ONLY=false
 
@@ -16,6 +17,7 @@ for arg in "$@"; do
   case "$arg" in
     --json) OUTPUT_JSON=true ;;
     --mine-only) MINE_ONLY=true ;;
+    --author) AUTHOR="$2"; shift 2 ;;
   esac
 done
 
@@ -109,7 +111,7 @@ else
       *) status="⏳ $review" ;;
     esac
 
-    echo "  $repo#$number — $title"
+    echo "  $repo#$number - $title"
     echo "  $status | Author: $author | Updated: $updated"
     echo "  $url"
     echo ""

@@ -1,45 +1,45 @@
-# Tier Ranking — OSS Contribution Reference
+# Tier Ranking - OSS Contribution Reference
 
-Clasificación de repositorios objetivo para contribuciones estratégicas.
+Classification of target repositories for strategic contributions.
 
 ## Tier System
 
-### Tier 0 — High Impact, High Visibility
-Repos con gran audiencia, PRs revisados rigurosamente.
+### Tier 0 - High Impact, High Visibility
+Repos with large audiences, PRs reviewed rigorously.
 
-- **shadcn/ui** — Componentes UI, audiencia masiva
-- **TanStack (react-query, react-router, table)** — Librerías core del stack
-- **Vercel (next.js, ai-sdk)** — Framework principal
-- **Biome** — Toolchain del stack
+- **shadcn/ui** - UI components, massive audience
+- **TanStack (react-query, react-router, table)** - Core stack libraries
+- **Vercel (next.js, ai-sdk)** - Main framework
+- **Biome** - Stack toolchain
 
-**Estrategia:** PRs pequeños y precisos. Descripción humana, sin trazas de automatización. Bugs concretos sin competencia → PR rápido.
+**Strategy:** small and precise PRs. Human description, no automation traces. Concrete bugs without competition -> quick PR.
 
-### Tier 1 — Strategic Value
-Repos que usamos activamente o complementan el stack.
+### Tier 1 - Strategic Value
+Repos we actively use or that complement the stack.
 
-- **Supabase** — Backend principal
-- **Radix UI / Ariakit** — Headless UI primitives
-- **React Aria** — Accesibilidad
-- **Playwright** — Testing E2E
-- **Vitest** — Testing unitario
+- **Supabase** - Main backend
+- **Radix UI / Ariakit** - Headless UI primitives
+- **React Aria** - Accessibility
+- **Playwright** - E2E testing
+- **Vitest** - Unit testing
 
-**Estrategia:** Features pequeños, mejoras de DX, fixes de accesibilidad.
+**Strategy:** small features, DX improvements, accessibility fixes.
 
-### Tier 2 — Community Building
-Repos donde construir presencia sin presión de review.
+### Tier 2 - Community Building
+Repos where to build presence without review pressure.
 
-- **create-stack-next** — Proyecto propio, control total
-- **workflow-kit** — Proyecto propio
-- **Repos de accesibilidad** (axe-core, WAI-ARIA practices)
-- **Documentación de frameworks**
+- **create-stack-next** - Own project, full control
+- **workflow-kit** - Own project
+- **Accessibility repos** (axe-core, WAI-ARIA practices)
+- **Framework documentation**
 
-**Estrategia:** Contribuciones regulares, issues, reviews de PRs ajenos.
+**Strategy:** regular contributions, issues, reviews of others' PRs.
 
 ## Opportunity Detection
 
-Buscar issues abiertos sin PRs competidores (usar `scripts/triage-issues.sh`). Priorizar:
+Look for open issues without competing PRs (use `scripts/triage-issues.sh`). Prioritize:
 
-- Bugs concretos con repro claro (fix rápido, alto valor)
-- Issues de accesibilidad (especialización del usuario)
-- Issues donde el reporter ya identificó la causa raíz (análisis más rápido)
-- Issues con etiqueta `good first issue` o `help wanted` en repos Tier 0/1
+- Concrete bugs with a clear repro (quick fix, high value)
+- Accessibility issues (the user's specialty)
+- Issues where the reporter already identified the root cause (faster analysis)
+- Issues labeled `good first issue` or `help wanted` in Tier 0/1 repos

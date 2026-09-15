@@ -1,6 +1,6 @@
 ---
 name: "godot-mcp"
-description: "Aprender Godot 4.x paso a paso con asistencia de OpenClaw. El MCP server es una herramienta complementaria, no un reemplazo del editor."
+description: "Learn Godot 4.x step by step with OpenClaw assistance. The MCP server is a complementary tool, not a replacement for the editor."
 metadata:
   version: 2.0.0
   author: Kanam
@@ -16,27 +16,27 @@ allowed-tools:
   - browser
 ---
 
-# Godot MCP - Aprender Godot juntos
+# Godot MCP - Learning Godot together
 
-Este skill NO es sobre construir juegos de un prompt. Es sobre acompañar al usuario en su viaje de aprendizaje de Godot 4.7, paso a paso, hito por hito.
+This skill is NOT about building games from a single prompt. It is about accompanying the user on his journey of learning Godot 4.7, step by step, milestone by milestone.
 
-## Filosofía
+## Philosophy
 
-- **El usuario aprende haciendo, no leyendo.** Cada hito es hands-on.
-- **Prueba y error.** Si algo se rompe, lo investigamos juntos.
-- **Descubrimiento compartido.** Godot 4.7 tiene cosas nuevas que neither of us knows. Las exploramos juntos.
-- **No automatizar el aprendizaje.** No construyo el juego por el usuario. Soy guía, copiloto y herramienta.
-- **Hitos pequeños y celebrables.** Cada paso genera algo visible que se puede probar.
+- **the user learns by doing, not by reading.** Every milestone is hands-on.
+- **Trial and error.** If something breaks, we investigate it together.
+- **Shared discovery.** Godot 4.7 has new things that neither of us knows. We explore them together.
+- **Do not automate learning.** I do not build the game for the user. I am a guide, a copilot and a tool.
+- **Small, celebrateable milestones.** Every step produces something visible that can be tested.
 
-## Rol de OpenClaw
+## OpenClaw's role
 
-1. **Guía**: explicar conceptos de Godot cuando se necesiten.
-2. **Asistente MCP**: usar el MCP server para tareas repetitivas o de verificación.
-3. **Investigador**: buscar docs, ejemplos, cambios en Godot 4.7 vs versiones anteriores.
-4. **Debug companion**: ayudar a diagnosticar errores cuando algo no funciona.
-5. **NOT a builder**: no construyo escenas enteras de un prompt. El usuario decide qué hacer y lo hacemos juntos.
+1. **Guide**: explain Godot concepts when they are needed.
+2. **MCP assistant**: use the MCP server for repetitive or verification tasks.
+3. **Researcher**: look up docs, examples, and changes in Godot 4.7 vs earlier versions.
+4. **Debug companion**: help diagnose errors when something does not work.
+5. **NOT a builder**: I do not build entire scenes from a prompt. the user decides what to do and we do it together.
 
-## Setup del MCP server (cuando se necesite)
+## MCP server setup (when needed)
 
 ```bash
 cd /path/to/godot/project
@@ -46,75 +46,75 @@ npx @yanhuifair/godot-mcp -t streamable-http --port 9877 -p .
 Health: `http://127.0.0.1:9877/health`
 MCP endpoint: `http://127.0.0.1:9877/mcp`
 
-Helper script: `/tmp/godot-mcp.sh` (maneja sesión MCP automáticamente).
+Helper script: `/tmp/godot-mcp.sh` (handles the MCP session automatically).
 
 If this skill ever adds scripts under `skills/godot-mcp/scripts/`, run `npm test` from the workspace root and use `test-skills.sh` to validate them before committing.
 
-## Cuándo usar el MCP vs el editor
+## When to use MCP vs the editor
 
-- **MCP**: verificación rápida, lectura de estado, validación, operaciones repetitivas.
-- **Editor**: el usuario trabaja directamente. El MCP no reemplaza la experiencia de usar Godot.
-- **Ambos**: el usuario puede tener el editor abierto mientras OpenClaw asiste con MCP.
+- **MCP**: quick verification, reading state, validation, repetitive operations.
+- **Editor**: the user works directly. MCP does not replace the experience of using Godot.
+- **Both**: the user can have the editor open while OpenClaw assists through MCP.
 
-## Godot 4.7 - Qué hay de nuevo
+## Godot 4.7 - What's new
 
-Godot 4.7 trae cambios sobre 4.6 que vale la pena explorar:
+Godot 4.7 brings changes over 4.6 worth exploring:
 
-- **TileMapLayer**: reemplazo definitivo de TileMap (nodo separado, no TileMap + layers)
-- **Mejoras de renderizado**: Metal backend mejorado en macOS
-- **Nuevos nodos y propiedades**: investigar cambios en CharacterBody2D, Camera2D, etc.
-- **Performance**: mejoras en culling y batching 2D
-- **GDScript**: posibles nuevos features del lenguaje
+- **TileMapLayer**: final replacement for TileMap (a separate node, not TileMap + layers)
+- **Rendering improvements**: improved Metal backend on macOS
+- **New nodes and properties**: look into changes in CharacterBody2D, Camera2D, etc.
+- **Performance**: improvements in 2D culling and batching
+- **GDScript**: possible new language features
 
->Nota: verificar changelog oficial de 4.7 para detalles exactos antes de enseñar algo que podría haber cambiado.
+>Note: check the official 4.7 changelog for exact details before teaching something that may have changed.
 
-## Estructura de hitos sugerida (flexible)
+## Suggested milestone structure (flexible)
 
-### Hito 1: Primer proyecto y editor
-- Crear proyecto nuevo desde Godot
-- Entender la interfaz: viewport, dock de escena, inspector, sistema de archivos
-- Crear primera escena con un nodo visible
-- Guardar y correr
+### Milestone 1: First project and editor
+- Create a new project from Godot
+- Understand the interface: viewport, scene dock, inspector, file system
+- Create a first scene with a visible node
+- Save and run
 
-### Hito 2: Nodos y escenas
-- Árbol de nodos: parent/child
-- Tipos de nodos: Node2D, Sprite2D, CharacterBody2D, StaticBody2D
-- Instancing: reutilizar escenas dentro de escenas
+### Milestone 2: Nodes and scenes
+- Node tree: parent/child
+- Node types: Node2D, Sprite2D, CharacterBody2D, StaticBody2D
+- Instancing: reusing scenes inside scenes
 - Transform: position, rotation, scale
 
-### Hito 3: Scripts y GDScript
-- Attachar script a un nodo
+### Milestone 3: Scripts and GDScript
+- Attach a script to a node
 - _ready, _process, _physics_process
 - Variables, @export
 - Input handling
-- Señales
+- Signals
 
-### Hito 4: Física 2D
+### Milestone 4: 2D physics
 - Collision shapes
 - CharacterBody2D vs StaticBody2D vs RigidBody2D
-- Gravedad y move_and_slide
-- Áreas (Area2D) para detección
+- Gravity and move_and_slide
+- Areas (Area2D) for detection
 
-### Hito 5: Cámara y UI
-- Camera2D: seguimiento, límites, smoothing
-- CanvasLayer y Control nodes
-- Labels, Buttons, signals de UI
+### Milestone 5: Camera and UI
+- Camera2D: follow, limits, smoothing
+- CanvasLayer and Control nodes
+- Labels, Buttons, UI signals
 
-### Hito 6: Game feel
-- Animación (AnimatedSprite2D o _draw)
+### Milestone 6: Game feel
+- Animation (AnimatedSprite2D or _draw)
 - Particles
 - Sound effects
 - Screen shake
 
-### Hito 7: Niveles y progresión
+### Milestone 7: Levels and progression
 - Tilemaps/TileMapLayer
 - Scene switching
 - Save/load
 - Export
 
-## Notas
+## Notes
 
-- Godot 4.7.1 instalado en `/Applications/Godot.app`
-- El MCP server `@yanhuifair/godot-mcp` v1.4.0 tiene 282 tools
-- No instalar el plugin del MCP en el proyecto a menos que sea necesario para algo específico
-- Preferir que el usuario trabaje en el editor y use OpenClaw como guía
+- Godot 4.7.1 installed at `/Applications/Godot.app`
+- The `@yanhuifair/godot-mcp` v1.4.0 MCP server has 282 tools
+- Do not install the MCP plugin in the project unless it is needed for something specific
+- Prefer the user working in the editor and using OpenClaw as a guide

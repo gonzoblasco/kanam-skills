@@ -4,142 +4,141 @@ metadata:
   category: "Workflow"
   tags:
     - i18n
-    - localizacion
-    - internacionalizacion
-description: "Workflow de internacionalización y localización: setup, auditoría, reemplazo de strings y validación de paridad de locales."
+    - localization
+    - internationalization
+description: "Internationalization and localization workflow: setup, audit, string replacement and locale parity validation."
 user-invocable: false
 ---
 
 # Workflow: I18n Expert
 
-## Propósito
+## Purpose
 
-Configurar, auditar y mantener la internacionalización (i18n) y localización (l10n) en proyectos UI. Incluye setup del framework, reemplazo de strings hardcodeadas, validación de paridad entre locales y manejo de plurales, formatos y RTL.
+Configure, audit and maintain internationalization (i18n) and localization (l10n) in UI projects. Includes framework setup, replacing hardcoded strings, validating parity between locales and handling plurals, formats and RTL.
 
-## Filosofía
+## Philosophy
 
 > Every user deserves the app in their language.
 
-La internacionalización no es un feature post-hoc. Es una decisión arquitectónica que se toma al inicio.
+Internationalization is not a post-hoc feature. It's an architectural decision made at the start.
 
 ---
 
-# Cuándo usarlo
+# When to use it
 
-- Configurar i18n en un proyecto nuevo
-- Reemplazar strings hardcodeadas por claves traducibles
-- Auditar paridad entre locales (claves faltantes, keys huérfanas)
-- Agregar un nuevo locale
-- Localizar mensajes de error (nunca exponer raw error.message)
-- Configurar routing con detección de idioma
+- Configure i18n in a new project
+- Replace hardcoded strings with translatable keys
+- Audit parity between locales (missing keys, orphaned keys)
+- Add a new locale
+- Localize error messages (never expose raw error.message)
+- Configure routing with language detection
 
 ---
 
-# Fases
+# Phases
 
 ## 1. Scope
 
-Confirmar:
+Confirm:
 
-- Framework y routing
-- Estado actual de i18n (none, partial, legacy)
-- Locales target (default: en-US + es-AR)
-- Necesidad de traducción (AI, professional, manual)
-- Formato de locales (JSON, YAML, PO, XLIFF)
-- Requerimientos de formalidad cultural
+- Framework and routing
+- Current i18n state (none, partial, legacy)
+- Target locales (default: en-US + es-AR)
+- Translation need (AI, professional, manual)
+- Locale format (JSON, YAML, PO, XLIFF)
+- Cultural formality requirements
 
 ## 2. Setup
 
-Elegir e instalar framework:
+Choose and install framework:
 
-| Framework | Librería recomendada |
+| Framework | Recommended library |
 |---|---|
 | Next.js App Router | `next-intl` |
 | Next.js Pages Router | `next-i18next` |
 | React (Vite, CRA) | `react-i18next` |
 | Vue | `vue-i18n` |
 
-Wire provider, cargar recursos, agregar language switcher.
+Wire provider, load resources, add language switcher.
 
-## 3. Auditoría
+## 3. Audit
 
-Ejecutar script de auditoría para detectar:
+Run the audit script to detect:
 
-- Claves faltantes en algún locale
-- Keys huérfanas (existen en archivo pero no se usan)
-- Strings hardcodeadas sin traducir
-- Problemas de pluralización
+- Missing keys in any locale
+- Orphaned keys (they exist in the file but are not used)
+- Hardcoded strings without translation
+- Pluralization problems
 
 ```bash
 python3 scripts/i18n_audit.py --src src/ --locale public/locales/en-US.json --locale public/locales/es-AR.json
 ```
 
-## 4. Reemplazo
+## 4. Replacement
 
-Buscar y reemplazar strings hardcodeadas:
+Find and replace hardcoded strings:
 
 ```bash
-# Buscar texto visible en JSX
+# Find visible text in JSX
 rg -n --glob 'src/**/*.{ts,tsx}' '<[^>]+>[^<{]*[A-Za-z][^<{]*<'
 
-# Buscar aria-labels, titles, placeholders
+# Find aria-labels, titles, placeholders
 rg -n --glob 'src/**/*.{ts,tsx}' 'aria-label="[^"]+"|title="[^"]+"|placeholder="[^"]+"'
 ```
 
-Reemplazar con `t('namespace.key')`.
+Replace with `t('namespace.key')`.
 
-## 5. Localización de Errores
+## 5. Error Localization
 
-- Mapear códigos de error a claves localizadas
-- Mostrar solo strings localizados en UI
-- Loggear raw error details solo en backend
-- Proveer fallback localizado para códigos desconocidos
+- Map error codes to localized keys
+- Show only localized strings in UI
+- Log raw error details only in backend
+- Provide localized fallback for unknown codes
 
-## 6. Validación
+## 6. Validation
 
-- Re-ejecutar auditoría hasta 0 issues
-- Validar JSON: `python3 -m json.tool <file>`
-- Actualizar tests que afirman texto visible
-- Verificar plurales y formatos en todos los locales
+- Re-run audit until 0 issues
+- Validate JSON: `python3 -m json.tool <file>`
+- Update tests that assert visible text
+- Verify plurals and formats in all locales
 
 ## 7. Performance
 
 - Lazy-load locale bundles
-- Split archivos grandes por namespace
-- Cachear recursos de idioma
+- Split large files by namespace
+- Cache language resources
 
 ---
 
 # Outputs
 
 - i18n config/provider wiring
-- Locale files para cada idioma target
-- Strings reemplazadas con claves estables
-- Language switcher con persistencia
-- Tests actualizados para texto localizado
-- Reporte de auditoría de paridad
+- Locale files for each target language
+- Strings replaced with stable keys
+- Language switcher with persistence
+- Tests updated for localized text
+- Parity audit report
 
 ---
 
-# Principios
+# Principles
 
-- Nunca exponer raw `error.message` en UI
-- Preferir namespaces estructurados (`errors.*`, `buttons.*`, `workspace.*`)
-- Términos técnicos/marca pueden quedar sin traducir (product name, API, MCP)
-- Mantener traducciones concisas y consistentes
-- La clave es estable aunque el texto cambie
+- Never expose raw `error.message` in UI
+- Prefer structured namespaces (`errors.*`, `buttons.*`, `workspace.*`)
+- Technical/brand terms can stay untranslated (product name, API, MCP)
+- Keep translations concise and consistent
+- The key is stable even if the text changes
 
 ## Helper Scripts
 
-Scripts en `skills/i18n-expert/scripts/`:
+Scripts in `skills/i18n-expert/scripts/`:
 
-| Script | Uso |
+| Script | Use |
 |---|---|
-| `i18n_audit.py --src src/ --locale path/to/en.json --locale path/to/es.json` | Detecta claves faltantes, keys huérfanas, strings hardcodeadas y problemas de pluralización. Usar en Fase 3 (Auditoría) y Fase 6 (Validación). |
+| `i18n_audit.py --src src/ --locale path/to/en.json --locale path/to/es.json` | Detects missing keys, orphaned keys, hardcoded strings and pluralization problems. Use in Phase 3 (Audit) and Phase 6 (Validation). |
 
 ---
 
 # Related Skills
 
-- [Build & Scaffold](../build-scaffold): Para incluir i18n en el scaffolding inicial
-- [Review & Quality](../review-quality): Para revisar que no haya strings hardcodeadas
+- [Review & Quality](../code-review-and-quality): To review that there are no hardcoded strings

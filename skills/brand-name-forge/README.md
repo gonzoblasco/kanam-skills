@@ -1,41 +1,41 @@
 # Brand Name Forge
 
-Workshop sistemático de naming de marca.
+Systematic brand naming workshop.
 
-## ¿Para qué sirve?
+## What Is It For?
 
-Para **nombrar productos, servicios, empresas o proyectos** usando 8 métodos clásicos de naming. Cada método genera un candidato con significado, justificación y sugerencias de dominio.
+To **name products, services, companies or projects** using 8 classic naming methods. Each method generates a candidate with meaning, rationale and domain suggestions.
 
-## ¿Cuándo usarlo?
+## When to Use It?
 
-- Cuando necesitás nombrar un producto nuevo
-- Cuando el nombre actual no convence
-- Cuando querés explorar opciones antes de decidir
+- When you need to name a new product
+- When the current name is not convincing
+- When you want to explore options before deciding
 
-## ¿Cómo se usa?
+## How Is It Used?
 
-Es conversacional. Le contás qué estás nombrando y te devuelve 8 candidatos.
+It is conversational. You tell it what you are naming and it returns 8 candidates.
 
-> "Necesito un nombre para una herramienta de IA que ayuda a developers a escribir tests automáticamente."
+> "I need a name for an AI tool that helps developers write tests automatically."
 
-Te va a pedir: descripción del producto, audiencia target, tono de marca (techy, friendly, premium), y preferencia de idioma.
+It will ask you for: product description, target audience, brand tone (techy, friendly, premium), and language preference.
 
-Después genera 8 nombres, uno por método:
+Then it generates 8 names, one per method:
 
-| # | Método | Ejemplo de salida |
+| # | Method | Example output |
 |---|---|---|
-| 1 | Portmanteau | TestWright (Test + Wright como en playwright) |
-| 2 | Metaphor | Sentinel (el que vigila la calidad) |
-| 3 | Onomatopoeia | Click (el sonido de un test que pasa) |
+| 1 | Portmanteau | TestWright (Test + Wright as in playwright) |
+| 2 | Metaphor | Sentinel (the one that watches over quality) |
+| 3 | Onomatopoeia | Click (the sound of a test passing) |
 | 4 | Acronym | ATS (Automated Test Suite) |
-| 5 | Foreign Borrowing | Veritas (latín: verdad) |
-| 6 | Eponym | Turing (por Alan Turing) |
-| 7 | Coined Word | Qualyx (inventado, suena a quality) |
+| 5 | Foreign Borrowing | Veritas (Latin: truth) |
+| 6 | Eponym | Turing (after Alan Turing) |
+| 7 | Coined Word | Qualyx (invented, sounds like quality) |
 | 8 | Wordplay | Testify (test + testify) |
 
-Incluye top recommendation con justificación y name quality check (cross-language safety, trademarkability, pronunciabilidad).
+Includes a top recommendation with justification and a name quality check (cross-language safety, trademarkability, pronounceability).
 
-## Skills relacionadas
+## Related Skills
 
-- [Product Discovery](../product-discovery) - Para definir el producto antes de nombrarlo
-- [Copy Editing](../copy-editing) - Para pulir el messaging de la marca
+- [Product Discovery](../product-discovery) - To define the product before naming it
+- [Copy Editing](../copy-editing) - To polish the brand messaging
